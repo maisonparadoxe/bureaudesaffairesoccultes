@@ -733,6 +733,7 @@ body.orientation-hint-dismissed .orientation-hint {
   stroke-width: 2;
   stroke-dasharray: 4 3;
   animation: spin-ring 6s linear infinite;
+  transform-box: fill-box;
   transform-origin: center;
 }
 
