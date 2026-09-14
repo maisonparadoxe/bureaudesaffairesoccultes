@@ -343,8 +343,330 @@ window.GAME_DATA_FALLBACK = {
     {
       "id": "nyons",
       "name": "Nyons",
-      "status": "coming_next",
-      "cases": []
+      "status": "available",
+      "cases": [
+        {
+          "id": "puits_des_forts",
+          "title": "Le Puits des Forts",
+          "subtitle": "Une enquête du Pontias",
+          "year": 1994,
+          "totalLeads": 13,
+          "intro": "Mars 1994. À Nyons, le printemps arrive plus tôt qu'ailleurs, les oliviers commencent à peine à bourgeonner et le marché du jeudi retrouve ses habitués sous les platanes. Mais depuis dix jours, une absence intrigue tout le quartier des Forts : Gaspard Reynier, l'antiquaire de la rue des Grands Forts, ne répond plus à sa porte. Sa gouvernante a donné l'alerte, la gendarmerie a jeté un œil rapide et conclu à un départ précipité, peut-être une fugue de vieil homme fatigué de sa propre collection. Vous, à la rédaction du Pontias, vous n'y croyez pas : Reynier n'a jamais quitté cette maison plus de deux jours d'affilée depuis vingt ans. Vous disposez de 13 pistes pour comprendre ce qui s'est réellement passé, avant qu'il ne soit trop tard pour lui.",
+          "briefing": "Menez des entretiens auprès des personnes impliquées, ou des investigations sur les lieux liés à l'affaire. Chaque piste consultée pour la première fois coûte une unité sur votre total ; relire une piste déjà découverte ne coûte rien. Vous n'aurez pas le temps de tout explorer, et c'est voulu : un bon journaliste choisit ses pistes, il ne les épuise pas toutes. L'annuaire se remplit au fil de vos découvertes : un nom n'y apparaît que lorsqu'il a été mentionné ou rencontré. Quand vous manquerez de pistes, ou que vous penserez tenir le fin mot de l'histoire, il faudra choisir trois lieux où porter secours et confronter les responsables.",
+          "quartiers": [
+            {
+              "id": "centre_ville",
+              "name": "Centre-ville"
+            },
+            {
+              "id": "quartier_forts",
+              "name": "Quartier des Forts"
+            },
+            {
+              "id": "rocher_maupas",
+              "name": "Rocher du Maupas"
+            },
+            {
+              "id": "bords_eygues",
+              "name": "Bords de l'Eygues"
+            },
+            {
+              "id": "alentours",
+              "name": "Alentours"
+            }
+          ],
+          "locations": [
+            {
+              "id": "redaction_pontias",
+              "name": "Rédaction du Pontias",
+              "quartier": "centre_ville",
+              "address": "5 place des Arcades"
+            },
+            {
+              "id": "gendarmerie",
+              "name": "Brigade de gendarmerie",
+              "quartier": "centre_ville",
+              "address": "Avenue de la Digue"
+            },
+            {
+              "id": "marche_jeudi",
+              "name": "Étal de Roland Pastier, marché du jeudi",
+              "quartier": "centre_ville",
+              "address": "Place aux Platanes"
+            },
+            {
+              "id": "maison_reynier",
+              "name": "Maison Reynier",
+              "quartier": "quartier_forts",
+              "address": "14 rue des Grands Forts"
+            },
+            {
+              "id": "boutique_delaroche",
+              "name": "Antiquités Delaroche",
+              "quartier": "quartier_forts",
+              "address": "3 rue des Petits Forts"
+            },
+            {
+              "id": "tour_randonne",
+              "name": "Tour Randonne",
+              "quartier": "rocher_maupas",
+              "address": "Chemin de la Tour"
+            },
+            {
+              "id": "pont_romain",
+              "name": "Le Pont Roman",
+              "quartier": "bords_eygues",
+              "address": "Quai des Platanes"
+            },
+            {
+              "id": "atelier_fontanet",
+              "name": "Atelier Fontanet",
+              "quartier": "alentours",
+              "address": "Chemin de Venterol"
+            }
+          ],
+          "characters": [
+            {
+              "id": "gaspard_reynier",
+              "name": "Reynier Gaspard",
+              "role": "Antiquaire, propriétaire de la maison des Grands Forts (disparu)",
+              "locationId": "maison_reynier",
+              "alwaysRevealed": true
+            },
+            {
+              "id": "odette_sabatier",
+              "name": "Sabatier Odette",
+              "role": "Gouvernante de Gaspard Reynier",
+              "locationId": "maison_reynier",
+              "alwaysRevealed": false
+            },
+            {
+              "id": "julien_reynier",
+              "name": "Reynier Julien",
+              "role": "Neveu et héritier présumé",
+              "locationId": "pont_romain",
+              "alwaysRevealed": false
+            },
+            {
+              "id": "roland_pastier",
+              "name": "Pastier Roland",
+              "role": "Brocanteur, marché du jeudi",
+              "locationId": "marche_jeudi",
+              "alwaysRevealed": false
+            },
+            {
+              "id": "elie_fontanet",
+              "name": "Fontanet Élie",
+              "role": "Restaurateur de meubles",
+              "locationId": "atelier_fontanet",
+              "alwaysRevealed": false
+            },
+            {
+              "id": "basile_long",
+              "name": "Long Basile",
+              "role": "Ancien maçon, connaît les souterrains",
+              "locationId": "tour_randonne",
+              "alwaysRevealed": false
+            },
+            {
+              "id": "antoine_delaroche",
+              "name": "Delaroche Antoine",
+              "role": "Antiquaire, rue des Petits Forts",
+              "locationId": "boutique_delaroche",
+              "alwaysRevealed": false
+            },
+            {
+              "id": "vasseur",
+              "name": "Adjudant Vasseur",
+              "role": "Gendarmerie de Nyons",
+              "locationId": "gendarmerie",
+              "alwaysRevealed": false
+            }
+          ],
+          "clues": [
+            {
+              "id": "c_redaction_inv",
+              "locationId": "redaction_pontias",
+              "type": "investigation",
+              "title": "Les archives du Pontias",
+              "revealsCharacters": [
+                "antoine_delaroche",
+                "elie_fontanet"
+              ],
+              "text": "Les archives du Pontias ne remontent pas bien loin, le journal n'a que huit ans d'existence, mais ça suffit. Un portrait flatteur, publié l'an dernier, présente {{p:Antoine Delaroche}} comme « le nouvel œil expert de la brocante nyonsaise », installé rue des Petits Forts depuis peu, déjà consulté par plusieurs collectionneurs de la région. Un autre article, plus modeste, consacré aux artisans du coin, cite {{p:Élie Fontanet}}, restaurateur de meubles à l'{{l:atelier}} du chemin de Venterol, « capable de redonner vie à n'importe quelle pièce du XVIIIe ». Aucun des deux articles ne mentionne {{p:Gaspard Reynier}}, pourtant propriétaire de la plus ancienne collection privée de la ville. Comme s'il avait toujours refusé qu'on parle de lui."
+            },
+            {
+              "id": "c_gendarmerie_entretien",
+              "locationId": "gendarmerie",
+              "type": "entretien",
+              "title": "Adjudant Vasseur",
+              "revealsCharacters": [
+                "vasseur"
+              ],
+              "text": "L'adjudant {{p:Vasseur}} vous reçoit dans un bureau où tout est rangé à angle droit, dossiers compris. « Monsieur Reynier n'est pas un homme jeune, et sa maison est pleine d'escaliers et de recoins. Nous privilégions l'hypothèse d'une chute, ou d'un malaise. » Vous demandez pourquoi personne n'a fouillé la cave en profondeur. « Nous avons constaté qu'elle était fermée à clé. Une porte fermée à clé, pour nous, ça n'indique pas une urgence. » Il referme le dossier, aligné bien droit sur le reste de la pile. « Si de nouveaux éléments apparaissent, nous rouvrirons le dossier. Officiellement. »"
+            },
+            {
+              "id": "c_gendarmerie_investigation",
+              "locationId": "gendarmerie",
+              "type": "investigation",
+              "title": "Les plans de défense passive",
+              "revealsCharacters": [],
+              "text": "Un vieux classeur, rangé au sous-sol du poste, contient les plans de défense passive établis après-guerre : caves, souterrains, abris recensés dans tout le centre ancien. Un plan jauni, à moitié déchiré, montre un réseau de galeries reliant plusieurs caves du {{l:quartier des Forts}} à un point unique, plus haut sur le plan, simplement annoté « Château ». La légende précise que plusieurs de ces passages ont été « comblés ou murés » dans les années 1960. Pas tous, semble-t-il."
+            },
+            {
+              "id": "c_marche_entretien",
+              "locationId": "marche_jeudi",
+              "type": "entretien",
+              "title": "Roland Pastier, brocanteur",
+              "revealsCharacters": [
+                "roland_pastier"
+              ],
+              "text": "{{p:Roland Pastier}} vend de tout sur son étal, des fers à repasser aux missels, et ne s'arrête jamais vraiment de parler, même à vous. « Reynier ? Un vrai connaisseur, celui-là, pas comme certains qui se prétendent experts sans avoir jamais soulevé un meuble de leur vie. » Il jette un œil mauvais vers la rue des Petits Forts. « {{p:Delaroche}}, tenez. Il m'a acheté trois fossiles la semaine dernière, pour une bouchée de pain, en me jurant qu'ils étaient sans intérêt. Je les ai revus en vitrine chez lui, étiquetés le triple. » Il hausse les épaules, philosophe. « Le commerce, c'est le commerce. »"
+            },
+            {
+              "id": "c_marche_investigation",
+              "locationId": "marche_jeudi",
+              "type": "investigation",
+              "title": "Sous l'étal",
+              "revealsCharacters": [],
+              "text": "En fouillant les caisses sous l'étal de {{p:Pastier}}, pendant qu'il négocie avec un client, vous tombez sur une petite ammonite fossilisée, encore enveloppée dans un morceau de papier journal. Au dos du papier, un tampon à moitié effacé : celui de la {{l:Maison Reynier}}. Ce n'est pas le genre d'objet qu'on laisse traîner dans une caisse à deux francs, à moins de ne pas savoir ce qu'on a entre les mains, ou de très bien le savoir et vouloir s'en débarrasser vite."
+            },
+            {
+              "id": "c_maison_entretien",
+              "locationId": "maison_reynier",
+              "type": "entretien",
+              "title": "Odette Sabatier, la gouvernante",
+              "revealsCharacters": [
+                "odette_sabatier",
+                "julien_reynier"
+              ],
+              "text": "{{p:Odette Sabatier}} parle vite, beaucoup, et revient sans cesse en arrière, comme si chaque phrase en appelait une autre restée en travers de la gorge. « Monsieur Reynier ne serait jamais parti sans prévenir, jamais, il me demandait toujours, même pour aller chercher le pain, enfin presque, il avait ses habitudes, vous comprenez, et puis il y a eu cette histoire avec son neveu, {{p:Julien}}, qui voulait vendre la maison, vendre tout, les meubles, la collection, tout, et Monsieur Reynier, ça l'a beaucoup contrarié, il en parlait la nuit, je l'entendais à travers le mur, il n'arrivait plus à dormir. » Elle s'arrête, essoufflée. « Vous croyez qu'il lui est arrivé quelque chose de grave ? »"
+            },
+            {
+              "id": "c_maison_investigation",
+              "locationId": "maison_reynier",
+              "type": "investigation",
+              "title": "La cave et le puits",
+              "revealsCharacters": [],
+              "text": "La cave sent la pierre humide et le salpêtre. Contre le mur du fond, un vieux puits, muré en apparence, mais la margelle porte des traces de corde toutes fraîches, comme si quelqu'un s'y était récemment appuyé, ou y était descendu. Une échelle de meunier, habituellement posée contre la paroi, manque à l'appel. Sur l'établi voisin, un carnet à moitié rempli, de l'écriture serrée et précise d'un homme habitué à décrire des objets plutôt que des sentiments : « 14 mars. Le plateau Directoire du salon n'est plus le même. Le grain du bois ne ment pas. » Plus loin : « Si j'ai raison, je le saurai en descendant. B.L. m'a parlé d'un passage, autrefois. Personne ne me croira sans preuve. »"
+            },
+            {
+              "id": "c_delaroche_entretien",
+              "locationId": "boutique_delaroche",
+              "type": "entretien",
+              "title": "Antoine Delaroche, antiquaire",
+              "revealsCharacters": [
+                "antoine_delaroche"
+              ],
+              "text": "{{p:Antoine Delaroche}} reçoit dans une boutique où chaque objet semble avoir sa propre petite lumière, chaude, flatteuse. « Gaspard Reynier, quel dommage, un puriste, une autre époque. » Sur les fossiles achetés à {{p:Pastier}}, il sourit, presque désolé pour vous. « Le marché de la brocante, cher monsieur, c'est aussi savoir reconnaître ce que les autres ne voient pas. Ce n'est pas malhonnête, c'est de l'expertise. » Vous mentionnez le triplement du prix. Le sourire ne bouge pas d'un millimètre. « L'authentification a un coût. Le vôtre, de métier, ne fonctionne pas autrement, si vous y réfléchissez bien. »"
+            },
+            {
+              "id": "c_delaroche_investigation",
+              "locationId": "boutique_delaroche",
+              "type": "investigation",
+              "title": "L'arrière-boutique",
+              "revealsCharacters": [
+                "elie_fontanet"
+              ],
+              "text": "Derrière un rideau de velours qui sépare la boutique de l'arrière-salle, une pièce plus terne, sans les petites lumières chaudes du magasin. Sur une table, un plateau Directoire, presque identique à celui décrit dans le carnet de {{p:Reynier}}, sauf que le bois, sous la lampe, paraît trop neuf pour son vernis. Une facture, à moitié cachée sous un chiffon : {{d:atelier Fontanet}}, « restauration, finition d'époque », payée en liquide. Le mot « restauration » est souligné deux fois, comme une blague entre initiés."
+            },
+            {
+              "id": "c_tour_investigation",
+              "locationId": "tour_randonne",
+              "type": "investigation",
+              "title": "Repérage depuis la tour",
+              "revealsCharacters": [],
+              "text": "Depuis le parvis de la {{l:Tour Randonne}}, la vue plonge sur les toits du {{l:quartier des Forts}}, sur le lacis de ruelles voûtées et, plus bas, sur l'ombre d'un renfoncement dans la roche, à moitié caché par un figuier sauvage. Une vieille grille rouillée, presque invisible depuis la rue, semble condamner une ouverture dans la paroi. Le genre d'endroit que personne ne remarque, sauf si on sait exactement où regarder."
+            },
+            {
+              "id": "c_tour_entretien",
+              "locationId": "tour_randonne",
+              "type": "entretien",
+              "title": "Basile Long, ancien maçon",
+              "revealsCharacters": [
+                "basile_long"
+              ],
+              "text": "{{p:Basile Long}} reprend son souffle en haut des marches, une main sur la rambarde, l'autre sur sa casquette. « J'ai posé des pavés dans ce quartier pendant trente ans, alors les souterrains, j'en connais un rayon. » Il raconte, avec l'air de quelqu'un qui a déjà raconté ça cent fois : « Autrefois, les caves du bas de la rue des Grands Forts communiquaient entre elles, et avec le rocher, jusqu'au pied du château. On a muré la plupart des passages dans les années soixante, sécurité oblige. La plupart. » Vous mentionnez {{p:Gaspard Reynier}}. Il s'arrête de sourire. « Reynier, oui, il m'a posé des questions là-dessus, il y a pas longtemps. Je lui ai dit d'être prudent. Je crois pas qu'il m'ait écouté. »"
+            },
+            {
+              "id": "c_pont_entretien",
+              "locationId": "pont_romain",
+              "type": "entretien",
+              "title": "Julien Reynier, le neveu",
+              "revealsCharacters": [
+                "julien_reynier"
+              ],
+              "text": "{{p:Julien Reynier}} vous donne rendez-vous sur le {{l:Pont Roman}}, plutôt que chez son oncle, « question d'air », dit-il. Blouson en cuir, cigarette qu'il n'allume jamais vraiment. « Mon oncle et ses vieilleries, franchement, ça n'intéresse plus personne, sauf lui. Moi je dis, on vend, on partage, tout le monde est content. » Sur sa disparition, il hausse les épaules, mal à l'aise sous l'air détaché. « Il est parti sans un mot, ça lui ressemble pas, je veux dire, il est chiant, mais organisé. » Il regarde la rivière un moment. « Vous croyez pas qu'il s'est enfermé dans sa cave à bouder, quand même ? » Il rit, un peu trop fort pour que ce soit vraiment drôle."
+            },
+            {
+              "id": "c_fontanet_entretien",
+              "locationId": "atelier_fontanet",
+              "type": "entretien",
+              "title": "Élie Fontanet, restaurateur",
+              "revealsCharacters": [
+                "elie_fontanet"
+              ],
+              "text": "{{p:Élie Fontanet}} travaille sans lever les yeux, un pinceau fin à la main, une commode ouverte devant lui comme un patient sur une table d'opération. « La restauration, c'est un métier de patience. On répare, on ne trahit pas l'objet. » Sur le plateau Directoire commandé par {{p:Delaroche}}, il se raidit à peine. « Je fais ce qu'on me demande. Une belle reproduction, ce n'est pas un crime, c'est un savoir-faire. » Vous insistez sur la facture, le mot souligné. Il pose enfin son pinceau. « Ce que les gens en font après, ça ne me regarde plus. Moi, je fabrique. »"
+            },
+            {
+              "id": "c_fontanet_investigation",
+              "locationId": "atelier_fontanet",
+              "type": "investigation",
+              "title": "Les moulages sous la bâche",
+              "revealsCharacters": [],
+              "text": "Dans un coin de l'atelier, sous une bâche, plusieurs moulages en résine attendent, à différents stades de finition : une ammonite, un encrier en bronze, un petit buste. Des copies, patientes, méticuleuses, presque plus soignées que les originaux qu'elles imitent. Un carnet de commandes traîne sur l'établi, des initiales en guise de clients : {{d:A.D.}}, trois fois ce mois-ci. Rien à côté qui ressemble à une commande de {{p:Reynier}} lui-même. Ce que fabrique {{p:Fontanet}}, personne ne le lui commande pour le garder."
+            }
+          ],
+          "interventionTargets": [
+            "maison_reynier",
+            "boutique_delaroche",
+            "atelier_fontanet",
+            "tour_randonne"
+          ],
+          "interventionCombos": [
+            {
+              "set": [
+                "maison_reynier",
+                "boutique_delaroche",
+                "atelier_fontanet"
+              ],
+              "points": 7,
+              "text": "La descente dans le puits n'est pas facile, mais au bout de la galerie, recroquevillé contre la pierre froide, épuisé et à moitié déshydraté, {{p:Gaspard Reynier}} est bien vivant. Il ne dira que peu de mots avant l'arrivée des secours, mais ils suffisent : « Le plateau. Le mien n'était plus le mien. » Confronté au carnet retrouvé dans sa propre cave et au témoignage du principal intéressé, {{p:Antoine Delaroche}} s'effondre et reconnaît le trafic, la substitution méthodique des pièces authentiques par les copies d'{{p:Élie Fontanet}}, écoulées ensuite auprès de collectionneurs peu regardants. {{p:Fontanet}}, confronté à son tour, ne nie rien, presque soulagé de ne plus avoir à se taire. Votre article, publié en une du Pontias, provoque l'ouverture d'une enquête sur l'ensemble des ventes de {{p:Delaroche}} ces cinq dernières années. RÉUSSITE MAJEURE."
+            },
+            {
+              "set": [
+                "maison_reynier",
+                "boutique_delaroche",
+                "tour_randonne"
+              ],
+              "points": 6,
+              "text": "{{p:Gaspard Reynier}}, retrouvé à temps au fond du puits, épuisé mais vivant, confirme ce que vous soupçonniez déjà : ses pièces étaient remplacées, une à une. Confronté directement, {{p:Antoine Delaroche}} finit par reconnaître le trafic, sans toutefois donner le nom de son fournisseur de copies, que vous n'avez pas eu l'occasion d'aller confronter vous-même. Votre article sauve un homme et expose un marchand indélicat. RÉUSSITE, même si {{p:Fontanet}} continuera sans doute, ailleurs, avec quelqu'un d'autre."
+            },
+            {
+              "set": [
+                "maison_reynier",
+                "atelier_fontanet",
+                "tour_randonne"
+              ],
+              "points": 5,
+              "text": "{{p:Gaspard Reynier}} est secouru à temps, faible mais bien vivant. {{p:Élie Fontanet}}, confronté aux moulages retrouvés dans son atelier, finit par tout raconter, y compris le nom de son commanditaire. Mais sans être jamais confronté directement, {{p:Antoine Delaroche}} nie tout lien avec l'atelier et continue de tenir boutique comme si de rien n'était, en attendant que l'orage passe. RÉUSSITE : l'homme est sauvé, mais celui qui a organisé le trafic reste, pour l'instant, hors de portée."
+            },
+            {
+              "set": [
+                "boutique_delaroche",
+                "atelier_fontanet",
+                "tour_randonne"
+              ],
+              "points": 3,
+              "text": "Votre article démonte méthodiquement le trafic entre {{p:Antoine Delaroche}} et {{p:Élie Fontanet}}, preuves à l'appui, un vrai scoop pour le Pontias. Mais personne n'est descendu dans le puits de la {{l:Maison Reynier}}. Ce n'est que deux jours plus tard, lors d'une fouille tardive de la gendarmerie, que {{p:Gaspard Reynier}} est retrouvé dans le souterrain, très affaibli, sauvé de justesse. Il s'en remettra, mais il aurait pu ne jamais en ressortir. ÉCHEC : la preuve la plus importante n'était pas dans un dossier, mais dans une cave."
+            }
+          ],
+          "interventionFallback": {
+            "points": 0,
+            "text": "Vos accusations, mal ciblées, ne trouvent pas de prise : les personnes ou les lieux que vous avez choisis n'ont pas de lien assez direct avec l'affaire pour que votre dossier tienne debout, et personne n'est allé chercher Gaspard Reynier là où il se trouvait vraiment. Votre article paraît, flou, sans preuve solide, et l'affaire retombe dans l'oubli, comme tant d'autres. ÉCHEC."
+          }
+        }
+      ]
     },
     {
       "id": "lyon",

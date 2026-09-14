@@ -691,7 +691,8 @@
 
   // ---------------- Plan cliquable ----------------
 
-  const ZONE_RECTS = {
+  // Mise en page dessinée à la main pour Saint-Étienne (conservée telle quelle).
+  const SE_ZONE_RECTS = {
     bellevue: { x: 320, y: 20, w: 280, h: 110 },
     tarentaize: { x: 40, y: 170, w: 220, h: 190 },
     centre: { x: 300, y: 170, w: 300, h: 190 },
@@ -699,7 +700,7 @@
     soleil: { x: 170, y: 400, w: 520, h: 170 }
   };
 
-  const LOCATION_COORDS = {
+  const SE_LOCATION_COORDS = {
     redaction: { x: 380, y: 225 },
     mairie: { x: 480, y: 225 },
     cabinet_vallenot: { x: 430, y: 305 },
@@ -711,11 +712,77 @@
     parking_relais: { x: 460, y: 78 }
   };
 
+  // Mise en page générique (grille) pour toute affaire qui n'a pas de
+  // disposition dessinée à la main. Calculée à partir du nombre réel
+  // de quartiers et de lieux, donc valable pour n'importe quelle
+  // nouvelle ville sans rien coder en dur.
+  function computeGenericZoneRects(cs) {
+    const quartiers = cs.quartiers;
+    const n = quartiers.length;
+    const margin = 20;
+    const cols = Math.max(1, Math.ceil(Math.sqrt(n)));
+    const rows = Math.max(1, Math.ceil(n / cols));
+    const areaW = 900 - margin * 2;
+    const areaH = 600 - margin * 2;
+    const cellW = areaW / cols;
+    const cellH = areaH / rows;
+    const padding = 12;
+    const rects = {};
+    quartiers.forEach((q, i) => {
+      const col = i % cols;
+      const row = Math.floor(i / cols);
+      rects[q.id] = {
+        x: margin + col * cellW + padding,
+        y: margin + row * cellH + padding,
+        w: cellW - padding * 2,
+        h: cellH - padding * 2
+      };
+    });
+    return rects;
+  }
+
+  function computeGenericLocationCoords(cs, zoneRects) {
+    const coords = {};
+    cs.quartiers.forEach((q) => {
+      const rect = zoneRects[q.id];
+      if (!rect) return;
+      const locs = cs.locations.filter((l) => l.quartier === q.id);
+      const n = locs.length;
+      const cols = Math.max(1, Math.ceil(Math.sqrt(n)));
+      const rows = Math.max(1, Math.ceil(n / cols));
+      const labelOffset = 34;
+      const cellW = rect.w / cols;
+      const cellH = Math.max(20, (rect.h - labelOffset) / rows);
+      locs.forEach((loc, i) => {
+        const col = i % cols;
+        const row = Math.floor(i / cols);
+        coords[loc.id] = {
+          x: rect.x + cellW * (col + 0.5),
+          y: rect.y + labelOffset + cellH * (row + 0.5)
+        };
+      });
+    });
+    return coords;
+  }
+
+  function getMapLayout() {
+    const cs = currentCase();
+    if (cs.id === "hauts_fourneaux") {
+      return { zoneRects: SE_ZONE_RECTS, locationCoords: SE_LOCATION_COORDS };
+    }
+    const zoneRects = computeGenericZoneRects(cs);
+    const locationCoords = computeGenericLocationCoords(cs, zoneRects);
+    return { zoneRects: zoneRects, locationCoords: locationCoords };
+  }
+
   function locationVisited(locationId) {
     return cluesForLocation(locationId).some((c) => state.readClueIds.has(c.id));
   }
 
   function buildCityMapSVG() {
+    const layout = getMapLayout();
+    const ZONE_RECTS = layout.zoneRects;
+    const LOCATION_COORDS = layout.locationCoords;
     let zonesSvg = "";
     currentCase().quartiers.forEach((q) => {
       const r = ZONE_RECTS[q.id];
