@@ -13,7 +13,7 @@ window.GAME_DATA_FALLBACK = {
           "subtitle": "Une enquête du Stéphanois",
           "year": 1993,
           "totalLeads": 13,
-          "intro": "Novembre 1993. À la rédaction du Stéphanois, le radiateur fait plus de bruit que de chaleur, et ça fait trois ans que personne n'a de budget pour le remplacer. Depuis la fermeture de Manufrance, la moitié de la ville pointe au chômage, et les seules bonnes nouvelles qu'on imprime, ce sont les scores de l'ASSE. Ce matin, un coup de fil a changé la donne. Bernard Faure, chargé de mission à l'urbanisme, a été retrouvé mort au pied d'un escalier de l'ancienne Manufacture Ferréol, ce site industriel que la mairie voulait transformer en pépinière d'entreprises. La police parle d'accident, dossier classé avant même l'heure du déjeuner. Vous, vous vous souvenez qu'il vous avait appelés trois jours plus tôt, la voix tendue, pour dire qu'il avait « des documents à montrer ». Vous disposez de 13 pistes pour comprendre ce qui s'est réellement passé, avant que l'affaire ne retombe dans l'oubli comme tant d'autres.",
+          "intro": "Novembre 1993. À la rédaction du Stéphanois, le radiateur fait plus de bruit que de chaleur, et ça fait trois ans que personne n'a de budget pour le remplacer. Depuis la fermeture de Manufrance, la moitié de la ville pointe au chômage, et les seules bonnes nouvelles qu'on imprime, ce sont les scores de l'ASSE. Ce matin, un coup de fil a changé la donne. Bernard Faure, chargé de mission à l'urbanisme, a été retrouvé mort au pied d'un escalier de l'ancienne Manufacture Ferréol, ce site industriel que la mairie voulait transformer en pépinière d'entreprises. La police parle d'accident, dossier classé avant même l'heure du déjeuner. Vous, vous vous souvenez qu'il vous avait appelés trois jours plus tôt, la voix tendue, pour dire qu'il avait « des documents à montrer ». Personne d'autre n'a reçu cet appel. À vous de comprendre ce qu'il voulait vous montrer, avant qu'un autre que vous ne décide que l'affaire est close.",
           "briefing": "Menez des entretiens auprès des personnes impliquées, ou des investigations sur les lieux liés à l'affaire. Chaque piste consultée pour la première fois coûte une unité sur votre total ; relire une piste déjà découverte ne coûte rien. Vous n'aurez pas le temps de tout explorer, et c'est voulu : un bon journaliste choisit ses pistes, il ne les épuise pas toutes. L'annuaire se remplit au fil de vos découvertes : un nom n'y apparaît que lorsqu'il a été mentionné ou rencontré. Quand vous manquerez de pistes, ou que vous penserez tenir le fin mot de l'histoire, il faudra choisir trois lieux où porter l'accusation.",
           "quartiers": [
             {
@@ -168,7 +168,7 @@ window.GAME_DATA_FALLBACK = {
               "revealsCharacters": [
                 "roussillon_marcel"
               ],
-              "text": "{{p:Marcel Roussillon}} reçoit debout, la porte du bureau restée ouverte sur le couloir, une façon de dire que ça ne durera pas. Sur l'étagère derrière lui, une photo de l'inauguration du gymnase Jean Moulin, lui au deuxième rang, jamais au premier. « {{p:Faure}}, oui. Sérieux. Un peu raide ces derniers temps, mais on lui en demandait beaucoup. » Sur le budget du {{l:projet Ferréol}}, il ouvre les mains, paumes vers le plafond. « Techniquement, la dépollution d'un site comme celui-là, on découvre toujours des choses en cours de route. » Vous demandez pourquoi aucun appel d'offres n'apparaît dans les registres. Il regarde son stylo, le repose bien parallèle au bord du bureau. « Ça, il faudrait voir avec les services. » Un carillon sonne dans le couloir. Il se lève avant vous."
+              "text": "{{p:Marcel Roussillon}} reçoit debout, la porte du bureau restée ouverte sur le couloir, une façon de dire que ça ne durera pas. Sur l'étagère derrière lui, une photo de l'inauguration du gymnase Jean Moulin, lui au deuxième rang, jamais au premier. « {{p:Faure}}, oui. Sérieux. Un peu raide ces derniers temps, mais on lui en demandait beaucoup. » Sur le budget du {{l:projet Ferréol}}, il ouvre les mains, paumes vers le plafond. « Techniquement, la dépollution d'un site industriel, ça réserve toujours des surprises en cours de route. » Vous demandez pourquoi aucun appel d'offres n'apparaît dans les registres. Il regarde son stylo, le repose bien parallèle au bord du bureau. « Ça, il faudrait voir avec les services. » Un carillon sonne dans le couloir. Il se lève avant vous."
             },
             {
               "id": "c_mairie_investigation",
@@ -178,7 +178,7 @@ window.GAME_DATA_FALLBACK = {
               "revealsCharacters": [
                 "roussillon_marcel"
               ],
-              "text": "Une employée du service, à cran depuis qu'il a fallu remplacer {{p:Bernard Faure}} au pied levé, vous laisse feuilleter le {{d:dossier « Ferréol »}} pendant qu'elle va chercher un café. Le budget est passé de 4 à 8,2 millions de francs en trois mois, validé par une délibération signée {{p:Marcel Roussillon}}, sans la moindre mise en concurrence. Une ligne retient votre attention : « études et honoraires de conseil », 1,3 million de francs, versée à une structure au nom sec, {{d:SCI Delombre}}. Vous cherchez ce nom ailleurs dans les dossiers municipaux. Rien. Comme si la structure n'existait que pour cette seule ligne."
+              "text": "Une employée du service, à cran depuis qu'il a fallu remplacer {{p:Bernard Faure}} au pied levé, vous laisse feuilleter le {{d:dossier « Ferréol »}} pendant qu'elle va chercher un café. Le budget est passé de 4 à 8,2 millions de francs en trois mois, validé par une délibération signée {{p:Marcel Roussillon}}, sans la moindre mise en concurrence. Une ligne retient votre attention : « études et honoraires de conseil », 1,3 million de francs, versée à une structure au nom sec, {{d:SCI Delombre}}. Vous cherchez ce nom ailleurs dans les dossiers municipaux. Rien. Une structure fantôme, qui n'existe, sur le papier, que pour cette seule ligne."
             },
             {
               "id": "c_domicile_entretien",
@@ -188,7 +188,7 @@ window.GAME_DATA_FALLBACK = {
               "revealsCharacters": [
                 "faure_colette"
               ],
-              "text": "{{p:Colette Faure}} vous fait entrer, machinalement, comme si elle recevait encore les collègues de son mari. « Il ne dormait plus. Il descendait répondre au téléphone sur le palier, pour que je n'entende pas, je crois. » Elle tourne son alliance autour de son doigt, sans s'en rendre compte. « Avant-hier, il m'a dit : si jamais il m'arrivait quelque chose, il fallait que le journal récupère le {{d:dossier bleu}}, dans son bureau. Je n'ai pas voulu entendre ça. » Elle s'arrête. « Je ne sais même pas ce qu'il y a dedans. »"
+              "text": "{{p:Colette Faure}} vous fait entrer par automatisme, le geste d'une femme qui a reçu les collègues de son mari des dizaines de fois et n'a pas encore réappris à faire autrement. « Il ne dormait plus. Il descendait répondre au téléphone sur le palier, pour que je n'entende pas, je crois. » Elle tourne son alliance autour de son doigt, sans s'en rendre compte. « Avant-hier, il m'a dit : si jamais il m'arrivait quelque chose, il fallait que le journal récupère le {{d:dossier bleu}}, dans son bureau. Je n'ai pas voulu entendre ça. » Elle s'arrête. « Je ne sais même pas ce qu'il y a dedans. »"
             },
             {
               "id": "c_domicile_investigation",
@@ -199,7 +199,7 @@ window.GAME_DATA_FALLBACK = {
                 "vallenot_herve",
                 "ferrand_roger"
               ],
-              "text": "Le tiroir du bas coince, comme toujours dans les meubles de bureau de l'administration. Sous une pile de notes de frais jamais remboursées, un {{d:classeur bleu}}, le carton ramolli à force d'avoir été feuilleté. Les montants des bons de commande {{l:Ferrand Frères}} sont soulignés au stylo rouge, deux fois, comme s'il n'arrivait pas à y croire lui-même. Un post-it, écriture pressée : « {{p:Vallenot}} sait. {{p:Ferrand}} couvre. Voir {{d:SCI Delombre}}, qui est derrière ? » Coincé entre deux pages, un bout de papier arraché à la hâte : « {{l:Usine Ferréol}}, 22h, apporter dossier. » Pas de nom, pas de signature. Juste cette écriture qui ne ressemble déjà plus à celle des pages précédentes."
+              "text": "Le tiroir du bas coince. Un classique du mobilier de bureau fourni par l'administration, jamais vraiment d'aplomb. Sous une pile de notes de frais jamais remboursées, un {{d:classeur bleu}}, le carton ramolli à force d'avoir été feuilleté. Les montants des bons de commande {{l:Ferrand Frères}} sont soulignés au stylo rouge, et soulignés une seconde fois, le trait plus appuyé, celui d'un homme qui relit un chiffre en espérant s'être trompé. Un post-it, écriture pressée : « {{p:Vallenot}} sait. {{p:Ferrand}} couvre. Voir {{d:SCI Delombre}}, qui est derrière ? » Coincé entre deux pages, un bout de papier arraché à la hâte : « {{l:Usine Ferréol}}, 22h, apporter dossier. » Pas de nom, pas de signature. Juste cette écriture qui ne ressemble déjà plus à celle des pages précédentes."
             },
             {
               "id": "c_ferreol_entretien",
@@ -210,7 +210,7 @@ window.GAME_DATA_FALLBACK = {
                 "bensaid_ahmed",
                 "ferrand_roger"
               ],
-              "text": "{{p:Ahmed Bensaïd}} ouvre le portail sans un mot de trop. Vingt ans de gardiennage, ça apprend à ne pas se mêler de ce qui ne vous regarde pas. « Le soir où le monsieur de la mairie est tombé, j'ai entendu des voix, du côté de l'ancien {{l:atelier de forge}}. Deux hommes. Je suis pas descendu, c'est pas mon rôle. » Il hésite, puis reprend, plus bas, comme s'il se surprenait lui-même à le dire : « Je regarde pas ce qui me regarde pas. Mais des camions à minuit sur un chantier à l'arrêt, ça, je l'ai vu. Ceux de chez {{p:Ferrand}}. Depuis un mois. »"
+              "text": "{{p:Ahmed Bensaïd}} ouvre le portail sans un mot de trop. Vingt ans de gardiennage, ça apprend à ne pas se mêler de ce qui ne vous regarde pas. « Le soir où le monsieur de la mairie est tombé, j'ai entendu des voix, du côté de l'ancien {{l:atelier de forge}}. Deux hommes. Je suis pas descendu, c'est pas mon rôle. » Il hésite, puis reprend, plus bas, la voix de quelqu'un qui s'entend dire une chose qu'il n'avait pas prévu de dire : « Je regarde pas ce qui me regarde pas. Mais des camions à minuit sur un chantier à l'arrêt, ça, je l'ai vu. Ceux de chez {{p:Ferrand}}. Depuis un mois. »"
             },
             {
               "id": "c_ferreol_investigation",
@@ -218,7 +218,7 @@ window.GAME_DATA_FALLBACK = {
               "type": "investigation",
               "title": "Repérage du chantier",
               "revealsCharacters": [],
-              "text": "Le gel des travaux devait tout arrêter. Pourtant, dans l'aile est, une dalle de béton toute fraîche a été coulée, exactement là où l'escalier de la victime a cédé. Près d'une benne à moitié pleine, un {{d:bon de livraison}} {{l:Ferrand Frères}} traîne, daté de la nuit de la mort de {{p:Faure}}, une mention griffonnée au stylo bille : « Dépose matériel, RF sur place. » La marche descellée ne montre aucune trace de rouille ni d'usure. Les fixations arrachées sont propres, nettes, comme si on venait tout juste de les retirer."
+              "text": "Le gel des travaux devait tout arrêter. Pourtant, dans l'aile est, une dalle de béton toute fraîche a été coulée, exactement là où l'escalier de la victime a cédé. Près d'une benne à moitié pleine, un {{d:bon de livraison}} {{l:Ferrand Frères}} traîne, daté de la nuit de la mort de {{p:Faure}}, une mention griffonnée au stylo bille : « Dépose matériel, RF sur place. » La marche descellée ne montre aucune trace de rouille ni d'usure. Les fixations arrachées sont propres, nettes, sans la moindre trace de rouille. Retirées récemment, pas usées par le temps."
             },
             {
               "id": "c_chevalnoir_entretien",
@@ -240,7 +240,7 @@ window.GAME_DATA_FALLBACK = {
                 "vallenot_herve",
                 "ferrand_roger"
               ],
-              "text": "{{p:Hervé Vallenot}} reçoit dans un bureau qui sent le café frais et le mobilier neuf, tout sourire, main tendue avant même que vous ayez ouvert la bouche. « {{l:Ferréol}}, c'est un vrai projet de ville, vous savez. Après, je comprends que les habitudes, ça se bouscule pas comme ça. » Sur le dépassement de budget, il écarte la question d'un geste léger, comme on chasse une mouche. « La dépollution, c'est technique, ça. Allez donc voir du côté de la mairie. » Quand vous prononcez le nom de {{p:Ferrand}}, le sourire tient bon, mais la mâchoire, elle, se crispe un quart de seconde. « {{p:Roger}} fait du bon travail. Allez lui poser vos questions, à lui, s'il a le temps entre deux chantiers. »"
+              "text": "{{p:Hervé Vallenot}} reçoit dans un bureau qui sent le café frais et le mobilier neuf, tout sourire, main tendue avant même que vous ayez ouvert la bouche. « {{l:Ferréol}}, c'est un vrai projet de ville, vous savez. Après, je comprends que les habitudes, ça se bouscule pas comme ça. » Sur le dépassement de budget, il écarte la question d'un geste léger, celui qu'on réserve à une mouche plutôt qu'à une vraie objection. « La dépollution, c'est technique, ça. Allez donc voir du côté de la mairie. » Quand vous prononcez le nom de {{p:Ferrand}}, le sourire tient bon, mais la mâchoire, elle, se crispe un quart de seconde. « {{p:Roger}} fait du bon travail. Allez lui poser vos questions, à lui, s'il a le temps entre deux chantiers. »"
             },
             {
               "id": "c_vallenot_investigation",
@@ -303,7 +303,7 @@ window.GAME_DATA_FALLBACK = {
                 "siege_ferrand"
               ],
               "points": 7,
-              "text": "Face aux preuves étalées sur son bureau, le {{d:dossier bleu}}, les {{d:factures de la SCI Delombre}}, le {{d:bon de livraison}} de cette nuit-là, {{p:Marcel Roussillon}} finit par craquer et reconnaît le montage via la société de son beau-frère. Confronté séparément, {{p:Hervé Vallenot}} lâche {{p:Roger Ferrand}} sans hésiter, pour sauver ce qui peut encore l'être. {{p:Ferrand}}, pris de court, admet enfin s'être rendu sur le {{l:site Ferréol}} ce soir-là pour empêcher {{p:Faure}} de tout révéler. La dispute a mal tourné, dit-il, comme si ça suffisait à l'excuser. Votre article, publié en une du Stéphanois, provoque la démission de {{p:Roussillon}}, la mise en examen de {{p:Ferrand}} pour homicide involontaire, et l'ouverture d'une enquête sur l'ensemble des marchés du {{l:Groupe Vallenot}}. RÉUSSITE MAJEURE."
+              "text": "Face aux preuves étalées sur son bureau, le {{d:dossier bleu}}, les {{d:factures de la SCI Delombre}}, le {{d:bon de livraison}} de cette nuit-là, {{p:Marcel Roussillon}} finit par craquer et reconnaît le montage via la société de son beau-frère. Confronté séparément, {{p:Hervé Vallenot}} lâche {{p:Roger Ferrand}} sans hésiter, pour sauver ce qui peut encore l'être. {{p:Ferrand}}, pris de court, admet enfin s'être rendu sur le {{l:site Ferréol}} ce soir-là pour empêcher {{p:Faure}} de tout révéler. La dispute a mal tourné, dit-il, sur le ton d'une explication qu'il croit suffisante pour excuser le reste. Votre article, publié en une du Stéphanois, provoque la démission de {{p:Roussillon}}, la mise en examen de {{p:Ferrand}} pour homicide involontaire, et l'ouverture d'une enquête sur l'ensemble des marchés du {{l:Groupe Vallenot}}. RÉUSSITE MAJEURE."
             },
             {
               "set": [
@@ -351,7 +351,7 @@ window.GAME_DATA_FALLBACK = {
           "subtitle": "Une enquête du Pontias",
           "year": 1994,
           "totalLeads": 13,
-          "intro": "Mars 1994. À Nyons, le printemps arrive plus tôt qu'ailleurs, les oliviers commencent à peine à bourgeonner et le marché du jeudi retrouve ses habitués sous les platanes. Mais depuis dix jours, une absence intrigue tout le quartier des Forts : Gaspard Reynier, l'antiquaire de la rue des Grands Forts, ne répond plus à sa porte. Sa gouvernante a donné l'alerte, la gendarmerie a jeté un œil rapide et conclu à un départ précipité, peut-être une fugue de vieil homme fatigué de sa propre collection. Vous, à la rédaction du Pontias, vous n'y croyez pas : Reynier n'a jamais quitté cette maison plus de deux jours d'affilée depuis vingt ans. Vous disposez de 13 pistes pour comprendre ce qui s'est réellement passé, avant qu'il ne soit trop tard pour lui.",
+          "intro": "Mars 1994. À Nyons, le printemps arrive plus tôt qu'ailleurs, les oliviers commencent à peine à bourgeonner et le marché du jeudi retrouve ses habitués sous les platanes. Mais depuis dix jours, une absence intrigue tout le quartier des Forts : Gaspard Reynier, l'antiquaire de la rue des Grands Forts, ne répond plus à sa porte. Sa gouvernante a donné l'alerte, la gendarmerie a jeté un œil rapide et conclu à un départ précipité, peut-être une fugue de vieil homme fatigué de sa propre collection. Vous, à la rédaction du Pontias, vous n'y croyez pas : Reynier n'a jamais quitté cette maison plus de deux jours d'affilée depuis vingt ans. Quelque part dans cette ville, quelqu'un sait exactement où il se trouve. Il faut juste le trouver avant qu'il ne soit trop tard pour lui.",
           "briefing": "Menez des entretiens auprès des personnes impliquées, ou des investigations sur les lieux liés à l'affaire. Chaque piste consultée pour la première fois coûte une unité sur votre total ; relire une piste déjà découverte ne coûte rien. Vous n'aurez pas le temps de tout explorer, et c'est voulu : un bon journaliste choisit ses pistes, il ne les épuise pas toutes. L'annuaire se remplit au fil de vos découvertes : un nom n'y apparaît que lorsqu'il a été mentionné ou rencontré. Quand vous manquerez de pistes, ou que vous penserez tenir le fin mot de l'histoire, il faudra choisir trois lieux où porter secours et confronter les responsables.",
           "quartiers": [
             {
@@ -493,7 +493,7 @@ window.GAME_DATA_FALLBACK = {
                 "antoine_delaroche",
                 "elie_fontanet"
               ],
-              "text": "Les archives du Pontias ne remontent pas bien loin, le journal n'a que huit ans d'existence, mais ça suffit. Un portrait flatteur, publié l'an dernier, présente {{p:Antoine Delaroche}} comme « le nouvel œil expert de la brocante nyonsaise », installé rue des Petits Forts depuis peu, déjà consulté par plusieurs collectionneurs de la région. Un autre article, plus modeste, consacré aux artisans du coin, cite {{p:Élie Fontanet}}, restaurateur de meubles à l'{{l:atelier}} du chemin de Venterol, « capable de redonner vie à n'importe quelle pièce du XVIIIe ». Aucun des deux articles ne mentionne {{p:Gaspard Reynier}}, pourtant propriétaire de la plus ancienne collection privée de la ville. Comme s'il avait toujours refusé qu'on parle de lui."
+              "text": "Les archives du Pontias ne remontent pas bien loin, le journal n'a que huit ans d'existence, mais ça suffit. Un portrait flatteur, publié l'an dernier, présente {{p:Antoine Delaroche}} comme « le nouvel œil expert de la brocante nyonsaise », installé rue des Petits Forts depuis peu, déjà consulté par plusieurs collectionneurs de la région. Un autre article, plus modeste, consacré aux artisans du coin, cite {{p:Élie Fontanet}}, restaurateur de meubles à l'{{l:atelier}} du chemin de Venterol, « capable de redonner vie à n'importe quelle pièce du XVIIIe ». Aucun des deux articles ne mentionne {{p:Gaspard Reynier}}, pourtant propriétaire de la plus ancienne collection privée de la ville. Lui n'a jamais rien demandé à personne, et surtout pas qu'on parle de lui."
             },
             {
               "id": "c_gendarmerie_entretien",
@@ -540,7 +540,7 @@ window.GAME_DATA_FALLBACK = {
                 "odette_sabatier",
                 "julien_reynier"
               ],
-              "text": "{{p:Odette Sabatier}} parle vite, beaucoup, et revient sans cesse en arrière, comme si chaque phrase en appelait une autre restée en travers de la gorge. « Monsieur Reynier ne serait jamais parti sans prévenir, jamais, il me demandait toujours, même pour aller chercher le pain, enfin presque, il avait ses habitudes, vous comprenez, et puis il y a eu cette histoire avec son neveu, {{p:Julien}}, qui voulait vendre la maison, vendre tout, les meubles, la collection, tout, et Monsieur Reynier, ça l'a beaucoup contrarié, il en parlait la nuit, je l'entendais à travers le mur, il n'arrivait plus à dormir. » Elle s'arrête, essoufflée. « Vous croyez qu'il lui est arrivé quelque chose de grave ? »"
+              "text": "{{p:Odette Sabatier}} parle vite, beaucoup, et revient sans cesse en arrière, une phrase n'attendant jamais que la précédente soit vraiment finie. « Monsieur Reynier ne serait jamais parti sans prévenir, jamais, il me demandait toujours, même pour aller chercher le pain, enfin presque, il avait ses habitudes, vous comprenez, et puis il y a eu cette histoire avec son neveu, {{p:Julien}}, qui voulait vendre la maison, vendre tout, les meubles, la collection, tout, et Monsieur Reynier, ça l'a beaucoup contrarié, il en parlait la nuit, je l'entendais à travers le mur, il n'arrivait plus à dormir. » Elle s'arrête, essoufflée. « Vous croyez qu'il lui est arrivé quelque chose de grave ? »"
             },
             {
               "id": "c_maison_investigation",
@@ -548,7 +548,7 @@ window.GAME_DATA_FALLBACK = {
               "type": "investigation",
               "title": "La cave et le puits",
               "revealsCharacters": [],
-              "text": "La cave sent la pierre humide et le salpêtre. Contre le mur du fond, un vieux puits, muré en apparence, mais la margelle porte des traces de corde toutes fraîches, comme si quelqu'un s'y était récemment appuyé, ou y était descendu. Une échelle de meunier, habituellement posée contre la paroi, manque à l'appel. Sur l'établi voisin, un carnet à moitié rempli, de l'écriture serrée et précise d'un homme habitué à décrire des objets plutôt que des sentiments : « 14 mars. Le plateau Directoire du salon n'est plus le même. Le grain du bois ne ment pas. » Plus loin : « Si j'ai raison, je le saurai en descendant. B.L. m'a parlé d'un passage, autrefois. Personne ne me croira sans preuve. »"
+              "text": "La cave sent la pierre humide et le salpêtre. Contre le mur du fond, un vieux puits, muré en apparence, mais la margelle porte des traces de corde toutes fraîches. Quelqu'un s'y est appuyé récemment. Ou y est descendu. Une échelle de meunier, habituellement posée contre la paroi, manque à l'appel. Sur l'établi voisin, un carnet à moitié rempli, de l'écriture serrée et précise d'un homme habitué à décrire des objets plutôt que des sentiments : « 14 mars. Le plateau Directoire du salon n'est plus le même. Le grain du bois ne ment pas. » Plus loin : « Si j'ai raison, je le saurai en descendant. B.L. m'a parlé d'un passage, autrefois. Personne ne me croira sans preuve. »"
             },
             {
               "id": "c_delaroche_entretien",
@@ -568,7 +568,7 @@ window.GAME_DATA_FALLBACK = {
               "revealsCharacters": [
                 "elie_fontanet"
               ],
-              "text": "Derrière un rideau de velours qui sépare la boutique de l'arrière-salle, une pièce plus terne, sans les petites lumières chaudes du magasin. Sur une table, un plateau Directoire, presque identique à celui décrit dans le carnet de {{p:Reynier}}, sauf que le bois, sous la lampe, paraît trop neuf pour son vernis. Une facture, à moitié cachée sous un chiffon : {{d:atelier Fontanet}}, « restauration, finition d'époque », payée en liquide. Le mot « restauration » est souligné deux fois, comme une blague entre initiés."
+              "text": "Derrière un rideau de velours qui sépare la boutique de l'arrière-salle, une pièce plus terne, sans les petites lumières chaudes du magasin. Sur une table, un plateau Directoire, presque identique à celui décrit dans le carnet de {{p:Reynier}}, sauf que le bois, sous la lampe, paraît trop neuf pour son vernis. Une facture, à moitié cachée sous un chiffon : {{d:atelier Fontanet}}, « restauration, finition d'époque », payée en liquide. Le mot « restauration » est souligné deux fois, avec l'humour discret de ceux qui savent exactement ce que le mot recouvre."
             },
             {
               "id": "c_tour_investigation",
@@ -576,7 +576,7 @@ window.GAME_DATA_FALLBACK = {
               "type": "investigation",
               "title": "Repérage depuis la tour",
               "revealsCharacters": [],
-              "text": "Depuis le parvis de la {{l:Tour Randonne}}, la vue plonge sur les toits du {{l:quartier des Forts}}, sur le lacis de ruelles voûtées et, plus bas, sur l'ombre d'un renfoncement dans la roche, à moitié caché par un figuier sauvage. Une vieille grille rouillée, presque invisible depuis la rue, semble condamner une ouverture dans la paroi. Le genre d'endroit que personne ne remarque, sauf si on sait exactement où regarder."
+              "text": "Depuis le parvis de la {{l:Tour Randonne}}, la vue plonge sur les toits du {{l:quartier des Forts}}, sur le lacis de ruelles voûtées et, plus bas, sur l'ombre d'un renfoncement dans la roche, à moitié caché par un figuier sauvage. Une vieille grille rouillée, qu'on ne repère pas depuis la rue si on ne sait pas exactement où chercher, semble condamner une ouverture dans la paroi. Le genre d'endroit que personne ne remarque, sauf ceux qui le cherchent."
             },
             {
               "id": "c_tour_entretien",
@@ -606,7 +606,7 @@ window.GAME_DATA_FALLBACK = {
               "revealsCharacters": [
                 "elie_fontanet"
               ],
-              "text": "{{p:Élie Fontanet}} travaille sans lever les yeux, un pinceau fin à la main, une commode ouverte devant lui comme un patient sur une table d'opération. « La restauration, c'est un métier de patience. On répare, on ne trahit pas l'objet. » Sur le plateau Directoire commandé par {{p:Delaroche}}, il se raidit à peine. « Je fais ce qu'on me demande. Une belle reproduction, ce n'est pas un crime, c'est un savoir-faire. » Vous insistez sur la facture, le mot souligné. Il pose enfin son pinceau. « Ce que les gens en font après, ça ne me regarde plus. Moi, je fabrique. »"
+              "text": "{{p:Élie Fontanet}} travaille sans lever les yeux, un pinceau fin à la main, penché sur une commode ouverte avec la concentration d'un chirurgien plutôt que d'un artisan pressé. « La restauration, c'est un métier de patience. On répare, on ne trahit pas l'objet. » Sur le plateau Directoire commandé par {{p:Delaroche}}, il se raidit à peine. « Je fais ce qu'on me demande. Une belle reproduction, ce n'est pas un crime, c'est un savoir-faire. » Vous insistez sur la facture, le mot souligné. Il pose enfin son pinceau. « Ce que les gens en font après, ça ne me regarde plus. Moi, je fabrique. »"
             },
             {
               "id": "c_fontanet_investigation",
@@ -649,7 +649,7 @@ window.GAME_DATA_FALLBACK = {
                 "tour_randonne"
               ],
               "points": 5,
-              "text": "{{p:Gaspard Reynier}} est secouru à temps, faible mais bien vivant. {{p:Élie Fontanet}}, confronté aux moulages retrouvés dans son atelier, finit par tout raconter, y compris le nom de son commanditaire. Mais sans être jamais confronté directement, {{p:Antoine Delaroche}} nie tout lien avec l'atelier et continue de tenir boutique comme si de rien n'était, en attendant que l'orage passe. RÉUSSITE : l'homme est sauvé, mais celui qui a organisé le trafic reste, pour l'instant, hors de portée."
+              "text": "{{p:Gaspard Reynier}} est secouru à temps, faible mais bien vivant. {{p:Élie Fontanet}}, confronté aux moulages retrouvés dans son atelier, finit par tout raconter, y compris le nom de son commanditaire. Mais sans être jamais confronté directement, {{p:Antoine Delaroche}} nie tout lien avec l'atelier, garde boutique ouverte et le sourire intact, et attend simplement que l'orage passe. RÉUSSITE : l'homme est sauvé, mais celui qui a organisé le trafic reste, pour l'instant, hors de portée."
             },
             {
               "set": [
@@ -663,7 +663,7 @@ window.GAME_DATA_FALLBACK = {
           ],
           "interventionFallback": {
             "points": 0,
-            "text": "Vos accusations, mal ciblées, ne trouvent pas de prise : les personnes ou les lieux que vous avez choisis n'ont pas de lien assez direct avec l'affaire pour que votre dossier tienne debout, et personne n'est allé chercher Gaspard Reynier là où il se trouvait vraiment. Votre article paraît, flou, sans preuve solide, et l'affaire retombe dans l'oubli, comme tant d'autres. ÉCHEC."
+            "text": "Le choix des lieux ne mène nulle part : rien de concret ne relie les endroits ou les personnes que vous avez retenus à ce qui s'est vraiment passé rue des Grands Forts, et personne n'est allé chercher Gaspard Reynier là où il se trouvait vraiment. Votre article paraît, flou, sans preuve solide, et l'affaire s'éteint doucement, faute de nouvel élément pour la relancer. ÉCHEC."
           }
         }
       ]
