@@ -1,0 +1,522 @@
+[
+  {
+    "id": "hauts_fourneaux",
+    "title": "L'Affaire des Hauts Fourneaux",
+    "subtitle": "Une enquête du Stéphanois",
+    "year": 1993,
+    "totalLeads": 13,
+    "intro": "Novembre 1993. À la {{l:redaction|rédaction du Stéphanois}}, le radiateur fait plus de bruit que de chaleur, et ça fait trois ans que personne n'a de budget pour le remplacer. Depuis la fermeture de Manufrance, la moitié de la ville pointe au chômage, et les seules bonnes nouvelles qu'on imprime, ce sont les scores de l'ASSE. Ce matin, un coup de fil a changé la donne. {{p:faure_bernard|Bernard Faure}}, chargé de mission à l'urbanisme, a été retrouvé mort au pied d'un escalier de l'ancienne {{l:site_ferreol|Manufacture Ferréol}}, ce site industriel que la {{l:mairie|mairie}} voulait transformer en pépinière d'entreprises. La {{l:commissariat|police}} parle d'accident, dossier classé avant même l'heure du déjeuner. Vous, vous vous souvenez qu'il vous avait appelés trois jours plus tôt, la voix tendue, pour dire qu'il avait « des documents à montrer ». Personne d'autre n'a reçu cet appel. À vous de comprendre ce qu'il voulait vous montrer, avant qu'un autre que vous ne décide que l'affaire est close.",
+    "briefing": "Menez des entretiens auprès des personnes impliquées, ou des investigations sur les lieux liés à l'affaire. Chaque piste consultée pour la première fois coûte une unité sur votre total ; relire une piste déjà découverte ne coûte rien. Vous n'aurez pas le temps de tout explorer, et c'est voulu : un bon journaliste choisit ses pistes, il ne les épuise pas toutes. Un lieu n'apparaît sur le plan, et une personne dans l'annuaire, qu'une fois qu'on vous en a parlé. Quand vous manquerez de pistes, ou que vous penserez tenir le fin mot de l'histoire, il faudra choisir trois lieux où porter l'accusation.",
+    "quartiers": [
+      {
+        "id": "centre",
+        "name": "Centre-ville"
+      },
+      {
+        "id": "soleil",
+        "name": "Le Soleil"
+      },
+      {
+        "id": "tarentaize",
+        "name": "Tarentaize"
+      },
+      {
+        "id": "zone_industrielle",
+        "name": "Zone industrielle"
+      },
+      {
+        "id": "bellevue",
+        "name": "Bellevue"
+      }
+    ],
+    "locations": [
+      {
+        "id": "redaction",
+        "name": "Rédaction du Stéphanois",
+        "quartier": "centre",
+        "address": "12 rue de la République",
+        "alwaysRevealed": true
+      },
+      {
+        "id": "mairie",
+        "name": "Mairie, Service Urbanisme",
+        "quartier": "centre",
+        "address": "Place de l'Hôtel de Ville"
+      },
+      {
+        "id": "domicile_faure",
+        "name": "Domicile de Bernard Faure",
+        "quartier": "tarentaize",
+        "address": "8 rue des Creuses"
+      },
+      {
+        "id": "site_ferreol",
+        "name": "Ancien site Manufacture Ferréol",
+        "quartier": "soleil",
+        "address": "Impasse des Fondeurs"
+      },
+      {
+        "id": "cheval_noir",
+        "name": "Café Le Cheval Noir",
+        "quartier": "soleil",
+        "address": "45 rue de la Montat"
+      },
+      {
+        "id": "cabinet_vallenot",
+        "name": "Cabinet Groupe Vallenot",
+        "quartier": "centre",
+        "address": "3 avenue de la Libération"
+      },
+      {
+        "id": "siege_ferrand",
+        "name": "Siège Ferrand Frères BTP",
+        "quartier": "zone_industrielle",
+        "address": "Zone de la Rivière"
+      },
+      {
+        "id": "parking_relais",
+        "name": "Chantier du parking-relais",
+        "quartier": "bellevue",
+        "address": "Boulevard Thiers"
+      },
+      {
+        "id": "commissariat",
+        "name": "Commissariat central",
+        "quartier": "centre",
+        "address": "Rue Charles de Gaulle"
+      }
+    ],
+    "characters": [
+      {
+        "id": "faure_bernard",
+        "name": "Faure Bernard",
+        "role": "Chargé de mission urbanisme (victime)",
+        "locationId": "domicile_faure",
+        "alwaysRevealed": true
+      },
+      {
+        "id": "faure_colette",
+        "name": "Faure Colette",
+        "role": "Veuve de Bernard Faure",
+        "locationId": "domicile_faure"
+      },
+      {
+        "id": "roussillon_marcel",
+        "name": "Roussillon Marcel",
+        "role": "Adjoint au maire, urbanisme",
+        "locationId": "mairie"
+      },
+      {
+        "id": "bensaid_ahmed",
+        "name": "Bensaïd Ahmed",
+        "role": "Gardien du site Ferréol",
+        "locationId": "site_ferreol"
+      },
+      {
+        "id": "chaptal_marcel",
+        "name": "Chaptal Marcel",
+        "role": "Ancien syndicaliste CGT",
+        "locationId": "cheval_noir"
+      },
+      {
+        "id": "vallenot_herve",
+        "name": "Vallenot Hervé",
+        "role": "Promoteur, Groupe Vallenot",
+        "locationId": "cabinet_vallenot"
+      },
+      {
+        "id": "ferrand_roger",
+        "name": "Ferrand Roger",
+        "role": "Gérant, Ferrand Frères BTP",
+        "locationId": "siege_ferrand"
+      },
+      {
+        "id": "igier_bernard",
+        "name": "Igier Bernard",
+        "role": "Lieutenant de police",
+        "locationId": "commissariat"
+      }
+    ],
+    "documents": [
+      {
+        "id": "dossier_bleu",
+        "name": "Le dossier bleu de Bernard Faure"
+      },
+      {
+        "id": "dossier_ferreol",
+        "name": "Le dossier « Ferréol » de la mairie"
+      },
+      {
+        "id": "sci_delombre",
+        "name": "SCI Delombre"
+      },
+      {
+        "id": "facture_delombre",
+        "name": "Facture de la SCI Delombre"
+      },
+      {
+        "id": "bon_livraison",
+        "name": "Bon de livraison Ferrand Frères"
+      },
+      {
+        "id": "registre_virements",
+        "name": "Registre de virements de Ferrand Frères"
+      },
+      {
+        "id": "agenda_chantier",
+        "name": "Agenda de chantier de Ferrand Frères"
+      }
+    ],
+    "clues": [
+      {
+        "id": "c_redaction_inv",
+        "locationId": "redaction",
+        "type": "investigation",
+        "title": "Les archives du journal",
+        "text": "Vous étalez sur la table les coupures des derniers mois, jaunies déjà malgré leur fraîcheur. En avril, une pleine page annonçait la reconversion de la {{l:site_ferreol|Manufacture Ferréol}} en pépinière d'entreprises, photo du maire, casque de chantier vissé de travers sur la tête, sourire un peu trop grand pour être naturel. Un entrefilet de juillet, en page intérieure, glissé entre les résultats du comice agricole et une brève sur les inondations à Rive-de-Gier, note que le budget a doublé « pour tenir compte de la dépollution du site ». Personne n'a jugé utile d'y revenir. Dans la liste des remerciements de l'inauguration, un nom revient deux fois : {{l:siege_ferrand|Ferrand Frères}}, gros œuvre. Le {{l:cabinet_vallenot|Groupe Vallenot}} porte le projet. En septembre, trois lignes signalent que la même entreprise a aussi décroché le {{l:parking_relais|chantier du parking-relais de Bellevue}}. Aucune trace d'appel d'offres, nulle part.",
+        "facts": [
+          {
+            "about": "l:site_ferreol",
+            "label": "Projet",
+            "text": "Reconversion en pépinière d'entreprises annoncée en avril 1993."
+          },
+          {
+            "about": "l:site_ferreol",
+            "label": "Budget",
+            "text": "Doublé en juillet, « pour tenir compte de la dépollution du site »."
+          },
+          {
+            "about": "l:siege_ferrand",
+            "text": "Gros œuvre du projet Ferréol, cité deux fois dans les remerciements."
+          },
+          {
+            "about": "l:cabinet_vallenot",
+            "text": "Porte le projet Ferréol."
+          },
+          {
+            "about": "l:parking_relais",
+            "text": "Confié à {{l:siege_ferrand|Ferrand Frères}} en septembre 1993."
+          }
+        ]
+      },
+      {
+        "id": "c_mairie_entretien",
+        "locationId": "mairie",
+        "type": "entretien",
+        "title": "Marcel Roussillon, adjoint à l'urbanisme",
+        "text": "{{p:roussillon_marcel|Marcel Roussillon}} reçoit debout, la porte du bureau restée ouverte sur le couloir, une façon de dire que ça ne durera pas. Sur l'étagère derrière lui, une photo de l'inauguration du gymnase Jean Moulin, lui au deuxième rang, jamais au premier. « {{p:faure_bernard|Faure}}, oui. Sérieux. Un peu raide ces derniers temps, mais on lui en demandait beaucoup. » Sur le budget du {{l:site_ferreol|projet Ferréol}}, il ouvre les mains, paumes vers le plafond. « Techniquement, la dépollution d'un site industriel, ça réserve toujours des surprises en cours de route. » Vous demandez pourquoi aucun appel d'offres n'apparaît dans les registres. Il regarde son stylo, le repose bien parallèle au bord du bureau. « Ça, il faudrait voir avec les services. » Un carillon sonne dans le couloir. Il se lève avant vous.",
+        "facts": [
+          {
+            "about": "p:roussillon_marcel",
+            "label": "Appel d'offres",
+            "text": "Élude la question : « Ça, il faudrait voir avec les services. »"
+          },
+          {
+            "about": "p:faure_bernard",
+            "label": "Selon Roussillon",
+            "text": "« Sérieux. Un peu raide ces derniers temps. »"
+          }
+        ]
+      },
+      {
+        "id": "c_mairie_investigation",
+        "locationId": "mairie",
+        "type": "investigation",
+        "title": "Le dossier de reconversion",
+        "text": "Une employée du service, à cran depuis qu'il a fallu remplacer {{p:faure_bernard|Bernard Faure}} au pied levé, vous laisse feuilleter le {{d:dossier_ferreol|dossier « Ferréol »}} pendant qu'elle va chercher un café. Le budget est passé de 4 à 8,2 millions de francs en trois mois, validé par une délibération signée {{p:roussillon_marcel|Marcel Roussillon}}, sans la moindre mise en concurrence. Une ligne retient votre attention : « études et honoraires de conseil », 1,3 million de francs, versée à une structure au nom sec, {{d:sci_delombre|SCI Delombre}}. Vous cherchez ce nom ailleurs dans les dossiers municipaux. Rien. Une structure fantôme, qui n'existe, sur le papier, que pour cette seule ligne.",
+        "facts": [
+          {
+            "about": "d:dossier_ferreol",
+            "label": "Budget",
+            "text": "Passé de 4 à 8,2 millions de francs en trois mois, sans mise en concurrence."
+          },
+          {
+            "about": "p:roussillon_marcel",
+            "label": "Signature",
+            "text": "A signé la délibération qui valide le nouveau budget."
+          },
+          {
+            "about": "d:sci_delombre",
+            "label": "Montant",
+            "text": "1,3 million de francs d'« études et honoraires de conseil » sur le projet Ferréol."
+          },
+          {
+            "about": "d:sci_delombre",
+            "text": "Aucune autre trace dans les dossiers municipaux."
+          }
+        ]
+      },
+      {
+        "id": "c_domicile_entretien",
+        "locationId": "domicile_faure",
+        "type": "entretien",
+        "title": "Colette Faure, la veuve",
+        "text": "{{p:faure_colette|Colette Faure}} vous fait entrer par automatisme, le geste d'une femme qui a reçu les collègues de son mari des dizaines de fois et n'a pas encore réappris à faire autrement. « Il ne dormait plus. Il descendait répondre au téléphone sur le palier, pour que je n'entende pas, je crois. » Elle tourne son alliance autour de son doigt, sans s'en rendre compte. « Avant-hier, il m'a dit : si jamais il m'arrivait quelque chose, il fallait que le journal récupère le {{d:dossier_bleu|dossier bleu}}, dans son bureau. Je n'ai pas voulu entendre ça. » Elle s'arrête. « Je ne sais même pas ce qu'il y a dedans. »",
+        "facts": [
+          {
+            "about": "p:faure_bernard",
+            "label": "Ses derniers jours",
+            "text": "Ne dormait plus. Téléphonait sur le palier pour ne pas être entendu."
+          },
+          {
+            "about": "d:dossier_bleu",
+            "text": "Faure voulait que le journal le récupère « s'il lui arrivait quelque chose »."
+          },
+          {
+            "about": "p:faure_colette",
+            "label": "Ce qu'elle dit",
+            "text": "Ne sait pas ce que contient le {{d:dossier_bleu|dossier bleu}}."
+          }
+        ]
+      },
+      {
+        "id": "c_domicile_investigation",
+        "locationId": "domicile_faure",
+        "type": "investigation",
+        "title": "Le bureau de Bernard Faure",
+        "text": "Le tiroir du bas coince. Un classique du mobilier de bureau fourni par l'administration, jamais vraiment d'aplomb. Sous une pile de notes de frais jamais remboursées, un {{d:dossier_bleu|classeur bleu}}, le carton ramolli à force d'avoir été feuilleté. Les montants des bons de commande {{l:siege_ferrand|Ferrand Frères}} sont soulignés au stylo rouge, et soulignés une seconde fois, le trait plus appuyé, celui d'un homme qui relit un chiffre en espérant s'être trompé. Un post-it, écriture pressée : « {{p:vallenot_herve|Vallenot}} sait. {{p:ferrand_roger|Ferrand}} couvre. Voir {{d:sci_delombre|SCI Delombre}}, qui est derrière ? » Coincé entre deux pages, un bout de papier arraché à la hâte : « {{l:site_ferreol|Usine Ferréol}}, 22h, apporter dossier. » Pas de nom, pas de signature. Juste cette écriture qui ne ressemble déjà plus à celle des pages précédentes.",
+        "facts": [
+          {
+            "about": "d:dossier_bleu",
+            "label": "Contenu",
+            "text": "Bons de commande {{l:siege_ferrand|Ferrand Frères}}, montants soulignés deux fois au stylo rouge."
+          },
+          {
+            "about": "d:dossier_bleu",
+            "label": "Post-it",
+            "text": "« Vallenot sait. Ferrand couvre. Voir SCI Delombre, qui est derrière ? »"
+          },
+          {
+            "about": "p:faure_bernard",
+            "label": "Rendez-vous",
+            "text": "Note de sa main : « Usine Ferréol, 22h, apporter dossier. »"
+          }
+        ]
+      },
+      {
+        "id": "c_ferreol_entretien",
+        "locationId": "site_ferreol",
+        "type": "entretien",
+        "title": "Ahmed Bensaïd, gardien du site",
+        "text": "{{p:bensaid_ahmed|Ahmed Bensaïd}} ouvre le portail sans un mot de trop. Vingt ans de gardiennage, ça apprend à ne pas se mêler de ce qui ne vous regarde pas. « Le soir où le monsieur de la mairie est tombé, j'ai entendu des voix, du côté de l'ancien {{l:site_ferreol|atelier de forge}}. Deux hommes. Je suis pas descendu, c'est pas mon rôle. » Il hésite, puis reprend, plus bas, la voix de quelqu'un qui s'entend dire une chose qu'il n'avait pas prévu de dire : « Je regarde pas ce qui me regarde pas. Mais des camions à minuit sur un chantier à l'arrêt, ça, je l'ai vu. Ceux de chez {{p:ferrand_roger|Ferrand}}. Depuis un mois. » Il remet sa casquette d'aplomb. « Pour l'histoire de l'usine, voyez plutôt {{p:chaptal_marcel|Marcel Chaptal}}. Il est tous les jours au {{l:cheval_noir|Cheval Noir}}. »",
+        "facts": [
+          {
+            "about": "p:bensaid_ahmed",
+            "label": "Le soir de la mort",
+            "text": "A entendu deux voix d'hommes du côté de l'atelier de forge. Dit ne pas être descendu."
+          },
+          {
+            "about": "l:site_ferreol",
+            "label": "La nuit",
+            "text": "Des camions de chez Ferrand y viennent vers minuit depuis un mois, chantier pourtant à l'arrêt."
+          },
+          {
+            "about": "p:ferrand_roger",
+            "label": "Selon le gardien",
+            "text": "Ses camions viennent la nuit sur le site Ferréol depuis un mois."
+          },
+          {
+            "about": "p:chaptal_marcel",
+            "text": "Connaît l'histoire de l'usine, selon le gardien."
+          }
+        ]
+      },
+      {
+        "id": "c_ferreol_investigation",
+        "locationId": "site_ferreol",
+        "type": "investigation",
+        "title": "Repérage du chantier",
+        "text": "Le gel des travaux devait tout arrêter. Pourtant, dans l'aile est, une dalle de béton toute fraîche a été coulée, exactement là où l'escalier de la victime a cédé. Près d'une benne à moitié pleine, un {{d:bon_livraison|bon de livraison}} {{l:siege_ferrand|Ferrand Frères}} traîne, daté de la nuit de la mort de {{p:faure_bernard|Faure}}, une mention griffonnée au stylo bille : « Dépose matériel, RF sur place. » La marche descellée ne montre aucune trace de rouille ni d'usure. Les fixations arrachées sont propres, nettes, sans la moindre trace de rouille. Retirées récemment, pas usées par le temps.",
+        "facts": [
+          {
+            "about": "l:site_ferreol",
+            "label": "Aile est",
+            "text": "Dalle de béton toute fraîche, à l'endroit où l'escalier a cédé."
+          },
+          {
+            "about": "l:site_ferreol",
+            "label": "L'escalier",
+            "text": "Fixations de la marche retirées récemment : propres, sans rouille."
+          },
+          {
+            "about": "d:bon_livraison",
+            "text": "Daté de la nuit de la mort. Mention : « Dépose matériel, RF sur place. »"
+          }
+        ]
+      },
+      {
+        "id": "c_chevalnoir_entretien",
+        "locationId": "cheval_noir",
+        "type": "entretien",
+        "title": "Marcel Chaptal, ancien syndicaliste",
+        "text": "{{p:chaptal_marcel|Marcel Chaptal}} parle bas, le coude sur le zinc, un ballon de rouge qu'il ne finira pas. « Ferréol, mon gars, ça a toujours été un panier de crabes. Nous on trime, eux ils signent des papiers dans leur bureau chauffé. » Il rit, sans joie. « {{l:site_ferreol|Ferréol}}, {{p:ferrand_roger|Ferrand}}, je l'ai vu une fois, complètement bourré, à une réunion publique, se vanter d'avoir des amis qui ferment les yeux, place de l'Hôtel de Ville. Personne a bronché. Ici, tout le monde a besoin de ces chantiers pour bouffer. » Il finit par refuser de témoigner officiellement. « J'ai encore un gars qui bosse dans le BTP, moi. Faut pas pousser. »",
+        "facts": [
+          {
+            "about": "p:chaptal_marcel",
+            "text": "Refuse de témoigner officiellement : il a « encore un gars dans le BTP »."
+          },
+          {
+            "about": "p:ferrand_roger",
+            "label": "Selon Chaptal",
+            "text": "S'est vanté en réunion publique d'avoir « des amis qui ferment les yeux » à la mairie."
+          }
+        ]
+      },
+      {
+        "id": "c_vallenot_entretien",
+        "locationId": "cabinet_vallenot",
+        "type": "entretien",
+        "title": "Hervé Vallenot, le promoteur",
+        "text": "{{p:vallenot_herve|Hervé Vallenot}} reçoit dans un bureau qui sent le café frais et le mobilier neuf, tout sourire, main tendue avant même que vous ayez ouvert la bouche. « {{l:site_ferreol|Ferréol}}, c'est un vrai projet de ville, vous savez. Après, je comprends que les habitudes, ça se bouscule pas comme ça. » Sur le dépassement de budget, il écarte la question d'un geste léger, celui qu'on réserve à une mouche plutôt qu'à une vraie objection. « La dépollution, c'est technique, ça. Allez donc voir du côté de la mairie. » Quand vous prononcez le nom de {{p:ferrand_roger|Ferrand}}, le sourire tient bon, mais la mâchoire, elle, se crispe un quart de seconde. « {{p:ferrand_roger|Roger}} fait du bon travail. Allez lui poser vos questions, à lui, s'il a le temps entre deux chantiers. »",
+        "facts": [
+          {
+            "about": "p:vallenot_herve",
+            "text": "Renvoie les questions vers la mairie, puis vers Ferrand."
+          },
+          {
+            "about": "p:vallenot_herve",
+            "label": "Réaction",
+            "text": "Sa mâchoire se crispe quand on prononce le nom de Ferrand."
+          }
+        ]
+      },
+      {
+        "id": "c_vallenot_investigation",
+        "locationId": "cabinet_vallenot",
+        "type": "investigation",
+        "title": "Le bureau de Vallenot",
+        "text": "La secrétaire s'absente deux minutes, le temps d'aller chercher un dossier, et deux minutes, c'est déjà beaucoup. Sur un classeur mal refermé, une {{d:facture_delombre|facture de « conseil en stratégie urbaine »}} émise par la {{d:sci_delombre|SCI Delombre}}, 1,3 million de francs, sans le moindre livrable en pièce jointe. Le nom du gérant, presque illisible sur le tampon, est noté à la main dans la marge : « M. Delombre, beau-frère MR. » Les initiales, vous les avez déjà lues ailleurs. Celles de {{p:roussillon_marcel|Marcel Roussillon}}.",
+        "facts": [
+          {
+            "about": "d:facture_delombre",
+            "text": "1,3 million de francs de « conseil en stratégie urbaine », sans aucun livrable."
+          },
+          {
+            "about": "d:sci_delombre",
+            "label": "Gérant",
+            "text": "Note en marge de la facture : « M. Delombre, beau-frère MR »."
+          }
+        ]
+      },
+      {
+        "id": "c_ferrand_entretien",
+        "locationId": "siege_ferrand",
+        "type": "entretien",
+        "title": "Roger Ferrand, patron de BTP",
+        "text": "{{p:ferrand_roger|Roger Ferrand}} ne s'assoit pas, vous non plus. Dans le hangar, un poste crache RTL en sourdine, noyé sous le bruit d'un compresseur que personne ne va couper pour vous. « J'étais chez moi. Comme tous les soirs. Demandez à ma femme. » Quand vous parlez des livraisons de nuit sur le {{l:site_ferreol|site Ferréol}}, il s'essuie les mains sur son bleu de travail, lentement, une main puis l'autre. « Je livre du matériel, moi. Vous êtes en train de dire quoi, là, exactement ? » Il ne hausse pas la voix. Il n'en a pas besoin. Il a déjà fait deux pas vers la porte, et vous suivez.",
+        "facts": [
+          {
+            "about": "p:ferrand_roger",
+            "label": "Alibi",
+            "text": "Dit avoir passé la soirée chez lui. « Demandez à ma femme. »"
+          }
+        ]
+      },
+      {
+        "id": "c_ferrand_investigation",
+        "locationId": "siege_ferrand",
+        "type": "investigation",
+        "title": "La comptabilité de Ferrand Frères",
+        "text": "Sur un bureau qu'on dirait abandonné en plein milieu d'une journée de travail, un {{d:registre_virements|registre de virements}} traîne, grand ouvert. Trois versements vers la {{d:sci_delombre|SCI Delombre}}, un total qui colle, au franc près, à la facture retrouvée chez {{p:vallenot_herve|Vallenot}}. Un {{d:agenda_chantier|agenda de chantier}}, à la date de la mort de {{p:faure_bernard|Faure}} : « 22h, {{l:site_ferreol|Ferréol}}, urgent, l'urbaniste veut tout arrêter. RF sur place. » La page du lendemain manque. Arrachée proprement, au ras de la reliure.",
+        "facts": [
+          {
+            "about": "d:registre_virements",
+            "text": "Trois versements vers la {{d:sci_delombre|SCI Delombre}}, pour un total égal à la facture trouvée chez Vallenot."
+          },
+          {
+            "about": "d:agenda_chantier",
+            "label": "Jour de la mort",
+            "text": "« 22h, Ferréol, urgent, l'urbaniste veut tout arrêter. RF sur place. »"
+          },
+          {
+            "about": "d:agenda_chantier",
+            "text": "La page du lendemain a été arrachée."
+          }
+        ]
+      },
+      {
+        "id": "c_parking_investigation",
+        "locationId": "parking_relais",
+        "type": "investigation",
+        "title": "Le chantier du parking-relais",
+        "text": "Autre chantier municipal, même histoire. Le {{l:parking_relais|parking-relais de Bellevue}}, confié lui aussi à {{l:siege_ferrand|Ferrand Frères}} sur recommandation du {{l:cabinet_vallenot|Groupe Vallenot}}, présente la même ligne « études », facturée à la même {{d:sci_delombre|SCI Delombre}}. Ce n'est donc pas un accident isolé, mais une mécanique bien huilée, répétée d'un marché à l'autre. Rien, ici, ne relie directement ce chantier à la mort de {{p:faure_bernard|Bernard Faure}}. Mais ça ne vous rassure pas pour autant.",
+        "facts": [
+          {
+            "about": "l:parking_relais",
+            "text": "Même ligne « études » facturée à la {{d:sci_delombre|SCI Delombre}}."
+          },
+          {
+            "about": "d:sci_delombre",
+            "text": "Apparaît aussi sur le chantier du parking-relais."
+          }
+        ]
+      },
+      {
+        "id": "c_commissariat_entretien",
+        "locationId": "commissariat",
+        "type": "entretien",
+        "title": "Lieutenant Igier, un contact au commissariat",
+        "text": "{{p:igier_bernard|Igier}} vous retrouve au comptoir d'un café, jamais au commissariat, question d'habitude. « Entre nous, hein. Le dossier a été bouclé en deux jours. Chute accidentelle, tampon, classé. Pas d'autopsie poussée. » Il tourne sa cuillère dans un café qu'il ne boit pas. « D'habitude, un fonctionnaire retrouvé mort sur un chantier, on prend plus de gants. Là, non. » Il baisse la voix encore d'un cran. « On m'a fait comprendre qu'il valait mieux ne pas gratter. Je vous ai rien dit, hein. »",
+        "facts": [
+          {
+            "about": "p:igier_bernard",
+            "text": "Le dossier a été bouclé en deux jours. On lui a fait comprendre de ne pas gratter."
+          },
+          {
+            "about": "p:faure_bernard",
+            "label": "Version officielle",
+            "text": "Chute accidentelle. Pas d'autopsie poussée."
+          }
+        ]
+      }
+    ],
+    "interventionTargets": [
+      "mairie",
+      "cabinet_vallenot",
+      "siege_ferrand",
+      "site_ferreol"
+    ],
+    "interventionCombos": [
+      {
+        "set": [
+          "mairie",
+          "cabinet_vallenot",
+          "siege_ferrand"
+        ],
+        "points": 7,
+        "text": "Face aux preuves étalées sur son bureau, le {{d:dossier_bleu|dossier bleu}}, les {{d:facture_delombre|factures de la SCI Delombre}}, le {{d:bon_livraison|bon de livraison}} de cette nuit-là, {{p:roussillon_marcel|Marcel Roussillon}} finit par craquer et reconnaît le montage via la société de son beau-frère. Confronté séparément, {{p:vallenot_herve|Hervé Vallenot}} lâche {{p:ferrand_roger|Roger Ferrand}} sans hésiter, pour sauver ce qui peut encore l'être. {{p:ferrand_roger|Ferrand}}, pris de court, admet enfin s'être rendu sur le {{l:site_ferreol|site Ferréol}} ce soir-là pour empêcher {{p:faure_bernard|Faure}} de tout révéler. La dispute a mal tourné, dit-il, sur le ton d'une explication qu'il croit suffisante pour excuser le reste. Votre article, publié en une du Stéphanois, provoque la démission de {{p:roussillon_marcel|Roussillon}}, la mise en examen de {{p:ferrand_roger|Ferrand}} pour homicide involontaire, et l'ouverture d'une enquête sur l'ensemble des marchés du {{l:cabinet_vallenot|Groupe Vallenot}}. RÉUSSITE MAJEURE."
+      },
+      {
+        "set": [
+          "mairie",
+          "cabinet_vallenot",
+          "site_ferreol"
+        ],
+        "points": 3,
+        "text": "Le système de surfacturation entre la mairie et le {{l:cabinet_vallenot|Groupe Vallenot}} ne résiste pas longtemps à vos questions, et vos relevés du chantier confirment des travaux menés en toute illégalité. Mais vous n'avez jamais confronté {{p:ferrand_roger|Roger Ferrand}} directement, et rien ne le relie, sur le papier, à la mort de {{p:faure_bernard|Faure}}. Votre article fait grand bruit sur le plan financier, {{p:roussillon_marcel|Roussillon}} est écarté, mais la mort de {{p:faure_bernard|Bernard Faure}} reste classée en accident. Le responsable ne sera jamais inquiété. ÉCHEC : l'essentiel vous a échappé."
+      },
+      {
+        "set": [
+          "mairie",
+          "siege_ferrand",
+          "site_ferreol"
+        ],
+        "points": 6,
+        "text": "Confronté au {{d:dossier_bleu|dossier bleu}} et au {{d:bon_livraison|bon de livraison}}, {{p:ferrand_roger|Roger Ferrand}} finit par s'effondrer et reconnaît sa dispute avec {{p:faure_bernard|Faure}}, cette nuit-là. {{p:roussillon_marcel|Roussillon}}, pris à revers par la mise en cause directe de {{p:ferrand_roger|Ferrand}}, admet à son tour le montage de la {{d:sci_delombre|SCI Delombre}}, histoire de limiter les dégâts pour lui-même. Votre article fait grand bruit : {{p:ferrand_roger|Ferrand}} est mis en examen pour homicide involontaire, {{p:roussillon_marcel|Roussillon}} démissionne. Faute des preuves comptables saisies chez {{p:vallenot_herve|Vallenot}}, celui-ci plaide l'ignorance et garde son entreprise intacte. RÉUSSITE : la ville respire, mais un responsable a gardé les mains libres."
+      },
+      {
+        "set": [
+          "cabinet_vallenot",
+          "siege_ferrand",
+          "site_ferreol"
+        ],
+        "points": 5,
+        "text": "{{p:vallenot_herve|Vallenot}} et {{p:ferrand_roger|Ferrand}}, confrontés ensemble aux preuves matérielles du chantier, finissent par se dénoncer mutuellement, chacun cherchant à sauver sa peau : {{p:ferrand_roger|Ferrand}} pour la mort de {{p:faure_bernard|Faure}}, {{p:vallenot_herve|Vallenot}} pour le système de surfacturation. Votre article aboutit à leur mise en examen. Mais jamais confronté directement, {{p:roussillon_marcel|Marcel Roussillon}} nie tout lien avec la {{d:sci_delombre|SCI Delombre}} de son beau-frère et conserve son siège d'adjoint, se contentant de déplorer publiquement « des pratiques qu'il ignorait totalement ». RÉUSSITE : les auteurs directs tombent, le protecteur politique reste en place."
+      }
+    ],
+    "interventionFallback": {
+      "points": 0,
+      "text": "Vos accusations, mal ciblées, ne trouvent pas de prise : les personnes ou les lieux que vous avez choisis n'ont pas de lien assez direct avec l'affaire pour que votre dossier tienne debout. Votre article paraît, mais faute de preuves suffisamment solides, il est démenti dès le lendemain par un communiqué de la mairie, et l'affaire Faure retombe dans l'oubli. ÉCHEC."
+    }
+  }
+]

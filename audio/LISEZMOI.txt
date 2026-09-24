@@ -1,0 +1,3 @@
+Déposez ici les fichiers audio, dans le bon sous-dossier et sous le nom exact
+indiqué dans sons-et-musiques.md. Un fichier absent ne bloque rien : le jeu
+joue simplement sans ce son.

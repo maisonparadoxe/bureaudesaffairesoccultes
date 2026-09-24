@@ -1,0 +1,181 @@
+/* ===================================================================
+   Couleurs des balises : personnes, lieux, pièces du dossier.
+   Chargé après style.css, dont il remplace les anciennes règles .tag-*.
+   Pour changer une couleur, il suffit de modifier les trois variables.
+   =================================================================== */
+
+:root {
+  --c-person: #1F4E8C;   /* bleu encre      : personnes */
+  --c-lieu: #2E6B3A;     /* vert bouteille  : lieux */
+  --c-doc: #7A2E5A;      /* prune           : pièces du dossier */
+  --c-person-soft: rgba(31, 78, 140, 0.14);
+  --c-lieu-soft: rgba(46, 107, 58, 0.14);
+  --c-doc-soft: rgba(122, 46, 90, 0.14);
+}
+
+/* ---------- Les trois familles ---------- */
+
+.tag-person {
+  color: var(--c-person);
+  font-weight: 600;
+}
+
+.tag-lieu {
+  color: var(--c-lieu);
+  font-weight: 600;
+}
+
+.tag-doc {
+  color: var(--c-doc);
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* Cliquable : un lieu ou une personne qu'on connaît déjà */
+.tag-link {
+  cursor: pointer;
+  border-bottom: 1px dotted currentColor;
+  border-radius: 2px;
+  transition: background 0.15s ease;
+}
+.tag-link:hover,
+.tag-link:focus-visible {
+  outline: none;
+  border-bottom-style: solid;
+}
+.tag-person.tag-link:hover, .tag-person.tag-link:focus-visible { background: var(--c-person-soft); }
+.tag-lieu.tag-link:hover, .tag-lieu.tag-link:focus-visible { background: var(--c-lieu-soft); }
+
+/* Découvert à l'instant : coup de surligneur */
+.tag-new {
+  padding: 0 2px;
+  border-radius: 2px;
+  animation: tag-appear 0.9s ease-out;
+}
+.tag-person.tag-new { background: var(--c-person-soft); }
+.tag-lieu.tag-new { background: var(--c-lieu-soft); }
+.tag-doc.tag-new { background: var(--c-doc-soft); }
+
+@keyframes tag-appear {
+  from { box-shadow: 0 0 0 3px rgba(185, 139, 42, 0.45); }
+  to { box-shadow: 0 0 0 0 rgba(185, 139, 42, 0); }
+}
+
+/* ---------- Légende des couleurs ---------- */
+
+.tag-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  margin-top: 12px;
+}
+.tag-legend span::before {
+  content: "";
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 2px;
+  margin-right: 6px;
+  background: currentColor;
+  vertical-align: 0;
+}
+.sidebar .tag-legend {
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--muted);
+  flex-direction: column;
+}
+
+/* ---------- Encadré « Nouveau » sous une piste ---------- */
+
+.discoveries {
+  margin-top: 16px;
+  border: 1px dashed var(--muted);
+  border-radius: 3px;
+  padding: 10px 14px;
+  background: rgba(42, 38, 32, 0.03);
+}
+.discoveries-head {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--stamp-red);
+  margin: 0 0 6px;
+}
+.disc-line {
+  margin: 3px 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.disc-label {
+  display: inline-block;
+  min-width: 92px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ---------- Plan et barre latérale ---------- */
+
+.map-count {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--c-lieu);
+  margin-left: 10px;
+  letter-spacing: 0.04em;
+}
+
+.pin-circle { stroke: var(--c-lieu); }
+.dot { border-color: var(--c-lieu); }
+
+.nav-item.nav-empty { color: var(--muted); }
+.nav-count {
+  float: right;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--c-lieu);
+}
+.tag-lieu-nav { color: var(--c-lieu); }
+.nav-none {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 4px 10px;
+}
+
+.location-header h2.location-name { color: var(--c-lieu); }
+
+/* ---------- Carnet : pièces du dossier ---------- */
+
+.doc-list {
+  display: grid;
+  gap: 8px;
+  margin-top: 8px;
+}
+.doc-entry {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  align-items: baseline;
+  border-left: 3px solid var(--c-doc);
+  background: rgba(122, 46, 90, 0.05);
+  padding: 8px 12px;
+  border-radius: 0 3px 3px 0;
+}
+.doc-sources {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--ink-soft);
+}
+
+/* ---------- Page de fin (fond sombre) : versions claires ---------- */
+
+.ending-page .tag-person { color: #9CBBEA; }
+.ending-page .tag-lieu { color: #93CFA1; }
+.ending-page .tag-doc { color: #E0A9CB; }

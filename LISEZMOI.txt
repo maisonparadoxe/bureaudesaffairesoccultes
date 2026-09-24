@@ -1,0 +1,33 @@
+BUREAU DES AFFAIRES OCCULTES
+
+Le jeu s'ouvre sur le menu principal : Continuer, Nouvelle partie, Options
+(son, animations, taille du texte, effacer la progression), Crédits.
+Les crédits se modifient dans data.json (rubrique « credits »),
+puis lancer : node outils/verifier.js
+
+Pour jouer : gardez tous les fichiers dans le même dossier et ouvrez index.html
+avec votre navigateur (double-clic). Pas besoin d'internet ni de serveur
+(sans internet, seules les polices de caractères changent).
+
+Fichiers du jeu, tous au même niveau que index.html :
+  index.html, style.css, tags.css, carnet.css, jeu.css,
+  audio.js, script.js, data.js, data.json
+Sons et images : dossiers audio/ et img/. La liste complète, avec les noms
+exacts et les formats, est dans assets-a-creer.md.
+
+L'affaire de Saint-Étienne se prépare dans le dossier saint-etienne/ :
+  1-verite.md, 2-personnages.md   la conception
+  carte.py                        la carte des pistes (et ses contrôles)
+  textes.py                       tous les textes
+  verifier_textes.py              contrôle les textes, produit 5-textes.md
+  construire.py                   range l'affaire dans data.json
+
+Après une modification des textes ou de la carte :
+  cd saint-etienne
+  python3 carte.py
+  python3 verifier_textes.py
+  python3 construire.py
+  cd ..
+  node outils/verifier.js        (vérifie data.json et régénère data.js)
+
+Les anciennes versions des affaires sont gardées dans archives/.

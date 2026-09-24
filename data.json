@@ -1,0 +1,2080 @@
+{
+  "gameTitle": "Bureau des affaires occultes",
+  "cities": [
+    {
+      "id": "saint_etienne",
+      "name": "Saint-Étienne",
+      "status": "available",
+      "cases": [
+        {
+          "id": "feu_ferreol",
+          "title": "Le feu de Ferréol",
+          "subtitle": "Une enquête du Bureau des affaires occultes",
+          "year": 1993,
+          "totalLeads": 16,
+          "referenceLeads": 12,
+          "penaltyPerExtraLead": 2,
+          "referencePath": [
+            "reperage",
+            "livre",
+            "bensaid2",
+            "bureau_vallenot",
+            "lacour2",
+            "igier2",
+            "compta",
+            "colette2",
+            "dossier",
+            "registre",
+            "tirages",
+            "chaptal2"
+          ],
+          "intro": "Jeudi 18 novembre 1993, quatrième étage du siège, à Lyon.\n\nLa lettre est arrivée au courrier du matin, entre deux soucoupes volantes au-dessus du Vercors et une abonnée qui voit la Vierge dans une tache d'humidité. Karim l'a mise de côté. Enveloppe kraft, cachet de Saint-Étienne, lundi 15. Écriture en capitales, au stylo bille, appuyée au point de trouer le papier.\n\n{{d:lettre_fantome|« AU JOURNAL. DEPUIS UN MOIS LE FEU EST REVENU À LA FORGE DE FERRÉOL. ON LE VOIT LA NUIT DEPUIS LA RUE DE LA MONTAT, ROUGE, COMME AU TEMPS DES COULÉES. C'EST LE FONDEUR DE 1911. ON L'A LAISSÉ DANS LA FONTE ET ON A COULÉ LA PIÈCE QUAND MÊME. IL REVIENT CHAQUE FOIS QU'ON TOUCHE À L'USINE. FERRÉOL NE SERA PAS UN PARKING. IL Y AURA D'AUTRES MORTS. UN ANCIEN DE CHEZ FERRÉOL. »}}\n\nÀ dix heures, Odile descend avec le Stéphanois du jour, plié à la page des faits divers. {{p:faure|Bernard Faure}}, 52 ans, chargé de mission au service d'urbanisme de la {{l:mairie|mairie}}, retrouvé mort mercredi matin au pied d'un escalier de l'ancienne {{l:site_ferreol|Manufacture Ferréol}}. La {{l:commissariat|police}} conclut à une chute accidentelle. Quatorze lignes, pas de photo.\n\nJean-Loup Sarrazin a lu les deux par-dessus l'épaule d'Odile. « Un fantôme qui annonce un mort, et le mort qui arrive. C'est une page, ça. On est d'accord ? »\n\nMathilde plie la lettre en quatre et la glisse dans son sac. « Admettons. »\n\nLe soir même, vous prenez vos quartiers dans un bureau vide de la {{l:redaction|rédaction du Stéphanois}}, rue de la République. Le radiateur fait plus de bruit que de chaleur.",
+          "introNotes": [
+            {
+              "about": "p:faure",
+              "text": "Retrouvé mort le mercredi 17 novembre au matin, au pied d'un escalier de Ferréol. La police conclut à une chute accidentelle.",
+              "label": "Version officielle",
+              "struckBy": [
+                "bensaid2",
+                "lacour2"
+              ]
+            },
+            {
+              "about": "d:lettre_fantome",
+              "text": "Postée à Saint-Étienne le lundi 15 novembre, la veille de la mort de Faure. Signée « un ancien de chez Ferréol »."
+            },
+            {
+              "about": "l:site_ferreol",
+              "text": "Selon la lettre, un « feu » y brille la nuit depuis un mois, et un fondeur y est mort en 1911.",
+              "label": "La légende"
+            }
+          ],
+          "briefing": "Menez des entretiens et des investigations. Chaque piste lue pour la première fois coûte une heure avant le bouclage, et vous n'en avez que 16 ; relire est gratuit. Un lieu n'apparaît sur le plan qu'une fois qu'on vous en a parlé. Certaines adresses se cherchent au Minitel. Certaines personnes ne parlent que si vous revenez avec la bonne pièce. Quand vous serez prêts, remplissez le questionnaire : votre article en dépend.",
+          "quartiers": [
+            {
+              "id": "centre",
+              "name": "Centre-ville",
+              "rect": {
+                "x": 300,
+                "y": 200,
+                "w": 300,
+                "h": 190
+              }
+            },
+            {
+              "id": "chateaucreux",
+              "name": "Châteaucreux",
+              "rect": {
+                "x": 630,
+                "y": 180,
+                "w": 230,
+                "h": 140
+              }
+            },
+            {
+              "id": "tarentaize",
+              "name": "Tarentaize",
+              "rect": {
+                "x": 40,
+                "y": 200,
+                "w": 230,
+                "h": 170
+              }
+            },
+            {
+              "id": "soleil",
+              "name": "Le Soleil",
+              "rect": {
+                "x": 330,
+                "y": 20,
+                "w": 260,
+                "h": 150
+              }
+            },
+            {
+              "id": "zone_industrielle",
+              "name": "Zone industrielle",
+              "rect": {
+                "x": 40,
+                "y": 400,
+                "w": 260,
+                "h": 170
+              }
+            },
+            {
+              "id": "montreynaud",
+              "name": "Montreynaud",
+              "rect": {
+                "x": 620,
+                "y": 20,
+                "w": 240,
+                "h": 130
+              }
+            },
+            {
+              "id": "vallee_gier",
+              "name": "Vallée du Gier",
+              "rect": {
+                "x": 630,
+                "y": 350,
+                "w": 230,
+                "h": 220
+              }
+            },
+            {
+              "id": "bellevue",
+              "name": "Bellevue",
+              "rect": {
+                "x": 330,
+                "y": 420,
+                "w": 270,
+                "h": 150
+              }
+            }
+          ],
+          "locations": [
+            {
+              "id": "redaction",
+              "name": "Rédaction du Stéphanois",
+              "quartier": "centre",
+              "address": "12 rue de la République",
+              "map": {
+                "x": 360,
+                "y": 265
+              },
+              "ambience": "redaction",
+              "alwaysRevealed": true
+            },
+            {
+              "id": "mairie",
+              "name": "Mairie, service urbanisme",
+              "quartier": "centre",
+              "address": "Place de l'Hôtel de Ville",
+              "map": {
+                "x": 455,
+                "y": 255
+              },
+              "ambience": "mairie"
+            },
+            {
+              "id": "cabinet_vallenot",
+              "name": "Cabinet Groupe Vallenot",
+              "quartier": "centre",
+              "address": "3 avenue de la Libération",
+              "map": {
+                "x": 550,
+                "y": 265
+              },
+              "ambience": "cabinet-vallenot"
+            },
+            {
+              "id": "commissariat",
+              "name": "Commissariat central",
+              "quartier": "centre",
+              "address": "Rue Charles de Gaulle",
+              "map": {
+                "x": 400,
+                "y": 340
+              },
+              "ambience": "commissariat"
+            },
+            {
+              "id": "cabinet_lacour",
+              "name": "Cabinet du Dr Lacour",
+              "quartier": "centre",
+              "address": "Cours Fauriel",
+              "map": {
+                "x": 510,
+                "y": 345
+              },
+              "ambience": "cabinet-lacour"
+            },
+            {
+              "id": "consigne_gare",
+              "name": "Consigne de la gare de Châteaucreux",
+              "quartier": "chateaucreux",
+              "address": "Gare de Châteaucreux",
+              "map": {
+                "x": 745,
+                "y": 260
+              },
+              "ambience": "consigne-gare"
+            },
+            {
+              "id": "domicile_faure",
+              "name": "Domicile des Faure",
+              "quartier": "tarentaize",
+              "address": "8 rue des Creuses",
+              "map": {
+                "x": 155,
+                "y": 295
+              },
+              "ambience": "domicile-faure"
+            },
+            {
+              "id": "site_ferreol",
+              "name": "Ancienne Manufacture Ferréol",
+              "quartier": "soleil",
+              "address": "Impasse des Fondeurs",
+              "map": {
+                "x": 400,
+                "y": 105
+              },
+              "ambience": "ferreol"
+            },
+            {
+              "id": "cheval_noir",
+              "name": "Café Le Cheval Noir",
+              "quartier": "soleil",
+              "address": "45 rue de la Montat",
+              "map": {
+                "x": 520,
+                "y": 115
+              },
+              "ambience": "cheval-noir"
+            },
+            {
+              "id": "siege_ferrand",
+              "name": "Ferrand Frères BTP",
+              "quartier": "zone_industrielle",
+              "address": "Zone de la Rivière",
+              "map": {
+                "x": 170,
+                "y": 495
+              },
+              "ambience": "ferrand"
+            },
+            {
+              "id": "cite_mounier",
+              "name": "Cité de Montreynaud, chez Mounier",
+              "quartier": "montreynaud",
+              "address": "Tour 9, cité de Montreynaud",
+              "map": {
+                "x": 740,
+                "y": 95
+              },
+              "ambience": "cite-mounier"
+            },
+            {
+              "id": "casse_berthet",
+              "name": "Casse Berthet",
+              "quartier": "vallee_gier",
+              "address": "Chemin du Gier, Rive-de-Gier",
+              "map": {
+                "x": 700,
+                "y": 445
+              },
+              "ambience": "casse-berthet"
+            },
+            {
+              "id": "decharge",
+              "name": "Décharge agréée de la Croix-de-l'Orme",
+              "quartier": "vallee_gier",
+              "address": "Route de la Croix-de-l'Orme",
+              "map": {
+                "x": 795,
+                "y": 520
+              },
+              "ambience": "decharge"
+            },
+            {
+              "id": "parking_relais",
+              "name": "Chantier du parking-relais",
+              "quartier": "bellevue",
+              "address": "Boulevard Thiers",
+              "map": {
+                "x": 465,
+                "y": 505
+              },
+              "ambience": "parking-relais"
+            }
+          ],
+          "characters": [
+            {
+              "id": "faure",
+              "name": "Faure Bernard",
+              "role": "Chargé de mission à l'urbanisme (la victime)",
+              "locationId": "domicile_faure",
+              "alwaysRevealed": true
+            },
+            {
+              "id": "colette",
+              "name": "Faure Colette",
+              "role": "Veuve de Bernard Faure",
+              "locationId": "domicile_faure"
+            },
+            {
+              "id": "ferrand",
+              "name": "Ferrand Roger",
+              "role": "Gérant de Ferrand Frères BTP",
+              "locationId": "siege_ferrand"
+            },
+            {
+              "id": "simone",
+              "name": "Ferrand Simone",
+              "role": "Épouse de Roger Ferrand, comptable de l'entreprise",
+              "locationId": "siege_ferrand"
+            },
+            {
+              "id": "vallenot",
+              "name": "Vallenot Hervé",
+              "role": "Promoteur, président du Groupe Vallenot",
+              "locationId": "cabinet_vallenot"
+            },
+            {
+              "id": "roussillon",
+              "name": "Roussillon Marcel",
+              "role": "Adjoint au maire, chargé de l'urbanisme",
+              "locationId": "mairie"
+            },
+            {
+              "id": "bensaid",
+              "name": "Bensaïd Ahmed",
+              "role": "Gardien du site Ferréol",
+              "locationId": "site_ferreol"
+            },
+            {
+              "id": "chaptal",
+              "name": "Chaptal Marcel",
+              "role": "Ancien délégué CGT de la forge",
+              "locationId": "cheval_noir"
+            },
+            {
+              "id": "jeannot",
+              "name": "Jeannot",
+              "role": "Patron du Cheval Noir",
+              "locationId": "cheval_noir"
+            },
+            {
+              "id": "mounier",
+              "name": "Mounier Gérard",
+              "role": "Chef d'équipe de nuit chez Ferrand Frères",
+              "locationId": "cite_mounier",
+              "minitel": true
+            },
+            {
+              "id": "lacour",
+              "name": "Lacour Pierre (Dr)",
+              "role": "Médecin, a constaté le décès",
+              "locationId": "cabinet_lacour",
+              "minitel": true
+            },
+            {
+              "id": "berthet",
+              "name": "Berthet Lucien",
+              "role": "Ferrailleur à Rive-de-Gier",
+              "locationId": "casse_berthet",
+              "minitel": true
+            },
+            {
+              "id": "igier",
+              "name": "Igier Bernard (lieutenant)",
+              "role": "Lieutenant de police",
+              "locationId": "commissariat"
+            },
+            {
+              "id": "roche",
+              "name": "Roche Daniel",
+              "role": "Chef des faits divers du Stéphanois",
+              "locationId": "redaction"
+            }
+          ],
+          "documents": [
+            {
+              "id": "lettre_fantome",
+              "name": "La lettre du « fantôme »"
+            },
+            {
+              "id": "dossier_ferreol",
+              "name": "Le dossier Ferréol de la mairie"
+            },
+            {
+              "id": "sci_delombre",
+              "name": "SCI Delombre"
+            },
+            {
+              "id": "facture_tel",
+              "name": "Facture de la ligne du gardien"
+            },
+            {
+              "id": "carte_vallenot",
+              "name": "Carte de visite de Vallenot"
+            },
+            {
+              "id": "facture_delombre",
+              "name": "Facture de la SCI Delombre"
+            },
+            {
+              "id": "cigarillos",
+              "name": "Les cigarillos de Vallenot"
+            },
+            {
+              "id": "constat",
+              "name": "Le rapport de police"
+            },
+            {
+              "id": "dossier_bleu",
+              "name": "Le dossier bleu de Bernard"
+            },
+            {
+              "id": "releves_faure",
+              "name": "Les relevés bancaires de Bernard"
+            },
+            {
+              "id": "carnet_versements",
+              "name": "Le carnet de Bernard"
+            },
+            {
+              "id": "ticket_consigne",
+              "name": "Le ticket de consigne"
+            },
+            {
+              "id": "copie_faure",
+              "name": "Le sac de la consigne"
+            },
+            {
+              "id": "megots",
+              "name": "Quatre mégots de cigarillo"
+            },
+            {
+              "id": "compta_ferrand",
+              "name": "Le livre de caisse de Ferrand"
+            },
+            {
+              "id": "agenda_ferrand",
+              "name": "L'agenda de chantier de Ferrand"
+            },
+            {
+              "id": "recu_berthet",
+              "name": "Le reçu déchiré"
+            },
+            {
+              "id": "livre_police",
+              "name": "Le livre de police de Berthet"
+            },
+            {
+              "id": "registre_decharge",
+              "name": "Le registre de la décharge"
+            },
+            {
+              "id": "liasses",
+              "name": "Les liasses du coffre"
+            }
+          ],
+          "minitel": [
+            {
+              "keys": [
+                "berthet",
+                "casse berthet"
+              ],
+              "lines": [
+                "BERTHET Lucien",
+                "Récupération métaux",
+                "Chemin du Gier · 42800 RIVE-DE-GIER",
+                "77 75 02 41"
+              ],
+              "reveals": [
+                "l:casse_berthet"
+              ]
+            },
+            {
+              "keys": [
+                "mounier"
+              ],
+              "lines": [
+                "MOUNIER Gérard",
+                "Tour 9 · Cité de Montreynaud",
+                "42000 SAINT-ÉTIENNE",
+                "77 74 18 90"
+              ],
+              "reveals": [
+                "l:cite_mounier"
+              ]
+            },
+            {
+              "keys": [
+                "lacour"
+              ],
+              "lines": [
+                "LACOUR Pierre",
+                "Médecin généraliste",
+                "Cours Fauriel · 42100 SAINT-ÉTIENNE",
+                "77 57 30 12"
+              ],
+              "reveals": [
+                "l:cabinet_lacour"
+              ]
+            },
+            {
+              "keys": [
+                "ferrand",
+                "ferrand freres"
+              ],
+              "lines": [
+                "FERRAND FRÈRES",
+                "Bâtiment, travaux publics",
+                "Zone de la Rivière · SAINT-ÉTIENNE",
+                "77 25 60 13"
+              ],
+              "reveals": [
+                "l:siege_ferrand"
+              ]
+            },
+            {
+              "keys": [
+                "vallenot",
+                "groupe vallenot"
+              ],
+              "lines": [
+                "GROUPE VALLENOT",
+                "Promotion immobilière",
+                "3 av. de la Libération · SAINT-ÉTIENNE",
+                "77 32 44 00"
+              ],
+              "reveals": [
+                "l:cabinet_vallenot"
+              ]
+            },
+            {
+              "keys": [
+                "faure"
+              ],
+              "lines": [
+                "FAURE Bernard",
+                "8 rue des Creuses",
+                "42000 SAINT-ÉTIENNE",
+                "77 33 08 27"
+              ],
+              "reveals": [
+                "l:domicile_faure"
+              ]
+            },
+            {
+              "keys": [
+                "chaptal"
+              ],
+              "lines": [
+                "CHAPTAL Marcel",
+                "Abonné en liste rouge."
+              ],
+              "reveals": []
+            },
+            {
+              "keys": [
+                "roussillon"
+              ],
+              "lines": [
+                "ROUSSILLON Marcel",
+                "Abonné en liste rouge."
+              ],
+              "reveals": []
+            },
+            {
+              "keys": [
+                "bensaid"
+              ],
+              "lines": [
+                "BENSAÏD Ahmed",
+                "Rue de la Montat",
+                "42000 SAINT-ÉTIENNE",
+                "77 41 90 55"
+              ],
+              "reveals": []
+            },
+            {
+              "keys": [
+                "delombre",
+                "sci delombre"
+              ],
+              "lines": [
+                "SCI DELOMBRE",
+                "Aucun abonné dans la Loire.",
+                "Essayez le 3614 pour un autre département."
+              ],
+              "reveals": []
+            },
+            {
+              "keys": [
+                "jeannot"
+              ],
+              "lines": [
+                "Précisez le nom de famille."
+              ],
+              "reveals": []
+            },
+            {
+              "keys": [
+                "simone",
+                "colette",
+                "roger",
+                "herve",
+                "marcel",
+                "bernard",
+                "ahmed",
+                "gerard",
+                "lucien",
+                "pierre",
+                "daniel"
+              ],
+              "lines": [
+                "Recherche par prénom impossible.",
+                "Tapez le nom de famille."
+              ],
+              "reveals": []
+            }
+          ],
+          "clues": [
+            {
+              "id": "archives",
+              "locationId": "redaction",
+              "type": "investigation",
+              "button": "Fouiller les archives du journal",
+              "title": "Les archives du Stéphanois",
+              "text": "Le service documentation du Stéphanois tient dans une pièce sans fenêtre, entre la chaufferie et les archives photo. La chemise « Ferréol » contient onze coupures.\n\nAvril : une pleine page, {{p:roussillon|Marcel Roussillon}}, adjoint à l'urbanisme, devant la forge, casque de chantier sur la tête. Le projet est porté par le {{l:cabinet_vallenot|Groupe Vallenot}}, de {{p:vallenot|Hervé Vallenot}}. Juillet : trois lignes en page 9, le budget « réévalué pour tenir compte de la dépollution ». Septembre : l'entreprise {{l:siege_ferrand|Ferrand Frères}}, de {{p:ferrand|Roger Ferrand}}, décroche aussi le {{l:parking_relais|parking-relais de Bellevue}}.\n\nUne brève de mai cite un opposant, {{p:chaptal|Marcel Chaptal}}, ancien délégué CGT de la forge : « On ne transforme pas un cimetière en pépinière. » Le journaliste précise qu'on le trouve tous les jours au {{l:cheval_noir|Cheval Noir}}.",
+              "facts": [
+                {
+                  "about": "l:site_ferreol",
+                  "text": "Reconversion en pépinière d'entreprises, annoncée en avril 1993. Budget « réévalué » en juillet pour la dépollution.",
+                  "label": "Le projet"
+                },
+                {
+                  "about": "p:vallenot",
+                  "text": "Porte le projet Ferréol avec le Groupe Vallenot."
+                },
+                {
+                  "about": "p:ferrand",
+                  "text": "Ferrand Frères : gros œuvre de Ferréol, et du parking-relais de Bellevue depuis septembre."
+                },
+                {
+                  "about": "p:chaptal",
+                  "text": "Ancien délégué CGT de la forge, opposé au projet : « On ne transforme pas un cimetière en pépinière. »"
+                }
+              ]
+            },
+            {
+              "id": "roche",
+              "locationId": "redaction",
+              "type": "entretien",
+              "button": "Parler à Daniel Roche",
+              "title": "Daniel Roche, chef des faits divers",
+              "text": "{{p:roche|Daniel Roche}} ne se lève pas de son fauteuil. Il a gardé son imperméable, comme s'il allait repartir d'une minute à l'autre depuis 1971. « Alors c'est vous, les Lyonnais. Les fantômes. » Il tapote un paquet de Gitanes sur le bureau sans en sortir une.\n\nMathilde : « Faure vous avait appelé, la semaine dernière. »\n\n« Moi ? Des appels de cinglés, j'en prends dix par jour. Trente ans de métier, je les reconnais à la première phrase. » Il revient à sa machine à écrire. « Faure, c'est un accident. Le petit {{p:lacour|Lacour}} a constaté, le commissaire a signé. Allez donc photographier vos revenants. »",
+              "facts": [
+                {
+                  "about": "p:roche",
+                  "text": "Dit ne pas se souvenir d'un appel de Faure.",
+                  "struckBy": [
+                    "standard"
+                  ]
+                },
+                {
+                  "about": "p:lacour",
+                  "text": "Médecin qui a constaté le décès de Faure, selon Roche."
+                }
+              ]
+            },
+            {
+              "id": "standard",
+              "locationId": "redaction",
+              "type": "investigation",
+              "button": "Consulter le cahier du standard",
+              "title": "Le cahier de la standardiste",
+              "text": "La standardiste, Mme Peyrache, garde tout dans des cahiers d'écolier, un par mois. Elle vous laisse feuilleter novembre en surveillant son tableau, où trois voyants clignotent en même temps.\n\nSamedi 13, d'une écriture penchée : « 16 h 40. M. Faure, urbanisme, demande les faits divers. Passé à M. Roche. » Dans la marge, au crayon, la durée, qu'elle note toujours pour la facturation interne : « 4 min ».\n\n« M. Roche ? Oui, il l'a pris. Il a même fermé sa porte. »",
+              "facts": [
+                {
+                  "about": "p:faure",
+                  "text": "A appelé le Stéphanois le samedi 13 novembre à 16 h 40. Appel passé à Daniel Roche.",
+                  "label": "Au téléphone"
+                },
+                {
+                  "about": "p:roche",
+                  "text": "A parlé 4 minutes avec Faure, porte fermée."
+                }
+              ],
+              "requires": [
+                "roche"
+              ]
+            },
+            {
+              "id": "roche2",
+              "locationId": "redaction",
+              "type": "entretien",
+              "button": "Revenir voir Roche avec le cahier",
+              "title": "Roche, second entretien",
+              "text": "Vous posez la photocopie du cahier sur la machine à écrire de {{p:roche|Roche}}. Il la regarde un moment. « Quatre minutes. Bon. » Il allume enfin une Gitane.\n\n« Il ne voulait pas un article, votre Faure. Il m'a demandé : \"C'est combien, pour vous, un dossier comme ça ?\" Combien. Trente ans de métier, on ne m'avait jamais fait le coup. J'ai raccroché. »\n\nMathilde : « Et vous n'en avez parlé à personne. »\n\n« À qui ? Le {{l:cabinet_vallenot|Groupe Vallenot}} nous achète une pleine page tous les jeudis. Vous voulez que j'écrive qu'un fonctionnaire vend des papiers sur Ferréol ? »",
+              "facts": [
+                {
+                  "about": "p:faure",
+                  "text": "A demandé à Roche : « C'est combien, pour vous, un dossier comme ça ? »",
+                  "label": "Au téléphone"
+                },
+                {
+                  "about": "p:roche",
+                  "text": "Le Groupe Vallenot achète une pleine page de publicité au Stéphanois chaque jeudi."
+                }
+              ],
+              "requires": [
+                "standard"
+              ]
+            },
+            {
+              "id": "odile",
+              "locationId": "redaction",
+              "type": "investigation",
+              "button": "Appeler Odile aux archives du groupe",
+              "title": "Odile et le fondeur de 1911",
+              "text": "Odile décroche à la deuxième sonnerie, depuis Lyon. « Ferréol. Je vous faxe ce que j'ai. » Vingt-deux minutes plus tard, le télécopieur de la rédaction se met à grincer.\n\n[[fax]]\n\nKarim lit la page encore tiède par-dessus votre épaule. « Non mais attends. Il y a genre soixante pour cent des apparitions qui tombent près d'un anniversaire. »",
+              "facts": [
+                {
+                  "about": "l:site_ferreol",
+                  "text": "Étienne Vial, fondeur de 19 ans, tombé dans la coulée le 3 février 1911. La coulée n'a pas été arrêtée.",
+                  "label": "1911"
+                },
+                {
+                  "about": "p:ferrand",
+                  "text": "Paul Ferrand, 39 ans, mort écrasé sous une banche le 14 mars 1987. Roger a refusé de parler au journaliste.",
+                  "label": "Son frère"
+                }
+              ],
+              "fax": "GROUPE SARRAZIN · SERVICE DES ARCHIVES · LYON\nÀ : BUREAU DES AFFAIRES OCCULTES, AUX BONS SOINS DU STÉPHANOIS · 2 PAGES\n\nLE STÉPHANOIS, 3 FÉVRIER 1911, PAGE 4, COLONNE DE DROITE\nAccident à la forge Ferréol. Un fondeur de dix-neuf ans, Étienne Vial, est tombé hier dans la poche de coulée. La coulée n'a pas été arrêtée. La pièce, une roue de laminoir, est partie pour Le Creusot.\n\nLE STÉPHANOIS, 14 MARS 1987, PAGE 11, EN BAS À GAUCHE\nMontreynaud : un entrepreneur écrasé sous une banche. Paul Ferrand, 39 ans, cogérant de Ferrand Frères, est mort sur le chantier de la tour 12. Son frère Roger n'a pas souhaité s'exprimer.\n\n(À la main, en bas de la page :) Rien d'autre sur Ferréol entre 1947 et 1990. Pas une ligne. Bizarre. O."
+            },
+            {
+              "id": "tirages",
+              "locationId": "redaction",
+              "type": "investigation",
+              "button": "Récupérer les tirages d'Yves",
+              "title": "Les tirages d'Yves",
+              "text": "Yves a fait parler le laborantin. Le 17 au matin, le photographe de permanence est allé à Ferréol pour le fait divers. Le journal n'a rien publié, mais la planche contact est restée dans un tiroir.\n\nYves la pose sous la lampe et vous tend son compte-fils. Vue numéro sept : le mur est, à huit heures. Sur les lettres blanches, la peinture brille encore. Deux coulures descendent jusqu'au trottoir, un pot vide est posé contre le mur.\n\nMathilde sort de son sac la lettre du fantôme et la pose à côté de la planche. Yves regarde l'une, puis l'autre. « Ferréol ne sera pas un parking. » Il répète, plus lentement : « Pas un parking. »",
+              "facts": [
+                {
+                  "about": "l:site_ferreol",
+                  "text": "Le 17 à 8 h, la peinture du slogan était encore fraîche. Un pot vide contre le mur.",
+                  "label": "Mur est"
+                }
+              ],
+              "requires": [
+                "reperage"
+              ]
+            },
+            {
+              "id": "roussillon",
+              "locationId": "mairie",
+              "type": "entretien",
+              "button": "Rencontrer Marcel Roussillon",
+              "title": "Marcel Roussillon, adjoint à l'urbanisme",
+              "text": "{{p:roussillon|Marcel Roussillon}} reçoit debout, porte ouverte sur le couloir. À l'annulaire droit, une chevalière en or gravée d'une salamandre dans les flammes. Il la fait tourner en parlant.\n\n« On regrette beaucoup Bernard Faure, dans les services. Un agent sérieux. » Sur le budget : « On a suivi l'avis technique. La dépollution, ça ne se commande pas. »\n\nVous n'avez encore rien demandé sur mardi soir. « Et pour la soirée, on était en conseil municipal jusqu'à dix heures et demie. Tout le monde pourra vous le dire. »\n\nUn carillon sonne dans le couloir. Il se lève avant vous.",
+              "facts": [
+                {
+                  "about": "p:roussillon",
+                  "text": "Porte une chevalière en or gravée d'une salamandre dans les flammes."
+                },
+                {
+                  "about": "p:roussillon",
+                  "text": "Dit, sans qu'on le lui demande, avoir été en conseil municipal jusqu'à 22 h 30.",
+                  "label": "Mardi 16"
+                }
+              ],
+              "salamandre": true
+            },
+            {
+              "id": "dossier",
+              "locationId": "mairie",
+              "type": "investigation",
+              "button": "Consulter le dossier Ferréol",
+              "title": "Le dossier de reconversion",
+              "text": "Une employée du service, les yeux rouges, vous laisse le {{d:dossier_ferreol|dossier Ferréol}} le temps d'aller chercher un café. « C'était son dossier, à M. Faure. »\n\nLe plan de dépollution tient en douze pages : 3 000 tonnes de terres chargées d'hydrocarbures et de métaux, à évacuer vers la {{l:decharge|décharge agréée de la Croix-de-l'Orme}}. Le budget passe de 4 à 8,2 millions de francs par une délibération de juillet, signée {{p:roussillon|M. Roussillon}}, sans appel d'offres. Une ligne « études et honoraires » de 1,3 million, à l'ordre d'une {{d:sci_delombre|SCI Delombre}} dont le nom n'apparaît nulle part ailleurs.\n\nDans la marge de la page des tonnages, quelqu'un a écrit au crayon, puis gommé. Il reste la trace d'un point d'interrogation.",
+              "facts": [
+                {
+                  "about": "d:dossier_ferreol",
+                  "text": "3 000 tonnes de terres polluées à évacuer vers la décharge de la Croix-de-l'Orme.",
+                  "label": "Tonnage"
+                },
+                {
+                  "about": "d:dossier_ferreol",
+                  "text": "Passé de 4 à 8,2 millions de francs en juillet, sans appel d'offres. Délibération signée Roussillon.",
+                  "label": "Budget"
+                },
+                {
+                  "about": "d:sci_delombre",
+                  "text": "1,3 million de francs d'« études et honoraires » sur Ferréol. Aucune autre trace à la mairie."
+                }
+              ]
+            },
+            {
+              "id": "conseil",
+              "locationId": "mairie",
+              "type": "investigation",
+              "button": "Lire le compte rendu du conseil municipal",
+              "title": "Le conseil municipal du 16 novembre",
+              "text": "Le compte rendu du conseil municipal du mardi 16 novembre est déjà tapé, photocopié, agrafé.\n\nOuverture de la séance à 18 h 30. Budget des cantines scolaires : intervention de {{p:roussillon|M. Roussillon}} à 22 h 15, trois paragraphes sur le prix du repas. Levée de la séance à 22 h 30.\n\nDans la marge d'un exemplaire, un conseiller d'opposition a griffonné : « Roussillon parti en courant, pas resté au pot. »",
+              "facts": [
+                {
+                  "about": "p:roussillon",
+                  "text": "Intervient au conseil municipal à 22 h 15. Séance levée à 22 h 30. Parti vite, sans rester au pot.",
+                  "label": "Mardi 16"
+                }
+              ]
+            },
+            {
+              "id": "facture_tel",
+              "locationId": "mairie",
+              "type": "investigation",
+              "button": "Demander la facture de la ligne du site",
+              "title": "La facture détaillée de la cabane du gardien",
+              "text": "Au service comptabilité, un employé vous sort la {{d:facture_tel|facture détaillée}} de la ligne 77 33 61 08, « cabane de gardiennage, site Ferréol », payée par la ville. Octobre et novembre tiennent sur deux feuillets de listing à bandes perforées.\n\nUne trentaine d'appels, presque tous en journée, vers la mairie ou vers Ferrand Frères. L'employé a déjà tourné les talons. Karim fait glisser son doigt le long des colonnes.",
+              "facts": [],
+              "requires": [
+                "bensaid2"
+              ],
+              "puzzle": "facture_tel"
+            },
+            {
+              "id": "vallenot",
+              "locationId": "cabinet_vallenot",
+              "type": "entretien",
+              "button": "Rencontrer Hervé Vallenot",
+              "title": "Hervé Vallenot, le promoteur",
+              "text": "{{p:vallenot|Hervé Vallenot}} vous reçoit debout devant une maquette du projet : des arbres en éponge verte, de petits personnages qui ne vont nulle part. La pièce sent le cigarillo froid. « Ferréol, c'est un beau projet. Une belle opération pour la ville. »\n\nSur Faure, il baisse la voix d'un demi-ton. « Un drame. Je le connaissais de loin, ce sont les services qui suivaient le dossier. »\n\nMathilde : « Vous étiez à Ferréol mardi soir, donc. »\n\n« Mardi ? J'étais chez moi. Seul, ma femme était chez sa mère, à Lyon. Soirée télé. » Il sourit. « Rien de très passionnant. »\n\nVous demandez qui a coulé la dalle neuve. « Ça, c'est technique. Voyez avec Roger Ferrand. »\n\nEn vous raccompagnant, il glisse une {{d:carte_vallenot|carte de visite}} dans la poche de Mathilde. Groupe Vallenot, Hervé Vallenot, président. Radiotéléphone : 07 42 18 63. « Pour votre beau papier. N'hésitez pas. »",
+              "facts": [
+                {
+                  "about": "p:vallenot",
+                  "text": "Dit avoir passé la soirée seul chez lui, sa femme chez sa mère à Lyon.",
+                  "label": "Mardi 16"
+                },
+                {
+                  "about": "p:vallenot",
+                  "text": "Dit ne connaître le dossier Ferréol que « de loin »."
+                },
+                {
+                  "about": "d:carte_vallenot",
+                  "text": "Hervé Vallenot, président. Radiotéléphone : 07 42 18 63."
+                }
+              ]
+            },
+            {
+              "id": "bureau_vallenot",
+              "locationId": "cabinet_vallenot",
+              "type": "investigation",
+              "button": "Profiter de l'absence de la secrétaire",
+              "title": "Le bureau de Vallenot",
+              "text": "La secrétaire descend chercher le courrier et laisse la porte entrouverte.\n\nSur un classeur mal refermé, une {{d:facture_delombre|facture de la SCI Delombre}} : « Conseil en stratégie urbaine, projet Ferréol, 1 300 000 F ». Pas de rapport, pas d'annexe, réglée comptant, signée Maurice Delombre, gérant.\n\nSur le bureau en noyer de {{p:vallenot|Vallenot}}, à côté du radiotéléphone dans sa sacoche, un cendrier de cristal et une {{d:cigarillos|boîte de cigarillos}} hollandais, entamée. Les cigarillos ont un embout de plastique blanc.\n\nPar la fenêtre, dans la cour, une Safrane bleu nuit est garée en épi.",
+              "facts": [
+                {
+                  "about": "d:facture_delombre",
+                  "text": "1,3 million de francs de « conseil en stratégie urbaine », sans rapport ni annexe. Signée Maurice Delombre, gérant."
+                },
+                {
+                  "about": "d:cigarillos",
+                  "text": "Cigarillos hollandais à embout de plastique blanc, sur le bureau de Vallenot."
+                },
+                {
+                  "about": "p:vallenot",
+                  "text": "Une Safrane bleu nuit, garée dans la cour du cabinet.",
+                  "label": "Sa voiture"
+                }
+              ]
+            },
+            {
+              "id": "igier",
+              "locationId": "commissariat",
+              "type": "entretien",
+              "button": "Retrouver Igier au café d'en face",
+              "title": "Le lieutenant Igier",
+              "text": "{{p:igier|Igier}} vous donne rendez-vous au comptoir du café d'en face, jamais au commissariat. « Le 17 à 6 h 40, la patrouille s'est transportée sur les lieux, où elle a constaté… » Il s'interrompt, repose sa tasse. « Bon. On est arrivés, il était mort, on a appelé le médecin. »\n\nIl fait glisser vers vous une photocopie du {{d:constat|rapport}}. « Victime découverte au pied de l'escalier métallique. » Pas de croquis, pas de photos. Le certificat de décès est signé du {{p:lacour|Dr Pierre Lacour}}.\n\n« C'est pas moi qui ai tapé le rapport. Le commissaire Borel l'a fait lui-même, dans la matinée. D'habitude, un fonctionnaire mort sur un chantier, on prend plus de gants. Là, non. »",
+              "facts": [
+                {
+                  "about": "d:constat",
+                  "text": "« Victime découverte au pied de l'escalier métallique. » Sans croquis ni photos. Tapé par le commissaire Borel lui-même.",
+                  "struckBy": [
+                    "bensaid2"
+                  ]
+                },
+                {
+                  "about": "p:lacour",
+                  "text": "A signé le certificat de décès de Faure."
+                }
+              ]
+            },
+            {
+              "id": "igier2",
+              "locationId": "commissariat",
+              "type": "entretien",
+              "button": "Revenir voir Igier avec l'aveu du médecin",
+              "title": "Igier, second entretien",
+              "text": "Quand vous lui répétez ce que {{p:lacour|Lacour}} vous a dit, {{p:igier|Igier}} regarde longtemps le fond de sa tasse. « L'heure du décès a été établie par… » Il s'arrête. « Non. Écoutez. »\n\n« Le 17 à 8 h 10, le commissaire a reçu un appel. J'étais dans son bureau. Il a dit \"Oui, monsieur l'adjoint\" trois fois et il a raccroché. Après, il m'a demandé de ne pas m'embêter avec la position du corps. »\n\nIl pose un billet sur le comptoir. « C'était {{p:roussillon|Roussillon}}. Vous ne tenez pas ça de moi. »",
+              "facts": [
+                {
+                  "about": "p:roussillon",
+                  "text": "Le commissaire Borel reçoit un appel à 8 h 10 et répond « Oui, monsieur l'adjoint ». Selon Igier, c'était Roussillon.",
+                  "label": "Mercredi 17"
+                },
+                {
+                  "about": "d:constat",
+                  "text": "Après cet appel, le commissaire a demandé à Igier de « ne pas s'embêter avec la position du corps »."
+                }
+              ],
+              "requires": [
+                "lacour2"
+              ]
+            },
+            {
+              "id": "lacour",
+              "locationId": "cabinet_lacour",
+              "type": "entretien",
+              "button": "Consulter le Dr Lacour",
+              "title": "Le Dr Lacour",
+              "text": "Le cabinet du {{p:lacour|Dr Lacour}} sent l'éther et la moquette humide. Il vous reçoit entre deux patients, sans vous faire asseoir.\n\n« Mort sur le coup, j'imagine. Une chute de quatre mètres sur de l'acier, c'est très classique. Rien d'alarmant. » Il regarde sa montre, puis la pendule.\n\nMathilde : « Vous êtes arrivé vers six heures, donc. »\n\n« Sept heures. On m'a appelé à sept heures moins le quart. Tout était très classique. Ça arrive, ces choses-là, sur les chantiers. »",
+              "facts": [
+                {
+                  "about": "p:lacour",
+                  "text": "Appelé à 6 h 45, arrivé à Ferréol à 7 h. Parle de « mort sur le coup ».",
+                  "struckBy": [
+                    "lacour2"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "lacour2",
+              "locationId": "cabinet_lacour",
+              "type": "entretien",
+              "button": "Revenir voir Lacour avec le témoignage du gardien",
+              "title": "Lacour, second entretien",
+              "text": "Vous racontez à {{p:lacour|Lacour}} ce qu'a vu le gardien : le corps près de la porte, à deux mètres de l'escalier, les yeux ouverts. Il ferme la porte du cabinet. Il ne dit plus « classique ».\n\n« La rigidité, les lividités… Il est mort entre minuit et une heure. Pas à dix heures. » Il enlève ses lunettes. « Il n'est pas mort sur le coup. Il a mis longtemps. Deux heures, peut-être. Il a dû avoir froid. »\n\nMathilde : « Et vous avez écrit \"mort immédiate\". »\n\n« Le commissaire était là. Il m'a dit qu'une famille n'a pas besoin de lire ce genre de détails. J'ai soixante et un ans, madame. »",
+              "facts": [
+                {
+                  "about": "p:faure",
+                  "text": "Entre minuit et une heure, selon le Dr Lacour. Pas sur le coup.",
+                  "label": "Heure de la mort"
+                },
+                {
+                  "about": "p:lacour",
+                  "text": "A écrit « mort immédiate » à la demande du commissaire."
+                }
+              ],
+              "requires": [
+                "bensaid2"
+              ],
+              "mood": "silence"
+            },
+            {
+              "id": "colette",
+              "locationId": "domicile_faure",
+              "type": "entretien",
+              "button": "Rendre visite à Colette Faure",
+              "title": "Colette Faure, la veuve",
+              "text": "{{p:colette|Colette Faure}} vous fait entrer dans une cuisine où tout est rangé, sauf une pile de courrier qu'elle n'ouvre pas. « Bernard part toujours à huit heures. Partait. »\n\nMardi, il a dit qu'il avait une réunion. Il est sorti à sept heures du soir avec son {{d:dossier_bleu|dossier bleu}}, « celui qu'il ne lâchait plus depuis l'été ». Ce qu'il y avait dedans ? « Je ne sais pas. Des papiers du travail. »\n\nSur le frigo, sous un aimant en forme de Vierge de Fourvière, la photo d'une jeune fille devant un amphithéâtre. « La petite. En droit, à Lyon. Il fait des heures pour elle. Faisait. »",
+              "facts": [
+                {
+                  "about": "p:faure",
+                  "text": "Parti de chez lui à 19 h, « pour une réunion », avec son dossier bleu.",
+                  "label": "Mardi 16"
+                },
+                {
+                  "about": "d:dossier_bleu",
+                  "text": "Bernard ne le lâchait plus depuis l'été. Colette dit ignorer ce qu'il contenait.",
+                  "struckBy": [
+                    "colette2"
+                  ]
+                },
+                {
+                  "about": "p:colette",
+                  "text": "Leur fille fait son droit à Lyon."
+                }
+              ]
+            },
+            {
+              "id": "bureau_faure",
+              "locationId": "domicile_faure",
+              "type": "investigation",
+              "button": "Fouiller le bureau de Bernard",
+              "title": "Le bureau de Bernard Faure",
+              "text": "Le bureau de Bernard est une ancienne chambre d'enfant, papier peint à ballons sous les étagères. Le tiroir où Colette pensait trouver le dossier bleu est vide.\n\nDans une chemise « Banque », les {{d:releves_faure|relevés du Crédit Agricole}}. Le prêt immobilier est en retard de trois échéances en juin, puis tout est régularisé en août. Chaque mois depuis, un dépôt en espèces : 29 000 francs en août, 29 500 en septembre, 30 000 en octobre.\n\nSur l'agenda de bureau, à la date du mardi 16, une seule ligne : « 22 h, F. »",
+              "facts": [
+                {
+                  "about": "d:releves_faure",
+                  "text": "Prêt en retard de trois échéances en juin, régularisé en août. Dépôts en espèces : 29 000 F en août, 29 500 F en septembre, 30 000 F en octobre."
+                },
+                {
+                  "about": "p:faure",
+                  "text": "Sur son agenda : « 22 h, F. »",
+                  "label": "Mardi 16"
+                }
+              ]
+            },
+            {
+              "id": "colette2",
+              "locationId": "domicile_faure",
+              "type": "entretien",
+              "button": "Revenir voir Colette avec les retraits « B.F. »",
+              "title": "Colette, second entretien",
+              "text": "Vous posez sur la toile cirée la photocopie des retraits « B.F. ». {{p:colette|Colette Faure}} la lit deux fois, sans rien dire. Puis elle se lève, ouvre sa boîte à couture et sort de sous les bobines un {{d:carnet_versements|petit carnet à spirale}}.\n\n« Bernard note tout. Notait. Même les pleins d'essence. »\n\nSur une page, quatre lignes au stylo bille. « R.F. 30 » en août, en septembre, en octobre. En novembre : « R.F. 200 ? », le point d'interrogation repassé plusieurs fois.\n\n« J'ai trouvé les enveloppes en septembre. Dans une boîte à chaussures, au-dessus de l'armoire. J'ai rien demandé. On avait le crédit, la petite à Lyon… »\n\nElle pose aussi sur la table un {{d:ticket_consigne|ticket orange}} numéroté. « C'était dans son portefeuille. Je sais pas à quoi ça sert. » C'est un ticket de la consigne à bagages de la {{l:consigne_gare|gare de Châteaucreux}}.\n\nAu bout de la table, le couvert de Bernard est toujours mis.",
+              "facts": [
+                {
+                  "about": "d:carnet_versements",
+                  "text": "« R.F. 30 » en août, septembre et octobre. « R.F. 200 ? » en novembre."
+                },
+                {
+                  "about": "p:colette",
+                  "text": "A trouvé des enveloppes de billets en septembre, dans une boîte à chaussures.",
+                  "label": "Ce qu'elle cachait"
+                },
+                {
+                  "about": "d:ticket_consigne",
+                  "text": "Consigne à bagages de la gare de Châteaucreux. Trouvé dans le portefeuille de Bernard."
+                }
+              ],
+              "requires": [
+                "compta"
+              ]
+            },
+            {
+              "id": "consigne",
+              "locationId": "consigne_gare",
+              "type": "investigation",
+              "button": "Ouvrir la consigne",
+              "title": "La consigne de Châteaucreux",
+              "text": "La consigne à bagages de {{l:consigne_gare|Châteaucreux}} est un guichet au bout du hall, sous l'horloge. Le préposé regarde le ticket, soupire, et revient avec un sac de sport bleu, celui d'un club de handball.\n\nDedans, une enveloppe kraft : la {{d:copie_faure|copie d'un dossier}}. Des photocopies des bons de pesée de la décharge. Douze photos au flash de camions bennes Ferrand Frères, de nuit, dans la cour de Ferréol. Et un tableau écrit à la main : « Prévu : 3 000 t. Évacué : 400 t. Reste : ? »\n\nAu fond du sac, une paire de chaussettes de rechange et un paquet de biscuits entamé. Karim regarde les chaussettes plus longtemps que les documents.",
+              "facts": [
+                {
+                  "about": "d:copie_faure",
+                  "text": "Photocopies des bons de pesée de la décharge. Douze photos de camions Ferrand la nuit à Ferréol. Tableau : « Prévu : 3 000 t. Évacué : 400 t. Reste : ? »"
+                }
+              ]
+            },
+            {
+              "id": "bensaid",
+              "locationId": "site_ferreol",
+              "type": "entretien",
+              "button": "Parler au gardien",
+              "title": "Ahmed Bensaïd, le gardien",
+              "text": "{{p:bensaid|Ahmed Bensaïd}} ouvre le portail sans un mot de trop. Vingt ans de gardiennage.\n\n« Il se pourrait que j'aie entendu des voix, monsieur le journaliste. Vers dix heures. Du côté de l'atelier de forge. Je suis pas descendu, c'est pas mon rôle. »\n\nLes camions ? « Il se pourrait qu'il y en ait eu, la nuit. Depuis un mois. Ceux de chez Ferrand. »\n\nMathilde : « Vous avez vu qui conduisait, donc. »\n\n« Non, madame. Je regarde pas ce qui me regarde pas. » Il vous raccompagne. « Pour l'histoire de l'usine, voyez plutôt {{p:chaptal|Marcel Chaptal}}. Il est tous les jours au {{l:cheval_noir|Cheval Noir}}. »",
+              "facts": [
+                {
+                  "about": "p:bensaid",
+                  "text": "Dit avoir entendu des voix vers 22 h, du côté de l'atelier de forge. « Je suis pas descendu. »",
+                  "label": "Mardi 16",
+                  "struckBy": [
+                    "bensaid2"
+                  ]
+                },
+                {
+                  "about": "l:site_ferreol",
+                  "text": "Des camions de Ferrand y viennent la nuit depuis un mois, selon le gardien.",
+                  "label": "La nuit"
+                }
+              ]
+            },
+            {
+              "id": "reperage",
+              "locationId": "site_ferreol",
+              "type": "investigation",
+              "button": "Faire le tour du site",
+              "title": "Repérage du chantier",
+              "text": "Le panneau à l'entrée annonce un chantier gelé depuis septembre. Maître d'ouvrage : {{l:cabinet_vallenot|Groupe Vallenot}}, {{p:vallenot|H. Vallenot}}. Gros œuvre : {{l:siege_ferrand|Ferrand Frères}}, {{p:ferrand|R. Ferrand}}.\n\nDans l'aile est, une dalle de béton neuve couvre le pied de l'escalier métallique, encore sombre d'humidité. Tout autour, le sol est noir de calamine et de terre retournée. Contre un pilier, deux projecteurs de chantier sur trépied et un groupe électrogène, câbles enroulés avec soin. Sous une palette, un bon de livraison : « Béton, 8 m³, 17/11/93, réceptionné {{p:mounier|G. Mounier}} ».\n\nAu portail arrière, des traces de pneus jumelés dans la boue, et quatre morceaux de papier collés par la pluie contre le grillage.\n\nSur le mur d'enceinte, côté est, en lettres blanches d'un mètre de haut : FERRÉOL NE SERA PAS UN PARKING.\n\nYves fait trois photos du mur, deux de la dalle, une des projecteurs.",
+              "facts": [
+                {
+                  "about": "l:site_ferreol",
+                  "text": "Dalle de béton neuve au pied de l'escalier, sur un chantier gelé depuis septembre.",
+                  "label": "Aile est"
+                },
+                {
+                  "about": "l:site_ferreol",
+                  "text": "Deux projecteurs de chantier et un groupe électrogène dans l'atelier.",
+                  "label": "La nuit"
+                },
+                {
+                  "about": "l:site_ferreol",
+                  "text": "Slogan en lettres blanches : « FERRÉOL NE SERA PAS UN PARKING ».",
+                  "label": "Mur est"
+                },
+                {
+                  "about": "p:mounier",
+                  "text": "A réceptionné 8 m³ de béton à Ferréol le 17 novembre."
+                }
+              ],
+              "puzzle": "reperage"
+            },
+            {
+              "id": "bensaid2",
+              "locationId": "site_ferreol",
+              "type": "entretien",
+              "button": "Revenir voir Bensaïd avec le livre de police",
+              "title": "Bensaïd, second entretien",
+              "text": "{{p:bensaid|Ahmed Bensaïd}} regarde longtemps la photocopie du {{d:livre_police|livre de police}}. Puis il ferme la porte de la cabane.\n\n« Il se pourrait que… » Il s'arrête. « Non. J'étais au portail de derrière, avec {{p:berthet|Berthet}}. La fonte, ça part à la casse de toute façon. »\n\nEnsuite il parle sans conditionnel, d'une traite, les mains à plat sur la table. « Vers onze heures moins vingt, en revenant, il y avait une voiture devant l'entrée. Une Safrane bleu nuit. Pas une voiture d'ici. Le matin, à six heures et demie, j'ai fait ma ronde. Le monsieur n'était pas au pied de l'escalier. Il était près de la porte. Il avait les yeux ouverts. Je les lui ai fermés. »\n\nIl ouvre un tiroir et pose une boîte d'allumettes sur la table. Dedans, {{d:megots|quatre mégots}} de cigarillo à embout de plastique blanc. « Ils étaient à côté de lui. Je sais pas pourquoi je les ai gardés. »\n\nSur le pas de la porte, il ajoute : « Cette nuit-là, quelqu'un est entré dans ma cabane. Le téléphone pendait au bout du fil. Et le vieux {{p:chaptal|Chaptal}}, du {{l:cheval_noir|Cheval Noir}}, traînait le long du mur est vers neuf heures. C'est le docteur {{p:lacour|Lacour}} qui est venu, le matin. »",
+              "facts": [
+                {
+                  "about": "p:bensaid",
+                  "text": "Revend la ferraille du site à Berthet. Le 16 au soir, il était au portail arrière.",
+                  "label": "Ce qu'il cachait"
+                },
+                {
+                  "about": "p:faure",
+                  "text": "Trouvé à 6 h 30 près de la porte, pas au pied de l'escalier. Les yeux ouverts.",
+                  "label": "Le matin du 17"
+                },
+                {
+                  "about": "d:megots",
+                  "text": "Cigarillos à embout de plastique blanc, trouvés à côté du corps par le gardien."
+                },
+                {
+                  "about": "l:site_ferreol",
+                  "text": "Une Safrane bleu nuit devant l'entrée vers 22 h 40. Quelqu'un est entré dans la cabane du gardien et a utilisé le téléphone.",
+                  "label": "Mardi 16"
+                },
+                {
+                  "about": "p:chaptal",
+                  "text": "Vu le long du mur est vers 21 h, selon le gardien.",
+                  "label": "Mardi 16"
+                }
+              ],
+              "requires": [
+                "livre"
+              ],
+              "mood": "silence",
+              "ambience": "ferreol-nuit"
+            },
+            {
+              "id": "porte",
+              "locationId": "site_ferreol",
+              "type": "investigation",
+              "button": "Examiner le sol près de la porte",
+              "title": "Près de la porte de l'atelier",
+              "text": "Le gardien vous montre l'endroit, puis retourne dans sa cabane. Il ne veut pas regarder.\n\nLa dalle neuve s'arrête à deux mètres de la porte de l'atelier. Au-delà, le sol de brique est couvert d'une poussière noire de calamine que personne n'a balayée. On y distingue des traces de doigts, parallèles, qui partent du bord de la dalle et vont vers la porte. Elles s'arrêtent à cinquante centimètres du seuil.\n\nDans une rainure entre deux briques, Yves trouve un ongle cassé. Il le photographie sans flash, puis avec, et le laisse où il est.",
+              "facts": [
+                {
+                  "about": "l:site_ferreol",
+                  "text": "Traces de doigts dans la calamine, du bord de la dalle vers la porte. Elles s'arrêtent à 50 cm du seuil. Un ongle cassé entre deux briques.",
+                  "label": "Près de la porte"
+                }
+              ],
+              "requires": [
+                "bensaid2"
+              ],
+              "mood": "silence",
+              "ambience": "ferreol-nuit"
+            },
+            {
+              "id": "chaptal",
+              "locationId": "cheval_noir",
+              "type": "entretien",
+              "button": "Payer un verre à Marcel Chaptal",
+              "title": "Marcel Chaptal",
+              "text": "{{p:chaptal|Marcel Chaptal}} parle bas, le coude sur le zinc, un ballon de rouge qu'il ne finira pas. « Ferréol, mon gars, j'y suis entré l'année de la grande grève des mineurs, en quarante-huit. Trente ans à la forge. »\n\nLe fondeur de 1911, il le raconte comme s'il y était. « On l'a laissé dans la coulée. La pièce est partie quand même. Elle doit rouler encore quelque part, la pièce. »\n\nLe feu, la nuit ? « Tout le monde l'a vu, rue de la Montat. Demande. »\n\nEt lui, mardi soir ? « Ici. Au comptoir, toute la soirée. Demande à {{p:jeannot|Jeannot}}. »",
+              "facts": [
+                {
+                  "about": "p:chaptal",
+                  "text": "Dit avoir passé la soirée au comptoir du Cheval Noir. « Demande à Jeannot. »",
+                  "label": "Mardi 16",
+                  "struckBy": [
+                    "jeannot",
+                    "chaptal2"
+                  ]
+                },
+                {
+                  "about": "l:site_ferreol",
+                  "text": "Selon Chaptal, tout le quartier voit le « feu » de la forge la nuit, depuis la rue de la Montat.",
+                  "label": "La légende"
+                }
+              ]
+            },
+            {
+              "id": "jeannot",
+              "locationId": "cheval_noir",
+              "type": "entretien",
+              "button": "Parler au patron",
+              "title": "Jeannot, patron du Cheval Noir",
+              "text": "{{p:jeannot|Jeannot}} essuie les verres un par un, à la lumière, sans se presser.\n\n« Marcel ? Mardi ? » Il pose un verre, en prend un autre. « Il a pris sa première tournée à sept heures, sa deuxième à huit. La troisième, il l'a prise à dix heures passées. Entre les deux, pas de Marcel. »\n\nIl baisse la voix. « Il est revenu avec les mains pleines de peinture blanche. Il m'a dit : \"Si on te demande, j'étais là.\" Moi, je dis ce qu'on me demande. Vous me demandez. »",
+              "facts": [
+                {
+                  "about": "p:chaptal",
+                  "text": "Absent du Cheval Noir de 20 h à 22 h passées, selon Jeannot. Revenu les mains pleines de peinture blanche.",
+                  "label": "Mardi 16"
+                }
+              ]
+            },
+            {
+              "id": "chaptal2",
+              "locationId": "cheval_noir",
+              "type": "entretien",
+              "button": "Revenir voir Chaptal",
+              "title": "Chaptal, second entretien",
+              "text": "Quand vous lui parlez de la peinture, {{p:chaptal|Chaptal}} repose son verre. « Bon. Oui. C'est moi, le mur. Et la lettre. Et deux autres, à Faure, sans signature. Pour qu'il ait peur. Pour qu'il arrête avec son parking. »\n\nIl frotte ses doigts. Il reste du blanc sous ses ongles. « Mardi, vers neuf heures, la voiture de Faure était dans l'impasse. Une 405 grise. Et à dix heures moins dix, le camion benne de chez Ferrand est arrivé. Avec le patron au volant, mon gars. {{p:ferrand|Ferrand}} lui-même, qui conduit jamais. Je suis parti. Je voulais pas qu'on me voie avec mon pot. »\n\nIl regarde la rue. « Le fondeur, c'est des histoires. C'est moi qui les raconte. »",
+              "facts": [
+                {
+                  "about": "p:chaptal",
+                  "text": "A peint le slogan du mur est, écrit la lettre au Bureau et envoyé deux lettres anonymes à Faure.",
+                  "label": "Ce qu'il cachait"
+                },
+                {
+                  "about": "p:ferrand",
+                  "text": "Arrivé à Ferréol vers 21 h 50, seul au volant du camion benne, selon Chaptal.",
+                  "label": "Mardi 16"
+                },
+                {
+                  "about": "p:faure",
+                  "text": "Sa 405 grise était dans l'impasse des Fondeurs vers 21 h, selon Chaptal.",
+                  "label": "Mardi 16"
+                }
+              ],
+              "requiresAny": [
+                "tirages",
+                "jeannot"
+              ]
+            },
+            {
+              "id": "ferrand",
+              "locationId": "siege_ferrand",
+              "type": "entretien",
+              "button": "Rencontrer Roger Ferrand",
+              "title": "Roger Ferrand",
+              "text": "{{p:ferrand|Roger Ferrand}} ne s'assoit pas, vous non plus. Dans le hangar, un poste crache RTL sous le bruit d'un compresseur que personne ne coupe.\n\n« Mardi soir ? Pourquoi, j'aurais dû être où ? »\n\nMathilde : « À Ferréol, avec Faure. »\n\n« Et j'y aurais fait quoi, à Ferréol, sur un chantier gelé ? » Il essuie ses mains sur son bleu, lentement, une main puis l'autre. Son alliance serre un doigt gonflé. « J'étais chez moi. Demandez à {{p:simone|ma femme}}, elle est au bureau du fond. Vous croyez qu'elle va vous dire autre chose ? »",
+              "facts": [
+                {
+                  "about": "p:ferrand",
+                  "text": "Dit avoir passé la soirée du 16 chez lui. « Demandez à ma femme. »",
+                  "label": "Alibi",
+                  "struckBy": [
+                    "simone2"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "compta",
+              "locationId": "siege_ferrand",
+              "type": "investigation",
+              "button": "Jeter un œil à la comptabilité",
+              "title": "La comptabilité de Ferrand Frères",
+              "text": "Le bureau vitré du fond est vide : {{p:simone|Simone Ferrand}} est partie à la banque. Sur la table, le {{d:compta_ferrand|livre de caisse}} est ouvert à novembre.\n\nTrois virements de 430 000 francs à la {{d:sci_delombre|SCI Delombre}}, en juin, en juillet et en septembre. Plus bas, dans la colonne des retraits en espèces, une écriture ronde de comptable :\n\n12/08 · B.F. · 30 000\n13/09 · B.F. · 30 000\n12/10 · B.F. · 30 000\n16/11 · B.F. · 50 000\n\nSur l'{{d:agenda_ferrand|agenda de chantier}}, à la date du mardi 16 novembre, au crayon et appuyé : « Ferréol 22 h ».\n\nDans un coin, un poêle à bois ronfle. Dans le cendrier, sous la cendre grise, un coin de carton bleu qui n'a pas brûlé et une agrafe de classeur tordue par la chaleur.\n\nLe calendrier des Postes est accroché de travers. Derrière, on devine le métal d'une petite porte de coffre.",
+              "facts": [
+                {
+                  "about": "d:compta_ferrand",
+                  "text": "30 000 F les 12 août, 13 septembre et 12 octobre. 50 000 F le 16 novembre.",
+                  "label": "Retraits « B.F. »"
+                },
+                {
+                  "about": "d:agenda_ferrand",
+                  "text": "Mardi 16 novembre : « Ferréol 22 h »."
+                },
+                {
+                  "about": "p:ferrand",
+                  "text": "Dans les cendres, un coin de carton bleu et une agrafe de classeur.",
+                  "label": "Le poêle"
+                },
+                {
+                  "about": "d:sci_delombre",
+                  "text": "Trois virements de 430 000 F de Ferrand Frères, en juin, juillet et septembre."
+                }
+              ]
+            },
+            {
+              "id": "coffre",
+              "locationId": "siege_ferrand",
+              "type": "investigation",
+              "button": "Examiner le coffre derrière le calendrier",
+              "title": "Le coffre de Roger Ferrand",
+              "text": "Le calendrier des Postes pend à un clou. Les pages de janvier à octobre ont été arrachées, sauf une, gardée derrière novembre : mars, avec le 14 entouré au feutre noir. Derrière, une petite porte de coffre scellée dans le parpaing, avec une molette à quatre chiffres.",
+              "facts": [],
+              "requires": [
+                "compta"
+              ],
+              "puzzle": "coffre"
+            },
+            {
+              "id": "simone",
+              "locationId": "siege_ferrand",
+              "type": "entretien",
+              "button": "Parler à Simone Ferrand",
+              "title": "Simone Ferrand",
+              "text": "{{p:simone|Simone Ferrand}} tient la comptabilité dans un bureau vitré au fond du hangar, entre un classeur métallique et un ficus en plastique. « Roger dit que vous n'avez rien à faire ici. »\n\nMardi soir ? « Roger est rentré à neuf heures. Comme d'habitude. » Elle a répondu avant la fin de la question. « Roger dit que la saison est bonne, qu'on a du travail jusqu'au printemps. »\n\nL'équipe de nuit ? « C'est {{p:mounier|Gérard Mounier}} qui s'en occupe. Roger dit qu'il faut pas parler aux journaux. »",
+              "facts": [
+                {
+                  "about": "p:simone",
+                  "text": "Affirme que Roger est rentré à 21 h le 16. A répondu avant la fin de la question.",
+                  "struckBy": [
+                    "simone2"
+                  ]
+                },
+                {
+                  "about": "p:mounier",
+                  "text": "Chef de l'équipe de nuit de Ferrand Frères."
+                }
+              ]
+            },
+            {
+              "id": "simone2",
+              "locationId": "siege_ferrand",
+              "type": "entretien",
+              "button": "Revenir voir Simone",
+              "title": "Simone, second entretien",
+              "text": "Vous lui dites que le camion de Ferrand était à Ferréol mardi soir. {{p:simone|Simone}} ne dément pas. Elle range un crayon, puis un autre.\n\n« Roger dit… » Elle s'arrête. « Il est rentré à onze heures vingt. J'ai regardé le réveil. Il est allé dans la buanderie. Il a lavé son pantalon lui-même, à la main, dans l'évier. Il fait jamais ça. Il sait pas où on met la lessive. »\n\nElle regarde vers le hangar, où son mari parle fort au téléphone. « Il y avait de la poussière noire dans l'eau. »",
+              "facts": [
+                {
+                  "about": "p:ferrand",
+                  "text": "Rentré chez lui à 23 h 20 le 16, selon Simone. A lavé lui-même son pantalon dans la nuit. De la poussière noire dans l'eau.",
+                  "label": "Alibi"
+                },
+                {
+                  "about": "p:simone",
+                  "text": "Revient sur son témoignage : Roger n'était pas rentré à 21 h."
+                }
+              ],
+              "requiresAny": [
+                "chaptal2",
+                "mounier",
+                "berthet2"
+              ]
+            },
+            {
+              "id": "mounier",
+              "locationId": "cite_mounier",
+              "type": "entretien",
+              "button": "Aller voir Gérard Mounier",
+              "title": "Gérard Mounier, chef d'équipe",
+              "text": "{{p:mounier|Gérard Mounier}} vous parle sur le palier du neuvième étage, en survêtement, la porte tirée derrière lui : sa femme dort, elle travaille de nuit à l'hôpital.\n\n« Je sais rien, moi. Je fais ce qu'on me dit. » Le béton du 17 ? « Le patron a dit de couler, j'ai coulé. »\n\nMathilde : « Et le 16 au soir, vous étiez à Ferréol avec votre équipe, donc. »\n\n« Non. Le patron a dit de pas venir, mardi. Pour une fois. » Il entend ce qu'il vient de dire. « Ça fait un mois qu'on y va toutes les nuits, et mardi, non. C'est tout. C'est le patron qui décide. »",
+              "facts": [
+                {
+                  "about": "p:mounier",
+                  "text": "« Le patron a dit de pas venir. » Pour la première fois en un mois.",
+                  "label": "Mardi 16"
+                },
+                {
+                  "about": "p:mounier",
+                  "text": "A coulé la dalle neuve de Ferréol, sur ordre.",
+                  "label": "Mercredi 17"
+                }
+              ]
+            },
+            {
+              "id": "mounier2",
+              "locationId": "cite_mounier",
+              "type": "entretien",
+              "button": "Revenir voir Mounier avec les tonnages",
+              "title": "Mounier, second entretien",
+              "text": "Vous lui montrez les chiffres : 3 000 tonnes prévues, 400 arrivées à la décharge. {{p:mounier|Mounier}} s'assoit sur une marche. « Le patron a dit qu'on allait me mettre ça sur le dos. Je le savais. »\n\nDepuis octobre, son équipe creuse la nuit dans l'aile est, verse la terre noire dans les fosses et coule une dalle par-dessus. « Ça sent le gasoil, cette terre. Ça brûle les mains. »\n\nIl se tait, puis : « Le 17, avant de couler près de l'escalier, il y avait des traînées sombres par terre. J'ai demandé au patron. Il a dit : \"Coule.\" »",
+              "facts": [
+                {
+                  "about": "l:site_ferreol",
+                  "text": "Depuis octobre, l'équipe de nuit y enterre une terre noire qui sent le gasoil, sur ordre de Ferrand.",
+                  "label": "Sous les dalles"
+                },
+                {
+                  "about": "p:mounier",
+                  "text": "Avant de couler près de l'escalier, a vu des traînées sombres au sol. Ferrand : « Coule. »",
+                  "label": "Mercredi 17"
+                }
+              ],
+              "requiresAny": [
+                "registre",
+                "consigne"
+              ]
+            },
+            {
+              "id": "berthet",
+              "locationId": "casse_berthet",
+              "type": "entretien",
+              "button": "Parler à Lucien Berthet",
+              "title": "Lucien Berthet, ferrailleur",
+              "text": "La casse de {{p:berthet|Lucien Berthet}} occupe la cour d'une ancienne verrerie, au bord du Gier. Des carcasses de 4L, des radiateurs en fonte, une grue qui grince.\n\n« Ferréol ? J'y ai jamais mis les pieds, l'ami. » Il vous fait visiter quand même. « Là, le cuivre, dix-huit francs le kilo. Là, l'alu. La fonte, ça vaut rien, l'ami. Un franc vingt, quand ça vaut. »\n\nIl donne un coup de pied dans un tas de radiateurs. « Ferréol, c'est de la fonte. Vous voyez bien que ça m'intéresse pas. »",
+              "facts": [
+                {
+                  "about": "p:berthet",
+                  "text": "Dit n'avoir « jamais mis les pieds » à Ferréol. « La fonte, ça vaut rien. »",
+                  "struckBy": [
+                    "livre",
+                    "berthet2"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "livre",
+              "locationId": "casse_berthet",
+              "type": "investigation",
+              "button": "Consulter le livre de police",
+              "title": "Le livre de police de la casse",
+              "text": "Les ferrailleurs doivent tenir un {{d:livre_police|livre de police}}, coté et paraphé par la gendarmerie. Celui de {{p:berthet|Berthet}} est posé sur le bureau de la guérite, sous une tasse sale. Berthet est dans la cour, à la grue.\n\nL'écriture est lente, appliquée, pleine de fautes. « 16/11/93 · 21 h 30 · site Ferréol portail arière · vendeur A.B. · fonte 1,2 t · 1 440 F espèse. »\n\nLa même ligne revient le 2 et le 9 novembre. Toujours un mardi.",
+              "facts": [
+                {
+                  "about": "d:livre_police",
+                  "text": "« 16/11/93, 21 h 30, site Ferréol, portail arrière, vendeur A.B., fonte 1,2 t. » Même ligne les mardis 2 et 9 novembre."
+                },
+                {
+                  "about": "p:berthet",
+                  "text": "Au portail arrière de Ferréol à 21 h 30, selon son propre registre.",
+                  "label": "Mardi 16"
+                }
+              ]
+            },
+            {
+              "id": "berthet2",
+              "locationId": "casse_berthet",
+              "type": "entretien",
+              "button": "Revenir voir Berthet avec son registre",
+              "title": "Berthet, second entretien",
+              "text": "{{p:berthet|Berthet}} voit le livre ouvert dans vos mains et coupe la grue. « Bon. J'y étais, l'ami. Tous les mardis. C'est pas du vol, c'est de la récupération. »\n\nMardi 16 : arrivé à neuf heures et demie, reparti à dix heures et demie. « Vers dix heures dix, il y a eu un cri dans l'usine. Un seul. Après, plus rien. Le gardien a dit que c'était les chats. »\n\nIl crache par terre. « Dans la cour, il y avait le camion benne de chez Ferrand. Moteur tiède. J'ai mis la main sur le capot en passant. Réflexe. »",
+              "facts": [
+                {
+                  "about": "l:site_ferreol",
+                  "text": "Un cri vers 22 h 10, puis plus rien, selon Berthet. Le camion benne de Ferrand dans la cour, moteur tiède.",
+                  "label": "Mardi 16"
+                },
+                {
+                  "about": "p:berthet",
+                  "text": "Au portail arrière de 21 h 30 à 22 h 30.",
+                  "label": "Mardi 16"
+                }
+              ],
+              "requires": [
+                "livre"
+              ]
+            },
+            {
+              "id": "registre",
+              "locationId": "decharge",
+              "type": "investigation",
+              "button": "Consulter le registre des entrées",
+              "title": "Le registre de la décharge",
+              "text": "La {{l:decharge|décharge de la Croix-de-l'Orme}} tient ses entrées sur des {{d:registre_decharge|fiches de pesée}} agrafées par chantier. Le préposé, qui ne reçoit pas souvent de visites, vous sort la chemise « Ferrand Frères, Ferréol ».\n\nVingt-deux fiches, toutes de juillet et d'août. En bas de la dernière, le total, souligné deux fois : 400 tonnes.\n\n« Depuis septembre, plus rien de chez eux. Ils ont fini, je suppose. » Il feuillette encore. « C'est bizarre, pour un gros chantier comme ça. »",
+              "facts": [
+                {
+                  "about": "d:registre_decharge",
+                  "text": "Ferrand Frères, chantier Ferréol : 22 pesées en juillet et août, 400 tonnes au total. Plus rien depuis septembre."
+                }
+              ]
+            },
+            {
+              "id": "parking",
+              "locationId": "parking_relais",
+              "type": "investigation",
+              "button": "Visiter le chantier",
+              "title": "Le chantier du parking-relais",
+              "text": "Le chantier du parking-relais de Bellevue avance, lui. Trois grues, des banches alignées, un panneau : maître d'ouvrage {{l:cabinet_vallenot|Groupe Vallenot}}, gros œuvre {{l:siege_ferrand|Ferrand Frères}}.\n\nLe chef de chantier, jovial, vous montre le plan de financement punaisé dans son Algeco. Une ligne « études » de 900 000 francs, versée à la {{d:sci_delombre|SCI Delombre}}. « On n'a jamais vu personne de chez eux. Mais bon, on a les plans. » Il hausse les épaules et vous offre un café soluble.",
+              "facts": [
+                {
+                  "about": "d:sci_delombre",
+                  "text": "Touche aussi 900 000 F d'« études » sur le chantier du parking-relais."
+                }
+              ]
+            }
+          ],
+          "puzzles": {
+            "reperage": {
+              "type": "fragments",
+              "title": "Le reçu déchiré",
+              "instructions": "Quatre morceaux de papier mouillé. Remettez-les dans l'ordre.",
+              "pieces": [
+                "CASSE BERT",
+                "HET · RIVE-DE-GIER",
+                "Acheté à : A.B. · 16/11/93",
+                "Fonte · 1,2 t · réglé espèces"
+              ],
+              "result": "{{d:recu_berthet|Reçu}} de la casse de {{p:berthet|Lucien Berthet}}, à Rive-de-Gier. Acheté à : A.B., le 16/11/93. Fonte, 1,2 t, réglé espèces.",
+              "help": "Yves prend les morceaux, les pose sur son genou et les remet dans l'ordre en dix secondes.",
+              "facts": [
+                {
+                  "about": "d:recu_berthet",
+                  "text": "Casse Berthet, Rive-de-Gier. « Acheté à : A.B., 16/11/93. Fonte, 1,2 t. » Trouvé au portail arrière de Ferréol."
+                }
+              ]
+            },
+            "facture_tel": {
+              "type": "line",
+              "title": "La facture détaillée",
+              "instructions": "Une trentaine d'appels. Trouvez celui qui ne ressemble pas aux autres.",
+              "lines": [
+                {
+                  "date": "06/10",
+                  "heure": "13 h 21",
+                  "numero": "77 48 12 37",
+                  "duree": "6 min 36 s",
+                  "qui": "le service urbanisme"
+                },
+                {
+                  "date": "06/10",
+                  "heure": "13 h 40",
+                  "numero": "77 41 90 55",
+                  "duree": "3 min 07 s",
+                  "qui": "le domicile du gardien"
+                },
+                {
+                  "date": "07/10",
+                  "heure": "16 h 33",
+                  "numero": "77 41 90 55",
+                  "duree": "6 min 21 s",
+                  "qui": "le domicile du gardien"
+                },
+                {
+                  "date": "09/10",
+                  "heure": "12 h 42",
+                  "numero": "77 92 11 11",
+                  "duree": "6 min 47 s",
+                  "qui": "l'horloge parlante"
+                },
+                {
+                  "date": "10/10",
+                  "heure": "08 h 12",
+                  "numero": "77 25 60 13",
+                  "duree": "6 min 53 s",
+                  "qui": "Ferrand Frères"
+                },
+                {
+                  "date": "11/10",
+                  "heure": "10 h 57",
+                  "numero": "77 25 60 13",
+                  "duree": "2 min 09 s",
+                  "qui": "Ferrand Frères"
+                },
+                {
+                  "date": "14/10",
+                  "heure": "11 h 33",
+                  "numero": "77 92 11 11",
+                  "duree": "6 min 54 s",
+                  "qui": "l'horloge parlante"
+                },
+                {
+                  "date": "15/10",
+                  "heure": "15 h 24",
+                  "numero": "77 41 90 55",
+                  "duree": "0 min 46 s",
+                  "qui": "le domicile du gardien"
+                },
+                {
+                  "date": "18/10",
+                  "heure": "17 h 22",
+                  "numero": "77 25 60 13",
+                  "duree": "4 min 19 s",
+                  "qui": "Ferrand Frères"
+                },
+                {
+                  "date": "21/10",
+                  "heure": "12 h 00",
+                  "numero": "77 41 90 55",
+                  "duree": "1 min 48 s",
+                  "qui": "le domicile du gardien"
+                },
+                {
+                  "date": "23/10",
+                  "heure": "13 h 57",
+                  "numero": "77 48 12 37",
+                  "duree": "0 min 08 s",
+                  "qui": "le service urbanisme"
+                },
+                {
+                  "date": "26/10",
+                  "heure": "11 h 01",
+                  "numero": "77 41 90 55",
+                  "duree": "2 min 35 s",
+                  "qui": "le domicile du gardien"
+                },
+                {
+                  "date": "26/10",
+                  "heure": "12 h 47",
+                  "numero": "77 41 90 55",
+                  "duree": "0 min 05 s",
+                  "qui": "le domicile du gardien"
+                },
+                {
+                  "date": "26/10",
+                  "heure": "15 h 37",
+                  "numero": "77 48 12 37",
+                  "duree": "4 min 10 s",
+                  "qui": "le service urbanisme"
+                },
+                {
+                  "date": "27/10",
+                  "heure": "13 h 51",
+                  "numero": "77 48 12 00",
+                  "duree": "0 min 27 s",
+                  "qui": "le standard de la mairie"
+                },
+                {
+                  "date": "29/10",
+                  "heure": "17 h 25",
+                  "numero": "77 25 60 13",
+                  "duree": "2 min 51 s",
+                  "qui": "Ferrand Frères"
+                },
+                {
+                  "date": "03/11",
+                  "heure": "14 h 49",
+                  "numero": "77 92 11 11",
+                  "duree": "3 min 02 s",
+                  "qui": "l'horloge parlante"
+                },
+                {
+                  "date": "04/11",
+                  "heure": "12 h 35",
+                  "numero": "77 92 11 11",
+                  "duree": "0 min 24 s",
+                  "qui": "l'horloge parlante"
+                },
+                {
+                  "date": "06/11",
+                  "heure": "17 h 58",
+                  "numero": "77 25 60 13",
+                  "duree": "3 min 02 s",
+                  "qui": "Ferrand Frères"
+                },
+                {
+                  "date": "07/11",
+                  "heure": "13 h 11",
+                  "numero": "77 48 12 37",
+                  "duree": "3 min 32 s",
+                  "qui": "le service urbanisme"
+                },
+                {
+                  "date": "07/11",
+                  "heure": "17 h 27",
+                  "numero": "77 25 60 13",
+                  "duree": "6 min 29 s",
+                  "qui": "Ferrand Frères"
+                },
+                {
+                  "date": "08/11",
+                  "heure": "11 h 46",
+                  "numero": "77 48 12 00",
+                  "duree": "1 min 58 s",
+                  "qui": "le standard de la mairie"
+                },
+                {
+                  "date": "09/11",
+                  "heure": "13 h 49",
+                  "numero": "77 25 60 13",
+                  "duree": "3 min 55 s",
+                  "qui": "Ferrand Frères"
+                },
+                {
+                  "date": "11/11",
+                  "heure": "16 h 28",
+                  "numero": "77 41 90 55",
+                  "duree": "3 min 27 s",
+                  "qui": "le domicile du gardien"
+                },
+                {
+                  "date": "13/11",
+                  "heure": "15 h 30",
+                  "numero": "77 92 11 11",
+                  "duree": "3 min 17 s",
+                  "qui": "l'horloge parlante"
+                },
+                {
+                  "date": "14/11",
+                  "heure": "15 h 27",
+                  "numero": "77 92 11 11",
+                  "duree": "0 min 52 s",
+                  "qui": "l'horloge parlante"
+                },
+                {
+                  "date": "15/11",
+                  "heure": "11 h 18",
+                  "numero": "77 92 11 11",
+                  "duree": "5 min 02 s",
+                  "qui": "l'horloge parlante"
+                },
+                {
+                  "date": "15/11",
+                  "heure": "11 h 35",
+                  "numero": "77 48 12 00",
+                  "duree": "3 min 01 s",
+                  "qui": "le standard de la mairie"
+                },
+                {
+                  "date": "15/11",
+                  "heure": "13 h 23",
+                  "numero": "77 48 12 37",
+                  "duree": "6 min 25 s",
+                  "qui": "le service urbanisme"
+                },
+                {
+                  "date": "16/11",
+                  "heure": "22 h 24",
+                  "numero": "07 42 18 63",
+                  "duree": "3 min 06 s",
+                  "qui": null
+                }
+              ],
+              "result": "Mardi 16 novembre, 22 h 24. Un appel de 3 minutes, depuis la cabane du gardien, vers le 07 42 18 63. Un numéro de radiotéléphone.",
+              "help": "Karim épluche la facture et entoure au feutre l'appel de 22 h 24.",
+              "facts": [
+                {
+                  "about": "d:facture_tel",
+                  "text": "Mardi 16 novembre, 22 h 24 : un appel de 3 minutes depuis la cabane du gardien, vers le 07 42 18 63, un radiotéléphone."
+                }
+              ]
+            },
+            "coffre": {
+              "type": "code",
+              "title": "Le coffre",
+              "instructions": "Une molette à quatre chiffres.",
+              "digits": 4,
+              "code": "1403",
+              "result": "Le coffre s'ouvre. Dedans, cinq {{d:liasses|liasses de billets de 200 francs}}, chacune serrée par une bande de papier kraft tamponnée par la banque : « 16 NOV. 1993 ». Cinquante mille francs, pas un billet de moins.\n\nSous les liasses, un faire-part de décès bordé de noir. Paul Ferrand, 1948-1987.",
+              "help": "Simone passe la tête par la porte du bureau. « Le 14 mars. C'est toujours le 14 mars, avec lui. »",
+              "facts": [
+                {
+                  "about": "d:liasses",
+                  "text": "50 000 F en cinq liasses de billets de 200 F. Bandes de banque tamponnées « 16 NOV. 1993 ». Dans le coffre de Ferrand."
+                },
+                {
+                  "about": "p:ferrand",
+                  "text": "Garde dans son coffre le faire-part de Paul Ferrand, 1948-1987.",
+                  "label": "Son frère"
+                }
+              ]
+            }
+          },
+          "questions": [
+            {
+              "id": "Q1",
+              "points": 20,
+              "text": "Qui a fait tomber Bernard Faure ?",
+              "choices": [
+                "Roger Ferrand",
+                "Hervé Vallenot",
+                "Marcel Roussillon",
+                "Marcel Chaptal",
+                "Ahmed Bensaïd",
+                "Personne, c'est un accident"
+              ],
+              "answer": "Roger Ferrand"
+            },
+            {
+              "id": "Q2",
+              "points": 20,
+              "text": "Pourquoi Bernard Faure était-il à Ferréol le 16 au soir ?",
+              "choices": [
+                "Pour remettre son dossier à la presse",
+                "Pour toucher de l'argent de Roger Ferrand",
+                "Pour constater des travaux illégaux",
+                "Pour y retrouver Marcel Chaptal"
+              ],
+              "answer": "Pour toucher de l'argent de Roger Ferrand"
+            },
+            {
+              "id": "Q3",
+              "points": 20,
+              "text": "Qui a laissé Bernard Faure mourir sans appeler les secours ?",
+              "choices": [
+                "Roger Ferrand, seul",
+                "Hervé Vallenot",
+                "Marcel Roussillon",
+                "Ahmed Bensaïd",
+                "Personne, il est mort sur le coup"
+              ],
+              "answer": "Hervé Vallenot"
+            },
+            {
+              "id": "Q4",
+              "points": 10,
+              "text": "Où sont passées les 2 600 tonnes de terres polluées ?",
+              "choices": [
+                "Sous les dalles neuves de Ferréol",
+                "Sous le parking-relais de Bellevue",
+                "À la casse Berthet",
+                "Nulle part : elles n'ont jamais existé"
+              ],
+              "answer": "Sous les dalles neuves de Ferréol"
+            },
+            {
+              "id": "Q5",
+              "points": 10,
+              "text": "Qui a fait classer l'affaire en accident ?",
+              "choices": [
+                "Marcel Roussillon",
+                "Hervé Vallenot",
+                "Le Dr Lacour, seul",
+                "Le commissaire Borel, de sa propre initiative"
+              ],
+              "answer": "Marcel Roussillon"
+            },
+            {
+              "id": "Q6",
+              "points": 10,
+              "text": "Qui a écrit la lettre du « fantôme » ?",
+              "choices": [
+                "Marcel Chaptal",
+                "Ahmed Bensaïd",
+                "Bernard Faure",
+                "Colette Faure"
+              ],
+              "answer": "Marcel Chaptal"
+            },
+            {
+              "id": "BONUS",
+              "points": 5,
+              "text": "Qui porte la salamandre ?",
+              "choices": [
+                "Marcel Roussillon",
+                "Hervé Vallenot",
+                "Roger Ferrand",
+                "Le Dr Lacour"
+              ],
+              "answer": "Marcel Roussillon"
+            }
+          ],
+          "ranks": [
+            {
+              "min": 80,
+              "label": "Réussite majeure"
+            },
+            {
+              "min": 60,
+              "label": "Réussite"
+            },
+            {
+              "min": 40,
+              "label": "Demi-succès"
+            },
+            {
+              "min": 0,
+              "label": "Échec"
+            }
+          ],
+          "endings": [
+            {
+              "id": "une",
+              "when": {
+                "Q1": true,
+                "Q2": true,
+                "Q3": true
+              },
+              "title": "La une",
+              "headline": "Ferréol : le fantôme avait un radiotéléphone",
+              "text": "Samedi 27 novembre, la page des Affaires occultes n'est pas en page 14. Elle est en une, sous un titre de Jean-Loup, qui n'aime pas qu'on lui dise non : « Ferréol : le fantôme avait un radiotéléphone ».\n\nRoger Ferrand est mis en examen pour homicide involontaire. Il ne dit presque rien, sauf une phrase au juge, rapportée par Igier : « Je l'ai poussé. Après, c'est l'autre qui a décidé. » Hervé Vallenot est mis en examen pour non-assistance à personne en danger. Ses avocats parlent d'un « malentendu dramatique ». Le Groupe Vallenot annule sa page de publicité du jeudi.\n\nL'article ne cache rien de Bernard Faure. Colette appelle la rédaction le lundi. Elle ne crie pas. Elle demande seulement si c'était nécessaire. Mathilde répond que oui. Elle raccroche, et reste longtemps sans rallumer sa cigarette.",
+              "music": "fin-une"
+            },
+            {
+              "id": "martyr",
+              "when": {
+                "Q1": true,
+                "Q3": true,
+                "Q2": false
+              },
+              "title": "Le martyr",
+              "headline": "Mort pour avoir voulu parler",
+              "text": "Samedi 27 novembre, l'article fait de Bernard Faure un lanceur d'alerte, mort pour avoir voulu dénoncer un scandale. Ferrand et Vallenot sont mis en examen. La ville organise une minute de silence devant la mairie.\n\nTrois semaines plus tard, l'avocat de Ferrand produit devant le juge les relevés de Faure et les retraits « B.F. ». Un quotidien concurrent titre sur « le martyr qui se faisait payer ». Le Stéphanois publie un rectificatif en page 2. Jean-Loup ne dit rien, ce qui est pire.\n\nColette Faure ne répond plus au téléphone. Sur la tombe de Bernard, quelqu'un a laissé une enveloppe vide.",
+              "music": "fin-martyr"
+            },
+            {
+              "id": "promoteur",
+              "when": {
+                "Q1": true,
+                "Q3": false
+              },
+              "title": "Le promoteur",
+              "headline": "Ferréol : le patron de BTP mis en examen",
+              "text": "Samedi 27 novembre, l'article tient debout : Roger Ferrand a poussé Bernard Faure, et il est mis en examen pour homicide involontaire. Il se tait. Il se taira jusqu'au procès.\n\nPersonne ne parle de la Safrane, ni des quatre mégots. Hervé Vallenot se déclare « profondément choqué » et « solidaire de la famille ». Le jeudi suivant, sa page de publicité paraît comme d'habitude dans le Stéphanois, avec une photo de la maquette de Ferréol : des arbres en éponge verte, de petits personnages qui ne vont nulle part.\n\nÀ Ferréol, quelqu'un a balayé la calamine près de la porte de l'atelier. Les traces de doigts ont disparu. Personne ne sait qui.",
+              "music": "fin-promoteur"
+            },
+            {
+              "id": "dementi",
+              "when": {
+                "Q1": false
+              },
+              "title": "Le démenti",
+              "headline": "Le fantôme de Ferréol n'a pas dit son dernier mot",
+              "text": "L'article paraît le samedi 27 novembre. Le lundi, la mairie publie un communiqué : l'enquête de police a conclu à un accident, et « certains journalistes feraient mieux de s'en tenir aux fantômes ». Le Groupe Vallenot menace de retirer sa publicité de tous les titres du groupe.\n\nJean-Loup convoque Mathilde. La porte reste fermée une heure. En sortant, elle dit seulement : « Admettons. »\n\nÀ Ferréol, la dalle a séché. Le chantier reprend en janvier.",
+              "music": "fin-dementi"
+            }
+          ],
+          "complements": {
+            "Q4": {
+              "right": "Les terres polluées sont retrouvées sous les dalles : la préfecture fait tout rouvrir, et le chantier de Ferréol est arrêté pour deux ans.",
+              "wrong": "Personne ne soulève les dalles. La pépinière d'entreprises ouvre en 1995, sur 2 600 tonnes de terre qui sent le gasoil."
+            },
+            "Q5": {
+              "right": "Marcel Roussillon démissionne « pour raisons de santé ». Le commissaire Borel est muté à Montluçon.",
+              "wrong": "Marcel Roussillon est réélu en 1995. Il porte toujours sa chevalière."
+            },
+            "Q6": {
+              "right": "Marcel Chaptal ne sera pas poursuivi pour ses lettres. Il repeint lui-même le mur est, en blanc. Le fondeur ne revient plus.",
+              "wrong": "Le Bureau reçoit encore deux lettres du « fantôme » en décembre. Karim les garde dans un tiroir, au cas où."
+            }
+          },
+          "epilogue": "Le lundi suivant, au courrier du Bureau, une enveloppe sans timbre, déposée à l'accueil du siège. Dedans, une carte de bristol blanc, sans un mot. Juste un dessin à l'encre, très fin : une salamandre dans les flammes. Au dos, une devise en latin : Nutrisco et extinguo.\n\nOdile la regarde longtemps. « Je l'ai déjà vue quelque part. » Elle ne dit pas où.",
+          "weather": "pluie",
+          "calendar": {
+            "days": [
+              "Vendredi 19 novembre",
+              "Lundi 22 novembre",
+              "Mardi 23 novembre",
+              "Mercredi 24 novembre"
+            ],
+            "slots": [
+              "9 h",
+              "11 h",
+              "14 h",
+              "16 h"
+            ],
+            "deadline": "Jeudi 25 novembre, 18 h : bouclage"
+          },
+          "solution": "Bernard Faure faisait chanter Roger Ferrand, qui enterrait sous des dalles neuves les terres polluées qu'il était payé pour évacuer. Le mardi 16 novembre, Faure vient à Ferréol toucher un dernier paiement. Ils se disputent sur la passerelle de l'atelier de forge, et Ferrand le pousse. Faure survit à la chute. Ferrand appelle Hervé Vallenot depuis la cabane du gardien. Vallenot arrive, voit que Faure respire encore et refuse d'appeler les secours. Il fume quatre cigarillos à côté de lui, puis ils maquillent la chute et s'en vont. Faure meurt vers minuit en rampant vers la porte. Le lendemain, Marcel Roussillon fait classer l'affaire. La lettre du fantôme, elle, était de Marcel Chaptal."
+        }
+      ]
+    },
+    {
+      "id": "nyons",
+      "name": "Nyons",
+      "status": "coming_soon",
+      "cases": []
+    },
+    {
+      "id": "lyon",
+      "name": "Lyon",
+      "status": "coming_soon",
+      "cases": []
+    },
+    {
+      "id": "annecy",
+      "name": "Annecy",
+      "status": "coming_soon",
+      "cases": []
+    },
+    {
+      "id": "marseille",
+      "name": "Marseille",
+      "status": "coming_soon",
+      "cases": []
+    },
+    {
+      "id": "paris",
+      "name": "Paris",
+      "status": "coming_soon",
+      "cases": []
+    },
+    {
+      "id": "rennes",
+      "name": "Rennes",
+      "status": "coming_soon",
+      "cases": []
+    },
+    {
+      "id": "bordeaux",
+      "name": "Bordeaux",
+      "status": "coming_soon",
+      "cases": []
+    },
+    {
+      "id": "perpignan",
+      "name": "Perpignan",
+      "status": "coming_soon",
+      "cases": []
+    },
+    {
+      "id": "montpellier",
+      "name": "Montpellier",
+      "status": "coming_soon",
+      "cases": []
+    },
+    {
+      "id": "strasbourg",
+      "name": "Strasbourg",
+      "status": "coming_soon",
+      "cases": []
+    },
+    {
+      "id": "besancon",
+      "name": "Besançon",
+      "status": "coming_soon",
+      "cases": []
+    },
+    {
+      "id": "orleans",
+      "name": "Orléans",
+      "status": "coming_soon",
+      "cases": []
+    },
+    {
+      "id": "bourges",
+      "name": "Bourges",
+      "status": "coming_soon",
+      "cases": []
+    }
+  ],
+  "credits": [
+    {
+      "title": "Conception et écriture",
+      "lines": [
+        "À compléter : votre nom"
+      ]
+    },
+    {
+      "title": "Illustrations",
+      "lines": [
+        "À compléter"
+      ]
+    },
+    {
+      "title": "Sons et musiques",
+      "lines": [
+        "À compléter : auteurs, sources et licences de chaque son"
+      ]
+    },
+    {
+      "title": "Programmation",
+      "lines": [
+        "Avec l'aide de Claude (Anthropic)"
+      ]
+    },
+    {
+      "title": "Polices de caractères",
+      "lines": [
+        "Special Elite, par Astigmatic",
+        "Lora, par Cyreal",
+        "IBM Plex Mono, par IBM",
+        "Sous licences libres (SIL Open Font License, Apache 2.0), via Google Fonts"
+      ]
+    },
+    {
+      "title": "Remerciements",
+      "lines": [
+        "Aux testeuses et testeurs."
+      ]
+    }
+  ],
+  "prologue": {
+    "entete": "Groupe Sarrazin · Direction générale · 14, cours Lafayette · Lyon",
+    "date": "Lyon, le 4 octobre 1993",
+    "de": "Jean-Loup Sarrazin, président-directeur général",
+    "a": "Mathilde Vernet",
+    "copie": "Yves Barral, Karim Haddou, Odile Perrichon",
+    "objet": "Création de la rubrique « Les Affaires occultes »",
+    "corps": [
+      "Mathilde,",
+      "Nos études sont formelles : le lecteur du samedi veut du mystère. À compter du 6 novembre, nos quatorze quotidiens publieront chaque samedi une page commune, « Les Affaires occultes » : maisons hantées, guérisseurs, phénomènes inexpliqués. Le concept est simple, la cible est large.",
+      "Vous en aurez la responsabilité. Vous disposerez de l'ancienne salle des archives, au quatrième étage, d'Yves Barral pour les photos, et de Karim Haddou, stagiaire, qui s'est porté volontaire. Odile Perrichon, aux archives, reste à votre disposition.",
+      "Chaque semaine, vous partirez là où nos lecteurs signalent quelque chose d'étrange. Vous serez hébergés par la rédaction locale. Le bouclage est le jeudi à 18 heures. Les notes de frais seront examinées une par une.",
+      "Je compte sur vous pour me faire du fantôme, pas de la politique. On est d'accord ?"
+    ],
+    "signature": "J.-L. S.",
+    "annotation": "Admettons. M. V.",
+    "equipe": [
+      {
+        "id": "mathilde",
+        "nom": "Mathilde Vernet",
+        "role": "Cheffe du Bureau",
+        "texte": "Dix ans au service police-justice. Mise au placard en 1991, après un article que le groupe a dû démentir. Elle n'a jamais cru à ce démenti."
+      },
+      {
+        "id": "yves",
+        "nom": "Yves Barral",
+        "role": "Photographe",
+        "texte": "Vingt-cinq ans dans les agences parisiennes. Ne croit qu'à ses négatifs, et remarque les visages qui reviennent."
+      },
+      {
+        "id": "karim",
+        "nom": "Karim Haddou",
+        "role": "Stagiaire",
+        "texte": "Sorti de l'école de journalisme de Lille. Lit tout sur les phénomènes inexpliqués, et y croit un peu."
+      },
+      {
+        "id": "odile",
+        "nom": "Odile Perrichon",
+        "role": "Documentaliste",
+        "texte": "Aux archives du groupe depuis 1964. Se souvient de tout, et de qui on a fait taire."
+      }
+    ],
+    "vous": "Vous êtes l'équipe. Vous choisissez où aller, qui interroger, et ce qui sera publié."
+  }
+}
