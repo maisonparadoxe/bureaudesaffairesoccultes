@@ -247,7 +247,7 @@ Mathilde : « Vous êtes arrivé vers six heures, donc. »
 ])
 
 piste("lacour2", """
-Vous racontez à {{p:lacour|Lacour}} ce qu'a vu le gardien : le corps près de la porte, à deux mètres de l'escalier, les yeux ouverts. Il ferme la porte du cabinet. Il ne dit plus « classique ».
+Vous racontez à {{p:lacour|Lacour}} ce qu'a vu le gardien : le corps près de la porte, à deux mètres de l'escalier, les yeux ouverts. Il ferme la porte du cabinet. Pour la première fois, il ne regarde pas sa montre.
 
 « La rigidité, les lividités… Il est mort entre minuit et une heure. Pas à dix heures. » Il enlève ses lunettes. « Il n'est pas mort sur le coup. Il a mis longtemps. Deux heures, peut-être. Il a dû avoir froid. »
 

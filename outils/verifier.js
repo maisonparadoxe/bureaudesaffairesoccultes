@@ -65,6 +65,8 @@ data.cities.filter((c) => c.status === "available").forEach((city) => {
       const w = "piste " + c.id;
       if (!locs.has(c.locationId)) err(w, "lieu inconnu");
       (c.requires || []).concat(c.requiresAny || []).forEach((r) => clues.has(r) || err(w, "débloquée par une piste inconnue « " + r + " »"));
+      if (c.follows && !clues.has(c.follows)) err(w, "suite d'une piste inconnue « " + c.follows + " »");
+      if (c.follows && (!c.buttonAlone || !c.titleAlone)) err(w, "suite sans bouton ni titre pour le cas où le premier entretien n'a pas eu lieu");
       if (c.puzzle && !puzzles[c.puzzle]) err(w, "puzzle inconnu « " + c.puzzle + " »");
       checkText(w, c.text);
       checkFacts(w, c.facts);
@@ -101,7 +103,11 @@ data.cities.filter((c) => c.status === "available").forEach((city) => {
         (c.revealsLocations || []).forEach((x) => k.l.add(x));
         if (c.puzzle && solved.has(c.puzzle)) absorb(puzzles[c.puzzle].result);
       });
-      minitel.forEach((i) => (cs.minitel[i].reveals || []).forEach((key) => k[key[0]].add(key.slice(2))));
+      minitel.forEach((i) => {
+        const e = cs.minitel[i];
+        if (e.about && !k[e.about[0]].has(e.about.slice(2))) return;
+        (e.reveals || []).forEach((key) => k[key[0]].add(key.slice(2)));
+      });
       k.p.forEach((id) => {
         const ch = chars.get(id);
         if (ch && ch.locationId && !ch.minitel) k.l.add(ch.locationId);
@@ -119,6 +125,7 @@ data.cities.filter((c) => c.status === "available").forEach((city) => {
     }
     const available = (c, k, read) =>
       k.l.has(c.locationId) &&
+      !cs.clues.some((x) => x.follows === c.id && read.has(x.id)) &&
       (c.requires || []).every((r) => read.has(r)) &&
       (!c.requiresAny || c.requiresAny.some((r) => read.has(r)));
 
@@ -143,6 +150,7 @@ data.cities.filter((c) => c.status === "available").forEach((city) => {
     cs.characters.forEach((ch) => all.k.p.has(ch.id) || warn("personnage " + ch.id, "jamais mentionné"));
     docs.forEach((d, id) => all.k.d.has(id) || warn("pièce " + id, "jamais trouvée"));
     cs.clues.forEach((c) => all.read.has(c.id) || err("piste " + c.id, "inaccessible"));
+    (cs.minitel || []).forEach((e, i) => e.about && !chars.has(e.about.slice(2)) && err("minitel " + i, "rattaché à une personne inconnue « " + e.about + " »"));
 
     if (cs.referencePath) {
       const read = new Set(), solved = new Set(), minitel = new Set();

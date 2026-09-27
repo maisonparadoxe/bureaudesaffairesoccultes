@@ -129,15 +129,48 @@
     }, ms);
   }
 
+  // Les musiques en boucle ne se contentent pas de repartir au début : quelques
+  // secondes avant la fin, une nouvelle lecture démarre en fondu pendant que
+  // l'ancienne s'éteint. Pas de coupure, même avec un morceau qui a une vraie fin.
+  const FONDU_BOUCLE = 4;
+  function watchLoop(m) {
+    const el = m.el;
+    const onTime = () => {
+      if (music !== m || m.el !== el) return el.removeEventListener("timeupdate", onTime);
+      const d = el.duration;
+      if (!d || !isFinite(d)) return;
+      if (d < FONDU_BOUCLE * 3) {
+        el.removeEventListener("timeupdate", onTime);
+        el.loop = true;
+        return;
+      }
+      if (el.currentTime < d - FONDU_BOUCLE) return;
+      el.removeEventListener("timeupdate", onTime);
+      const next = make("musiques/" + m.name, false);
+      if (!next) return;
+      next.volume = 0;
+      next.play().catch(() => {});
+      fade(next, vol("musique"), FONDU_BOUCLE * 1000);
+      fade(el, 0, FONDU_BOUCLE * 1000, () => el.pause());
+      m.el = next;
+      watchLoop(m);
+    };
+    el.addEventListener("timeupdate", onTime);
+  }
+
   function setMusic(name, loop) {
     if (music && music.name === name) return;
     const old = music;
     music = null;
-    if (old) fade(old.el, 0, 900, () => old.el.pause());
+    if (old) {
+      const oldEl = old.el;
+      fade(oldEl, 0, 900, () => oldEl.pause());
+    }
     if (!name) return;
-    const el = make("musiques/" + name, loop !== false);
+    const el = make("musiques/" + name, false);
     if (!el) return;
     music = { name: name, el: el };
+    if (loop !== false) watchLoop(music);
     el.volume = 0;
     if (unlocked) {
       el.play().catch(() => {});

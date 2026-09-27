@@ -782,3 +782,59 @@ body.menu-mode #pluie { z-index: 3; }
   .memo-annotation { left: 20px; }
   .equipe-grille { grid-template-columns: 1fr; }
 }
+
+/* Le cercle du lieu sélectionné tourne sur lui-même, et non autour du centre du plan */
+.pin-ring { transform-box: fill-box; transform-origin: center; }
+
+/* ---------- Le plan dessiné de la ville ---------- */
+.city-map-svg.plan-dessine { max-height: 72vh; background: none; }
+.plan-papier { fill: #EDE4CB; }
+.plan-dessine .plan-decor, .plan-dessine .plan-cadre, .plan-dessine .plan-cadre-fin, .plan-dessine .plan-grille,
+.plan-dessine .plan-repere, .plan-dessine .plan-cartouche, .plan-dessine .zone-label, .plan-dessine .pin-nom { pointer-events: none; }
+.plan-dessine .zone-group { cursor: pointer; outline: none; }
+.plan-dessine .zone-fond { fill: #E4D8B8; transition: fill 0.2s ease; }
+.plan-dessine .ilot { fill: rgba(82, 74, 62, 0.13); }
+.plan-dessine .zone-ilots { pointer-events: none; }
+.plan-dessine .zone-shape { fill: transparent; stroke: rgba(42, 38, 32, 0.55); stroke-width: 1.4; transition: stroke 0.2s ease, stroke-width 0.2s ease, fill 0.2s ease; }
+.plan-dessine .zone-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; fill: var(--ink); paint-order: stroke; stroke: #E4D8B8; stroke-width: 4px; }
+.plan-dessine .zone-empty .zone-fond { fill: #E9E0C6; }
+.plan-dessine .zone-empty .zone-label { fill: var(--muted); }
+.plan-dessine .zone-group:hover .zone-fond, .plan-dessine .zone-group:focus-visible .zone-fond { fill: #EAD9A8; }
+.plan-dessine .zone-group:hover .zone-shape, .plan-dessine .zone-group:focus-visible .zone-shape { stroke: var(--stamp-red); stroke-width: 2.6; fill: rgba(154, 43, 37, 0.07); }
+.plan-dessine .zone-group:hover .zone-label { fill: var(--stamp-red); }
+.plan-dessine .zone-selected .zone-shape { stroke: var(--stamp-red); stroke-width: 3; stroke-dasharray: 7 4; fill: rgba(154, 43, 37, 0.09); }
+.plan-dessine .zone-selected .zone-label { fill: var(--stamp-red); }
+.plan-route-bord { fill: none; stroke: rgba(42, 38, 32, 0.45); stroke-width: 9; stroke-linecap: round; }
+.plan-route { fill: none; stroke: #F4EEDD; stroke-width: 6.5; stroke-linecap: round; }
+.plan-tram { fill: none; stroke: rgba(42, 38, 32, 0.7); stroke-width: 1.2; stroke-dasharray: 5 4; }
+.plan-rail { fill: none; stroke: #3A342C; stroke-width: 2.4; }
+.plan-rail-traverses { fill: none; stroke: #3A342C; stroke-width: 8; stroke-dasharray: 1.3 7; }
+.plan-riviere { fill: none; stroke: #6F8594; stroke-width: 3.5; stroke-dasharray: 2 5; stroke-linecap: round; opacity: 0.8; }
+.plan-legende { font-family: var(--font-body); font-style: italic; font-size: 11px; fill: #3B4E5C; paint-order: stroke; stroke: #EDE4CB; stroke-width: 3px; }
+.plan-legende-road, .plan-legende-rail { fill: var(--ink-soft); font-style: normal; font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.08em; }
+.plan-cadre { fill: none; stroke: var(--ink); stroke-width: 2; }
+.plan-cadre-fin { fill: none; stroke: var(--ink); stroke-width: 0.6; }
+.plan-grille { stroke: rgba(42, 38, 32, 0.12); stroke-width: 0.8; }
+.plan-repere { font-family: var(--font-mono); font-size: 8.5px; fill: var(--ink-soft); }
+.plan-cartouche > rect { fill: #F4EEDD; stroke: var(--ink); stroke-width: 1.4; }
+.plan-cartouche .plan-cartouche-fin { fill: none; stroke-width: 0.6; }
+.plan-titre { font-family: var(--font-display); font-size: 17px; fill: var(--ink); }
+.plan-sous-titre { font-family: var(--font-mono); font-size: 8.5px; letter-spacing: 0.06em; fill: var(--ink-soft); }
+.plan-rose path { fill: var(--ink); }
+.plan-rose .plan-rose-clair { fill: none; stroke: var(--ink); stroke-width: 0.8; }
+.plan-rose text { font-family: var(--font-mono); font-size: 8px; fill: var(--ink); }
+/* Les lieux : des punaises */
+.plan-dessine .pin-ombre { fill: rgba(0, 0, 0, 0.25); }
+.plan-dessine .pin-circle { fill: #2E6B3A; stroke: #1C4424; stroke-width: 1.2; }
+.plan-dessine .pin-group.pin-visited .pin-circle { fill: var(--stamp-red); stroke: #6A1C18; }
+.plan-dessine .pin-group:hover .pin-circle { fill: #3E8A4D; stroke: var(--ink); }
+.plan-dessine .pin-group.pin-visited:hover .pin-circle { fill: #B8392F; }
+.plan-dessine .pin-reflet { fill: rgba(255, 255, 255, 0.55); pointer-events: none; }
+.plan-dessine .pin-nom { font-family: var(--font-mono); font-size: 9.5px; fill: var(--ink); paint-order: stroke; stroke: #EDE4CB; stroke-width: 3.5px; stroke-linejoin: round; }
+.plan-dessine .pin-group:hover .pin-nom, .plan-dessine .pin-active .pin-nom { font-weight: 600; }
+.city-map-wrap:has(.plan-dessine) .dot-todo { background: #2E6B3A; border-color: #1C4424; }
+
+.plan-dessine .zone-dehors .zone-fond { fill: #E6DCC0; }
+.plan-dessine .zone-dehors .zone-shape { stroke-dasharray: 3 3; }
+.plan-dessine .zone-dehors .zone-ilots { opacity: 0.45; }
+.plan-legende-note { font-family: var(--font-mono); font-style: normal; font-size: 9px; letter-spacing: 0.04em; fill: var(--ink-soft); }

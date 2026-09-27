@@ -40,7 +40,7 @@ Si vous ne deviez en faire qu'une partie, dans cet ordre :
 - **Format :** `.mp3`, 44,1 kHz, 128 kbit/s. Les ambiances peuvent être en mono.
 - **Volume :** tous les fichiers normalisés au même niveau (par exemple −16 LUFS pour les ambiances et musiques, crête à −3 dB pour les effets). Le joueur règle ensuite trois volumes séparés.
 - **Effets :** coupés court, sans silence au début (le son doit partir dès le clic).
-- **Boucles :** les fichiers marqués « boucle » doivent se répéter sans coupure audible.
+- **Boucles :** pour les musiques, le jeu enchaîne lui-même la fin et le début en fondu : un morceau Suno avec une vraie fin convient. Pour les ambiances, le fichier doit se répéter sans coupure audible.
 - **Ni voix ni chanson de l'époque.**
 - **Sons trouvés en ligne :** vérifiez la licence de chacun (idéalement libre de droits, CC0). Notez la source : elle devra figurer dans les crédits.
 
@@ -129,8 +129,8 @@ Style d'ensemble : une formation jazz feutrée (contrebasse, piano électrique, 
 
 | Fichier | Durée | Boucle | Contenu et moment |
 | --- | --- | --- | --- |
-| `menu.mp3` | 1 min 30 à 3 min | oui | La musique de l'écran titre, sous la pluie : la plus soignée du jeu, c'est la première chose qu'on entend. Nocturne, un piano électrique seul ou presque, une contrebasse qui entre plus tard. Joue aussi sur les écrans Options et Crédits. |
-| `theme-principal.mp3` | 1 à 2 min | oui | Le thème du jeu, mélancolique, contrebasse et piano électrique, en variation plus sobre que la musique du menu. Choix de la ville et de l'affaire, fiche de l'enquêteur. |
+| `menu.mp3` (fait) | 1 min 30 à 3 min | oui | La musique de l'écran titre, sous la pluie : la plus soignée du jeu, c'est la première chose qu'on entend. Nocturne, un piano électrique seul ou presque, une contrebasse qui entre plus tard. Joue aussi sur les écrans Options et Crédits. |
+| `theme-principal.mp3` (fait) | 1 à 2 min | oui | Le thème du jeu, mélancolique, contrebasse et piano électrique, en variation plus sobre que la musique du menu. Choix de la ville et de l'affaire, fiche de l'enquêteur. |
 | `intro-affaire.mp3` | 40 à 60 s | non | Plus tendu, s'éteint doucement. Pendant la lecture de l'intro. |
 | `enquete-fond.mp3` | 2 à 3 min | oui | Une nappe presque imperceptible sous les ambiances pendant l'enquête. Si elle gêne en test, laissez-la vide. |
 | `tension.mp3` | 1 min | oui | Une pulsation grave, une note tenue. Remplace la nappe quand il reste 3 pistes ou moins. |
@@ -156,13 +156,13 @@ Style d'ensemble : une formation jazz feutrée (contrebasse, piano électrique, 
 ## 2.1 Portraits (`img/portraits/`) : 14 fichiers
 
 **Format :** JPG, **600 × 900 px** (format 2:3, celui de ChatGPT : l'image de 1024 × 1536 qu'il produit se réduit sans recadrage), vertical, sujet cadré en buste, visage au tiers supérieur. Le jeu les affiche comme une photo punaisée (grande dans la fiche du carnet, minuscule dans la liste).
-**Style retenu :** photo de presse argentique en noir et blanc, 1993. Grain fort, flash direct avec ombre portée, mur gris clair uni, tirage un peu abîmé. Visages ordinaires, jamais retouchés. **Déjà fait :** `ferrand.jpg`, qui sert de référence de style.
+**Style retenu :** photo de presse argentique en noir et blanc, 1993. Grain fort, flash direct avec ombre portée, mur gris clair uni, tirage un peu abîmé. Visages ordinaires, jamais retouchés. **Déjà fait :** les 14 portraits de Saint-Étienne sont dans le jeu. `ferrand.jpg` sert de référence de style pour les suivants.
 
 **Prompt de base pour ChatGPT** (garder le bloc STYLE identique, ne changer que le bloc PERSONNAGE, et générer tous les portraits d'une affaire dans la même conversation) :
 
 ```
 Photographie argentique en noir et blanc, prise en France en novembre 1993.
-Portrait vertical (format 2:3), cadré en buste, le visage dans le tiers supérieur de l'image, regard vers l'objectif ou légèrement à côté.
+Portrait vertical (format 2:3), cadré de la tête au haut du buste, le visage dans le tiers supérieur de l'image, regard vers l'objectif ou légèrement à côté. Les mains ne sont pas visibles : hors du cadre, ou dans les poches.
 
 STYLE :
 - Film Kodak Tri-X 400 poussé, grain très visible, contrastes durs, noirs profonds.
@@ -176,7 +176,7 @@ STYLE :
 - Ne pas ressembler à une personne réelle ou connue.
 
 PERSONNAGE :
-[Nom, âge, métier. Deux ou trois traits physiques précis. Vêtements. Une attitude ou un détail qui raconte quelque chose. Mains posées l'une sur l'autre ou bras le long du corps.]
+[Nom, âge, métier. Deux ou trois traits physiques précis. Vêtements. Une attitude ou un détail qui raconte quelque chose, sans passer par les mains.]
 ```
 
 
@@ -199,7 +199,7 @@ PERSONNAGE :
 
 ## 2.2 L'équipe du Bureau (`img/equipe/`) : 4 fichiers
 
-**Format :** identique aux portraits, JPG **600 × 900 px**, même style. Ils s'affichent sur les fiches de l'équipe, sous la note de service du début de partie.
+**Format :** identique aux portraits, JPG **600 × 900 px**, même style. **Déjà fait :** les quatre portraits sont dans le jeu. Ils s'affichent sur les fiches de l'équipe, sous la note de service du début de partie.
 
 | Fichier | Personnage | À représenter |
 | --- | --- | --- |

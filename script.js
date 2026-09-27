@@ -395,8 +395,12 @@
       if (pz && state.puzzlesSolved.has(clue.puzzle)) absorb(pz.result);
     });
 
+    // Une adresse trouvée au Minitel ne mène quelque part que si l'enquête a déjà parlé
+    // de cette personne. Si elle en parle plus tard, l'adresse notée sert aussitôt.
     (cs.minitel || []).forEach((entry, i) => {
-      if (state.minitelFound.has(i)) (entry.reveals || []).forEach((key) => k[key[0]].add(key.slice(2)));
+      if (!state.minitelFound.has(i)) return;
+      if (entry.about && !k[entry.about[0]].has(entry.about.slice(2))) return;
+      (entry.reveals || []).forEach((key) => k[key[0]].add(key.slice(2)));
     });
 
     // Connaître quelqu'un, c'est savoir où le trouver, sauf s'il faut
@@ -412,8 +416,22 @@
     return k;
   }
 
+  // Un entretien de suite peut se faire sans le premier : il porte alors un autre titre,
+  // et une fois fait, le premier entretien n'a plus lieu d'être.
+  function followUpRead(clue) {
+    return currentCase().clues.some((c) => c.follows === clue.id && state.readClueIds.has(c.id));
+  }
+  function clueTitle(clue) {
+    return clue.follows && clue.titleAlone && !state.readClueIds.has(clue.follows) ? clue.titleAlone : clue.title;
+  }
+  function clueButton(clue) {
+    if (clue.follows && clue.buttonAlone && !state.readClueIds.has(clue.follows)) return clue.buttonAlone;
+    return clue.button || clue.title;
+  }
+
   function clueAvailable(clue, k) {
     if (!k.l.has(clue.locationId)) return false;
+    if (!state.readClueIds.has(clue.id) && followUpRead(clue)) return false;
     if ((clue.requires || []).some((r) => !state.readClueIds.has(r))) return false;
     if (clue.requiresAny && !clue.requiresAny.some((r) => state.readClueIds.has(r))) return false;
     return true;
@@ -440,7 +458,7 @@
     Array.from(state.readClueIds).forEach((id) => {
       const clue = clueById(id);
       if (!clue) return;
-      (clue.facts || []).forEach((f) => push(f, clue.title, clue.id));
+      (clue.facts || []).forEach((f) => push(f, clueTitle(clue), clue.id));
       const pz = puzzleOf(clue);
       if (pz && state.puzzlesSolved.has(clue.puzzle)) (pz.facts || []).forEach((f) => push(f, pz.title, clue.id));
     });
@@ -486,7 +504,7 @@
       newCharacters: names.p,
       newLocations: names.l,
       newDocuments: names.d,
-      unlocked: unlocked.map((id) => clueById(id).button || clueById(id).title),
+      unlocked: unlocked.map((id) => clueButton(clueById(id))),
       struck: after.struck - before.struck
     };
   }
@@ -1204,8 +1222,89 @@
     return cluesForLocation(locationId).some((c) => state.readClueIds.has(c.id));
   }
 
+  // Plan dessiné : quartiers aux vrais contours, décor de la ville, quadrillage et cartouche.
+  function buildPlanSVG(k) {
+    const cs = currentCase();
+    const P = cs.plan;
+    const esc = escapeHtml;
+    const angles = [8, -14, 22, -4, 15, -22, 3, -10, 18];
+    let defs = "";
+    let zones = "";
+    cs.quartiers.forEach((q, i) => {
+      defs +=
+        '<pattern id="ilots-' + q.id + '" width="30" height="22" patternUnits="userSpaceOnUse" patternTransform="rotate(' + angles[i % angles.length] + ')">' +
+        '<rect x="2" y="2" width="12" height="8" class="ilot"/><rect x="17" y="2" width="11" height="8" class="ilot"/>' +
+        '<rect x="2" y="13" width="7" height="7" class="ilot"/><rect x="12" y="13" width="16" height="7" class="ilot"/></pattern>';
+      const hasKnown = cs.locations.some((l) => l.quartier === q.id && k.l.has(l.id));
+      zones +=
+        '<g data-zone="' + q.id + '" class="zone-group' + (state.selectedQuartier === q.id ? " zone-selected" : "") + (hasKnown ? "" : " zone-empty") + (q.outside ? " zone-dehors" : "") +
+        '" tabindex="0" role="button" aria-label="Quartier ' + esc(q.name) + '">' +
+        '<path d="' + q.shape + '" class="zone-fond"/><path d="' + q.shape + '" fill="url(#ilots-' + q.id + ')" class="zone-ilots"/>' +
+        '<path d="' + q.shape + '" class="zone-shape"/>' +
+        '<text x="' + q.label.x + '" y="' + q.label.y + '" class="zone-label" text-anchor="middle"' +
+        (q.label.angle ? ' transform="rotate(' + q.label.angle + " " + q.label.x + " " + q.label.y + ')"' : "") + ">" + esc(q.name.toUpperCase()) + "</text></g>";
+    });
+    let decor = "";
+    let decorLabels = "";
+    (P.decor || []).forEach((d, i) => {
+      if (d.type === "road") decor += '<path d="' + d.d + '" class="plan-route-bord"/><path d="' + d.d + '" class="plan-route"/>';
+      if (d.type === "tram") decor += '<path d="' + d.d + '" class="plan-tram"/>';
+      if (d.type === "rail") decor += '<path d="' + d.d + '" class="plan-rail"/><path d="' + d.d + '" class="plan-rail-traverses"/>';
+      if (d.type === "river") decor += '<path d="' + d.d + '" class="plan-riviere"/>';
+      if (d.label && d.at)
+        decorLabels +=
+          '<text x="' + d.at[0] + '" y="' + d.at[1] + '" class="plan-legende plan-legende-' + d.type + '" transform="rotate(' + (d.angle || 0) + " " + d.at[0] + " " + d.at[1] + ')">' + esc(d.label) + "</text>";
+    });
+    // Quadrillage des plans-guides : colonnes A à F, lignes 1 à 6
+    let grille = '<rect x="12" y="12" width="876" height="576" class="plan-cadre"/><rect x="20" y="20" width="860" height="560" class="plan-cadre-fin"/>';
+    for (let c = 1; c < 6; c++) grille += '<line x1="' + (20 + c * 860 / 6) + '" y1="20" x2="' + (20 + c * 860 / 6) + '" y2="580" class="plan-grille"/>';
+    for (let r = 1; r < 6; r++) grille += '<line x1="20" y1="' + (20 + r * 560 / 6) + '" x2="880" y2="' + (20 + r * 560 / 6) + '" class="plan-grille"/>';
+    "ABCDEF".split("").forEach((l, c) => {
+      const x = 20 + (c + 0.5) * 860 / 6;
+      grille += '<text x="' + x + '" y="18" class="plan-repere" text-anchor="middle">' + l + '</text><text x="' + x + '" y="589" class="plan-repere" text-anchor="middle">' + l + "</text>";
+    });
+    for (let r = 0; r < 6; r++) {
+      const y = 20 + (r + 0.5) * 560 / 6 + 3;
+      grille += '<text x="16" y="' + y + '" class="plan-repere" text-anchor="middle">' + (r + 1) + '</text><text x="884" y="' + y + '" class="plan-repere" text-anchor="middle">' + (r + 1) + "</text>";
+    }
+    const cartouche =
+      '<g class="plan-cartouche"><rect x="46" y="40" width="236" height="112"/><rect x="51" y="45" width="226" height="102" class="plan-cartouche-fin"/>' +
+      '<text x="164" y="76" text-anchor="middle" class="plan-titre">' + esc(P.title || "") + "</text>" +
+      '<text x="164" y="94" text-anchor="middle" class="plan-sous-titre">' + esc(P.subtitle || "") + "</text>" +
+      '<g transform="translate(164 128)" class="plan-rose"><path d="M0,-16 L4,0 L0,16 L-4,0 Z"/><path d="M-16,0 L0,-3 L16,0 L0,3 Z" class="plan-rose-clair"/>' +
+      '<text x="0" y="-18" text-anchor="middle">N</text></g></g>';
+    const coords = {};
+    cs.locations.forEach((l) => (coords[l.id] = l.map));
+    let pins = "";
+    cs.locations.forEach((loc) => {
+      if (!k.l.has(loc.id)) return;
+      const c = coords[loc.id];
+      const visited = locationVisited(loc.id);
+      const active = state.selectedLocationId === loc.id;
+      const hasNew = cluesForLocation(loc.id).some((cl) => state.freshClueIds.has(cl.id) && clueAvailable(cl, k) && !state.readClueIds.has(cl.id));
+      const court = loc.short || loc.name.replace(/^(Ancienne |Café |Cabinet du |Cabinet |Chantier du |Consigne de la gare de )/, "").replace(/,.*$/, "");
+      pins +=
+        '<g data-loc="' + loc.id + '" class="pin-group' + (visited ? " pin-visited" : "") + (active ? " pin-active" : "") + (hasNew ? " pin-new" : "") +
+        '" tabindex="0" role="button" aria-label="' + esc(loc.name) + '"><circle cx="' + c.x + '" cy="' + c.y + '" r="20" class="pin-hitarea"/>' +
+        (active ? '<circle cx="' + c.x + '" cy="' + c.y + '" r="15" class="pin-ring"/>' : "") +
+        '<circle cx="' + (c.x + 1.5) + '" cy="' + (c.y + 2) + '" r="8" class="pin-ombre"/>' +
+        '<circle cx="' + c.x + '" cy="' + c.y + '" r="8" class="pin-circle"/><circle cx="' + (c.x - 2.5) + '" cy="' + (c.y - 2.5) + '" r="2.2" class="pin-reflet"/>' +
+        (hasNew ? '<circle cx="' + (c.x + 9) + '" cy="' + (c.y - 9) + '" r="4.5" class="pin-badge"/>' : "") +
+        '<text x="' + c.x + '" y="' + (c.y + 21) + '" text-anchor="middle" class="pin-nom">' + esc(court) + "</text>" +
+        "<title>" + esc(loc.name) + (visited ? " (déjà exploré)" : "") + "</title></g>";
+    });
+    const bg = mapImages[state.currentCityId]
+      ? '<image href="img/plans/' + state.currentCityId + '.jpg" x="0" y="0" width="900" height="600" preserveAspectRatio="xMidYMid slice" class="map-image"/>'
+      : "";
+    return (
+      '<svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg" class="city-map-svg plan-dessine' + (bg ? " has-map-image" : "") + '"><defs>' + defs + "<clipPath id=\"plan-cadre\"><rect x=\"20\" y=\"20\" width=\"860\" height=\"560\"/></clipPath></defs>" +
+      '<rect x="0" y="0" width="900" height="600" class="plan-papier"/>' + bg + zones + '<g class="plan-decor" clip-path="url(#plan-cadre)">' + decor + decorLabels + "</g>" + grille + cartouche + pins + "</svg>"
+    );
+  }
+
   function buildCityMapSVG(k) {
     const cs = currentCase();
+    if (cs.plan && cs.quartiers.every((q) => q.shape)) return buildPlanSVG(k);
     const rects = computeGenericZoneRects(cs);
     const coords = computeGenericLocationCoords(cs, rects);
     let zones = "";
@@ -1415,7 +1514,7 @@
         (state.lastResult && state.lastResult.clueId === clue.id ? " lead-current" : "");
       btn.innerHTML =
         '<span class="lead-kind">' + (clue.type === "entretien" ? "Entretien" : "Investigation") + "</span>" +
-        '<span class="lead-label">' + escapeHtml(clue.button || clue.title) + "</span>" +
+        '<span class="lead-label">' + escapeHtml(clueButton(clue)) + "</span>" +
         (read ? '<span class="already-read">déjà lu, gratuit</span>' : isNew ? '<span class="new-tag">nouveau</span>' : "");
       btn.addEventListener("click", () => selectClue(clue));
       list.appendChild(btn);
@@ -1492,7 +1591,7 @@
     const fax = animate && !!clue.fax;
     box.className = "clue-result" + (silence ? " clue-silence" : "") + (typing ? " clue-typing" : "");
     box.innerHTML =
-      '<div class="clue-title">' + escapeHtml(clue.title) + '</div><div class="clue-text">' +
+      '<div class="clue-title">' + escapeHtml(clueTitle(clue)) + '</div><div class="clue-text">' +
       renderParagraphs(clue.text, { fresh: new Set(r.fresh || []), links: true, knowledge: k, fax: clue.fax, printFax: fax }) +
       '</div><div class="stamp">Lu</div>' + discoveriesHTML(r);
     if (typing) setTimeout(() => typewrite(box.querySelector(".clue-text"), box), 0);
@@ -1886,6 +1985,10 @@
         lines = ["> " + query.toUpperCase()].concat(entry.lines);
         found = (entry.reveals || []).length > 0;
         state.minitelFound.add(i);
+        if (found && entry.about && !before.k[entry.about[0]].has(entry.about.slice(2))) {
+          found = false;
+          lines.push("(Ce nom n'apparaît nulle part dans votre dossier.)");
+        }
         A.play("outils/minitel-resultat", 500);
       }
       const after = snapshot();
@@ -2101,7 +2204,7 @@
       notes += "</ul>";
     }
     const seen = cluesMentioning(ent.key);
-    if (seen.length) notes += '<p class="journal-recap-label" style="margin-top:18px">Cité dans</p><p class="carnet-seen">' + seen.map((c) => escapeHtml(c.title)).join(" · ") + "</p>";
+    if (seen.length) notes += '<p class="journal-recap-label" style="margin-top:18px">Cité dans</p><p class="carnet-seen">' + seen.map((c) => escapeHtml(clueTitle(c))).join(" · ") + "</p>";
     page.innerHTML = head + notes;
 
     const target = ent.type === "l" ? obj.id : ent.type === "p" ? obj.locationId : null;
@@ -2138,7 +2241,7 @@
       entry.className = "journal-entry";
       entry.innerHTML =
         '<div class="journal-entry-head"><span class="journal-index">' + (i + 1) + '</span><span class="journal-loc">' + escapeHtml(loc.name) + " · " +
-        (clue.type === "entretien" ? "Entretien" : "Investigation") + '</span></div><div class="clue-title">' + escapeHtml(clue.title) + "</div>" +
+        (clue.type === "entretien" ? "Entretien" : "Investigation") + '</span></div><div class="clue-title">' + escapeHtml(clueTitle(clue)) + "</div>" +
         renderParagraphs(clue.text, { links: true, knowledge: k, fax: clue.fax });
       const go = document.createElement("button");
       go.className = "journal-goto";
@@ -2319,7 +2422,7 @@
       '<p class="score-line">Pistes lues : ' + e.leads + " (référence : " + cs.referenceLeads + ")" + (e.penalty ? " · pénalité −" + e.penalty : "") + "</p>" +
       '<p class="score-total">' + e.total + " / " + maxScore(cs) + ' <span class="score-rank">' + escapeHtml(e.rank) + "</span></p>" +
       '<details class="solution"><summary>Ce qui s\'est vraiment passé</summary><p>' + escapeHtml(cs.solution || "") + "</p><p class='solution-path'>Le chemin le plus court : " +
-      (cs.referencePath || []).map((id) => escapeHtml(clueById(id).title)).join(" → ") + "</p></details>";
+      (cs.referencePath || []).map((id) => { const c = clueById(id); return escapeHtml(c.follows && c.titleAlone && !cs.referencePath.includes(c.follows) ? c.titleAlone : c.title); }).join(" → ") + "</p></details>";
     wrap.appendChild(score);
 
     if (cs.epilogue) {

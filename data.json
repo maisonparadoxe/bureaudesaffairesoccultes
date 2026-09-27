@@ -59,6 +59,12 @@
                 "y": 200,
                 "w": 300,
                 "h": 190
+              },
+              "shape": "M330,218 L470,204 L590,226 L606,300 L586,386 L470,402 L346,382 L316,300 Z",
+              "label": {
+                "x": 540,
+                "y": 238,
+                "angle": 0
               }
             },
             {
@@ -69,6 +75,12 @@
                 "y": 180,
                 "w": 230,
                 "h": 140
+              },
+              "shape": "M630,198 L748,200 L756,300 L752,420 L748,566 L644,560 L616,470 L624,380 L634,300 Z",
+              "label": {
+                "x": 690,
+                "y": 224,
+                "angle": 0
               }
             },
             {
@@ -79,6 +91,12 @@
                 "y": 200,
                 "w": 230,
                 "h": 170
+              },
+              "shape": "M60,196 L198,180 L304,212 L292,300 L302,372 L182,384 L52,362 L42,272 Z",
+              "label": {
+                "x": 170,
+                "y": 222,
+                "angle": 0
               }
             },
             {
@@ -89,16 +107,28 @@
                 "y": 20,
                 "w": 260,
                 "h": 150
+              },
+              "shape": "M630,50 L760,38 L862,62 L866,176 L760,184 L642,170 L624,110 Z",
+              "label": {
+                "x": 748,
+                "y": 68,
+                "angle": 0
               }
             },
             {
               "id": "zone_industrielle",
-              "name": "Zone industrielle",
+              "name": "La Rivière",
               "rect": {
                 "x": 40,
                 "y": 400,
                 "w": 260,
                 "h": 170
+              },
+              "shape": "M346,418 L470,428 L592,408 L602,472 L592,566 L462,576 L332,562 L322,482 Z",
+              "label": {
+                "x": 540,
+                "y": 450,
+                "angle": 0
               }
             },
             {
@@ -109,6 +139,12 @@
                 "y": 20,
                 "w": 240,
                 "h": 130
+              },
+              "shape": "M338,46 L470,36 L600,52 L612,118 L598,174 L470,170 L336,176 L326,108 Z",
+              "label": {
+                "x": 520,
+                "y": 66,
+                "angle": 0
               }
             },
             {
@@ -119,7 +155,14 @@
                 "y": 350,
                 "w": 230,
                 "h": 220
-              }
+              },
+              "shape": "M770,202 L866,196 L870,566 L768,572 L762,420 L766,300 Z",
+              "label": {
+                "x": 800,
+                "y": 392,
+                "angle": -90
+              },
+              "outside": true
             },
             {
               "id": "bellevue",
@@ -129,6 +172,12 @@
                 "y": 420,
                 "w": 270,
                 "h": 150
+              },
+              "shape": "M52,400 L182,410 L304,398 L312,482 L302,566 L152,572 L42,556 Z",
+              "label": {
+                "x": 176,
+                "y": 432,
+                "angle": 0
               }
             }
           ],
@@ -139,8 +188,8 @@
               "quartier": "centre",
               "address": "12 rue de la République",
               "map": {
-                "x": 360,
-                "y": 265
+                "x": 392,
+                "y": 282
               },
               "ambience": "redaction",
               "alwaysRevealed": true
@@ -151,8 +200,8 @@
               "quartier": "centre",
               "address": "Place de l'Hôtel de Ville",
               "map": {
-                "x": 455,
-                "y": 255
+                "x": 478,
+                "y": 274
               },
               "ambience": "mairie"
             },
@@ -162,8 +211,8 @@
               "quartier": "centre",
               "address": "3 avenue de la Libération",
               "map": {
-                "x": 550,
-                "y": 265
+                "x": 556,
+                "y": 306
               },
               "ambience": "cabinet-vallenot"
             },
@@ -173,8 +222,8 @@
               "quartier": "centre",
               "address": "Rue Charles de Gaulle",
               "map": {
-                "x": 400,
-                "y": 340
+                "x": 420,
+                "y": 346
               },
               "ambience": "commissariat"
             },
@@ -184,8 +233,8 @@
               "quartier": "centre",
               "address": "Cours Fauriel",
               "map": {
-                "x": 510,
-                "y": 345
+                "x": 526,
+                "y": 356
               },
               "ambience": "cabinet-lacour"
             },
@@ -195,10 +244,11 @@
               "quartier": "chateaucreux",
               "address": "Gare de Châteaucreux",
               "map": {
-                "x": 745,
-                "y": 260
+                "x": 690,
+                "y": 300
               },
-              "ambience": "consigne-gare"
+              "ambience": "consigne-gare",
+              "short": "Consigne de la gare"
             },
             {
               "id": "domicile_faure",
@@ -206,8 +256,8 @@
               "quartier": "tarentaize",
               "address": "8 rue des Creuses",
               "map": {
-                "x": 155,
-                "y": 295
+                "x": 168,
+                "y": 298
               },
               "ambience": "domicile-faure"
             },
@@ -217,8 +267,8 @@
               "quartier": "soleil",
               "address": "Impasse des Fondeurs",
               "map": {
-                "x": 400,
-                "y": 105
+                "x": 690,
+                "y": 124
               },
               "ambience": "ferreol"
             },
@@ -228,8 +278,8 @@
               "quartier": "soleil",
               "address": "45 rue de la Montat",
               "map": {
-                "x": 520,
-                "y": 115
+                "x": 800,
+                "y": 140
               },
               "ambience": "cheval-noir"
             },
@@ -239,8 +289,8 @@
               "quartier": "zone_industrielle",
               "address": "Zone de la Rivière",
               "map": {
-                "x": 170,
-                "y": 495
+                "x": 410,
+                "y": 505
               },
               "ambience": "ferrand"
             },
@@ -250,10 +300,11 @@
               "quartier": "montreynaud",
               "address": "Tour 9, cité de Montreynaud",
               "map": {
-                "x": 740,
-                "y": 95
+                "x": 470,
+                "y": 126
               },
-              "ambience": "cite-mounier"
+              "ambience": "cite-mounier",
+              "short": "Chez Mounier"
             },
             {
               "id": "casse_berthet",
@@ -261,10 +312,11 @@
               "quartier": "vallee_gier",
               "address": "Chemin du Gier, Rive-de-Gier",
               "map": {
-                "x": 700,
-                "y": 445
+                "x": 826,
+                "y": 505
               },
-              "ambience": "casse-berthet"
+              "ambience": "casse-berthet",
+              "short": "Casse Berthet"
             },
             {
               "id": "decharge",
@@ -272,10 +324,11 @@
               "quartier": "vallee_gier",
               "address": "Route de la Croix-de-l'Orme",
               "map": {
-                "x": 795,
-                "y": 520
+                "x": 826,
+                "y": 262
               },
-              "ambience": "decharge"
+              "ambience": "decharge",
+              "short": "Décharge"
             },
             {
               "id": "parking_relais",
@@ -283,10 +336,11 @@
               "quartier": "bellevue",
               "address": "Boulevard Thiers",
               "map": {
-                "x": 465,
+                "x": 180,
                 "y": 505
               },
-              "ambience": "parking-relais"
+              "ambience": "parking-relais",
+              "short": "Parking-relais"
             }
           ],
           "characters": [
@@ -475,7 +529,8 @@
               ],
               "reveals": [
                 "l:casse_berthet"
-              ]
+              ],
+              "about": "p:berthet"
             },
             {
               "keys": [
@@ -489,7 +544,8 @@
               ],
               "reveals": [
                 "l:cite_mounier"
-              ]
+              ],
+              "about": "p:mounier"
             },
             {
               "keys": [
@@ -503,7 +559,8 @@
               ],
               "reveals": [
                 "l:cabinet_lacour"
-              ]
+              ],
+              "about": "p:lacour"
             },
             {
               "keys": [
@@ -518,7 +575,8 @@
               ],
               "reveals": [
                 "l:siege_ferrand"
-              ]
+              ],
+              "about": "p:ferrand"
             },
             {
               "keys": [
@@ -533,7 +591,8 @@
               ],
               "reveals": [
                 "l:cabinet_vallenot"
-              ]
+              ],
+              "about": "p:vallenot"
             },
             {
               "keys": [
@@ -547,7 +606,8 @@
               ],
               "reveals": [
                 "l:domicile_faure"
-              ]
+              ],
+              "about": "p:faure"
             },
             {
               "keys": [
@@ -914,7 +974,10 @@
               ],
               "requires": [
                 "lacour2"
-              ]
+              ],
+              "follows": "igier",
+              "buttonAlone": "Retrouver Igier avec l'aveu du médecin",
+              "titleAlone": "Igier, face à l'aveu du médecin"
             },
             {
               "id": "lacour",
@@ -939,7 +1002,7 @@
               "type": "entretien",
               "button": "Revenir voir Lacour avec le témoignage du gardien",
               "title": "Lacour, second entretien",
-              "text": "Vous racontez à {{p:lacour|Lacour}} ce qu'a vu le gardien : le corps près de la porte, à deux mètres de l'escalier, les yeux ouverts. Il ferme la porte du cabinet. Il ne dit plus « classique ».\n\n« La rigidité, les lividités… Il est mort entre minuit et une heure. Pas à dix heures. » Il enlève ses lunettes. « Il n'est pas mort sur le coup. Il a mis longtemps. Deux heures, peut-être. Il a dû avoir froid. »\n\nMathilde : « Et vous avez écrit \"mort immédiate\". »\n\n« Le commissaire était là. Il m'a dit qu'une famille n'a pas besoin de lire ce genre de détails. J'ai soixante et un ans, madame. »",
+              "text": "Vous racontez à {{p:lacour|Lacour}} ce qu'a vu le gardien : le corps près de la porte, à deux mètres de l'escalier, les yeux ouverts. Il ferme la porte du cabinet. Pour la première fois, il ne regarde pas sa montre.\n\n« La rigidité, les lividités… Il est mort entre minuit et une heure. Pas à dix heures. » Il enlève ses lunettes. « Il n'est pas mort sur le coup. Il a mis longtemps. Deux heures, peut-être. Il a dû avoir froid. »\n\nMathilde : « Et vous avez écrit \"mort immédiate\". »\n\n« Le commissaire était là. Il m'a dit qu'une famille n'a pas besoin de lire ce genre de détails. J'ai soixante et un ans, madame. »",
               "facts": [
                 {
                   "about": "p:faure",
@@ -954,6 +1017,9 @@
               "requires": [
                 "bensaid2"
               ],
+              "follows": "lacour",
+              "buttonAlone": "Consulter le Dr Lacour avec le témoignage du gardien",
+              "titleAlone": "Le Dr Lacour, face au témoignage du gardien",
               "mood": "silence"
             },
             {
@@ -1025,7 +1091,10 @@
               ],
               "requires": [
                 "compta"
-              ]
+              ],
+              "follows": "colette",
+              "buttonAlone": "Rendre visite à Colette Faure avec les retraits « B.F. »",
+              "titleAlone": "Colette Faure, face aux retraits « B.F. »"
             },
             {
               "id": "consigne",
@@ -1130,6 +1199,9 @@
               "requires": [
                 "livre"
               ],
+              "follows": "bensaid",
+              "buttonAlone": "Montrer le livre de police au gardien",
+              "titleAlone": "Ahmed Bensaïd, face au livre de police",
               "mood": "silence",
               "ambience": "ferreol-nuit"
             },
@@ -1196,7 +1268,7 @@
               "id": "chaptal2",
               "locationId": "cheval_noir",
               "type": "entretien",
-              "button": "Revenir voir Chaptal",
+              "button": "Revenir voir Chaptal pour la peinture du mur",
               "title": "Chaptal, second entretien",
               "text": "Quand vous lui parlez de la peinture, {{p:chaptal|Chaptal}} repose son verre. « Bon. Oui. C'est moi, le mur. Et la lettre. Et deux autres, à Faure, sans signature. Pour qu'il ait peur. Pour qu'il arrête avec son parking. »\n\nIl frotte ses doigts. Il reste du blanc sous ses ongles. « Mardi, vers neuf heures, la voiture de Faure était dans l'impasse. Une 405 grise. Et à dix heures moins dix, le camion benne de chez Ferrand est arrivé. Avec le patron au volant, mon gars. {{p:ferrand|Ferrand}} lui-même, qui conduit jamais. Je suis parti. Je voulais pas qu'on me voie avec mon pot. »\n\nIl regarde la rue. « Le fondeur, c'est des histoires. C'est moi qui les raconte. »",
               "facts": [
@@ -1219,7 +1291,10 @@
               "requiresAny": [
                 "tirages",
                 "jeannot"
-              ]
+              ],
+              "follows": "chaptal",
+              "buttonAlone": "Parler de la peinture du mur à Marcel Chaptal",
+              "titleAlone": "Marcel Chaptal et la peinture du mur"
             },
             {
               "id": "ferrand",
@@ -1305,7 +1380,7 @@
               "id": "simone2",
               "locationId": "siege_ferrand",
               "type": "entretien",
-              "button": "Revenir voir Simone",
+              "button": "Revenir voir Simone pour le camion",
               "title": "Simone, second entretien",
               "text": "Vous lui dites que le camion de Ferrand était à Ferréol mardi soir. {{p:simone|Simone}} ne dément pas. Elle range un crayon, puis un autre.\n\n« Roger dit… » Elle s'arrête. « Il est rentré à onze heures vingt. J'ai regardé le réveil. Il est allé dans la buanderie. Il a lavé son pantalon lui-même, à la main, dans l'évier. Il fait jamais ça. Il sait pas où on met la lessive. »\n\nElle regarde vers le hangar, où son mari parle fort au téléphone. « Il y avait de la poussière noire dans l'eau. »",
               "facts": [
@@ -1323,7 +1398,10 @@
                 "chaptal2",
                 "mounier",
                 "berthet2"
-              ]
+              ],
+              "follows": "simone",
+              "buttonAlone": "Interroger Simone Ferrand sur le camion",
+              "titleAlone": "Simone Ferrand et le camion"
             },
             {
               "id": "mounier",
@@ -1367,7 +1445,10 @@
               "requiresAny": [
                 "registre",
                 "consigne"
-              ]
+              ],
+              "follows": "mounier",
+              "buttonAlone": "Aller voir Gérard Mounier avec les tonnages",
+              "titleAlone": "Gérard Mounier, face aux tonnages"
             },
             {
               "id": "berthet",
@@ -1427,7 +1508,10 @@
               ],
               "requires": [
                 "livre"
-              ]
+              ],
+              "follows": "berthet",
+              "buttonAlone": "Aller voir Lucien Berthet avec son registre",
+              "titleAlone": "Lucien Berthet, face à son registre"
             },
             {
               "id": "registre",
@@ -1909,7 +1993,78 @@
             ],
             "deadline": "Jeudi 25 novembre, 18 h : bouclage"
           },
-          "solution": "Bernard Faure faisait chanter Roger Ferrand, qui enterrait sous des dalles neuves les terres polluées qu'il était payé pour évacuer. Le mardi 16 novembre, Faure vient à Ferréol toucher un dernier paiement. Ils se disputent sur la passerelle de l'atelier de forge, et Ferrand le pousse. Faure survit à la chute. Ferrand appelle Hervé Vallenot depuis la cabane du gardien. Vallenot arrive, voit que Faure respire encore et refuse d'appeler les secours. Il fume quatre cigarillos à côté de lui, puis ils maquillent la chute et s'en vont. Faure meurt vers minuit en rampant vers la porte. Le lendemain, Marcel Roussillon fait classer l'affaire. La lettre du fantôme, elle, était de Marcel Chaptal."
+          "solution": "Bernard Faure faisait chanter Roger Ferrand, qui enterrait sous des dalles neuves les terres polluées qu'il était payé pour évacuer. Le mardi 16 novembre, Faure vient à Ferréol toucher un dernier paiement. Ils se disputent sur la passerelle de l'atelier de forge, et Ferrand le pousse. Faure survit à la chute. Ferrand appelle Hervé Vallenot depuis la cabane du gardien. Vallenot arrive, voit que Faure respire encore et refuse d'appeler les secours. Il fume quatre cigarillos à côté de lui, puis ils maquillent la chute et s'en vont. Faure meurt vers minuit en rampant vers la porte. Le lendemain, Marcel Roussillon fait classer l'affaire. La lettre du fantôme, elle, était de Marcel Chaptal.",
+          "plan": {
+            "title": "Plan de Saint-Étienne",
+            "subtitle": "Édition 1993 · échelle 1/15 000",
+            "decor": [
+              {
+                "type": "river",
+                "d": "M382,600 C388,520 376,470 374,400 C372,330 368,280 374,210 C380,150 394,80 390,0",
+                "label": "Le Furan (couvert)",
+                "at": [
+                  372,
+                  140
+                ],
+                "angle": -86
+              },
+              {
+                "type": "river",
+                "d": "M800,600 C812,500 826,420 836,330 C844,260 856,190 900,120",
+                "label": "Le Gier",
+                "at": [
+                  856,
+                  236
+                ],
+                "angle": -72
+              },
+              {
+                "type": "road",
+                "d": "M462,0 C458,120 462,220 464,300 C466,400 460,500 462,600",
+                "label": "Grand-Rue",
+                "at": [
+                  472,
+                  560
+                ],
+                "angle": -88
+              },
+              {
+                "type": "tram",
+                "d": "M462,0 C458,120 462,220 464,300 C466,400 460,500 462,600"
+              },
+              {
+                "type": "road",
+                "d": "M0,392 C150,390 300,396 460,392 C560,390 600,392 612,392"
+              },
+              {
+                "type": "road",
+                "d": "M612,0 C616,120 612,260 610,340 C606,440 610,520 606,600"
+              },
+              {
+                "type": "road",
+                "d": "M612,190 C700,188 760,192 900,186"
+              },
+              {
+                "type": "rail",
+                "d": "M0,168 C100,176 200,182 300,188 C400,192 480,190 560,194 C620,198 660,240 700,262 C760,290 830,300 900,304",
+                "label": "SNCF",
+                "at": [
+                  250,
+                  176
+                ],
+                "angle": 3
+              },
+              {
+                "type": "note",
+                "label": "vers Saint-Chamond, Rive-de-Gier →",
+                "at": [
+                  876,
+                  560
+                ],
+                "angle": -90
+              }
+            ]
+          }
         }
       ]
     },
@@ -1994,42 +2149,9 @@
   ],
   "credits": [
     {
-      "title": "Conception et écriture",
+      "title": "Un jeu",
       "lines": [
-        "À compléter : votre nom"
-      ]
-    },
-    {
-      "title": "Illustrations",
-      "lines": [
-        "À compléter"
-      ]
-    },
-    {
-      "title": "Sons et musiques",
-      "lines": [
-        "À compléter : auteurs, sources et licences de chaque son"
-      ]
-    },
-    {
-      "title": "Programmation",
-      "lines": [
-        "Avec l'aide de Claude (Anthropic)"
-      ]
-    },
-    {
-      "title": "Polices de caractères",
-      "lines": [
-        "Special Elite, par Astigmatic",
-        "Lora, par Cyreal",
-        "IBM Plex Mono, par IBM",
-        "Sous licences libres (SIL Open Font License, Apache 2.0), via Google Fonts"
-      ]
-    },
-    {
-      "title": "Remerciements",
-      "lines": [
-        "Aux testeuses et testeurs."
+        "Maison Paradoxe"
       ]
     }
   ],

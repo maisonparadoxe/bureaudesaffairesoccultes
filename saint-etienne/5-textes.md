@@ -260,9 +260,9 @@ Mathilde : « Vous êtes arrivé vers six heures, donc. »
 
 ### Lacour, second entretien
 
-*Bouton : « Revenir voir Lacour avec le témoignage du gardien » · entretien · après : Bensaïd, second entretien · 116 mots*
+*Bouton : « Revenir voir Lacour avec le témoignage du gardien » · entretien · après : Bensaïd, second entretien · 119 mots*
 
-Vous racontez à **Lacour** ce qu'a vu le gardien : le corps près de la porte, à deux mètres de l'escalier, les yeux ouverts. Il ferme la porte du cabinet. Il ne dit plus « classique ».
+Vous racontez à **Lacour** ce qu'a vu le gardien : le corps près de la porte, à deux mètres de l'escalier, les yeux ouverts. Il ferme la porte du cabinet. Pour la première fois, il ne regarde pas sa montre.
 
 « La rigidité, les lividités… Il est mort entre minuit et une heure. Pas à dix heures. » Il enlève ses lunettes. « Il n'est pas mort sur le coup. Il a mis longtemps. Deux heures, peut-être. Il a dû avoir froid. »
 
@@ -454,7 +454,7 @@ Il baisse la voix. « Il est revenu avec les mains pleines de peinture blanche. 
 
 ### Chaptal, second entretien
 
-*Bouton : « Revenir voir Chaptal » · entretien · après : Les tirages d'Yves ou Jeannot, patron du Cheval Noir · 120 mots*
+*Bouton : « Revenir voir Chaptal pour la peinture du mur » · entretien · après : Les tirages d'Yves ou Jeannot, patron du Cheval Noir · 120 mots*
 
 Quand vous lui parlez de la peinture, **Chaptal** repose son verre. « Bon. Oui. C'est moi, le mur. Et la lettre. Et deux autres, à Faure, sans signature. Pour qu'il ait peur. Pour qu'il arrête avec son parking. »
 
@@ -540,7 +540,7 @@ L'équipe de nuit ? « C'est **Gérard Mounier** qui s'en occupe. Roger dit qu'i
 
 ### Simone, second entretien
 
-*Bouton : « Revenir voir Simone » · entretien · après : Chaptal, second entretien ou Gérard Mounier, chef d'équipe ou Berthet, second entretien · 95 mots*
+*Bouton : « Revenir voir Simone pour le camion » · entretien · après : Chaptal, second entretien ou Gérard Mounier, chef d'équipe ou Berthet, second entretien · 95 mots*
 
 Vous lui dites que le camion de Ferrand était à Ferréol mardi soir. **Simone** ne dément pas. Elle range un crayon, puis un autre.
 

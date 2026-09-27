@@ -12,7 +12,7 @@ QUARTIERS = {
     "chateaucreux": "Châteaucreux",
     "tarentaize": "Tarentaize",
     "soleil": "Le Soleil",
-    "zone_industrielle": "Zone industrielle",
+    "zone_industrielle": "La Rivière",
     "montreynaud": "Montreynaud",
     "vallee_gier": "Vallée du Gier",
     "bellevue": "Bellevue",
@@ -131,7 +131,8 @@ PISTES = [
          titre="Le lieutenant Igier", role="U",
          contenu="Dossier bouclé en deux jours, sans photos. Il vous montre le constat : « victime au pied de l'escalier ». Certificat signé par le Dr Lacour.",
          revele=["p:igier", "p:lacour", "d:constat"], repond={"Q3": "Le constat place le corps au pied de l'escalier."}),
-    dict(id="igier2", lieu="commissariat", type="entretien", bouton="Revenir voir Igier avec l'aveu du médecin",
+    dict(id="igier2", suite="igier", bouton_seul="Retrouver Igier avec l'aveu du médecin", titre_seul="Igier, face à l'aveu du médecin",
+         lieu="commissariat", type="entretien", bouton="Revenir voir Igier avec l'aveu du médecin",
          titre="Igier, second entretien", role="E", requiert=["lacour2"],
          contenu="Il lâche le morceau : le 17 à 8 h 10, le commissaire Borel a reçu un appel de la mairie. « L'adjoint Roussillon en personne. Il fallait que ça reste un accident. »",
          revele=[], repond={"Q5": "Roussillon a appelé le commissaire pour faire classer l'affaire."}),
@@ -141,7 +142,8 @@ PISTES = [
          titre="Le Dr Lacour", role="F",
          contenu="« Mort sur le coup. Rien d'inhabituel. C'est très classique. » Il a été appelé à 7 h. Il regarde beaucoup sa montre.",
          revele=["p:lacour"]),
-    dict(id="lacour2", lieu="cabinet_lacour", type="entretien", bouton="Revenir voir Lacour avec le témoignage du gardien",
+    dict(id="lacour2", suite="lacour", bouton_seul="Consulter le Dr Lacour avec le témoignage du gardien", titre_seul="Le Dr Lacour, face au témoignage du gardien",
+         lieu="cabinet_lacour", type="entretien", bouton="Revenir voir Lacour avec le témoignage du gardien",
          titre="Lacour, second entretien", role="E", requiert=["bensaid2"],
          contenu="Quand vous lui dites où Bensaïd a trouvé le corps, il cède. Décès entre minuit et une heure, pas à 22 h. « Il n'est pas mort sur le coup. Il a mis longtemps. » "
                  "Le commissaire lui a demandé d'écrire autre chose.",
@@ -158,7 +160,8 @@ PISTES = [
          contenu="Le dossier bleu n'y est plus. Des relevés bancaires : crédit immobilier en retard jusqu'en juillet, puis soudain à jour, dépôts en liquide chaque mois. "
                  "Son agenda : « Mardi 16, 22 h, F. »",
          revele=["d:releves_faure"], repond={"Q2": "De l'argent liquide arrive chaque mois depuis août."}),
-    dict(id="colette2", lieu="domicile_faure", type="entretien", bouton="Revenir voir Colette avec les retraits « B.F. »",
+    dict(id="colette2", suite="colette", bouton_seul="Rendre visite à Colette Faure avec les retraits « B.F. »", titre_seul="Colette Faure, face aux retraits « B.F. »",
+         lieu="domicile_faure", type="entretien", bouton="Revenir voir Colette avec les retraits « B.F. »",
          titre="Colette, second entretien", role="E", requiert=["compta"],
          contenu="Elle sort de sa boîte à couture le carnet de Bernard : « R.F. 30 » en août, septembre, octobre, puis « R.F. 200 ? » en novembre. "
                  "Et un ticket de consigne de la gare, trouvé dans son portefeuille.",
@@ -185,7 +188,8 @@ PISTES = [
                      solution="Reçu de la Casse Berthet, Rive-de-Gier, « fonte, 1,2 t », daté du 16/11.",
                      donne=["p:berthet"], aide="Yves recolle le reçu à votre place."),
          repond={"Q4": "Une dalle neuve coulée sur un chantier à l'arrêt."}),
-    dict(id="bensaid2", lieu="site_ferreol", type="entretien", bouton="Revenir voir Bensaïd avec le livre de police",
+    dict(id="bensaid2", suite="bensaid", bouton_seul="Montrer le livre de police au gardien", titre_seul="Ahmed Bensaïd, face au livre de police",
+         lieu="site_ferreol", type="entretien", bouton="Revenir voir Bensaïd avec le livre de police",
          titre="Bensaïd, second entretien", role="E", requiert=["livre"],
          contenu="Il avoue la ferraille, puis tout le reste. À 22 h 40, une Safrane bleu nuit près de l'entrée. À 6 h 30, Faure près de la porte, pas au pied de l'escalier, les yeux ouverts. "
                  "Quatre mégots de cigarillo à côté de lui, qu'il a gardés dans une boîte d'allumettes. Sa cabane avait été ouverte, le téléphone mal raccroché. C'est le Dr Lacour qui est venu à 7 h. Et « le vieux Chaptal, du Cheval Noir » traînait le long du mur est vers 21 h.",
@@ -204,7 +208,8 @@ PISTES = [
          titre="Jeannot, patron du Cheval Noir", role="U",
          contenu="« Marcel ? Parti vers huit heures, revenu vers dix heures, les mains pleines de peinture blanche. Il m'a dit de dire qu'il était là. »",
          revele=["p:jeannot"]),
-    dict(id="chaptal2", lieu="cheval_noir", type="entretien", bouton="Revenir voir Chaptal",
+    dict(id="chaptal2", suite="chaptal", bouton_seul="Parler de la peinture du mur à Marcel Chaptal", titre_seul="Marcel Chaptal et la peinture du mur",
+         lieu="cheval_noir", type="entretien", bouton="Revenir voir Chaptal pour la peinture du mur",
          titre="Chaptal, second entretien", role="E", requiert_un=["tirages", "jeannot"],
          contenu="Il avoue le slogan, la lettre du fantôme et deux lettres de menaces à Faure. Ce soir-là, il a vu la 405 grise de Faure vers 21 h, "
                  "puis à 21 h 50 le camion benne de Ferrand, « le patron lui-même au volant, jamais il conduit, lui ».",
@@ -233,7 +238,8 @@ PISTES = [
          titre="Simone Ferrand", role="U",
          contenu="« Roger est rentré à neuf heures, comme d'habitude. » Tout ce qu'elle dit commence par « Roger dit ». Elle mentionne Gérard Mounier, le chef d'équipe de nuit.",
          revele=["p:simone", "p:mounier", "l:cite_mounier"]),
-    dict(id="simone2", lieu="siege_ferrand", type="entretien", bouton="Revenir voir Simone",
+    dict(id="simone2", suite="simone", bouton_seul="Interroger Simone Ferrand sur le camion", titre_seul="Simone Ferrand et le camion",
+         lieu="siege_ferrand", type="entretien", bouton="Revenir voir Simone pour le camion",
          titre="Simone, second entretien", role="U", requiert_un=["chaptal2", "mounier", "berthet2"],
          contenu="Elle ne dément pas franchement. Elle raconte que Roger est rentré vers 23 h 20, et qu'il a lavé lui-même son pantalon dans la nuit. « Il fait jamais ça. »",
          revele=[], repond={"Q1": "L'alibi de Ferrand tombe."}),
@@ -243,7 +249,8 @@ PISTES = [
          titre="Gérard Mounier, chef d'équipe", role="U",
          contenu="« Je sais rien, je fais ce qu'on me dit. » Il laisse échapper que mardi, « le patron a dit de pas venir ». Pour la première fois depuis un mois.",
          revele=["p:mounier"], repond={"Q1": "Ferrand a écarté son équipe le soir du drame."}),
-    dict(id="mounier2", lieu="cite_mounier", type="entretien", bouton="Revenir voir Mounier avec les tonnages",
+    dict(id="mounier2", suite="mounier", bouton_seul="Aller voir Gérard Mounier avec les tonnages", titre_seul="Gérard Mounier, face aux tonnages",
+         lieu="cite_mounier", type="entretien", bouton="Revenir voir Mounier avec les tonnages",
          titre="Mounier, second entretien", role="U", requiert_un=["registre", "consigne"],
          contenu="Il comprend qu'il portera le chapeau. Depuis octobre, son équipe enterre des terres noires sous des dalles, la nuit. "
                  "La nuit du 17, avant de couler la dalle sur la zone de l'escalier, il a vu des traînées sombres. « Le patron a dit : coule. »",
@@ -258,7 +265,8 @@ PISTES = [
          titre="Le livre de police de la casse", role="E",
          contenu="Le registre obligatoire des ferrailleurs : « 16/11/93, 21 h 30, site Ferréol, A.B., fonte, 1,2 t ». A.B. : Ahmed Bensaïd.",
          revele=["d:livre_police"]),
-    dict(id="berthet2", lieu="casse_berthet", type="entretien", bouton="Revenir voir Berthet avec son registre",
+    dict(id="berthet2", suite="berthet", bouton_seul="Aller voir Lucien Berthet avec son registre", titre_seul="Lucien Berthet, face à son registre",
+         lieu="casse_berthet", type="entretien", bouton="Revenir voir Berthet avec son registre",
          titre="Berthet, second entretien", role="U", requiert=["livre"],
          contenu="« Bon, j'y étais. » De 21 h 30 à 22 h 30, au portail arrière. Vers 22 h 10, un cri, puis plus rien. Le camion benne de Ferrand était garé dans la cour.",
          revele=[], repond={"Q1": "Un cri vers 22 h 10, le camion de Ferrand sur place."}),
@@ -313,6 +321,8 @@ def accessible(cid, lues):
     c = P[cid]
     if "l:" + c["lieu"] not in cles_connues(lues):
         return False
+    if any(x.get("suite") == cid and x["id"] in lues for x in PISTES):
+        return False  # déjà confronté : le premier entretien n'a plus lieu d'être
     if any(r not in lues for r in c.get("requiert", [])):
         return False
     if c.get("requiert_un") and not any(r in lues for r in c["requiert_un"]):

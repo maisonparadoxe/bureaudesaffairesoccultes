@@ -186,12 +186,12 @@ L'intro contient la lettre du « fantôme » en entier (gratuite, relisible) et 
   « Marcel ? Parti vers huit heures, revenu vers dix heures, les mains pleines de peinture blanche. Il m'a dit de dire qu'il était là. »
   
   *Révèle :* Jeannot, patron du Cheval Noir.
-- **Revenir voir Chaptal** · entretien · Essentielle · après : Les tirages d'Yves ou Jeannot, patron du Cheval Noir  
+- **Revenir voir Chaptal pour la peinture du mur** · entretien · Essentielle · après : Les tirages d'Yves ou Jeannot, patron du Cheval Noir  
   Il avoue le slogan, la lettre du fantôme et deux lettres de menaces à Faure. Ce soir-là, il a vu la 405 grise de Faure vers 21 h, puis à 21 h 50 le camion benne de Ferrand, « le patron lui-même au volant, jamais il conduit, lui ».
   
   *Sert à :* Q6 (Chaptal a écrit la lettre du fantôme.) ; Q1 (Ferrand arrive au site à 21 h 50, seul.)
 
-### Ferrand Frères BTP (Zone industrielle)
+### Ferrand Frères BTP (La Rivière)
 
 - **Rencontrer Roger Ferrand** · entretien · Utile  
   Il répond par des questions. « J'étais chez moi. Demandez à ma femme, elle est au bureau du fond. »
@@ -213,7 +213,7 @@ L'intro contient la lettre du « fantôme » en entier (gratuite, relisible) et 
   « Roger est rentré à neuf heures, comme d'habitude. » Tout ce qu'elle dit commence par « Roger dit ». Elle mentionne Gérard Mounier, le chef d'équipe de nuit.
   
   *Révèle :* Simone Ferrand, Gérard Mounier, Cité de Montreynaud, chez Mounier.
-- **Revenir voir Simone** · entretien · Utile · après : Chaptal, second entretien ou Gérard Mounier, chef d'équipe ou Berthet, second entretien  
+- **Revenir voir Simone pour le camion** · entretien · Utile · après : Chaptal, second entretien ou Gérard Mounier, chef d'équipe ou Berthet, second entretien  
   Elle ne dément pas franchement. Elle raconte que Roger est rentré vers 23 h 20, et qu'il a lavé lui-même son pantalon dans la nuit. « Il fait jamais ça. »
   
   *Sert à :* Q1 (L'alibi de Ferrand tombe.)

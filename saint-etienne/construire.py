@@ -143,7 +143,7 @@ cas = dict(
     locations=[],
     characters=[],
     documents=[dict(id=i, name=n) for i, n in T["DOCUMENTS"].items()],
-    minitel=MINITEL,
+    minitel=[dict(e, about="p:" + e["keys"][0]) if e["reveals"] else e for e in MINITEL],  # l'adresse ne sert que si la personne est connue
     clues=[],
     puzzles={},
     questions=[dict(id=q["id"], points=q["points"], text=q["texte"], choices=q["choix"], answer=q["bonne"]) for q in T["QUESTIONS"]],
@@ -157,9 +157,56 @@ cas = dict(
     solution=T["SOLUTION"],
 )
 
+# ---------------------------------------------------------------------------
+# Le plan de la ville : contours des quartiers, position des lieux, décor.
+# Coordonnées dans un cadre de 900 × 600. Géographie simplifiée mais fidèle
+# dans les grandes lignes (Montreynaud au nord-est, Bellevue au sud, etc.).
+# ---------------------------------------------------------------------------
+# Noms courts affichés sous les punaises du plan
+COURTS = dict(consigne_gare="Consigne de la gare", decharge="Décharge", casse_berthet="Casse Berthet", cite_mounier="Chez Mounier", parking_relais="Parking-relais")
+
+PLAN = dict(
+    titre="Plan de Saint-Étienne",
+    sousTitre="Édition 1993 · échelle 1/15 000",
+    zones=dict(
+        montreynaud=dict(d="M338,46 L470,36 L600,52 L612,118 L598,174 L470,170 L336,176 L326,108 Z", label=[520, 66]),
+        soleil=dict(d="M630,50 L760,38 L862,62 L866,176 L760,184 L642,170 L624,110 Z", label=[748, 68]),
+        tarentaize=dict(d="M60,196 L198,180 L304,212 L292,300 L302,372 L182,384 L52,362 L42,272 Z", label=[170, 222]),
+        centre=dict(d="M330,218 L470,204 L590,226 L606,300 L586,386 L470,402 L346,382 L316,300 Z", label=[540, 238]),
+        chateaucreux=dict(d="M630,198 L748,200 L756,300 L752,420 L748,566 L644,560 L616,470 L624,380 L634,300 Z", label=[690, 224]),
+        vallee_gier=dict(d="M770,202 L866,196 L870,566 L768,572 L762,420 L766,300 Z", label=[800, 392], angle=-90, dehors=True),
+        bellevue=dict(d="M52,400 L182,410 L304,398 L312,482 L302,566 L152,572 L42,556 Z", label=[176, 432]),
+        zone_industrielle=dict(d="M346,418 L470,428 L592,408 L602,472 L592,566 L462,576 L332,562 L322,482 Z", label=[540, 450]),
+    ),
+    lieux=dict(
+        redaction=[392, 282], mairie=[478, 274], cabinet_vallenot=[556, 306], commissariat=[420, 346], cabinet_lacour=[526, 356],
+        consigne_gare=[690, 300], domicile_faure=[168, 298], site_ferreol=[690, 124], cheval_noir=[800, 140],
+        siege_ferrand=[410, 505], cite_mounier=[470, 126], casse_berthet=[826, 505], decharge=[826, 262], parking_relais=[180, 505],
+    ),
+    decor=[
+        dict(type="river", d="M382,600 C388,520 376,470 374,400 C372,330 368,280 374,210 C380,150 394,80 390,0", label="Le Furan (couvert)", at=[372, 140], angle=-86),
+        dict(type="river", d="M800,600 C812,500 826,420 836,330 C844,260 856,190 900,120", label="Le Gier", at=[856, 236], angle=-72),
+        dict(type="road", d="M462,0 C458,120 462,220 464,300 C466,400 460,500 462,600", label="Grand-Rue", at=[472, 560], angle=-88),
+        dict(type="tram", d="M462,0 C458,120 462,220 464,300 C466,400 460,500 462,600"),
+        dict(type="road", d="M0,392 C150,390 300,396 460,392 C560,390 600,392 612,392"),
+        dict(type="road", d="M612,0 C616,120 612,260 610,340 C606,440 610,520 606,600"),
+        dict(type="road", d="M612,190 C700,188 760,192 900,186"),
+        dict(type="rail", d="M0,168 C100,176 200,182 300,188 C400,192 480,190 560,194 C620,198 660,240 700,262 C760,290 830,300 900,304", label="SNCF", at=[250, 176], angle=3),
+        dict(type="note", label="vers Saint-Chamond, Rive-de-Gier →", at=[876, 560], angle=-90),
+    ],
+)
+
+for q in cas["quartiers"]:
+    z = PLAN["zones"][q["id"]]
+    q["shape"] = z["d"]
+    q["label"] = dict(x=z["label"][0], y=z["label"][1], angle=z.get("angle", 0))
+    if z.get("dehors"): q["outside"] = True
+cas["plan"] = dict(title=PLAN["titre"], subtitle=PLAN["sousTitre"], decor=PLAN["decor"])
+
 for lid, (nom, q) in C["LIEUX"].items():
-    loc = dict(id=lid, name=nom, quartier=q, address=ADRESSES[lid], map=dict(x=PINS[lid][0], y=PINS[lid][1]), ambience=AMBIANCES[lid])
+    loc = dict(id=lid, name=nom, quartier=q, address=ADRESSES[lid], map=dict(x=PLAN["lieux"][lid][0], y=PLAN["lieux"][lid][1]), ambience=AMBIANCES[lid])
     if lid == "redaction": loc["alwaysRevealed"] = True
+    if lid in COURTS: loc["short"] = COURTS[lid]
     cas["locations"].append(loc)
 
 for pid, (nom, lieu) in C["PERSONNES"].items():
@@ -174,6 +221,7 @@ for c in C["PISTES"]:
                 text=x["texte"], facts=notes(c["id"], x["notes"]))
     if c.get("requiert"): clue["requires"] = c["requiert"]
     if c.get("requiert_un"): clue["requiresAny"] = c["requiert_un"]
+    if c.get("suite"): clue.update(follows=c["suite"], buttonAlone=c["bouton_seul"], titleAlone=c["titre_seul"])
     if c["id"] in T["PUZZLES"]: clue["puzzle"] = c["id"]
     if c["id"] in T["SILENCE"]: clue["mood"] = "silence"; clue["ambience"] = "ferreol-nuit" if c["lieu"] == "site_ferreol" else None
     if clue.get("ambience") is None: clue.pop("ambience", None)
@@ -242,15 +290,10 @@ data["prologue"] = {
     "vous": "Vous êtes l'équipe. Vous choisissez où aller, qui interroger, et ce qui sera publié."
 }
 
-# Crédits : créés une seule fois, puis modifiables à la main dans data.json
-data.setdefault("credits", [
-    {"title": "Conception et écriture", "lines": ["À compléter : votre nom"]},
-    {"title": "Illustrations", "lines": ["À compléter"]},
-    {"title": "Sons et musiques", "lines": ["À compléter : auteurs, sources et licences de chaque son"]},
-    {"title": "Programmation", "lines": ["Avec l'aide de Claude (Anthropic)"]},
-    {"title": "Polices de caractères", "lines": ["Special Elite, par Astigmatic", "Lora, par Cyreal", "IBM Plex Mono, par IBM", "Sous licences libres (SIL Open Font License, Apache 2.0), via Google Fonts"]},
-    {"title": "Remerciements", "lines": ["Aux testeuses et testeurs."]},
-])
+# Crédits
+data["credits"] = [
+    {"title": "Un jeu", "lines": ["Maison Paradoxe"]},
+]
 data_path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
 print(f"Affaire construite : {len(cas['clues'])} pistes, {len(cas['locations'])} lieux, {len(cas['characters'])} personnages, "
       f"{len(cas['documents'])} pièces, {len(cas['puzzles'])} puzzles, {len(cas['questions'])} questions, {len(cas['endings'])} fins.")
