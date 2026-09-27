@@ -838,3 +838,21 @@ body.menu-mode #pluie { z-index: 3; }
 .plan-dessine .zone-dehors .zone-shape { stroke-dasharray: 3 3; }
 .plan-dessine .zone-dehors .zone-ilots { opacity: 0.45; }
 .plan-legende-note { font-family: var(--font-mono); font-style: normal; font-size: 9px; letter-spacing: 0.04em; fill: var(--ink-soft); }
+
+/* Portrait de l'interlocuteur pendant un entretien */
+.portrait-moyen { width: 96px; height: 148px; transform: rotate(-2deg); margin-left: 4px; }
+.clue-tete { display: flex; gap: 16px; align-items: center; margin-bottom: 12px; }
+.clue-tete .clue-title { margin-bottom: 4px; }
+.clue-qui { margin: 0; font-family: var(--font-mono); font-size: 11.5px; color: var(--muted); }
+.lead-btn.lead-avec-portrait { grid-template-columns: 28px 1fr; column-gap: 12px; align-items: center; }
+.lead-btn.lead-avec-portrait .portrait { grid-row: 1 / span 3; align-self: center; }
+.lead-btn.lead-avec-portrait > span { grid-column: 2; }
+
+/* Le logo est une étiquette de papier : légèrement penchée, avec une ombre */
+.menu-screen .logo-img { transform: rotate(-1.5deg); filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.65)); }
+.credits .logo-img { transform: rotate(-1deg); filter: drop-shadow(0 4px 10px rgba(42, 38, 32, 0.35)); max-height: 220px; }
+
+/* La salamandre de l'épilogue : une carte de bristol plus grande quand le dessin existe */
+.epilogue-card:has(img) { width: 118px; height: 176px; background: #F6F1E2; }
+.epilogue-card img { background: transparent !important; inset: 8px !important; width: calc(100% - 16px) !important; height: calc(100% - 16px) !important; }
+.epilogue-card:has(img) svg { display: none; }

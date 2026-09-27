@@ -732,7 +732,8 @@ window.GAME_DATA_FALLBACK = {
                   "about": "p:lacour",
                   "text": "Médecin qui a constaté le décès de Faure, selon Roche."
                 }
-              ]
+              ],
+              "speaker": "roche"
             },
             {
               "id": "standard",
@@ -776,7 +777,8 @@ window.GAME_DATA_FALLBACK = {
               ],
               "requires": [
                 "standard"
-              ]
+              ],
+              "speaker": "roche"
             },
             {
               "id": "odile",
@@ -835,6 +837,7 @@ window.GAME_DATA_FALLBACK = {
                   "label": "Mardi 16"
                 }
               ],
+              "speaker": "roussillon",
               "salamandre": true
             },
             {
@@ -910,7 +913,8 @@ window.GAME_DATA_FALLBACK = {
                   "about": "d:carte_vallenot",
                   "text": "Hervé Vallenot, président. Radiotéléphone : 07 42 18 63."
                 }
-              ]
+              ],
+              "speaker": "vallenot"
             },
             {
               "id": "bureau_vallenot",
@@ -954,7 +958,8 @@ window.GAME_DATA_FALLBACK = {
                   "about": "p:lacour",
                   "text": "A signé le certificat de décès de Faure."
                 }
-              ]
+              ],
+              "speaker": "igier"
             },
             {
               "id": "igier2",
@@ -977,6 +982,7 @@ window.GAME_DATA_FALLBACK = {
               "requires": [
                 "lacour2"
               ],
+              "speaker": "igier",
               "follows": "igier",
               "buttonAlone": "Retrouver Igier avec l'aveu du médecin",
               "titleAlone": "Igier, face à l'aveu du médecin"
@@ -996,7 +1002,8 @@ window.GAME_DATA_FALLBACK = {
                     "lacour2"
                   ]
                 }
-              ]
+              ],
+              "speaker": "lacour"
             },
             {
               "id": "lacour2",
@@ -1019,6 +1026,7 @@ window.GAME_DATA_FALLBACK = {
               "requires": [
                 "bensaid2"
               ],
+              "speaker": "lacour",
               "follows": "lacour",
               "buttonAlone": "Consulter le Dr Lacour avec le témoignage du gardien",
               "titleAlone": "Le Dr Lacour, face au témoignage du gardien",
@@ -1048,7 +1056,8 @@ window.GAME_DATA_FALLBACK = {
                   "about": "p:colette",
                   "text": "Leur fille fait son droit à Lyon."
                 }
-              ]
+              ],
+              "speaker": "colette"
             },
             {
               "id": "bureau_faure",
@@ -1094,6 +1103,7 @@ window.GAME_DATA_FALLBACK = {
               "requires": [
                 "compta"
               ],
+              "speaker": "colette",
               "follows": "colette",
               "buttonAlone": "Rendre visite à Colette Faure avec les retraits « B.F. »",
               "titleAlone": "Colette Faure, face aux retraits « B.F. »"
@@ -1133,7 +1143,8 @@ window.GAME_DATA_FALLBACK = {
                   "text": "Des camions de Ferrand y viennent la nuit depuis un mois, selon le gardien.",
                   "label": "La nuit"
                 }
-              ]
+              ],
+              "speaker": "bensaid"
             },
             {
               "id": "reperage",
@@ -1201,6 +1212,7 @@ window.GAME_DATA_FALLBACK = {
               "requires": [
                 "livre"
               ],
+              "speaker": "bensaid",
               "follows": "bensaid",
               "buttonAlone": "Montrer le livre de police au gardien",
               "titleAlone": "Ahmed Bensaïd, face au livre de police",
@@ -1249,7 +1261,8 @@ window.GAME_DATA_FALLBACK = {
                   "text": "Selon Chaptal, tout le quartier voit le « feu » de la forge la nuit, depuis la rue de la Montat.",
                   "label": "La légende"
                 }
-              ]
+              ],
+              "speaker": "chaptal"
             },
             {
               "id": "jeannot",
@@ -1264,7 +1277,8 @@ window.GAME_DATA_FALLBACK = {
                   "text": "Absent du Cheval Noir de 20 h à 22 h passées, selon Jeannot. Revenu les mains pleines de peinture blanche.",
                   "label": "Mardi 16"
                 }
-              ]
+              ],
+              "speaker": "jeannot"
             },
             {
               "id": "chaptal2",
@@ -1294,6 +1308,7 @@ window.GAME_DATA_FALLBACK = {
                 "tirages",
                 "jeannot"
               ],
+              "speaker": "chaptal",
               "follows": "chaptal",
               "buttonAlone": "Parler de la peinture du mur à Marcel Chaptal",
               "titleAlone": "Marcel Chaptal et la peinture du mur"
@@ -1314,7 +1329,8 @@ window.GAME_DATA_FALLBACK = {
                     "simone2"
                   ]
                 }
-              ]
+              ],
+              "speaker": "ferrand"
             },
             {
               "id": "compta",
@@ -1376,7 +1392,8 @@ window.GAME_DATA_FALLBACK = {
                   "about": "p:mounier",
                   "text": "Chef de l'équipe de nuit de Ferrand Frères."
                 }
-              ]
+              ],
+              "speaker": "simone"
             },
             {
               "id": "simone2",
@@ -1401,6 +1418,7 @@ window.GAME_DATA_FALLBACK = {
                 "mounier",
                 "berthet2"
               ],
+              "speaker": "simone",
               "follows": "simone",
               "buttonAlone": "Interroger Simone Ferrand sur le camion",
               "titleAlone": "Simone Ferrand et le camion"
@@ -1423,7 +1441,8 @@ window.GAME_DATA_FALLBACK = {
                   "text": "A coulé la dalle neuve de Ferréol, sur ordre.",
                   "label": "Mercredi 17"
                 }
-              ]
+              ],
+              "speaker": "mounier"
             },
             {
               "id": "mounier2",
@@ -1448,6 +1467,7 @@ window.GAME_DATA_FALLBACK = {
                 "registre",
                 "consigne"
               ],
+              "speaker": "mounier",
               "follows": "mounier",
               "buttonAlone": "Aller voir Gérard Mounier avec les tonnages",
               "titleAlone": "Gérard Mounier, face aux tonnages"
@@ -1468,7 +1488,8 @@ window.GAME_DATA_FALLBACK = {
                     "berthet2"
                   ]
                 }
-              ]
+              ],
+              "speaker": "berthet"
             },
             {
               "id": "livre",
@@ -1511,6 +1532,7 @@ window.GAME_DATA_FALLBACK = {
               "requires": [
                 "livre"
               ],
+              "speaker": "berthet",
               "follows": "berthet",
               "buttonAlone": "Aller voir Lucien Berthet avec son registre",
               "titleAlone": "Lucien Berthet, face à son registre"

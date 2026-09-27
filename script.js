@@ -1516,6 +1516,11 @@
         '<span class="lead-kind">' + (clue.type === "entretien" ? "Entretien" : "Investigation") + "</span>" +
         '<span class="lead-label">' + escapeHtml(clueButton(clue)) + "</span>" +
         (read ? '<span class="already-read">déjà lu, gratuit</span>' : isNew ? '<span class="new-tag">nouveau</span>' : "");
+      const who = clue.speaker && characterById(clue.speaker);
+      if (who) {
+        btn.classList.add("lead-avec-portrait");
+        btn.insertAdjacentHTML("afterbegin", portraitHTML(who, "mini"));
+      }
       btn.addEventListener("click", () => selectClue(clue));
       list.appendChild(btn);
     });
@@ -1590,8 +1595,13 @@
     const typing = animate && !silence && clue.type === "entretien";
     const fax = animate && !!clue.fax;
     box.className = "clue-result" + (silence ? " clue-silence" : "") + (typing ? " clue-typing" : "");
+    const who = clue.speaker && characterById(clue.speaker);
     box.innerHTML =
-      '<div class="clue-title">' + escapeHtml(clueTitle(clue)) + '</div><div class="clue-text">' +
+      (who
+        ? '<div class="clue-tete">' + portraitHTML(who, "moyen") + '<div><div class="clue-title">' + escapeHtml(clueTitle(clue)) +
+          '</div><p class="clue-qui"><span class="tag-person">' + escapeHtml(who.name) + "</span> · " + escapeHtml(who.role || "") + "</p></div></div>"
+        : '<div class="clue-title">' + escapeHtml(clueTitle(clue)) + "</div>") +
+      '<div class="clue-text">' +
       renderParagraphs(clue.text, { fresh: new Set(r.fresh || []), links: true, knowledge: k, fax: clue.fax, printFax: fax }) +
       '</div><div class="stamp">Lu</div>' + discoveriesHTML(r);
     if (typing) setTimeout(() => typewrite(box.querySelector(".clue-text"), box), 0);
