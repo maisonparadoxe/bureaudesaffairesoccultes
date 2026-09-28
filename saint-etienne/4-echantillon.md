@@ -1,6 +1,6 @@
 # Le feu de Ferréol : échantillon d'écriture
 
-> Document historique : l'échantillon validé avant l'écriture. La version à jour de tous les textes est `5-textes.md`.
+> Document historique : l'échantillon validé avant l'écriture. La version à jour de tous les textes est `5-textes.md`. Le chef du Bureau s'appelle désormais Paul Moreau (il s'appelait Mathilde Vernet dans cet échantillon) ; les noms ont été mis à jour ici par cohérence.
 
 Six textes pour valider le ton avant d'écrire les 39 pistes : l'intro, cinq pistes choisies pour couvrir tous les registres (document, repérage, entretien piège, aveu, scène d'horreur), et un puzzle.
 
@@ -23,7 +23,7 @@ La lettre est arrivée au courrier du matin, entre deux soucoupes volantes au-de
 
 Jean-Loup Sarrazin a lu les deux par-dessus l'épaule d'Odile. « Un fantôme qui annonce un mort, et le mort qui arrive. C'est une page, ça. On est d'accord ? »
 
-Mathilde plie la lettre en quatre et la glisse dans son sac. « Admettons. »
+Paul plie la lettre en quatre et la glisse dans la poche de son imperméable. « Admettons. »
 
 Le soir même, vous prenez vos quartiers dans un bureau vide de la ⌖rédaction du Stéphanois, rue de la République. Le radiateur fait plus de bruit que de chaleur.
 
@@ -55,13 +55,13 @@ Yves fait trois photos du mur, deux de la dalle, une des projecteurs.
 
 Sur Faure, il baisse la voix d'un demi-ton. « Un drame. Je le connaissais de loin, ce sont les services qui suivaient le dossier. »
 
-Mathilde : « Vous étiez à Ferréol mardi soir, donc. »
+Paul : « Vous étiez à Ferréol mardi soir, donc. »
 
 « Mardi ? J'étais chez moi. Seul, ma femme était chez sa mère, à Lyon. Soirée télé. » Il sourit. « Vous voyez, rien de très passionnant. »
 
 Vous demandez qui a coulé la dalle neuve. « Ça, c'est technique. Voyez avec Roger Ferrand. »
 
-En vous raccompagnant, il glisse une *carte de visite* dans la poche de Mathilde. Groupe Vallenot, Hervé Vallenot, président. En dessous, un numéro de radiotéléphone. « Pour votre beau papier. N'hésitez pas. »
+En vous raccompagnant, il glisse une *carte de visite* dans la poche de Paul. Groupe Vallenot, Hervé Vallenot, président. En dessous, un numéro de radiotéléphone. « Pour votre beau papier. N'hésitez pas. »
 
 *Notes au carnet :* **Hervé Vallenot** · Soirée du 16 : « Dit avoir passé la soirée seul chez lui, sa femme chez sa mère à Lyon. » · « Dit ne connaître le dossier Ferréol que "de loin". » *Carte de visite de Vallenot* · « Porte son numéro de radiotéléphone. »
 
@@ -142,11 +142,11 @@ Une fois le reçu reconstitué, **Lucien Berthet** entre dans le carnet. Son adr
 
 ## Ce que j'ai appliqué
 
-- **Les tics :** Mathilde qui affirme faux pour se faire corriger (« Vous étiez à Ferréol mardi soir, donc. »), Colette qui se reprend sur le présent, Vallenot et ses « beau ». Et Bensaïd qui **perd son conditionnel** quand il se met à dire la vérité : c'est la règle du tic comme indice, à l'envers.
+- **Les tics :** Paul qui affirme faux pour se faire corriger (« Vous étiez à Ferréol mardi soir, donc. »), Colette qui se reprend sur le présent, Vallenot et ses « beau ». Et Bensaïd qui **perd son conditionnel** quand il se met à dire la vérité : c'est la règle du tic comme indice, à l'envers.
 - **Le narrateur ne conclut jamais.** Les retraits « B.F. » ne sont pas reliés à Faure, les mégots ne sont pas reliés à Vallenot, le « feu » n'est pas relié aux projecteurs. C'est au joueur de le faire.
 - **Les indices qui se répondent :** l'odeur de cigarillo froid chez Vallenot et les mégots de Bensaïd, le « Ferréol ne sera pas un parking » de la lettre et du mur, le numéro de la carte de visite et celui de la facture.
 - **Une seule chute sèche** dans l'échantillon : le couvert de Bernard. Aucune comparaison du type « le geste de quelqu'un qui ».
-- **Le « donc » interdit** l'est dans la narration. Dans la bouche de Mathilde, c'est son tic : il reste.
+- **Le « donc » interdit** l'est dans la narration. Dans la bouche de Paul, c'est son tic : il reste.
 
 ## Ce qui reste à vérifier
 

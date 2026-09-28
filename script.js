@@ -820,7 +820,7 @@
       '<div class="logo" role="img" aria-label="Bureau des affaires occultes">' +
       '<img src="img/logo.png" alt="" class="logo-img" data-remove-on-error>' +
       '<div class="logo-text"><span class="logo-top">Bureau des</span><span class="logo-main">Affaires</span><span class="logo-main">occultes</span>' +
-      '<span class="logo-stamp">France · 1993</span></div></div>'
+      '<span class="logo-stamp">France · Années 1990</span></div></div>'
     );
   }
 
@@ -2347,7 +2347,7 @@
     const panel = document.createElement("div");
     panel.className = "intervention-panel questionnaire";
     panel.innerHTML =
-      "<h2>Rédiger l'article</h2><p>Le bouclage approche. Avant d'écrire, Mathilde veut vos réponses. Chaque bonne réponse rapporte des points ; " +
+      "<h2>Rédiger l'article</h2><p>Le bouclage approche. Avant d'écrire, Paul veut vos réponses. Chaque bonne réponse rapporte des points ; " +
       "chaque piste lue au-delà de " + cs.referenceLeads + " vous en coûte " + cs.penaltyPerExtraLead + ". Vous avez lu " + leadsUsed() + " piste" + (leadsUsed() > 1 ? "s" : "") +
       ". Le carnet reste consultable.</p>";
 

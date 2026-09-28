@@ -6,7 +6,7 @@
 //    chaque puzzle et chaque entrée Minitel renvoie à quelque chose qui existe ;
 //  - on simule une partie où le joueur lit tout ce qu'il peut (puzzles résolus,
 //    Minitel consulté pour les noms connus) : tout doit finir par apparaître ;
-//  - la « solution de Mathilde » (referencePath) est jouable dans l'ordre ;
+//  - le chemin de référence (referencePath) est jouable dans l'ordre ;
 //  - le questionnaire et les fins sont cohérents.
 
 const fs = require("fs");
@@ -156,16 +156,16 @@ data.cities.filter((c) => c.status === "available").forEach((city) => {
       const read = new Set(), solved = new Set(), minitel = new Set();
       cs.referencePath.forEach((id) => {
         const c = clues.get(id);
-        if (!c) return err("solution de Mathilde", "piste inconnue " + id);
+        if (!c) return err("chemin de référence", "piste inconnue " + id);
         let k = knowledge(read, solved, minitel);
         searchMinitel(k, minitel);
         k = knowledge(read, solved, minitel);
-        if (!available(c, k, read)) err("solution de Mathilde", "« " + id + " » n'est pas encore accessible à ce moment");
+        if (!available(c, k, read)) err("chemin de référence", "« " + id + " » n'est pas encore accessible à ce moment");
         read.add(id);
         if (c.puzzle) solved.add(c.puzzle);
       });
-      if (cs.referencePath.length >= cs.totalLeads) err("solution de Mathilde", "elle consomme toutes les pistes accordées");
-      console.log("  Solution de Mathilde : " + cs.referencePath.length + " pistes sur " + cs.totalLeads + " accordées.");
+      if (cs.referencePath.length >= cs.totalLeads) err("chemin de référence", "il consomme toutes les pistes accordées");
+      console.log("  Chemin de référence : " + cs.referencePath.length + " pistes sur " + cs.totalLeads + " accordées.");
     }
     const start = knowledge(new Set(), new Set(), new Set());
     console.log("  " + start.l.size + " lieu(x) connu(s) au départ sur " + cs.locations.length + ", " + all.read.size + "/" + cs.clues.length + " pistes atteignables.");

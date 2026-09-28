@@ -33,7 +33,7 @@ Secrétaire médicale à mi-temps. Domicile, rue des Creuses.
 
 ## Roger Ferrand, 47 ans, le patron de BTP
 
-Gérant de Ferrand Frères, zone de la Rivière. Le « frère », Paul, est mort en 1987, écrasé sous une banche sur un chantier. Roger n'en parle jamais.
+Gérant de Ferrand Frères, zone de la Rivière. Le « frère », André, est mort en 1987, écrasé sous une banche sur un chantier. Roger n'en parle jamais.
 
 - **Ce qu'il sait :** tout, sauf ce que Vallenot a fait après avoir renvoyé Roger chez lui (les mégots, les vingt minutes d'attente).
 - **Ce qu'il cache :** sa présence sur le site, les 50 000 francs, le dossier bleu (brûlé), les dalles.
@@ -65,7 +65,7 @@ Groupe Vallenot, avenue de la Libération. Safrane bleu nuit, radiotéléphone d
 
 ## Marcel Roussillon, 58 ans, l'adjoint à l'urbanisme
 
-Mairie, place de l'Hôtel de Ville. Chevalière en or à la salamandre.
+Mairie, place de l'Hôtel de Ville. Chevalière en or à la salamandre, héritée sans qu'il en connaisse le sens (il n'est pas un Gardien du seuil).
 
 - **Ce qu'il sait :** le montage de la SCI Delombre (son beau-frère Maurice). Le soir du 16 à 23 h 30, Vallenot l'appelle : « Il y a eu un accident. Il faut que ça reste un accident. » Le lendemain à 8 h 10, il appelle le commissaire Borel.
 - **Son mensonge :** « L'urgence justifiait la procédure. » Il ne dit rien de l'appel de la nuit.

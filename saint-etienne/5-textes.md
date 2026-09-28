@@ -1,6 +1,6 @@
 # Le feu de Ferréol : les textes
 
-Saint-Étienne, novembre 1993. Tous les textes de l'affaire, dans l'ordre des lieux. Personnes en **gras**, pièces en *italique*, lieux précédés de ⌖. Généré depuis `textes.py` par `verifier_textes.py`, qui contrôle aussi les balises, les révélations et le chemin idéal.
+Saint-Étienne, novembre 1993. Tous les textes de l'affaire, dans l'ordre des lieux. Personnes en **gras**, pièces en *italique*, lieux précédés de ⌖. Généré depuis `textes.py` par `verifier_textes.py`, qui contrôle aussi les balises, les révélations et le chemin de référence.
 
 ## L'intro
 
@@ -14,7 +14,7 @@ La lettre est arrivée au courrier du matin, entre deux soucoupes volantes au-de
 
 Jean-Loup Sarrazin a lu les deux par-dessus l'épaule d'Odile. « Un fantôme qui annonce un mort, et le mort qui arrive. C'est une page, ça. On est d'accord ? »
 
-Mathilde plie la lettre en quatre et la glisse dans son sac. « Admettons. »
+Paul plie la lettre en quatre et la glisse dans la poche de son imperméable. « Admettons. »
 
 Le soir même, vous prenez vos quartiers dans un bureau vide de la ⌖rédaction du Stéphanois, rue de la République. Le radiateur fait plus de bruit que de chaleur.
 
@@ -47,7 +47,7 @@ Une brève de mai cite un opposant, **Marcel Chaptal**, ancien délégué CGT de
 
 **Daniel Roche** ne se lève pas de son fauteuil. Il a gardé son imperméable, comme s'il allait repartir d'une minute à l'autre depuis 1971. « Alors c'est vous, les Lyonnais. Les fantômes. » Il tapote un paquet de Gitanes sur le bureau sans en sortir une.
 
-Mathilde : « Faure vous avait appelé, la semaine dernière. »
+Paul : « Faure vous avait appelé, la semaine dernière. »
 
 « Moi ? Des appels de cinglés, j'en prends dix par jour. Trente ans de métier, je les reconnais à la première phrase. » Il revient à sa machine à écrire. « Faure, c'est un accident. Le petit **Lacour** a constaté, le commissaire a signé. Allez donc photographier vos revenants. »
 
@@ -77,7 +77,7 @@ Vous posez la photocopie du cahier sur la machine à écrire de **Roche**. Il la
 
 « Il ne voulait pas un article, votre Faure. Il m'a demandé : "C'est combien, pour vous, un dossier comme ça ?" Combien. Trente ans de métier, on ne m'avait jamais fait le coup. J'ai raccroché. »
 
-Mathilde : « Et vous n'en avez parlé à personne. »
+Paul : « Et vous n'en avez parlé à personne. »
 
 « À qui ? Le ⌖Groupe Vallenot nous achète une pleine page tous les jeudis. Vous voulez que j'écrive qu'un fonctionnaire vend des papiers sur Ferréol ? »
 
@@ -97,17 +97,17 @@ Karim lit la page encore tiède par-dessus votre épaule. « Non mais attends. I
 
 > **Carnet**
 > - Ancienne Manufacture Ferréol · 1911 : Étienne Vial, fondeur de 19 ans, tombé dans la coulée le 3 février 1911. La coulée n'a pas été arrêtée.
-> - Roger Ferrand · Son frère : Paul Ferrand, 39 ans, mort écrasé sous une banche le 14 mars 1987. Roger a refusé de parler au journaliste.
+> - Roger Ferrand · Son frère : André Ferrand, 39 ans, mort écrasé sous une banche le 14 mars 1987. Roger a refusé de parler au journaliste.
 
 ### Les tirages d'Yves
 
-*Bouton : « Récupérer les tirages d'Yves » · investigation · après : Repérage du chantier · 118 mots*
+*Bouton : « Récupérer les tirages d'Yves » · investigation · après : Repérage du chantier · 121 mots*
 
 Yves a fait parler le laborantin. Le 17 au matin, le photographe de permanence est allé à Ferréol pour le fait divers. Le journal n'a rien publié, mais la planche contact est restée dans un tiroir.
 
 Yves la pose sous la lampe et vous tend son compte-fils. Vue numéro sept : le mur est, à huit heures. Sur les lettres blanches, la peinture brille encore. Deux coulures descendent jusqu'au trottoir, un pot vide est posé contre le mur.
 
-Mathilde sort de son sac la lettre du fantôme et la pose à côté de la planche. Yves regarde l'une, puis l'autre. « Ferréol ne sera pas un parking. » Il répète, plus lentement : « Pas un parking. »
+Paul sort de la poche de son imperméable la lettre du fantôme et la pose à côté de la planche. Yves regarde l'une, puis l'autre. « Ferréol ne sera pas un parking. » Il répète, plus lentement : « Pas un parking. »
 
 > **Carnet**
 > - Ancienne Manufacture Ferréol · Mur est : Le 17 à 8 h, la peinture du slogan était encore fraîche. Un pot vide contre le mur.
@@ -181,13 +181,13 @@ Une trentaine d'appels, presque tous en journée, vers la mairie ou vers Ferrand
 
 Sur Faure, il baisse la voix d'un demi-ton. « Un drame. Je le connaissais de loin, ce sont les services qui suivaient le dossier. »
 
-Mathilde : « Vous étiez à Ferréol mardi soir, donc. »
+Paul : « Vous étiez à Ferréol mardi soir, donc. »
 
 « Mardi ? J'étais chez moi. Seul, ma femme était chez sa mère, à Lyon. Soirée télé. » Il sourit. « Rien de très passionnant. »
 
 Vous demandez qui a coulé la dalle neuve. « Ça, c'est technique. Voyez avec Roger Ferrand. »
 
-En vous raccompagnant, il glisse une *carte de visite* dans la poche de Mathilde. Groupe Vallenot, Hervé Vallenot, président. Radiotéléphone : 07 42 18 63. « Pour votre beau papier. N'hésitez pas. »
+En vous raccompagnant, il glisse une *carte de visite* dans la poche de Paul. Groupe Vallenot, Hervé Vallenot, président. Radiotéléphone : 07 42 18 63. « Pour votre beau papier. N'hésitez pas. »
 
 > **Carnet**
 > - Hervé Vallenot · Mardi 16 : Dit avoir passé la soirée seul chez lui, sa femme chez sa mère à Lyon.
@@ -251,7 +251,7 @@ Le cabinet du **Dr Lacour** sent l'éther et la moquette humide. Il vous reçoit
 
 « Mort sur le coup, j'imagine. Une chute de quatre mètres sur de l'acier, c'est très classique. Rien d'alarmant. » Il regarde sa montre, puis la pendule.
 
-Mathilde : « Vous êtes arrivé vers six heures, donc. »
+Paul : « Vous êtes arrivé vers six heures, donc. »
 
 « Sept heures. On m'a appelé à sept heures moins le quart. Tout était très classique. Ça arrive, ces choses-là, sur les chantiers. »
 
@@ -266,9 +266,9 @@ Vous racontez à **Lacour** ce qu'a vu le gardien : le corps près de la porte, 
 
 « La rigidité, les lividités… Il est mort entre minuit et une heure. Pas à dix heures. » Il enlève ses lunettes. « Il n'est pas mort sur le coup. Il a mis longtemps. Deux heures, peut-être. Il a dû avoir froid. »
 
-Mathilde : « Et vous avez écrit "mort immédiate". »
+Paul : « Et vous avez écrit "mort immédiate". »
 
-« Le commissaire était là. Il m'a dit qu'une famille n'a pas besoin de lire ce genre de détails. J'ai soixante et un ans, madame. »
+« Le commissaire était là. Il m'a dit qu'une famille n'a pas besoin de lire ce genre de détails. J'ai soixante et un ans, monsieur. »
 
 > **Carnet**
 > - Bernard Faure · Heure de la mort : Entre minuit et une heure, selon le Dr Lacour. Pas sur le coup.
@@ -353,9 +353,9 @@ Au bout de la table, le couvert de Bernard est toujours mis.
 
 Les camions ? « Il se pourrait qu'il y en ait eu, la nuit. Depuis un mois. Ceux de chez Ferrand. »
 
-Mathilde : « Vous avez vu qui conduisait, donc. »
+Paul : « Vous avez vu qui conduisait, donc. »
 
-« Non, madame. Je regarde pas ce qui me regarde pas. » Il vous raccompagne. « Pour l'histoire de l'usine, voyez plutôt **Marcel Chaptal**. Il est tous les jours au ⌖Cheval Noir. »
+« Non, monsieur. Je regarde pas ce qui me regarde pas. » Il vous raccompagne. « Pour l'histoire de l'usine, voyez plutôt **Marcel Chaptal**. Il est tous les jours au ⌖Cheval Noir. »
 
 > **Carnet**
 > - Ahmed Bensaïd · Mardi 16 : Dit avoir entendu des voix vers 22 h, du côté de l'atelier de forge. « Je suis pas descendu. »
@@ -477,7 +477,7 @@ Il regarde la rue. « Le fondeur, c'est des histoires. C'est moi qui les raconte
 
 « Mardi soir ? Pourquoi, j'aurais dû être où ? »
 
-Mathilde : « À Ferréol, avec Faure. »
+Paul : « À Ferréol, avec Faure. »
 
 « Et j'y aurais fait quoi, à Ferréol, sur un chantier gelé ? » Il essuie ses mains sur son bleu, lentement, une main puis l'autre. Son alliance serre un doigt gonflé. « J'étais chez moi. Demandez à **ma femme**, elle est au bureau du fond. Vous croyez qu'elle va vous dire autre chose ? »
 
@@ -518,10 +518,10 @@ Le calendrier des Postes pend à un clou. Les pages de janvier à octobre ont é
 > **Puzzle : Le coffre**  
 > Une molette à quatre chiffres.  
 > Solution : 1403  
-> Indices : Le 14 mars entouré sur le calendrier. La date de la mort de Paul Ferrand, donnée par Odile.  
+> Indices : Le 14 mars entouré sur le calendrier. La date de la mort d'André Ferrand, donnée par Odile.  
 > Résultat : Le coffre s'ouvre. Dedans, cinq *liasses de billets de 200 francs*, chacune serrée par une bande de papier kraft tamponnée par la banque : « 16 NOV. 1993 ». Cinquante mille francs, pas un billet de moins.
 
-Sous les liasses, un faire-part de décès bordé de noir. Paul Ferrand, 1948-1987.  
+Sous les liasses, un faire-part de décès bordé de noir. André Ferrand, 1948-1987.  
 > Aide (coûte une piste) : Simone passe la tête par la porte du bureau. « Le 14 mars. C'est toujours le 14 mars, avec lui. »
 
 ### Simone Ferrand
@@ -562,7 +562,7 @@ Elle regarde vers le hangar, où son mari parle fort au téléphone. « Il y ava
 
 « Je sais rien, moi. Je fais ce qu'on me dit. » Le béton du 17 ? « Le patron a dit de couler, j'ai coulé. »
 
-Mathilde : « Et le 16 au soir, vous étiez à Ferréol avec votre équipe, donc. »
+Paul : « Et le 16 au soir, vous étiez à Ferréol avec votre équipe, donc. »
 
 « Non. Le patron a dit de pas venir, mardi. Pour une fois. » Il entend ce qu'il vient de dire. « Ça fait un mois qu'on y va toutes les nuits, et mardi, non. C'est tout. C'est le patron qui décide. »
 
@@ -657,7 +657,7 @@ Le chef de chantier, jovial, vous montre le plan de financement punaisé dans so
 
 ## Le questionnaire
 
-Score : points des bonnes réponses, moins 2 points par piste lue au-delà de 12 (la solution de Mathilde). Rangs : Réussite majeure à partir de 80, Réussite à partir de 60, Demi-succès à partir de 40, Échec à partir de 0.
+Score : points des bonnes réponses, moins 2 points par piste lue au-delà de 12 (le chemin de référence). Rangs : Réussite majeure à partir de 80, Réussite à partir de 60, Demi-succès à partir de 40, Échec à partir de 0.
 
 **Q1. Qui a fait tomber Bernard Faure ?** (20 points)  
 ✔ Roger Ferrand  ○ Hervé Vallenot  ○ Marcel Roussillon  ○ Marcel Chaptal  ○ Ahmed Bensaïd  ○ Personne, c'est un accident
@@ -690,7 +690,7 @@ Samedi 27 novembre, la page des Affaires occultes n'est pas en page 14. Elle est
 
 Roger Ferrand est mis en examen pour homicide involontaire. Il ne dit presque rien, sauf une phrase au juge, rapportée par Igier : « Je l'ai poussé. Après, c'est l'autre qui a décidé. » Hervé Vallenot est mis en examen pour non-assistance à personne en danger. Ses avocats parlent d'un « malentendu dramatique ». Le Groupe Vallenot annule sa page de publicité du jeudi.
 
-L'article ne cache rien de Bernard Faure. Colette appelle la rédaction le lundi. Elle ne crie pas. Elle demande seulement si c'était nécessaire. Mathilde répond que oui. Elle raccroche, et reste longtemps sans rallumer sa cigarette.
+L'article ne cache rien de Bernard Faure. Colette appelle la rédaction le lundi. Elle ne crie pas. Elle demande seulement si c'était nécessaire. Paul répond que oui. Il raccroche, et reste longtemps sans rallumer sa cigarette.
 
 ### Le martyr (Q1 et Q3 justes, Q2 fausse)
 
@@ -712,7 +712,7 @@ Personne ne parle de la Safrane, ni des quatre mégots. Hervé Vallenot se décl
 
 L'article paraît le samedi 27 novembre. Le lundi, la mairie publie un communiqué : l'enquête de police a conclu à un accident, et « certains journalistes feraient mieux de s'en tenir aux fantômes ». Le Groupe Vallenot menace de retirer sa publicité de tous les titres du groupe.
 
-Jean-Loup convoque Mathilde. La porte reste fermée une heure. En sortant, elle dit seulement : « Admettons. »
+Jean-Loup convoque Paul. La porte reste fermée une heure. En sortant, il dit seulement : « Admettons. »
 
 À Ferréol, la dalle a séché. Le chantier reprend en janvier.
 

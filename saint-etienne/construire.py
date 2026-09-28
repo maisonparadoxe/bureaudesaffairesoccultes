@@ -1,6 +1,8 @@
 # Construit l'affaire de Saint-Étienne pour le jeu, à partir de carte.py et
 # textes.py, et la range dans ../data.json.
 #   python3 construire.py      puis      node ../outils/verifier.js
+# Ne touche qu'à la ville de Saint-Étienne (et à la note de service et aux
+# crédits, communs à tout le jeu) : les autres villes restent intactes.
 import json, pathlib, runpy, io, contextlib, random, re
 
 ICI = pathlib.Path(__file__).parent
@@ -132,7 +134,7 @@ cas = dict(
     totalLeads=T["AFFAIRE"]["pistes_accordees"],
     referenceLeads=T["SCORE"]["pistes_de_reference"],
     penaltyPerExtraLead=T["SCORE"]["penalite_par_piste_en_plus"],
-    referencePath=C["MATHILDE"],
+    referencePath=C["REFERENCE"],
     intro=T["INTRO"],
     introNotes=notes("intro", T["INTRO_NOTES"]),
     briefing=("Menez des entretiens et des investigations. Chaque piste lue pour la première fois coûte une heure avant le bouclage, "
@@ -258,39 +260,37 @@ for f in T["FINS"]:
                                text=f["texte"].strip(), music=MUSIQUES[f["id"]]))
 
 # ------------------------------------------------------------------ data.json
+# Seule la ville de Saint-Étienne est remplacée. Les autres villes (Nyons…)
+# ne sont jamais touchées par ce script.
 data_path = RACINE / "data.json"
 data = json.loads(data_path.read_text(encoding="utf-8"))
 archives = RACINE / "archives"
-archives.mkdir(exist_ok=True)
 for city in data["cities"]:
     if city["id"] == "saint_etienne":
         anciens = [c for c in city["cases"] if c["id"] != "feu_ferreol"]
         if anciens:
+            archives.mkdir(exist_ok=True)
             (archives / "saint-etienne-ancienne-version.json").write_text(json.dumps(anciens, ensure_ascii=False, indent=2), encoding="utf-8")
         city["cases"] = [cas]
-    if city["id"] == "nyons" and city["cases"]:
-        (archives / "nyons-ancienne-version.json").write_text(json.dumps(city["cases"], ensure_ascii=False, indent=2), encoding="utf-8")
-        city["cases"] = []
-        city["status"] = "coming_soon"
 # Note de service d'introduction (affichée à la première nouvelle partie)
 data["prologue"] = {
     "entete": "Groupe Sarrazin · Direction générale · 14, cours Lafayette · Lyon",
     "date": "Lyon, le 4 octobre 1993",
     "de": "Jean-Loup Sarrazin, président-directeur général",
-    "a": "Mathilde Vernet",
+    "a": "Paul Moreau",
     "copie": "Yves Barral, Karim Haddou, Odile Perrichon",
     "objet": "Création de la rubrique « Les Affaires occultes »",
     "corps": [
-        "Mathilde,",
+        "Paul,",
         "Nos études sont formelles : le lecteur du samedi veut du mystère. À compter du 6 novembre, nos quatorze quotidiens publieront chaque samedi une page commune, « Les Affaires occultes » : maisons hantées, guérisseurs, phénomènes inexpliqués. Le concept est simple, la cible est large.",
         "Vous en aurez la responsabilité. Vous disposerez de l'ancienne salle des archives, au quatrième étage, d'Yves Barral pour les photos, et de Karim Haddou, stagiaire, qui s'est porté volontaire. Odile Perrichon, aux archives, reste à votre disposition.",
         "Chaque semaine, vous partirez là où nos lecteurs signalent quelque chose d'étrange. Vous serez hébergés par la rédaction locale. Le bouclage est le jeudi à 18 heures. Les notes de frais seront examinées une par une.",
         "Je compte sur vous pour me faire du fantôme, pas de la politique. On est d'accord ?"
     ],
     "signature": "J.-L. S.",
-    "annotation": "Admettons. M. V.",
+    "annotation": "Admettons. P. M.",
     "equipe": [
-        {"id": "mathilde", "nom": "Mathilde Vernet", "role": "Cheffe du Bureau", "texte": "Dix ans au service police-justice. Mise au placard en 1991, après un article que le groupe a dû démentir. Elle n'a jamais cru à ce démenti."},
+        {"id": "paul", "nom": "Paul Moreau", "role": "Chef du Bureau", "texte": "Dix ans au service police-justice. Mis au placard en 1991, après un article que le groupe a dû démentir. Il n'a jamais cru à ce démenti."},
         {"id": "yves", "nom": "Yves Barral", "role": "Photographe", "texte": "Vingt-cinq ans dans les agences parisiennes. Ne croit qu'à ses négatifs, et remarque les visages qui reviennent."},
         {"id": "karim", "nom": "Karim Haddou", "role": "Stagiaire", "texte": "Sorti de l'école de journalisme de Lille. Lit tout sur les phénomènes inexpliqués, et y croit un peu."},
         {"id": "odile", "nom": "Odile Perrichon", "role": "Documentaliste", "texte": "Aux archives du groupe depuis 1964. Se souvient de tout, et de qui on a fait taire."}

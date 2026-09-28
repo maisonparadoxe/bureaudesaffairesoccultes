@@ -111,15 +111,10 @@ for pid in P:
     if pid not in lues:
         erreurs.append(f"avec les textes réels, piste inaccessible : {pid}")
 faites = []
-for pid in carte["MATHILDE"]:
+for pid in carte["REFERENCE"]:
     if not accessible(pid, faites):
-        erreurs.append(f"avec les textes réels, chemin de Mathilde bloqué à : {pid}")
+        erreurs.append(f"avec les textes réels, chemin de référence bloqué à : {pid}")
     faites.append(pid)
-
-# Ce que chaque piste fait apparaître trop tôt par rapport à la carte (pour relecture)
-depart = connu([])
-for key in sorted(depart):
-    pass
 
 # ------------------------------------------------------------------ document
 def rendu(txt):
@@ -130,7 +125,7 @@ def rendu(txt):
 
 md = ["# Le feu de Ferréol : les textes\n",
       "Saint-Étienne, novembre 1993. Tous les textes de l'affaire, dans l'ordre des lieux. Personnes en **gras**, pièces en *italique*, lieux précédés de ⌖. "
-      "Généré depuis `textes.py` par `verifier_textes.py`, qui contrôle aussi les balises, les révélations et le chemin idéal.\n"]
+      "Généré depuis `textes.py` par `verifier_textes.py`, qui contrôle aussi les balises, les révélations et le chemin de référence.\n"]
 md.append("## L'intro\n")
 md.append(rendu(T["INTRO"]).replace("\n", "\n\n").replace("\n\n\n\n", "\n\n") + "\n")
 def nom_fiche(a):
@@ -154,9 +149,7 @@ for lid, (lnom, q) in LIEUX.items():
         if x["notes"]:
             md.append("> **Carnet**")
             for a, l, t in x["notes"]:
-                t2, i = a.split(":")
-                nomf = PERSONNES[i][0] if t2 == "p" else LIEUX[i][0] if t2 == "l" else DOCS[i]
-                md.append(f"> - {nomf}{(' · ' + l) if l else ''} : {rendu(t)}")
+                md.append(f"> - {nom_fiche(a)}{(' · ' + l) if l else ''} : {rendu(t)}")
             md.append("")
         if c["id"] in PUZZLES:
             pz = PUZZLES[c["id"]]
@@ -170,7 +163,7 @@ for lid, (lnom, q) in LIEUX.items():
 
 md.append("## Le questionnaire\n")
 sc = T["SCORE"]
-md.append(f"Score : points des bonnes réponses, moins {sc['penalite_par_piste_en_plus']} points par piste lue au-delà de {sc['pistes_de_reference']} (la solution de Mathilde). "
+md.append(f"Score : points des bonnes réponses, moins {sc['penalite_par_piste_en_plus']} points par piste lue au-delà de {sc['pistes_de_reference']} (le chemin de référence). "
           "Rangs : " + ", ".join(f"{r} à partir de {s}" for s, r in sc["rangs"]) + ".\n")
 for q in T["QUESTIONS"]:
     md.append(f"**{q['id']}. {q['texte']}** ({q['points']} points)  ")

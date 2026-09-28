@@ -30,7 +30,7 @@ window.GAME_DATA_FALLBACK = {
             "tirages",
             "chaptal2"
           ],
-          "intro": "Jeudi 18 novembre 1993, quatrième étage du siège, à Lyon.\n\nLa lettre est arrivée au courrier du matin, entre deux soucoupes volantes au-dessus du Vercors et une abonnée qui voit la Vierge dans une tache d'humidité. Karim l'a mise de côté. Enveloppe kraft, cachet de Saint-Étienne, lundi 15. Écriture en capitales, au stylo bille, appuyée au point de trouer le papier.\n\n{{d:lettre_fantome|« AU JOURNAL. DEPUIS UN MOIS LE FEU EST REVENU À LA FORGE DE FERRÉOL. ON LE VOIT LA NUIT DEPUIS LA RUE DE LA MONTAT, ROUGE, COMME AU TEMPS DES COULÉES. C'EST LE FONDEUR DE 1911. ON L'A LAISSÉ DANS LA FONTE ET ON A COULÉ LA PIÈCE QUAND MÊME. IL REVIENT CHAQUE FOIS QU'ON TOUCHE À L'USINE. FERRÉOL NE SERA PAS UN PARKING. IL Y AURA D'AUTRES MORTS. UN ANCIEN DE CHEZ FERRÉOL. »}}\n\nÀ dix heures, Odile descend avec le Stéphanois du jour, plié à la page des faits divers. {{p:faure|Bernard Faure}}, 52 ans, chargé de mission au service d'urbanisme de la {{l:mairie|mairie}}, retrouvé mort mercredi matin au pied d'un escalier de l'ancienne {{l:site_ferreol|Manufacture Ferréol}}. La {{l:commissariat|police}} conclut à une chute accidentelle. Quatorze lignes, pas de photo.\n\nJean-Loup Sarrazin a lu les deux par-dessus l'épaule d'Odile. « Un fantôme qui annonce un mort, et le mort qui arrive. C'est une page, ça. On est d'accord ? »\n\nMathilde plie la lettre en quatre et la glisse dans son sac. « Admettons. »\n\nLe soir même, vous prenez vos quartiers dans un bureau vide de la {{l:redaction|rédaction du Stéphanois}}, rue de la République. Le radiateur fait plus de bruit que de chaleur.",
+          "intro": "Jeudi 18 novembre 1993, quatrième étage du siège, à Lyon.\n\nLa lettre est arrivée au courrier du matin, entre deux soucoupes volantes au-dessus du Vercors et une abonnée qui voit la Vierge dans une tache d'humidité. Karim l'a mise de côté. Enveloppe kraft, cachet de Saint-Étienne, lundi 15. Écriture en capitales, au stylo bille, appuyée au point de trouer le papier.\n\n{{d:lettre_fantome|« AU JOURNAL. DEPUIS UN MOIS LE FEU EST REVENU À LA FORGE DE FERRÉOL. ON LE VOIT LA NUIT DEPUIS LA RUE DE LA MONTAT, ROUGE, COMME AU TEMPS DES COULÉES. C'EST LE FONDEUR DE 1911. ON L'A LAISSÉ DANS LA FONTE ET ON A COULÉ LA PIÈCE QUAND MÊME. IL REVIENT CHAQUE FOIS QU'ON TOUCHE À L'USINE. FERRÉOL NE SERA PAS UN PARKING. IL Y AURA D'AUTRES MORTS. UN ANCIEN DE CHEZ FERRÉOL. »}}\n\nÀ dix heures, Odile descend avec le Stéphanois du jour, plié à la page des faits divers. {{p:faure|Bernard Faure}}, 52 ans, chargé de mission au service d'urbanisme de la {{l:mairie|mairie}}, retrouvé mort mercredi matin au pied d'un escalier de l'ancienne {{l:site_ferreol|Manufacture Ferréol}}. La {{l:commissariat|police}} conclut à une chute accidentelle. Quatorze lignes, pas de photo.\n\nJean-Loup Sarrazin a lu les deux par-dessus l'épaule d'Odile. « Un fantôme qui annonce un mort, et le mort qui arrive. C'est une page, ça. On est d'accord ? »\n\nPaul plie la lettre en quatre et la glisse dans la poche de son imperméable. « Admettons. »\n\nLe soir même, vous prenez vos quartiers dans un bureau vide de la {{l:redaction|rédaction du Stéphanois}}, rue de la République. Le radiateur fait plus de bruit que de chaleur.",
           "introNotes": [
             {
               "about": "p:faure",
@@ -719,7 +719,7 @@ window.GAME_DATA_FALLBACK = {
               "type": "entretien",
               "button": "Parler à Daniel Roche",
               "title": "Daniel Roche, chef des faits divers",
-              "text": "{{p:roche|Daniel Roche}} ne se lève pas de son fauteuil. Il a gardé son imperméable, comme s'il allait repartir d'une minute à l'autre depuis 1971. « Alors c'est vous, les Lyonnais. Les fantômes. » Il tapote un paquet de Gitanes sur le bureau sans en sortir une.\n\nMathilde : « Faure vous avait appelé, la semaine dernière. »\n\n« Moi ? Des appels de cinglés, j'en prends dix par jour. Trente ans de métier, je les reconnais à la première phrase. » Il revient à sa machine à écrire. « Faure, c'est un accident. Le petit {{p:lacour|Lacour}} a constaté, le commissaire a signé. Allez donc photographier vos revenants. »",
+              "text": "{{p:roche|Daniel Roche}} ne se lève pas de son fauteuil. Il a gardé son imperméable, comme s'il allait repartir d'une minute à l'autre depuis 1971. « Alors c'est vous, les Lyonnais. Les fantômes. » Il tapote un paquet de Gitanes sur le bureau sans en sortir une.\n\nPaul : « Faure vous avait appelé, la semaine dernière. »\n\n« Moi ? Des appels de cinglés, j'en prends dix par jour. Trente ans de métier, je les reconnais à la première phrase. » Il revient à sa machine à écrire. « Faure, c'est un accident. Le petit {{p:lacour|Lacour}} a constaté, le commissaire a signé. Allez donc photographier vos revenants. »",
               "facts": [
                 {
                   "about": "p:roche",
@@ -763,7 +763,7 @@ window.GAME_DATA_FALLBACK = {
               "type": "entretien",
               "button": "Revenir voir Roche avec le cahier",
               "title": "Roche, second entretien",
-              "text": "Vous posez la photocopie du cahier sur la machine à écrire de {{p:roche|Roche}}. Il la regarde un moment. « Quatre minutes. Bon. » Il allume enfin une Gitane.\n\n« Il ne voulait pas un article, votre Faure. Il m'a demandé : \"C'est combien, pour vous, un dossier comme ça ?\" Combien. Trente ans de métier, on ne m'avait jamais fait le coup. J'ai raccroché. »\n\nMathilde : « Et vous n'en avez parlé à personne. »\n\n« À qui ? Le {{l:cabinet_vallenot|Groupe Vallenot}} nous achète une pleine page tous les jeudis. Vous voulez que j'écrive qu'un fonctionnaire vend des papiers sur Ferréol ? »",
+              "text": "Vous posez la photocopie du cahier sur la machine à écrire de {{p:roche|Roche}}. Il la regarde un moment. « Quatre minutes. Bon. » Il allume enfin une Gitane.\n\n« Il ne voulait pas un article, votre Faure. Il m'a demandé : \"C'est combien, pour vous, un dossier comme ça ?\" Combien. Trente ans de métier, on ne m'avait jamais fait le coup. J'ai raccroché. »\n\nPaul : « Et vous n'en avez parlé à personne. »\n\n« À qui ? Le {{l:cabinet_vallenot|Groupe Vallenot}} nous achète une pleine page tous les jeudis. Vous voulez que j'écrive qu'un fonctionnaire vend des papiers sur Ferréol ? »",
               "facts": [
                 {
                   "about": "p:faure",
@@ -795,11 +795,11 @@ window.GAME_DATA_FALLBACK = {
                 },
                 {
                   "about": "p:ferrand",
-                  "text": "Paul Ferrand, 39 ans, mort écrasé sous une banche le 14 mars 1987. Roger a refusé de parler au journaliste.",
+                  "text": "André Ferrand, 39 ans, mort écrasé sous une banche le 14 mars 1987. Roger a refusé de parler au journaliste.",
                   "label": "Son frère"
                 }
               ],
-              "fax": "GROUPE SARRAZIN · SERVICE DES ARCHIVES · LYON\nÀ : BUREAU DES AFFAIRES OCCULTES, AUX BONS SOINS DU STÉPHANOIS · 2 PAGES\n\nLE STÉPHANOIS, 3 FÉVRIER 1911, PAGE 4, COLONNE DE DROITE\nAccident à la forge Ferréol. Un fondeur de dix-neuf ans, Étienne Vial, est tombé hier dans la poche de coulée. La coulée n'a pas été arrêtée. La pièce, une roue de laminoir, est partie pour Le Creusot.\n\nLE STÉPHANOIS, 14 MARS 1987, PAGE 11, EN BAS À GAUCHE\nMontreynaud : un entrepreneur écrasé sous une banche. Paul Ferrand, 39 ans, cogérant de Ferrand Frères, est mort sur le chantier de la tour 12. Son frère Roger n'a pas souhaité s'exprimer.\n\n(À la main, en bas de la page :) Rien d'autre sur Ferréol entre 1947 et 1990. Pas une ligne. Bizarre. O."
+              "fax": "GROUPE SARRAZIN · SERVICE DES ARCHIVES · LYON\nÀ : BUREAU DES AFFAIRES OCCULTES, AUX BONS SOINS DU STÉPHANOIS · 2 PAGES\n\nLE STÉPHANOIS, 3 FÉVRIER 1911, PAGE 4, COLONNE DE DROITE\nAccident à la forge Ferréol. Un fondeur de dix-neuf ans, Étienne Vial, est tombé hier dans la poche de coulée. La coulée n'a pas été arrêtée. La pièce, une roue de laminoir, est partie pour Le Creusot.\n\nLE STÉPHANOIS, 14 MARS 1987, PAGE 11, EN BAS À GAUCHE\nMontreynaud : un entrepreneur écrasé sous une banche. André Ferrand, 39 ans, cogérant de Ferrand Frères, est mort sur le chantier de la tour 12. Son frère Roger n'a pas souhaité s'exprimer.\n\n(À la main, en bas de la page :) Rien d'autre sur Ferréol entre 1947 et 1990. Pas une ligne. Bizarre. O."
             },
             {
               "id": "tirages",
@@ -807,7 +807,7 @@ window.GAME_DATA_FALLBACK = {
               "type": "investigation",
               "button": "Récupérer les tirages d'Yves",
               "title": "Les tirages d'Yves",
-              "text": "Yves a fait parler le laborantin. Le 17 au matin, le photographe de permanence est allé à Ferréol pour le fait divers. Le journal n'a rien publié, mais la planche contact est restée dans un tiroir.\n\nYves la pose sous la lampe et vous tend son compte-fils. Vue numéro sept : le mur est, à huit heures. Sur les lettres blanches, la peinture brille encore. Deux coulures descendent jusqu'au trottoir, un pot vide est posé contre le mur.\n\nMathilde sort de son sac la lettre du fantôme et la pose à côté de la planche. Yves regarde l'une, puis l'autre. « Ferréol ne sera pas un parking. » Il répète, plus lentement : « Pas un parking. »",
+              "text": "Yves a fait parler le laborantin. Le 17 au matin, le photographe de permanence est allé à Ferréol pour le fait divers. Le journal n'a rien publié, mais la planche contact est restée dans un tiroir.\n\nYves la pose sous la lampe et vous tend son compte-fils. Vue numéro sept : le mur est, à huit heures. Sur les lettres blanches, la peinture brille encore. Deux coulures descendent jusqu'au trottoir, un pot vide est posé contre le mur.\n\nPaul sort de la poche de son imperméable la lettre du fantôme et la pose à côté de la planche. Yves regarde l'une, puis l'autre. « Ferréol ne sera pas un parking. » Il répète, plus lentement : « Pas un parking. »",
               "facts": [
                 {
                   "about": "l:site_ferreol",
@@ -898,7 +898,7 @@ window.GAME_DATA_FALLBACK = {
               "type": "entretien",
               "button": "Rencontrer Hervé Vallenot",
               "title": "Hervé Vallenot, le promoteur",
-              "text": "{{p:vallenot|Hervé Vallenot}} vous reçoit debout devant une maquette du projet : des arbres en éponge verte, de petits personnages qui ne vont nulle part. La pièce sent le cigarillo froid. « Ferréol, c'est un beau projet. Une belle opération pour la ville. »\n\nSur Faure, il baisse la voix d'un demi-ton. « Un drame. Je le connaissais de loin, ce sont les services qui suivaient le dossier. »\n\nMathilde : « Vous étiez à Ferréol mardi soir, donc. »\n\n« Mardi ? J'étais chez moi. Seul, ma femme était chez sa mère, à Lyon. Soirée télé. » Il sourit. « Rien de très passionnant. »\n\nVous demandez qui a coulé la dalle neuve. « Ça, c'est technique. Voyez avec Roger Ferrand. »\n\nEn vous raccompagnant, il glisse une {{d:carte_vallenot|carte de visite}} dans la poche de Mathilde. Groupe Vallenot, Hervé Vallenot, président. Radiotéléphone : 07 42 18 63. « Pour votre beau papier. N'hésitez pas. »",
+              "text": "{{p:vallenot|Hervé Vallenot}} vous reçoit debout devant une maquette du projet : des arbres en éponge verte, de petits personnages qui ne vont nulle part. La pièce sent le cigarillo froid. « Ferréol, c'est un beau projet. Une belle opération pour la ville. »\n\nSur Faure, il baisse la voix d'un demi-ton. « Un drame. Je le connaissais de loin, ce sont les services qui suivaient le dossier. »\n\nPaul : « Vous étiez à Ferréol mardi soir, donc. »\n\n« Mardi ? J'étais chez moi. Seul, ma femme était chez sa mère, à Lyon. Soirée télé. » Il sourit. « Rien de très passionnant. »\n\nVous demandez qui a coulé la dalle neuve. « Ça, c'est technique. Voyez avec Roger Ferrand. »\n\nEn vous raccompagnant, il glisse une {{d:carte_vallenot|carte de visite}} dans la poche de Paul. Groupe Vallenot, Hervé Vallenot, président. Radiotéléphone : 07 42 18 63. « Pour votre beau papier. N'hésitez pas. »",
               "facts": [
                 {
                   "about": "p:vallenot",
@@ -993,7 +993,7 @@ window.GAME_DATA_FALLBACK = {
               "type": "entretien",
               "button": "Consulter le Dr Lacour",
               "title": "Le Dr Lacour",
-              "text": "Le cabinet du {{p:lacour|Dr Lacour}} sent l'éther et la moquette humide. Il vous reçoit entre deux patients, sans vous faire asseoir.\n\n« Mort sur le coup, j'imagine. Une chute de quatre mètres sur de l'acier, c'est très classique. Rien d'alarmant. » Il regarde sa montre, puis la pendule.\n\nMathilde : « Vous êtes arrivé vers six heures, donc. »\n\n« Sept heures. On m'a appelé à sept heures moins le quart. Tout était très classique. Ça arrive, ces choses-là, sur les chantiers. »",
+              "text": "Le cabinet du {{p:lacour|Dr Lacour}} sent l'éther et la moquette humide. Il vous reçoit entre deux patients, sans vous faire asseoir.\n\n« Mort sur le coup, j'imagine. Une chute de quatre mètres sur de l'acier, c'est très classique. Rien d'alarmant. » Il regarde sa montre, puis la pendule.\n\nPaul : « Vous êtes arrivé vers six heures, donc. »\n\n« Sept heures. On m'a appelé à sept heures moins le quart. Tout était très classique. Ça arrive, ces choses-là, sur les chantiers. »",
               "facts": [
                 {
                   "about": "p:lacour",
@@ -1011,7 +1011,7 @@ window.GAME_DATA_FALLBACK = {
               "type": "entretien",
               "button": "Revenir voir Lacour avec le témoignage du gardien",
               "title": "Lacour, second entretien",
-              "text": "Vous racontez à {{p:lacour|Lacour}} ce qu'a vu le gardien : le corps près de la porte, à deux mètres de l'escalier, les yeux ouverts. Il ferme la porte du cabinet. Pour la première fois, il ne regarde pas sa montre.\n\n« La rigidité, les lividités… Il est mort entre minuit et une heure. Pas à dix heures. » Il enlève ses lunettes. « Il n'est pas mort sur le coup. Il a mis longtemps. Deux heures, peut-être. Il a dû avoir froid. »\n\nMathilde : « Et vous avez écrit \"mort immédiate\". »\n\n« Le commissaire était là. Il m'a dit qu'une famille n'a pas besoin de lire ce genre de détails. J'ai soixante et un ans, madame. »",
+              "text": "Vous racontez à {{p:lacour|Lacour}} ce qu'a vu le gardien : le corps près de la porte, à deux mètres de l'escalier, les yeux ouverts. Il ferme la porte du cabinet. Pour la première fois, il ne regarde pas sa montre.\n\n« La rigidité, les lividités… Il est mort entre minuit et une heure. Pas à dix heures. » Il enlève ses lunettes. « Il n'est pas mort sur le coup. Il a mis longtemps. Deux heures, peut-être. Il a dû avoir froid. »\n\nPaul : « Et vous avez écrit \"mort immédiate\". »\n\n« Le commissaire était là. Il m'a dit qu'une famille n'a pas besoin de lire ce genre de détails. J'ai soixante et un ans, monsieur. »",
               "facts": [
                 {
                   "about": "p:faure",
@@ -1128,7 +1128,7 @@ window.GAME_DATA_FALLBACK = {
               "type": "entretien",
               "button": "Parler au gardien",
               "title": "Ahmed Bensaïd, le gardien",
-              "text": "{{p:bensaid|Ahmed Bensaïd}} ouvre le portail sans un mot de trop. Vingt ans de gardiennage.\n\n« Il se pourrait que j'aie entendu des voix, monsieur le journaliste. Vers dix heures. Du côté de l'atelier de forge. Je suis pas descendu, c'est pas mon rôle. »\n\nLes camions ? « Il se pourrait qu'il y en ait eu, la nuit. Depuis un mois. Ceux de chez Ferrand. »\n\nMathilde : « Vous avez vu qui conduisait, donc. »\n\n« Non, madame. Je regarde pas ce qui me regarde pas. » Il vous raccompagne. « Pour l'histoire de l'usine, voyez plutôt {{p:chaptal|Marcel Chaptal}}. Il est tous les jours au {{l:cheval_noir|Cheval Noir}}. »",
+              "text": "{{p:bensaid|Ahmed Bensaïd}} ouvre le portail sans un mot de trop. Vingt ans de gardiennage.\n\n« Il se pourrait que j'aie entendu des voix, monsieur le journaliste. Vers dix heures. Du côté de l'atelier de forge. Je suis pas descendu, c'est pas mon rôle. »\n\nLes camions ? « Il se pourrait qu'il y en ait eu, la nuit. Depuis un mois. Ceux de chez Ferrand. »\n\nPaul : « Vous avez vu qui conduisait, donc. »\n\n« Non, monsieur. Je regarde pas ce qui me regarde pas. » Il vous raccompagne. « Pour l'histoire de l'usine, voyez plutôt {{p:chaptal|Marcel Chaptal}}. Il est tous les jours au {{l:cheval_noir|Cheval Noir}}. »",
               "facts": [
                 {
                   "about": "p:bensaid",
@@ -1319,7 +1319,7 @@ window.GAME_DATA_FALLBACK = {
               "type": "entretien",
               "button": "Rencontrer Roger Ferrand",
               "title": "Roger Ferrand",
-              "text": "{{p:ferrand|Roger Ferrand}} ne s'assoit pas, vous non plus. Dans le hangar, un poste crache RTL sous le bruit d'un compresseur que personne ne coupe.\n\n« Mardi soir ? Pourquoi, j'aurais dû être où ? »\n\nMathilde : « À Ferréol, avec Faure. »\n\n« Et j'y aurais fait quoi, à Ferréol, sur un chantier gelé ? » Il essuie ses mains sur son bleu, lentement, une main puis l'autre. Son alliance serre un doigt gonflé. « J'étais chez moi. Demandez à {{p:simone|ma femme}}, elle est au bureau du fond. Vous croyez qu'elle va vous dire autre chose ? »",
+              "text": "{{p:ferrand|Roger Ferrand}} ne s'assoit pas, vous non plus. Dans le hangar, un poste crache RTL sous le bruit d'un compresseur que personne ne coupe.\n\n« Mardi soir ? Pourquoi, j'aurais dû être où ? »\n\nPaul : « À Ferréol, avec Faure. »\n\n« Et j'y aurais fait quoi, à Ferréol, sur un chantier gelé ? » Il essuie ses mains sur son bleu, lentement, une main puis l'autre. Son alliance serre un doigt gonflé. « J'étais chez moi. Demandez à {{p:simone|ma femme}}, elle est au bureau du fond. Vous croyez qu'elle va vous dire autre chose ? »",
               "facts": [
                 {
                   "about": "p:ferrand",
@@ -1429,7 +1429,7 @@ window.GAME_DATA_FALLBACK = {
               "type": "entretien",
               "button": "Aller voir Gérard Mounier",
               "title": "Gérard Mounier, chef d'équipe",
-              "text": "{{p:mounier|Gérard Mounier}} vous parle sur le palier du neuvième étage, en survêtement, la porte tirée derrière lui : sa femme dort, elle travaille de nuit à l'hôpital.\n\n« Je sais rien, moi. Je fais ce qu'on me dit. » Le béton du 17 ? « Le patron a dit de couler, j'ai coulé. »\n\nMathilde : « Et le 16 au soir, vous étiez à Ferréol avec votre équipe, donc. »\n\n« Non. Le patron a dit de pas venir, mardi. Pour une fois. » Il entend ce qu'il vient de dire. « Ça fait un mois qu'on y va toutes les nuits, et mardi, non. C'est tout. C'est le patron qui décide. »",
+              "text": "{{p:mounier|Gérard Mounier}} vous parle sur le palier du neuvième étage, en survêtement, la porte tirée derrière lui : sa femme dort, elle travaille de nuit à l'hôpital.\n\n« Je sais rien, moi. Je fais ce qu'on me dit. » Le béton du 17 ? « Le patron a dit de couler, j'ai coulé. »\n\nPaul : « Et le 16 au soir, vous étiez à Ferréol avec votre équipe, donc. »\n\n« Non. Le patron a dit de pas venir, mardi. Pour une fois. » Il entend ce qu'il vient de dire. « Ça fait un mois qu'on y va toutes les nuits, et mardi, non. C'est tout. C'est le patron qui décide. »",
               "facts": [
                 {
                   "about": "p:mounier",
@@ -1817,7 +1817,7 @@ window.GAME_DATA_FALLBACK = {
               "instructions": "Une molette à quatre chiffres.",
               "digits": 4,
               "code": "1403",
-              "result": "Le coffre s'ouvre. Dedans, cinq {{d:liasses|liasses de billets de 200 francs}}, chacune serrée par une bande de papier kraft tamponnée par la banque : « 16 NOV. 1993 ». Cinquante mille francs, pas un billet de moins.\n\nSous les liasses, un faire-part de décès bordé de noir. Paul Ferrand, 1948-1987.",
+              "result": "Le coffre s'ouvre. Dedans, cinq {{d:liasses|liasses de billets de 200 francs}}, chacune serrée par une bande de papier kraft tamponnée par la banque : « 16 NOV. 1993 ». Cinquante mille francs, pas un billet de moins.\n\nSous les liasses, un faire-part de décès bordé de noir. André Ferrand, 1948-1987.",
               "help": "Simone passe la tête par la porte du bureau. « Le 14 mars. C'est toujours le 14 mars, avec lui. »",
               "facts": [
                 {
@@ -1826,7 +1826,7 @@ window.GAME_DATA_FALLBACK = {
                 },
                 {
                   "about": "p:ferrand",
-                  "text": "Garde dans son coffre le faire-part de Paul Ferrand, 1948-1987.",
+                  "text": "Garde dans son coffre le faire-part d'André Ferrand, 1948-1987.",
                   "label": "Son frère"
                 }
               ]
@@ -1949,7 +1949,7 @@ window.GAME_DATA_FALLBACK = {
               },
               "title": "La une",
               "headline": "Ferréol : le fantôme avait un radiotéléphone",
-              "text": "Samedi 27 novembre, la page des Affaires occultes n'est pas en page 14. Elle est en une, sous un titre de Jean-Loup, qui n'aime pas qu'on lui dise non : « Ferréol : le fantôme avait un radiotéléphone ».\n\nRoger Ferrand est mis en examen pour homicide involontaire. Il ne dit presque rien, sauf une phrase au juge, rapportée par Igier : « Je l'ai poussé. Après, c'est l'autre qui a décidé. » Hervé Vallenot est mis en examen pour non-assistance à personne en danger. Ses avocats parlent d'un « malentendu dramatique ». Le Groupe Vallenot annule sa page de publicité du jeudi.\n\nL'article ne cache rien de Bernard Faure. Colette appelle la rédaction le lundi. Elle ne crie pas. Elle demande seulement si c'était nécessaire. Mathilde répond que oui. Elle raccroche, et reste longtemps sans rallumer sa cigarette.",
+              "text": "Samedi 27 novembre, la page des Affaires occultes n'est pas en page 14. Elle est en une, sous un titre de Jean-Loup, qui n'aime pas qu'on lui dise non : « Ferréol : le fantôme avait un radiotéléphone ».\n\nRoger Ferrand est mis en examen pour homicide involontaire. Il ne dit presque rien, sauf une phrase au juge, rapportée par Igier : « Je l'ai poussé. Après, c'est l'autre qui a décidé. » Hervé Vallenot est mis en examen pour non-assistance à personne en danger. Ses avocats parlent d'un « malentendu dramatique ». Le Groupe Vallenot annule sa page de publicité du jeudi.\n\nL'article ne cache rien de Bernard Faure. Colette appelle la rédaction le lundi. Elle ne crie pas. Elle demande seulement si c'était nécessaire. Paul répond que oui. Il raccroche, et reste longtemps sans rallumer sa cigarette.",
               "music": "fin-une"
             },
             {
@@ -1982,7 +1982,7 @@ window.GAME_DATA_FALLBACK = {
               },
               "title": "Le démenti",
               "headline": "Le fantôme de Ferréol n'a pas dit son dernier mot",
-              "text": "L'article paraît le samedi 27 novembre. Le lundi, la mairie publie un communiqué : l'enquête de police a conclu à un accident, et « certains journalistes feraient mieux de s'en tenir aux fantômes ». Le Groupe Vallenot menace de retirer sa publicité de tous les titres du groupe.\n\nJean-Loup convoque Mathilde. La porte reste fermée une heure. En sortant, elle dit seulement : « Admettons. »\n\nÀ Ferréol, la dalle a séché. Le chantier reprend en janvier.",
+              "text": "L'article paraît le samedi 27 novembre. Le lundi, la mairie publie un communiqué : l'enquête de police a conclu à un accident, et « certains journalistes feraient mieux de s'en tenir aux fantômes ». Le Groupe Vallenot menace de retirer sa publicité de tous les titres du groupe.\n\nJean-Loup convoque Paul. La porte reste fermée une heure. En sortant, il dit seulement : « Admettons. »\n\nÀ Ferréol, la dalle a séché. Le chantier reprend en janvier.",
               "music": "fin-dementi"
             }
           ],
@@ -2190,24 +2190,24 @@ window.GAME_DATA_FALLBACK = {
     "entete": "Groupe Sarrazin · Direction générale · 14, cours Lafayette · Lyon",
     "date": "Lyon, le 4 octobre 1993",
     "de": "Jean-Loup Sarrazin, président-directeur général",
-    "a": "Mathilde Vernet",
+    "a": "Paul Moreau",
     "copie": "Yves Barral, Karim Haddou, Odile Perrichon",
     "objet": "Création de la rubrique « Les Affaires occultes »",
     "corps": [
-      "Mathilde,",
+      "Paul,",
       "Nos études sont formelles : le lecteur du samedi veut du mystère. À compter du 6 novembre, nos quatorze quotidiens publieront chaque samedi une page commune, « Les Affaires occultes » : maisons hantées, guérisseurs, phénomènes inexpliqués. Le concept est simple, la cible est large.",
       "Vous en aurez la responsabilité. Vous disposerez de l'ancienne salle des archives, au quatrième étage, d'Yves Barral pour les photos, et de Karim Haddou, stagiaire, qui s'est porté volontaire. Odile Perrichon, aux archives, reste à votre disposition.",
       "Chaque semaine, vous partirez là où nos lecteurs signalent quelque chose d'étrange. Vous serez hébergés par la rédaction locale. Le bouclage est le jeudi à 18 heures. Les notes de frais seront examinées une par une.",
       "Je compte sur vous pour me faire du fantôme, pas de la politique. On est d'accord ?"
     ],
     "signature": "J.-L. S.",
-    "annotation": "Admettons. M. V.",
+    "annotation": "Admettons. P. M.",
     "equipe": [
       {
-        "id": "mathilde",
-        "nom": "Mathilde Vernet",
-        "role": "Cheffe du Bureau",
-        "texte": "Dix ans au service police-justice. Mise au placard en 1991, après un article que le groupe a dû démentir. Elle n'a jamais cru à ce démenti."
+        "id": "paul",
+        "nom": "Paul Moreau",
+        "role": "Chef du Bureau",
+        "texte": "Dix ans au service police-justice. Mis au placard en 1991, après un article que le groupe a dû démentir. Il n'a jamais cru à ce démenti."
       },
       {
         "id": "yves",

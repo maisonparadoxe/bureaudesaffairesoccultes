@@ -1,20 +1,31 @@
 # Bureau des affaires occultes : note de passation
 
-État du projet au 28 septembre 2026, à lire avant de commencer une nouvelle affaire. Cette note résume les décisions prises pendant la création de la première enquête, « Le feu de Ferréol » (Saint-Étienne).
+État du projet au 28 septembre 2026, à lire avant de commencer une nouvelle affaire. Cette note résume les décisions prises pendant la création de la première enquête, « Le feu de Ferréol » (Saint-Étienne), puis pendant la conception de la deuxième (Nyons).
 
 ## 1. Le jeu en bref
 
 - **Principe :** enquête textuelle dans le navigateur, inspirée de *Sherlock Holmes Détective Conseil* et de *Bureau of Investigation*.
-- **Cadre :** France, 1993. Le joueur incarne **toute l'équipe** du Bureau des affaires occultes : Mathilde Vernet (cheffe), Yves Barral (photographe), Karim Haddou (stagiaire), Odile Perrichon (documentaliste). Ce n'est pas Mathilde seule. Elle parle dans les entretiens, mais le « vous » désigne le groupe.
+- **Cadre :** France, **années 1990**. Chaque affaire a sa propre date (Ferréol : novembre 1993 ; Nyons : juin 1994). Les enquêtes sont regroupées sous l'étiquette « Années 1990 » (le tampon du logo), pour pouvoir un jour ouvrir d'autres époques (passé ou futur). Rien d'autre dans l'interface commune ne doit porter une année précise.
+- **L'équipe :** le joueur incarne **toute l'équipe** du Bureau des affaires occultes : **Paul Moreau** (chef), Yves Barral (photographe), Karim Haddou (stagiaire), Odile Perrichon (documentaliste). Ce n'est pas Paul seul. Il parle dans les entretiens, mais le « vous » désigne le groupe.
+  - **Paul Moreau** remplace Mathilde Vernet (ancienne cheffe, première version). Le changement est fait partout : textes, note de service, questionnaire, portrait `img/equipe/paul.jpg`.
+  - **Ses tics :** il affirme faux pour se faire corriger (« Vous étiez à Ferréol mardi soir, donc. ») et répond « Admettons. » quand il n'est pas convaincu. Imperméable, cigarette qu'il ne rallume pas. Les témoins l'appellent « monsieur ».
+  - **Attention aux prénoms :** « Paul » est réservé au chef. Le frère mort de Roger Ferrand s'appelle désormais André.
 - **Commande :** le groupe de presse Sarrazin (14 quotidiens régionaux) publie chaque samedi une page « Les Affaires occultes ». Le bouclage a lieu le jeudi à 18 h.
 - **Chaque affaire :** une façade occulte, une vérité humaine. Le ton est sombre, parfois proche de l'horreur. Pas de surnaturel avéré, sauf le fil rouge.
-- **Fil rouge de la série :** la salamandre (chevalière de Roussillon, carte de bristol dans l'épilogue, devise *Nutrisco et extinguo*). Elle doit revenir dans chaque affaire, sans être expliquée trop tôt.
 - **Studio :** Maison Paradoxe. Les crédits n'affichent que « Un jeu · Maison Paradoxe ».
 - **En ligne :** https://maisonparadoxe.github.io/bureaudesaffairesoccultes/
 
-## 2. Mécaniques existantes
+## 2. Le fil rouge : la salamandre et les Gardiens du seuil
 
-- **Pistes :** 16 pistes accordées. Le parcours de référence (« le chemin le plus court ») en utilise 12. Au-delà, chaque piste coûte 2 points.
+- **Le signe :** une salamandre dans les flammes, devise *Nutrisco et extinguo*. Lecture possible : « je nourris le vrai feu, j'éteins le faux ».
+- **Ce qu'elle est (jamais dit au joueur avant longtemps) :** l'emblème des **Gardiens du seuil**, un ordre très ancien qui enquête en secret, depuis des siècles, sur le surnaturel et sur ceux qui prétendent l'être. Les Gardiens sont **neutres** : ni bons ni mauvais, ils défendent le seuil sans prendre parti. Le joueur doit longtemps douter de leur camp.
+- **Roussillon (Ferréol) :** il a hérité de la chevalière sans en connaître le sens. Il n'est pas un Gardien. C'est ce qui explique que le joueur ait d'abord vu le signe au doigt d'un homme corrompu.
+- **Épilogue de Ferréol :** le lundi 29 novembre 1993, une carte de bristol arrive au Bureau (salamandre, devise). Odile : « Je l'ai déjà vue quelque part. » Elle ne dit pas où.
+- **Règle :** la salamandre revient dans chaque affaire, sans être expliquée trop tôt. Chaque apparition doit en montrer une facette différente.
+
+## 3. Mécaniques existantes
+
+- **Pistes :** 16 pistes accordées. Le chemin de référence (« le chemin le plus court ») en utilise 12. Au-delà, chaque piste coûte 2 points.
 - **Calendrier :** 4 créneaux par jour (9 h, 11 h, 14 h, 16 h), du vendredi au mercredi, puis le bouclage le jeudi à 18 h. Le clocher sonne à chaque nouveau jour. Il pleut à certains créneaux seulement (`calendar.rain`).
 - **Entités colorées :** personnes en bleu, lieux en vert, pièces en violet. Un lieu ou une personne n'est connu qu'une fois mentionné dans une piste (syntaxe `{{p:id|texte}}`, `{{l:id|texte}}`, `{{d:id|texte}}`).
 - **Entretiens de suite :** « Revenir voir X ». On peut confronter quelqu'un sans l'avoir vu avant : le bouton et le titre s'adaptent (`bouton_seul`, `titre_seul`). Une fois la personne confrontée, le premier entretien disparaît.
@@ -24,33 +35,64 @@
 - **Fin :** questionnaire (6 questions et un bonus), 4 fins selon les réponses, une du journal, puis l'épilogue avec la salamandre.
 - **Autour :** menu principal, sauvegarde automatique, options (volumes, coupure du son, effets réduits, animations, texte plus grand), note de service au premier lancement, fiche de l'enquêteur (points de carrière).
 
-## 3. Idées gardées pour les prochaines affaires
+## 4. Idées gardées pour les prochaines affaires
 
-- **Portrait-robot** (idée validée, pas encore faite) : un témoin décrit quelqu'un, le joueur compose un visage (front, yeux, nez, bouche, menton, coiffure), puis le rapproche d'un suspect. Le témoin se trompe sur un seul trait, pour une raison qu'on découvre. À construire autour de l'affaire, pas plaqué dessus.
+- **Portrait-robot** (validé, utilisé à Nyons) : un témoin décrit quelqu'un, le joueur compose un visage (front, yeux, nez, bouche, menton, coiffure), puis le rapproche d'un suspect. Le témoin se trompe sur un trait, pour une raison qu'on découvre.
 - **Pas de reconnaissance de voix :** pas d'enregistrements vocaux possibles.
 - **Chaque affaire doit apporter au moins une mécanique nouvelle,** pour que le joueur ne sente pas que seule l'histoire change.
+- **La jauge de rumeur** (en réserve) : une jauge à trois niveaux qui monte quand l'équipe pose des questions sur une rumeur au village, et déclenche des événements (inscription sur un mur, témoin qui se ferme). Pensée pour une affaire de sorcellerie de village, écartée pour Nyons.
+- **La planche-contact d'Yves** (en réserve) : un outil pour examiner les photos d'un lieu à la loupe et y trouver des détails absents du texte.
+- **Affaire en réserve, « La masco » :** un vieil oléiculteur qui se croit ensorcelé meurt empoisonné à l'arsenic (arsénite de soude des vignes) par sa fille, battue ; le village accuse une herboriste néo-rurale. Portrait-robot faussé par le préjugé, datation des doses par les lignes des ongles. Une excellente candidate pour une future affaire de village.
 
-## 4. Direction artistique
+## 5. Direction artistique
 
-- **Portraits :** photo de presse argentique noir et blanc, 1993. Kodak Tri-X poussé, flash direct, ombre portée à droite, mur gris clair, tirage abîmé. Visages ordinaires, jamais retouchés. **Mains hors champ.** Format 2:3, 600 × 900. Prompt de base dans `assets-a-creer.md` ; `img/portraits/ferrand.jpg` sert de référence de style. Générés avec ChatGPT, un à la fois, validés ensemble.
+- **Portraits :** photo de presse argentique noir et blanc, années 1990. Kodak Tri-X poussé, flash direct, ombre portée à droite, mur gris clair, tirage abîmé. Visages ordinaires, jamais retouchés. **Mains hors champ.** Format 2:3, 600 × 900. Prompt de base dans `assets-a-creer.md` (la date du prompt s'adapte à chaque affaire) ; `img/portraits/ferrand.jpg` sert de référence de style. Générés avec ChatGPT, un à la fois, validés ensemble.
+- **Logo :** carte de papier kraft, lettrage machine à écrire, tampon rouge « France · Années 1990 » (`img/logo.png`, PNG transparent 1200 × 690).
 - **Musique :** jazz noir feutré (Fender Rhodes, contrebasse, balais), nappes sombres. Générée avec Suno (abonnement payant pour les droits commerciaux), en Cover du morceau `menu.mp3` pour garder le thème. Les musiques bouclent en fondu automatiquement : un morceau Suno avec une vraie fin convient.
 - **Sons :** Pixabay ou Freesound en CC0. Fournis bruts, puis coupés et égalisés par Claude.
 - **Écriture :** pas de tournures « typiques d'IA », pas de tirets cadratins. Chaque personnage a ses tics de langage, sans cliché.
 - **Plan de ville :** dessiné par le jeu (quartiers en tracés SVG, décor, quadrillage A-F / 1-6, cartouche). La géographie doit être juste dans les grandes lignes : vérifier les quartiers réels.
 
-## 5. Organisation des fichiers
+## 6. Organisation des fichiers
 
 - **Le jeu (seul ce qui est publié) :** `index.html`, `style.css`, `tags.css`, `carnet.css`, `jeu.css`, `script.js`, `audio.js`, `data.json`, `data.js`, `img/`, `audio/`.
-- **L'atelier d'une ville (`saint-etienne/`, ne pas publier) :** `1-verite.md` (la solution), `2-personnages.md`, `carte.py` (structure : lieux, personnes, pistes, déblocages, Minitel, contrôles), `textes.py` (tous les textes), `verifier_textes.py`, `construire.py` (écrit l'affaire dans `data.json`). Une nouvelle ville = un nouveau dossier sur ce modèle.
+- **L'atelier d'une ville (`saint-etienne/`, ne pas publier) :** `1-verite.md` (la solution), `2-personnages.md`, `carte.py` (structure : lieux, personnes, pistes, déblocages, Minitel, contrôles, chemin de référence `REFERENCE`), `textes.py` (tous les textes), `verifier_textes.py`, `construire.py` (écrit l'affaire dans `data.json`). Une nouvelle ville = un nouveau dossier sur ce modèle.
 - **Chaîne de construction :** `python3 carte.py`, puis `python3 verifier_textes.py`, puis `python3 construire.py`, puis `node outils/verifier.js` (qui contrôle tout et régénère `data.js`).
 - **Ne jamais modifier `data.json` à la main :** il est reconstruit.
+- **`construire.py` ne touche qu'à sa ville.** Celui de Saint-Étienne ne vide plus Nyons (corrigé le 28 septembre). Il écrit encore la note de service et les crédits, communs à tout le jeu : quand Nyons aura son propre `construire.py`, il faudra sortir ces deux blocs dans un script commun (par exemple `outils/commun.py`), pour qu'une seule source les écrive.
 - **Nyons** est déjà déclarée dans `data.json` avec le statut `coming_soon`, comme les autres villes.
 - **Assets :** `assets-a-creer.md` tient la liste à jour de ce qui est fait et de ce qui manque.
 
-## 6. Méthode de travail qui a bien marché
+## 7. Méthode de travail qui a bien marché
 
 1. Écrire d'abord la vérité complète (chronologie, qui a fait quoi, pourquoi), puis les personnages avec ce qu'ils savent, cachent et mentent.
 2. Construire la carte des pistes (déblocages, chemin le plus court, contrôle que tout est accessible), avant d'écrire les textes.
 3. Écrire les textes, les vérifier, construire, puis rejouer l'affaire en test automatique.
 4. Assets en dernier, un à la fois, validés ensemble.
 5. Pendant le développement, ne pas renvoyer de zip complet à chaque fois : l'utilisateur demande le dossier quand il le souhaite.
+
+## 8. Chantiers ouverts
+
+- **Synchronisation :** la référence du jeu est le dépôt GitHub `maisonparadoxe/bureaudesaffairesoccultes` (publié sur GitHub Pages). Le dossier local `C:\Users\Pascal\Documents\MaisonParadoxe\bureau-affaires-occultes` en est une copie : le mettre à jour en même temps que le dépôt.
+- **Ce que `script.js` suppose encore de Saint-Étienne (à rendre propre à chaque affaire avant Nyons) :**
+  - l'écran d'accueil du Minitel affiche « LOCALITÉ : SAINT-ÉTIENNE (42) » ;
+  - la une de fin affiche « Le Stéphanois » et « Samedi 27 novembre 1993 » ;
+  - la pluie est la seule météo prévue (`weather: "pluie"`) : Nyons aura besoin d'une autre (soleil, vent, cigales) ;
+  - l'écran d'intro et la note de service jouent l'ambiance « bureau-lyon » avec la pluie sur la vitre : ça reste juste pour Lyon, mais pas forcément en juin.
+  Il suffira de lire ces valeurs dans l'affaire (`cs.journal`, `cs.dateUne`, `cs.localite`, `cs.weather`), avec les valeurs actuelles par défaut.
+
+## 9. Nyons : décisions prises (conception en cours, rien d'écrit)
+
+- **Date :** fin juin 1994. Proposition de calendrier, à confirmer : enquête du vendredi 17 au mercredi 22 juin, bouclage le jeudi 23, page le samedi 25. La fête de la musique tombe le mardi 21.
+- **Affaire retenue : « Le noyé de l'Ouvèze ».** Arrière-plan réel : la crue de l'Ouvèze à Vaison-la-Romaine, le 22 septembre 1992. Les victimes et le camping de l'histoire sont inventés ; la catastrophe est traitée avec gravité.
+  - **Le disparu :** gérant d'un petit camping au bord de l'Ouvèze. Le soir de la crue, il a évacué ses campeurs, mais il a oublié une caravane, et ses occupants sont morts. Il n'a pas supporté de l'avoir oubliée. Il a poussé sa voiture dans le courant et disparu. Ni monstre ni héros.
+  - **Le faux témoignage :** son ami le meunier de Nyons a déclaré l'avoir vu emporté en aidant des campeurs. Le disparu est devenu un héros local, son nom est sur une plaque. Il a été déclaré mort par jugement, et l'assurance-vie a été versée à sa femme.
+  - **Le déclencheur :** en juin 1994, le quotidien Sarrazin local publie la photo des vainqueurs d'un concours de pétanque. On y reconnaît le mort, sous un autre nom. Quelques jours plus tard, le meunier est retrouvé noyé dans le canal.
+  - **La coupable : la veuve.** Elle savait depuis le début que son mari était vivant. Le meunier menaçait de tout dire, donc l'assurance, la maison, l'avenir des enfants. Le revenant est une fausse piste parfaite : tout l'accuse, il n'a pas tué.
+  - **La façade :** « la rivière rend ses morts ». Des gens de Vaison croient revoir d'autres disparus.
+- **Ambiance :** été naissant, cigales (elles commencent fin juin), chaleur, lumière dure, pétanque. La boule lyonnaise sert de marqueur de personnage (un homme venu d'ailleurs). Pas de moulin en activité : on presse les olives en hiver ; en juin, ce sont les cerises, les abricots, le marché du jeudi, les concours de boules.
+- **Mécaniques nouvelles :**
+  - **Portrait-robot à deux témoins :** la saisonnière (ou le témoin du concours) et Karim, qui voit le revenant pendant la poursuite. Chacun se trompe sur un trait différent (l'un contaminé par la photo de l'avis de recherche, l'autre par la nuit et la peur) ; en les croisant, le joueur retrouve le vrai visage.
+  - **Une scène de poursuite** (une seule par affaire au maximum) : une nuit, au camping dévasté ou sous le pont roman, choix en temps limité : se cacher (on voit son visage), le poursuivre (plaque, démarche), lui barrer la route (il fuit, un témoin disparaît), frapper ou lancer une boule (Karim arrêté, un jour perdu, et la fin « Le Bureau fait la une » où l'article est annulé). Pas d'arme, pas de corps à cacher, pas de game over sec. Aucune issue ne bloque la solution.
+  - **La jauge de rumeur n'est pas retenue** pour Nyons.
+- **Salamandre à Nyons :** un Gardien discret parmi les personnages secondaires (piste : un vieux joueur de boules ou le curé), qui a enquêté sur le revenant avant le Bureau. Le joueur trouve ses notes, et elles sont justes. À préciser.

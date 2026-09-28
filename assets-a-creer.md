@@ -11,7 +11,7 @@ index.html
 audio/
   interface/  outils/  puzzles/  ambiances/  musiques/
 img/
-  portraits/  equipe/  lieux/  pieces/  plans/  textures/
+  portraits/  equipe/  lieux/  pieces/  textures/
   salamandre.png
   logo.png
   menu-fond.jpg
@@ -48,27 +48,27 @@ Si vous ne deviez en faire qu'une partie, dans cet ordre :
 
 | Fichier | Durée | Contenu | Quand il est joué |
 | --- | --- | --- | --- |
-| `clic.mp3` | < 0,2 s | Clic sec et discret, comme un interrupteur de lampe de bureau. | Choix d'une ville, réglage du volume. |
-| `page.mp3` | 0,5 s | Une feuille de papier qu'on tourne. | Relire une piste, changer d'onglet ou de fiche dans le carnet. |
-| `page-journal.mp3` | 1 s | Une grande page de journal qu'on déplie, ample et froissée. | Ouverture d'une affaire, questionnaire, une de fin. |
-| `tampon.mp3` | 0,4 s | Un tampon encreur écrasé sur du papier, avec le petit rebond du manche. | Le tampon « Lu » sur chaque piste. |
-| `stylo.mp3` | 0,8 s | Un stylo bille qui gratte deux ou trois mots sur un bloc. | Début d'un entretien. |
-| `appareil-photo.mp3` | 0,8 s | Déclencheur d'un reflex argentique, puis le levier d'avance du film. | Début d'une investigation. |
-| `machine-ecrire-touche-1.mp3` | < 0,15 s | Une frappe de machine à écrire mécanique. | Pendant que le texte d'un entretien s'affiche. |
-| `machine-ecrire-touche-2.mp3` | < 0,15 s | Une autre frappe, légèrement différente (autre touche). | Idem, tiré au hasard. |
-| `machine-ecrire-touche-3.mp3` | < 0,15 s | Une troisième frappe, un peu plus lourde. | Idem, tiré au hasard. |
-| `machine-ecrire-sonnette.mp3` | 0,6 s | La petite sonnette de fin de ligne, suivie ou non du retour du chariot. | À chaque fin de paragraphe tapé. |
-| `fax.mp3` | 3 à 4 s | Un télécopieur thermique qui imprime : grincement régulier, papier qui avance. | Le fax des archives d'Odile. |
-| `punaise.mp3` | 0,3 s | Une punaise enfoncée dans du liège. | Un nouveau lieu apparaît sur le plan. |
-| `fiche.mp3` | 0,5 s | Une fiche cartonnée glissée dans un fichier rotatif. | Un nouveau personnage entre dans l'annuaire. |
-| `agrafeuse.mp3` | 0,3 s | Un coup d'agrafeuse de bureau. | Une nouvelle pièce entre au dossier. |
-| `crayon-note.mp3` | 0,5 s | Un crayon qui souligne un mot d'un trait rapide. | Une fiche du carnet reçoit une note ; choix d'une réponse au questionnaire. |
-| `rature.mp3` | 0,5 s | Un stylo qui barre une ligne d'un trait appuyé. | Une déclaration est contredite et se barre dans le carnet. |
-| `deblocage.mp3` | 0,6 s | Un tiroir de bureau en métal qu'on ouvre. | Un second entretien devient possible. |
-| `carte-depliee.mp3` | 1 s | Une carte routière qu'on déplie. | Début de l'enquête. |
-| `clocher.mp3` | 3 à 5 s | Un clocher d'église au loin, quelques coups. | Chaque nouvelle journée d'enquête. |
-| `horloge.mp3` | 4 à 5 s | Tic-tac d'une pendule de bureau. | Une fois, quand il ne reste que 3 pistes. |
-| `plus-de-pistes.mp3` | 2 s | Un téléphone de bureau à sonnerie mécanique qui sonne deux fois, puis s'arrête. | Plus aucune piste disponible. |
+| `clic.mp3` (fait) | < 0,2 s | Clic sec et discret, comme un interrupteur de lampe de bureau. | Choix d'une ville, réglage du volume. |
+| `page.mp3` (fait) | 0,5 s | Une feuille de papier qu'on tourne. | Relire une piste, changer d'onglet ou de fiche dans le carnet. |
+| `page-journal.mp3` (fait) | 1 s | Une grande page de journal qu'on déplie, ample et froissée. | Ouverture d'une affaire, questionnaire, une de fin. |
+| `tampon.mp3` (fait) | 0,4 s | Un tampon encreur écrasé sur du papier, avec le petit rebond du manche. | Le tampon « Lu » sur chaque piste. |
+| `stylo.mp3` (fait) | 0,8 s | Un stylo bille qui gratte deux ou trois mots sur un bloc. | Début d'un entretien. |
+| `appareil-photo.mp3` (fait) | 0,8 s | Déclencheur d'un reflex argentique, puis le levier d'avance du film. | Début d'une investigation. |
+| `machine-ecrire-touche-1.mp3` (fait) | < 0,15 s | Une frappe de machine à écrire mécanique. | Pendant que le texte d'un entretien s'affiche. |
+| `machine-ecrire-touche-2.mp3` (fait) | < 0,15 s | Une autre frappe, légèrement différente (autre touche). | Idem, tiré au hasard. |
+| `machine-ecrire-touche-3.mp3` (fait) | < 0,15 s | Une troisième frappe, un peu plus lourde. | Idem, tiré au hasard. |
+| `machine-ecrire-sonnette.mp3` (fait) | 0,6 s | La petite sonnette de fin de ligne, suivie ou non du retour du chariot. | À chaque fin de paragraphe tapé. |
+| `fax.mp3` (fait) | 3 à 4 s | Un télécopieur thermique qui imprime : grincement régulier, papier qui avance. | Le fax des archives d'Odile. |
+| `punaise.mp3` (fait) | 0,3 s | Une punaise enfoncée dans du liège. | Un nouveau lieu apparaît sur le plan. |
+| `fiche.mp3` (fait) | 0,5 s | Une fiche cartonnée glissée dans un fichier rotatif. | Un nouveau personnage entre dans l'annuaire. |
+| `agrafeuse.mp3` (fait) | 0,3 s | Un coup d'agrafeuse de bureau. | Une nouvelle pièce entre au dossier. |
+| `crayon-note.mp3` (fait) | 0,5 s | Un crayon qui souligne un mot d'un trait rapide. | Une fiche du carnet reçoit une note ; choix d'une réponse au questionnaire. |
+| `rature.mp3` (fait) | 0,5 s | Un stylo qui barre une ligne d'un trait appuyé. | Une déclaration est contredite et se barre dans le carnet. |
+| `deblocage.mp3` (fait) | 0,6 s | Un tiroir de bureau en métal qu'on ouvre. | Un second entretien devient possible. |
+| `carte-depliee.mp3` (fait) | 1 s | Une carte routière qu'on déplie. | Début de l'enquête. |
+| `clocher.mp3` (fait) | 3 à 5 s | Un clocher d'église au loin, quelques coups. | Chaque nouvelle journée d'enquête. |
+| `horloge.mp3` (fait) | 4 à 5 s | Tic-tac d'une pendule de bureau. | Une fois, quand il ne reste que 3 pistes. |
+| `plus-de-pistes.mp3` (fait) | 2 s | Un téléphone de bureau à sonnerie mécanique qui sonne deux fois, puis s'arrête. | Plus aucune piste disponible. |
 
 ## 1.2 Outils (`audio/outils/`) : 10 fichiers
 
@@ -121,9 +121,11 @@ Toutes **en boucle**, 30 à 60 secondes, très discrètes : elles ne doivent jam
 | `casse-berthet.mp3` | Une casse en plein air : grue qui grince, ferraille qu'on laisse tomber, rivière au loin. |
 | `decharge.mp3` | Un grand espace ouvert : un engin de chantier au loin, des corbeaux. |
 | `parking-relais.mp3` | Un chantier actif : grue, marteau-piqueur au loin, bétonnière. |
-| `pluie-vitre.mp3` | De la pluie sur une vitre, régulière, sans orage. Se superpose aux autres ambiances pendant toute l'enquête. |
+| `pluie-vitre.mp3` (fait) | De la pluie sur une vitre, régulière, sans orage. Se superpose aux autres ambiances pendant toute l'enquête. |
 
 ## 1.5 Musiques (`audio/musiques/`) : 11 fichiers
+
+**État :** 6 musiques originales sont faites. Les 4 fins et la salamandre sont des versions provisoires, découpées dans les musiques existantes (la une dans le thème principal, le martyr dans le questionnaire, le promoteur dans la tension, le démenti dans le fond d'enquête, la salamandre dans les premières notes du menu). Pour les remplacer, déposez simplement le nouveau fichier sous le même nom.
 
 Style d'ensemble : une formation jazz feutrée (contrebasse, piano électrique, balais) mêlée à des nappes sombres (cordes frottées, drones). Peu de notes, beaucoup d'espace.
 
@@ -131,37 +133,37 @@ Style d'ensemble : une formation jazz feutrée (contrebasse, piano électrique, 
 | --- | --- | --- | --- |
 | `menu.mp3` (fait) | 1 min 30 à 3 min | oui | La musique de l'écran titre, sous la pluie : la plus soignée du jeu, c'est la première chose qu'on entend. Nocturne, un piano électrique seul ou presque, une contrebasse qui entre plus tard. Joue aussi sur les écrans Options et Crédits. |
 | `theme-principal.mp3` (fait) | 1 à 2 min | oui | Le thème du jeu, mélancolique, contrebasse et piano électrique, en variation plus sobre que la musique du menu. Choix de la ville et de l'affaire, fiche de l'enquêteur. |
-| `intro-affaire.mp3` | 40 à 60 s | non | Plus tendu, s'éteint doucement. Pendant la lecture de l'intro. |
-| `enquete-fond.mp3` | 2 à 3 min | oui | Une nappe presque imperceptible sous les ambiances pendant l'enquête. Si elle gêne en test, laissez-la vide. |
-| `tension.mp3` | 1 min | oui | Une pulsation grave, une note tenue. Remplace la nappe quand il reste 3 pistes ou moins. |
-| `questionnaire.mp3` | 1 à 2 min | oui | Suspendu, peu de notes. Pendant le questionnaire. |
-| `fin-une.mp3` | 40 à 60 s | non | Soulagement sans triomphe : l'affaire reste triste. |
-| `fin-martyr.mp3` | 40 à 60 s | non | Amer. |
-| `fin-promoteur.mp3` | 40 à 60 s | non | Inquiétant. |
-| `fin-dementi.mp3` | 40 à 60 s | non | Sombre, sec. |
-| `salamandre.mp3` | 5 à 8 s | non | Le leitmotiv : 4 ou 5 notes, par exemple une boîte à musique légèrement désaccordée. Joué quand la salamandre apparaît (la chevalière de Roussillon, l'épilogue). Il reviendra dans toutes les affaires : prenez le temps de le trouver. |
+| `intro-affaire.mp3` (fait) | 40 à 60 s | non | Plus tendu, s'éteint doucement. Pendant la lecture de l'intro. |
+| `enquete-fond.mp3` (fait) | 2 à 3 min | oui | Une nappe presque imperceptible sous les ambiances pendant l'enquête. Si elle gêne en test, laissez-la vide. |
+| `tension.mp3` (fait) | 1 min | oui | Une pulsation grave, une note tenue. Remplace la nappe quand il reste 3 pistes ou moins. |
+| `questionnaire.mp3` (fait) | 1 à 2 min | oui | Suspendu, peu de notes. Pendant le questionnaire. |
+| `fin-une.mp3` (provisoire) | 40 à 60 s | non | Soulagement sans triomphe : l'affaire reste triste. |
+| `fin-martyr.mp3` (provisoire) | 40 à 60 s | non | Amer. |
+| `fin-promoteur.mp3` (provisoire) | 40 à 60 s | non | Inquiétant. |
+| `fin-dementi.mp3` (provisoire) | 40 à 60 s | non | Sombre, sec. |
+| `salamandre.mp3` (provisoire) | 5 à 8 s | non | Le leitmotiv : 4 ou 5 notes, par exemple une boîte à musique légèrement désaccordée. Joué quand la salamandre apparaît (la chevalière de Roussillon, l'épilogue). Il reviendra dans toutes les affaires : prenez le temps de le trouver. |
 
 ---
 
-# Partie 2 : les images (60 fichiers)
+# Partie 2 : les images (59 fichiers)
 
 ## Consignes communes
 
 - **Format :** `.jpg` (qualité 80 %) pour les images, `.png` seulement là où c'est indiqué (transparence).
 - **Poids :** visez moins de 250 Ko par image, pour que le jeu reste rapide sur téléphone.
-- **Style d'ensemble :** l'univers des objets de 1993 (papier, photos argentiques, encre). Teintes sépia et gris, pas de couleurs vives. Même style pour toutes les images d'une même famille.
+- **Style d'ensemble :** l'univers des objets des années 1990 (papier, photos argentiques, encre). Teintes sépia et gris, pas de couleurs vives. Même style pour toutes les images d'une même famille.
 - **Pas de personne réelle reconnaissable,** pas de logo ni de marque réelle.
 - **Les tailles** sont données en pixels. Le jeu recadre automatiquement ; gardez le sujet principal au centre.
 
 ## 2.1 Portraits (`img/portraits/`) : 14 fichiers
 
 **Format :** JPG, **600 × 900 px** (format 2:3, celui de ChatGPT : l'image de 1024 × 1536 qu'il produit se réduit sans recadrage), vertical, sujet cadré en buste, visage au tiers supérieur. Le jeu les affiche comme une photo punaisée (grande dans la fiche du carnet, minuscule dans la liste).
-**Style retenu :** photo de presse argentique en noir et blanc, 1993. Grain fort, flash direct avec ombre portée, mur gris clair uni, tirage un peu abîmé. Visages ordinaires, jamais retouchés. **Déjà fait :** les 14 portraits de Saint-Étienne sont dans le jeu. `ferrand.jpg` sert de référence de style pour les suivants.
+**Style retenu :** photo de presse argentique en noir et blanc, années 1990. Grain fort, flash direct avec ombre portée, mur gris clair uni, tirage un peu abîmé. Visages ordinaires, jamais retouchés. **Déjà fait :** les 14 portraits de Saint-Étienne sont dans le jeu. `ferrand.jpg` sert de référence de style pour les suivants.
 
-**Prompt de base pour ChatGPT** (garder le bloc STYLE identique, ne changer que le bloc PERSONNAGE, et générer tous les portraits d'une affaire dans la même conversation) :
+**Prompt de base pour ChatGPT** (garder le bloc STYLE identique, ne changer que le bloc PERSONNAGE et la date de l'affaire, entre crochets, et générer tous les portraits d'une affaire dans la même conversation) :
 
 ```
-Photographie argentique en noir et blanc, prise en France en novembre 1993.
+Photographie argentique en noir et blanc, prise en France en [MOIS ANNÉE DE L'AFFAIRE : novembre 1993 pour Saint-Étienne, juin 1994 pour Nyons].
 Portrait vertical (format 2:3), cadré de la tête au haut du buste, le visage dans le tiers supérieur de l'image, regard vers l'objectif ou légèrement à côté. Les mains ne sont pas visibles : hors du cadre, ou dans les poches.
 
 STYLE :
@@ -171,7 +173,7 @@ STYLE :
 - Aucun sourire de pose. Une expression naturelle, comme si la personne n'avait pas envie d'être photographiée.
 - Défauts d'un vrai tirage : léger flou de bougé, petites poussières, bords du tirage légèrement irréguliers.
 - Peau réaliste avec pores, rides et imperfections. Surtout pas de peau lisse ni de retouche.
-- Vêtements, coiffure et accessoires strictement de 1993, typiques de la France de province.
+- Vêtements, coiffure et accessoires strictement de l'époque de l'affaire, typiques de la France de province.
 - Aucun texte, aucun logo, aucune marque visible. Rien de moderne.
 - Ne pas ressembler à une personne réelle ou connue.
 
@@ -201,9 +203,11 @@ PERSONNAGE :
 
 **Format :** identique aux portraits, JPG **600 × 900 px**, même style. **Déjà fait :** les quatre portraits sont dans le jeu. Ils s'affichent sur les fiches de l'équipe, sous la note de service du début de partie.
 
+**Changement :** le chef du Bureau n'est plus Mathilde Vernet mais **Paul Moreau**. Le fichier `mathilde.jpg` ne sert plus : vous pouvez le supprimer du dossier.
+
 | Fichier | Personnage | À représenter |
 | --- | --- | --- |
-| `mathilde.jpg` | Mathilde Vernet, cheffe du Bureau | La quarantaine, imperméable, cigarette pas allumée entre les doigts. Regard direct, un peu de défi. Dix ans de rubrique police-justice derrière elle. |
+| `paul.jpg` (fait) | Paul Moreau, chef du Bureau | La quarantaine, imperméable beige sur une veste sombre, cravate desserrée, barbe courte et moustache. Regard direct, un peu de défi. Dix ans de rubrique police-justice derrière lui. |
 | `yves.jpg` | Yves Barral, photographe | La cinquantaine, barbe grise mal taillée, gilet de reporter, un boîtier argentique autour du cou. Il regarde à côté de l'objectif. |
 | `karim.jpg` | Karim Haddou, stagiaire | Vingt-trois ans, blouson en jean, carnet à spirale dans la poche. Sourire poli, l'air de ne pas encore savoir où il a mis les pieds. |
 | `odile.jpg` | Odile Perrichon, documentaliste | Soixante ans, lunettes au bout du nez, chaînette, gilet de laine. Assise devant des rayonnages de classeurs. Le visage de quelqu'un qui n'oublie rien. |
@@ -211,7 +215,7 @@ PERSONNAGE :
 ## 2.3 Photos des lieux (`img/lieux/`) : 14 fichiers
 
 **Format :** JPG, **1200 × 600 px** (2 pour 1), horizontal. Le jeu les affiche en tête de chaque lieu, dans un cadre blanc de tirage photo.
-**Style conseillé :** photos argentiques d'Yves, noir et blanc ou sépia, grain visible, lumière de novembre. Pas de personnage au premier plan.
+**Style conseillé :** photos argentiques d'Yves, noir et blanc ou sépia, grain visible, lumière de la saison de l'affaire (novembre pour Saint-Étienne). Pas de personnage au premier plan.
 
 | Fichier | Lieu | À représenter |
 | --- | --- | --- |
@@ -256,25 +260,11 @@ PERSONNAGE :
 | `recu_berthet.jpg` | Le reçu déchiré | Un reçu reconstitué, quatre morceaux recollés au ruban adhésif. |
 | `livre_police.jpg` | Le livre de police de Berthet | Registre de ferrailleur, écriture maladroite, une ligne « Ferréol ». |
 | `registre_decharge.jpg` | Le registre de la décharge | Fiches de pesée agrafées, total « 400 t » souligné. |
-| `liasses.jpg` | Les liasses du coffre | Cinq liasses de billets de 200 F dans un petit coffre, bandes datées. |
+| `liasses.jpg` | Les liasses du coffre | Cinq liasses de billets de 200 F dans un petit coffre, bandes datées. Un faire-part « André Ferrand, 1948-1987 » dessous. |
 
-## 2.5 Le plan de Saint-Étienne (`img/plans/`) : 1 fichier
+## 2.5 Le plan de Saint-Étienne : plus nécessaire
 
-**`saint_etienne.jpg`** · JPG, **1800 × 1200 px**.
-Une carte routière stylisée de 1993, pliée (traces de pliure), couleurs passées. Le jeu dessine par-dessus, en transparence, les quartiers et les punaises. **Placez les quartiers aux emplacements ci-dessous** (coordonnées en pixels sur l'image 1800 × 1200, depuis le coin en haut à gauche) :
-
-| Quartier | Rectangle (x, y, largeur, hauteur) |
-| --- | --- |
-| Le Soleil | 660, 40, 520, 300 |
-| Montreynaud | 1240, 40, 480, 260 |
-| Tarentaize | 80, 400, 460, 340 |
-| Centre-ville | 600, 400, 600, 380 |
-| Châteaucreux | 1260, 360, 460, 280 |
-| Zone industrielle | 80, 800, 520, 340 |
-| Bellevue | 660, 840, 540, 300 |
-| Vallée du Gier | 1260, 700, 460, 440 |
-
-Ce n'est pas une carte exacte de la ville, mais une carte « de jeu » : les proportions n'ont pas besoin d'être justes, seulement lisibles. Laissez les zones assez claires pour que les punaises restent visibles.
+Le jeu dessine lui-même le plan de la ville (quartiers, rues, voie ferrée, rivières). Aucune image à fournir.
 
 ## 2.6 Textures (`img/textures/`) : 3 fichiers
 
@@ -283,16 +273,16 @@ Toutes **raccordables** (tileable) : le bord droit continue le bord gauche, le h
 | Fichier | Taille | Contenu |
 | --- | --- | --- |
 | `fond.jpg` | 1024 × 1024 | Le fond de l'écran : un sous-main en cuir ou un bureau en bois sombre. C'est lui qu'on voit dans les marges, sous la pluie. |
-| `papier.jpg` | 1024 × 1024 | Le papier des cartes et des panneaux : kraft **très clair**, grain léger. Il doit rester assez clair pour que le texte se lise parfaitement. |
+| `papier.jpg` (fait) | 1024 × 1024 | Le papier des cartes et des panneaux : kraft **très clair**, grain léger. Il doit rester assez clair pour que le texte se lise parfaitement. |
 | `journal.jpg` | 1024 × 1024 | Du papier journal : blanc cassé, fibres légères, sans texte. Pour la une de fin. |
 
 ## 2.7 Écran titre et icône : 4 fichiers
 
 | Fichier | Format | Contenu |
 | --- | --- | --- |
-| `img/salamandre.png` | PNG transparent, 400 × 560 | La carte de l'épilogue : une salamandre dans les flammes, dessinée à l'encre noire, très fine, style gravure ancienne. Fond transparent (le jeu pose la carte sur du bristol crème). Ce dessin reviendra dans toutes les affaires. |
-| `img/menu-fond.jpg` | JPG, 1920 × 1080 | Le fond de l'écran titre : un bureau de rédaction la nuit, vu de près. Une lampe de bureau allumée, un dossier kraft marqué « AFFAIRES OCCULTES », une machine à écrire, une fenêtre sombre ruisselante de pluie. Image assez sombre (le jeu l'assombrit encore un peu), avec une zone centrale calme où s'affichent le logo et le menu. La pluie animée du jeu passe par-dessus. |
-| `img/logo.png` | PNG transparent, 1200 × 500 | Le logo du jeu, « Bureau des affaires occultes ». Clair sur fond transparent, car il s'affiche sur le fond sombre de l'écran titre. Style machine à écrire ou lettrage de presse des années 90, avec un tampon rouge « France · 1993 » si vous le souhaitez. Tant qu'il est absent, le jeu affiche un logo en texte. Il apparaît aussi dans les crédits. |
+| `img/salamandre.png` (fait) | PNG transparent, 400 × 560 | La carte de l'épilogue : une salamandre dans les flammes, dessinée à l'encre noire, très fine, style gravure ancienne. Fond transparent (le jeu pose la carte sur du bristol crème). Ce dessin reviendra dans toutes les affaires. |
+| `img/menu-fond.jpg` (fait) | JPG, 1920 × 1080 | Le fond de l'écran titre : un bureau de rédaction la nuit, vu de près. Une lampe de bureau allumée, un dossier kraft marqué « AFFAIRES OCCULTES », une machine à écrire, une fenêtre sombre ruisselante de pluie. Image assez sombre (le jeu l'assombrit encore un peu), avec une zone centrale calme où s'affichent le logo et le menu. La pluie animée du jeu passe par-dessus. |
+| `img/logo.png` (fait, nouvelle version) | PNG transparent, 1200 × 690 | Une carte de papier kraft abîmée, « Bureau des / Affaires occultes » tapé à la machine, tampon rouge « France · Années 1990 ». Fond transparent, recadré au ras de la carte. Tant qu'il est absent, le jeu affiche un logo en texte (avec le même tampon). Il apparaît aussi dans les crédits. |
 | `img/icone.png` | PNG, 256 × 256 | L'icône de l'onglet du navigateur. **Une icône provisoire est déjà fournie** (une salamandre claire sur fond sombre) : remplacez-la simplement par la vôtre, sous le même nom. Doit rester lisible en tout petit (16 × 16). |
 
 ---
@@ -310,9 +300,8 @@ Toutes **raccordables** (tileable) : le bord droit continue le bord gauche, le h
 | L'équipe du Bureau | `img/equipe/` | 4 |
 | Photos des lieux | `img/lieux/` | 14 |
 | Pièces du dossier | `img/pieces/` | 20 |
-| Plan | `img/plans/` | 1 |
 | Textures | `img/textures/` | 3 |
 | Écran titre et icône | `img/` | 4 |
-| **Total** | | **128** (68 sons, 60 images, dont l'icône provisoire déjà fournie) |
+| **Total** | | **127** (68 sons, 59 images, dont l'icône provisoire déjà fournie) |
 
 Pour vérifier qu'un fichier est bien pris en compte : ouvrez le jeu, allez à l'endroit où il doit apparaître ou se faire entendre, et rechargez la page si besoin (Ctrl + F5).

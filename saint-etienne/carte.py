@@ -1,6 +1,6 @@
 # Carte des pistes de l'affaire de Saint-Étienne (« Le feu de Ferréol »).
 # Source unique : ce fichier produit 3-carte-des-pistes.md et vérifie la
-# cohérence de l'enquête (accès aux pistes, chemin idéal, recoupements).
+# cohérence de l'enquête (accès aux pistes, chemin de référence, recoupements).
 #   python3 carte.py
 
 import json, sys, pathlib
@@ -58,7 +58,7 @@ MINITEL = {"berthet": "Casse Berthet, Rive-de-Gier", "mounier": "G. Mounier, Mon
 # Connu dès l'intro (la lettre du « fantôme » y est donnée en entier, gratuitement).
 DEPART = ["l:redaction", "l:site_ferreol", "l:mairie", "l:commissariat", "p:faure"]
 
-# Rôles : E = essentielle (sur le chemin idéal), U = utile (recoupe, confirme),
+# Rôles : E = essentielle (sur le chemin de référence), U = utile (recoupe, confirme),
 #         X = élimine un suspect, F = fausse piste
 PISTES = [
     # ---------------- Rédaction ----------------
@@ -83,7 +83,7 @@ PISTES = [
     dict(id="odile", lieu="redaction", type="investigation", bouton="Appeler Odile aux archives du groupe",
          titre="Odile et le fondeur de 1911", role="U",
          contenu="La légende du fondeur tombé dans la coulée en 1911, articles d'époque à l'appui. On n'a jamais retrouvé le corps. "
-                 "Et une brève de 1987 : Paul Ferrand, frère de Roger, mort écrasé sous une banche. C'est la piste de Karim pour le fantôme ; la date de la mort de Paul (14 mars 1987) servira pour le coffre.",
+                 "Et une brève de 1987 : André Ferrand, frère de Roger, mort écrasé sous une banche. C'est la piste de Karim pour le fantôme ; la date de la mort d'André (14 mars 1987) servira pour le coffre.",
          revele=[]),
     dict(id="tirages", lieu="redaction", type="investigation", bouton="Récupérer les tirages d'Yves",
          titre="Les tirages d'Yves", role="E", requiert=["reperage"],
@@ -232,7 +232,7 @@ PISTES = [
                  "L'argent que Ferrand a apporté à Ferréol et qu'il a remporté.",
          revele=["d:liasses"], repond={"Q1": "Ferrand a retiré 50 000 francs le jour même et les a rapportés.", "Q2": "Le dernier paiement n'a jamais été versé."},
          puzzle=dict(type="Trouver un code", objet="Le coffre à combinaison (4 chiffres)",
-                     solution="1403 : la date de la mort de Paul Ferrand, donnée par les archives d'Odile. Sur le calendrier, un 14 mars entouré au feutre noir.",
+                     solution="1403 : la date de la mort d'André Ferrand, donnée par les archives d'Odile. Sur le calendrier, un 14 mars entouré au feutre noir.",
                      donne=[], aide="Simone laisse échapper le code, contre une piste.", obligatoire=True)),
     dict(id="simone", lieu="siege_ferrand", type="entretien", bouton="Parler à Simone Ferrand",
          titre="Simone Ferrand", role="U",
@@ -294,9 +294,9 @@ QUESTIONS = {
     "BONUS": "Qui porte la salamandre ? (Roussillon)",
 }
 
-# La « solution de Mathilde » : le chemin le plus court pour répondre à tout.
-MATHILDE = ["reperage", "livre", "bensaid2", "bureau_vallenot", "lacour2", "igier2",
-            "compta", "colette2", "dossier", "registre", "tirages", "chaptal2"]
+# Le chemin de référence : le plus court pour répondre à tout.
+REFERENCE = ["reperage", "livre", "bensaid2", "bureau_vallenot", "lacour2", "igier2",
+             "compta", "colette2", "dossier", "registre", "tirages", "chaptal2"]
 
 PISTES_ACCORDEES = 16
 
@@ -357,16 +357,16 @@ for l in LIEUX:
 for p in PERSONNES:
     if "p:" + p not in k: erreurs.append(f"personne jamais révélée : {p}")
 
-# le chemin de Mathilde est jouable dans l'ordre et répond à tout
+# le chemin de référence est jouable dans l'ordre et répond à tout
 faites = []
-for cid in MATHILDE:
-    if not accessible(cid, faites): erreurs.append(f"chemin de Mathilde : {cid} pas encore accessible à ce moment")
+for cid in REFERENCE:
+    if not accessible(cid, faites): erreurs.append(f"chemin de référence : {cid} pas encore accessible à ce moment")
     faites.append(cid)
 for q in QUESTIONS:
-    if q != "BONUS" and not any(q in P[c].get("repond", {}) for c in MATHILDE):
-        erreurs.append(f"chemin de Mathilde : aucune réponse à {q}")
-if len(MATHILDE) >= PISTES_ACCORDEES:
-    erreurs.append("le chemin de Mathilde consomme toutes les pistes accordées")
+    if q != "BONUS" and not any(q in P[c].get("repond", {}) for c in REFERENCE):
+        erreurs.append(f"chemin de référence : aucune réponse à {q}")
+if len(REFERENCE) >= PISTES_ACCORDEES:
+    erreurs.append("le chemin de référence consomme toutes les pistes accordées")
 
 for c in PISTES:
     if c.get("puzzle") and not c["puzzle"].get("aide"):
@@ -394,7 +394,7 @@ md.append(f"| Personnages | {len(PERSONNES)} |")
 md.append(f"| Pistes écrites | {len(PISTES)}, dont {sum(1 for c in PISTES if c.get('requiert') or c.get('requiert_un'))} à débloquer |")
 md.append(f"| Rôle des pistes | {nb['E']} essentielles, {nb['U']} utiles, {nb['X']} qui élimine un suspect, {nb['F']} fausses pistes |")
 md.append(f"| Pistes accordées au joueur | {PISTES_ACCORDEES} |")
-md.append(f"| Solution de Mathilde | {len(MATHILDE)} pistes |\n")
+md.append(f"| Chemin de référence | {len(REFERENCE)} pistes |\n")
 
 md.append("## Ce que le joueur connaît au départ\n")
 md.append("L'intro contient la lettre du « fantôme » en entier (gratuite, relisible) et nomme Bernard Faure, la Manufacture Ferréol, la mairie et la police. "
@@ -437,9 +437,9 @@ for pid, txt in MINITEL.items():
     md.append(f"- **{PERSONNES[pid][0]}** : « {txt} »")
 md.append("")
 
-md.append("## La solution de Mathilde\n")
-md.append(f"Le chemin le plus court pour répondre à toutes les questions : {len(MATHILDE)} pistes. Le joueur en a {PISTES_ACCORDEES}, soit {PISTES_ACCORDEES - len(MATHILDE)} de marge pour les détours.\n")
-for i, cid in enumerate(MATHILDE, 1):
+md.append("## Le chemin de référence\n")
+md.append(f"Le chemin le plus court pour répondre à toutes les questions : {len(REFERENCE)} pistes. Le joueur en a {PISTES_ACCORDEES}, soit {PISTES_ACCORDEES - len(REFERENCE)} de marge pour les détours.\n")
+for i, cid in enumerate(REFERENCE, 1):
     c = P[cid]
     md.append(f"{i}. **{c['titre']}** ({LIEUX[c['lieu']][0]})")
 md.append("")
@@ -462,7 +462,7 @@ md.append("")
 (ICI / "3-carte-des-pistes.md").write_text("\n".join(md), encoding="utf-8")
 
 print(f"{len(PISTES)} pistes, {len(LIEUX)} lieux, {len(PERSONNES)} personnages.")
-print(f"Chemin de Mathilde : {len(MATHILDE)} pistes sur {PISTES_ACCORDEES} accordées.")
+print(f"Chemin de référence : {len(REFERENCE)} pistes sur {PISTES_ACCORDEES} accordées.")
 for q in QUESTIONS:
     print(f"  {q} : {sum(1 for c in PISTES if q in c.get('repond', {}))} sources")
 print(("ERREURS :\n  " + "\n  ".join(erreurs)) if erreurs else "Aucune erreur.")

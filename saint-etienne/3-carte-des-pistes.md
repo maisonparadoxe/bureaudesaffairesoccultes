@@ -13,7 +13,7 @@ Généré par `carte.py`, qui vérifie aussi la cohérence de l'enquête. Pour m
 | Pistes écrites | 39, dont 14 à débloquer |
 | Rôle des pistes | 12 essentielles, 21 utiles, 1 qui élimine un suspect, 5 fausses pistes |
 | Pistes accordées au joueur | 16 |
-| Solution de Mathilde | 12 pistes |
+| Chemin de référence | 12 pistes |
 
 ## Ce que le joueur connaît au départ
 
@@ -57,7 +57,7 @@ L'intro contient la lettre du « fantôme » en entier (gratuite, relisible) et 
   
   *Sert à :* Q2 (Faure voulait vendre son dossier, pas le donner.)
 - **Appeler Odile aux archives du groupe** · investigation · Utile  
-  La légende du fondeur tombé dans la coulée en 1911, articles d'époque à l'appui. On n'a jamais retrouvé le corps. Et une brève de 1987 : Paul Ferrand, frère de Roger, mort écrasé sous une banche. C'est la piste de Karim pour le fantôme ; la date de la mort de Paul (14 mars 1987) servira pour le coffre.
+  La légende du fondeur tombé dans la coulée en 1911, articles d'époque à l'appui. On n'a jamais retrouvé le corps. Et une brève de 1987 : André Ferrand, frère de Roger, mort écrasé sous une banche. C'est la piste de Karim pour le fantôme ; la date de la mort d'André (14 mars 1987) servira pour le coffre.
 - **Récupérer les tirages d'Yves** · investigation · Essentielle · après : Repérage du chantier  
   Photos prises le 17 au matin : le slogan « FERRÉOL NE SERA PAS UN PARKING » sur le mur est, peinture encore brillante, coulures fraîches. Les mêmes mots que dans la lettre du « fantôme ».
   
@@ -270,7 +270,7 @@ Résoudre un puzzle est gratuit, c'est ouvrir la piste qui coûte. En cas de blo
 | --- | --- | --- | --- | --- |
 | La facture détaillée de la cabane du gardien | Comparer des documents | Une trentaine d'appels sur la facture | Le joueur repère l'appel de 22 h 24 et reconnaît le numéro de la carte de visite de Vallenot. | Karim épluche la facture et entoure l'appel de 22 h 24. |
 | Repérage du chantier | Recoller des morceaux | Le reçu déchiré en quatre | Reçu de la Casse Berthet, Rive-de-Gier, « fonte, 1,2 t », daté du 16/11. | Yves recolle le reçu à votre place. |
-| Le coffre de Roger Ferrand | Trouver un code | Le coffre à combinaison (4 chiffres) | 1403 : la date de la mort de Paul Ferrand, donnée par les archives d'Odile. Sur le calendrier, un 14 mars entouré au feutre noir. | Simone laisse échapper le code, contre une piste. |
+| Le coffre de Roger Ferrand | Trouver un code | Le coffre à combinaison (4 chiffres) | 1403 : la date de la mort d'André Ferrand, donnée par les archives d'Odile. Sur le calendrier, un 14 mars entouré au feutre noir. | Simone laisse échapper le code, contre une piste. |
 
 ## Le Minitel
 
@@ -280,7 +280,7 @@ Un outil permanent, gratuit : le joueur tape un nom pour obtenir une adresse. Po
 - **Gérard Mounier** : « G. Mounier, Montreynaud »
 - **Dr Pierre Lacour** : « Dr P. Lacour, cours Fauriel »
 
-## La solution de Mathilde
+## Le chemin de référence
 
 Le chemin le plus court pour répondre à toutes les questions : 12 pistes. Le joueur en a 16, soit 4 de marge pour les détours.
 
