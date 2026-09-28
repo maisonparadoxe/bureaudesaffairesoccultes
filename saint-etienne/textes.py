@@ -587,36 +587,99 @@ Sous les liasses, un faire-part de décès bordé de noir. André Ferrand, 1948-
     ),
 }
 
-# =========================================================== QUESTIONNAIRE
+# =========================================================== L'ARTICLE À TROUS
+# Le joueur écrit la page du samedi en remplissant des trous avec les mots
+# qu'il a découverts : personnes (p), lieux (l), pièces (d) et actions (a).
+# Syntaxe d'un trou : [[type:id|question]]. La question (Q1 à Q6, BONUS)
+# décide des points, des fins et des compléments, comme l'ancien QCM.
 
-QUESTIONS = [
-    dict(id="Q1", points=20, texte="Qui a fait tomber Bernard Faure ?",
-         choix=["Roger Ferrand", "Hervé Vallenot", "Marcel Roussillon", "Marcel Chaptal", "Ahmed Bensaïd", "Personne, c'est un accident"],
-         bonne="Roger Ferrand"),
-    dict(id="Q2", points=20, texte="Pourquoi Bernard Faure était-il à Ferréol le 16 au soir ?",
-         choix=["Pour remettre son dossier à la presse", "Pour toucher de l'argent de Roger Ferrand", "Pour constater des travaux illégaux", "Pour y retrouver Marcel Chaptal"],
-         bonne="Pour toucher de l'argent de Roger Ferrand"),
-    dict(id="Q3", points=20, texte="Qui a laissé Bernard Faure mourir sans appeler les secours ?",
-         choix=["Roger Ferrand, seul", "Hervé Vallenot", "Marcel Roussillon", "Ahmed Bensaïd", "Personne, il est mort sur le coup"],
-         bonne="Hervé Vallenot"),
-    dict(id="Q4", points=10, texte="Où sont passées les 2 600 tonnes de terres polluées ?",
-         choix=["Sous les dalles neuves de Ferréol", "Sous le parking-relais de Bellevue", "À la casse Berthet", "Nulle part : elles n'ont jamais existé"],
-         bonne="Sous les dalles neuves de Ferréol"),
-    dict(id="Q5", points=10, texte="Qui a fait classer l'affaire en accident ?",
-         choix=["Marcel Roussillon", "Hervé Vallenot", "Le Dr Lacour, seul", "Le commissaire Borel, de sa propre initiative"],
-         bonne="Marcel Roussillon"),
-    dict(id="Q6", points=10, texte="Qui a écrit la lettre du « fantôme » ?",
-         choix=["Marcel Chaptal", "Ahmed Bensaïd", "Bernard Faure", "Colette Faure"],
-         bonne="Marcel Chaptal"),
-    dict(id="BONUS", points=5, texte="Qui porte la salamandre ?",
-         choix=["Marcel Roussillon", "Hervé Vallenot", "Roger Ferrand", "Le Dr Lacour"],
-         bonne="Marcel Roussillon"),
+# Les mots d'action : un verbe ou une locution, à la forme où ils entrent dans
+# les phrases. Ils s'obtiennent en lisant certaines pistes (DEBLOCAGE_ACTIONS).
+ACTIONS = {
+    "fait_chanter": "fait chanter",
+    "pousse": "pousse",
+    "laisse_mourir": "laisse mourir",
+    "fait_classer": "fait classer",
+    "denonce": "dénonce",
+    "menace": "menace",
+    "paie": "paie",
+    "couvre": "couvre",
+}
+
+# Piste lue -> mots d'action qu'elle fait entrer dans la liste.
+# « laisse mourir » ne doit jamais être disponible trop tôt : il dévoile le
+# second retournement de l'affaire.
+DEBLOCAGE_ACTIONS = {
+    "reperage": ["pousse"],
+    "berthet2": ["pousse"],
+    "porte": ["pousse", "laisse_mourir"],
+    "lacour2": ["laisse_mourir"],
+    "compta": ["fait_chanter", "paie"],
+    "colette2": ["fait_chanter"],
+    "roche2": ["fait_chanter"],
+    "igier": ["fait_classer"],
+    "igier2": ["fait_classer"],
+    "standard": ["denonce"],
+    "chaptal2": ["menace"],
+    "lacour": ["couvre"],
+}
+
+# Comment un lieu s'écrit dans une phrase de l'article (« enterré … »).
+LIEUX_ARTICLE = {
+    "redaction": "à la rédaction du Stéphanois",
+    "mairie": "à la mairie",
+    "cabinet_vallenot": "au cabinet Vallenot",
+    "commissariat": "au commissariat central",
+    "cabinet_lacour": "au cabinet du Dr Lacour",
+    "consigne_gare": "à la consigne de la gare",
+    "domicile_faure": "chez les Faure",
+    "site_ferreol": "à l'ancienne Manufacture Ferréol",
+    "cheval_noir": "au Cheval Noir",
+    "siege_ferrand": "chez Ferrand Frères",
+    "cite_mounier": "à la cité de Montreynaud",
+    "casse_berthet": "à la casse Berthet",
+    "decharge": "à la décharge de la Croix-de-l'Orme",
+    "parking_relais": "au chantier du parking-relais",
+}
+
+# Paragraphes de l'article. Jean-Loup relit paragraphe par paragraphe ;
+# le bonus n'est pas relu.
+ARTICLE = [
+    dict(id="chantage", titre="Le chantage", texte=(
+        "Chargé du dossier à la mairie, Bernard Faure découvre cet été que [[p:ferrand|Q2]] n'a évacué que 400 tonnes "
+        "de terres polluées. Le reste est enterré la nuit, sous des dalles neuves, [[l:site_ferreol|Q4]]. "
+        "Faure ne dit rien à sa hiérarchie. Il le [[a:fait_chanter|Q2]].")),
+    dict(id="chute", titre="La chute", texte=(
+        "Le mardi 16 novembre à 22 h, Faure a rendez-vous dans l'atelier de forge. "
+        "Sur la passerelle, [[p:ferrand|Q1]] le [[a:pousse|Q1]].")),
+    dict(id="attente", titre="L'attente", texte=(
+        "Faure survit à sa chute. Appelé depuis la cabane du gardien, [[p:vallenot|Q3]] arrive, voit qu'il respire encore "
+        "et le [[a:laisse_mourir|Q3]]. Il laisse derrière lui [[d:megots|Q3]].")),
+    dict(id="classement", titre="Le classement", texte=(
+        "Le lendemain matin, [[p:roussillon|Q5]] [[a:fait_classer|Q5]] l'affaire en accident.")),
+    dict(id="fantome", titre="Le fantôme", texte=(
+        "Quant au fondeur de 1911, c'est [[p:chaptal|Q6]] qui a écrit [[d:lettre_fantome|Q6]].")),
+    dict(id="salamandre", titre="La salamandre", bonus=True, texte=(
+        "La salamandre de l'épilogue était déjà gravée sur la chevalière de [[p:roussillon|BONUS]].")),
 ]
+
+# Points de chaque question, répartis entre ses trous. Un trou faux ne rapporte rien.
+POINTS = {"Q1": 20, "Q2": 20, "Q3": 20, "Q4": 10, "Q5": 10, "Q6": 10, "BONUS": 5}
 
 SCORE = dict(
     pistes_de_reference=12,
     penalite_par_piste_en_plus=2,
+    essais=[1.0, 0.8, 0.6],   # part des points gardée selon l'essai où l'article part
     rangs=[(80, "Réussite majeure"), (60, "Réussite"), (40, "Demi-succès"), (0, "Échec")],
+)
+
+# Ce que dit Jean-Loup en relisant.
+RELECTURE = dict(
+    juste="Jean-Loup lit l'article deux fois, sans rien dire. Puis il le pose sur la pile de l'imprimerie. « Ça tient. »",
+    essai1="Jean-Loup rend la copie. « Il y a quelque chose qui ne tient pas. J'ai marqué le paragraphe. Je ne vous dis pas où ça cloche. »",
+    essai1_pluriel="Jean-Loup rend la copie. « Il y a des paragraphes qui ne tiennent pas. Je les ai marqués. Je ne vous dis pas où ça cloche. »",
+    essai2="Jean-Loup soupire et sort son stylo rouge. « Là, et là. Dernière chance. Au prochain passage, ça part tel quel. »",
+    essai3="Jean-Loup ne relit même pas. « C'est l'heure. Ça part. »",
 )
 
 # =========================================================== FINS

@@ -148,7 +148,10 @@ cas = dict(
     minitel=[dict(e, about="p:" + e["keys"][0]) if e["reveals"] else e for e in MINITEL],  # l'adresse ne sert que si la personne est connue
     clues=[],
     puzzles={},
-    questions=[dict(id=q["id"], points=q["points"], text=q["texte"], choices=q["choix"], answer=q["bonne"]) for q in T["QUESTIONS"]],
+    actions=[dict(id=i, name=n) for i, n in T["ACTIONS"].items()],
+    article=None,  # rempli plus bas
+    attemptFactors=T["SCORE"]["essais"],
+    review=T["RELECTURE"],
     ranks=[dict(min=m, label=l) for m, l in T["SCORE"]["rangs"]],
     endings=[],
     complements={q: dict(right=a, wrong=b) for q, (a, b) in T["FINS_COMPLEMENTS"].items()},
@@ -210,10 +213,11 @@ for lid, (nom, q) in C["LIEUX"].items():
     loc = dict(id=lid, name=nom, quartier=q, address=ADRESSES[lid], map=dict(x=PLAN["lieux"][lid][0], y=PLAN["lieux"][lid][1]), ambience=AMBIANCES[lid])
     if lid == "redaction": loc["alwaysRevealed"] = True
     if lid in COURTS: loc["short"] = COURTS[lid]
+    loc["inArticle"] = T["LIEUX_ARTICLE"][lid]
     cas["locations"].append(loc)
 
 for pid, (nom, lieu) in C["PERSONNES"].items():
-    ch = dict(id=pid, name=NOMS_ANNUAIRE[pid], role=ROLES[pid], locationId=lieu)
+    ch = dict(id=pid, name=NOMS_ANNUAIRE[pid], label=nom.split(",")[0], role=ROLES[pid], locationId=lieu)
     if pid == "faure": ch["alwaysRevealed"] = True
     if pid in MINITEL_PERSONNES: ch["minitel"] = True
     cas["characters"].append(ch)
@@ -237,6 +241,7 @@ for c in C["PISTES"]:
     if clue.get("ambience") is None: clue.pop("ambience", None)
     if c["id"] in T["SALAMANDRE"]: clue["salamandre"] = True
     if c["id"] in T.get("FAX", {}): clue["fax"] = T["FAX"][c["id"]]
+    if c["id"] in T["DEBLOCAGE_ACTIONS"]: clue["revealsActions"] = T["DEBLOCAGE_ACTIONS"][c["id"]]
     cas["clues"].append(clue)
 
 pz = T["PUZZLES"]
@@ -251,6 +256,32 @@ cas["puzzles"] = {
                    code=pz["coffre"]["solution"], result=pz["coffre"]["resultat"], help=pz["coffre"]["aide"],
                    facts=notes("puzzle_coffre", pz["coffre"]["notes"])),
 }
+
+# ------------------------------------------------------------------ l'article à trous
+# Chaque paragraphe devient une suite de morceaux : du texte, ou un trou
+# {id, type, answer, q, points}. Les points d'une question sont répartis
+# entre ses trous.
+TROU = re.compile(r"\[\[(p|l|d|a):([^|\]]+)\|([^\]]+)\]\]")
+nb_trous = {}
+for par in T["ARTICLE"]:
+    for m in TROU.finditer(par["texte"]):
+        nb_trous[m.group(3)] = nb_trous.get(m.group(3), 0) + 1
+article = []
+for par in T["ARTICLE"]:
+    parts, pos, n = [], 0, 0
+    for m in TROU.finditer(par["texte"]):
+        if m.start() > pos: parts.append(par["texte"][pos:m.start()])
+        n += 1
+        q = m.group(3)
+        parts.append(dict(id=f"{par['id']}-{n}", type=m.group(1), answer=m.group(2), q=q,
+                          points=round(T["POINTS"][q] / nb_trous[q], 3)))
+        pos = m.end()
+    if pos < len(par["texte"]): parts.append(par["texte"][pos:])
+    p = dict(id=par["id"], title=par["titre"], parts=parts)
+    if par.get("bonus"): p["bonus"] = True
+    article.append(p)
+cas["article"] = article
+cas["maxPoints"] = sum(T["POINTS"].values())
 
 CONDITIONS = {"une": {"Q1": True, "Q2": True, "Q3": True}, "martyr": {"Q1": True, "Q3": True, "Q2": False},
               "promoteur": {"Q1": True, "Q3": False}, "dementi": {"Q1": False}}
@@ -304,4 +335,4 @@ data["credits"] = [
 ]
 data_path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
 print(f"Affaire construite : {len(cas['clues'])} pistes, {len(cas['locations'])} lieux, {len(cas['characters'])} personnages, "
-      f"{len(cas['documents'])} pièces, {len(cas['puzzles'])} puzzles, {len(cas['questions'])} questions, {len(cas['endings'])} fins.")
+      f"{len(cas['documents'])} pièces, {len(cas['puzzles'])} puzzles, {len(cas['article'])} paragraphes d'article, {len(cas['endings'])} fins.")

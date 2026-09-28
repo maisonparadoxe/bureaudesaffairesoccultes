@@ -79,6 +79,23 @@ for pid, c in P.items():
         if key not in presents and key not in lieux_des_personnes:
             erreurs.append(f"{pid} : la carte révèle {key}, absent du texte")
 
+# 3 bis. L'article à trous
+TROU_C = re.compile(r"\[\[(p|l|d|a):([^|\]]+)\|([^\]]+)\]\]")
+for par in T["ARTICLE"]:
+    for t, i, q in TROU_C.findall(par["texte"]):
+        if t == "a":
+            if i not in T["ACTIONS"]: erreurs.append(f"article {par['id']} : action inconnue {i}")
+        elif not existe(t, i):
+            erreurs.append(f"article {par['id']} : trou {t}:{i} inconnu")
+        if q not in T["POINTS"]: erreurs.append(f"article {par['id']} : question inconnue {q}")
+    controle_texte("article " + par["id"], par["texte"])
+for c, liste in T["DEBLOCAGE_ACTIONS"].items():
+    if c not in P: erreurs.append(f"mot d'action débloqué par une piste inconnue : {c}")
+    for a in liste:
+        if a not in T["ACTIONS"]: erreurs.append(f"{c} débloque une action inconnue : {a}")
+for a in T["ACTIONS"]:
+    if not any(a in l for l in T["DEBLOCAGE_ACTIONS"].values()): erreurs.append(f"mot d'action jamais débloqué : {a}")
+
 # 4. Simulation avec les révélations réelles des textes
 def connu(lues):
     k = {f"{t}:{i}" for t, i in tags(T["INTRO"])}
@@ -161,13 +178,24 @@ for lid, (lnom, q) in LIEUX.items():
             if pz.get("resultat"): md.append(f"> Résultat : {rendu(pz['resultat'])}  ")
             md.append(f"> Aide (coûte une piste) : {pz['aide']}\n")
 
-md.append("## Le questionnaire\n")
+md.append("## L'article à trous\n")
 sc = T["SCORE"]
-md.append(f"Score : points des bonnes réponses, moins {sc['penalite_par_piste_en_plus']} points par piste lue au-delà de {sc['pistes_de_reference']} (le chemin de référence). "
+md.append(f"Le joueur remplit les trous avec les mots découverts (personnes, lieux, pièces, actions). Trois essais au plus : "
+          f"{' / '.join(str(int(x * 100)) + ' %' for x in sc['essais'])} des points selon l'essai où l'article part. "
+          f"Moins {sc['penalite_par_piste_en_plus']} points par piste lue au-delà de {sc['pistes_de_reference']} (le chemin de référence). "
           "Rangs : " + ", ".join(f"{r} à partir de {s}" for s, r in sc["rangs"]) + ".\n")
-for q in T["QUESTIONS"]:
-    md.append(f"**{q['id']}. {q['texte']}** ({q['points']} points)  ")
-    md.append("  ".join(("✔ " if ch == q["bonne"] else "○ ") + ch for ch in q["choix"]) + "\n")
+TROU = re.compile(r"\[\[(p|l|d|a):([^|\]]+)\|([^\]]+)\]\]")
+def mot(t, i):
+    return {"p": lambda: f"**{PERSONNES[i][0]}**", "l": lambda: f"⌖{T['LIEUX_ARTICLE'][i]}",
+            "d": lambda: f"*{DOCS[i]}*", "a": lambda: f"__{T['ACTIONS'][i]}__"}[t]()
+for par in T["ARTICLE"]:
+    md.append(f"**{par['titre']}**{' (bonus)' if par.get('bonus') else ''}  ")
+    md.append(TROU.sub(lambda m: f"[{mot(m.group(1), m.group(2))} · {m.group(3)}]", par["texte"]) + "\n")
+md.append("**Mots d'action** (soulignés) et pistes qui les débloquent :\n")
+for aid, lab in T["ACTIONS"].items():
+    src = [P[c]["titre"] for c, l in T["DEBLOCAGE_ACTIONS"].items() if aid in l]
+    md.append(f"- __{lab}__ : {', '.join(src)}")
+md.append("")
 
 md.append("## Les fins\n")
 md.append("La fin dépend des trois questions principales. Un paragraphe s'ajoute ensuite pour chacune des questions 4 à 6, selon que la réponse est juste ou fausse, puis vient l'épilogue.\n")
@@ -184,7 +212,7 @@ md.append(T["EPILOGUE"].strip() + "\n")
 (ICI / "5-textes.md").write_text("\n".join(md), encoding="utf-8")
 
 tot = sum(x["mots"] for x in TEXTES.values())
-print(f"{len(TEXTES)} pistes, {tot} mots (moyenne {tot // len(TEXTES)}), {len(PUZZLES)} puzzles, {len(T['QUESTIONS'])} questions, {len(T['FINS'])} fins.")
+print(f"{len(TEXTES)} pistes, {tot} mots (moyenne {tot // len(TEXTES)}), {len(PUZZLES)} puzzles, {len(T['ARTICLE'])} paragraphes d'article, {len(T['FINS'])} fins.")
 for a in avertissements: print("  ATTENTION", a)
 print(("ERREURS :\n  " + "\n  ".join(erreurs)) if erreurs else "Aucune erreur.")
 sys.exit(1 if erreurs else 0)

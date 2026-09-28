@@ -67,13 +67,17 @@ Autres nouveaux personnages : Dr Lacour, le médecin qui a signé le certificat 
 - **Vallenot est venu :** l'appel de 22 h 24 vers un radiotéléphone, le numéro imprimé sur la carte de visite de Vallenot, et la Safrane vue par Bensaïd.
 - **Faure a survécu à la chute :** Bensaïd l'a trouvé près de la porte, le constat officiel dit « au pied de l'escalier », et le Dr Lacour estime le décès vers minuit, deux heures après la chute.
 
-## Le questionnaire final (première version)
+## L'article à trous (remplace le questionnaire)
 
-1. Qui a fait tomber Bernard Faure ? *Roger Ferrand.*
-2. Pourquoi Faure était-il sur le site ce soir-là ? *Pour toucher un dernier paiement de son chantage.*
-3. Qui a empêché qu'on appelle les secours ? *Hervé Vallenot.*
-4. Où se trouvent les terres polluées ? *Sous les dalles neuves du site.*
-5. Qui a fait classer l'affaire ? *Marcel Roussillon.*
-6. Qui a écrit la lettre sur le fantôme du fondeur ? *Marcel Chaptal.*
+À la fin, le joueur écrit la page du samedi en remplissant des blancs avec les mots qu'il a découverts : personnes, lieux, pièces et actions (« fait chanter », « pousse », « laisse mourir », « fait classer », et quatre leurres). Chaque blanc est rattaché à une des anciennes questions, qui décident toujours des fins :
+
+1. Qui a fait tomber Bernard Faure ? *Roger Ferrand le pousse.* (paragraphe « La chute »)
+2. Pourquoi Faure était-il sur le site ce soir-là ? *Il faisait chanter Ferrand.* (« Le chantage »)
+3. Qui a empêché qu'on appelle les secours ? *Hervé Vallenot le laisse mourir, et laisse ses mégots.* (« L'attente »)
+4. Où se trouvent les terres polluées ? *À l'ancienne Manufacture Ferréol, sous les dalles.* (« Le chantage »)
+5. Qui a fait classer l'affaire ? *Marcel Roussillon.* (« Le classement »)
+6. Qui a écrit la lettre sur le fantôme du fondeur ? *Marcel Chaptal.* (« Le fantôme »)
 
 Bonus : qui porte la salamandre ? *Roussillon, sur sa chevalière.*
+
+Le texte exact de l'article est dans `textes.py` (ARTICLE) et `5-textes.md`.

@@ -33,7 +33,11 @@
     minitelFound: new Set(), // index des entrées Minitel trouvées
     puzzlesSolved: new Set(),
     puzzlesHelped: new Set(),
-    answers: {},
+    answers: {}, // article : id du trou -> "type:id" du mot posé
+    attempts: 0, // relectures de Jean-Loup déjà faites
+    review: null, // dernier retour de Jean-Loup
+    lastSubmitted: null, // la version relue en dernier
+    activeBlank: null,
     started: false,
     savedGame: null,
     selectedQuartier: null,
@@ -66,12 +70,13 @@
   const characterById = (id) => byId(currentCase().characters, id);
   const documentById = (id) => byId(currentCase().documents, id);
   const clueById = (id) => byId(currentCase().clues, id);
+  const actionById = (id) => byId(currentCase().actions, id);
   const puzzleOf = (clue) => (clue && clue.puzzle ? (currentCase().puzzles || {})[clue.puzzle] : null);
   const cluesForLocation = (locationId) => currentCase().clues.filter((c) => c.locationId === locationId);
   const leadsUsed = () => currentCase().totalLeads - state.leadsRemaining;
 
   function maxScore(cs) {
-    return (cs.questions || []).reduce((s, q) => s + q.points, 0) || 7;
+    return cs.maxPoints || (cs.questions || []).reduce((s, q) => s + q.points, 0) || 7;
   }
 
   // ---------------------------------------------------------------
@@ -195,6 +200,9 @@
           puzzlesSolved: Array.from(state.puzzlesSolved),
           puzzlesHelped: Array.from(state.puzzlesHelped),
           answers: state.answers,
+          attempts: state.attempts,
+          review: state.review,
+          lastSubmitted: state.lastSubmitted,
           selectedQuartier: state.selectedQuartier,
           selectedLocationId: state.selectedLocationId,
           view: ["intro", "minitel"].includes(state.view) ? "quartier" : state.view,
@@ -270,6 +278,10 @@
     state.puzzlesSolved = new Set();
     state.puzzlesHelped = new Set();
     state.answers = {};
+    state.attempts = 0;
+    state.review = null;
+    state.lastSubmitted = null;
+    state.activeBlank = null;
     state.selectedQuartier = cs.quartiers[0].id;
     state.selectedLocationId = null;
     state.lastResult = null;
@@ -292,7 +304,10 @@
     state.minitelFound = new Set(s.minitelFound || []);
     state.puzzlesSolved = new Set(s.puzzlesSolved || []);
     state.puzzlesHelped = new Set(s.puzzlesHelped || []);
-    state.answers = s.answers || {};
+    state.answers = s.answers && !s.answers.Q1 ? s.answers : {};
+    state.attempts = s.attempts || 0;
+    state.review = s.review || null;
+    state.lastSubmitted = s.lastSubmitted || null;
     state.selectedQuartier = s.selectedQuartier || currentCase().quartiers[0].id;
     state.selectedLocationId = s.selectedLocationId || null;
     state.ending = s.ending || null;
@@ -378,7 +393,7 @@
 
   function computeKnowledge() {
     const cs = currentCase();
-    const k = { p: new Set(), l: new Set(), d: new Set() };
+    const k = { p: new Set(), l: new Set(), d: new Set(), a: new Set() };
     const absorb = (text) => parseTags(text).forEach((t) => k[t.type].add(t.id));
 
     cs.characters.forEach((ch) => ch.alwaysRevealed && k.p.add(ch.id));
@@ -391,6 +406,7 @@
       absorb(clue.text);
       (clue.revealsCharacters || []).forEach((id) => k.p.add(id));
       (clue.revealsLocations || []).forEach((id) => k.l.add(id));
+      (clue.revealsActions || []).forEach((id) => k.a.add(id));
       const pz = puzzleOf(clue);
       if (pz && state.puzzlesSolved.has(clue.puzzle)) absorb(pz.result);
     });
@@ -413,6 +429,7 @@
     k.p = new Set(Array.from(k.p).filter((id) => characterById(id)));
     k.l = new Set(Array.from(k.l).filter((id) => locationById(id)));
     k.d = new Set(Array.from(k.d).filter((id) => documentById(id)));
+    k.a = new Set(Array.from(k.a).filter((id) => actionById(id)));
     return k;
   }
 
@@ -475,12 +492,12 @@
   // Ce qui a changé entre deux photographies ; joue les sons correspondants
   function diff(before, after, defer) {
     const fresh = [];
-    const names = { p: [], l: [], d: [] };
-    ["p", "l", "d"].forEach((type) => {
+    const names = { p: [], l: [], d: [], a: [] };
+    ["p", "l", "d", "a"].forEach((type) => {
       after.k[type].forEach((id) => {
         if (before.k[type].has(id)) return;
         fresh.push(type + ":" + id);
-        const obj = type === "p" ? characterById(id) : type === "l" ? locationById(id) : documentById(id);
+        const obj = type === "p" ? characterById(id) : type === "l" ? locationById(id) : type === "d" ? documentById(id) : actionById(id);
         names[type].push(obj.name);
       });
     });
@@ -496,6 +513,7 @@
       : names.l.length ? "interface/punaise"
       : names.p.length ? "interface/fiche"
       : names.d.length ? "interface/agrafeuse"
+      : names.a.length ? "interface/crayon-note"
       : after.struck > before.struck ? "interface/rature"
       : after.facts > before.facts ? "interface/crayon-note"
       : null;
@@ -507,6 +525,7 @@
       newCharacters: names.p,
       newLocations: names.l,
       newDocuments: names.d,
+      newActions: names.a,
       unlocked: unlocked.map((id) => clueButton(clueById(id))),
       struck: after.struck - before.struck
     };
@@ -1597,6 +1616,7 @@
     if (r.newCharacters && r.newCharacters.length) lines.push('<span class="disc-label">Annuaire</span>' + join(r.newCharacters, "tag-person"));
     if (r.newLocations && r.newLocations.length) lines.push('<span class="disc-label">Sur le plan</span>' + join(r.newLocations, "tag-lieu"));
     if (r.newDocuments && r.newDocuments.length) lines.push('<span class="disc-label">Au dossier</span>' + join(r.newDocuments, "tag-doc"));
+    if (r.newActions && r.newActions.length) lines.push('<span class="disc-label">Pour l\'article</span>' + join(r.newActions, "tag-action"));
     if (r.struck) lines.push('<span class="disc-label">Au carnet</span>' + r.struck + " déclaration" + (r.struck > 1 ? "s" : "") + " contredite" + (r.struck > 1 ? "s" : "") + ", barrée" + (r.struck > 1 ? "s" : ""));
     if (r.unlocked && r.unlocked.length) lines.push('<span class="disc-label">Nouvelle piste</span>' + r.unlocked.map((u) => "« " + escapeHtml(u) + " »").join(", "));
     if (!lines.length) return "";
@@ -2341,53 +2361,177 @@
   // Questionnaire et fin
   // ---------------------------------------------------------------
 
+  // ---------------------------------------------------------------
+  // L'article à trous : le joueur écrit la page du samedi avec les mots
+  // qu'il a trouvés. Jean-Loup relit (trois essais au plus), puis
+  // l'article part à l'imprimerie.
+  // ---------------------------------------------------------------
+
+  const TYPE_NOM = { p: "personne", l: "lieu", d: "pièce", a: "action" };
+  const TYPE_CLASS = { p: "tag-person", l: "tag-lieu", d: "tag-doc", a: "tag-action" };
+
+  function articleBlanks(cs) {
+    const out = [];
+    (cs.article || []).forEach((par) => par.parts.forEach((x) => typeof x === "object" && out.push(Object.assign({ par: par }, x))));
+    return out;
+  }
+
+  // Le nom d'un mot dans la liste
+  function wordLabel(type, id) {
+    if (type === "p") { const c = characterById(id); return c ? c.label || c.name : id; }
+    if (type === "l") { const l = locationById(id); return l ? l.name : id; }
+    if (type === "d") { const d = documentById(id); return d ? d.name : id; }
+    const a = actionById(id);
+    return a ? a.name : id;
+  }
+
+  // Le même mot, tel qu'il s'écrit au milieu d'une phrase de l'article
+  function wordInText(type, id) {
+    if (type === "l") { const l = locationById(id); return l ? l.inArticle || l.name : id; }
+    const w = wordLabel(type, id);
+    if (type === "d" && !/^[A-Z]{2}/.test(w)) return w.charAt(0).toLowerCase() + w.slice(1);
+    return w;
+  }
+
+  function knownWords(k, type) {
+    return Array.from(k[type])
+      .map((id) => ({ id: id, label: wordLabel(type, id) }))
+      .sort((a, b) => a.label.localeCompare(b.label, "fr"));
+  }
+
+  const isRight = (answers, b) => answers[b.id] === b.type + ":" + b.answer;
+
   function renderQuestionnaire() {
     const cs = currentCase();
+    const k = computeKnowledge();
+    const blanks = articleBlanks(cs);
+    const factors = cs.attemptFactors || [1, 0.8, 0.6];
+    if (!state.activeBlank || !blanks.some((b) => b.id === state.activeBlank)) {
+      const first = blanks.find((b) => !state.answers[b.id]) || blanks[0];
+      state.activeBlank = first ? first.id : null;
+    }
+    const active = blanks.find((b) => b.id === state.activeBlank);
+    const rv = state.review || {};
+    const wrongPars = new Set(rv.pars || []);
+    const wrongBlanks = new Set(rv.blanks || []);
+    const attempt = state.attempts + 1;
+
     const wrap = document.createElement("div");
     const panel = document.createElement("div");
-    panel.className = "intervention-panel questionnaire";
+    panel.className = "intervention-panel article-redac";
     panel.innerHTML =
-      "<h2>Rédiger l'article</h2><p>Le bouclage approche. Avant d'écrire, Paul veut vos réponses. Chaque bonne réponse rapporte des points ; " +
-      "chaque piste lue au-delà de " + cs.referenceLeads + " vous en coûte " + cs.penaltyPerExtraLead + ". Vous avez lu " + leadsUsed() + " piste" + (leadsUsed() > 1 ? "s" : "") +
-      ". Le carnet reste consultable.</p>";
+      "<h2>Rédiger l'article</h2><p>Le bouclage approche. Paul tape l'article ; à vous de remplir les blancs avec ce que l'enquête a trouvé. " +
+      "Chaque couleur attend un type de mot. Touchez un blanc, puis un mot. Jean-Loup relit avant l'imprimerie : trois passages au plus, " +
+      "et moins il en faut, plus l'article rapporte (" + factors.map((f) => Math.round(f * 100) + " %").join(", ") + "). " +
+      "Vous avez lu " + leadsUsed() + " piste" + (leadsUsed() > 1 ? "s" : "") + " ; chaque piste au-delà de " + cs.referenceLeads + " coûte " + cs.penaltyPerExtraLead + " points.</p>" +
+      '<div class="tag-legend article-legende"><span class="tag-person">Personne</span><span class="tag-lieu">Lieu</span><span class="tag-doc">Pièce</span><span class="tag-action">Action</span></div>';
 
-    cs.questions.forEach((q) => {
-      const block = document.createElement("fieldset");
-      block.className = "question" + (q.id === "BONUS" ? " question-bonus" : "");
-      block.innerHTML = "<legend><span class='q-id'>" + (q.id === "BONUS" ? "Bonus" : q.id.replace("Q", "")) + "</span> " + escapeHtml(q.text) +
-        ' <span class="q-points">' + q.points + " pts</span></legend>";
-      q.choices.forEach((c) => {
-        const lab = document.createElement("label");
-        lab.className = "choice" + (state.answers[q.id] === c ? " chosen" : "");
-        lab.innerHTML = '<input type="radio" name="' + q.id + '"' + (state.answers[q.id] === c ? " checked" : "") + "> " + escapeHtml(c);
-        lab.querySelector("input").addEventListener("change", () => {
-          state.answers[q.id] = c;
-          A.play("interface/crayon-note");
-          block.querySelectorAll(".choice").forEach((x) => x.classList.remove("chosen"));
-          lab.classList.add("chosen");
-          saveGame();
-          updateSubmit();
-        });
-        block.appendChild(lab);
+    if (rv.message) {
+      const note = document.createElement("div");
+      note.className = "relecture";
+      note.innerHTML = '<p class="relecture-qui">Relecture de Jean-Loup · passage ' + state.attempts + " sur 3</p><p>" + escapeHtml(rv.message) + "</p>";
+      panel.appendChild(note);
+    }
+
+    // La copie
+    const copy = document.createElement("div");
+    copy.className = "copie";
+    copy.innerHTML = '<p class="copie-rubrique">Les Affaires occultes · brouillon</p>';
+    (cs.article || []).forEach((par) => {
+      const p = document.createElement("p");
+      p.className = "copie-par" + (wrongPars.has(par.id) ? " copie-par-faux" : "") + (par.bonus ? " copie-par-bonus" : "");
+      let html = par.bonus ? '<span class="copie-bonus">Bonus</span> ' : "";
+      par.parts.forEach((x) => {
+        if (typeof x === "string") { html += escapeHtml(x); return; }
+        const val = state.answers[x.id];
+        const cls = "trou trou-" + x.type + (val ? " trou-rempli" : "") + (x.id === state.activeBlank ? " trou-actif" : "") + (wrongBlanks.has(x.id) ? " trou-faux" : "");
+        const txt = val ? wordInText(val.split(":")[0], val.slice(2)) : TYPE_NOM[x.type];
+        html += '<button type="button" class="' + cls + '" data-blank="' + x.id + '" aria-label="Blanc : ' + TYPE_NOM[x.type] + '">' + escapeHtml(txt) + "</button>";
       });
-      panel.appendChild(block);
+      if (wrongPars.has(par.id)) html += ' <span class="copie-marge">ne tient pas</span>';
+      p.innerHTML = html;
+      copy.appendChild(p);
     });
+    copy.querySelectorAll("[data-blank]").forEach((b) =>
+      b.addEventListener("click", () => {
+        state.activeBlank = b.getAttribute("data-blank");
+        A.play("interface/page");
+        render();
+      })
+    );
+    panel.appendChild(copy);
 
+    // Les mots trouvés, pour le blanc sélectionné
+    if (active) {
+      const bank = document.createElement("div");
+      bank.className = "banque banque-" + active.type;
+      const words = knownWords(k, active.type);
+      bank.innerHTML =
+        '<p class="banque-titre">Mots trouvés · <span class="' + TYPE_CLASS[active.type] + '">' + TYPE_NOM[active.type] + "s</span>" +
+        (words.length ? "" : " : aucun pour l'instant") + "</p>";
+      const list = document.createElement("div");
+      list.className = "banque-mots";
+      words.forEach((w) => {
+        const key = active.type + ":" + w.id;
+        const b = document.createElement("button");
+        b.type = "button";
+        b.className = "mot mot-" + active.type + (state.answers[active.id] === key ? " mot-pose" : "");
+        b.textContent = w.label;
+        b.addEventListener("click", () => {
+          state.answers[active.id] = key;
+          if (state.review && state.review.blanks) state.review.blanks = state.review.blanks.filter((x) => x !== active.id);
+          A.play("interface/crayon-note");
+          const next = blanks.find((x) => !state.answers[x.id]);
+          state.activeBlank = next ? next.id : active.id;
+          saveGame();
+          render();
+        });
+        list.appendChild(b);
+      });
+      if (state.answers[active.id]) {
+        const clear = document.createElement("button");
+        clear.type = "button";
+        clear.className = "mot mot-retirer";
+        clear.textContent = "Effacer ce blanc";
+        clear.addEventListener("click", () => {
+          delete state.answers[active.id];
+          A.play("interface/rature");
+          saveGame();
+          render();
+        });
+        list.appendChild(clear);
+      }
+      bank.appendChild(list);
+      panel.appendChild(bank);
+    }
+
+    // Les boutons
+    const missing = blanks.filter((b) => !state.answers[b.id]).length;
     const row = document.createElement("div");
     row.className = "btn-row";
     const submit = document.createElement("button");
     submit.className = "confirm-btn";
-    const updateSubmit = () => {
-      const missing = cs.questions.filter((q) => q.id !== "BONUS" && !state.answers[q.id]).length;
-      submit.disabled = missing > 0;
-      submit.textContent = missing ? "Encore " + missing + " réponse" + (missing > 1 ? "s" : "") + " à donner" : "Envoyer l'article à l'imprimerie";
-    };
-    updateSubmit();
+    submit.disabled = missing > 0;
+    submit.textContent = missing
+      ? "Encore " + missing + " blanc" + (missing > 1 ? "s" : "") + " à remplir"
+      : attempt >= 3 ? "Dernier passage : envoyer à l'imprimerie" : "Faire relire par Jean-Loup (passage " + attempt + " sur 3)";
     submit.addEventListener("click", () => {
-      if (!window.confirm("Envoyer l'article ? Vous ne pourrez plus modifier vos réponses.")) return;
-      resolveCase();
+      if (attempt >= 3 && !window.confirm("Dernier passage : l'article part à l'imprimerie tel quel. On y va ?")) return;
+      submitArticle();
     });
     row.appendChild(submit);
+    if (state.lastSubmitted && state.attempts > 0) {
+      const keep = document.createElement("button");
+      keep.className = "end-early-btn";
+      keep.style.width = "auto";
+      keep.style.marginTop = "0";
+      keep.textContent = "Envoyer la version déjà relue (" + Math.round(factors[state.attempts - 1] * 100) + " % des points)";
+      keep.addEventListener("click", () => {
+        if (!window.confirm("Envoyer la version relue au passage " + state.attempts + ", sans vos corrections depuis ?")) return;
+        publishArticle(state.lastSubmitted, state.attempts);
+      });
+      row.appendChild(keep);
+    }
     const back = document.createElement("button");
     back.className = "end-early-btn";
     back.style.width = "auto";
@@ -2413,26 +2557,88 @@
     return wrap;
   }
 
-  function resolveCase() {
+  // Un passage chez Jean-Loup
+  function submitArticle() {
     const cs = currentCase();
+    const blanks = articleBlanks(cs);
+    const attempt = state.attempts + 1;
+    const wrong = blanks.filter((b) => !b.par.bonus && !isRight(state.answers, b));
+    state.lastSubmitted = Object.assign({}, state.answers);
+    if (!wrong.length || attempt >= 3) {
+      state.attempts = attempt;
+      publishArticle(state.answers, attempt);
+      return;
+    }
+    state.attempts = attempt;
+    const pars = Array.from(new Set(wrong.map((b) => b.par.id)));
+    state.review = {
+      message: attempt === 1 ? (pars.length > 1 && cs.review.essai1_pluriel) || cs.review.essai1 : cs.review.essai2,
+      pars: pars,
+      blanks: attempt >= 2 ? wrong.map((b) => b.id) : []
+    };
+    A.play("interface/rature");
+    saveGame();
+    render();
+    window.scrollTo(0, 0);
+  }
+
+  // L'article part à l'imprimerie : score et fin
+  function publishArticle(answers, attempt) {
+    const cs = currentCase();
+    const blanks = articleBlanks(cs);
+    const factor = (cs.attemptFactors || [1, 0.8, 0.6])[Math.max(0, attempt - 1)] || 0.6;
     const right = {};
     let points = 0;
-    cs.questions.forEach((q) => {
-      right[q.id] = state.answers[q.id] === q.answer;
-      if (right[q.id]) points += q.points;
+    blanks.forEach((b) => {
+      const ok = isRight(answers, b);
+      if (right[b.q] === undefined) right[b.q] = true;
+      if (!ok) right[b.q] = false;
+      if (ok) points += b.points;
     });
+    points = Math.round(points * factor);
     const extra = Math.max(0, leadsUsed() - cs.referenceLeads);
     const penalty = extra * cs.penaltyPerExtraLead;
     const total = Math.max(0, points - penalty);
     const rank = (cs.ranks.find((r) => total >= r.min) || cs.ranks[cs.ranks.length - 1]).label;
     const ending = cs.endings.find((e) => Object.keys(e.when).every((q) => right[q] === e.when[q])) || cs.endings[cs.endings.length - 1];
-    state.ending = { endingId: ending.id, right: right, answers: Object.assign({}, state.answers), points: points, penalty: penalty, total: total, rank: rank, leads: leadsUsed() };
+    const allRight = blanks.every((b) => b.par.bonus || isRight(answers, b));
+    state.ending = {
+      endingId: ending.id, right: right, answers: Object.assign({}, answers), points: points, penalty: penalty, total: total, rank: rank,
+      leads: leadsUsed(), attempt: attempt, factor: factor, review: allRight ? cs.review.juste : attempt >= 3 ? cs.review.essai3 : ""
+    };
     recordCaseCompletion(state.currentCityId, state.currentCaseId, total, rank);
     clearSavedGame(state.currentCityId, state.currentCaseId);
     state.view = "ending";
-    A.play("interface/page-journal");
+    A.play("interface/tampon");
+    A.play("interface/page-journal", 400);
     render();
     window.scrollTo(0, 0);
+  }
+
+  // Le bilan de l'article, paragraphe par paragraphe (écran de fin)
+  function articleReportHTML(cs, e) {
+    return (cs.article || [])
+      .map((par) => {
+        let ok = true;
+        let pts = 0;
+        let html = "";
+        par.parts.forEach((x) => {
+          if (typeof x === "string") { html += escapeHtml(x); return; }
+          const val = e.answers[x.id];
+          const good = val === x.type + ":" + x.answer;
+          if (good) pts += x.points;
+          else ok = false;
+          const rightTxt = wordInText(x.type, x.answer);
+          html += good
+            ? '<span class="' + TYPE_CLASS[x.type] + '">' + escapeHtml(rightTxt) + "</span>"
+            : '<s class="bilan-faux">' + escapeHtml(val ? wordInText(val.split(":")[0], val.slice(2)) : "…") + '</s> <span class="' + TYPE_CLASS[x.type] + '">' + escapeHtml(rightTxt) + "</span>";
+        });
+        return (
+          '<li class="' + (ok ? "ok" : "ko") + '"><span class="score-mark">' + (ok ? "✔" : "✘") + "</span><span><strong>" + escapeHtml(par.title) +
+          (par.bonus ? " (bonus)" : "") + "</strong><br><small class=\"bilan-texte\">" + html + '</small></span><span class="score-pts">+' + Math.round(pts * e.factor) + "</span></li>"
+        );
+      })
+      .join("");
   }
 
   function renderEnding() {
@@ -2455,20 +2661,20 @@
       '<div class="une-body">' + renderParagraphs(ending.text) + complements + "</div>";
     wrap.appendChild(paper);
 
+    if (e.review) {
+      const jl = document.createElement("p");
+      jl.className = "relecture relecture-fin";
+      jl.textContent = e.review;
+      wrap.insertBefore(jl, paper);
+    }
+
     const score = document.createElement("div");
     score.className = "score-card";
     score.innerHTML =
-      "<h3>Votre enquête</h3>" +
-      '<ul class="score-list">' +
-      cs.questions
-        .map(
-          (q) =>
-            '<li class="' + (e.right[q.id] ? "ok" : "ko") + '"><span class="score-mark">' + (e.right[q.id] ? "✔" : "✘") + "</span><span>" + escapeHtml(q.text) +
-            "<br><small>" + (e.right[q.id] ? escapeHtml(q.answer) : "Votre réponse : " + escapeHtml(e.answers[q.id] || "aucune") + " · La bonne : " + escapeHtml(q.answer)) +
-            '</small></span><span class="score-pts">' + (e.right[q.id] ? "+" + q.points : "0") + "</span></li>"
-        )
-        .join("") +
+      "<h3>Votre article</h3>" +
+      '<ul class="score-list">' + articleReportHTML(cs, e) +
       "</ul>" +
+      (e.attempt ? '<p class="score-line">Envoyé au passage ' + e.attempt + " sur 3 : " + Math.round(e.factor * 100) + " % des points</p>" : "") +
       '<p class="score-line">Pistes lues : ' + e.leads + " (référence : " + cs.referenceLeads + ")" + (e.penalty ? " · pénalité −" + e.penalty : "") + "</p>" +
       '<p class="score-total">' + e.total + " / " + maxScore(cs) + ' <span class="score-rank">' + escapeHtml(e.rank) + "</span></p>" +
       '<details class="solution"><summary>Ce qui s\'est vraiment passé</summary><p>' + escapeHtml(cs.solution || "") + "</p><p class='solution-path'>Le chemin le plus court : " +

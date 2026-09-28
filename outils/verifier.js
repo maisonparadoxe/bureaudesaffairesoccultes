@@ -7,7 +7,9 @@
 //  - on simule une partie où le joueur lit tout ce qu'il peut (puzzles résolus,
 //    Minitel consulté pour les noms connus) : tout doit finir par apparaître ;
 //  - le chemin de référence (referencePath) est jouable dans l'ordre ;
-//  - le questionnaire et les fins sont cohérents.
+//  - l'article à trous : chaque blanc a une réponse qui existe, que le chemin
+//    de référence permet de trouver, avec au moins deux mots possibles ;
+//  - les fins sont cohérentes.
 
 const fs = require("fs");
 const path = require("path");
@@ -40,6 +42,7 @@ data.cities.filter((c) => c.status === "available").forEach((city) => {
     const clues = new Map(cs.clues.map((x) => [x.id, x]));
     const quartiers = new Set(cs.quartiers.map((q) => q.id));
     const puzzles = cs.puzzles || {};
+    const actions = new Map((cs.actions || []).map((x) => [x.id, x]));
     const exists = (type, id) =>
       (type === "p" && chars.has(id)) || (type === "l" && (locs.has(id) || quartiers.has(id))) || (type === "d" && docs.has(id));
 
@@ -68,6 +71,7 @@ data.cities.filter((c) => c.status === "available").forEach((city) => {
       if (c.follows && !clues.has(c.follows)) err(w, "suite d'une piste inconnue « " + c.follows + " »");
       if (c.follows && (!c.buttonAlone || !c.titleAlone)) err(w, "suite sans bouton ni titre pour le cas où le premier entretien n'a pas eu lieu");
       if (c.puzzle && !puzzles[c.puzzle]) err(w, "puzzle inconnu « " + c.puzzle + " »");
+      (c.revealsActions || []).forEach((a) => actions.has(a) || err(w, "révèle un mot d'action inconnu « " + a + " »"));
       checkText(w, c.text);
       checkFacts(w, c.facts);
     });
@@ -83,14 +87,20 @@ data.cities.filter((c) => c.status === "available").forEach((city) => {
     (cs.minitel || []).forEach((e, i) =>
       (e.reveals || []).forEach((key) => exists(key[0], key.slice(2)) || err("Minitel " + (e.keys || [])[0], "révèle « " + key + " » inconnu"))
     );
-    (cs.questions || []).forEach((q) => q.choices.includes(q.answer) || err("question " + q.id, "la bonne réponse n'est pas parmi les choix"));
-    (cs.endings || []).forEach((e) =>
-      Object.keys(e.when || {}).forEach((q) => (cs.questions || []).some((x) => x.id === q) || err("fin " + e.id, "question inconnue " + q))
-    );
+    const blanks = [];
+    (cs.article || []).forEach((par) => par.parts.forEach((x) => typeof x === "object" && blanks.push(Object.assign({ par: par.id }, x))));
+    if (!blanks.length) err("article", "aucun blanc");
+    const qs = new Set(blanks.map((b) => b.q));
+    blanks.forEach((b) => {
+      const ok = b.type === "a" ? actions.has(b.answer) : exists(b.type, b.answer);
+      if (!ok) err("article, blanc " + b.id, "la réponse « " + b.type + ":" + b.answer + " » n'existe pas");
+    });
+    (cs.endings || []).forEach((e) => Object.keys(e.when || {}).forEach((q) => qs.has(q) || err("fin " + e.id, "question inconnue " + q)));
+    Object.keys(cs.complements || {}).forEach((q) => qs.has(q) || err("complément " + q, "aucun blanc ne décide de cette question"));
 
     // 2. Simulation
     function knowledge(read, solved, minitel) {
-      const k = { p: new Set(), l: new Set(), d: new Set() };
+      const k = { p: new Set(), l: new Set(), d: new Set(), a: new Set() };
       const absorb = (text) => tagsOf(text).forEach((t) => t.id && k[t.type].add(t.id));
       cs.characters.forEach((ch) => ch.alwaysRevealed && k.p.add(ch.id));
       cs.locations.forEach((l) => l.alwaysRevealed && k.l.add(l.id));
@@ -101,6 +111,7 @@ data.cities.filter((c) => c.status === "available").forEach((city) => {
         absorb(c.text);
         (c.revealsCharacters || []).forEach((x) => k.p.add(x));
         (c.revealsLocations || []).forEach((x) => k.l.add(x));
+        (c.revealsActions || []).forEach((x) => k.a.add(x));
         if (c.puzzle && solved.has(c.puzzle)) absorb(puzzles[c.puzzle].result);
       });
       minitel.forEach((i) => {
@@ -165,9 +176,20 @@ data.cities.filter((c) => c.status === "available").forEach((city) => {
         if (c.puzzle) solved.add(c.puzzle);
       });
       if (cs.referencePath.length >= cs.totalLeads) err("chemin de référence", "il consomme toutes les pistes accordées");
+      // Au bout du chemin de référence, chaque blanc doit pouvoir être rempli juste,
+      // et il doit y avoir au moins deux mots possibles (sinon le blanc est gratuit).
+      let k = knowledge(read, solved, minitel);
+      searchMinitel(k, minitel);
+      k = knowledge(read, solved, minitel);
+      blanks.forEach((b) => {
+        if (!k[b.type].has(b.answer)) err("article, blanc " + b.id, "« " + b.answer + " » n'est pas trouvable par le chemin de référence");
+        if (k[b.type].size < 2) warn("article, blanc " + b.id, "un seul mot possible : le blanc est gratuit");
+      });
       console.log("  Chemin de référence : " + cs.referencePath.length + " pistes sur " + cs.totalLeads + " accordées.");
     }
     const start = knowledge(new Set(), new Set(), new Set());
+    start.a.forEach((a) => warn("mot d'action " + a, "disponible dès le départ"));
+    actions.forEach((a, id) => all.k.a.has(id) || err("mot d'action " + id, "jamais débloqué"));
     console.log("  " + start.l.size + " lieu(x) connu(s) au départ sur " + cs.locations.length + ", " + all.read.size + "/" + cs.clues.length + " pistes atteignables.");
   });
 });

@@ -655,30 +655,38 @@ Le chef de chantier, jovial, vous montre le plan de financement punaisé dans so
 > **Carnet**
 > - SCI Delombre : Touche aussi 900 000 F d'« études » sur le chantier du parking-relais.
 
-## Le questionnaire
+## L'article à trous
 
-Score : points des bonnes réponses, moins 2 points par piste lue au-delà de 12 (le chemin de référence). Rangs : Réussite majeure à partir de 80, Réussite à partir de 60, Demi-succès à partir de 40, Échec à partir de 0.
+Le joueur remplit les trous avec les mots découverts (personnes, lieux, pièces, actions). Trois essais au plus : 100 % / 80 % / 60 % des points selon l'essai où l'article part. Moins 2 points par piste lue au-delà de 12 (le chemin de référence). Rangs : Réussite majeure à partir de 80, Réussite à partir de 60, Demi-succès à partir de 40, Échec à partir de 0.
 
-**Q1. Qui a fait tomber Bernard Faure ?** (20 points)  
-✔ Roger Ferrand  ○ Hervé Vallenot  ○ Marcel Roussillon  ○ Marcel Chaptal  ○ Ahmed Bensaïd  ○ Personne, c'est un accident
+**Le chantage**  
+Chargé du dossier à la mairie, Bernard Faure découvre cet été que [**Roger Ferrand** · Q2] n'a évacué que 400 tonnes de terres polluées. Le reste est enterré la nuit, sous des dalles neuves, [⌖à l'ancienne Manufacture Ferréol · Q4]. Faure ne dit rien à sa hiérarchie. Il le [__fait chanter__ · Q2].
 
-**Q2. Pourquoi Bernard Faure était-il à Ferréol le 16 au soir ?** (20 points)  
-○ Pour remettre son dossier à la presse  ✔ Pour toucher de l'argent de Roger Ferrand  ○ Pour constater des travaux illégaux  ○ Pour y retrouver Marcel Chaptal
+**La chute**  
+Le mardi 16 novembre à 22 h, Faure a rendez-vous dans l'atelier de forge. Sur la passerelle, [**Roger Ferrand** · Q1] le [__pousse__ · Q1].
 
-**Q3. Qui a laissé Bernard Faure mourir sans appeler les secours ?** (20 points)  
-○ Roger Ferrand, seul  ✔ Hervé Vallenot  ○ Marcel Roussillon  ○ Ahmed Bensaïd  ○ Personne, il est mort sur le coup
+**L'attente**  
+Faure survit à sa chute. Appelé depuis la cabane du gardien, [**Hervé Vallenot** · Q3] arrive, voit qu'il respire encore et le [__laisse mourir__ · Q3]. Il laisse derrière lui [*Quatre mégots de cigarillo* · Q3].
 
-**Q4. Où sont passées les 2 600 tonnes de terres polluées ?** (10 points)  
-✔ Sous les dalles neuves de Ferréol  ○ Sous le parking-relais de Bellevue  ○ À la casse Berthet  ○ Nulle part : elles n'ont jamais existé
+**Le classement**  
+Le lendemain matin, [**Marcel Roussillon** · Q5] [__fait classer__ · Q5] l'affaire en accident.
 
-**Q5. Qui a fait classer l'affaire en accident ?** (10 points)  
-✔ Marcel Roussillon  ○ Hervé Vallenot  ○ Le Dr Lacour, seul  ○ Le commissaire Borel, de sa propre initiative
+**Le fantôme**  
+Quant au fondeur de 1911, c'est [**Marcel Chaptal** · Q6] qui a écrit [*La lettre du « fantôme »* · Q6].
 
-**Q6. Qui a écrit la lettre du « fantôme » ?** (10 points)  
-✔ Marcel Chaptal  ○ Ahmed Bensaïd  ○ Bernard Faure  ○ Colette Faure
+**La salamandre** (bonus)  
+La salamandre de l'épilogue était déjà gravée sur la chevalière de [**Marcel Roussillon** · BONUS].
 
-**BONUS. Qui porte la salamandre ?** (5 points)  
-✔ Marcel Roussillon  ○ Hervé Vallenot  ○ Roger Ferrand  ○ Le Dr Lacour
+**Mots d'action** (soulignés) et pistes qui les débloquent :
+
+- __fait chanter__ : La comptabilité de Ferrand Frères, Colette, second entretien, Roche, second entretien
+- __pousse__ : Repérage du chantier, Berthet, second entretien, Près de la porte de l'atelier
+- __laisse mourir__ : Près de la porte de l'atelier, Lacour, second entretien
+- __fait classer__ : Le lieutenant Igier, Igier, second entretien
+- __dénonce__ : Le cahier de la standardiste
+- __menace__ : Chaptal, second entretien
+- __paie__ : La comptabilité de Ferrand Frères
+- __couvre__ : Le Dr Lacour
 
 ## Les fins
 

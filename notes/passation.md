@@ -32,13 +32,18 @@
 - **Minitel 3611 :** l'annuaire répond pour n'importe quel nom, mais une adresse ne débloque le lieu que si l'enquête a déjà parlé de la personne. Liste rouge, SCI introuvable et prénoms seuls donnent des réponses spécifiques.
 - **Carnet :** une page par personne, lieu et pièce, avec portrait. Les notes s'y accumulent et se barrent quand elles sont contredites.
 - **Puzzles (Saint-Étienne) :** reçu déchiré à reconstituer, facture téléphonique où trouver l'appel suspect, coffre à code. Une aide existe pour chacun ; elle coûte une piste.
-- **Fin :** questionnaire (6 questions et un bonus), 4 fins selon les réponses, une du journal, puis l'épilogue avec la salamandre.
+- **Fin : l'article à trous** (remplace l'ancien QCM depuis le 28 septembre, inspiré de *The Case of the Golden Idol*). Paul « tape » la page du samedi ; le joueur remplit les blancs avec les mots découverts. Quatre couleurs : personne (bleu), lieu (vert), pièce (prune), **action** (ambre, nouvelle famille de mots : « fait chanter », « pousse »…). On touche un blanc, puis un mot. Tous les blancs doivent être remplis (pas de blanc vide : les phrases perdraient leur sens).
+  - **Relecture de Jean-Loup, trois passages au plus.** Passage 1 faux : il marque en rouge les paragraphes qui ne tiennent pas, sans dire quel blanc. Passage 2 faux : il marque les blancs faux. Passage 3 : l'article part tel quel. Points gardés : 100 %, 80 %, 60 % selon le passage. On peut aussi envoyer la dernière version relue sans la corriger.
+  - **Données :** dans `textes.py`, `ACTIONS` (les mots d'action), `DEBLOCAGE_ACTIONS` (quelle piste débloque quel mot ; attention à ne pas débloquer trop tôt un mot qui dévoile un retournement), `LIEUX_ARTICLE` (comment un lieu s'écrit dans une phrase), `ARTICLE` (paragraphes, blancs `[[type:id|Q1]]`), `POINTS`, `RELECTURE`. Chaque blanc est rattaché à une question (Q1 à Q6, BONUS) : les fins et les compléments se décident comme avant.
+  - **Contrôles :** `verifier.js` vérifie que chaque blanc peut être rempli juste avec le chemin de référence et qu'il y a au moins deux mots possibles par blanc.
+  - Puis 4 fins selon les réponses, la une du journal, le bilan paragraphe par paragraphe, et l'épilogue avec la salamandre.
 - **Autour :** menu principal, sauvegarde automatique, options (volumes, coupure du son, effets réduits, animations, texte plus grand), note de service au premier lancement, fiche de l'enquêteur (points de carrière).
 
 ## 4. Idées gardées pour les prochaines affaires
 
 - **Portrait-robot** (validé, utilisé à Nyons) : un témoin décrit quelqu'un, le joueur compose un visage (front, yeux, nez, bouche, menton, coiffure), puis le rapproche d'un suspect. Le témoin se trompe sur un trait, pour une raison qu'on découvre.
 - **Pas de reconnaissance de voix :** pas d'enregistrements vocaux possibles.
+- **Chaque affaire écrit son article à trous** (même système pour toutes les enquêtes).
 - **Chaque affaire doit apporter au moins une mécanique nouvelle,** pour que le joueur ne sente pas que seule l'histoire change.
 - **La jauge de rumeur** (en réserve) : une jauge à trois niveaux qui monte quand l'équipe pose des questions sur une rumeur au village, et déclenche des événements (inscription sur un mur, témoin qui se ferme). Pensée pour une affaire de sorcellerie de village, écartée pour Nyons.
 - **La planche-contact d'Yves** (en réserve) : un outil pour examiner les photos d'un lieu à la loupe et y trouver des détails absents du texte.

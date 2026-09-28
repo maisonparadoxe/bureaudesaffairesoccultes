@@ -194,7 +194,8 @@ window.GAME_DATA_FALLBACK = {
                 "y": 282
               },
               "ambience": "redaction",
-              "alwaysRevealed": true
+              "alwaysRevealed": true,
+              "inArticle": "à la rédaction du Stéphanois"
             },
             {
               "id": "mairie",
@@ -205,7 +206,8 @@ window.GAME_DATA_FALLBACK = {
                 "x": 478,
                 "y": 274
               },
-              "ambience": "mairie"
+              "ambience": "mairie",
+              "inArticle": "à la mairie"
             },
             {
               "id": "cabinet_vallenot",
@@ -216,7 +218,8 @@ window.GAME_DATA_FALLBACK = {
                 "x": 556,
                 "y": 306
               },
-              "ambience": "cabinet-vallenot"
+              "ambience": "cabinet-vallenot",
+              "inArticle": "au cabinet Vallenot"
             },
             {
               "id": "commissariat",
@@ -227,7 +230,8 @@ window.GAME_DATA_FALLBACK = {
                 "x": 420,
                 "y": 346
               },
-              "ambience": "commissariat"
+              "ambience": "commissariat",
+              "inArticle": "au commissariat central"
             },
             {
               "id": "cabinet_lacour",
@@ -238,7 +242,8 @@ window.GAME_DATA_FALLBACK = {
                 "x": 526,
                 "y": 356
               },
-              "ambience": "cabinet-lacour"
+              "ambience": "cabinet-lacour",
+              "inArticle": "au cabinet du Dr Lacour"
             },
             {
               "id": "consigne_gare",
@@ -250,7 +255,8 @@ window.GAME_DATA_FALLBACK = {
                 "y": 300
               },
               "ambience": "consigne-gare",
-              "short": "Consigne de la gare"
+              "short": "Consigne de la gare",
+              "inArticle": "à la consigne de la gare"
             },
             {
               "id": "domicile_faure",
@@ -261,7 +267,8 @@ window.GAME_DATA_FALLBACK = {
                 "x": 168,
                 "y": 298
               },
-              "ambience": "domicile-faure"
+              "ambience": "domicile-faure",
+              "inArticle": "chez les Faure"
             },
             {
               "id": "site_ferreol",
@@ -272,7 +279,8 @@ window.GAME_DATA_FALLBACK = {
                 "x": 690,
                 "y": 124
               },
-              "ambience": "ferreol"
+              "ambience": "ferreol",
+              "inArticle": "à l'ancienne Manufacture Ferréol"
             },
             {
               "id": "cheval_noir",
@@ -283,7 +291,8 @@ window.GAME_DATA_FALLBACK = {
                 "x": 800,
                 "y": 140
               },
-              "ambience": "cheval-noir"
+              "ambience": "cheval-noir",
+              "inArticle": "au Cheval Noir"
             },
             {
               "id": "siege_ferrand",
@@ -294,7 +303,8 @@ window.GAME_DATA_FALLBACK = {
                 "x": 410,
                 "y": 505
               },
-              "ambience": "ferrand"
+              "ambience": "ferrand",
+              "inArticle": "chez Ferrand Frères"
             },
             {
               "id": "cite_mounier",
@@ -306,7 +316,8 @@ window.GAME_DATA_FALLBACK = {
                 "y": 126
               },
               "ambience": "cite-mounier",
-              "short": "Chez Mounier"
+              "short": "Chez Mounier",
+              "inArticle": "à la cité de Montreynaud"
             },
             {
               "id": "casse_berthet",
@@ -318,7 +329,8 @@ window.GAME_DATA_FALLBACK = {
                 "y": 505
               },
               "ambience": "casse-berthet",
-              "short": "Casse Berthet"
+              "short": "Casse Berthet",
+              "inArticle": "à la casse Berthet"
             },
             {
               "id": "decharge",
@@ -330,7 +342,8 @@ window.GAME_DATA_FALLBACK = {
                 "y": 262
               },
               "ambience": "decharge",
-              "short": "Décharge"
+              "short": "Décharge",
+              "inArticle": "à la décharge de la Croix-de-l'Orme"
             },
             {
               "id": "parking_relais",
@@ -342,13 +355,15 @@ window.GAME_DATA_FALLBACK = {
                 "y": 505
               },
               "ambience": "parking-relais",
-              "short": "Parking-relais"
+              "short": "Parking-relais",
+              "inArticle": "au chantier du parking-relais"
             }
           ],
           "characters": [
             {
               "id": "faure",
               "name": "Faure Bernard",
+              "label": "Bernard Faure",
               "role": "Chargé de mission à l'urbanisme (la victime)",
               "locationId": "domicile_faure",
               "alwaysRevealed": true
@@ -356,54 +371,63 @@ window.GAME_DATA_FALLBACK = {
             {
               "id": "colette",
               "name": "Faure Colette",
+              "label": "Colette Faure",
               "role": "Veuve de Bernard Faure",
               "locationId": "domicile_faure"
             },
             {
               "id": "ferrand",
               "name": "Ferrand Roger",
+              "label": "Roger Ferrand",
               "role": "Gérant de Ferrand Frères BTP",
               "locationId": "siege_ferrand"
             },
             {
               "id": "simone",
               "name": "Ferrand Simone",
+              "label": "Simone Ferrand",
               "role": "Épouse de Roger Ferrand, comptable de l'entreprise",
               "locationId": "siege_ferrand"
             },
             {
               "id": "vallenot",
               "name": "Vallenot Hervé",
+              "label": "Hervé Vallenot",
               "role": "Promoteur, président du Groupe Vallenot",
               "locationId": "cabinet_vallenot"
             },
             {
               "id": "roussillon",
               "name": "Roussillon Marcel",
+              "label": "Marcel Roussillon",
               "role": "Adjoint au maire, chargé de l'urbanisme",
               "locationId": "mairie"
             },
             {
               "id": "bensaid",
               "name": "Bensaïd Ahmed",
+              "label": "Ahmed Bensaïd",
               "role": "Gardien du site Ferréol",
               "locationId": "site_ferreol"
             },
             {
               "id": "chaptal",
               "name": "Chaptal Marcel",
+              "label": "Marcel Chaptal",
               "role": "Ancien délégué CGT de la forge",
               "locationId": "cheval_noir"
             },
             {
               "id": "jeannot",
               "name": "Jeannot",
+              "label": "Jeannot",
               "role": "Patron du Cheval Noir",
               "locationId": "cheval_noir"
             },
             {
               "id": "mounier",
               "name": "Mounier Gérard",
+              "label": "Gérard Mounier",
               "role": "Chef d'équipe de nuit chez Ferrand Frères",
               "locationId": "cite_mounier",
               "minitel": true
@@ -411,6 +435,7 @@ window.GAME_DATA_FALLBACK = {
             {
               "id": "lacour",
               "name": "Lacour Pierre (Dr)",
+              "label": "Dr Pierre Lacour",
               "role": "Médecin, a constaté le décès",
               "locationId": "cabinet_lacour",
               "minitel": true
@@ -418,6 +443,7 @@ window.GAME_DATA_FALLBACK = {
             {
               "id": "berthet",
               "name": "Berthet Lucien",
+              "label": "Lucien Berthet",
               "role": "Ferrailleur à Rive-de-Gier",
               "locationId": "casse_berthet",
               "minitel": true
@@ -425,12 +451,14 @@ window.GAME_DATA_FALLBACK = {
             {
               "id": "igier",
               "name": "Igier Bernard (lieutenant)",
+              "label": "Lieutenant Bernard Igier",
               "role": "Lieutenant de police",
               "locationId": "commissariat"
             },
             {
               "id": "roche",
               "name": "Roche Daniel",
+              "label": "Daniel Roche",
               "role": "Chef des faits divers du Stéphanois",
               "locationId": "redaction"
             }
@@ -755,6 +783,9 @@ window.GAME_DATA_FALLBACK = {
               ],
               "requires": [
                 "roche"
+              ],
+              "revealsActions": [
+                "denonce"
               ]
             },
             {
@@ -778,7 +809,10 @@ window.GAME_DATA_FALLBACK = {
               "requires": [
                 "standard"
               ],
-              "speaker": "roche"
+              "speaker": "roche",
+              "revealsActions": [
+                "fait_chanter"
+              ]
             },
             {
               "id": "odile",
@@ -959,7 +993,10 @@ window.GAME_DATA_FALLBACK = {
                   "text": "A signé le certificat de décès de Faure."
                 }
               ],
-              "speaker": "igier"
+              "speaker": "igier",
+              "revealsActions": [
+                "fait_classer"
+              ]
             },
             {
               "id": "igier2",
@@ -985,7 +1022,10 @@ window.GAME_DATA_FALLBACK = {
               "speaker": "igier",
               "follows": "igier",
               "buttonAlone": "Retrouver Igier avec l'aveu du médecin",
-              "titleAlone": "Igier, face à l'aveu du médecin"
+              "titleAlone": "Igier, face à l'aveu du médecin",
+              "revealsActions": [
+                "fait_classer"
+              ]
             },
             {
               "id": "lacour",
@@ -1003,7 +1043,10 @@ window.GAME_DATA_FALLBACK = {
                   ]
                 }
               ],
-              "speaker": "lacour"
+              "speaker": "lacour",
+              "revealsActions": [
+                "couvre"
+              ]
             },
             {
               "id": "lacour2",
@@ -1030,7 +1073,10 @@ window.GAME_DATA_FALLBACK = {
               "follows": "lacour",
               "buttonAlone": "Consulter le Dr Lacour avec le témoignage du gardien",
               "titleAlone": "Le Dr Lacour, face au témoignage du gardien",
-              "mood": "silence"
+              "mood": "silence",
+              "revealsActions": [
+                "laisse_mourir"
+              ]
             },
             {
               "id": "colette",
@@ -1106,7 +1152,10 @@ window.GAME_DATA_FALLBACK = {
               "speaker": "colette",
               "follows": "colette",
               "buttonAlone": "Rendre visite à Colette Faure avec les retraits « B.F. »",
-              "titleAlone": "Colette Faure, face aux retraits « B.F. »"
+              "titleAlone": "Colette Faure, face aux retraits « B.F. »",
+              "revealsActions": [
+                "fait_chanter"
+              ]
             },
             {
               "id": "consigne",
@@ -1174,7 +1223,10 @@ window.GAME_DATA_FALLBACK = {
                   "text": "A réceptionné 8 m³ de béton à Ferréol le 17 novembre."
                 }
               ],
-              "puzzle": "reperage"
+              "puzzle": "reperage",
+              "revealsActions": [
+                "pousse"
+              ]
             },
             {
               "id": "bensaid2",
@@ -1237,7 +1289,11 @@ window.GAME_DATA_FALLBACK = {
                 "bensaid2"
               ],
               "mood": "silence",
-              "ambience": "ferreol-nuit"
+              "ambience": "ferreol-nuit",
+              "revealsActions": [
+                "pousse",
+                "laisse_mourir"
+              ]
             },
             {
               "id": "chaptal",
@@ -1311,7 +1367,10 @@ window.GAME_DATA_FALLBACK = {
               "speaker": "chaptal",
               "follows": "chaptal",
               "buttonAlone": "Parler de la peinture du mur à Marcel Chaptal",
-              "titleAlone": "Marcel Chaptal et la peinture du mur"
+              "titleAlone": "Marcel Chaptal et la peinture du mur",
+              "revealsActions": [
+                "menace"
+              ]
             },
             {
               "id": "ferrand",
@@ -1358,6 +1417,10 @@ window.GAME_DATA_FALLBACK = {
                   "about": "d:sci_delombre",
                   "text": "Trois virements de 430 000 F de Ferrand Frères, en juin, juillet et septembre."
                 }
+              ],
+              "revealsActions": [
+                "fait_chanter",
+                "paie"
               ]
             },
             {
@@ -1535,7 +1598,10 @@ window.GAME_DATA_FALLBACK = {
               "speaker": "berthet",
               "follows": "berthet",
               "buttonAlone": "Aller voir Lucien Berthet avec son registre",
-              "titleAlone": "Lucien Berthet, face à son registre"
+              "titleAlone": "Lucien Berthet, face à son registre",
+              "revealsActions": [
+                "pousse"
+              ]
             },
             {
               "id": "registre",
@@ -1832,95 +1898,201 @@ window.GAME_DATA_FALLBACK = {
               ]
             }
           },
-          "questions": [
+          "actions": [
             {
-              "id": "Q1",
-              "points": 20,
-              "text": "Qui a fait tomber Bernard Faure ?",
-              "choices": [
-                "Roger Ferrand",
-                "Hervé Vallenot",
-                "Marcel Roussillon",
-                "Marcel Chaptal",
-                "Ahmed Bensaïd",
-                "Personne, c'est un accident"
-              ],
-              "answer": "Roger Ferrand"
+              "id": "fait_chanter",
+              "name": "fait chanter"
             },
             {
-              "id": "Q2",
-              "points": 20,
-              "text": "Pourquoi Bernard Faure était-il à Ferréol le 16 au soir ?",
-              "choices": [
-                "Pour remettre son dossier à la presse",
-                "Pour toucher de l'argent de Roger Ferrand",
-                "Pour constater des travaux illégaux",
-                "Pour y retrouver Marcel Chaptal"
-              ],
-              "answer": "Pour toucher de l'argent de Roger Ferrand"
+              "id": "pousse",
+              "name": "pousse"
             },
             {
-              "id": "Q3",
-              "points": 20,
-              "text": "Qui a laissé Bernard Faure mourir sans appeler les secours ?",
-              "choices": [
-                "Roger Ferrand, seul",
-                "Hervé Vallenot",
-                "Marcel Roussillon",
-                "Ahmed Bensaïd",
-                "Personne, il est mort sur le coup"
-              ],
-              "answer": "Hervé Vallenot"
+              "id": "laisse_mourir",
+              "name": "laisse mourir"
             },
             {
-              "id": "Q4",
-              "points": 10,
-              "text": "Où sont passées les 2 600 tonnes de terres polluées ?",
-              "choices": [
-                "Sous les dalles neuves de Ferréol",
-                "Sous le parking-relais de Bellevue",
-                "À la casse Berthet",
-                "Nulle part : elles n'ont jamais existé"
-              ],
-              "answer": "Sous les dalles neuves de Ferréol"
+              "id": "fait_classer",
+              "name": "fait classer"
             },
             {
-              "id": "Q5",
-              "points": 10,
-              "text": "Qui a fait classer l'affaire en accident ?",
-              "choices": [
-                "Marcel Roussillon",
-                "Hervé Vallenot",
-                "Le Dr Lacour, seul",
-                "Le commissaire Borel, de sa propre initiative"
-              ],
-              "answer": "Marcel Roussillon"
+              "id": "denonce",
+              "name": "dénonce"
             },
             {
-              "id": "Q6",
-              "points": 10,
-              "text": "Qui a écrit la lettre du « fantôme » ?",
-              "choices": [
-                "Marcel Chaptal",
-                "Ahmed Bensaïd",
-                "Bernard Faure",
-                "Colette Faure"
-              ],
-              "answer": "Marcel Chaptal"
+              "id": "menace",
+              "name": "menace"
             },
             {
-              "id": "BONUS",
-              "points": 5,
-              "text": "Qui porte la salamandre ?",
-              "choices": [
-                "Marcel Roussillon",
-                "Hervé Vallenot",
-                "Roger Ferrand",
-                "Le Dr Lacour"
-              ],
-              "answer": "Marcel Roussillon"
+              "id": "paie",
+              "name": "paie"
+            },
+            {
+              "id": "couvre",
+              "name": "couvre"
             }
           ],
+          "article": [
+            {
+              "id": "chantage",
+              "title": "Le chantage",
+              "parts": [
+                "Chargé du dossier à la mairie, Bernard Faure découvre cet été que ",
+                {
+                  "id": "chantage-1",
+                  "type": "p",
+                  "answer": "ferrand",
+                  "q": "Q2",
+                  "points": 10
+                },
+                " n'a évacué que 400 tonnes de terres polluées. Le reste est enterré la nuit, sous des dalles neuves, ",
+                {
+                  "id": "chantage-2",
+                  "type": "l",
+                  "answer": "site_ferreol",
+                  "q": "Q4",
+                  "points": 10
+                },
+                ". Faure ne dit rien à sa hiérarchie. Il le ",
+                {
+                  "id": "chantage-3",
+                  "type": "a",
+                  "answer": "fait_chanter",
+                  "q": "Q2",
+                  "points": 10
+                },
+                "."
+              ]
+            },
+            {
+              "id": "chute",
+              "title": "La chute",
+              "parts": [
+                "Le mardi 16 novembre à 22 h, Faure a rendez-vous dans l'atelier de forge. Sur la passerelle, ",
+                {
+                  "id": "chute-1",
+                  "type": "p",
+                  "answer": "ferrand",
+                  "q": "Q1",
+                  "points": 10
+                },
+                " le ",
+                {
+                  "id": "chute-2",
+                  "type": "a",
+                  "answer": "pousse",
+                  "q": "Q1",
+                  "points": 10
+                },
+                "."
+              ]
+            },
+            {
+              "id": "attente",
+              "title": "L'attente",
+              "parts": [
+                "Faure survit à sa chute. Appelé depuis la cabane du gardien, ",
+                {
+                  "id": "attente-1",
+                  "type": "p",
+                  "answer": "vallenot",
+                  "q": "Q3",
+                  "points": 6.667
+                },
+                " arrive, voit qu'il respire encore et le ",
+                {
+                  "id": "attente-2",
+                  "type": "a",
+                  "answer": "laisse_mourir",
+                  "q": "Q3",
+                  "points": 6.667
+                },
+                ". Il laisse derrière lui ",
+                {
+                  "id": "attente-3",
+                  "type": "d",
+                  "answer": "megots",
+                  "q": "Q3",
+                  "points": 6.667
+                },
+                "."
+              ]
+            },
+            {
+              "id": "classement",
+              "title": "Le classement",
+              "parts": [
+                "Le lendemain matin, ",
+                {
+                  "id": "classement-1",
+                  "type": "p",
+                  "answer": "roussillon",
+                  "q": "Q5",
+                  "points": 5
+                },
+                " ",
+                {
+                  "id": "classement-2",
+                  "type": "a",
+                  "answer": "fait_classer",
+                  "q": "Q5",
+                  "points": 5
+                },
+                " l'affaire en accident."
+              ]
+            },
+            {
+              "id": "fantome",
+              "title": "Le fantôme",
+              "parts": [
+                "Quant au fondeur de 1911, c'est ",
+                {
+                  "id": "fantome-1",
+                  "type": "p",
+                  "answer": "chaptal",
+                  "q": "Q6",
+                  "points": 5
+                },
+                " qui a écrit ",
+                {
+                  "id": "fantome-2",
+                  "type": "d",
+                  "answer": "lettre_fantome",
+                  "q": "Q6",
+                  "points": 5
+                },
+                "."
+              ]
+            },
+            {
+              "id": "salamandre",
+              "title": "La salamandre",
+              "parts": [
+                "La salamandre de l'épilogue était déjà gravée sur la chevalière de ",
+                {
+                  "id": "salamandre-1",
+                  "type": "p",
+                  "answer": "roussillon",
+                  "q": "BONUS",
+                  "points": 5
+                },
+                "."
+              ],
+              "bonus": true
+            }
+          ],
+          "attemptFactors": [
+            1,
+            0.8,
+            0.6
+          ],
+          "review": {
+            "juste": "Jean-Loup lit l'article deux fois, sans rien dire. Puis il le pose sur la pile de l'imprimerie. « Ça tient. »",
+            "essai1": "Jean-Loup rend la copie. « Il y a quelque chose qui ne tient pas. J'ai marqué le paragraphe. Je ne vous dis pas où ça cloche. »",
+            "essai1_pluriel": "Jean-Loup rend la copie. « Il y a des paragraphes qui ne tiennent pas. Je les ai marqués. Je ne vous dis pas où ça cloche. »",
+            "essai2": "Jean-Loup soupire et sort son stylo rouge. « Là, et là. Dernière chance. Au prochain passage, ça part tel quel. »",
+            "essai3": "Jean-Loup ne relit même pas. « C'est l'heure. Ça part. »"
+          },
           "ranks": [
             {
               "min": 80,
@@ -2095,7 +2267,8 @@ window.GAME_DATA_FALLBACK = {
                 "angle": -90
               }
             ]
-          }
+          },
+          "maxPoints": 95
         }
       ]
     },
