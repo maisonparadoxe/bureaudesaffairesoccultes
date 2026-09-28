@@ -37,6 +37,7 @@
   - **Données :** dans `textes.py`, `ACTIONS` (les mots d'action), `DEBLOCAGE_ACTIONS` (quelle piste débloque quel mot ; attention à ne pas débloquer trop tôt un mot qui dévoile un retournement), `LIEUX_ARTICLE` (comment un lieu s'écrit dans une phrase), `ARTICLE` (paragraphes, blancs `[[type:id|Q1]]`), `POINTS`, `RELECTURE`. Chaque blanc est rattaché à une question (Q1 à Q6, BONUS) : les fins et les compléments se décident comme avant.
   - **Contrôles :** `verifier.js` vérifie que chaque blanc peut être rempli juste avec le chemin de référence et qu'il y a au moins deux mots possibles par blanc.
   - Puis 4 fins selon les réponses, la une du journal, le bilan paragraphe par paragraphe, et l'épilogue avec la salamandre.
+- **Équipe du Bureau, accessible pendant l'enquête (depuis le 28 septembre) :** avant, l'équipe (Paul, Yves, Karim, Odile) n'apparaissait qu'une fois, sur la note de service, avant de choisir une ville. Un bouton « L'équipe du Bureau » a été ajouté dans la colonne de gauche, section Outils, au-dessus de « Carnet de l'enquête » — il ouvre à tout moment un écran avec les quatre portraits, rôles et bios (`renderEquipe`, vue `equipe`, réutilise les données `prologue.equipe` de `data.json` et le style `.equipe-grille` déjà existant).
 - **Autour :** menu principal, sauvegarde automatique, options (volumes, coupure du son, effets réduits, animations, texte plus grand), note de service au premier lancement, fiche de l'enquêteur (points de carrière).
 
 ## 4. Idées gardées pour les prochaines affaires

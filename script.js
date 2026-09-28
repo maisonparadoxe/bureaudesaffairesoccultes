@@ -1459,6 +1459,11 @@
     );
 
     h("Outils");
+    button("annuaire-btn equipe-btn", "L'équipe du Bureau", () => {
+      A.play("interface/page");
+      state.view = "equipe";
+      render();
+    });
     button("annuaire-btn journal-btn", "Carnet de l'enquête", () => {
       A.play("outils/carnet-ouvrir");
       state.view = "journal";
@@ -1517,6 +1522,7 @@
     if (state.view === "annuaire") panel.appendChild(renderAnnuaire(k));
     else if (state.view === "journal") panel.appendChild(renderJournal(k));
     else if (state.view === "minitel") panel.appendChild(renderMinitel(k));
+    else if (state.view === "equipe") panel.appendChild(renderEquipe(k));
     else if (!state.selectedLocationId || !k.l.has(state.selectedLocationId)) {
       const hint = document.createElement("div");
       hint.className = "location-card";
@@ -2354,6 +2360,27 @@
       list.appendChild(row);
     });
     card.appendChild(list);
+    return card;
+  }
+
+  // À tout moment de l'enquête, on peut revoir qui compose l'équipe du
+  // Bureau (portraits, rôles) sans devoir rouvrir la note de service.
+  function renderEquipe(k) {
+    const P = state.data.prologue;
+    const card = document.createElement("div");
+    card.className = "location-card";
+    card.innerHTML = "<h2>L'équipe du Bureau</h2>";
+    if (!P || !P.equipe || !P.equipe.length) return card;
+    const grille = document.createElement("div");
+    grille.className = "equipe-grille equipe-grille-jeu";
+    grille.innerHTML = P.equipe
+      .map(
+        (m) =>
+          '<div class="equipe-fiche">' + portraitHTML({ id: m.id, name: m.nom, portrait: "img/equipe/" + m.id + ".jpg" }, "large") +
+          '<div><h3>' + escapeHtml(m.nom) + '</h3><p class="equipe-role">' + escapeHtml(m.role) + "</p><p>" + escapeHtml(m.texte) + "</p></div></div>"
+      )
+      .join("");
+    card.appendChild(grille);
     return card;
   }
 
