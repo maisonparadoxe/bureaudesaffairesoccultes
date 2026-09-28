@@ -1,7 +1,7 @@
 # Construit l'affaire de Saint-Étienne pour le jeu, à partir de carte.py et
 # textes.py, et la range dans ../data.json.
 #   python3 construire.py      puis      node ../outils/verifier.js
-import json, pathlib, runpy, io, contextlib, random
+import json, pathlib, runpy, io, contextlib, random, re
 
 ICI = pathlib.Path(__file__).parent
 RACINE = ICI.parent
@@ -153,7 +153,8 @@ cas = dict(
     epilogue=T["EPILOGUE"],
     weather="pluie",
     calendar=dict(days=["Vendredi 19 novembre", "Lundi 22 novembre", "Mardi 23 novembre", "Mercredi 24 novembre"],
-                  slots=["9 h", "11 h", "14 h", "16 h"], deadline="Jeudi 25 novembre, 18 h : bouclage"),
+                  slots=["9 h", "11 h", "14 h", "16 h"], deadline="Jeudi 25 novembre, 18 h : bouclage",
+                  rain=[0, 1, 10, 11, 16]),  # créneaux (pistes déjà lues) où il pleut
     solution=T["SOLUTION"],
 )
 
@@ -221,6 +222,13 @@ for c in C["PISTES"]:
                 text=x["texte"], facts=notes(c["id"], x["notes"]))
     if c.get("requiert"): clue["requires"] = c["requiert"]
     if c.get("requiert_un"): clue["requiresAny"] = c["requiert_un"]
+    # Interlocuteur d'un entretien (portrait affiché) : celui de l'entretien qu'il prolonge,
+    # sinon la première personne citée dans le texte.
+    if c["type"] == "entretien":
+        avant = next((k for k in cas["clues"] if k["id"] == c.get("suite")), None)
+        premier = re.search(r"\{\{p:([^|}]+)", x["texte"])
+        qui = avant.get("speaker") if avant else (premier.group(1) if premier else None)
+        if qui: clue["speaker"] = qui
     if c.get("suite"): clue.update(follows=c["suite"], buttonAlone=c["bouton_seul"], titleAlone=c["titre_seul"])
     if c["id"] in T["PUZZLES"]: clue["puzzle"] = c["id"]
     if c["id"] in T["SILENCE"]: clue["mood"] = "silence"; clue["ambience"] = "ferreol-nuit" if c["lieu"] == "site_ferreol" else None
