@@ -2015,7 +2015,14 @@ window.GAME_DATA_FALLBACK = {
               "14 h",
               "16 h"
             ],
-            "deadline": "Jeudi 25 novembre, 18 h : bouclage"
+            "deadline": "Jeudi 25 novembre, 18 h : bouclage",
+            "rain": [
+              0,
+              1,
+              10,
+              11,
+              16
+            ]
           },
           "solution": "Bernard Faure faisait chanter Roger Ferrand, qui enterrait sous des dalles neuves les terres polluées qu'il était payé pour évacuer. Le mardi 16 novembre, Faure vient à Ferréol toucher un dernier paiement. Ils se disputent sur la passerelle de l'atelier de forge, et Ferrand le pousse. Faure survit à la chute. Ferrand appelle Hervé Vallenot depuis la cabane du gardien. Vallenot arrive, voit que Faure respire encore et refuse d'appeler les secours. Il fume quatre cigarillos à côté de lui, puis ils maquillent la chute et s'en vont. Faure meurt vers minuit en rampant vers la porte. Le lendemain, Marcel Roussillon fait classer l'affaire. La lettre du fantôme, elle, était de Marcel Chaptal.",
           "plan": {

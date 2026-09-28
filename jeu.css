@@ -856,3 +856,8 @@ body.menu-mode #pluie { z-index: 3; }
 .epilogue-card:has(img) { width: 118px; height: 176px; background: #F6F1E2; }
 .epilogue-card img { background: transparent !important; inset: 8px !important; width: calc(100% - 16px) !important; height: calc(100% - 16px) !important; }
 .epilogue-card:has(img) svg { display: none; }
+
+/* Plus de pistes : le compteur devient le bouton « Rédiger l'article » */
+.lead-counter-article { cursor: pointer; border: 2px solid var(--stamp-red); background: var(--stamp-red); color: var(--paper); font: inherit; }
+.lead-counter-article .label { color: var(--paper); font-weight: 600; }
+.lead-counter-article:hover { background: #7E211C; }

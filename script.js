@@ -473,7 +473,7 @@
   }
 
   // Ce qui a changé entre deux photographies ; joue les sons correspondants
-  function diff(before, after) {
+  function diff(before, after, defer) {
     const fresh = [];
     const names = { p: [], l: [], d: [] };
     ["p", "l", "d"].forEach((type) => {
@@ -491,15 +491,18 @@
     });
     unlocked.forEach((id) => state.freshClueIds.add(id));
 
-    let t = 350;
-    if (names.l.length) { A.play("interface/punaise", t); t += 300; }
-    if (names.p.length) { A.play("interface/fiche", t); t += 300; }
-    if (names.d.length) { A.play("interface/agrafeuse", t); t += 300; }
-    if (after.facts > before.facts) { A.play("interface/crayon-note", t); t += 300; }
-    if (after.struck > before.struck) { A.play("interface/rature", t); t += 300; }
-    if (unlocked.length) A.play("interface/deblocage", t);
+    // Un seul son pour signaler les découvertes : le plus important
+    const sound = unlocked.length ? "interface/deblocage"
+      : names.l.length ? "interface/punaise"
+      : names.p.length ? "interface/fiche"
+      : names.d.length ? "interface/agrafeuse"
+      : after.struck > before.struck ? "interface/rature"
+      : after.facts > before.facts ? "interface/crayon-note"
+      : null;
+    if (sound && !defer) A.play(sound, 350);
 
     return {
+      sound: sound,
       fresh: fresh,
       newCharacters: names.p,
       newLocations: names.l,
@@ -636,7 +639,7 @@
   function syncAudio() {
     const v = state.view;
     const inCase = state.started && CASE_VIEWS.concat(["questionnaire"]).includes(v);
-    const raining = inCase && currentCase() && currentCase().weather === "pluie";
+    const raining = inCase && currentCase() && isRaining();
     rain.on = raining && vis.anim;
     A.setWeather(raining ? "pluie-vitre" : null);
     const ck = inCase && vis.anim ? clockInfo() : null;
@@ -740,11 +743,24 @@
       pts.innerHTML = '<span class="num">' + careerPoints() + '</span><span class="label">points de carrière</span>';
       tools.appendChild(pts);
     } else if (state.started && CASE_VIEWS.concat(["questionnaire"]).includes(state.view)) {
-      const counter = document.createElement("div");
-      counter.className = "lead-counter" + (state.leadsRemaining <= 3 ? " low" : "");
-      counter.innerHTML =
-        '<span class="num">' + state.leadsRemaining + '</span><span class="label">piste' + (state.leadsRemaining > 1 ? "s" : "") + " avant le bouclage</span>";
-      tools.appendChild(counter);
+      if (state.leadsRemaining <= 0 && state.view !== "questionnaire") {
+        const write = document.createElement("button");
+        write.className = "lead-counter lead-counter-article";
+        write.innerHTML = '<span class="num">0</span><span class="label">Rédiger l\'article →</span>';
+        write.addEventListener("click", () => {
+          A.play("interface/page-journal");
+          state.view = "questionnaire";
+          render();
+          window.scrollTo(0, 0);
+        });
+        tools.appendChild(write);
+      } else {
+        const counter = document.createElement("div");
+        counter.className = "lead-counter" + (state.leadsRemaining <= 3 ? " low" : "");
+        counter.innerHTML =
+          '<span class="num">' + state.leadsRemaining + '</span><span class="label">piste' + (state.leadsRemaining > 1 ? "s" : "") + " avant le bouclage</span>";
+        tools.appendChild(counter);
+      }
       const ck = clockInfo();
       if (ck) {
         const clock = document.createElement("div");
@@ -965,6 +981,12 @@
     h1.textContent = "Son";
     card.appendChild(h1);
     card.appendChild(renderAudioPanel(true));
+
+    const red = document.createElement("label");
+    red.className = "audio-row";
+    red.innerHTML = '<input type="checkbox"' + (A.settings.reduits ? " checked" : "") + "> Effets sonores réduits (seulement le tampon et la sonnette)";
+    red.querySelector("input").addEventListener("change", (e) => A.set("reduits", e.target.checked));
+    card.appendChild(red);
 
     const h2 = document.createElement("h2");
     h2.textContent = "Lecture";
@@ -1551,14 +1573,14 @@
       state.lastReadClueId = clue.id;
       const after = snapshot();
 
-      A.play(clue.type === "entretien" ? "interface/stylo" : "interface/appareil-photo");
-      A.play("interface/tampon", clue.mood === "silence" ? 2600 : 900);
+      // Le tampon, la sonnette et le son des découvertes viennent à la fin de la lecture
+      if (clue.type !== "entretien") A.play("interface/appareil-photo");
       if (clue.mood === "silence") A.silence(3200);
       if (clue.salamandre) A.play("musiques/salamandre", 1200);
       if (state.leadsRemaining === 3) A.play("interface/horloge", 1500);
       if (state.leadsRemaining === 0) A.play("interface/plus-de-pistes", 1800);
 
-      const d = diff(before, after);
+      const d = diff(before, after, true);
       state.lastResult = Object.assign({ clueId: clue.id, first: true }, d);
     } else {
       A.play("interface/page");
@@ -1604,7 +1626,17 @@
       '<div class="clue-text">' +
       renderParagraphs(clue.text, { fresh: new Set(r.fresh || []), links: true, knowledge: k, fax: clue.fax, printFax: fax }) +
       '</div><div class="stamp">Lu</div>' + discoveriesHTML(r);
-    if (typing) setTimeout(() => typewrite(box.querySelector(".clue-text"), box), 0);
+    // Fin de lecture : sonnette (si le texte a été tapé), tampon « Lu », puis le son des découvertes
+    const endSounds = (typed) => {
+      if (r.endPlayed) return;
+      r.endPlayed = true;
+      let t = 0;
+      if (typed) { A.play("interface/machine-ecrire-sonnette"); t = 450; }
+      A.play("interface/tampon", t);
+      if (r.sound) A.play(r.sound, t + 550);
+    };
+    if (typing) setTimeout(() => typewrite(box.querySelector(".clue-text"), box, () => endSounds(true)), 0);
+    else if (animate) setTimeout(() => endSounds(false), silence ? 2600 : 700);
     if (fax) {
       A.play("interface/fax", 300);
       if (!typing) setTimeout(() => A.play("interface/fax", 2600), 0);
@@ -1619,7 +1651,7 @@
   // Un clic (ou une touche) affiche tout d'un coup.
   // ---------------------------------------------------------------
 
-  function typewrite(el, box) {
+  function typewrite(el, box, onDone) {
     if (!el) return;
     const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, {
       acceptNode: (n) => (n.parentElement.closest(".fax") ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT)
@@ -1631,11 +1663,15 @@
     box.classList.add("typing-active");
     let i = 0;
     let pos = 0;
-    let lastPara = nodes[0].node.parentElement.closest("p");
     const keys = ["interface/machine-ecrire-touche-1", "interface/machine-ecrire-touche-2", "interface/machine-ecrire-touche-3"];
     let timer = null;
+    let done = false;
+    let tick = 0;
     const finish = () => {
+      if (done) return;
+      done = true;
       clearInterval(timer);
+      if (onDone) onDone();
       nodes.forEach((n) => (n.node.nodeValue = n.text));
       box.classList.remove("typing-active");
       box.removeEventListener("click", finish);
@@ -1652,14 +1688,9 @@
         if (pos >= n.text.length) {
           i++;
           pos = 0;
-          const para = i < nodes.length ? nodes[i].node.parentElement.closest("p") : null;
-          if (para !== lastPara) {
-            A.play("interface/machine-ecrire-sonnette");
-            lastPara = para;
-          }
         }
       }
-      A.playQuick(keys, 70);
+      if (tick++ % 2 === 0) A.playQuick(keys, 120, 0.6);
       if (i >= nodes.length) finish();
     }, 16);
   }
@@ -1744,6 +1775,15 @@
     const day = Math.min(Math.floor(used / perDay), cal.days.length - 1);
     const slot = used % perDay;
     return { label: cal.days[day] + ", " + cal.slots[slot], moment: MOMENTS[Math.min(slot, MOMENTS.length - 1)], day: day };
+  }
+
+  // Il pleut à certains moments de l'enquête seulement (calendar.rain : numéros de créneaux)
+  function isRaining() {
+    const cs = currentCase();
+    if (cs.weather !== "pluie") return false;
+    const cal = cs.calendar;
+    if (!cal || !cal.rain) return true;
+    return cal.rain.includes(Math.min(leadsUsed(), cal.days.length * cal.slots.length));
   }
 
   // À appeler après chaque piste dépensée : la cloche sonne à chaque nouvelle journée

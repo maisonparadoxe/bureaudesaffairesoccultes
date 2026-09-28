@@ -7,7 +7,7 @@
   "use strict";
 
   const SETTINGS_KEY = "bao-audio-v1";
-  const settings = { muted: false, effets: 0.8, ambiances: 0.5, musique: 0.45 };
+  const settings = { muted: false, reduits: false, effets: 0.8, ambiances: 0.5, musique: 0.45 };
   try {
     Object.assign(settings, JSON.parse(localStorage.getItem(SETTINGS_KEY) || "{}"));
   } catch (e) {}
@@ -57,15 +57,18 @@
   }
 
   // Effet ponctuel. delay en ms pour enchaîner plusieurs sons.
-  function play(path, delay) {
+  // Mode « effets sonores réduits » : seuls les sons essentiels restent
+  const ESSENTIELS = ["interface/tampon", "interface/machine-ecrire-sonnette", "interface/clic", "interface/plus-de-pistes"];
+  function play(path, delay, gain) {
     if (settings.muted || !unlocked) return;
+    if (settings.reduits && !ESSENTIELS.includes(path) && !/^(musiques|puzzles)\//.test(path)) return;
     const go = () => {
       if (missing.has(path)) return;
       let base = cache[path];
       if (!base) base = cache[path] = make(path, false);
       if (!base) return;
       const el = base.cloneNode();
-      el.volume = vol("effets");
+      el.volume = Math.min(1, vol("effets") * (gain || 1));
       el.addEventListener("error", () => missing.add(path));
       el.play().catch(() => {});
     };
@@ -75,14 +78,14 @@
 
   // Un son parmi plusieurs variantes (frappes de clavier...)
   let lastQuick = 0;
-  function playQuick(paths, minGap) {
+  function playQuick(paths, minGap, gain) {
     const now = Date.now();
     if (now - lastQuick < (minGap || 45)) return;
     lastQuick = now;
-    playOneOf(paths);
+    playOneOf(paths, 0, gain);
   }
-  function playOneOf(paths, delay) {
-    play(paths[Math.floor(Math.random() * paths.length)], delay);
+  function playOneOf(paths, delay, gain) {
+    play(paths[Math.floor(Math.random() * paths.length)], delay, gain);
   }
 
   function setAmbience(name) {
