@@ -430,6 +430,8 @@
   .sidebar { position: static; }
   .main-grid .content-panel { order: -1; min-height: 0; }
   .lead-buttons { grid-template-columns: 1fr; }
+  /* Carnet, annuaire, minitel, équipe : la carte n'y sert à rien, on ne la fait pas défiler pour rien */
+  .city-map-wrap.map-secondaire { display: none; }
   .minitel-top { font-size: 10.5px; }
   .masthead-tools { width: 100%; justify-content: flex-end; }
 }

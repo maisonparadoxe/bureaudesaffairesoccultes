@@ -313,6 +313,7 @@
     state.ending = s.ending || null;
     state.view = state.ending ? "ending" : s.view || "quartier";
     render();
+    scrollToTop();
   }
 
   // ---------------------------------------------------------------
@@ -545,6 +546,13 @@
   function scrollToPanel() {
     const panel = document.querySelector(".content-panel");
     if (panel && panel.scrollIntoView) panel.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  // Change d'écran (carte, outil...) : sans ça, sur mobile, on atterrit
+  // au beau milieu de l'écran précédent au lieu de voir le nouveau depuis
+  // le début.
+  function scrollToTop() {
+    window.scrollTo({ top: 0, left: 0, behavior: vis.anim ? "smooth" : "auto" });
   }
 
   // ---------------------------------------------------------------
@@ -1195,6 +1203,7 @@
       state.view = "quartier";
       A.play("interface/carte-depliee");
       render();
+      scrollToTop();
     });
     btnRow.appendChild(btn);
     card.appendChild(btnRow);
@@ -1214,10 +1223,17 @@
   // Écran d'enquête : plan + barre latérale + panneau
   // ---------------------------------------------------------------
 
+  // Sur mobile, la carte ne s'affiche qu'aux endroits où elle sert vraiment
+  // (choisir un quartier / un lieu) : ailleurs (carnet, annuaire, minitel,
+  // équipe), elle ne ferait qu'ajouter un long scroll avant le vrai contenu.
+  const VUES_AVEC_CARTE = ["quartier", "location"];
+
   function renderMainGrid() {
     const wrap = document.createElement("div");
     const k = computeKnowledge();
-    wrap.appendChild(renderCityMap(k));
+    const mapWrap = renderCityMap(k);
+    if (!VUES_AVEC_CARTE.includes(state.view)) mapWrap.classList.add("map-secondaire");
+    wrap.appendChild(mapWrap);
     const grid = document.createElement("div");
     grid.className = "main-grid";
     grid.appendChild(renderSidebar(k));
@@ -1442,6 +1458,7 @@
           state.selectedQuartier = q.id;
           state.lastResult = null;
           render();
+          scrollToTop();
         }
       );
     });
@@ -1463,22 +1480,26 @@
       A.play("interface/page");
       state.view = "equipe";
       render();
+      scrollToPanel();
     });
     button("annuaire-btn journal-btn", "Carnet de l'enquête", () => {
       A.play("outils/carnet-ouvrir");
       state.view = "journal";
       render();
+      scrollToPanel();
     });
     button("annuaire-btn", "Consulter l'annuaire (" + k.p.size + ")", () => {
       A.play("interface/page");
       state.view = "annuaire";
       render();
+      scrollToPanel();
     });
     button("annuaire-btn minitel-btn", "Minitel · 3611", () => {
       state.view = "minitel";
       A.play("outils/minitel-allumage");
       A.play("outils/minitel-connexion", 600);
       render();
+      scrollToPanel();
     });
 
     const legend = document.createElement("div");
@@ -1494,6 +1515,7 @@
     button("end-early-btn", "← Retour aux affaires", () => {
       state.view = "caseSelect";
       render();
+      scrollToTop();
     });
 
     const note = document.createElement("p");
