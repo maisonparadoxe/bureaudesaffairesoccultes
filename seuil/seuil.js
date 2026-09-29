@@ -81,6 +81,10 @@
     { id: "sablier", nom: "Salle du sablier", court: "Sablier", doors: ["F"], w: 3, max: 2, kind: "bonus", fx: { time: 6 }, desc: "Un sablier géant. Le temps semble s'y écouler plus lentement." },
     { id: "puits", nom: "Puits aux salamandres", court: "Puits", doors: ["F"], w: 2, max: 1, kind: "bonus", fx: { steps: 3, dice: 1 }, desc: "L'eau y est claire. Des salamandres gravées tapissent la margelle." },
     { id: "sanctuaire", nom: "Sanctuaire", court: "Sanctuaire", doors: ["F", "L", "R"], w: 2, max: 1, kind: "bonus", fx: { steps: 4, seals: 1 }, desc: "Une salle calme, éclairée par une flamme qui ne vacille pas." },
+    { id: "cristallerie", nom: "Cristallerie", court: "Cristaux", doors: ["F", "L"], mirror: true, w: 3, max: 2, kind: "bonus", fx: { gem: { axe: "H", max: 1 } }, desc: "Des cristaux taillés en losange, alignés sur une étagère. L'un d'eux vibre encore." },
+    { id: "cave", nom: "Cave aux cristaux", court: "Cave", doors: ["L", "R"], w: 3, max: 2, kind: "bonus", fx: { gem: { axe: "V", max: 1 } }, desc: "Des cristaux dressés comme des stalagmites. Un seul est détachable." },
+    { id: "engrenages", nom: "Salle des engrenages", court: "Engrenages", doors: ["F"], w: 2, max: 1, kind: "bonus", fx: { gem: { axe: "H", max: 2 } }, desc: "Un mécanisme colossal de Valcourt. Une gemme rare, encore chaude, dans son axe." },
+    { id: "vents", nom: "Colonne des vents", court: "Colonne", doors: ["F"], w: 2, max: 1, kind: "bonus", fx: { gem: { axe: "V", max: 2 } }, desc: "Un puits d'air qui monte du sol. Une gemme rare flotte à mi-hauteur." },
     { id: "archives", nom: "Archives", court: "Archives", doors: ["F", "R"], mirror: true, w: 4, max: 3, kind: "bonus", fx: { fragment: 1 }, desc: "Des rayonnages de dossiers. Certains portent le nom de Valcourt." },
     { id: "fresque", nom: "Fresque des Gardiens", court: "Fresque", doors: ["L", "R"], w: 3, max: 2, kind: "bonus", fx: { fragment: 1 }, desc: "Des silhouettes en capuche gardent une porte. L'une d'elles tient une salamandre." },
     { id: "cabinet", nom: "Cabinet du serrurier", court: "Cabinet", doors: ["F"], w: 2, max: 1, kind: "bonus", fx: { fragment: 1, steps: 3 }, desc: "Un bureau encombré de pênes et de ressorts. Quelqu'un a travaillé ici." },
@@ -183,6 +187,70 @@
       const answer = t[5];
       return { kind: "num", label: "Suite logique", text: suiteTexte(t.slice(0, 5)), answer };
     },
+    anagramme(l) {
+      const liste = MOTS.filter((m) => m[0] === l);
+      const m = pick(liste);
+      const lettres = m[1].split("");
+      let melange = lettres.slice();
+      for (let i = 0; i < 30 && melange.join("") === m[1]; i++) melange = shuffle(lettres);
+      const autres = shuffle(liste.filter((x) => x[1] !== m[1])).slice(0, 2).map((x) => x[1]);
+      return {
+        kind: "mcq", label: "Anagramme",
+        text: "Remettez ces lettres dans l'ordre, puis choisissez le mot.",
+        grand: melange.join(" ").toUpperCase(),
+        options: shuffle([m[1], ...autres]), answer: m[1],
+      };
+    },
+    intrus(l) {
+      const k = pick([[3, 4, 5, 6], [7, 8, 9], [11, 12, 13]][l - 1]);
+      const mx = [60, 100, 150][l - 1];
+      const mult = [];
+      while (mult.length < 3) {
+        const v = k * rnd(2, Math.floor(mx / k));
+        if (!mult.includes(v)) mult.push(v);
+      }
+      let intrus;
+      do intrus = k * rnd(2, Math.floor(mx / k)) + rnd(1, k - 1);
+      while (mult.includes(intrus));
+      return {
+        kind: "mcq", label: "Multiples",
+        text: "Lequel de ces nombres n'est pas un multiple de " + k + " ?",
+        options: shuffle([...mult, intrus]).map(String), answer: String(intrus),
+      };
+    },
+    motif(l) {
+      const SYM = ["▲", "●", "■", "◆", "★", "✚"];
+      const p = l + 2;
+      const base = shuffle(SYM).slice(0, p);
+      const seq = [];
+      for (let i = 0; i < 2 * p; i++) seq.push(base[i % p]);
+      const answer = seq[2 * p - 1];
+      const autres = shuffle(SYM.filter((x) => x !== answer)).slice(0, 2);
+      return {
+        kind: "mcq", label: "Motif", text: "Quel symbole vient ensuite ?",
+        grand: seq.slice(0, 2 * p - 1).join(" ") + " ?",
+        options: shuffle([answer, ...autres]), answer,
+      };
+    },
+    compte(l) {
+      const SYM = ["▲", "●", "■"];
+      const n = [12, 20, 30][l - 1];
+      const par = n === 12 ? 6 : 10;
+      let cible, items, nb;
+      do {
+        cible = pick(SYM);
+        items = [];
+        nb = 0;
+        for (let i = 0; i < n; i++) {
+          const x = pick(SYM);
+          items.push(x);
+          if (x === cible) nb++;
+        }
+      } while (nb === 0);
+      const lignes = [];
+      for (let i = 0; i < n; i += par) lignes.push(items.slice(i, i + par).join(" "));
+      return { kind: "num", label: "Comptage", consigne: "Combien de " + cible + " voyez-vous ?", text: lignes.join("\n"), grille: true, answer: nb };
+    },
     ortho(l) {
       const liste = MOTS.filter((m) => m[0] === l);
       const m = pick(liste);
@@ -191,14 +259,25 @@
     },
   };
 
-  function makePuzzle(level) {
-    const type = pick(["add", "sub", "mul", "suite", "ortho", "ortho"]);
-    const p = GEN[type](level);
+  function makePuzzle(level, theme) {
+    const t = THEMES[theme] ? theme : pick(THEME_IDS);
+    const p = GEN[pick(THEMES[t].gens)](level);
     p.level = level;
+    p.theme = t;
     return p;
   }
 
   const TEMPS_BASE = { 1: 40, 2: 35, 3: 30 };
+
+  // Les quatre thèmes. La couleur d'une salle est le thème des énigmes
+  // qui gardent ses portes de sortie.
+  const THEMES = {
+    chiffres: { nom: "Chiffres", couleur: "#3F5B66", glyphe: "#", gens: ["add", "sub", "mul"] },
+    mots: { nom: "Mots", couleur: "#9A2B25", glyphe: "A", gens: ["ortho", "anagramme"] },
+    logique: { nom: "Logique", couleur: "#4C5A4E", glyphe: "?", gens: ["suite", "intrus"] },
+    symboles: { nom: "Symboles", couleur: "#B98B2A", glyphe: "★", gens: ["motif", "compte"] },
+  };
+  const THEME_IDS = Object.keys(THEMES);
 
   // ------------------------------------------------------------------
   // État de la partie
@@ -228,7 +307,8 @@
       timeBonus: 0,
       grid: Array.from({ length: ROWS }, () => Array(COLS).fill(null)),
       pos: { r: START.r, c: START.c },
-      doors: {},
+      gems: [],
+      shift: null,
       count: {},
       fragments: 0,
       log: [],
@@ -256,19 +336,16 @@
   // ------------------------------------------------------------------
   // Portes
   // ------------------------------------------------------------------
-  function edgeKey(r, c, d) {
+  // Chaque salle porte ses propres portes (room.door[d]) : elles la suivent
+  // quand une ligne ou une colonne glisse.
+  function porteDe(room, r, c, d) {
+    room.door = room.door || {};
     const r2 = r + DIRS[d].dr, c2 = c + DIRS[d].dc;
-    const a = r + "," + c, b = r2 + "," + c2;
-    return a < b ? a + "|" + b : b + "|" + a;
-  }
-
-  function doorFor(r, c, d) {
-    const k = edgeKey(r, c, d);
-    if (!G.doors[k]) {
-      const r2 = r + DIRS[d].dr, c2 = c + DIRS[d].dc;
-      const isGoal = (r === GOAL.r && c === GOAL.c) || (r2 === GOAL.r && c2 === GOAL.c);
+    const cible = G.grid[r2][c2];
+    let D = room.door[d];
+    if (!D) {
       let level, status = "locked";
-      if (isGoal) level = 3;
+      if (cible && cible.goal) level = 3;
       else {
         const row = Math.min(r, r2);
         level = row >= 6 ? 1 : row >= 3 ? 2 : 3;
@@ -277,9 +354,10 @@
         else if (x > 0.85 && level < 3) level += 1;
         if (Math.random() < 0.18) { status = "ajar"; level = 0; }
       }
-      G.doors[k] = { level, status };
+      D = { level, status, theme: room.theme || pick(THEME_IDS) };
+      room.door[d] = D;
     }
-    return G.doors[k];
+    return D;
   }
 
   // État d'une porte vue depuis la salle (r,c), côté d.
@@ -292,14 +370,10 @@
     const n = G.grid[r2][c2];
     if (n) {
       if (!n.doors.includes(opp(d))) return { s: "wall" };
-      if (n.goal || room.goal) {
-        const D = doorFor(r, c, d);
-        return { s: D.status, level: D.level };
-      }
-      return { s: "open" };
+      if (!(n.goal || room.goal)) return { s: "open" };
     }
-    const D = doorFor(r, c, d);
-    return { s: D.status, level: D.level };
+    const D = porteDe(room, r, c, d);
+    return { s: D.status, level: D.level, theme: D.theme };
   }
 
   // ------------------------------------------------------------------
@@ -327,6 +401,14 @@
     return tpl.w;
   }
 
+  // Chaque salle qui a des sorties reçoit un thème, tous différents.
+  function themer(cands) {
+    const t = shuffle(THEME_IDS);
+    let i = 0;
+    cands.forEach((cd) => (cd.theme = cd.sorties > 0 ? t[i++] : null));
+    return cands;
+  }
+
   function tirage(d, tr, tc) {
     for (let essai = 0; essai < 60; essai++) {
       const pool = SALLES.map((t) => ({ t, w: poids(t) })).filter((x) => x.w > 0);
@@ -344,9 +426,9 @@
       const cands = choisies.map((t) => candidat(t, d, tr, tc));
       const pieges = cands.filter((x) => x.tpl.kind === "trap").length;
       const avecSortie = cands.filter((x) => x.sorties > 0).length;
-      if (cands.length === 3 && pieges <= 1 && avecSortie >= 2) return cands;
+      if (cands.length === 3 && pieges <= 1 && avecSortie >= 2) return themer(cands);
     }
-    return [candidat(SALLES[0], d, tr, tc), candidat(SALLES[1], d, tr, tc), candidat(SALLES[3], d, tr, tc)];
+    return themer([candidat(SALLES[0], d, tr, tc), candidat(SALLES[1], d, tr, tc), candidat(SALLES[3], d, tr, tc)]);
   }
 
   // ------------------------------------------------------------------
@@ -357,7 +439,7 @@
   }
 
   function tenter(d) {
-    if (!G || G.over || modalOpen()) return;
+    if (!G || G.over || G.shift || modalOpen()) return;
     const { r, c } = G.pos;
     const e = edge(r, c, d);
     if (e.s === "wall") return;
@@ -371,7 +453,7 @@
       log("La porte est entrouverte : personne ne l'a verrouillée.");
       return ouvrirTirage(d);
     }
-    G.pending = { r, c, d, level: e.level };
+    G.pending = { r, c, d, level: e.level, theme: e.theme };
     modalePorte();
   }
 
@@ -403,6 +485,10 @@
     if (fx.dice) { G.dice += fx.dice; morceaux.push("+" + fx.dice + " dé"); }
     if (fx.seals) { G.seals += fx.seals; morceaux.push("+" + fx.seals + " sceau"); }
     if (fx.time) { G.timeBonus += fx.time; morceaux.push("+" + fx.time + " s par énigme"); }
+    if (fx.gem) {
+      G.gems.push({ axe: fx.gem.axe, max: fx.gem.max });
+      morceaux.push("une gemme " + (fx.gem.axe === "H" ? "↔" : "↕") + (fx.gem.max === 2 ? " rare" : ""));
+    }
     if (fx.fragment && G.fragments < FRAGMENTS.length) {
       G.fragments += 1;
       morceaux.push("un fragment du carnet de Valcourt");
@@ -421,10 +507,10 @@
   function choisir(i) {
     const D = G.draft;
     const cand = D.cands[i];
-    G.grid[D.tr][D.tc] = { tpl: cand.tpl, doors: cand.doors, visited: false };
+    G.grid[D.tr][D.tc] = { tpl: cand.tpl, doors: cand.doors, visited: false, theme: cand.theme };
     G.count[cand.tpl.id] = (G.count[cand.tpl.id] || 0) + 1;
     G.rooms += 1;
-    doorFor(G.pos.r, G.pos.c, D.d).status = "open";
+    porteDe(G.grid[G.pos.r][G.pos.c], G.pos.r, G.pos.c, D.d).status = "open";
     log("Porte " + (D.d === 0 || D.d === 2 ? "du " : "de l'") + DIRS[D.d].nom + " : vous choisissez « " + cand.tpl.nom + " ».");
     son("punaise");
     const d = D.d;
@@ -446,6 +532,7 @@
 
   // Est-il encore possible d'aller quelque part ? Sinon, impasse.
   function impasse() {
+    if (gemUtile()) return false;
     const vus = new Set();
     const file = [[G.pos.r, G.pos.c]];
     vus.add(G.pos.r + "," + G.pos.c);
@@ -485,7 +572,7 @@
   // ------------------------------------------------------------------
   function demarrerEnigme() {
     const P = G.pending;
-    const p = makePuzzle(P.level);
+    const p = makePuzzle(P.level, P.theme);
     const total = (TEMPS_BASE[P.level] || 35) + G.timeBonus;
     pz = { puzzle: p, restant: total, total, fini: false };
     modaleEnigme();
@@ -519,7 +606,7 @@
     pz.fini = true;
     arreterChrono();
     const P = G.pending;
-    const D = doorFor(P.r, P.c, P.d);
+    const D = G.grid[P.r][P.c].door[P.d];
     const p = pz.puzzle;
     if (ok) {
       G.solved += 1;
@@ -540,7 +627,7 @@
     if (G.seals < 1) return;
     G.seals -= 1;
     const P = G.pending;
-    doorFor(P.r, P.c, P.d).status = "open";
+    G.grid[P.r][P.c].door[P.d].status = "open";
     log("Vous posez un sceau sur la serrure : la porte s'ouvre d'elle-même.");
     son("deblocage");
     suiteApresPorte();
@@ -577,6 +664,7 @@
     if (fx.seals) parts.push("🗝");
     if (fx.time) parts.push("⏳");
     if (fx.fragment) parts.push("📜");
+    if (fx.gem) parts.push((fx.gem.max === 2 ? "💎" : "") + (fx.gem.axe === "H" ? "↔" : "↕"));
     return parts.slice(0, 2).join(" ");
   }
 
@@ -594,11 +682,12 @@
       if (!ouvert) continue;
       const [x, y, w, h] = c.porte;
       if (st.s === "locked") {
-        s += `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="#7A5A34" stroke="#2A2620" stroke-width="1.5"/>`;
+        const col = st.theme && THEMES[st.theme] ? THEMES[st.theme].couleur : "#7A5A34";
+        s += `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${col}" stroke="#2A2620" stroke-width="1.5"/>`;
         for (let i = 0; i < st.level; i++) {
           const off = (i - (st.level - 1) / 2) * 8;
           const cx = c.h ? 50 + off : x + w / 2, cy = c.h ? y + h / 2 : 50 + off;
-          s += `<circle cx="${cx}" cy="${cy}" r="2.4" fill="#E3C77A"/>`;
+          s += `<circle cx="${cx}" cy="${cy}" r="2.4" fill="#F3EBD6"/>`;
         }
       } else if (st.s === "ajar") {
         s += `<rect x="${x + (c.h ? 4 : 0)}" y="${y + (c.h ? 0 : 4)}" width="${c.h ? w - 8 : w}" height="${c.h ? h : h - 8}" fill="#B98B2A" stroke="#2A2620" stroke-width="1.2" opacity=".85"/>`;
@@ -615,6 +704,11 @@
         "M9 50L20 43V57Z",
       ][opts.entree];
       s += `<path d="${f}" fill="#9A2B25"/>`;
+    }
+    if (opts.theme && THEMES[opts.theme]) {
+      const T = THEMES[opts.theme];
+      s += `<rect x="11" y="11" width="78" height="78" fill="none" stroke="${T.couleur}" stroke-width="3.4"/>`;
+      s += `<text x="19" y="26" font-size="13" font-family="IBM Plex Mono, monospace" font-weight="700" fill="${T.couleur}">${T.glyphe}</text>`;
     }
     const icone = opts.icone !== undefined ? opts.icone : iconeDe(tpl);
     if (icone) {
@@ -643,11 +737,14 @@
     if (fx.seals) p.push("+" + fx.seals + " sceau");
     if (fx.time) p.push("+" + fx.time + " s par énigme");
     if (fx.fragment) p.push("un fragment du carnet de Valcourt");
+    if (fx.gem) p.push("une gemme " + (fx.gem.axe === "H" ? "↔ (décale une ligne" : "↕ (décale une colonne") + (fx.gem.max === 2 ? " de 1 ou 2 crans, rare)" : " d'un cran)"));
     return p.join(", ") + ".";
   }
 
   function plateauHTML() {
-    let h = `<div class="board" role="grid" aria-label="Plan du labyrinthe">`;
+    const S = G.shift;
+    const gemS = S ? G.gems[S.gi] : null;
+    let h = `<div class="board${S ? " shifting" : ""}" role="grid" aria-label="Plan du labyrinthe">`;
     for (let r = 0; r < ROWS; r++) {
       for (let c = 0; c < COLS; c++) {
         const room = G.grid[r][c];
@@ -655,18 +752,27 @@
         let cls = "cell";
         let contenu = "";
         let action = "";
-        // Voisinage de la salle actuelle
-        let d = -1;
-        for (let k = 0; k < 4; k++) if (G.pos.r + DIRS[k].dr === r && G.pos.c + DIRS[k].dc === c) d = k;
-        if (d >= 0 && !G.over) {
-          const e = edge(G.pos.r, G.pos.c, d);
-          if (e.s === "open") cls += " can-go";
-          else if (e.s === "locked" || e.s === "ajar") cls += " can-open";
-          if (e.s !== "wall") action = ` data-act="go" data-d="${d}"`;
+        if (gemS) {
+          // Mode gemme : on choisit la ligne ou la colonne à décaler
+          const ligne = gemS.axe === "H" ? r : c;
+          if (ligneOk(gemS.axe, ligne)) {
+            cls += " shift-ok" + (S.sel === ligne ? " shift-sel" : "");
+            action = ` data-act="line" data-line="${ligne}"`;
+          } else cls += " shift-no";
+        } else {
+          // Voisinage de la salle actuelle
+          let d = -1;
+          for (let k = 0; k < 4; k++) if (G.pos.r + DIRS[k].dr === r && G.pos.c + DIRS[k].dc === c) d = k;
+          if (d >= 0 && !G.over) {
+            const e = edge(G.pos.r, G.pos.c, d);
+            if (e.s === "open") cls += " can-go";
+            else if (e.s === "locked" || e.s === "ajar") cls += " can-open";
+            if (e.s !== "wall") action = ` data-act="go" data-d="${d}"`;
+          }
         }
         if (room) {
           const cotes = [0, 1, 2, 3].map((k) => coteEtat(r, c, k));
-          contenu = salleSVG(room.tpl, cotes, { nom: room.tpl.court });
+          contenu = salleSVG(room.tpl, cotes, { nom: room.tpl.court, theme: room.theme });
           cls += " placed" + (room.visited ? "" : " unseen") + (room.goal ? " goal" : "");
           if (cur) {
             cls += " current";
@@ -677,6 +783,93 @@
       }
     }
     return h + `</div>`;
+  }
+
+  function gemmesHTML() {
+    if (!G.gems.length) return `<span class="chip vide-chip" title="Les gemmes se trouvent dans certaines salles">💎 <em>aucune gemme</em></span>`;
+    return G.gems
+      .map((g, i) => {
+        const fl = g.axe === "H" ? "↔" : "↕";
+        const actif = G.shift && G.shift.gi === i;
+        return `<button class="chip gem-btn${actif ? " actif" : ""}" data-act="gem" data-i="${i}" title="Gemme ${g.axe === "H" ? "horizontale : décale une ligne" : "verticale : décale une colonne"} de ${g.max === 2 ? "1 ou 2 crans" : "1 cran"}">💎 <b>${fl}</b>${g.max === 2 ? "<sup>2</sup>" : ""}</button>`;
+      })
+      .join("");
+  }
+
+  // ------------------------------------------------------------------
+  // Gemmes : décaler une ligne (H) ou une colonne (V)
+  // ------------------------------------------------------------------
+  function ligneOk(axe, i) {
+    if (axe === "H") {
+      if (i === G.pos.r || i === START.r || i === GOAL.r) return false;
+    } else if (i === G.pos.c || i === START.c || i === GOAL.c) return false;
+    const n = axe === "H" ? COLS : ROWS;
+    for (let j = 0; j < n; j++) if (axe === "H" ? G.grid[i][j] : G.grid[j][i]) return true;
+    return false;
+  }
+
+  function gemUtile() {
+    return G.gems.some((g) => {
+      const n = g.axe === "H" ? ROWS : COLS;
+      for (let i = 0; i < n; i++) if (ligneOk(g.axe, i)) return true;
+      return false;
+    });
+  }
+
+  function decaler(k) {
+    const S = G.shift;
+    if (!S || S.sel === null) return;
+    const gem = G.gems[S.gi];
+    if (!gem || Math.abs(k) > gem.max || !ligneOk(gem.axe, S.sel)) return;
+    const H = gem.axe === "H", i = S.sel, n = H ? COLS : ROWS;
+    const anciens = [];
+    for (let j = 0; j < n; j++) anciens.push(H ? G.grid[i][j] : G.grid[j][i]);
+    const nouveaux = Array(n).fill(null);
+    anciens.forEach((salle, j) => {
+      nouveaux[(((j + k) % n) + n) % n] = salle;
+      // Les passages déjà ouverts sont recalculés d'après le nouveau voisinage
+      if (salle && salle.door) for (const d in salle.door) if (salle.door[d].status === "open") delete salle.door[d];
+    });
+    for (let j = 0; j < n; j++) {
+      if (H) G.grid[i][j] = nouveaux[j];
+      else G.grid[j][i] = nouveaux[j];
+    }
+    // Un passage ouvert vers une case devenue vide n'existe plus : la porte est à refaire
+    for (let r = 0; r < ROWS; r++)
+      for (let c = 0; c < COLS; c++) {
+        const salle = G.grid[r][c];
+        if (!salle || !salle.door) continue;
+        for (const d in salle.door) {
+          if (salle.door[d].status !== "open") continue;
+          const r2 = r + DIRS[d].dr, c2 = c + DIRS[d].dc;
+          if (!inGrid(r2, c2) || !G.grid[r2][c2]) delete salle.door[d];
+        }
+      }
+    G.gems.splice(S.gi, 1);
+    G.shift = null;
+    const sens = H ? (k > 0 ? "vers la droite" : "vers la gauche") : k > 0 ? "vers le bas" : "vers le haut";
+    log("Gemme " + (H ? "↔" : "↕") + " : " + (H ? "la ligne " : "la colonne ") + (i + 1) + " glisse de " + Math.abs(k) + " cran" + (Math.abs(k) > 1 ? "s" : "") + " " + sens + ".");
+    son("carte-depliee");
+    if (impasse()) return finir("stuck");
+    render();
+  }
+
+  function barreDecalage() {
+    const S = G.shift;
+    if (!S) return "";
+    const g = G.gems[S.gi];
+    const H = g.axe === "H";
+    const mot = H ? "ligne" : "colonne";
+    let h = `<div class="shift-bar"><span class="shift-txt">💎 ${H ? "↔" : "↕"}${g.max === 2 ? " rare" : ""} : `;
+    if (S.sel === null) h += `touchez une ${mot} du plan.</span>`;
+    else {
+      h += `${mot} ${S.sel + 1}, décaler :</span>`;
+      const a = H ? "◀" : "▲", b = H ? "▶" : "▼";
+      for (let k = 1; k <= g.max; k++) {
+        h += `<button class="btn mini-btn" data-act="shift-do" data-k="${-k}">${a.repeat(k)} ${k}</button><button class="btn mini-btn" data-act="shift-do" data-k="${k}">${k} ${b.repeat(k)}</button>`;
+      }
+    }
+    return h + `<button class="btn lien mini-btn" data-act="shift-cancel">Annuler</button></div>`;
   }
 
   function panneauHTML() {
@@ -694,6 +887,7 @@
         <span class="chip" title="Sceaux : ouvrent une porte sans énigme">🗝 <b>${G.seals}</b> <em>sceau${G.seals > 1 ? "x" : ""}</em></span>
         <span class="chip" title="Temps bonus sur chaque énigme">⏳ <b>+${G.timeBonus}</b> <em>s</em></span>
       </div>
+      <div class="hud-items">${gemmesHTML()}</div>
     </div>
     <section class="carte">
       <h3>Vous êtes ici</h3>
@@ -732,6 +926,7 @@
       <main class="game">
         <div class="col-plateau">
           <div class="hud-mobile">${hudMobile()}</div>
+          ${barreDecalage()}
           <div class="plateau-cadre">
             <div class="etiquette haut">Chambre des Gardiens</div>
             ${plateauHTML()}
@@ -747,7 +942,7 @@
     const bas = G.steps <= 10;
     return `<span class="hm-steps${bas ? " bas" : ""}"><b>${G.steps}</b> pas</span>
       <span class="chip">🎲 <b>${G.dice}</b></span><span class="chip">🗝 <b>${G.seals}</b></span><span class="chip">⏳ <b>+${G.timeBonus}</b></span>
-      <span class="chip">📜 <b>${G.fragments}/${FRAGMENTS.length}</b></span>`;
+      <span class="chip">📜 <b>${G.fragments}/${FRAGMENTS.length}</b></span>${G.gems.length ? gemmesHTML() : ""}`;
   }
 
   function menuHTML() {
@@ -792,10 +987,11 @@
     const d = DIRS[P.d];
     const temps = (TEMPS_BASE[P.level] || 35) + G.timeBonus;
     const pips = "●".repeat(P.level) + "○".repeat(3 - P.level);
+    const T = THEMES[P.theme];
     afficherModale(`
       <p class="modal-sur">Porte du ${d.nom} ${d.fleche}</p>
       <h2>Une serrure sans clé</h2>
-      <p class="niveau">Difficulté <span class="pips">${pips}</span></p>
+      <p class="niveau"><span class="theme-tag" style="--t:${T.couleur}">${T.glyphe} ${T.nom}</span> Difficulté <span class="pips">${pips}</span></p>
       <p>Une seule tentative, ${temps} secondes. Si vous échouez, la porte est condamnée pour toute la partie.</p>
       <div class="boutons">
         <button class="btn principal" data-act="try">Tenter l'énigme</button>
@@ -817,18 +1013,20 @@
   function modaleEnigme() {
     const p = pz.puzzle;
     let corps;
+    const grand = p.grand ? `<p class="enonce suite">${esc(p.grand)}</p>` : "";
     if (p.kind === "num") {
-      corps = `<p class="enonce${p.label === "Suite logique" ? " suite" : ""}">${esc(p.text)}</p>
+      corps = `${p.consigne ? `<p class="consigne">${esc(p.consigne)}</p>` : ""}<p class="enonce${p.label === "Suite logique" ? " suite" : ""}${p.grille ? " grille" : ""}">${esc(p.text)}</p>
         <form class="reponse" data-form="num" autocomplete="off">
           <input id="champ" type="text" inputmode="numeric" pattern="-?[0-9]*" autocomplete="off" aria-label="Votre réponse" placeholder="?">
           <button class="btn principal" type="submit">Valider</button>
         </form>`;
     } else {
-      corps = `<p class="consigne">${esc(p.text)}</p>
+      corps = `<p class="consigne">${esc(p.text)}</p>${grand}
         <div class="choix">${p.options.map((o, i) => `<button class="btn choix-btn" data-act="mcq" data-v="${esc(o)}"><kbd>${i + 1}</kbd> ${esc(o)}</button>`).join("")}</div>`;
     }
+    const T = THEMES[p.theme];
     afficherModale(`
-      <p class="modal-sur">${esc(p.label)} · difficulté ${"●".repeat(p.level)}${"○".repeat(3 - p.level)}</p>
+      <p class="modal-sur"><span class="theme-tag" style="--t:${T.couleur}">${T.glyphe} ${T.nom}</span> ${esc(p.label)} · difficulté ${"●".repeat(p.level)}${"○".repeat(3 - p.level)}</p>
       <div class="chrono"><span id="chrono-barre"></span><span id="chrono-texte" class="chrono-texte"></span></div>
       ${corps}`, "enigme");
     majChrono();
@@ -856,11 +1054,12 @@
         const cotes = [0, 1, 2, 3].map((k) => (cd.doors.includes(k) ? { s: "gap" } : { s: "wall" }));
         const fx = cd.tpl.fx;
         return `<button class="carte-salle ${cd.tpl.kind}" data-act="pick" data-i="${i}">
-          <span class="mini">${salleSVG(cd.tpl, cotes, { entree: opp(D.d) })}</span>
+          <span class="mini">${salleSVG(cd.tpl, cotes, { entree: opp(D.d), theme: cd.theme })}</span>
           <span class="cs-nom">${esc(cd.tpl.nom)}</span>
           <span class="cs-desc">${esc(cd.tpl.desc)}</span>
           <span class="cs-fx">${esc(effetTexte(fx))}</span>
           <span class="cs-portes">${cd.sorties === 0 ? "Cul-de-sac" : cd.sorties + " sortie" + (cd.sorties > 1 ? "s" : "")}</span>
+          ${cd.theme ? `<span class="cs-theme theme-tag" style="--t:${THEMES[cd.theme].couleur}">${THEMES[cd.theme].glyphe} ${THEMES[cd.theme].nom}</span>` : ""}
         </button>`;
       })
       .join("");
@@ -871,7 +1070,7 @@
        <div class="boutons">
          <button class="btn" data-act="reroll"${G.dice < 1 ? " disabled" : ""}>🎲 Relancer (${G.dice})</button>
        </div>
-       <p class="note">Le haut de chaque plan est le nord. Le triangle rouge marque l'entrée ; les autres ouvertures sont les sorties possibles.</p>`,
+       <p class="note">Le haut de chaque plan est le nord. Le triangle rouge marque l'entrée ; les autres ouvertures sont les sorties. La couleur d'une salle est le thème des énigmes de ses portes de sortie.</p>`,
       "tirage-modal"
     );
   }
@@ -910,7 +1109,9 @@
         <li><b>Les portes sont scellées.</b> Une porte verrouillée pose une énigme chronométrée : calcul, suite logique, orthographe. Trois niveaux de difficulté, de plus en plus durs en montant.</li>
         <li><b>Une seule chance.</b> Rater ou laisser filer le temps condamne la porte pour toute la partie. Si vous résolvez l'énigme, vous choisissez <b>une salle parmi trois</b>.</li>
         <li><b>Le plan se construit.</b> La salle choisie est posée derrière la porte, avec ses propres portes. Certaines rapportent des pas, des dés, des sceaux, du temps, des fragments du carnet de Valcourt. D'autres coûtent cher.</li>
+        <li><b>Quatre thèmes, quatre couleurs.</b> Chiffres (bleu), Mots (rouge), Logique (vert), Symboles (or). La couleur d'une salle est le thème des énigmes de ses portes de sortie : en choisissant une salle, vous choisissez ce que vous affronterez ensuite.</li>
         <li><b>Dés et sceaux.</b> Un dé relance le tirage de trois salles. Un sceau ouvre une porte sans énigme.</li>
+        <li><b>Gemmes ↔ et ↕.</b> Une gemme décale toute une ligne (↔) ou toute une colonne (↕) du plan d'un cran, en bouclant : la salle qui sort d'un côté réapparaît de l'autre. Les gemmes rares vont jusqu'à deux crans. Le Vestibule, la Chambre et la ligne et la colonne où vous vous trouvez ne bougent pas. Après un décalage, les portes se recalculent : deux portes face à face forment un passage, une porte contre un mur devient un mur.</li>
         <li><b>Impasse :</b> si plus aucune porte n'est accessible, l'expédition est perdue.</li>
       </ol>
       <div class="boutons"><button class="btn principal" data-act="close">Compris</button></div>`, "regles");
@@ -966,7 +1167,7 @@
         break;
       case "after":
         if (pz && pz.fini) {
-          const ok = G.doors[edgeKey(G.pending.r, G.pending.c, G.pending.d)].status === "open";
+          const ok = G.grid[G.pending.r][G.pending.c].door[G.pending.d].status === "open";
           pz = null;
           if (ok) suiteApresPorte();
           else {
@@ -979,6 +1180,33 @@
         break;
       case "pick":
         choisir(parseInt(el.getAttribute("data-i"), 10));
+        break;
+      case "gem": {
+        if (!G || G.over || modalOpen()) break;
+        const i = parseInt(el.getAttribute("data-i"), 10);
+        G.shift = G.shift && G.shift.gi === i ? null : { gi: i, sel: null };
+        son("clic");
+        render();
+        break;
+      }
+      case "line":
+        if (G && G.shift) {
+          const i = parseInt(el.getAttribute("data-line"), 10);
+          if (ligneOk(G.gems[G.shift.gi].axe, i)) {
+            G.shift.sel = i;
+            son("clic");
+            render();
+          }
+        }
+        break;
+      case "shift-do":
+        if (G && G.shift) decaler(parseInt(el.getAttribute("data-k"), 10));
+        break;
+      case "shift-cancel":
+        if (G) {
+          G.shift = null;
+          render();
+        }
         break;
       case "reroll":
         relancer();
@@ -1001,11 +1229,18 @@
       if (ev.key === "Escape" && !enCours && !(G && G.draft) && !(G && G.over)) {
         if (G) G.pending = null;
         fermerModale();
-      } else if (pz && !pz.fini && pz.puzzle.kind === "mcq" && /^[1-3]$/.test(ev.key)) repondre(pz.puzzle.options[parseInt(ev.key, 10) - 1]);
+      } else if (pz && !pz.fini && pz.puzzle.kind === "mcq" && /^[1-4]$/.test(ev.key) && parseInt(ev.key, 10) <= pz.puzzle.options.length) repondre(pz.puzzle.options[parseInt(ev.key, 10) - 1]);
       else if (G && G.draft && /^[1-3]$/.test(ev.key)) choisir(parseInt(ev.key, 10) - 1);
       return;
     }
     if (!G || G.over) return;
+    if (G.shift) {
+      if (ev.key === "Escape") {
+        G.shift = null;
+        render();
+      }
+      return;
+    }
     const map = { ArrowUp: 0, w: 0, z: 0, ArrowRight: 1, d: 1, ArrowDown: 2, s: 2, ArrowLeft: 3, a: 3, q: 3 };
     if (ev.key in map) {
       ev.preventDefault();
@@ -1016,5 +1251,5 @@
   render();
 
   // Petit accès pour les essais dans la console du navigateur
-  window.SEUIL = { get partie() { return G; }, get enigme() { return pz && pz.puzzle; } };
+  window.SEUIL = { get partie() { return G; }, get enigme() { return pz && pz.puzzle; }, render: () => render(), gen: (l, t) => makePuzzle(l, t) };
 })();

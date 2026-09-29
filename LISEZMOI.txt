@@ -37,3 +37,4 @@ SEUIL (prototype) : un second jeu, dans le dossier seuil/
   chaque porte pose une énigme chronométrée, on choisit une salle parmi
   trois, les pas sont comptés. Il réutilise les images, sons et couleurs
   du Bureau (../img, ../audio). Fichiers : index.html, seuil.css, seuil.js.
+  Quatre thèmes d'énigmes (couleurs), gemmes ↔ et ↕ pour décaler le plan.

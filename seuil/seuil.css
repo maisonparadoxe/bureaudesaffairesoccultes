@@ -207,11 +207,39 @@ body.menu-mode #app { max-width: none; padding: 0; }
 .choix-btn { font-size: 22px; text-align: left; }
 .choix-btn kbd { font-family: var(--font-mono); font-size: 12px; color: var(--muted); margin-right: 8px; }
 
+/* Thèmes */
+.theme-tag {
+  display: inline-block; padding: 1px 8px; margin-right: 6px; border-radius: 2px; background: var(--t, #6E655A); color: #F3EBD6;
+  font-family: var(--font-mono); font-size: 11.5px; font-weight: 600; letter-spacing: 0.04em; text-transform: none;
+}
+.carte-salle .cs-theme { grid-area: theme; justify-self: start; margin: 4px 0 0; }
+.modal-sur .theme-tag { letter-spacing: 0; }
+.enonce.grille { font-size: 22px; white-space: pre-line; letter-spacing: 0.18em; line-height: 1.55; }
+
+/* Gemmes et décalage de lignes */
+.gem-btn { cursor: pointer; background: #E3D7B4; }
+.gem-btn:hover, .gem-btn.actif { border-color: var(--stamp-red); background: #F0DDA0; }
+.gem-btn b { font-size: 16px; }
+.gem-btn sup { font-size: 9px; color: var(--stamp-red); }
+.vide-chip { opacity: 0.75; }
+.shift-bar {
+  display: flex; flex-wrap: wrap; gap: 6px; align-items: center; justify-content: center; width: 100%; max-width: 420px;
+  margin-bottom: 8px; padding: 8px 10px; min-height: 92px; align-content: center; background: var(--paper); border: 2px solid var(--gold); border-radius: 3px;
+  box-shadow: 0 0 16px rgba(185, 139, 42, 0.4);
+}
+.shift-txt { font-family: var(--font-mono); font-size: 12.5px; flex-basis: 100%; text-align: center; }
+.mini-btn { font-size: 14px; padding: 6px 10px; min-height: 38px; }
+.board.shifting .cell.shift-ok { cursor: pointer; }
+.board.shifting .cell.shift-ok:hover { outline: 2px solid var(--gold); outline-offset: -2px; z-index: 3; }
+.board.shifting .cell.shift-sel { outline: 3px solid var(--gold); outline-offset: -3px; box-shadow: 0 0 18px rgba(185, 139, 42, 0.7); z-index: 3; }
+.board.shifting .cell.shift-no { opacity: 0.32; }
+.board.shifting .cell.current { box-shadow: none; }
+
 /* Tirage de trois salles */
 .tirage { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 @media (max-width: 620px) { .tirage { grid-template-columns: 1fr; } }
 .carte-salle {
-  display: grid; grid-template-columns: 96px 1fr; grid-template-areas: "mini nom" "mini desc" "mini fx" "mini portes";
+  display: grid; grid-template-columns: 96px 1fr; grid-template-areas: "mini nom" "mini desc" "mini fx" "mini portes" "mini theme";
   column-gap: 12px; row-gap: 2px; align-content: start; text-align: left; padding: 10px;
   background: var(--paper-dark); border: 2px solid var(--ink); border-radius: 3px; box-shadow: 0 3px 0 rgba(42, 38, 32, 0.4);
   color: var(--ink);
@@ -225,7 +253,7 @@ body.menu-mode #app { max-width: none; padding: 0; }
 .carte-salle.trap .cs-fx { color: var(--stamp-red); }
 .cs-portes { grid-area: portes; font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
 @media (min-width: 621px) {
-  .carte-salle { grid-template-columns: 1fr; grid-template-areas: "mini" "nom" "desc" "fx" "portes"; justify-items: start; }
+  .carte-salle { grid-template-columns: 1fr; grid-template-areas: "mini" "nom" "desc" "fx" "portes" "theme"; justify-items: start; }
   .carte-salle .mini { width: 100%; height: auto; aspect-ratio: 1; }
 }
 
