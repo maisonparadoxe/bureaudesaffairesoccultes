@@ -31,10 +31,3 @@ Après une modification des textes ou de la carte :
   node outils/verifier.js        (vérifie data.json et régénère data.js)
 
 Les anciennes versions des affaires sont gardées dans archives/.
-
-SEUIL (prototype) : un second jeu, dans le dossier seuil/
-  Ouvrir seuil/index.html. Un labyrinthe de portes façon Blue Prince :
-  chaque porte pose une énigme chronométrée, on choisit une salle parmi
-  trois, les pas sont comptés. Il réutilise les images, sons et couleurs
-  du Bureau (../img, ../audio). Fichiers : index.html, seuil.css, seuil.js.
-  Quatre thèmes d'énigmes (couleurs), gemmes ↔ et ↕ pour décaler le plan.
