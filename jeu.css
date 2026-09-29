@@ -425,6 +425,8 @@
   .clue-silence .clue-text, .clue-silence .clue-title, .une, .epilogue, .minitel-entry > div { animation: none !important; }
 }
 
+.mobile-tabbar { display: none; }
+
 /* ---------- Téléphone : barre latérale sous le contenu, jamais collante ---------- */
 @media (max-width: 760px) {
   .sidebar { position: static; }
@@ -434,6 +436,43 @@
   .city-map-wrap.map-secondaire { display: none; }
   .minitel-top { font-size: 10.5px; }
   .masthead-tools { width: 100%; justify-content: flex-end; }
+
+  /* Barre d'outils fixe : équipe, carnet, annuaire, minitel, carte, toujours
+     accessibles sans avoir à scroller jusqu'à la colonne de gauche. */
+  .mobile-tabbar {
+    display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 40;
+    background: var(--paper-dark);
+    border-top: 2px solid var(--ink);
+    box-shadow: 0 -4px 14px rgba(42, 38, 32, 0.18);
+    padding: 5px 2px calc(5px + env(safe-area-inset-bottom, 0px));
+  }
+  .tabbar-btn {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    background: none;
+    border: none;
+    color: var(--ink-soft);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    padding: 4px 2px;
+    border-radius: 6px;
+    line-height: 1.1;
+  }
+  .tabbar-icon { font-size: 19px; line-height: 1; }
+  .tabbar-btn.active { color: var(--stamp-red); background: rgba(154, 43, 37, 0.1); font-weight: bold; }
+  /* Espace pour que le dernier bloc de la page ne se cache pas sous la barre fixe */
+  body.has-tabbar #app { padding-bottom: 62px; }
 }
 
 .disc-label { min-width: 118px; margin-right: 6px; }

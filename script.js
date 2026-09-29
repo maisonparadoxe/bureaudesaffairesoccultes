@@ -632,6 +632,11 @@
 
   const CASE_VIEWS = ["quartier", "location", "journal", "annuaire", "minitel"];
 
+  // Vues où la barre d'outils fixe (mobile) a un sens : les écrans de
+  // l'enquête en cours, mais pas l'article (la banque de mots occupe déjà
+  // le bas d'écran là-bas) ni les écrans hors-enquête.
+  const MOBILE_TABBAR_VIEWS = CASE_VIEWS.concat(["equipe"]);
+
   const OUT_OF_CASE = ["menu", "prologue", "options", "credits", "citySelect", "caseSelect", "profile"];
 
   function render() {
@@ -640,6 +645,7 @@
     app.innerHTML = "";
     document.body.classList.toggle("menu-mode", state.view === "menu");
     document.body.classList.toggle("texte-grand", !!vis.grandTexte);
+    document.body.classList.toggle("has-tabbar", state.started && MOBILE_TABBAR_VIEWS.includes(state.view));
 
     if (state.view === "menu") {
       app.appendChild(renderMenu());
@@ -658,6 +664,8 @@
     else if (state.view === "ending") app.appendChild(renderEnding());
     else if (state.view === "profile") app.appendChild(renderProfile());
     else app.appendChild(renderMainGrid());
+
+    if (state.started && MOBILE_TABBAR_VIEWS.includes(state.view)) app.appendChild(renderMobileTabBar());
 
     app.appendChild(renderFootnote());
     syncAudio();
@@ -1534,6 +1542,87 @@
       }
     });
     return sidebar;
+  }
+
+  // Sur téléphone, une barre d'outils fixe en bas d'écran évite de devoir
+  // scroller jusqu'à la colonne de gauche à chaque fois qu'on veut changer
+  // d'outil ou revenir à la carte. Sur desktop, elle reste masquée (la
+  // colonne de gauche suffit).
+  const MOBILE_TABBAR_ITEMS = [
+    {
+      id: "carte",
+      icon: "🗺️",
+      label: "Carte",
+      match: (v) => v === "quartier" || v === "location",
+      go: () => {
+        state.view = "quartier";
+        render();
+        scrollToTop();
+      },
+    },
+    {
+      id: "equipe",
+      icon: "🧑‍🤝‍🧑",
+      label: "Équipe",
+      match: (v) => v === "equipe",
+      go: () => {
+        A.play("interface/page");
+        state.view = "equipe";
+        render();
+        scrollToPanel();
+      },
+    },
+    {
+      id: "journal",
+      icon: "📓",
+      label: "Carnet",
+      match: (v) => v === "journal",
+      go: () => {
+        A.play("outils/carnet-ouvrir");
+        state.view = "journal";
+        render();
+        scrollToPanel();
+      },
+    },
+    {
+      id: "annuaire",
+      icon: "📇",
+      label: "Annuaire",
+      match: (v) => v === "annuaire",
+      go: () => {
+        A.play("interface/page");
+        state.view = "annuaire";
+        render();
+        scrollToPanel();
+      },
+    },
+    {
+      id: "minitel",
+      icon: "☎️",
+      label: "Minitel",
+      match: (v) => v === "minitel",
+      go: () => {
+        state.view = "minitel";
+        A.play("outils/minitel-allumage");
+        A.play("outils/minitel-connexion", 600);
+        render();
+        scrollToPanel();
+      },
+    },
+  ];
+
+  function renderMobileTabBar() {
+    const bar = document.createElement("nav");
+    bar.className = "mobile-tabbar";
+    bar.setAttribute("aria-label", "Accès rapide");
+    MOBILE_TABBAR_ITEMS.forEach((item) => {
+      const b = document.createElement("button");
+      b.className = "tabbar-btn" + (item.match(state.view) ? " active" : "");
+      b.innerHTML = '<span class="tabbar-icon" aria-hidden="true">' + item.icon + '</span><span class="tabbar-label">' + item.label + "</span>";
+      b.addEventListener("click", item.go);
+      bar.appendChild(b);
+    });
+    return bar;
   }
 
   // ---------------- Panneau principal ----------------
