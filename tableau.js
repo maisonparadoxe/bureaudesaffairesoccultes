@@ -87,9 +87,10 @@
             if (next) g[t.id][v.id] = next;
             else delete g[t.id][v.id];
             if (next === "oui") {
-              // un rond barre le reste de sa ligne et de sa colonne
-              cat.valeurs.forEach((w) => w.id !== v.id && !g[t.id][w.id] && (g[t.id][w.id] = "non"));
-              pz.temoins.forEach((u) => u.id !== t.id && !g[u.id][v.id] && (g[u.id][v.id] = "non"));
+              // un rond barre le reste de sa ligne et de sa colonne,
+              // y compris un ancien rond (le joueur a changé d'avis)
+              cat.valeurs.forEach((w) => w.id !== v.id && (g[t.id][w.id] = "non"));
+              pz.temoins.forEach((u) => u.id !== t.id && (g[u.id][v.id] = "non"));
             }
             o.play(next === "non" ? "interface/rature" : "interface/crayon-note");
             say("");
@@ -163,17 +164,20 @@
 
     submit.addEventListener("click", () => {
       const choice = {};
-      let complete = !!st.menteur;
+      const manques = [];
       pz.categories.forEach((cat) => {
         choice[cat.id] = {};
         pz.temoins.forEach((t) => {
           const yes = cat.valeurs.filter((v) => st.grids[cat.id][t.id][v.id] === "oui");
-          if (yes.length !== 1) complete = false;
+          if (yes.length !== 1) manques.push(nom(t) + " (" + cat.nom.toLowerCase() + ")");
           else choice[cat.id][t.id] = yes[0].id;
         });
       });
-      if (!complete) {
-        say("Le tableau n'est pas fini : il faut un rond par ligne dans chaque grille, et désigner le menteur.");
+      if (manques.length || !st.menteur) {
+        const parts = [];
+        if (manques.length) parts.push("il manque un rond pour " + manques.join(", "));
+        if (!st.menteur) parts.push("il faut désigner le menteur");
+        say("Le tableau n'est pas fini : " + parts.join(" ; ") + ".");
         return;
       }
       const sol = pz.solution;
