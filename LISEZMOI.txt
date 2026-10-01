@@ -11,7 +11,7 @@ avec votre navigateur (double-clic). Pas besoin d'internet ni de serveur
 
 Fichiers du jeu, tous au même niveau que index.html :
   index.html, style.css, tags.css, carnet.css, jeu.css,
-  audio.js, script.js, data.js, data.json
+  audio.js, tableau.js, script.js, data.js, data.json
 Sons et images : dossiers audio/ et img/. La liste complète, avec les noms
 exacts et les formats, est dans assets-a-creer.md.
 

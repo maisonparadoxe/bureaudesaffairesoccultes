@@ -81,6 +81,18 @@ data.cities.filter((c) => c.status === "available").forEach((city) => {
       if (pz.type === "fragments" && !(pz.pieces || []).length) err(w, "aucun morceau");
       if (pz.type === "line" && !(pz.lines || []).some((l) => !l.qui)) err(w, "aucune ligne gagnante");
       if (pz.type === "code" && String(pz.code).length !== (pz.digits || 4)) err(w, "le code n'a pas le bon nombre de chiffres");
+      if (pz.type === "grille") {
+        const tem = (pz.temoins || []).map((t) => t.id);
+        const sol = pz.solution || {};
+        if (!tem.includes(sol.menteur)) err(w, "le menteur n'est pas un des témoins");
+        (pz.categories || []).forEach((cat) => {
+          const vals = (cat.valeurs || []).map((v) => v.id);
+          const pris = tem.map((t) => (sol[cat.id] || {})[t]);
+          if (vals.length !== tem.length) err(w, "« " + cat.id + " » n'a pas autant de valeurs que de témoins");
+          if (pris.some((v) => !vals.includes(v)) || new Set(pris).size !== tem.length) err(w, "la solution de « " + cat.id + " » n'attribue pas une valeur différente à chaque témoin");
+        });
+        if (!(pz.declarations || []).some((d) => d.qui === sol.menteur)) err(w, "le menteur ne dit rien");
+      }
       checkText(w, pz.result);
       checkFacts(w, pz.facts);
     });

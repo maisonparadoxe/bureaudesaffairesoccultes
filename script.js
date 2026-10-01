@@ -1952,6 +1952,9 @@
     instr.className = "puzzle-instructions";
     instr.textContent = pz.instructions;
     box.appendChild(instr);
+    // Grille : la première aide donne un indice, la seconde la solution
+    const hinted = pz.type === "grille" && state.puzzlesHelped.has(clue.puzzle);
+    if (hinted) box.innerHTML += '<p class="puzzle-help-text">' + escapeHtml(pz.help) + "</p>";
 
     const area = document.createElement("div");
     area.className = "puzzle-area";
@@ -1963,18 +1966,29 @@
     if (pz.type === "fragments") buildFragments(clue, pz, area, feedback);
     else if (pz.type === "line") buildLine(clue, pz, area, feedback);
     else if (pz.type === "code") buildCode(clue, pz, area, feedback);
+    else if (pz.type === "grille") buildGrille(clue, pz, area);
 
     const help = document.createElement("button");
     help.className = "puzzle-help";
-    help.textContent = state.leadsRemaining > 0 ? "Demander de l'aide à l'équipe (coûte une piste)" : "Plus de piste disponible pour demander de l'aide";
+    help.textContent =
+      state.leadsRemaining <= 0
+        ? "Plus de piste disponible pour demander de l'aide"
+        : pz.type === "grille" && !hinted
+          ? "Demander un indice à Karim (coûte une piste)"
+          : "Demander de l'aide à l'équipe (coûte une piste)";
     help.disabled = state.leadsRemaining <= 0;
     help.addEventListener("click", () => {
       if (state.leadsRemaining <= 0) return;
       const prevUsed = leadsUsed();
       state.leadsRemaining -= 1;
       afterLeadSpent(prevUsed);
-      state.puzzlesHelped.add(clue.puzzle);
       A.play("puzzles/aide");
+      if (pz.type === "grille" && !hinted) {
+        state.puzzlesHelped.add(clue.puzzle);
+        render();
+        return;
+      }
+      state.puzzlesHelped.add(clue.puzzle);
       solvePuzzle(clue);
     });
     box.appendChild(help);
@@ -2063,6 +2077,24 @@
       table.appendChild(row);
     });
     area.appendChild(table);
+  }
+
+  // Le tableau de Karim : grilles de recoupement, un témoin ment (tableau.js)
+  function buildGrille(clue, pz, area) {
+    if (!window.BAOTableau) return;
+    window.BAOTableau.build(area, pz, {
+      id: state.currentCaseId + ":" + clue.puzzle,
+      play: (name) => A.play(name),
+      onSolved: () => solvePuzzle(clue),
+      onWrong: () => {
+        // une mauvaise réponse fait perdre un créneau, sans rien bloquer
+        if (state.leadsRemaining <= 0) return;
+        const prevUsed = leadsUsed();
+        state.leadsRemaining -= 1;
+        afterLeadSpent(prevUsed);
+        render();
+      }
+    });
   }
 
   // Le coffre : quatre molettes

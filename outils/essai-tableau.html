@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Essai : le tableau de Karim</title>
+<base href="../">
+<link rel="icon" href="img/icone.png">
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="tags.css">
+<link rel="stylesheet" href="jeu.css">
+<style>
+  body { padding: 24px 16px 60px; }
+  .essai { max-width: 860px; margin: 0 auto; }
+  .essai-note { font-family: var(--font-mono); font-size: 12px; color: var(--muted); margin: 0 0 14px; }
+  .essai-compteur { font-family: var(--font-mono); font-size: 12.5px; color: var(--ink-soft); margin: 10px 0 0; }
+</style>
+</head>
+<body>
+<div class="essai">
+  <p class="essai-note">Page d'essai, hors du jeu. Nyons, « Le noyé de l'Ouvèze » : la confrontation du canal.</p>
+  <div id="essai"></div>
+  <p class="essai-compteur" id="compteur"></p>
+</div>
+
+<script src="audio.js"></script>
+<script src="tableau.js"></script>
+<script>
+// Données provisoires : elles iront dans data.json avec l'affaire de Nyons.
+const PZ = {
+  type: "grille",
+  title: "Le tableau de Karim",
+  instructions: "Mercredi 15 juin, vers 22 h. Un seul des quatre ment, et tout ce qu'il dit est faux. Touchez une case une fois pour une croix, deux fois pour un rond.",
+  help: "Karim : « Royer et la saisonnière disent tous les deux avoir eu la boule lyonnaise. Ils ne peuvent pas avoir raison tous les deux. »",
+  result: "Lucien Royer était sur la berge du canal, une lampe à la main, et il était venu s'expliquer avec le meunier. Il l'a caché. Hélène Garcin attendait quelqu'un au café des Arcades, avec les clés du moulin dans son sac.",
+  temoins: [
+    { id: "helene", nom: "Hélène Garcin", court: "Hélène", role: "la veuve" },
+    { id: "royer", nom: "Lucien Royer", court: "Royer", role: "l'homme de la photo" },
+    { id: "firmin", nom: "Firmin Achard", court: "Firmin", role: "joueur de boules" },
+    { id: "sandrine", nom: "Sandrine Mollet", court: "Sandrine", role: "saisonnière" }
+  ],
+  categories: [
+    { id: "lieu", nom: "Où, à 22 h", valeurs: [
+      { id: "canal", nom: "la berge du canal", court: "Canal" },
+      { id: "pont", nom: "le pont roman", court: "Pont roman" },
+      { id: "digue", nom: "le boulodrome de la Digue", court: "Digue" },
+      { id: "arcades", nom: "le café des Arcades", court: "Arcades" } ] },
+    { id: "objet", nom: "Avec quoi", valeurs: [
+      { id: "lampe", nom: "une lampe de poche", court: "Lampe" },
+      { id: "cles", nom: "les clés du moulin", court: "Clés" },
+      { id: "journal", nom: "le journal du jour", court: "Journal" },
+      { id: "boule", nom: "une boule lyonnaise", court: "Boule" } ] },
+    { id: "raison", nom: "Pourquoi dehors", valeurs: [
+      { id: "expliquer", nom: "venir s'expliquer avec quelqu'un", court: "S'expliquer" },
+      { id: "attendre", nom: "attendre quelqu'un", court: "Attendre" },
+      { id: "surveiller", nom: "surveiller quelqu'un", court: "Surveiller" },
+      { id: "chercher", nom: "chercher un objet perdu", court: "Chercher" } ] }
+  ],
+  declarations: [
+    { qui: "helene", texte: "J'ai passé la soirée au café des Arcades. Demandez à qui vous voulez." },
+    { qui: "royer", texte: "Le canal ? Je n'y ai pas mis les pieds de la soirée." },
+    { qui: "royer", texte: "J'avais mes boules avec moi, comme tous les soirs. Je ne les quitte pas." },
+    { qui: "royer", texte: "Si je suis sorti, c'est pour chercher une boule que j'avais oubliée sur la Digue. Rien d'autre." },
+    { qui: "firmin", texte: "Une lampe ? À mon âge, je connais chaque pierre de ce pays." },
+    { qui: "firmin", texte: "Je n'étais ni au bord de l'eau, ni sur la Digue." },
+    { qui: "firmin", texte: "Je ne cherchais rien, et je n'attendais personne." },
+    { qui: "sandrine", texte: "La boule lyonnaise, c'est moi qui l'avais. Je l'ai ramassée par terre, elle traînait." },
+    { qui: "sandrine", texte: "Madame Garcin n'avait pas le journal. Elle a fait suspendre l'abonnement après la photo, tout le monde le sait." }
+  ],
+  indices: [
+    { source: "Le cantonnier de la Digue", texte: "une femme seule près du boulodrome, vers 22 h." },
+    { source: "Les gendarmes", texte: "une lampe de poche retrouvée sur la berge du canal. Celui qui la tenait y était." },
+    { source: "Le serveur des Arcades", texte: "sa cliente de 22 h « a regardé la porte toute la soirée ». Elle attendait quelqu'un." },
+    { source: "La femme de ménage du meunier", texte: "il devait « s'expliquer avec quelqu'un, au canal, ce soir ». Celui qui était au canal venait s'expliquer." }
+  ],
+  solution: {
+    menteur: "royer",
+    lieu: { helene: "arcades", royer: "canal", firmin: "pont", sandrine: "digue" },
+    objet: { helene: "cles", royer: "lampe", firmin: "journal", sandrine: "boule" },
+    raison: { helene: "attendre", royer: "expliquer", firmin: "surveiller", sandrine: "chercher" }
+  }
+};
+
+const A = window.BAOAudio || { play() {} };
+let pistes = 0, indice = false, resolu = false;
+
+function afficher() {
+  const root = document.getElementById("essai");
+  root.innerHTML = "";
+  const box = document.createElement("div");
+  box.className = "puzzle puzzle-grille";
+  box.innerHTML = '<p class="puzzle-head">' + PZ.title + '</p>';
+  if (resolu) {
+    box.innerHTML += '<div class="puzzle-result"><p>' + PZ.result + '</p></div>';
+  } else {
+    box.innerHTML += '<p class="puzzle-instructions">' + PZ.instructions + '</p>';
+    if (indice) box.innerHTML += '<p class="puzzle-help-text">' + PZ.help + '</p>';
+    const area = document.createElement("div");
+    area.className = "puzzle-area";
+    box.appendChild(area);
+    BAOTableau.build(area, PZ, {
+      id: "essai",
+      play: (n) => A.play(n),
+      onSolved: () => { resolu = true; afficher(); },
+      onWrong: () => { pistes += 1; compteur(); }
+    });
+    const help = document.createElement("button");
+    help.className = "puzzle-help";
+    help.textContent = indice ? "Demander de l'aide à l'équipe (coûte une piste)" : "Demander un indice à Karim (coûte une piste)";
+    help.addEventListener("click", () => {
+      pistes += 1;
+      if (indice) resolu = true; else indice = true;
+      afficher();
+    });
+    box.appendChild(help);
+  }
+  root.appendChild(box);
+  compteur();
+}
+function compteur() {
+  document.getElementById("compteur").textContent = "Pistes dépensées pendant l'essai : " + pistes;
+}
+afficher();
+</script>
+</body>
+</html>
