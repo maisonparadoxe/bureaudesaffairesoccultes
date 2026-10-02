@@ -75,9 +75,10 @@ J'ai vérifié par programme qu'il n'existe qu'une seule solution et un seul men
 
 ## À l'écran
 
-- Le **tableau de Karim** s'ouvre depuis le Carnet. Il compte trois petites grilles de 4×4 (témoins × lieux, témoins × objets, témoins × raisons). Elles tiennent en largeur sur un téléphone, empilées l'une sous l'autre. On touche une case pour mettre une croix, et une deuxième fois pour un rond.
+- Le **tableau de Karim** s'ouvre depuis le Carnet. Il compte trois petites grilles de 4×4 (témoins × lieux, témoins × objets, témoins × raisons). Elles tiennent en largeur sur un téléphone, empilées l'une sous l'autre. **Elles servent de brouillon et ne sont jamais vérifiées.**
+- Pour conclure, **Paul pose trois questions**, avec un choix par question : qui ment ? où était-il à 22 h ? qu'avait Hélène Garcin dans son sac ? (réponses : Royer, le canal, les clés du moulin). On touche une case pour mettre une croix, et une deuxième fois pour un rond.
 - Les déclarations et les indices matériels s'affichent au-dessus, avec les couleurs habituelles.
-- Pour valider, le joueur désigne le menteur et remplit la soirée. Une erreur ne bloque rien : Paul répond « Admettons. » et l'équipe perd un créneau.
+- Une erreur ne bloque rien : Paul répond « Admettons. » et l'équipe perd un créneau (une piste).
 - **Une aide existe** et coûte une piste, comme pour les puzzles de Saint-Étienne. Elle donne l'étape 1 du raisonnement.
 - **Une bonne réponse** débloque « Revenir voir Lucien Royer » (on le confronte à son mensonge) et ajoute les clés du moulin au Carnet comme pièce.
 

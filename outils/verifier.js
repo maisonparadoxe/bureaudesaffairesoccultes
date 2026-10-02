@@ -92,6 +92,14 @@ data.cities.filter((c) => c.status === "available").forEach((city) => {
           if (pris.some((v) => !vals.includes(v)) || new Set(pris).size !== tem.length) err(w, "la solution de « " + cat.id + " » n'attribue pas une valeur différente à chaque témoin");
         });
         if (!(pz.declarations || []).some((d) => d.qui === sol.menteur)) err(w, "le menteur ne dit rien");
+        if (!(pz.questions || []).length) err(w, "Paul ne pose aucune question");
+        (pz.questions || []).forEach((q) => {
+          const choix =
+            q.choix === "temoins" ? tem
+            : Array.isArray(q.choix) ? q.choix.map((c) => c.id)
+            : ((pz.categories || []).find((c) => c.id === q.choix) || { valeurs: [] }).valeurs.map((v) => v.id);
+          if (!choix.includes(q.reponse)) err(w, "la réponse à « " + q.texte + " » ne fait pas partie des choix");
+        });
       }
       checkText(w, pz.result);
       checkFacts(w, pz.facts);

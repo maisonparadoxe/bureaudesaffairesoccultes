@@ -31,7 +31,7 @@
 const PZ = {
   type: "grille",
   title: "Le tableau de Karim",
-  instructions: "Mercredi 15 juin, vers 22 h. Un seul des quatre ment, et tout ce qu'il dit est faux. Touchez une case une fois pour une croix, deux fois pour un rond.",
+  instructions: "Mercredi 15 juin, vers 22 h. Un seul des quatre ment, et tout ce qu'il dit est faux. Les grilles sont votre brouillon : touchez une case une fois pour une croix, deux fois pour un rond. Seules vos réponses à Paul comptent.",
   help: "Karim : « Royer et la saisonnière disent tous les deux avoir eu la boule lyonnaise. Ils ne peuvent pas avoir raison tous les deux. »",
   result: "Lucien Royer était sur la berge du canal, une lampe à la main, et il était venu s'expliquer avec le meunier. Il l'a caché. Hélène Garcin attendait quelqu'un au café des Arcades, avec les clés du moulin dans son sac.",
   temoins: [
@@ -73,6 +73,11 @@ const PZ = {
     { source: "Les gendarmes", texte: "une lampe de poche retrouvée sur la berge du canal. Celui qui la tenait y était." },
     { source: "Le serveur des Arcades", texte: "sa cliente de 22 h « a regardé la porte toute la soirée ». Elle attendait quelqu'un." },
     { source: "La femme de ménage du meunier", texte: "il devait « s'expliquer avec quelqu'un, au canal, ce soir ». Celui qui était au canal venait s'expliquer." }
+  ],
+  questions: [
+    { id: "menteur", texte: "Qui ment ?", choix: "temoins", reponse: "royer" },
+    { id: "lieu_menteur", texte: "Où était le menteur à 22 h ?", choix: "lieu", reponse: "canal" },
+    { id: "sac_helene", texte: "Qu'avait Hélène Garcin dans son sac ?", choix: "objet", reponse: "cles" }
   ],
   solution: {
     menteur: "royer",
