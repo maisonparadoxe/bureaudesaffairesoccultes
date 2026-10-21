@@ -714,6 +714,78 @@
 
     app.appendChild(renderFootnote());
     syncAudio();
+    phoneSync();
+  }
+
+  // ---------------------------------------------------------------
+  // Le téléphone comme manette (telephone.js) : le jeu lui dit quoi afficher
+  // ---------------------------------------------------------------
+  let activeChase = null;
+
+  function phoneSync() {
+    const P = window.BAOPhone;
+    if (!P || !P.connected()) return;
+    const cs = state.started ? currentCase() : null;
+    const inCase = cs && (CASE_VIEWS.includes(state.view) || state.view === "equipe");
+    const chase = activeChase && activeChase.area.isConnected && !state.choices[activeChase.clue.puzzle] ? activeChase : null;
+    const etat = {
+      lang: L.lang,
+      mode: !inCase ? "attente" : chase ? "poursuite" : state.view === "minitel" ? "minitel" : "enquete",
+      labels: {
+        attenteTitre: t("En attente de l'enquête"),
+        attenteTexte: t("Gardez cette page ouverte. Votre téléphone se transformera pendant l'enquête."),
+        pistes: t("pistes avant le bouclage"),
+        plan: t("Le plan de la ville"),
+        telecommande: t("Votre téléphone suit l'enquête."),
+        annuaire: t("Annuaire électronique"),
+        nom: t("Nom à chercher"),
+        deconnexion: t("Déconnexion"),
+        localite: "LOCALITÉ : " + ((cs && cs.localite) || ""),
+        invite: t("Tapez un nom, puis ENVOI.")
+      }
+    };
+    if (inCase) {
+      const ck = clockInfo();
+      const loc = state.view === "location" && locationById(state.selectedLocationId);
+      etat.enquete = { affaire: cs.title, horloge: ck ? ck.label : "", pistes: state.leadsRemaining, lieu: loc ? loc.name : "" };
+    }
+    if (etat.mode === "minitel") {
+      const last = state.minitelLog[0];
+      etat.minitel = { lignes: last ? last.lines : [], trouve: !!(last && last.found) };
+    }
+    if (chase) {
+      const pz = chase.pz;
+      etat.poursuite = {
+        titre: pz.title,
+        consigne: pz.instructions,
+        depart: t("Il se relève…"),
+        demarre: !!chase.end,
+        resteMs: chase.end ? Math.max(0, chase.end - Date.now()) : chase.total,
+        totalMs: chase.total,
+        options: pz.options.map((o) => ({ id: o.id, label: o.label, cout: o.cost ? t("coûte {n} pistes", { n: o.cost }) : "" }))
+      };
+    }
+    P.sync(etat);
+  }
+
+  if (window.BAOPhone) {
+    window.BAOPhone.onStatus(() => {
+      // le bouton des outils change de nom ; pas de nouveau rendu pendant une poursuite en cours
+      if (state.started && CASE_VIEWS.includes(state.view) && !(activeChase && activeChase.end && activeChase.area.isConnected)) render();
+      else phoneSync();
+    });
+    window.BAOPhone.onGesture((g) => {
+      if (!state.started) return;
+      if (g.kind === "minitel-ouvrir" && state.view !== "minitel") openMinitel();
+      else if (g.kind === "minitel-frappe") {
+        const inp = document.querySelector(".minitel-form input");
+        if (inp) inp.value = String(g.texte || "").slice(0, 30);
+        A.playOneOf(["outils/minitel-touche-1", "outils/minitel-touche-2", "outils/minitel-touche-3"]);
+      } else if (g.kind === "minitel-envoi" && state.view === "minitel") minitelSubmit(String(g.texte || "").slice(0, 30));
+      else if (g.kind === "minitel-fermer" && state.view === "minitel") minitelClose();
+      else if (g.kind === "poursuite-depart" && activeChase && activeChase.area.isConnected) activeChase.start();
+      else if (g.kind === "poursuite-choix" && activeChase && activeChase.end) activeChase.choose(String(g.id));
+    });
   }
 
   function syncAudio() {
@@ -1583,13 +1655,10 @@
       render();
       scrollToPanel();
     });
-    button("annuaire-btn minitel-btn", "Minitel · 3611", () => {
-      state.view = "minitel";
-      A.play("outils/minitel-allumage");
-      A.play("outils/minitel-connexion", 600);
-      render();
-      scrollToPanel();
-    });
+    button("annuaire-btn minitel-btn", "Minitel · 3611", openMinitel);
+    if (window.BAOPhone)
+      button("annuaire-btn manette-btn" + (window.BAOPhone.connected() ? " manette-reliee" : ""),
+        window.BAOPhone.connected() ? t("Téléphone relié") : t("Relier un téléphone"), () => window.BAOPhone.open());
 
     const legend = document.createElement("div");
     legend.innerHTML = colorLegendHTML();
@@ -2206,9 +2275,12 @@
     start.className = "poursuite-depart";
     start.textContent = t("Il se relève…");
     area.appendChild(start);
+    const chase = { clue: clue, pz: pz, area: area, end: 0, total: seconds * 1000, start: () => start.click(), choose: (id) => choose(pz.options.find((o) => o.id === id)) };
+    activeChase = chase;
     const choose = (opt) => {
-      if (state.choices[clue.puzzle]) return;
+      if (!opt || state.choices[clue.puzzle]) return;
       clearInterval(timer);
+      if (activeChase === chase) activeChase = null;
       state.choices[clue.puzzle] = opt.id;
       if (opt.cost) {
         const prevUsed = leadsUsed();
@@ -2219,7 +2291,9 @@
     };
     let timer = null;
     start.addEventListener("click", () => {
+      if (chase.end) return;
       start.remove();
+      chase.end = Date.now() + seconds * 1000;
       A.play("interface/horloge");
       const bar = document.createElement("div");
       bar.className = "poursuite-temps";
@@ -2235,11 +2309,11 @@
         row.appendChild(b);
       });
       area.appendChild(row);
-      const end = Date.now() + seconds * 1000;
       timer = setInterval(() => {
         if (!area.isConnected) return clearInterval(timer);
-        if (Date.now() >= end) choose(pz.options.find((o) => o.id === pz.timeout) || pz.options[0]);
+        if (Date.now() >= chase.end) choose(pz.options.find((o) => o.id === pz.timeout) || pz.options[0]);
       }, 200);
+      phoneSync();
     });
   }
 
@@ -2335,34 +2409,7 @@
     input.addEventListener("input", () => A.playOneOf(["outils/minitel-touche-1", "outils/minitel-touche-2", "outils/minitel-touche-3"]));
     form.addEventListener("submit", (e) => {
       e.preventDefault();
-      const query = input.value;
-      if (!query.trim()) return;
-      A.play("outils/minitel-envoi");
-      const i = minitelSearch(query);
-      const before = snapshot();
-      let lines;
-      let found = false;
-      if (i < 0) {
-        lines = ["> " + query.toUpperCase(), t("AUCUN ABONNÉ NE CORRESPOND"), t("À VOTRE DEMANDE.")];
-        A.play("outils/minitel-rien", 500);
-      } else {
-        const entry = currentCase().minitel[i];
-        lines = ["> " + query.toUpperCase()].concat(entry.lines);
-        found = (entry.reveals || []).length > 0;
-        state.minitelFound.add(i);
-        if (found && entry.about && !before.k[entry.about[0]].has(entry.about.slice(2))) {
-          found = false;
-          lines.push(t("(Ce nom n'apparaît nulle part dans votre dossier.)"));
-        }
-        A.play("outils/minitel-resultat", 500);
-      }
-      const after = snapshot();
-      const d = diff(before, after);
-      state.minitelLog.unshift({ lines: lines, found: found, d: d });
-      state.minitelLog = state.minitelLog.slice(0, 4);
-      render();
-      const inp = document.querySelector(".minitel-form input");
-      if (inp) inp.focus();
+      minitelSubmit(input.value);
     });
     screen.appendChild(form);
     wrap.appendChild(screen);
@@ -2377,17 +2424,59 @@
     const close = document.createElement("button");
     close.className = "end-early-btn minitel-close";
     close.textContent = t("Déconnexion");
-    close.addEventListener("click", () => {
-      A.play("outils/minitel-deconnexion");
-      state.view = state.selectedLocationId ? "location" : "quartier";
-      render();
-    });
+    close.addEventListener("click", minitelClose);
     wrap.appendChild(close);
     setTimeout(() => {
       const inp = wrap.querySelector("input");
-      if (inp) inp.focus();
+      if (inp && !(window.BAOPhone && window.BAOPhone.connected())) inp.focus();
     }, 50);
     return wrap;
+  }
+
+  function openMinitel() {
+    state.view = "minitel";
+    A.play("outils/minitel-allumage");
+    A.play("outils/minitel-connexion", 600);
+    render();
+    scrollToPanel();
+  }
+
+  function minitelClose() {
+    A.play("outils/minitel-deconnexion");
+    state.view = state.selectedLocationId ? "location" : "quartier";
+    render();
+  }
+
+  // Une recherche au Minitel (depuis le clavier de l'ordinateur ou du téléphone)
+  function minitelSubmit(query) {
+    if (!query || !query.trim()) return;
+    A.play("outils/minitel-envoi");
+    const i = minitelSearch(query);
+    const before = snapshot();
+    let lines;
+    let found = false;
+    if (i < 0) {
+      lines = ["> " + query.toUpperCase(), t("AUCUN ABONNÉ NE CORRESPOND"), t("À VOTRE DEMANDE.")];
+      A.play("outils/minitel-rien", 500);
+    } else {
+      const entry = currentCase().minitel[i];
+      lines = ["> " + query.toUpperCase()].concat(entry.lines);
+      found = (entry.reveals || []).length > 0;
+      state.minitelFound.add(i);
+      if (found && entry.about && !before.k[entry.about[0]].has(entry.about.slice(2))) {
+        found = false;
+        lines.push(t("(Ce nom n'apparaît nulle part dans votre dossier.)"));
+      }
+      A.play("outils/minitel-resultat", 500);
+    }
+    const after = snapshot();
+    const d = diff(before, after);
+    state.minitelLog.unshift({ lines: lines, found: found, d: d });
+    state.minitelLog = state.minitelLog.slice(0, 4);
+    render();
+    if (window.BAOPhone) window.BAOPhone.fx({ kind: "minitel-resultat", trouve: found });
+    const inp = document.querySelector(".minitel-form input");
+    if (inp && !(window.BAOPhone && window.BAOPhone.connected())) inp.focus();
   }
 
   // ---------------------------------------------------------------

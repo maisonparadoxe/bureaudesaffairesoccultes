@@ -13,6 +13,9 @@ Fichiers du jeu, tous au même niveau que index.html :
   index.html, style.css, tags.css, carnet.css, jeu.css,
   audio.js, i18n.js, tableau.js, portrait.js, script.js,
   data.js, data.json, data-en.js, data-en.json
+Le téléphone comme manette (facultatif) : telephone.js côté jeu,
+  manette.html, manette.css, manette.js côté téléphone. Ne marche que
+  depuis la version en ligne (GitHub Pages ou itch.io), pas en fichier local.
 Sons et images : dossiers audio/ et img/. La liste complète, avec les noms
 exacts et les formats, est dans assets-a-creer.md.
 
