@@ -1,0 +1,4520 @@
+=== gameTitle #fe15d08f
+Bureau of Occult Affairs
+
+=== credits/0/title #d733fc39
+A game by
+
+=== credits/0/lines/0 #bfc258f1
+Maison Paradoxe
+
+=== prologue/entete #93af0149
+Groupe Sarrazin · Head Office · 14, cours Lafayette · Lyon
+
+=== prologue/date #11ef3c4a
+Lyon, 4 October 1993
+
+=== prologue/de #d6c46046
+Jean-Loup Sarrazin, Chairman and Chief Executive
+
+=== prologue/a #1ea9246a
+Paul Moreau
+
+=== prologue/copie #c6c33269
+Yves Barral, Karim Haddou, Odile Perrichon
+
+=== prologue/objet #8dc5591e
+Launch of the “Occult Affairs” page
+
+=== prologue/corps/0 #8e546b98
+Paul,
+
+=== prologue/corps/1 #7ef4bf8b
+Our surveys are unanimous: the Saturday reader wants mystery. From 6 November, all fourteen of our dailies will carry a shared page every Saturday, “Occult Affairs”: haunted houses, faith healers, unexplained phenomena. The concept is simple, the readership is broad.
+
+=== prologue/corps/2 #ae2388df
+You will be in charge of it. You will have the old archive room on the fourth floor, Yves Barral for the photographs, and Karim Haddou, an intern, who volunteered. Odile Perrichon, in the archives, remains at your disposal.
+
+=== prologue/corps/3 #3144be23
+Each week you will go wherever our readers report something strange. The local newsroom will put you up. The page goes to press on Thursdays at 6 p.m. Expense claims will be examined one by one.
+
+=== prologue/corps/4 #bf9e6793
+I am counting on you to give me ghosts, not politics. Are we agreed?
+
+=== prologue/signature #04b98ef6
+J.-L. S.
+
+=== prologue/annotation #70f17939
+Granted. P. M.
+
+=== prologue/equipe/paul/nom #1ea9246a
+Paul Moreau
+
+=== prologue/equipe/paul/role #a7ae039d
+Head of the Bureau
+
+=== prologue/equipe/paul/texte #73384299
+Ten years on the crime and courts desk. Sidelined in 1991, after an article the group had to retract. He never believed in that retraction.
+
+=== prologue/equipe/yves/nom #d991128f
+Yves Barral
+
+=== prologue/equipe/yves/role #f65b0541
+Photographer
+
+=== prologue/equipe/yves/texte #ddd58b4c
+Twenty-five years with the Paris agencies. Trusts nothing but his negatives, and notices the faces that keep coming back.
+
+=== prologue/equipe/karim/nom #25cec3d9
+Karim Haddou
+
+=== prologue/equipe/karim/role #c09771fc
+Intern
+
+=== prologue/equipe/karim/texte #863d9d83
+Fresh out of journalism school in Lille. Reads everything about unexplained phenomena, and half believes it.
+
+=== prologue/equipe/odile/nom #bc5223c0
+Odile Perrichon
+
+=== prologue/equipe/odile/role #310ac0be
+Archivist
+
+=== prologue/equipe/odile/texte #c7a3e9ef
+In the group's archives since 1964. Remembers everything, including who was made to keep quiet.
+
+=== prologue/vous #772d588c
+You are the team. You choose where to go, whom to question, and what gets printed.
+
+=== villes/saint_etienne #98edebe9
+Saint-Étienne
+
+=== feu_ferreol/title #fe01d6bb
+The Fire at Ferréol
+
+=== feu_ferreol/subtitle #b07a3ac3
+A case for the Bureau of Occult Affairs
+
+=== feu_ferreol/intro #1a66f9b3
+Thursday 18 November 1993, fourth floor of head office, Lyon.
+
+The letter came with the morning post, between two flying saucers over the Vercors and a subscriber who sees the Virgin Mary in a damp stain. Karim set it aside. Brown envelope, Saint-Étienne postmark, Monday the 15th. Block capitals in ballpoint, pressed so hard the pen nearly went through the paper.
+
+{{d:lettre_fantome|“TO THE NEWSPAPER. FOR A MONTH NOW THE FIRE HAS BEEN BACK IN THE FERRÉOL FORGE. YOU CAN SEE IT AT NIGHT FROM RUE DE LA MONTAT, RED, LIKE IN THE DAYS OF THE CASTINGS. IT IS THE FOUNDRYMAN FROM 1911. THEY LEFT HIM IN THE IRON AND CAST THE PIECE ANYWAY. HE COMES BACK EVERY TIME SOMEONE TOUCHES THE WORKS. FERRÉOL WILL NOT BE A CAR PARK. THERE WILL BE MORE DEATHS. AN OLD FERRÉOL HAND.”}}
+
+At ten o'clock, Odile comes down with that day's Stéphanois, folded open at the local news. {{p:faure|Bernard Faure}}, 52, project officer in the planning department at the {{l:mairie|town hall}}, found dead on Wednesday morning at the foot of a staircase in the old {{l:site_ferreol|Ferréol Works}}. The {{l:commissariat|police}} have concluded it was an accidental fall. Fourteen lines, no photo.
+
+Jean-Loup Sarrazin has read both over Odile's shoulder. “A ghost announces a death, and the death arrives. That's a page. Are we agreed?”
+
+Paul folds the letter in four and slips it into his raincoat pocket. “Granted.”
+
+That same evening, you set up in an empty office at the {{l:redaction|Stéphanois newsroom}}, on rue de la République. The radiator makes more noise than heat.
+
+=== feu_ferreol/introNotes/0/text #47bb72ca
+Found dead on the morning of Wednesday 17 November, at the foot of a staircase at Ferréol. The police concluded it was an accidental fall.
+
+=== feu_ferreol/introNotes/0/label #f1411412
+Official version
+
+=== feu_ferreol/introNotes/1/text #a5b2ca84
+Posted in Saint-Étienne on Monday 15 November, the day before Faure died. Signed “an old Ferréol hand”.
+
+=== feu_ferreol/introNotes/2/text #f5bf8c13
+According to the letter, a “fire” has been glowing there at night for a month, and a foundryman died there in 1911.
+
+=== feu_ferreol/introNotes/2/label #13b87d97
+The legend
+
+=== feu_ferreol/briefing #04ee800e
+Carry out interviews and investigations. Each lead you read for the first time costs one hour before the deadline, and you only have 20; rereading is free. A place only appears on the map once someone has told you about it. Some addresses have to be looked up on the Minitel. Some people will only talk if you come back with the right piece of evidence. When you are ready, write your article: everything depends on it.
+
+=== feu_ferreol/quartiers/centre/name #4a066139
+Town Centre
+
+=== feu_ferreol/quartiers/chateaucreux/name #986dc524
+Châteaucreux
+
+=== feu_ferreol/quartiers/tarentaize/name #bda24310
+Tarentaize
+
+=== feu_ferreol/quartiers/soleil/name #b0e50775
+Le Soleil
+
+=== feu_ferreol/quartiers/zone_industrielle/name #d2e7fc6b
+La Rivière
+
+=== feu_ferreol/quartiers/montreynaud/name #ea392532
+Montreynaud
+
+=== feu_ferreol/quartiers/vallee_gier/name #6a0908b4
+Gier Valley
+
+=== feu_ferreol/quartiers/bellevue/name #53c9bf35
+Bellevue
+
+=== feu_ferreol/locations/redaction/name #cd24c6fd
+Le Stéphanois newsroom
+
+=== feu_ferreol/locations/redaction/address #195ac235
+12 rue de la République
+
+=== feu_ferreol/locations/redaction/inArticle #c91cce06
+at the Stéphanois newsroom
+
+=== feu_ferreol/locations/mairie/name #bed9fcf4
+Town Hall, Planning Department
+
+=== feu_ferreol/locations/mairie/address #56c73015
+Place de l'Hôtel de Ville
+
+=== feu_ferreol/locations/mairie/inArticle #235c239a
+at the town hall
+
+=== feu_ferreol/locations/cabinet_vallenot/name #970f2df9
+Groupe Vallenot offices
+
+=== feu_ferreol/locations/cabinet_vallenot/address #f7329116
+3 avenue de la Libération
+
+=== feu_ferreol/locations/cabinet_vallenot/inArticle #4cfea72d
+at the Vallenot offices
+
+=== feu_ferreol/locations/commissariat/name #328f2b88
+Central Police Station
+
+=== feu_ferreol/locations/commissariat/address #0d783aa8
+Rue Charles de Gaulle
+
+=== feu_ferreol/locations/commissariat/inArticle #13c925a4
+at the central police station
+
+=== feu_ferreol/locations/cabinet_lacour/name #b9aa811b
+Dr Lacour's surgery
+
+=== feu_ferreol/locations/cabinet_lacour/address #8208cb85
+Cours Fauriel
+
+=== feu_ferreol/locations/cabinet_lacour/inArticle #e398c62a
+at Dr Lacour's surgery
+
+=== feu_ferreol/locations/consigne_gare/name #e5804a4c
+Châteaucreux station left luggage
+
+=== feu_ferreol/locations/consigne_gare/address #07f9bd9d
+Gare de Châteaucreux
+
+=== feu_ferreol/locations/consigne_gare/short #1db25ef5
+Left luggage
+
+=== feu_ferreol/locations/consigne_gare/inArticle #cde5913e
+at the station left luggage office
+
+=== feu_ferreol/locations/domicile_faure/name #cbfda939
+The Faures' home
+
+=== feu_ferreol/locations/domicile_faure/address #3b0742a2
+8 rue des Creuses
+
+=== feu_ferreol/locations/domicile_faure/inArticle #2e212f00
+at the Faures' home
+
+=== feu_ferreol/locations/site_ferreol/name #f6980d0a
+The old Ferréol Works
+
+=== feu_ferreol/locations/site_ferreol/address #016187c8
+Impasse des Fondeurs
+
+=== feu_ferreol/locations/site_ferreol/inArticle #29d89319
+at the old Ferréol Works
+
+=== feu_ferreol/locations/cheval_noir/name #7ec0dbfb
+Le Cheval Noir café
+
+=== feu_ferreol/locations/cheval_noir/address #49840b2d
+45 rue de la Montat
+
+=== feu_ferreol/locations/cheval_noir/inArticle #3b7b0504
+at the Cheval Noir
+
+=== feu_ferreol/locations/siege_ferrand/name #20b19524
+Ferrand Frères Construction
+
+=== feu_ferreol/locations/siege_ferrand/address #3aaa31a2
+La Rivière industrial estate
+
+=== feu_ferreol/locations/siege_ferrand/inArticle #bd1618bc
+at Ferrand Frères
+
+=== feu_ferreol/locations/cite_mounier/name #d92cb067
+Montreynaud estate, Mounier's flat
+
+=== feu_ferreol/locations/cite_mounier/address #94d69b95
+Tower 9, Montreynaud estate
+
+=== feu_ferreol/locations/cite_mounier/short #e8f08307
+Mounier's flat
+
+=== feu_ferreol/locations/cite_mounier/inArticle #e4b220d3
+on the Montreynaud estate
+
+=== feu_ferreol/locations/casse_berthet/name #34398e65
+Berthet scrapyard
+
+=== feu_ferreol/locations/casse_berthet/address #4960e731
+Chemin du Gier, Rive-de-Gier
+
+=== feu_ferreol/locations/casse_berthet/short #34398e65
+Berthet scrapyard
+
+=== feu_ferreol/locations/casse_berthet/inArticle #1b4c1199
+at the Berthet scrapyard
+
+=== feu_ferreol/locations/decharge/name #77a12894
+Croix-de-l'Orme licensed landfill
+
+=== feu_ferreol/locations/decharge/address #ed82d726
+Route de la Croix-de-l'Orme
+
+=== feu_ferreol/locations/decharge/short #e8298858
+Landfill
+
+=== feu_ferreol/locations/decharge/inArticle #5d4c810c
+at the Croix-de-l'Orme landfill
+
+=== feu_ferreol/locations/parking_relais/name #1dca00c1
+Park-and-ride building site
+
+=== feu_ferreol/locations/parking_relais/address #a6d66b98
+Boulevard Thiers
+
+=== feu_ferreol/locations/parking_relais/short #278b119c
+Park-and-ride
+
+=== feu_ferreol/locations/parking_relais/inArticle #cbbfc164
+at the park-and-ride building site
+
+=== feu_ferreol/characters/faure/name #4c3a6eda
+Faure Bernard
+
+=== feu_ferreol/characters/faure/label #1a0a263c
+Bernard Faure
+
+=== feu_ferreol/characters/faure/role #cc3b2a54
+Planning project officer (the victim)
+
+=== feu_ferreol/characters/colette/name #dc57e509
+Faure Colette
+
+=== feu_ferreol/characters/colette/label #55d80c1b
+Colette Faure
+
+=== feu_ferreol/characters/colette/role #858a7d56
+Bernard Faure's widow
+
+=== feu_ferreol/characters/ferrand/name #f5ed02ec
+Ferrand Roger
+
+=== feu_ferreol/characters/ferrand/label #92a4f237
+Roger Ferrand
+
+=== feu_ferreol/characters/ferrand/role #b4960090
+Manager of Ferrand Frères Construction
+
+=== feu_ferreol/characters/simone/name #11c449b5
+Ferrand Simone
+
+=== feu_ferreol/characters/simone/label #5aba3597
+Simone Ferrand
+
+=== feu_ferreol/characters/simone/role #7bdb4e5d
+Roger Ferrand's wife, the firm's bookkeeper
+
+=== feu_ferreol/characters/vallenot/name #ee6cf6b4
+Vallenot Hervé
+
+=== feu_ferreol/characters/vallenot/label #6509509a
+Hervé Vallenot
+
+=== feu_ferreol/characters/vallenot/role #925739a1
+Property developer, chairman of Groupe Vallenot
+
+=== feu_ferreol/characters/roussillon/name #80ce2230
+Roussillon Marcel
+
+=== feu_ferreol/characters/roussillon/label #6a367ad3
+Marcel Roussillon
+
+=== feu_ferreol/characters/roussillon/role #f233650f
+Deputy mayor for planning
+
+=== feu_ferreol/characters/bensaid/name #c3a11398
+Bensaïd Ahmed
+
+=== feu_ferreol/characters/bensaid/label #9e20544b
+Ahmed Bensaïd
+
+=== feu_ferreol/characters/bensaid/role #6c4402ba
+Night watchman at the Ferréol site
+
+=== feu_ferreol/characters/chaptal/name #9a22c0b3
+Chaptal Marcel
+
+=== feu_ferreol/characters/chaptal/label #3c6b2c22
+Marcel Chaptal
+
+=== feu_ferreol/characters/chaptal/role #11bbb25c
+Former CGT union rep at the forge
+
+=== feu_ferreol/characters/jeannot/name #fe3e9538
+Jeannot
+
+=== feu_ferreol/characters/jeannot/label #fe3e9538
+Jeannot
+
+=== feu_ferreol/characters/jeannot/role #e07cfac7
+Landlord of the Cheval Noir
+
+=== feu_ferreol/characters/mounier/name #ca179f95
+Mounier Gérard
+
+=== feu_ferreol/characters/mounier/label #64a60d00
+Gérard Mounier
+
+=== feu_ferreol/characters/mounier/role #94887d8e
+Night-shift foreman at Ferrand Frères
+
+=== feu_ferreol/characters/lacour/name #cffd4dcc
+Lacour Pierre (Dr)
+
+=== feu_ferreol/characters/lacour/label #03cd18fd
+Dr Pierre Lacour
+
+=== feu_ferreol/characters/lacour/role #4433106f
+Doctor, certified the death
+
+=== feu_ferreol/characters/berthet/name #47641ca2
+Berthet Lucien
+
+=== feu_ferreol/characters/berthet/label #24a3851a
+Lucien Berthet
+
+=== feu_ferreol/characters/berthet/role #bdce9ed8
+Scrap dealer in Rive-de-Gier
+
+=== feu_ferreol/characters/igier/name #dbbadc64
+Igier Bernard (Lieutenant)
+
+=== feu_ferreol/characters/igier/label #b64879b8
+Lieutenant Bernard Igier
+
+=== feu_ferreol/characters/igier/role #a71f9c59
+Police lieutenant
+
+=== feu_ferreol/characters/roche/name #fa929e48
+Roche Daniel
+
+=== feu_ferreol/characters/roche/label #e616a34e
+Daniel Roche
+
+=== feu_ferreol/characters/roche/role #fb4d2487
+Crime editor at Le Stéphanois
+
+=== feu_ferreol/documents/lettre_fantome/name #e3400c49
+The “ghost” letter
+
+=== feu_ferreol/documents/dossier_ferreol/name #06a450cd
+The town hall's Ferréol file
+
+=== feu_ferreol/documents/sci_delombre/name #ef4e96be
+SCI Delombre
+
+=== feu_ferreol/documents/facture_tel/name #b2c841b4
+The watchman's phone bill
+
+=== feu_ferreol/documents/carte_vallenot/name #42f13565
+Vallenot's business card
+
+=== feu_ferreol/documents/facture_delombre/name #f9c9d3ab
+The SCI Delombre invoice
+
+=== feu_ferreol/documents/cigarillos/name #5067a38b
+Vallenot's cigarillos
+
+=== feu_ferreol/documents/constat/name #3ff78c2a
+The police report
+
+=== feu_ferreol/documents/dossier_bleu/name #77aa3e72
+Bernard's blue folder
+
+=== feu_ferreol/documents/releves_faure/name #6de3890f
+Bernard's bank statements
+
+=== feu_ferreol/documents/carnet_versements/name #84442edd
+Bernard's notebook
+
+=== feu_ferreol/documents/ticket_consigne/name #c2739ccb
+The left-luggage ticket
+
+=== feu_ferreol/documents/copie_faure/name #b45ce90d
+The bag from the left luggage
+
+=== feu_ferreol/documents/megots/name #9a13cd17
+Four cigarillo butts
+
+=== feu_ferreol/documents/compta_ferrand/name #6b0501f9
+Ferrand's cash book
+
+=== feu_ferreol/documents/agenda_ferrand/name #1b30302c
+Ferrand's site diary
+
+=== feu_ferreol/documents/recu_berthet/name #d962338d
+The torn receipt
+
+=== feu_ferreol/documents/livre_police/name #eca1da10
+Berthet's dealer's register
+
+=== feu_ferreol/documents/registre_decharge/name #ae5c7645
+The landfill register
+
+=== feu_ferreol/documents/liasses/name #0087847b
+The bundles from the safe
+
+=== feu_ferreol/minitel/0/lines/0 #ef0ae8c3
+BERTHET Lucien
+
+=== feu_ferreol/minitel/0/lines/1 #dabbde76
+Scrap metal merchant
+
+=== feu_ferreol/minitel/0/lines/2 #7fa61480
+Chemin du Gier · 42800 RIVE-DE-GIER
+
+=== feu_ferreol/minitel/1/lines/0 #f329877c
+MOUNIER Gérard
+
+=== feu_ferreol/minitel/1/lines/1 #e7fab004
+Tour 9 · Cité de Montreynaud
+
+=== feu_ferreol/minitel/1/lines/2 #5d7b941c
+42000 SAINT-ÉTIENNE
+
+=== feu_ferreol/minitel/2/lines/0 #14351ff9
+LACOUR Pierre
+
+=== feu_ferreol/minitel/2/lines/1 #87ad7055
+General practitioner
+
+=== feu_ferreol/minitel/2/lines/2 #a900590d
+Cours Fauriel · 42100 SAINT-ÉTIENNE
+
+=== feu_ferreol/minitel/3/lines/0 #57b3e42b
+FERRAND FRÈRES
+
+=== feu_ferreol/minitel/3/lines/1 #6c2c5d09
+Building and civil engineering
+
+=== feu_ferreol/minitel/3/lines/2 #98273dfe
+Zone de la Rivière · SAINT-ÉTIENNE
+
+=== feu_ferreol/minitel/4/lines/0 #d5388456
+GROUPE VALLENOT
+
+=== feu_ferreol/minitel/4/lines/1 #766d295c
+Property development
+
+=== feu_ferreol/minitel/4/lines/2 #be7568b4
+3 av. de la Libération · SAINT-ÉTIENNE
+
+=== feu_ferreol/minitel/5/lines/0 #ccf8ef9a
+FAURE Bernard
+
+=== feu_ferreol/minitel/5/lines/1 #3b0742a2
+8 rue des Creuses
+
+=== feu_ferreol/minitel/5/lines/2 #5d7b941c
+42000 SAINT-ÉTIENNE
+
+=== feu_ferreol/minitel/6/lines/0 #28319229
+CHAPTAL Marcel
+
+=== feu_ferreol/minitel/6/lines/1 #e8c09317
+Ex-directory number.
+
+=== feu_ferreol/minitel/7/lines/0 #09e1a3c8
+ROUSSILLON Marcel
+
+=== feu_ferreol/minitel/7/lines/1 #e8c09317
+Ex-directory number.
+
+=== feu_ferreol/minitel/8/lines/0 #6e5ba966
+BENSAÏD Ahmed
+
+=== feu_ferreol/minitel/8/lines/1 #1c9d7080
+Rue de la Montat
+
+=== feu_ferreol/minitel/8/lines/2 #5d7b941c
+42000 SAINT-ÉTIENNE
+
+=== feu_ferreol/minitel/9/lines/0 #c16a2f2d
+SCI DELOMBRE
+
+=== feu_ferreol/minitel/9/lines/1 #54778fa6
+No subscriber in the Loire.
+
+=== feu_ferreol/minitel/9/lines/2 #f02ac298
+Try 3614 for another département.
+
+=== feu_ferreol/minitel/10/lines/0 #d6c0c3ea
+Please give the surname.
+
+=== feu_ferreol/minitel/11/lines/0 #8ad9cafc
+Cannot search by first name.
+
+=== feu_ferreol/minitel/11/lines/1 #7cd1e5be
+Type the surname.
+
+=== feu_ferreol/clues/archives/button #369fde6e
+Search the newspaper's archives
+
+=== feu_ferreol/clues/archives/title #9501ba5f
+The Stéphanois archives
+
+=== feu_ferreol/clues/archives/text #c2156804
+The Stéphanois documentation department fits into a windowless room between the boiler room and the photo archive. The “Ferréol” folder holds eleven cuttings.
+
+April: a full page, {{p:roussillon|Marcel Roussillon}}, deputy mayor for planning, in front of the forge in a hard hat. The project is backed by {{l:cabinet_vallenot|Groupe Vallenot}}, run by {{p:vallenot|Hervé Vallenot}}. July: three lines on page 9, the budget “revised to allow for decontamination”. September: the firm {{l:siege_ferrand|Ferrand Frères}}, run by {{p:ferrand|Roger Ferrand}}, also wins the contract for the {{l:parking_relais|Bellevue park-and-ride}}.
+
+A short item from May quotes an opponent, {{p:chaptal|Marcel Chaptal}}, former CGT union rep at the forge: “You don't turn a graveyard into a business park.” The reporter adds that he can be found every day at the {{l:cheval_noir|Cheval Noir}}.
+
+=== feu_ferreol/clues/archives/facts/0/text #e220c1bf
+Conversion into a business incubator, announced in April 1993. Budget “revised” in July for decontamination.
+
+=== feu_ferreol/clues/archives/facts/0/label #b4220fae
+The project
+
+=== feu_ferreol/clues/archives/facts/1/text #73bc4571
+Backs the Ferréol project together with Groupe Vallenot.
+
+=== feu_ferreol/clues/archives/facts/2/text #a889c863
+Ferrand Frères: main contractor at Ferréol, and at the Bellevue park-and-ride since September.
+
+=== feu_ferreol/clues/archives/facts/3/text #a360d72e
+Former CGT union rep at the forge, opposed to the project: “You don't turn a graveyard into a business park.”
+
+=== feu_ferreol/clues/roche/button #a1cfe16a
+Talk to Daniel Roche
+
+=== feu_ferreol/clues/roche/title #0ea93470
+Daniel Roche, crime editor
+
+=== feu_ferreol/clues/roche/text #9534a2f9
+{{p:roche|Daniel Roche}} doesn't get up from his chair. He has kept his raincoat on, as if he has been about to leave any minute since 1971. “So you're the Lyon lot. The ghost people.” He taps a packet of Gitanes on the desk without taking one out.
+
+Paul: “Faure called you last week.”
+
+“Me? I get ten calls a day from cranks. Thirty years in the trade, I can spot them by the first sentence.” He turns back to his typewriter. “Faure was an accident. Young {{p:lacour|Lacour}} certified it, the superintendent signed off. Go and photograph your spooks.”
+
+=== feu_ferreol/clues/roche/facts/0/text #6b39bbb3
+Says he doesn't remember a call from Faure.
+
+=== feu_ferreol/clues/roche/facts/1/text #97365635
+The doctor who certified Faure's death, according to Roche.
+
+=== feu_ferreol/clues/standard/button #c6de92d3
+Check the switchboard log
+
+=== feu_ferreol/clues/standard/title #c59959cc
+The switchboard operator's log
+
+=== feu_ferreol/clues/standard/text #1e722494
+The switchboard operator, Madame Peyrache, keeps everything in school exercise books, one per month. She lets you leaf through November while keeping an eye on her board, where three lights are blinking at once.
+
+Saturday the 13th, in a slanting hand: “4:40 p.m. M. Faure, planning dept, asks for the crime desk. Put through to M. Roche.” In the margin, in pencil, the length of the call, which she always notes for internal billing: “4 min”.
+
+“Monsieur Roche? Yes, he took it. He even shut his door.”
+
+=== feu_ferreol/clues/standard/facts/0/text #714f7cf9
+Called the Stéphanois on Saturday 13 November at 4:40 p.m. Put through to Daniel Roche.
+
+=== feu_ferreol/clues/standard/facts/0/label #0473fc25
+On the phone
+
+=== feu_ferreol/clues/standard/facts/1/text #5831c1f1
+Spoke to Faure for 4 minutes, with his door shut.
+
+=== feu_ferreol/clues/roche2/button #081fdd27
+Go back to Roche with the log
+
+=== feu_ferreol/clues/roche2/title #219ccf0c
+Roche, second interview
+
+=== feu_ferreol/clues/roche2/text #67a5d8b5
+You lay the photocopy of the log on {{p:roche|Roche}}'s typewriter. He looks at it for a while. “Four minutes. All right.” At last he lights a Gitane.
+
+“He didn't want an article, your Faure. He asked me: ‘How much is a file like this worth to you?’ How much. Thirty years in the trade, nobody had ever tried that on me. I hung up.”
+
+Paul: “And you never told anyone.”
+
+“Who would I tell? {{l:cabinet_vallenot|Groupe Vallenot}} buys a full page from us every Thursday. You want me to write that a civil servant is selling papers about Ferréol?”
+
+=== feu_ferreol/clues/roche2/facts/0/text #f39bcd65
+Asked Roche: “How much is a file like this worth to you?”
+
+=== feu_ferreol/clues/roche2/facts/0/label #0473fc25
+On the phone
+
+=== feu_ferreol/clues/roche2/facts/1/text #f021c7ee
+Groupe Vallenot buys a full-page advertisement in the Stéphanois every Thursday.
+
+=== feu_ferreol/clues/odile/button #11ee6b11
+Call Odile at the group's archives
+
+=== feu_ferreol/clues/odile/title #b5886be1
+Odile and the foundryman of 1911
+
+=== feu_ferreol/clues/odile/text #bc488ffe
+Odile picks up on the second ring, in Lyon. “Ferréol. I'll fax you what I have.” Twenty-two minutes later, the newsroom fax machine starts to screech.
+
+[[fax]]
+
+Karim reads the still-warm page over your shoulder. “No, wait. Like sixty per cent of the sightings fall near an anniversary.”
+
+=== feu_ferreol/clues/odile/facts/0/text #2790be85
+Étienne Vial, 19-year-old foundryman, fell into the molten iron on 3 February 1911. The casting was not stopped.
+
+=== feu_ferreol/clues/odile/facts/1/text #b25fa6a6
+André Ferrand, 39, crushed to death under a concrete shuttering panel on 14 March 1987. Roger refused to speak to the reporter.
+
+=== feu_ferreol/clues/odile/facts/1/label #e4a929dd
+His brother
+
+=== feu_ferreol/clues/odile/fax #705d00a6
+GROUPE SARRAZIN · ARCHIVES DEPARTMENT · LYON
+TO: BUREAU OF OCCULT AFFAIRS, C/O LE STÉPHANOIS · 2 PAGES
+
+LE STÉPHANOIS, 3 FEBRUARY 1911, PAGE 4, RIGHT-HAND COLUMN
+Accident at the Ferréol forge. A nineteen-year-old foundryman, Étienne Vial, fell into the casting ladle yesterday. The casting was not stopped. The piece, a rolling-mill wheel, has been shipped to Le Creusot.
+
+LE STÉPHANOIS, 14 MARCH 1987, PAGE 11, BOTTOM LEFT
+Montreynaud: builder crushed under shuttering panel. André Ferrand, 39, co-manager of Ferrand Frères, died on the Tower 12 building site. His brother Roger declined to comment.
+
+(Handwritten, at the bottom of the page:) Nothing else on Ferréol between 1947 and 1990. Not a line. Odd. O.
+
+=== feu_ferreol/clues/tirages/button #90b2942f
+Collect Yves's prints
+
+=== feu_ferreol/clues/tirages/title #f00c51df
+Yves's prints
+
+=== feu_ferreol/clues/tirages/text #2ea048ce
+Yves got the darkroom technician talking. On the morning of the 17th, the duty photographer went to Ferréol for the news item. The paper published nothing, but the contact sheet stayed in a drawer.
+
+Yves lays it under the lamp and hands you his loupe. Frame number seven: the east wall, at eight o'clock. On the white letters, the paint is still glistening. Two drips run down to the pavement, and an empty paint tin stands against the wall.
+
+Paul takes the ghost's letter out of his raincoat pocket and lays it next to the sheet. Yves looks at one, then the other. “Ferréol will not be a car park.” He says it again, more slowly: “Not a car park.”
+
+=== feu_ferreol/clues/tirages/facts/0/text #c41e42c4
+At 8 a.m. on the 17th, the paint of the slogan was still wet. An empty tin against the wall.
+
+=== feu_ferreol/clues/tirages/facts/0/label #03d0fd64
+East wall
+
+=== feu_ferreol/clues/roussillon/button #4e633bd6
+Meet Marcel Roussillon
+
+=== feu_ferreol/clues/roussillon/title #30176b07
+Marcel Roussillon, deputy mayor for planning
+
+=== feu_ferreol/clues/roussillon/text #46a05ca8
+{{p:roussillon|Marcel Roussillon}} receives you standing up, his door open onto the corridor. On his right ring finger, a gold signet ring engraved with a salamander in flames. He turns it as he talks.
+
+“We all miss Bernard Faure very much in the department. A conscientious officer.” On the budget: “We followed the technical advice. You can't rush decontamination.”
+
+You haven't asked anything about Tuesday evening yet. “And as for that evening, we were in the council meeting until half past ten. Anyone can tell you that.”
+
+A chime sounds in the corridor. He is on his feet before you.
+
+=== feu_ferreol/clues/roussillon/facts/0/text #787dbd4d
+Wears a gold signet ring engraved with a salamander in flames.
+
+=== feu_ferreol/clues/roussillon/facts/1/text #e64f01b6
+Says, without being asked, that he was in the council meeting until 10:30 p.m.
+
+=== feu_ferreol/clues/roussillon/facts/1/label #8f0ad90c
+Tuesday 16th
+
+=== feu_ferreol/clues/dossier/button #be995dc0
+Look at the Ferréol file
+
+=== feu_ferreol/clues/dossier/title #07440134
+The redevelopment file
+
+=== feu_ferreol/clues/dossier/text #ba1e4269
+A clerk from the department, her eyes red, leaves you the {{d:dossier_ferreol|Ferréol file}} while she goes to fetch a coffee. “It was his file. Monsieur Faure's.”
+
+The decontamination plan runs to twelve pages: 3,000 tonnes of soil laden with hydrocarbons and metals, to be taken to the {{l:decharge|licensed landfill at Croix-de-l'Orme}}. The budget goes from 4 to 8.2 million francs by a council resolution in July, signed by {{p:roussillon|M. Roussillon}}, without a call for tenders. A line for “studies and fees” of 1.3 million, payable to an {{d:sci_delombre|SCI Delombre}} whose name appears nowhere else.
+
+In the margin of the tonnage page, someone has written in pencil, then rubbed it out. All that remains is the trace of a question mark.
+
+=== feu_ferreol/clues/dossier/facts/0/text #6ef22087
+3,000 tonnes of contaminated soil to be taken to the Croix-de-l'Orme landfill.
+
+=== feu_ferreol/clues/dossier/facts/0/label #06b8bf7f
+Tonnage
+
+=== feu_ferreol/clues/dossier/facts/1/text #18d7901c
+Raised from 4 to 8.2 million francs in July, without a call for tenders. Resolution signed by Roussillon.
+
+=== feu_ferreol/clues/dossier/facts/1/label #7aeba4cd
+Budget
+
+=== feu_ferreol/clues/dossier/facts/2/text #35aa645b
+1.3 million francs of “studies and fees” on Ferréol. No other trace at the town hall.
+
+=== feu_ferreol/clues/conseil/button #363240dd
+Read the minutes of the council meeting
+
+=== feu_ferreol/clues/conseil/title #1299ccb0
+The council meeting of 16 November
+
+=== feu_ferreol/clues/conseil/text #22104456
+The minutes of the council meeting of Tuesday 16 November are already typed, photocopied and stapled.
+
+Meeting opened at 6:30 p.m. School canteen budget: {{p:roussillon|M. Roussillon}} speaks at 10:15 p.m., three paragraphs on the price of a meal. Meeting closed at 10:30 p.m.
+
+In the margin of one copy, an opposition councillor has scribbled: “Roussillon ran off, didn't stay for drinks.”
+
+=== feu_ferreol/clues/conseil/facts/0/text #25cb6282
+Speaks at the council meeting at 10:15 p.m. Meeting closed at 10:30 p.m. Left in a hurry, without staying for drinks.
+
+=== feu_ferreol/clues/conseil/facts/0/label #8f0ad90c
+Tuesday 16th
+
+=== feu_ferreol/clues/facture_tel/button #be7cffb9
+Ask for the site's phone bill
+
+=== feu_ferreol/clues/facture_tel/title #291c44c2
+The itemised bill for the watchman's hut
+
+=== feu_ferreol/clues/facture_tel/text #7ecfeee8
+In the accounts department, a clerk digs out the {{d:facture_tel|itemised bill}} for line 77 33 61 08, “watchman's hut, Ferréol site”, paid for by the town. October and November fit on two sheets of perforated computer paper.
+
+About thirty calls, nearly all in the daytime, to the town hall or to Ferrand Frères. The clerk has already walked off. Karim runs his finger down the columns.
+
+=== feu_ferreol/clues/vallenot/button #cc990c03
+Meet Hervé Vallenot
+
+=== feu_ferreol/clues/vallenot/title #cd7fa7ed
+Hervé Vallenot, the developer
+
+=== feu_ferreol/clues/vallenot/text #afae3097
+{{p:vallenot|Hervé Vallenot}} receives you standing in front of a scale model of the project: trees made of green sponge, little figures going nowhere. The room smells of stale cigarillo. “Ferréol is a fine project. A fine operation for the town.”
+
+On Faure, he lowers his voice half a tone. “A tragedy. I knew him from a distance, it was the council officers who handled the file.”
+
+Paul: “So you were at Ferréol on Tuesday evening.”
+
+“Tuesday? I was at home. Alone, my wife was at her mother's in Lyon. An evening in front of the television.” He smiles. “Nothing very exciting.”
+
+You ask who poured the new concrete slab. “That's a technical matter. Ask Roger Ferrand.”
+
+As he shows you out, he slips a {{d:carte_vallenot|business card}} into Paul's pocket. Groupe Vallenot, Hervé Vallenot, Chairman. Car phone: 07 42 18 63. “For your nice little article. Don't hesitate.”
+
+=== feu_ferreol/clues/vallenot/facts/0/text #0932ff6c
+Says he spent the evening alone at home, his wife at her mother's in Lyon.
+
+=== feu_ferreol/clues/vallenot/facts/0/label #8f0ad90c
+Tuesday 16th
+
+=== feu_ferreol/clues/vallenot/facts/1/text #f9140f2c
+Says he only knew the Ferréol file “from a distance”.
+
+=== feu_ferreol/clues/vallenot/facts/2/text #f0f0234b
+Hervé Vallenot, Chairman. Car phone: 07 42 18 63.
+
+=== feu_ferreol/clues/bureau_vallenot/button #1b2a9c5f
+Take advantage of the secretary's absence
+
+=== feu_ferreol/clues/bureau_vallenot/title #8a0304c7
+Vallenot's office
+
+=== feu_ferreol/clues/bureau_vallenot/text #e705327b
+The secretary goes downstairs to fetch the post and leaves the door ajar.
+
+On a badly closed binder, an {{d:facture_delombre|invoice from SCI Delombre}}: “Urban strategy consultancy, Ferréol project, 1,300,000 F”. No report, no appendix, paid in cash, signed Maurice Delombre, managing partner.
+
+On {{p:vallenot|Vallenot}}'s walnut desk, next to the car phone in its carrying case, a crystal ashtray and an open {{d:cigarillos|box of Dutch cigarillos}}. The cigarillos have white plastic tips.
+
+Through the window, in the courtyard, a midnight-blue Renault Safrane is parked at an angle.
+
+=== feu_ferreol/clues/bureau_vallenot/facts/0/text #7acf3bef
+1.3 million francs for “urban strategy consultancy”, with no report or appendix. Signed Maurice Delombre, managing partner.
+
+=== feu_ferreol/clues/bureau_vallenot/facts/1/text #201f4f5a
+Dutch cigarillos with white plastic tips, on Vallenot's desk.
+
+=== feu_ferreol/clues/bureau_vallenot/facts/2/text #11ef15a7
+A midnight-blue Safrane, parked in the offices' courtyard.
+
+=== feu_ferreol/clues/bureau_vallenot/facts/2/label #ce6dc0e7
+His car
+
+=== feu_ferreol/clues/igier/button #226f64e4
+Meet Igier at the café opposite
+
+=== feu_ferreol/clues/igier/title #d78e5fad
+Lieutenant Igier
+
+=== feu_ferreol/clues/igier/text #339d9316
+{{p:igier|Igier}} meets you at the bar of the café opposite, never at the station. “On the 17th at 6:40 a.m., the patrol proceeded to the scene, where it observed…” He breaks off and puts down his cup. “Look. We got there, he was dead, we called the doctor.”
+
+He slides a photocopy of the {{d:constat|report}} across to you. “Victim found at the foot of the metal staircase.” No sketch, no photos. The death certificate is signed by {{p:lacour|Dr Pierre Lacour}}.
+
+“I'm not the one who typed the report. Superintendent Borel did it himself, during the morning. Normally, when a civil servant dies on a building site, we handle it with kid gloves. Not this time.”
+
+=== feu_ferreol/clues/igier/facts/0/text #e5682d41
+“Victim found at the foot of the metal staircase.” No sketch or photos. Typed by Superintendent Borel himself.
+
+=== feu_ferreol/clues/igier/facts/1/text #a296e4d9
+Signed Faure's death certificate.
+
+=== feu_ferreol/clues/igier2/button #1f845c2a
+Go back to Igier with the doctor's admission
+
+=== feu_ferreol/clues/igier2/title #79bc1ff6
+Igier, second interview
+
+=== feu_ferreol/clues/igier2/text #9ef70e54
+When you repeat what {{p:lacour|Lacour}} told you, {{p:igier|Igier}} stares into the bottom of his cup for a long time. “The time of death was established by…” He stops. “No. Listen.”
+
+“On the 17th at 8:10 a.m., the superintendent got a phone call. I was in his office. He said ‘Yes, Monsieur le Maire-adjoint’ three times and hung up. Afterwards he told me not to bother about the position of the body.”
+
+He puts a banknote on the counter. “It was {{p:roussillon|Roussillon}}. You didn't get that from me.”
+
+=== feu_ferreol/clues/igier2/facts/0/text #a7339145
+Superintendent Borel takes a call at 8:10 a.m. and answers “Yes, Monsieur le Maire-adjoint”. According to Igier, it was Roussillon.
+
+=== feu_ferreol/clues/igier2/facts/0/label #4f046ff1
+Wednesday 17th
+
+=== feu_ferreol/clues/igier2/facts/1/text #dd9bec77
+After that call, the superintendent told Igier “not to bother about the position of the body”.
+
+=== feu_ferreol/clues/igier2/buttonAlone #30477ccd
+Meet Igier with the doctor's admission
+
+=== feu_ferreol/clues/igier2/titleAlone #3ebf9098
+Igier, faced with the doctor's admission
+
+=== feu_ferreol/clues/lacour/button #c444f737
+See Dr Lacour
+
+=== feu_ferreol/clues/lacour/title #d58f4645
+Dr Lacour
+
+=== feu_ferreol/clues/lacour/text #5a15059d
+{{p:lacour|Dr Lacour}}'s surgery smells of ether and damp carpet. He sees you between two patients, without asking you to sit down.
+
+“Killed outright, I imagine. A four-metre fall onto steel, it's very typical. Nothing alarming.” He looks at his watch, then at the clock.
+
+Paul: “So you got there around six.”
+
+“Seven. They called me at a quarter to seven. Everything was very typical. These things happen, on building sites.”
+
+=== feu_ferreol/clues/lacour/facts/0/text #67d7481a
+Called at 6:45 a.m., arrived at Ferréol at 7. Speaks of being “killed outright”.
+
+=== feu_ferreol/clues/lacour2/button #84abbf77
+Go back to Lacour with the watchman's account
+
+=== feu_ferreol/clues/lacour2/title #2d735d41
+Lacour, second interview
+
+=== feu_ferreol/clues/lacour2/text #a2729fca
+You tell {{p:lacour|Lacour}} what the watchman saw: the body by the door, two metres from the staircase, eyes open. He closes the surgery door. For the first time, he doesn't look at his watch.
+
+“The rigor, the lividity… He died between midnight and one in the morning. Not at ten.” He takes off his glasses. “He wasn't killed outright. It took him a long time. Two hours, perhaps. He must have been cold.”
+
+Paul: “And you wrote ‘immediate death’.”
+
+“The superintendent was there. He told me a family doesn't need to read that kind of detail. I'm sixty-one, monsieur.”
+
+=== feu_ferreol/clues/lacour2/facts/0/text #012844c5
+Between midnight and one in the morning, according to Dr Lacour. Not killed outright.
+
+=== feu_ferreol/clues/lacour2/facts/0/label #739d91ed
+Time of death
+
+=== feu_ferreol/clues/lacour2/facts/1/text #0471539f
+Wrote “immediate death” at the superintendent's request.
+
+=== feu_ferreol/clues/lacour2/buttonAlone #6bb0a500
+See Dr Lacour with the watchman's account
+
+=== feu_ferreol/clues/lacour2/titleAlone #d6ad25c6
+Dr Lacour, faced with the watchman's account
+
+=== feu_ferreol/clues/colette/button #456921b0
+Visit Colette Faure
+
+=== feu_ferreol/clues/colette/title #fd260605
+Colette Faure, the widow
+
+=== feu_ferreol/clues/colette/text #81aef7b4
+{{p:colette|Colette Faure}} shows you into a kitchen where everything is tidied away, except a pile of post she isn't opening. “Bernard always leaves at eight. Left.”
+
+On Tuesday he said he had a meeting. He went out at seven in the evening with his {{d:dossier_bleu|blue folder}}, “the one he hadn't let out of his sight since the summer”. What was in it? “I don't know. Work papers.”
+
+On the fridge, under a magnet shaped like the Virgin of Fourvière, a photo of a young woman in front of a lecture hall. “Our girl. Studying law in Lyon. He does overtime for her. Did.”
+
+=== feu_ferreol/clues/colette/facts/0/text #1d81d1ec
+Left home at 7 p.m., “for a meeting”, with his blue folder.
+
+=== feu_ferreol/clues/colette/facts/0/label #8f0ad90c
+Tuesday 16th
+
+=== feu_ferreol/clues/colette/facts/1/text #a440dce8
+Bernard hadn't let it out of his sight since the summer. Colette says she doesn't know what was in it.
+
+=== feu_ferreol/clues/colette/facts/2/text #131c3395
+Their daughter is studying law in Lyon.
+
+=== feu_ferreol/clues/bureau_faure/button #1183a4d5
+Search Bernard's study
+
+=== feu_ferreol/clues/bureau_faure/title #98af8425
+Bernard Faure's study
+
+=== feu_ferreol/clues/bureau_faure/text #a8a14cb5
+Bernard's study is an old child's bedroom, balloon wallpaper under the shelves. The drawer where Colette expected to find the blue folder is empty.
+
+In a folder marked “Bank”, the {{d:releves_faure|Crédit Agricole statements}}. The mortgage is three payments behind in June, then everything is paid up in August. Every month since, a cash deposit: 29,000 francs in August, 29,500 in September, 30,000 in October.
+
+In the desk diary, on Tuesday the 16th, a single line: “10 p.m., F.”
+
+=== feu_ferreol/clues/bureau_faure/facts/0/text #2c92b51b
+Mortgage three payments behind in June, paid up in August. Cash deposits: 29,000 F in August, 29,500 F in September, 30,000 F in October.
+
+=== feu_ferreol/clues/bureau_faure/facts/1/text #0d34acb3
+In his diary: “10 p.m., F.”
+
+=== feu_ferreol/clues/bureau_faure/facts/1/label #8f0ad90c
+Tuesday 16th
+
+=== feu_ferreol/clues/colette2/button #324105c8
+Go back to Colette with the “B.F.” withdrawals
+
+=== feu_ferreol/clues/colette2/title #d25dbd73
+Colette, second interview
+
+=== feu_ferreol/clues/colette2/text #6ead9970
+You lay the photocopy of the “B.F.” withdrawals on the oilcloth. {{p:colette|Colette Faure}} reads it twice without a word. Then she gets up, opens her sewing box and takes a {{d:carnet_versements|small spiral notebook}} from under the reels of thread.
+
+“Bernard writes everything down. Wrote. Even when he fills up the car.”
+
+On one page, four lines in ballpoint. “R.F. 30” in August, in September, in October. In November: “R.F. 200?”, the question mark gone over several times.
+
+“I found the envelopes in September. In a shoebox, on top of the wardrobe. I didn't ask. We had the mortgage, our girl in Lyon…”
+
+She also puts a numbered {{d:ticket_consigne|orange ticket}} on the table. “It was in his wallet. I don't know what it's for.” It's a ticket from the left luggage office at {{l:consigne_gare|Châteaucreux station}}.
+
+At the end of the table, Bernard's place is still laid.
+
+=== feu_ferreol/clues/colette2/facts/0/text #a15d1465
+“R.F. 30” in August, September and October. “R.F. 200?” in November.
+
+=== feu_ferreol/clues/colette2/facts/1/text #31551671
+Found envelopes of banknotes in September, in a shoebox.
+
+=== feu_ferreol/clues/colette2/facts/1/label #f06f0ed6
+What she was hiding
+
+=== feu_ferreol/clues/colette2/facts/2/text #9e79663a
+Left luggage office at Châteaucreux station. Found in Bernard's wallet.
+
+=== feu_ferreol/clues/colette2/buttonAlone #bb4d9f6e
+Visit Colette Faure with the “B.F.” withdrawals
+
+=== feu_ferreol/clues/colette2/titleAlone #95cd1235
+Colette Faure, faced with the “B.F.” withdrawals
+
+=== feu_ferreol/clues/consigne/button #8dffd5ad
+Open the left luggage locker
+
+=== feu_ferreol/clues/consigne/title #7540c43c
+The Châteaucreux left luggage
+
+=== feu_ferreol/clues/consigne/text #c445a775
+The left luggage office at {{l:consigne_gare|Châteaucreux}} is a counter at the end of the concourse, under the clock. The attendant looks at the ticket, sighs, and comes back with a blue sports bag from a handball club.
+
+Inside, a brown envelope: a {{d:copie_faure|copy of a file}}. Photocopies of the landfill's weighbridge tickets. Twelve flash photos of Ferrand Frères tipper lorries, at night, in the Ferréol yard. And a handwritten table: “Planned: 3,000 t. Removed: 400 t. Remaining: ?”
+
+At the bottom of the bag, a spare pair of socks and an opened packet of biscuits. Karim looks at the socks for longer than at the documents.
+
+=== feu_ferreol/clues/consigne/facts/0/text #b53fab16
+Photocopies of the landfill's weighbridge tickets. Twelve photos of Ferrand lorries at night at Ferréol. Table: “Planned: 3,000 t. Removed: 400 t. Remaining: ?”
+
+=== feu_ferreol/clues/bensaid/button #de7bcf34
+Talk to the watchman
+
+=== feu_ferreol/clues/bensaid/title #72be93c8
+Ahmed Bensaïd, the watchman
+
+=== feu_ferreol/clues/bensaid/text #854a4730
+{{p:bensaid|Ahmed Bensaïd}} opens the gate without a word more than necessary. Twenty years as a watchman.
+
+“It may be that I heard voices, Monsieur le journaliste. Around ten o'clock. Over by the forge workshop. I didn't go down, it's not my job.”
+
+The lorries? “It may be there were some, at night. For a month now. Ferrand's.”
+
+Paul: “So you saw who was driving.”
+
+“No, monsieur. I don't look at what's none of my business.” He walks you back out. “For the history of the works, see {{p:chaptal|Marcel Chaptal}} instead. He's at the {{l:cheval_noir|Cheval Noir}} every day.”
+
+=== feu_ferreol/clues/bensaid/facts/0/text #db17566e
+Says he heard voices around 10 p.m., over by the forge workshop. “I didn't go down.”
+
+=== feu_ferreol/clues/bensaid/facts/0/label #8f0ad90c
+Tuesday 16th
+
+=== feu_ferreol/clues/bensaid/facts/1/text #5dab6791
+Ferrand's lorries have been coming at night for a month, according to the watchman.
+
+=== feu_ferreol/clues/bensaid/facts/1/label #45b0ba23
+At night
+
+=== feu_ferreol/clues/reperage/button #1e598371
+Walk round the site
+
+=== feu_ferreol/clues/reperage/title #06be3c86
+Surveying the site
+
+=== feu_ferreol/clues/reperage/text #afdfb8d8
+The sign at the entrance announces a project on hold since September. Client: {{l:cabinet_vallenot|Groupe Vallenot}}, {{p:vallenot|H. Vallenot}}. Main contractor: {{l:siege_ferrand|Ferrand Frères}}, {{p:ferrand|R. Ferrand}}.
+
+In the east wing, a new concrete slab covers the foot of the metal staircase, still dark with damp. All around, the ground is black with mill scale and churned earth. Against a pillar, two floodlights on tripods and a generator, the cables neatly coiled. Under a pallet, a delivery note: “Concrete, 8 m³, 17/11/93, received {{p:mounier|G. Mounier}}”.
+
+At the back gate, twin-tyre tracks in the mud, and four scraps of paper plastered against the wire fence by the rain.
+
+On the boundary wall, on the east side, in white letters a metre high: FERRÉOL WILL NOT BE A CAR PARK.
+
+Yves takes three photos of the wall, two of the slab, one of the floodlights.
+
+=== feu_ferreol/clues/reperage/facts/0/text #2b4a6c21
+New concrete slab at the foot of the staircase, on a site on hold since September.
+
+=== feu_ferreol/clues/reperage/facts/0/label #315506ca
+East wing
+
+=== feu_ferreol/clues/reperage/facts/1/text #c26b7b1f
+Two site floodlights and a generator in the workshop.
+
+=== feu_ferreol/clues/reperage/facts/1/label #45b0ba23
+At night
+
+=== feu_ferreol/clues/reperage/facts/2/text #beb8c8b1
+Slogan in white letters: “FERRÉOL WILL NOT BE A CAR PARK”.
+
+=== feu_ferreol/clues/reperage/facts/2/label #03d0fd64
+East wall
+
+=== feu_ferreol/clues/reperage/facts/3/text #c8538fe7
+Took delivery of 8 m³ of concrete at Ferréol on 17 November.
+
+=== feu_ferreol/clues/bensaid2/button #b3073e19
+Go back to Bensaïd with the dealer's register
+
+=== feu_ferreol/clues/bensaid2/title #7c75c1f0
+Bensaïd, second interview
+
+=== feu_ferreol/clues/bensaid2/text #52f62d60
+{{p:bensaid|Ahmed Bensaïd}} looks at the photocopy of the {{d:livre_police|dealer's register}} for a long time. Then he shuts the door of the hut.
+
+“It may be that…” He stops. “No. I was at the back gate, with {{p:berthet|Berthet}}. The cast iron goes for scrap anyway.”
+
+After that he speaks without any “may be”, all in one go, his hands flat on the table. “At about twenty to eleven, on my way back, there was a car outside the entrance. A midnight-blue Safrane. Not a local car. In the morning, at half past six, I did my round. The gentleman wasn't at the foot of the staircase. He was near the door. His eyes were open. I closed them for him.”
+
+He opens a drawer and puts a matchbox on the table. Inside, {{d:megots|four cigarillo butts}} with white plastic tips. “They were next to him. I don't know why I kept them.”
+
+On the doorstep, he adds: “That night, someone went into my hut. The phone was hanging off the hook. And old {{p:chaptal|Chaptal}}, from the {{l:cheval_noir|Cheval Noir}}, was hanging around along the east wall at about nine. It was Doctor {{p:lacour|Lacour}} who came, in the morning.”
+
+=== feu_ferreol/clues/bensaid2/facts/0/text #42a47acd
+Sells the site's scrap iron to Berthet. On the evening of the 16th, he was at the back gate.
+
+=== feu_ferreol/clues/bensaid2/facts/0/label #7b831355
+What he was hiding
+
+=== feu_ferreol/clues/bensaid2/facts/1/text #483ba4fe
+Found at 6:30 a.m. near the door, not at the foot of the staircase. Eyes open.
+
+=== feu_ferreol/clues/bensaid2/facts/1/label #d4ecbd4c
+Morning of the 17th
+
+=== feu_ferreol/clues/bensaid2/facts/2/text #3db3ba11
+Cigarillos with white plastic tips, found next to the body by the watchman.
+
+=== feu_ferreol/clues/bensaid2/facts/3/text #1fad7c60
+A midnight-blue Safrane outside the entrance around 10:40 p.m. Someone went into the watchman's hut and used the phone.
+
+=== feu_ferreol/clues/bensaid2/facts/3/label #8f0ad90c
+Tuesday 16th
+
+=== feu_ferreol/clues/bensaid2/facts/4/text #a659ab14
+Seen along the east wall around 9 p.m., according to the watchman.
+
+=== feu_ferreol/clues/bensaid2/facts/4/label #8f0ad90c
+Tuesday 16th
+
+=== feu_ferreol/clues/bensaid2/buttonAlone #ff6f25e5
+Show the dealer's register to the watchman
+
+=== feu_ferreol/clues/bensaid2/titleAlone #a7a33967
+Ahmed Bensaïd, faced with the dealer's register
+
+=== feu_ferreol/clues/porte/button #404617f9
+Examine the floor near the door
+
+=== feu_ferreol/clues/porte/title #81ed8395
+Near the workshop door
+
+=== feu_ferreol/clues/porte/text #dadab49c
+The watchman shows you the spot, then goes back to his hut. He doesn't want to look.
+
+The new slab stops two metres short of the workshop door. Beyond it, the brick floor is covered in a black dust of mill scale that nobody has swept. You can make out finger marks in it, parallel, running from the edge of the slab towards the door. They stop fifty centimetres short of the threshold.
+
+In a groove between two bricks, Yves finds a broken fingernail. He photographs it without flash, then with, and leaves it where it is.
+
+=== feu_ferreol/clues/porte/facts/0/text #be880eda
+Finger marks in the mill scale, from the edge of the slab towards the door. They stop 50 cm short of the threshold. A broken fingernail between two bricks.
+
+=== feu_ferreol/clues/porte/facts/0/label #fc0aff1e
+Near the door
+
+=== feu_ferreol/clues/chaptal/button #c0ceff23
+Buy Marcel Chaptal a drink
+
+=== feu_ferreol/clues/chaptal/title #3c6b2c22
+Marcel Chaptal
+
+=== feu_ferreol/clues/chaptal/text #69494c68
+{{p:chaptal|Marcel Chaptal}} speaks low, his elbow on the zinc counter, in front of a glass of red he won't finish. “Ferréol, lad, I started there the year of the big miners' strike, in forty-eight. Thirty years at the forge.”
+
+He tells the story of the 1911 foundryman as if he'd been there. “They left him in the molten iron. The piece went out all the same. It must still be turning somewhere, that piece.”
+
+The fire at night? “Everyone's seen it, on rue de la Montat. Ask around.”
+
+And him, on Tuesday evening? “Here. At the bar, all evening. Ask {{p:jeannot|Jeannot}}.”
+
+=== feu_ferreol/clues/chaptal/facts/0/text #6503cd36
+Says he spent the evening at the bar of the Cheval Noir. “Ask Jeannot.”
+
+=== feu_ferreol/clues/chaptal/facts/0/label #8f0ad90c
+Tuesday 16th
+
+=== feu_ferreol/clues/chaptal/facts/1/text #e7045920
+According to Chaptal, the whole neighbourhood sees the forge's “fire” at night, from rue de la Montat.
+
+=== feu_ferreol/clues/chaptal/facts/1/label #13b87d97
+The legend
+
+=== feu_ferreol/clues/jeannot/button #d728da53
+Talk to the landlord
+
+=== feu_ferreol/clues/jeannot/title #504e3908
+Jeannot, landlord of the Cheval Noir
+
+=== feu_ferreol/clues/jeannot/text #9168249a
+{{p:jeannot|Jeannot}} wipes the glasses one by one, holding them up to the light, taking his time.
+
+“Marcel? Tuesday?” He puts down one glass and picks up another. “He had his first round at seven, his second at eight. The third one he had after ten. In between, no Marcel.”
+
+He lowers his voice. “He came back with his hands covered in white paint. He said to me: ‘If anyone asks, I was here.’ Me, I answer what I'm asked. You're asking.”
+
+=== feu_ferreol/clues/jeannot/facts/0/text #768b264c
+Away from the Cheval Noir from 8 p.m. until after 10, according to Jeannot. Came back with his hands covered in white paint.
+
+=== feu_ferreol/clues/jeannot/facts/0/label #8f0ad90c
+Tuesday 16th
+
+=== feu_ferreol/clues/chaptal2/button #1501bbf8
+Go back to Chaptal about the paint on the wall
+
+=== feu_ferreol/clues/chaptal2/title #01bd073f
+Chaptal, second interview
+
+=== feu_ferreol/clues/chaptal2/text #948d7679
+When you mention the paint, {{p:chaptal|Chaptal}} puts his glass down. “All right. Yes. The wall was me. And the letter. And two more, to Faure, unsigned. To scare him. To make him stop with his car park.”
+
+He rubs his fingers. There is still white under his nails. “On Tuesday, around nine, Faure's car was in the cul-de-sac. A grey Peugeot 405. And at ten to ten, Ferrand's tipper lorry arrived. With the boss at the wheel, lad. {{p:ferrand|Ferrand}} himself, who never drives. I left. I didn't want to be seen with my paint tin.”
+
+He looks out at the street. “The foundryman is just stories. I'm the one who tells them.”
+
+=== feu_ferreol/clues/chaptal2/facts/0/text #fdb1d410
+Painted the slogan on the east wall, wrote the letter to the Bureau and sent two anonymous letters to Faure.
+
+=== feu_ferreol/clues/chaptal2/facts/0/label #7b831355
+What he was hiding
+
+=== feu_ferreol/clues/chaptal2/facts/1/text #6f81b861
+Arrived at Ferréol around 9:50 p.m., alone at the wheel of the tipper lorry, according to Chaptal.
+
+=== feu_ferreol/clues/chaptal2/facts/1/label #8f0ad90c
+Tuesday 16th
+
+=== feu_ferreol/clues/chaptal2/facts/2/text #82d5cf01
+His grey 405 was in Impasse des Fondeurs around 9 p.m., according to Chaptal.
+
+=== feu_ferreol/clues/chaptal2/facts/2/label #8f0ad90c
+Tuesday 16th
+
+=== feu_ferreol/clues/chaptal2/buttonAlone #ab51cf20
+Ask Marcel Chaptal about the paint on the wall
+
+=== feu_ferreol/clues/chaptal2/titleAlone #41df1f1d
+Marcel Chaptal and the paint on the wall
+
+=== feu_ferreol/clues/ferrand/button #05973920
+Meet Roger Ferrand
+
+=== feu_ferreol/clues/ferrand/title #92a4f237
+Roger Ferrand
+
+=== feu_ferreol/clues/ferrand/text #2e7cfb8c
+{{p:ferrand|Roger Ferrand}} doesn't sit down, and neither do you. In the shed, a radio blares RTL over the noise of a compressor nobody switches off.
+
+“Tuesday evening? Why, where should I have been?”
+
+Paul: “At Ferréol, with Faure.”
+
+“And what would I have been doing at Ferréol, on a site that's on hold?” He wipes his hands on his overalls, slowly, one hand then the other. His wedding ring bites into a swollen finger. “I was at home. Ask {{p:simone|my wife}}, she's in the office at the back. You think she'll tell you any different?”
+
+=== feu_ferreol/clues/ferrand/facts/0/text #7bd74a72
+Says he spent the evening of the 16th at home. “Ask my wife.”
+
+=== feu_ferreol/clues/ferrand/facts/0/label #8ea9f1f5
+Alibi
+
+=== feu_ferreol/clues/compta/button #909c96f7
+Take a look at the accounts
+
+=== feu_ferreol/clues/compta/title #c8202832
+The Ferrand Frères accounts
+
+=== feu_ferreol/clues/compta/text #dc9a462a
+The glass-walled office at the back is empty: {{p:simone|Simone Ferrand}} has gone to the bank. On the table, the {{d:compta_ferrand|cash book}} lies open at November.
+
+Three transfers of 430,000 francs to {{d:sci_delombre|SCI Delombre}}, in June, July and September. Further down, in the cash withdrawals column, in a bookkeeper's round hand:
+
+12/08 · B.F. · 30,000
+13/09 · B.F. · 30,000
+12/10 · B.F. · 30,000
+16/11 · B.F. · 50,000
+
+In the {{d:agenda_ferrand|site diary}}, on Tuesday 16 November, in pencil, pressed hard: “Ferréol 10 p.m.”
+
+In a corner, a wood-burning stove is roaring. In the ashtray beneath it, under the grey ash, a corner of blue card that didn't burn and a binder clip twisted by the heat.
+
+The Post Office calendar hangs crooked. Behind it, you can make out the metal of a small safe door.
+
+=== feu_ferreol/clues/compta/facts/0/text #1c35f6d7
+30,000 F on 12 August, 13 September and 12 October. 50,000 F on 16 November.
+
+=== feu_ferreol/clues/compta/facts/0/label #136b9825
+“B.F.” withdrawals
+
+=== feu_ferreol/clues/compta/facts/1/text #f6b5b72d
+Tuesday 16 November: “Ferréol 10 p.m.”
+
+=== feu_ferreol/clues/compta/facts/2/text #116cf072
+In the ashes, a corner of blue card and a binder clip.
+
+=== feu_ferreol/clues/compta/facts/2/label #112bc1bf
+The stove
+
+=== feu_ferreol/clues/compta/facts/3/text #ef49a677
+Three transfers of 430,000 F from Ferrand Frères, in June, July and September.
+
+=== feu_ferreol/clues/coffre/button #438f6313
+Examine the safe behind the calendar
+
+=== feu_ferreol/clues/coffre/title #ca53fe9d
+Roger Ferrand's safe
+
+=== feu_ferreol/clues/coffre/text #28404955
+The Post Office calendar hangs from a nail. The pages from January to October have been torn off, except one, kept behind November: March, with the 14th circled in black felt pen. Behind it, a small safe door set into the breeze-block wall, with a four-digit dial.
+
+=== feu_ferreol/clues/simone/button #9d57f037
+Talk to Simone Ferrand
+
+=== feu_ferreol/clues/simone/title #5aba3597
+Simone Ferrand
+
+=== feu_ferreol/clues/simone/text #0caf6312
+{{p:simone|Simone Ferrand}} keeps the books in a glass-walled office at the back of the shed, between a metal filing cabinet and a plastic ficus. “Roger says you've no business here.”
+
+Tuesday evening? “Roger came home at nine. As usual.” She answered before you'd finished the question. “Roger says it's a good season, we've got work till the spring.”
+
+The night shift? “{{p:mounier|Gérard Mounier}} runs it. Roger says we're not to talk to the papers.”
+
+=== feu_ferreol/clues/simone/facts/0/text #78af99a7
+Claims Roger came home at 9 p.m. on the 16th. Answered before the question was finished.
+
+=== feu_ferreol/clues/simone/facts/1/text #6e265485
+Foreman of the Ferrand Frères night shift.
+
+=== feu_ferreol/clues/simone2/button #3d3a7ddc
+Go back to Simone about the lorry
+
+=== feu_ferreol/clues/simone2/title #4480d219
+Simone, second interview
+
+=== feu_ferreol/clues/simone2/text #e9206fee
+You tell her Ferrand's lorry was at Ferréol on Tuesday evening. {{p:simone|Simone}} doesn't deny it. She puts away one pencil, then another.
+
+“Roger says…” She stops. “He came home at twenty past eleven. I looked at the alarm clock. He went into the utility room. He washed his trousers himself, by hand, in the sink. He never does that. He doesn't even know where we keep the washing powder.”
+
+She looks towards the shed, where her husband is talking loudly on the phone. “There was black dust in the water.”
+
+=== feu_ferreol/clues/simone2/facts/0/text #5a0288c4
+Came home at 11:20 p.m. on the 16th, according to Simone. Washed his own trousers during the night. Black dust in the water.
+
+=== feu_ferreol/clues/simone2/facts/0/label #8ea9f1f5
+Alibi
+
+=== feu_ferreol/clues/simone2/facts/1/text #5179bc6b
+Retracts her statement: Roger was not home at 9 p.m.
+
+=== feu_ferreol/clues/simone2/buttonAlone #5c344755
+Ask Simone Ferrand about the lorry
+
+=== feu_ferreol/clues/simone2/titleAlone #41ebaae2
+Simone Ferrand and the lorry
+
+=== feu_ferreol/clues/mounier/button #05ea4e42
+Go and see Gérard Mounier
+
+=== feu_ferreol/clues/mounier/title #3c98963a
+Gérard Mounier, foreman
+
+=== feu_ferreol/clues/mounier/text #a316ec45
+{{p:mounier|Gérard Mounier}} talks to you on the ninth-floor landing, in a tracksuit, the door pulled shut behind him: his wife is asleep, she works nights at the hospital.
+
+“I don't know anything. I do what I'm told.” The concrete on the 17th? “The boss said pour, so I poured.”
+
+Paul: “And on the evening of the 16th, you were at Ferréol with your crew, then.”
+
+“No. The boss said not to come on Tuesday. For once.” He hears what he has just said. “We'd been going every night for a month, and on Tuesday, no. That's all. The boss decides.”
+
+=== feu_ferreol/clues/mounier/facts/0/text #b4ff857a
+“The boss said not to come.” For the first time in a month.
+
+=== feu_ferreol/clues/mounier/facts/0/label #8f0ad90c
+Tuesday 16th
+
+=== feu_ferreol/clues/mounier/facts/1/text #bb290d69
+Poured the new slab at Ferréol, on orders.
+
+=== feu_ferreol/clues/mounier/facts/1/label #4f046ff1
+Wednesday 17th
+
+=== feu_ferreol/clues/mounier2/button #9a2ff739
+Go back to Mounier with the tonnages
+
+=== feu_ferreol/clues/mounier2/title #b28da3b0
+Mounier, second interview
+
+=== feu_ferreol/clues/mounier2/text #e3de26af
+You show him the figures: 3,000 tonnes planned, 400 delivered to the landfill. {{p:mounier|Mounier}} sits down on a step. “The boss said they'd pin this on me. I knew it.”
+
+Since October, his crew has been digging at night in the east wing, tipping the black earth into the pits and pouring a slab on top. “It stinks of diesel, that earth. It burns your hands.”
+
+He falls silent, then: “On the 17th, before we poured near the staircase, there were dark smears on the floor. I asked the boss. He said: ‘Pour.’”
+
+=== feu_ferreol/clues/mounier2/facts/0/text #0baaaaae
+Since October, the night shift has been burying black earth that smells of diesel there, on Ferrand's orders.
+
+=== feu_ferreol/clues/mounier2/facts/0/label #604c655c
+Under the slabs
+
+=== feu_ferreol/clues/mounier2/facts/1/text #ff26b7f6
+Before pouring near the staircase, saw dark smears on the floor. Ferrand: “Pour.”
+
+=== feu_ferreol/clues/mounier2/facts/1/label #4f046ff1
+Wednesday 17th
+
+=== feu_ferreol/clues/mounier2/buttonAlone #12a6eb99
+Go and see Gérard Mounier with the tonnages
+
+=== feu_ferreol/clues/mounier2/titleAlone #0462f888
+Gérard Mounier, faced with the tonnages
+
+=== feu_ferreol/clues/berthet/button #faf1c44b
+Talk to Lucien Berthet
+
+=== feu_ferreol/clues/berthet/title #ba10cb1d
+Lucien Berthet, scrap dealer
+
+=== feu_ferreol/clues/berthet/text #e00d52ec
+{{p:berthet|Lucien Berthet}}'s scrapyard fills the yard of an old glassworks on the bank of the Gier. Shells of Renault 4s, cast-iron radiators, a crane that creaks.
+
+“Ferréol? Never set foot there, my friend.” He shows you round anyway. “Over there, copper, eighteen francs a kilo. There, aluminium. Cast iron's worth nothing, my friend. One franc twenty, on a good day.”
+
+He kicks a pile of radiators. “Ferréol is cast iron. You can see it's no interest to me.”
+
+=== feu_ferreol/clues/berthet/facts/0/text #ff6ece72
+Says he has “never set foot” at Ferréol. “Cast iron's worth nothing.”
+
+=== feu_ferreol/clues/livre/button #996ba94a
+Look at the dealer's register
+
+=== feu_ferreol/clues/livre/title #e13be464
+The scrapyard's dealer's register
+
+=== feu_ferreol/clues/livre/text #1184e28d
+Scrap dealers have to keep a {{d:livre_police|dealer's register}}, numbered and initialled by the gendarmerie. {{p:berthet|Berthet}}'s lies on the desk in the gatehouse, under a dirty cup. Berthet is out in the yard, at the crane.
+
+The handwriting is slow, careful, full of spelling mistakes. “16/11/93 · 21:30 · Ferréol site back gait · seller A.B. · cast iron 1.2 t · 1,440 F cassh.”
+
+The same line appears on 2 and 9 November. Always a Tuesday.
+
+=== feu_ferreol/clues/livre/facts/0/text #8424d684
+“16/11/93, 21:30, Ferréol site, back gate, seller A.B., cast iron 1.2 t.” Same line on Tuesday 2 and Tuesday 9 November.
+
+=== feu_ferreol/clues/livre/facts/1/text #e43ef78a
+At the back gate of Ferréol at 9:30 p.m., according to his own register.
+
+=== feu_ferreol/clues/livre/facts/1/label #8f0ad90c
+Tuesday 16th
+
+=== feu_ferreol/clues/berthet2/button #b30eb37b
+Go back to Berthet with his register
+
+=== feu_ferreol/clues/berthet2/title #21a6fe8a
+Berthet, second interview
+
+=== feu_ferreol/clues/berthet2/text #7d7131da
+{{p:berthet|Berthet}} sees the open register in your hands and cuts the crane. “All right. I was there, my friend. Every Tuesday. It's not theft, it's salvage.”
+
+Tuesday the 16th: arrived at half past nine, left at half past ten. “At about ten past ten, there was a scream inside the works. Just one. After that, nothing. The watchman said it was the cats.”
+
+He spits on the ground. “In the yard, there was Ferrand's tipper lorry. Engine still warm. I put my hand on the bonnet as I went by. Habit.”
+
+=== feu_ferreol/clues/berthet2/facts/0/text #c5d38f2f
+A scream around 10:10 p.m., then nothing, according to Berthet. Ferrand's tipper lorry in the yard, engine still warm.
+
+=== feu_ferreol/clues/berthet2/facts/0/label #8f0ad90c
+Tuesday 16th
+
+=== feu_ferreol/clues/berthet2/facts/1/text #38ba10de
+At the back gate from 9:30 to 10:30 p.m.
+
+=== feu_ferreol/clues/berthet2/facts/1/label #8f0ad90c
+Tuesday 16th
+
+=== feu_ferreol/clues/berthet2/buttonAlone #4e97b5b6
+Go and see Lucien Berthet with his register
+
+=== feu_ferreol/clues/berthet2/titleAlone #53219dfe
+Lucien Berthet, faced with his register
+
+=== feu_ferreol/clues/registre/button #de5c9e78
+Look at the register of deliveries
+
+=== feu_ferreol/clues/registre/title #ae5c7645
+The landfill register
+
+=== feu_ferreol/clues/registre/text #9351dbe4
+The {{l:decharge|Croix-de-l'Orme landfill}} records its deliveries on {{d:registre_decharge|weighbridge slips}} stapled together by site. The attendant, who doesn't get many visitors, digs out the folder marked “Ferrand Frères, Ferréol”.
+
+Twenty-two slips, all from July and August. At the bottom of the last one, the total, underlined twice: 400 tonnes.
+
+“Nothing from them since September. They've finished, I suppose.” He leafs through again. “Odd, for a big job like that.”
+
+=== feu_ferreol/clues/registre/facts/0/text #2211c3e4
+Ferrand Frères, Ferréol site: 22 weighings in July and August, 400 tonnes in all. Nothing since September.
+
+=== feu_ferreol/clues/parking/button #e3951eb6
+Visit the building site
+
+=== feu_ferreol/clues/parking/title #537a7c58
+The park-and-ride building site
+
+=== feu_ferreol/clues/parking/text #95558df8
+The Bellevue park-and-ride site, at least, is moving along. Three cranes, rows of shuttering panels, a sign: client {{l:cabinet_vallenot|Groupe Vallenot}}, main contractor {{l:siege_ferrand|Ferrand Frères}}.
+
+The site manager, a jovial man, shows you the financing plan pinned up in his Portakabin. A line for “studies” of 900,000 francs, paid to {{d:sci_delombre|SCI Delombre}}. “Never seen anyone from their lot. Still, we've got the plans.” He shrugs and offers you an instant coffee.
+
+=== feu_ferreol/clues/parking/facts/0/text #8dbf14d3
+Also receives 900,000 F for “studies” on the park-and-ride site.
+
+=== feu_ferreol/puzzles/reperage/title #d962338d
+The torn receipt
+
+=== feu_ferreol/puzzles/reperage/instructions #76f0d5de
+Four scraps of wet paper. Put them back in order.
+
+=== feu_ferreol/puzzles/reperage/pieces/0 #f20b944c
+CASSE BERT
+
+=== feu_ferreol/puzzles/reperage/pieces/1 #2d38bc75
+HET · RIVE-DE-GIER
+
+=== feu_ferreol/puzzles/reperage/pieces/2 #feba3c68
+Bought from: A.B. · 16/11/93
+
+=== feu_ferreol/puzzles/reperage/pieces/3 #49a034b5
+Cast iron · 1.2 t · paid cash
+
+=== feu_ferreol/puzzles/reperage/result #22db56a7
+{{d:recu_berthet|Receipt}} from {{p:berthet|Lucien Berthet}}'s scrapyard, in Rive-de-Gier. Bought from: A.B., on 16/11/93. Cast iron, 1.2 t, paid cash.
+
+=== feu_ferreol/puzzles/reperage/help #23ce69dd
+Yves takes the scraps, lays them on his knee and puts them in order in ten seconds.
+
+=== feu_ferreol/puzzles/reperage/facts/0/text #0e63b634
+Berthet scrapyard, Rive-de-Gier. “Bought from: A.B., 16/11/93. Cast iron, 1.2 t.” Found at the back gate of Ferréol.
+
+=== feu_ferreol/puzzles/facture_tel/title #ac6e2861
+The itemised bill
+
+=== feu_ferreol/puzzles/facture_tel/instructions #d00a5d3e
+About thirty calls. Find the one that doesn't look like the others.
+
+=== feu_ferreol/puzzles/facture_tel/lines/0/heure #9cadc9b3
+13:21
+
+=== feu_ferreol/puzzles/facture_tel/lines/0/duree #3680a197
+6 min 36 s
+
+=== feu_ferreol/puzzles/facture_tel/lines/0/qui #058ce8b9
+the planning department
+
+=== feu_ferreol/puzzles/facture_tel/lines/1/heure #5ae1441d
+13:40
+
+=== feu_ferreol/puzzles/facture_tel/lines/1/duree #452109b8
+3 min 07 s
+
+=== feu_ferreol/puzzles/facture_tel/lines/1/qui #684da1a6
+the watchman's home
+
+=== feu_ferreol/puzzles/facture_tel/lines/2/heure #b866e884
+16:33
+
+=== feu_ferreol/puzzles/facture_tel/lines/2/duree #532aff05
+6 min 21 s
+
+=== feu_ferreol/puzzles/facture_tel/lines/2/qui #684da1a6
+the watchman's home
+
+=== feu_ferreol/puzzles/facture_tel/lines/3/heure #55494ca1
+12:42
+
+=== feu_ferreol/puzzles/facture_tel/lines/3/duree #28851eb9
+6 min 47 s
+
+=== feu_ferreol/puzzles/facture_tel/lines/3/qui #d4a6d5e5
+the speaking clock
+
+=== feu_ferreol/puzzles/facture_tel/lines/4/heure #135b9107
+08:12
+
+=== feu_ferreol/puzzles/facture_tel/lines/4/duree #03e81a14
+6 min 53 s
+
+=== feu_ferreol/puzzles/facture_tel/lines/4/qui #9cecd703
+Ferrand Frères
+
+=== feu_ferreol/puzzles/facture_tel/lines/5/heure #cdef9635
+10:57
+
+=== feu_ferreol/puzzles/facture_tel/lines/5/duree #10b576bf
+2 min 09 s
+
+=== feu_ferreol/puzzles/facture_tel/lines/5/qui #9cecd703
+Ferrand Frères
+
+=== feu_ferreol/puzzles/facture_tel/lines/6/heure #9de83dc1
+11:33
+
+=== feu_ferreol/puzzles/facture_tel/lines/6/duree #82e8f175
+6 min 54 s
+
+=== feu_ferreol/puzzles/facture_tel/lines/6/qui #d4a6d5e5
+the speaking clock
+
+=== feu_ferreol/puzzles/facture_tel/lines/7/heure #3c800987
+15:24
+
+=== feu_ferreol/puzzles/facture_tel/lines/7/duree #8516f3b2
+0 min 46 s
+
+=== feu_ferreol/puzzles/facture_tel/lines/7/qui #684da1a6
+the watchman's home
+
+=== feu_ferreol/puzzles/facture_tel/lines/8/heure #8135cd07
+17:22
+
+=== feu_ferreol/puzzles/facture_tel/lines/8/duree #1c8dc3a8
+4 min 19 s
+
+=== feu_ferreol/puzzles/facture_tel/lines/8/qui #9cecd703
+Ferrand Frères
+
+=== feu_ferreol/puzzles/facture_tel/lines/9/heure #a989b5fa
+12:00
+
+=== feu_ferreol/puzzles/facture_tel/lines/9/duree #a4cbfded
+1 min 48 s
+
+=== feu_ferreol/puzzles/facture_tel/lines/9/qui #684da1a6
+the watchman's home
+
+=== feu_ferreol/puzzles/facture_tel/lines/10/heure #dc578993
+13:57
+
+=== feu_ferreol/puzzles/facture_tel/lines/10/duree #08bbe7b4
+0 min 08 s
+
+=== feu_ferreol/puzzles/facture_tel/lines/10/qui #058ce8b9
+the planning department
+
+=== feu_ferreol/puzzles/facture_tel/lines/11/heure #34a4124e
+11:01
+
+=== feu_ferreol/puzzles/facture_tel/lines/11/duree #f7cf6b0b
+2 min 35 s
+
+=== feu_ferreol/puzzles/facture_tel/lines/11/qui #684da1a6
+the watchman's home
+
+=== feu_ferreol/puzzles/facture_tel/lines/12/heure #a10d5de8
+12:47
+
+=== feu_ferreol/puzzles/facture_tel/lines/12/duree #dbf8cc04
+0 min 05 s
+
+=== feu_ferreol/puzzles/facture_tel/lines/12/qui #684da1a6
+the watchman's home
+
+=== feu_ferreol/puzzles/facture_tel/lines/13/heure #a3c35c54
+15:37
+
+=== feu_ferreol/puzzles/facture_tel/lines/13/duree #616eb2a1
+4 min 10 s
+
+=== feu_ferreol/puzzles/facture_tel/lines/13/qui #058ce8b9
+the planning department
+
+=== feu_ferreol/puzzles/facture_tel/lines/14/heure #93f4ce20
+13:51
+
+=== feu_ferreol/puzzles/facture_tel/lines/14/duree #9e49d4a0
+0 min 27 s
+
+=== feu_ferreol/puzzles/facture_tel/lines/14/qui #daa09f60
+the town hall switchboard
+
+=== feu_ferreol/puzzles/facture_tel/lines/15/heure #a35734c9
+17:25
+
+=== feu_ferreol/puzzles/facture_tel/lines/15/duree #147d3c83
+2 min 51 s
+
+=== feu_ferreol/puzzles/facture_tel/lines/15/qui #9cecd703
+Ferrand Frères
+
+=== feu_ferreol/puzzles/facture_tel/lines/16/heure #1be9d55e
+14:49
+
+=== feu_ferreol/puzzles/facture_tel/lines/16/duree #da43da9c
+3 min 02 s
+
+=== feu_ferreol/puzzles/facture_tel/lines/16/qui #d4a6d5e5
+the speaking clock
+
+=== feu_ferreol/puzzles/facture_tel/lines/17/heure #923658f6
+12:35
+
+=== feu_ferreol/puzzles/facture_tel/lines/17/duree #bd3d2ce4
+0 min 24 s
+
+=== feu_ferreol/puzzles/facture_tel/lines/17/qui #d4a6d5e5
+the speaking clock
+
+=== feu_ferreol/puzzles/facture_tel/lines/18/heure #57123856
+17:58
+
+=== feu_ferreol/puzzles/facture_tel/lines/18/duree #da43da9c
+3 min 02 s
+
+=== feu_ferreol/puzzles/facture_tel/lines/18/qui #9cecd703
+Ferrand Frères
+
+=== feu_ferreol/puzzles/facture_tel/lines/19/heure #fead2643
+13:11
+
+=== feu_ferreol/puzzles/facture_tel/lines/19/duree #98343907
+3 min 32 s
+
+=== feu_ferreol/puzzles/facture_tel/lines/19/qui #058ce8b9
+the planning department
+
+=== feu_ferreol/puzzles/facture_tel/lines/20/heure #5e0859b6
+17:27
+
+=== feu_ferreol/puzzles/facture_tel/lines/20/duree #8e416b77
+6 min 29 s
+
+=== feu_ferreol/puzzles/facture_tel/lines/20/qui #9cecd703
+Ferrand Frères
+
+=== feu_ferreol/puzzles/facture_tel/lines/21/heure #5668cabb
+11:46
+
+=== feu_ferreol/puzzles/facture_tel/lines/21/duree #ebdeb7a3
+1 min 58 s
+
+=== feu_ferreol/puzzles/facture_tel/lines/21/qui #daa09f60
+the town hall switchboard
+
+=== feu_ferreol/puzzles/facture_tel/lines/22/heure #454aad0d
+13:49
+
+=== feu_ferreol/puzzles/facture_tel/lines/22/duree #53bdb0cb
+3 min 55 s
+
+=== feu_ferreol/puzzles/facture_tel/lines/22/qui #9cecd703
+Ferrand Frères
+
+=== feu_ferreol/puzzles/facture_tel/lines/23/heure #549e3b3b
+16:28
+
+=== feu_ferreol/puzzles/facture_tel/lines/23/duree #264c7623
+3 min 27 s
+
+=== feu_ferreol/puzzles/facture_tel/lines/23/qui #684da1a6
+the watchman's home
+
+=== feu_ferreol/puzzles/facture_tel/lines/24/heure #b42f4a43
+15:30
+
+=== feu_ferreol/puzzles/facture_tel/lines/24/duree #e2fffbb8
+3 min 17 s
+
+=== feu_ferreol/puzzles/facture_tel/lines/24/qui #d4a6d5e5
+the speaking clock
+
+=== feu_ferreol/puzzles/facture_tel/lines/25/heure #76f171b5
+15:27
+
+=== feu_ferreol/puzzles/facture_tel/lines/25/duree #10612489
+0 min 52 s
+
+=== feu_ferreol/puzzles/facture_tel/lines/25/qui #d4a6d5e5
+the speaking clock
+
+=== feu_ferreol/puzzles/facture_tel/lines/26/heure #1ec287dc
+11:18
+
+=== feu_ferreol/puzzles/facture_tel/lines/26/duree #e81c26e7
+5 min 02 s
+
+=== feu_ferreol/puzzles/facture_tel/lines/26/qui #d4a6d5e5
+the speaking clock
+
+=== feu_ferreol/puzzles/facture_tel/lines/27/heure #ebddf15e
+11:35
+
+=== feu_ferreol/puzzles/facture_tel/lines/27/duree #162d096d
+3 min 01 s
+
+=== feu_ferreol/puzzles/facture_tel/lines/27/qui #daa09f60
+the town hall switchboard
+
+=== feu_ferreol/puzzles/facture_tel/lines/28/heure #0e441ffd
+13:23
+
+=== feu_ferreol/puzzles/facture_tel/lines/28/duree #ea5e0f97
+6 min 25 s
+
+=== feu_ferreol/puzzles/facture_tel/lines/28/qui #058ce8b9
+the planning department
+
+=== feu_ferreol/puzzles/facture_tel/lines/29/heure #d741b0f9
+22:24
+
+=== feu_ferreol/puzzles/facture_tel/lines/29/duree #558f3d67
+3 min 06 s
+
+=== feu_ferreol/puzzles/facture_tel/result #87d65176
+Tuesday 16 November, 22:24. A 3-minute call from the watchman's hut to 07 42 18 63. A car phone number.
+
+=== feu_ferreol/puzzles/facture_tel/help #90db35fd
+Karim goes through the bill and circles the 22:24 call in felt pen.
+
+=== feu_ferreol/puzzles/facture_tel/facts/0/text #97cfc5dd
+Tuesday 16 November, 22:24: a 3-minute call from the watchman's hut to 07 42 18 63, a car phone.
+
+=== feu_ferreol/puzzles/coffre/title #fdb99b3b
+The safe
+
+=== feu_ferreol/puzzles/coffre/instructions #28c23637
+A four-digit dial.
+
+=== feu_ferreol/puzzles/coffre/result #f8521934
+The safe opens. Inside, five {{d:liasses|bundles of 200-franc notes}}, each held by a strip of brown paper stamped by the bank: “16 NOV. 1993”. Fifty thousand francs, not a note missing.
+
+Under the bundles, a black-edged funeral notice. André Ferrand, 1948-1987.
+
+=== feu_ferreol/puzzles/coffre/help #81d99bee
+Simone puts her head round the office door. “The 14th of March. It's always the 14th of March, with him.”
+
+=== feu_ferreol/puzzles/coffre/facts/0/text #335b5b6e
+50,000 F in five bundles of 200 F notes. Bank strips stamped “16 NOV. 1993”. In Ferrand's safe.
+
+=== feu_ferreol/puzzles/coffre/facts/1/text #1d5739f7
+Keeps André Ferrand's funeral notice in his safe, 1948-1987.
+
+=== feu_ferreol/puzzles/coffre/facts/1/label #e4a929dd
+His brother
+
+=== feu_ferreol/actions/fait_chanter/name #c4c1fc2d
+blackmails him
+
+=== feu_ferreol/actions/pousse/name #d47d5c06
+pushes him
+
+=== feu_ferreol/actions/laisse_mourir/name #e035f3b4
+leaves him to die
+
+=== feu_ferreol/actions/fait_classer/name #e4c50f33
+has the case closed
+
+=== feu_ferreol/actions/denonce/name #00f41c5b
+reports him
+
+=== feu_ferreol/actions/menace/name #139bec3d
+threatens him
+
+=== feu_ferreol/actions/paie/name #776d6c99
+pays him
+
+=== feu_ferreol/actions/couvre/name #3c22b156
+covers for him
+
+=== feu_ferreol/article/chantage/title #ccf979af
+The blackmail
+
+=== feu_ferreol/article/chantage/parts/0 #a66d94b1
+In charge of the file at the town hall, Bernard Faure discovers this summer that
+
+=== feu_ferreol/article/chantage/parts/2 #df400aa7
+ has removed only 400 tonnes of contaminated soil. The rest is being buried at night, under new concrete slabs,
+
+=== feu_ferreol/article/chantage/parts/4 #f07c3c77
+. Faure tells his superiors nothing. Instead, he
+
+=== feu_ferreol/article/chute/title #8399978b
+The fall
+
+=== feu_ferreol/article/chute/parts/0 #de7f5e8d
+On Tuesday 16 November at 10 p.m., Faure has an appointment in the forge workshop. Up on the walkway,
+
+=== feu_ferreol/article/chute/parts/2 #0e92acf6
+
+
+=== feu_ferreol/article/attente/title #b3083ada
+The wait
+
+=== feu_ferreol/article/attente/parts/0 #eeab30e0
+Faure survives the fall. Called from the watchman's hut,
+
+=== feu_ferreol/article/attente/parts/2 #0d1beaa9
+ arrives, sees that he is still breathing and
+
+=== feu_ferreol/article/attente/parts/4 #4c5e7148
+. All he leaves behind is
+
+=== feu_ferreol/article/classement/title #cc938599
+The cover-up
+
+=== feu_ferreol/article/classement/parts/0 #7728a2c8
+The next morning,
+
+=== feu_ferreol/article/classement/parts/4 #f84254eb
+ as an accident.
+
+=== feu_ferreol/article/fantome/title #4006e86e
+The ghost
+
+=== feu_ferreol/article/fantome/parts/0 #37fd0152
+As for the foundryman of 1911, it was
+
+=== feu_ferreol/article/fantome/parts/2 #f85a7da3
+ who wrote
+
+=== feu_ferreol/article/salamandre/title #d904c0be
+The salamander
+
+=== feu_ferreol/article/salamandre/parts/0 #e09338ad
+The salamander in the epilogue was already engraved on the signet ring of
+
+=== feu_ferreol/review/juste #4d86a2de
+Jean-Loup reads the article twice without a word. Then he puts it on the pile for the printers. “It holds up.”
+
+=== feu_ferreol/review/essai1 #dc4104c8
+Jean-Loup hands back the copy. “Something doesn't hold up. I've marked the paragraph. I'm not telling you where it goes wrong.”
+
+=== feu_ferreol/review/essai1_pluriel #1f175652
+Jean-Loup hands back the copy. “Some paragraphs don't hold up. I've marked them. I'm not telling you where it goes wrong.”
+
+=== feu_ferreol/review/essai2 #4cdbc1d4
+Jean-Loup sighs and takes out his red pen. “There, and there. Last chance. Next time round, it goes out as it is.”
+
+=== feu_ferreol/review/essai3 #6c180b4a
+Jean-Loup doesn't even reread it. “Time's up. It's going out.”
+
+=== feu_ferreol/ranks/0/label #5c20637e
+Major success
+
+=== feu_ferreol/ranks/1/label #5005261b
+Success
+
+=== feu_ferreol/ranks/2/label #78ade448
+Partial success
+
+=== feu_ferreol/ranks/3/label #0ff45fa6
+Failure
+
+=== feu_ferreol/endings/une/title #67f4ec71
+The front page
+
+=== feu_ferreol/endings/une/headline #69b1b6e7
+Ferréol: the ghost had a car phone
+
+=== feu_ferreol/endings/une/text #596668f8
+On Saturday 27 November, the Occult Affairs page is not on page 14. It is on the front page, under a headline by Jean-Loup, who doesn't like being told no: “Ferréol: the ghost had a car phone”.
+
+Roger Ferrand is charged with manslaughter. He says almost nothing, except one sentence to the examining magistrate, reported by Igier: “I pushed him. After that, it was the other one who decided.” Hervé Vallenot is charged with failing to assist a person in danger. His lawyers speak of a “tragic misunderstanding”. Groupe Vallenot cancels its Thursday advertising page.
+
+The article hides nothing about Bernard Faure. Colette calls the newsroom on Monday. She doesn't shout. She only asks whether it was necessary. Paul says yes. He hangs up, and sits for a long time without relighting his cigarette.
+
+=== feu_ferreol/endings/martyr/title #707025bb
+The martyr
+
+=== feu_ferreol/endings/martyr/headline #c039e41a
+Killed for trying to speak out
+
+=== feu_ferreol/endings/martyr/text #b6edfd74
+On Saturday 27 November, the article turns Bernard Faure into a whistleblower, killed for trying to expose a scandal. Ferrand and Vallenot are charged. The town holds a minute's silence outside the town hall.
+
+Three weeks later, Ferrand's lawyer produces Faure's bank statements and the “B.F.” withdrawals before the magistrate. A rival daily runs the headline “The martyr who was getting paid”. The Stéphanois prints a correction on page 2. Jean-Loup says nothing, which is worse.
+
+Colette Faure no longer answers the phone. On Bernard's grave, someone has left an empty envelope.
+
+=== feu_ferreol/endings/promoteur/title #29ed6e2e
+The developer
+
+=== feu_ferreol/endings/promoteur/headline #777005ec
+Ferréol: building contractor charged
+
+=== feu_ferreol/endings/promoteur/text #2fe4f8c1
+On Saturday 27 November, the article stands up: Roger Ferrand pushed Bernard Faure, and he is charged with manslaughter. He says nothing. He will say nothing until the trial.
+
+Nobody mentions the Safrane, or the four cigarillo butts. Hervé Vallenot declares himself “deeply shocked” and “standing by the family”. The following Thursday, his advertising page appears in the Stéphanois as usual, with a photo of the Ferréol scale model: trees made of green sponge, little figures going nowhere.
+
+At Ferréol, someone has swept away the mill scale by the workshop door. The finger marks are gone. Nobody knows who.
+
+=== feu_ferreol/endings/dementi/title #eb969db9
+The denial
+
+=== feu_ferreol/endings/dementi/headline #1086937c
+The Ferréol ghost has not had its last word
+
+=== feu_ferreol/endings/dementi/text #433c05ab
+The article comes out on Saturday 27 November. On Monday, the town hall issues a statement: the police investigation concluded it was an accident, and “certain journalists would do better to stick to ghosts”. Groupe Vallenot threatens to pull its advertising from every paper in the group.
+
+Jean-Loup summons Paul. The door stays shut for an hour. On his way out, Paul says only: “Granted.”
+
+At Ferréol, the slab has dried. Work resumes in January.
+
+=== feu_ferreol/complements/Q4/right #cd6a51ad
+The contaminated soil is found under the slabs: the prefecture has everything dug up again, and work at Ferréol is halted for two years.
+
+=== feu_ferreol/complements/Q4/wrong #4986d7a2
+Nobody lifts the slabs. The business incubator opens in 1995, on top of 2,600 tonnes of earth that smells of diesel.
+
+=== feu_ferreol/complements/Q5/right #fad5d19c
+Marcel Roussillon resigns “for health reasons”. Superintendent Borel is transferred to Montluçon.
+
+=== feu_ferreol/complements/Q5/wrong #73b1d3a2
+Marcel Roussillon is re-elected in 1995. He still wears his signet ring.
+
+=== feu_ferreol/complements/Q6/right #b47191a2
+Marcel Chaptal will not be prosecuted for his letters. He repaints the east wall himself, in white. The foundryman doesn't come back.
+
+=== feu_ferreol/complements/Q6/wrong #3d0cd455
+The Bureau receives two more letters from the “ghost” in December. Karim keeps them in a drawer, just in case.
+
+=== feu_ferreol/epilogue #26955e0e
+The following Monday, in the Bureau's post, an unstamped envelope, left at the front desk of head office. Inside, a plain white card, without a word. Just an ink drawing, very fine: a salamander in flames. On the back, a Latin motto: Nutrisco et extinguo.
+
+Odile looks at it for a long time. “I've seen it somewhere before.” She doesn't say where.
+
+=== feu_ferreol/calendar/days/0 #8bfafd40
+Friday 19 November
+
+=== feu_ferreol/calendar/days/1 #0ee40501
+Saturday 20 November
+
+=== feu_ferreol/calendar/days/2 #68cc7ce3
+Monday 22 November
+
+=== feu_ferreol/calendar/days/3 #6bd1e0d7
+Tuesday 23 November
+
+=== feu_ferreol/calendar/days/4 #18cee156
+Wednesday 24 November
+
+=== feu_ferreol/calendar/slots/0 #0755603b
+9 a.m.
+
+=== feu_ferreol/calendar/slots/1 #a2bb8c03
+11 a.m.
+
+=== feu_ferreol/calendar/slots/2 #3e5af99b
+2 p.m.
+
+=== feu_ferreol/calendar/slots/3 #eedb2403
+4 p.m.
+
+=== feu_ferreol/calendar/deadline #c6dbff5b
+Thursday 25 November, 6 p.m.: deadline
+
+=== feu_ferreol/solution #265c495f
+Bernard Faure was blackmailing Roger Ferrand, who was burying under new slabs the contaminated soil he was being paid to remove. On Tuesday 16 November, Faure comes to Ferréol to collect one last payment. They argue on the walkway of the forge workshop, and Ferrand pushes him. Faure survives the fall. Ferrand calls Hervé Vallenot from the watchman's hut. Vallenot arrives, sees that Faure is still breathing and refuses to call for help. He smokes four cigarillos beside him, then they stage the fall and leave. Faure dies around midnight, crawling towards the door. The next day, Marcel Roussillon has the case closed. As for the ghost's letter, it was written by Marcel Chaptal.
+
+=== feu_ferreol/plan/title #8e433a0f
+Map of Saint-Étienne
+
+=== feu_ferreol/plan/subtitle #be5b4f09
+1993 edition · scale 1:15,000
+
+=== feu_ferreol/plan/decor/0/label #71a772ab
+Le Furan (covered)
+
+=== feu_ferreol/plan/decor/1/label #5fba7490
+Le Gier
+
+=== feu_ferreol/plan/decor/2/label #4184ac76
+Grand-Rue
+
+=== feu_ferreol/plan/decor/7/label #33b7f25b
+SNCF
+
+=== feu_ferreol/plan/decor/8/label #8640f4d6
+to Saint-Chamond, Rive-de-Gier →
+
+=== villes/nyons #dd284174
+Nyons
+
+=== villes/lyon #438a3fab
+Lyon
+
+=== villes/annecy #d0b378fb
+Annecy
+
+=== villes/marseille #87c2bb14
+Marseille
+
+=== villes/paris #22390ad1
+Paris
+
+=== villes/rennes #ff840e2b
+Rennes
+
+=== villes/bordeaux #360e6740
+Bordeaux
+
+=== villes/perpignan #ef6a7e1f
+Perpignan
+
+=== villes/montpellier #448820f9
+Montpellier
+
+=== villes/strasbourg #a7b90170
+Strasbourg
+
+=== villes/besancon #6a2f22bd
+Besançon
+
+=== villes/orleans #a3a555eb
+Orléans
+
+=== villes/bourges #0a2e0318
+Bourges
+
+
+=== noye_ouveze/title #88927233
+The Drowned Man of the Ouvèze
+
+=== noye_ouveze/subtitle #b07a3ac3
+A case for the Bureau of Occult Affairs
+
+=== noye_ouveze/journal #8f9c89fa
+Le Drômois
+
+=== noye_ouveze/dateUne #eca9a363
+Saturday 25 June 1994
+
+=== noye_ouveze/priceUne #302ba39c
+4.80 F
+
+=== noye_ouveze/localite #b448e972
+NYONS (26)
+
+=== noye_ouveze/intro #b5d29953
+Thursday 16 June 1994, fourth floor of head office, Lyon. It is already thirty degrees at ten in the morning, and Odile's fan is stirring the paperwork.
+
+The letter came with the morning post. A sheet of squared exercise paper, a schoolgirl's handwriting, round and careful. Folded inside it, a page from Le Drômois of 2 June. In one corner of the page, dark red stains, like juice. Postmark: Nyons, Tuesday 14th.
+
+{{d:lettre_anonyme|“Dear journalist of Occult Affairs. You write about ghosts, so come to Nyons. Look at the photo. The man on the right is Jacques Garcin. He drowned in the Ouvèze on 22 September 1992, his name is on the plaque in Vaison. Now he plays boules. Everyone here says it: the river gives back its dead. Chabert the miller swore he saw him swept away. The miller lied. Ask him why.”}}
+
+The page is {{d:photo_concours|the winners' photo from the Grand Prix de la Digue}}, at the {{l:boulodrome|Nyons boules ground}}. Two men in vests, a cup between them. The caption says {{p:tardieu|Raoul Tardieu}} and {{p:royer|Lucien Royer}}. Royer turned his head just as the flash went off. You can see an ear, a cheek, a cap.
+
+At eleven, Odile comes back up with a fax from the Valence office. A short item from that morning's Drômois. “Nyons: miller drowned in the canal.” {{p:chabert|Aimé Chabert}}, 63, owner of the {{l:moulin|oil mill}} in the Roman bridge quarter, was found at dawn against the canal grating. The {{l:gendarmerie|gendarmes}} have concluded it was an accident. Last line: “In 1992 Aimé Chabert witnessed the heroic death of {{p:garcin|Jacques Garcin}}, swept away by the Ouvèze flood while going to the aid of campers. {{p:helene|His widow, Hélène}}, lives in Nyons.”
+
+Karim has read the letter three times. “She wrote on Tuesday. He died on Wednesday night.”
+
+Jean-Loup Sarrazin puts his head round the door. “A river that gives back its dead. It's summer, people want a shiver on the beach. You leave tonight.” Paul folds the newspaper page in two without taking his eyes off the photo. “Granted.”
+
+Three hours of motorway, then the road up the Eygues valley. It is dark when you arrive. The car windows are down, there is a smell of lime blossom and cut lavender, and the cicadas have not yet realised the sun has set. The {{l:agence|Le Drômois office}}, on avenue Henri-Rochier, used to be a haberdasher's. The metal shutter is half down. A fan turns on the ceiling, and on the desk they have left for you, someone has put a basket of apricots.
+
+=== noye_ouveze/briefing #7392d320
+Each lead you read for the first time costs a quarter of a day before Thursday's deadline, and you have 20; rereading is free. This time the calendar matters: some leads only appear from a certain day, others disappear if you take too long, because people leave and things get lost. Some people will only talk if you come back with the right piece of evidence, or the right face. When you are ready, write your article.
+
+=== noye_ouveze/introNotes/0/text #cd121d49
+Found drowned at dawn on Thursday 16 June, against the grating of the mill canal. The gendarmes have concluded it was an accident.
+
+=== noye_ouveze/introNotes/0/label #f1411412
+Official version
+
+=== noye_ouveze/introNotes/1/text #53510bcc
+Died on 22 September 1992 in the Ouvèze flood, going to the aid of campers. Chabert the miller saw him swept away.
+
+=== noye_ouveze/introNotes/1/label #f1411412
+Official version
+
+=== noye_ouveze/introNotes/2/text #d627a0bb
+Won the Grand Prix de la Digue with Raoul Tardieu. According to the anonymous letter, he is Jacques Garcin.
+
+=== noye_ouveze/introNotes/3/text #e0e82aec
+Posted in Nyons on Tuesday 14 June, the day before the miller died. Round handwriting, squared paper. Red stains, like juice, on the enclosed page.
+
+=== noye_ouveze/quartiers/vieille_ville/name #9a13d17c
+Les Forts
+
+=== noye_ouveze/quartiers/centre/name #16e5447a
+Town centre
+
+=== noye_ouveze/quartiers/pont_roman/name #03f730f7
+The Roman bridge
+
+=== noye_ouveze/quartiers/digue/name #f6d0d16f
+La Digue
+
+=== noye_ouveze/quartiers/les_pilles/name #d3a5c2fe
+Les Pilles
+
+=== noye_ouveze/quartiers/vaison/name #7d41bf3c
+Vaison-la-Romaine
+
+=== noye_ouveze/locations/agence/name #f8ba8e12
+Le Drômois office
+
+=== noye_ouveze/locations/agence/address #f4001535
+Avenue Henri-Rochier
+
+=== noye_ouveze/locations/agence/short #37c58081
+Office
+
+=== noye_ouveze/locations/agence/inArticle #0d1faec3
+at the Le Drômois office
+
+=== noye_ouveze/locations/gendarmerie/name #4b5a3975
+Gendarmerie station
+
+=== noye_ouveze/locations/gendarmerie/address #6ff40424
+Promenade de la Digue
+
+=== noye_ouveze/locations/gendarmerie/short #6339d68b
+Gendarmerie
+
+=== noye_ouveze/locations/gendarmerie/inArticle #1b0d6d46
+at the gendarmerie
+
+=== noye_ouveze/locations/arcades/name #2cd8dbe8
+Café des Arcades
+
+=== noye_ouveze/locations/arcades/address #a8534e60
+Place des Arcades
+
+=== noye_ouveze/locations/arcades/short #8395903c
+Les Arcades
+
+=== noye_ouveze/locations/arcades/inArticle #d20d1e1d
+at the Café des Arcades
+
+=== noye_ouveze/locations/cabinet_sauvan/name #26d5f25f
+Dr Sauvan's surgery
+
+=== noye_ouveze/locations/cabinet_sauvan/address #3d6ead1a
+Rue de la Résistance
+
+=== noye_ouveze/locations/cabinet_sauvan/short #2a848fee
+Dr Sauvan
+
+=== noye_ouveze/locations/cabinet_sauvan/inArticle #330df38f
+at Dr Sauvan's surgery
+
+=== noye_ouveze/locations/pharmacie/name #ba182408
+Pharmacie du Pont
+
+=== noye_ouveze/locations/pharmacie/address #b06f4ce0
+Place du Pont
+
+=== noye_ouveze/locations/pharmacie/short #172dce56
+Pharmacy
+
+=== noye_ouveze/locations/pharmacie/inArticle #0d743788
+at the Pharmacie du Pont
+
+=== noye_ouveze/locations/hotel/name #224c997e
+Hôtel de la Place
+
+=== noye_ouveze/locations/hotel/address #a8534e60
+Place des Arcades
+
+=== noye_ouveze/locations/hotel/short #5866af42
+Hotel
+
+=== noye_ouveze/locations/hotel/inArticle #1981f774
+at the Hôtel de la Place
+
+=== noye_ouveze/locations/maison_garcin/name #4e26dcad
+Hélène Garcin's house
+
+=== noye_ouveze/locations/maison_garcin/address #d0c2f688
+Rue des Grands-Forts
+
+=== noye_ouveze/locations/maison_garcin/short #4dc60176
+Garcin house
+
+=== noye_ouveze/locations/maison_garcin/inArticle #de7e7c0a
+at Hélène Garcin's house
+
+=== noye_ouveze/locations/pension/name #883eaf4c
+Pension des Forts
+
+=== noye_ouveze/locations/pension/address #780cd31f
+Montée des Forts
+
+=== noye_ouveze/locations/pension/short #009d49f8
+Pension
+
+=== noye_ouveze/locations/pension/inArticle #b2332dfb
+at the Pension des Forts
+
+=== noye_ouveze/locations/moulin/name #c70389b7
+Chabert's mill
+
+=== noye_ouveze/locations/moulin/address #c4022fa1
+Roman bridge quarter
+
+=== noye_ouveze/locations/moulin/short #9b40e37e
+Mill
+
+=== noye_ouveze/locations/moulin/inArticle #a2e4bdf4
+at Chabert's mill
+
+=== noye_ouveze/locations/canal/name #02df5dd5
+The mill canal
+
+=== noye_ouveze/locations/canal/address #2f7b19f4
+Chemin du canal
+
+=== noye_ouveze/locations/canal/short #61f21e6f
+Canal
+
+=== noye_ouveze/locations/canal/inArticle #03a2dc78
+by the canal
+
+=== noye_ouveze/locations/pont/name #03f730f7
+The Roman bridge
+
+=== noye_ouveze/locations/pont/address #730c3f20
+Roman bridge over the Eygues
+
+=== noye_ouveze/locations/pont/short #73f7d6ac
+Roman bridge
+
+=== noye_ouveze/locations/pont/inArticle #24ce8dad
+on the Roman bridge
+
+=== noye_ouveze/locations/boulodrome/name #2ac29dde
+La Digue boules ground
+
+=== noye_ouveze/locations/boulodrome/address #6ff40424
+Promenade de la Digue
+
+=== noye_ouveze/locations/boulodrome/short #e7cd827f
+Boules ground
+
+=== noye_ouveze/locations/boulodrome/inArticle #30ddcea6
+at La Digue
+
+=== noye_ouveze/locations/camping_municipal/name #44673e4e
+Municipal campsite
+
+=== noye_ouveze/locations/camping_municipal/address #7c41c941
+On the bank of the Eygues
+
+=== noye_ouveze/locations/camping_municipal/short #44673e4e
+Municipal campsite
+
+=== noye_ouveze/locations/camping_municipal/inArticle #5a34a18d
+at the municipal campsite
+
+=== noye_ouveze/locations/ferme_tardieu/name #bfcea895
+Tardieu farm
+
+=== noye_ouveze/locations/ferme_tardieu/address #787b84ef
+Route des Pilles, Les Pilles
+
+=== noye_ouveze/locations/ferme_tardieu/short #bfcea895
+Tardieu farm
+
+=== noye_ouveze/locations/ferme_tardieu/inArticle #69b70da2
+at the Tardieu farm
+
+=== noye_ouveze/locations/camping_saules/name #67f6cea4
+Camping des Saules
+
+=== noye_ouveze/locations/camping_saules/address #570c880b
+On the bank of the Ouvèze, upstream of Vaison
+
+=== noye_ouveze/locations/camping_saules/short #67f6cea4
+Camping des Saules
+
+=== noye_ouveze/locations/camping_saules/inArticle #2d8446b3
+at the Camping des Saules
+
+=== noye_ouveze/locations/memorial/name #358adeae
+Flood memorial
+
+=== noye_ouveze/locations/memorial/address #7565c3f3
+Near the Roman bridge, Vaison-la-Romaine
+
+=== noye_ouveze/locations/memorial/short #95ee29ed
+Memorial
+
+=== noye_ouveze/locations/memorial/inArticle #a4ebbd36
+at the memorial in Vaison
+
+=== noye_ouveze/characters/garcin/name #dfbb205e
+Garcin Jacques
+
+=== noye_ouveze/characters/garcin/label #95a0e3ce
+Jacques Garcin
+
+=== noye_ouveze/characters/garcin/role #7db31924
+Manager of the Camping des Saules, lost in the 1992 flood
+
+=== noye_ouveze/characters/royer/name #50fdf65b
+Royer Lucien
+
+=== noye_ouveze/characters/royer/label #b452e30e
+Lucien Royer
+
+=== noye_ouveze/characters/royer/role #fa90d0fe
+Farmhand at Tardieu's, the man in the photo
+
+=== noye_ouveze/characters/helene/name #301f6384
+Garcin Hélène
+
+=== noye_ouveze/characters/helene/label #da6e92a5
+Hélène Garcin
+
+=== noye_ouveze/characters/helene/role #4c853bc7
+Jacques Garcin's widow
+
+=== noye_ouveze/characters/chabert/name #8faed9ea
+Chabert Aimé
+
+=== noye_ouveze/characters/chabert/label #bd295391
+Aimé Chabert
+
+=== noye_ouveze/characters/chabert/role #3d550774
+Miller in Nyons (the victim)
+
+=== noye_ouveze/characters/firmin/name #48502d04
+Achard Firmin
+
+=== noye_ouveze/characters/firmin/label #73059b84
+Firmin Achard
+
+=== noye_ouveze/characters/firmin/role #aee4dc9b
+Boules player, at the Pension des Forts
+
+=== noye_ouveze/characters/sandrine/name #49a3962f
+Mollet Sandrine
+
+=== noye_ouveze/characters/sandrine/label #d3803724
+Sandrine Mollet
+
+=== noye_ouveze/characters/sandrine/role #5bb6c751
+Seasonal cherry picker
+
+=== noye_ouveze/characters/montagne/name #cb7bb4bf
+Montagne (Warrant Officer)
+
+=== noye_ouveze/characters/montagne/label #2823ea0a
+Warrant Officer Montagne
+
+=== noye_ouveze/characters/montagne/role #d605628c
+Commander of the gendarmerie station
+
+=== noye_ouveze/characters/sauvan/name #25d4c2db
+Sauvan Anne (Dr)
+
+=== noye_ouveze/characters/sauvan/label #7fec7ba2
+Dr Anne Sauvan
+
+=== noye_ouveze/characters/sauvan/role #4433106f
+Doctor who certified the death
+
+=== noye_ouveze/characters/gaston/name #d2f664c7
+Rey Gaston
+
+=== noye_ouveze/characters/gaston/label #72fa14e7
+Gaston Rey
+
+=== noye_ouveze/characters/gaston/role #c8eb52f6
+Road mender, secretary of la Boule nyonsaise
+
+=== noye_ouveze/characters/fredo/name #9876be48
+Fredo
+
+=== noye_ouveze/characters/fredo/label #9876be48
+Fredo
+
+=== noye_ouveze/characters/fredo/role #2effdd50
+Waiter at the Café des Arcades
+
+=== noye_ouveze/characters/josiane/name #2a4126db
+Pellegrin Josiane
+
+=== noye_ouveze/characters/josiane/label #2dcb6a56
+Josiane Pellegrin
+
+=== noye_ouveze/characters/josiane/role #186d9ba8
+The miller's cleaning lady
+
+=== noye_ouveze/characters/isnard/name #8db49b5d
+Isnard Norbert
+
+=== noye_ouveze/characters/isnard/label #4b69b385
+Norbert Isnard
+
+=== noye_ouveze/characters/isnard/role #6ccca44d
+Canal keeper of the mill canal
+
+=== noye_ouveze/characters/tardieu/name #cf227ac4
+Tardieu Raoul
+
+=== noye_ouveze/characters/tardieu/label #d1df6b7c
+Raoul Tardieu
+
+=== noye_ouveze/characters/tardieu/role #7f4521b7
+Fruit grower in Les Pilles
+
+=== noye_ouveze/characters/gisele/name #2c3955b5
+Arnaud Gisèle
+
+=== noye_ouveze/characters/gisele/label #b0c41525
+Gisèle Arnaud
+
+=== noye_ouveze/characters/gisele/role #841b19bf
+Le Drômois correspondent in Nyons
+
+=== noye_ouveze/characters/vasseur/name #670e8508
+Vasseur Jean-Claude
+
+=== noye_ouveze/characters/vasseur/label #0af8863f
+Jean-Claude Vasseur
+
+=== noye_ouveze/characters/vasseur/role #345260d5
+Claims inspector for the Mutuelle rhodanienne
+
+=== noye_ouveze/characters/rosa/name #7633e153
+Bérenger Rosa
+
+=== noye_ouveze/characters/rosa/label #ac789a64
+Rosa Bérenger
+
+=== noye_ouveze/characters/rosa/role #33d04e50
+Flood widow, in Vaison
+
+=== noye_ouveze/characters/roux/name #ed227f21
+Roux (pharmacist)
+
+=== noye_ouveze/characters/roux/label #f2b42023
+Mme Roux
+
+=== noye_ouveze/characters/roux/role #183df636
+Pharmacist, Pharmacie du Pont
+
+=== noye_ouveze/documents/lettre_anonyme/name #a2da8b17
+The anonymous letter
+
+=== noye_ouveze/documents/photo_concours/name #3bb1904b
+The Grand Prix de la Digue photo
+
+=== noye_ouveze/documents/coupure_1992/name #acc1a182
+The 1992 photo of Garcin
+
+=== noye_ouveze/documents/lettre_chabert/name #886be8e9
+The miller's letter
+
+=== noye_ouveze/documents/cles_moulin/name #9213737d
+The mill keys
+
+=== noye_ouveze/documents/portrait_robot/name #0f459bfe
+The identikit portrait
+
+=== noye_ouveze/documents/lampe/name #fb99172a
+The Camping des Saules torch
+
+=== noye_ouveze/documents/pv/name #9e0278e8
+The gendarmes' report
+
+=== noye_ouveze/documents/analyse/name #e477a9ac
+The laboratory analysis
+
+=== noye_ouveze/documents/assurance/name #72b98c41
+The life insurance on Jacques Garcin
+
+=== noye_ouveze/documents/mandats/name #44d63b3c
+The postal orders to L. Royer
+
+=== noye_ouveze/documents/carnet_firmin/name #e9aa915d
+Firmin Achard's notebook
+
+=== noye_ouveze/documents/brouillon/name #aaf874a5
+The miller's draft
+
+=== noye_ouveze/documents/feuille_concours/name #d6951819
+The Grand Prix entry sheet
+
+=== noye_ouveze/documents/carte_thierry/name #5c8c9f09
+Thierry's postcard
+
+=== noye_ouveze/documents/boules/name #82e8eeab
+The boules engraved J.G.
+
+=== noye_ouveze/documents/photo_famille/name #c7040650
+The family photo
+
+=== noye_ouveze/documents/temoignage_karim/name #a7c75774
+What Karim saw at Les Saules
+
+=== noye_ouveze/minitel/0/lines/0 #d5d14cb2
+TARDIEU Raoul
+
+=== noye_ouveze/minitel/0/lines/1 #a5eb1496
+Fruit grower
+
+=== noye_ouveze/minitel/0/lines/2 #56f2fc3d
+Route des Pilles · 26110 LES PILLES
+
+=== noye_ouveze/minitel/1/lines/0 #a5cfca7e
+SAUVAN Anne
+
+=== noye_ouveze/minitel/1/lines/1 #87ad7055
+General practitioner
+
+=== noye_ouveze/minitel/1/lines/2 #70330966
+Rue de la Résistance · 26110 NYONS
+
+=== noye_ouveze/minitel/2/lines/0 #30cfaadd
+ROYER
+
+=== noye_ouveze/minitel/2/lines/1 #0605eb57
+No subscriber by this name
+
+=== noye_ouveze/minitel/2/lines/2 #b8674033
+in the Drôme.
+
+=== noye_ouveze/minitel/3/lines/0 #c680807d
+GARCIN Hélène
+
+=== noye_ouveze/minitel/3/lines/1 #d0c2f688
+Rue des Grands-Forts
+
+=== noye_ouveze/minitel/3/lines/2 #58eeb0b4
+26110 NYONS
+
+=== noye_ouveze/minitel/4/lines/0 #f4edf856
+CHABERT Aimé
+
+=== noye_ouveze/minitel/4/lines/1 #644eff25
+Oil mill
+
+=== noye_ouveze/minitel/4/lines/2 #7f77893c
+Quartier du Pont roman · 26110 NYONS
+
+=== noye_ouveze/minitel/5/lines/0 #d8f7f730
+ACHARD
+
+=== noye_ouveze/minitel/5/lines/1 #0605eb57
+No subscriber by this name
+
+=== noye_ouveze/minitel/5/lines/2 #b8674033
+in the Drôme.
+
+=== noye_ouveze/minitel/6/lines/0 #7e117bef
+MOLLET
+
+=== noye_ouveze/minitel/6/lines/1 #07e05246
+No subscriber by this name in the Drôme.
+
+=== noye_ouveze/minitel/6/lines/2 #2eb24a40
+14 subscribers in the Loire: please specify the town.
+
+=== noye_ouveze/minitel/7/lines/0 #f73f4b1b
+MUTUELLE RHODANIENNE
+
+=== noye_ouveze/minitel/7/lines/1 #4827747d
+Avignon branch
+
+=== noye_ouveze/minitel/7/lines/2 #95b72bd1
+84000 AVIGNON
+
+=== noye_ouveze/minitel/8/lines/0 #02ff8bc0
+BÉRENGER Marius
+
+=== noye_ouveze/minitel/8/lines/1 #eddd5004
+Route de Malaucène
+
+=== noye_ouveze/minitel/8/lines/2 #53cf6bca
+84110 VAISON-LA-ROMAINE
+
+=== noye_ouveze/minitel/9/lines/0 #93cafcfc
+ISNARD Norbert
+
+=== noye_ouveze/minitel/9/lines/1 #2f7b19f4
+Chemin du canal
+
+=== noye_ouveze/minitel/9/lines/2 #58eeb0b4
+26110 NYONS
+
+=== noye_ouveze/minitel/10/lines/0 #8ad9cafc
+Search by first name not possible.
+
+=== noye_ouveze/minitel/10/lines/1 #7cd1e5be
+Type the surname.
+
+=== noye_ouveze/clues/gisele/button #8e79c3c6
+Talk to Gisèle Arnaud, the correspondent
+
+=== noye_ouveze/clues/gisele/title #942af0e4
+Gisèle Arnaud, correspondent
+
+=== noye_ouveze/clues/gisele/text #d01d5256
+{{p:gisele|Gisèle Arnaud}} has been Le Drômois's correspondent in Nyons for twenty-two years. She covers council meetings, agricultural shows, weddings and boules tournaments. She has brought a lemon cake “for the Lyon people” and she watches you eat it.
+
+“The photo's mine. Sunday 29 May, at La Digue. It's the first time they've ever picked me up for the regional page.” She smiles, then she stops smiling. “He turned his head just as I pressed the button. I didn't do it on purpose, you have to believe me. I didn't know, about Garcin.”
+
+Since 2 June, she says, people have talked about nothing else. In Vaison most of all. “They all lost someone, down there. And now they see their dead everywhere. {{p:rosa|Rosa Bérenger}}, one of the flood widows, swears she saw her husband last Thursday, at the market, in front of the cheese stall. She spends her days at the {{l:memorial|memorial}}, near the Roman bridge in Vaison. She says the river gives back its dead. People are starting to repeat it.”
+
+She lowers her voice, though there is nobody else in the office. “And there's this old gentleman, at the Pension des Forts. He came in on 2 June and bought three copies of the paper. Three. He asked me exactly what time I took the photo. I told him about six. He said: no, at twelve minutes to six, look at the shadow of the plane tree.” She checked. He was right.
+
+“His name's {{p:firmin|Achard}}, I think. He plays boules, but I've never seen him win.”
+
+=== noye_ouveze/clues/gisele/facts/0/text #4866c854
+Taken by Gisèle Arnaud on Sunday 29 May at about 5.48 p.m., at La Digue. Royer turned his head as the shutter went.
+
+=== noye_ouveze/clues/gisele/facts/1/text #3fb2b5bd
+Widow of the 1992 flood. Says she saw her dead husband at the Vaison market. “The river gives back its dead.”
+
+=== noye_ouveze/clues/gisele/facts/2/text #5108e5d0
+Old boules player, at the Pension des Forts. Bought three copies of the 2 June paper and worked out the time of the photo to the minute.
+
+=== noye_ouveze/clues/odile/button #11ee6b11
+Call Odile at the group archives
+
+=== noye_ouveze/clues/odile/title #4575dc9a
+Odile and the 1992 flood
+
+=== noye_ouveze/clues/odile/text #2e36dfd7
+Odile calls back within the hour. Then the office fax starts spitting out thermal paper, which curls up on the floor like a tongue.
+
+[[fax]]
+
+Paul puts his finger on the photo of Garcin, then on Royer's, the page from the tournament. You can see nothing in the second one. An ear. A cheek. “He had a moustache, in 1992.”
+
+Karim, for his part, has underlined two names in the list of victims, without knowing why. “Roanne. That's near us, Roanne.”
+
+=== noye_ouveze/clues/odile/facts/0/text #9615cc00
+Manager of the Camping des Saules, upstream of Vaison. Born in Givors in 1944. Has a moustache in the 1992 newspaper photo.
+
+=== noye_ouveze/clues/odile/facts/0/label #55f04cb0
+In 1992
+
+=== noye_ouveze/clues/odile/facts/1/text #ad2a7e51
+“I saw him go off towards the caravan at the far end. The water took him.” Le Drômois, 25 September 1992.
+
+=== noye_ouveze/clues/odile/facts/1/label #74df2a5b
+His statement
+
+=== noye_ouveze/clues/odile/facts/2/text #d9b0a46d
+Le Drômois, 25 September 1992: “The hero of the Camping des Saules”. The photo of Garcin, moustache, dark hair.
+
+=== noye_ouveze/clues/odile/facts/3/text #8657353b
+Jacques Garcin's campsite on the bank of the Ouvèze, upstream of Vaison. Destroyed by the flood of 22 September 1992.
+
+=== noye_ouveze/clues/odile/facts/4/text #9f780d22
+Among the dead of the flood: Thierry Mollet, 26, and Nathalie Brun, 24, from Roanne, found at Roaix three days later.
+
+=== noye_ouveze/clues/odile/facts/4/label #26352db1
+The victims
+
+=== noye_ouveze/clues/odile/fax #ded63ea4
+GROUPE SARRAZIN · ARCHIVES DEPARTMENT · LYON
+TO: BUREAU OF OCCULT AFFAIRS, C/O LE DRÔMOIS, NYONS · 2 PAGES
+
+LE DRÔMOIS, 25 SEPTEMBER 1992, PAGE 1
+The hero of the Camping des Saules. Jacques Garcin, 48, born in Givors, manager of the Camping des Saules upstream of Vaison, was swept away late on Tuesday afternoon as he went back for the occupants of a caravan at the far end of the site. His friend Aimé Chabert, a miller from Nyons who had come to help with the evacuation: “I saw him go off towards the caravan at the far end. The water took him. There was nothing I could do.” His car was found at the ford, upside down. The body has not been found. (Photo: J. Garcin at the campsite reception, summer 1991.)
+
+LE DRÔMOIS, 28 SEPTEMBER 1992, PAGE 3, LIST OF VICTIMS (EXTRACT)
+… Thierry MOLLET, 26, and Nathalie BRUN, 24, from Roanne, on holiday, found at Roaix …
+
+(Handwritten, at the bottom of the page:) In the 1991 photo he has a moustache and dark hair. The nose has been broken, and badly set. O.
+
+=== noye_ouveze/clues/lettre_chabert/button #465447eb
+Read Odile's fax: a letter to the editor
+
+=== noye_ouveze/clues/lettre_chabert/title #886be8e9
+The miller's letter
+
+=== noye_ouveze/clues/lettre_chabert/text #9172e977
+On Monday morning the {{d:lettre_chabert|fax}} rings before you have finished your coffee. Odile has written across the top of the first page, in felt-tip: “Reached Valence on Friday, in the readers' letters. They put it aside. They didn't know what to do with it. I do.”
+
+[[fax]]
+
+Nobody says anything for a while. The fan turns. Karim rereads the last sentence under his breath.
+
+Paul lights his cigarette, for once, and leaves it to burn down in the ashtray without touching it.
+
+=== noye_ouveze/clues/lettre_chabert/facts/0/text #8d5e5f78
+Posted in Valence by Aimé Chabert on Wednesday 15 June, the day he died. He admits he lied in 1992 and says he will speak to the gendarmes on Thursday.
+
+=== noye_ouveze/clues/lettre_chabert/facts/1/text #c5f6c726
+“I lied in 1992. Jacques is not dead. I will tell the gendarmes on Thursday.”
+
+=== noye_ouveze/clues/lettre_chabert/facts/1/label #05da7ead
+His letter
+
+=== noye_ouveze/clues/lettre_chabert/facts/2/text #49ec7e45
+“Hélène knows, I told her on Sunday.” She knew the miller would talk on Thursday.
+
+=== noye_ouveze/clues/lettre_chabert/facts/2/label #d28de1f5
+According to Chabert
+
+=== noye_ouveze/clues/lettre_chabert/fax #144941ef
+AIMÉ CHABERT · MOULIN CHABERT · QUARTIER DU PONT ROMAN · 26110 NYONS
+TO THE EDITORS OF LE DRÔMOIS, VALENCE · POSTED 15 JUNE 1994
+
+Dear Sirs,
+
+On 2 June you published the photo of a man called Lucien Royer. He is Jacques Garcin. He did not die in 1992. I lied to the gendarmes. I did not see him swept away. I found him alive, that night, up in the hills, and he asked me to say he was dead. I did. He did not go back for the caravan at the far end. He had forgotten it.
+
+I will tell the gendarmes on Thursday. I am also writing to the paper, because it was the paper that made him a hero, and because I am afraid I will not have the courage on Thursday.
+
+Hélène knows. I told her on Sunday. She asked me to wait. I will not wait any longer.
+
+If anything happens to me, it will not be the river.
+
+Aimé Chabert
+
+=== noye_ouveze/clues/confrontation/button #0bb563bf
+Bring in the four witnesses from Wednesday night
+
+=== noye_ouveze/clues/confrontation/title #016a5a6a
+Karim's grid
+
+=== noye_ouveze/clues/confrontation/text #41b5c879
+Paul has asked Gisèle to lend you the back room of the office, where the old issues are kept. A table, four chairs, stacks of yellowed newspapers up to the ceiling. He has them come in one at a time, an hour apart, without telling them who else is coming. Karim writes everything down, word for word, on a large sketch pad.
+
+{{p:helene|Hélène Garcin}} comes in a pale suit, her handbag on her knees, and does not sit back in the chair. {{p:royer|Lucien Royer}} comes because Tardieu told him to, cap in hand, and watches the door. {{p:firmin|Firmin Achard}} arrives exactly on time, and points it out. {{p:sandrine|Sandrine Mollet}} comes between two days of picking, her fingers red, and answers the table rather than Paul.
+
+Paul asks them all the same question: on Wednesday night, at about ten, where were you, what did you have on you, and why were you out?
+
+On her way out, Sandrine turns back to Karim, not to Paul. “The man I gave the boule back to, at twenty to, under the street lamp at La Digue. I'd watched him play all afternoon, from a distance. Short hair, grey. High forehead, with lines, three of them. A moustache, I think. Well. I don't know any more. I've looked at that man so much in the paper. Square chin. I didn't look him in the eye.”
+
+Karim has made a fair copy of the statements, next to what the gendarmes' file says. He has drawn the grids. “One of them is lying. Everything he says is false. The other three are telling the truth.”
+
+=== noye_ouveze/clues/confrontation/facts/0/text #0a9f465f
+Describes the man she gave the boule back to, on Wednesday at 10.40 p.m.: short grey hair, high lined forehead, “a moustache, I think”, square chin. She had watched him play in daylight.
+
+=== noye_ouveze/clues/confrontation/facts/0/label #728c5525
+The description
+
+=== noye_ouveze/clues/portrait/button #db791bf3
+Put together the identikit portrait with Yves
+
+=== noye_ouveze/clues/portrait/title #0f459bfe
+The identikit portrait
+
+=== noye_ouveze/clues/portrait/text #601aaffd
+Yves has taken an old identikit kit out of a suitcase, bought at a police sale in 1981: sheets of features printed on tracing paper, which you lay one over another. He spreads them out on the desk, under the fan, and puts a stapler on each pile so they don't blow away.
+
+“Two witnesses. Sandrine saw him play in broad daylight, from a distance, and in the evening under a street lamp. Karim saw him from a metre away, by candlelight, frightened. Each of them gets something wrong. People always get something wrong. You just have to know what, and why.”
+
+He hands you the overlays.
+
+=== noye_ouveze/clues/montagne/button #907b7550
+Meet Warrant Officer Montagne
+
+=== noye_ouveze/clues/montagne/title #2823ea0a
+Warrant Officer Montagne
+
+=== noye_ouveze/clues/montagne/text #69cee918
+Warrant Officer {{p:montagne|Montagne}} receives you standing, behind the station counter, the way you receive people who have come to report a stolen bicycle. He has a moustache trimmed to the millimetre and a mug that says “Club taurin de Nyons”.
+
+“The Bureau of Occult Affairs.” He says it slowly, so you can hear how it sounds. “A man of sixty-three who drinks, who lives alone, who goes out by his canal at midnight and falls in. 1.8 grams. There's nothing occult about that. Full stop.”
+
+A toxicology test? “What for? We know what he drank: marc. The bottle was on the table.” Nobody pushed him, he says, there's not a sign of a struggle, not one witness. The ghost? “That's for your paper. I don't have a ghost column.”
+
+He sees you out. On the doorstep, he adds all the same, in an undertone: “The death was certified by {{p:sauvan|Dr Sauvan}}. She asks questions too. She's young.”
+
+=== noye_ouveze/clues/montagne/facts/0/text #cc4e07fc
+Concludes it was an accident: 1.8 g of alcohol, a fall into the canal. No toxicology test. “Nobody pushed him.”
+
+=== noye_ouveze/clues/montagne/facts/1/text #6a06317a
+Accidental death: drunk, he fell into the canal going out through the millrace door.
+
+=== noye_ouveze/clues/montagne/facts/1/label #c74dc2f2
+According to the gendarmes
+
+=== noye_ouveze/clues/montagne/facts/2/text #4881a5fb
+Certified Aimé Chabert's death. “She asks questions,” according to the warrant officer.
+
+=== noye_ouveze/clues/dossier/button #47d89e29
+Read the file, since there's nothing to hide
+
+=== noye_ouveze/clues/dossier/title #22bba5cb
+The gendarmerie file
+
+=== noye_ouveze/clues/dossier/text #cb446ef9
+“You want to read the file? Read it. There's nothing to hide, it's an accident.” The warrant officer sets you up in an empty office with a cardboard folder and shuts the door behind you. It runs to only nine pages.
+
+The {{d:pv|report}} is dated Thursday 16 June, 6.30 a.m. The body was found at 5.10 a.m. by {{p:isnard|the canal keeper}}, against the grating, two hundred metres downstream of the mill. Death certified by {{p:sauvan|Dr Sauvan}}. At the mill, the street door was locked. Chabert's bunch of keys was hanging on its nail, inside. The door onto the millrace was open, and so was the sluice gate: “the victim must have opened it himself, while intoxicated”. Nobody pushed him, the officer concludes. On the bank of the {{l:canal|canal}}, upstream, a metal {{d:lampe|torch}}, still switched on, the battery almost flat. On the handle, a Dymo label: “CAMPING DES SAULES · ACCUEIL”.
+
+The house-to-house inquiry fits on one page. Four people out on Wednesday at about 10 p.m.: {{p:helene|Mme Hélène Garcin}}, at the {{l:arcades|Café des Arcades}}; “a man with boules”, whose name nobody knows; “the old gentleman from the pension”, {{p:firmin|M. Achard}}; and “a seasonal worker”, {{p:sandrine|Sandrine Mollet}}, who is staying at the {{l:camping_municipal|municipal campsite}}.
+
+And four statements taken, three lines each:
+{{p:gaston|Gaston Rey}}, road mender: at about 10 p.m., a woman alone near the La Digue boules ground.
+{{p:fredo|The waiter at the Arcades}}: his 10 p.m. customer “watched the door all evening”.
+{{p:josiane|Josiane Pellegrin}}, cleaning lady: M. Chabert told her on Wednesday that he had to “have it out with someone, at the canal, tonight”.
+And the torch, found on the bank: whoever was holding it was at the canal.
+
+Nobody made the connection between the torch and the {{l:camping_saules|Camping des Saules}}. Or nobody wanted to.
+
+
+=== noye_ouveze/clues/dossier/facts/0/text #2a81c94a
+Mill door locked, Chabert's key ring on its nail inside, millrace door open, sluice gate opened “by the victim”. Body found at 5.10 a.m. against the grating.
+
+=== noye_ouveze/clues/dossier/facts/1/text #63961e3f
+Found switched on, on the bank of the canal upstream of the mill. Dymo label: “CAMPING DES SAULES · ACCUEIL”. Whoever was holding it was at the canal.
+
+=== noye_ouveze/clues/dossier/facts/2/text #85577d8c
+At the Café des Arcades around 10 p.m., according to the door-to-door inquiries.
+
+=== noye_ouveze/clues/dossier/facts/2/label #5ae98fd6
+Wednesday night
+
+=== noye_ouveze/clues/dossier/facts/3/text #cc35c7d2
+Around 10 p.m. on Wednesday, saw a woman on her own near La Digue boules ground.
+
+=== noye_ouveze/clues/dossier/facts/4/text #327334af
+Her 10 p.m. customer at the Arcades “watched the door all evening”: she was waiting for someone.
+
+=== noye_ouveze/clues/dossier/facts/5/text #08ca22bc
+On Wednesday Chabert told her he had to “have it out with someone, at the canal, tonight”.
+
+=== noye_ouveze/clues/dossier/facts/6/text #067ac8e1
+Seasonal worker, staying at the municipal campsite. Out on Wednesday around 10 p.m.
+
+=== noye_ouveze/clues/dossier/facts/7/text #1104b5a3
+Out around 10 p.m., according to the door-to-door inquiries.
+
+=== noye_ouveze/clues/dossier/facts/7/label #5ae98fd6
+Wednesday night
+
+=== noye_ouveze/clues/sauvan/button #f9b487d0
+See Dr Sauvan
+
+=== noye_ouveze/clues/sauvan/title #6acefb77
+Dr Sauvan
+
+=== noye_ouveze/clues/sauvan/text #87d47267
+{{p:sauvan|Dr Anne Sauvan}}'s surgery is on the first floor, above a shop selling Provençal fabrics. She is thirty-two, her hair held up with a pencil, and between patients she smokes at the window, blowing the smoke outside as if that way it didn't count.
+
+“I don't sign what I don't know. I wrote drowning. I wrote alcohol. I didn't write accident, the gendarme wrote that.” She draws on her cigarette. “Death was between eleven at night and one in the morning. Not before eleven, that much I'll sign.”
+
+What bothers her is the hands. “A drowning man struggles. He grabs at the weeds, he breaks his nails on the concrete, he's covered in silt. Him, nothing. Clean hands. Not a scratch. He didn't fight.” She stubs the cigarette out on the sill. “He was asleep when he went into the water. A man who's drunk a litre of marc can sleep, fine. But not that deeply.”
+
+The warrant officer didn't want any tests. She kept a tube of blood in the fridge and on Friday she sent it to a laboratory in Lyon, at her own expense. “The result comes Tuesday. Come back Tuesday. And don't tell Montagne, he'd be put out.”
+
+=== noye_ouveze/clues/sauvan/facts/0/text #7df9e38d
+Aimé Chabert died between 11 p.m. and 1 a.m., not before 11 p.m. No sign of a struggle: “He was asleep when he went into the water.”
+
+=== noye_ouveze/clues/sauvan/facts/1/text #11aaf903
+Died after 11 p.m., without struggling. Dr Sauvan has had his blood tested in Lyon: result on Tuesday 21.
+
+=== noye_ouveze/clues/sauvan/facts/1/label #45562cfc
+According to Dr Sauvan
+
+=== noye_ouveze/clues/labo/button #69690497
+Call Dr Sauvan back about the test
+
+=== noye_ouveze/clues/labo/title #e477a9ac
+The laboratory report
+
+=== noye_ouveze/clues/labo/text #eb6fb9eb
+Dr Sauvan has the laboratory's sheet in her hand when you come in. She doesn't ask you to sit down.
+
+{{d:analyse|Test report}}, Mérieux laboratory, Lyon. Blood alcohol: 1.8 g. And one more line: nitrazepam, at a concentration “consistent with several tablets taken in the hours preceding death”.
+
+“Mogadon. A sleeping pill. It gets prescribed to insomniacs, to widows, to people who are frightened at night. With a litre of marc on top, he couldn't have lifted an arm.” She folds the sheet. “He didn't take it, I've been his doctor for four years. Someone gave it to him.”
+
+She doesn't need to be asked the next question. “In the centre there's only one chemist that dispenses a lot of it. The {{l:pharmacie|Pharmacie du Pont}}. {{p:roux|Mme Roux}}. She won't tell you anything. Well, she'll tell you she never tells anyone anything, and then she'll talk.”
+
+She is taking the report to the gendarmerie this afternoon. “Montagne will be put out. Too bad.”
+
+=== noye_ouveze/clues/labo/facts/0/text #6d4427af
+Aimé Chabert's blood: 1.8 g of alcohol and a heavy dose of nitrazepam (Mogadon), taken a few hours before death.
+
+=== noye_ouveze/clues/labo/facts/1/text #884c1c69
+Drugged with Mogadon before he went into the water. He didn't take it.
+
+=== noye_ouveze/clues/labo/facts/1/label #35b8106f
+The laboratory
+
+=== noye_ouveze/clues/pharmacie/button #8b77b199
+Talk to the chemist
+
+=== noye_ouveze/clues/pharmacie/title #7cfe6ba2
+Mme Roux, chemist
+
+=== noye_ouveze/clues/pharmacie/text #cc0acc8c
+{{p:roux|Mme Roux}} wears a starched white coat and glasses on a chain. Behind her, earthenware jars and a poster warning against sunburn.
+
+“I don't discuss my customers. Ever.” She puts three boxes away on a shelf, very carefully. “Mogadon, I dispense it to about twenty people. Elderly people, mostly. And people who've had a misfortune.”
+
+She turns towards the shop window. “Only one of those people came in last Thursday, at half past eight, before I'd even raised the blind. To renew her prescription, ten days early. She told me she'd tipped the box into the sink. I told her it didn't matter.” For a moment she says nothing. “She had a great misfortune, in 1992. I haven't told you her name.”
+
+She doesn't need to. There is only one widow of 1992 in Nyons whom people call “her”, lowering their voices.
+
+=== noye_ouveze/clues/pharmacie/facts/0/text #e3a1f058
+A customer, widowed in 1992, came in on Thursday 16 June at 8.30 a.m. to renew her Mogadon ten days early: “I tipped the box into the sink.”
+
+=== noye_ouveze/clues/pharmacie/facts/1/text #4945c6a6
+According to the chemist, renewed her Mogadon early on the morning of Thursday 16, the day after the miller died.
+
+=== noye_ouveze/clues/pharmacie/facts/1/label #3157100e
+The Mogadon
+
+=== noye_ouveze/clues/vasseur/button #9a0119f5
+Meet the man from the Mutuelle
+
+=== noye_ouveze/clues/vasseur/title #446788fb
+Jean-Claude Vasseur, of the Mutuelle rhodanienne
+
+=== noye_ouveze/clues/vasseur/text #e0874911
+{{p:vasseur|Jean-Claude Vasseur}}, claims inspector for the Mutuelle rhodanienne, has the best table on the terrace of the Hôtel de la Place, under the only parasol still standing. Grey suit, tie loosened by two centimetres, a solar calculator on top of his files.
+
+“The Bureau of Occult Affairs. I was told.” He orders two mint diabolos without asking you. “Me, I'm the Bureau of Very Concrete Affairs.”
+
+The contract is simple, he says. {{d:assurance|Life insurance}} on Jacques Garcin, taken out in 1988. Declaratory judgment of death in July 1993, in Carpentras. 1.4 million francs paid to the widow in December. “She bought back her parents' house, rue des Grands-Forts. She invested the rest for the children's education. A very sensible woman.”
+
+“If Garcin is alive, it all goes back to the Mutuelle. All of it. The house, the investments. And if the widow knew he was alive, it's no longer a repayment, it's fraud. The criminal court.” He taps the calculator. “Prison, possibly.”
+
+He was sent after the photo of 2 June, when someone telephoned his Avignon office. A young woman's voice, who didn't give her name. And there is something else. “The miller called me himself, on Tuesday the 14th. He wanted to know what a witness who'd made a false statement was facing. I told him to come and see me. He was supposed to come on Thursday.” He sighs. “If you want my opinion, I think he was blackmailing the widow. A poor devil with debts and a secret. We see them every day.”
+
+=== noye_ouveze/clues/vasseur/facts/0/text #6a0d1c8c
+Jacques Garcin's life insurance: 1.4 million francs paid to Hélène in December 1993. If Garcin is alive, it must all be repaid; if the widow knew, it is fraud.
+
+=== noye_ouveze/clues/vasseur/facts/1/text #40ff8095
+Inspector for the Mutuelle rhodanienne, in Nyons since the photo of 2 June. An anonymous young woman called his office.
+
+=== noye_ouveze/clues/vasseur/facts/2/text #501550ef
+Called the Mutuelle on Tuesday 14 to ask what a false witness was facing. Was due to come in on the Thursday. Vasseur suspects him of blackmailing the widow.
+
+=== noye_ouveze/clues/vasseur/facts/2/label #ea4a848e
+According to Vasseur
+
+=== noye_ouveze/clues/fredo/button #e0b4e3c5
+Talk to the waiter
+
+=== noye_ouveze/clues/fredo/title #c711a182
+Fredo, waiter at the Arcades
+
+=== noye_ouveze/clues/fredo/text #2c2394bd
+{{p:fredo|Fredo}} is wiping the terrace tables under the arcades with a cloth that has seen better days. He is on first-name terms with everyone, Paul included.
+
+“Mme Garcin? Wednesday, yeah. She sat there, half past nine, at the corner table. A mint cordial. She was watching the door. Not the square, the door. Every time somebody came in, she looked up.” He folds the cloth in four. “She was waiting for someone, no question. Someone who never showed.”
+
+She left at a quarter to eleven. “I remember because she hadn't finished her drink, and she left a twenty for a mint cordial. She went that way.” He points to the street that runs down to the east. “Towards the Roman bridge. Not towards home. Home's up the top, in Les Forts.”
+
+“The old boy from the pension, M. Achard, he reads his paper on the {{l:pont|Roman bridge}} every night, from nine till all hours. You could set your watch by him. Wednesday, same.”
+
+=== noye_ouveze/clues/fredo/facts/0/text #9b302169
+Hélène Garcin at the Arcades from 9.30 p.m. to 10.45 p.m., a mint cordial, eyes on the door. Left without finishing her drink, towards the Roman bridge, not towards home.
+
+=== noye_ouveze/clues/fredo/facts/0/label #5ae98fd6
+Wednesday night
+
+=== noye_ouveze/clues/fredo/facts/1/text #b914b0cf
+Left the Arcades at 10.45 p.m., heading for the Roman bridge.
+
+=== noye_ouveze/clues/fredo/facts/1/label #b38b18d7
+According to Fredo
+
+=== noye_ouveze/clues/fredo/facts/2/text #95fd3fa7
+Reads his paper on the Roman bridge every night, from 9 p.m. “till all hours”. Wednesday too.
+
+=== noye_ouveze/clues/fredo/facts/2/label #b38b18d7
+According to Fredo
+
+=== noye_ouveze/clues/helene/button #c1d9318d
+Visit Hélène Garcin
+
+=== noye_ouveze/clues/helene/title #2e136bf9
+Hélène Garcin, the widow
+
+=== noye_ouveze/clues/helene/text #44d18fc8
+The house is at the top of Les Forts, rue des Grands-Forts, where the lanes turn into covered stairways. Blue shutters, a bay tree in a pot, a teenager's bike against the wall. {{p:helene|Hélène Garcin}} opens the door before you have knocked. She saw you coming up.
+
+She serves you cold water in stemmed glasses, on a tray. She is very calm. She talks about Nyons olive oil, the only one in France with an appellation, about last winter's harvest, about the price per litre. When Paul lays the competition page on the table, she doesn't look at it.
+
+“Jacques is dead, monsieur. The river gives nothing back. I know, I waited three weeks by the water for it to give him back to me.” She puts her glass down. “I've stopped the subscription to Le Drômois. The children don't need to see that.”
+
+Wednesday night? She was at the Arcades. “I was waiting for a friend, who didn't come. I went home.” She has worked in the mill shop since last year: “Aimé offered it to me. He was good to us.” The keys to the mill? “I gave them back to him in May. The shop closes in summer, we only press in winter.”
+
+As she sees you out, she adds, in the same tone: “A gentleman from the Mutuelle came to see me. He's staying at the {{l:hotel|Hôtel de la Place}}. {{p:vasseur|M. Vasseur}}. You should talk to each other, you'd get on.”
+
+=== noye_ouveze/clues/helene/facts/0/text #73cce009
+“Jacques is dead. The river gives nothing back.” Stopped her subscription to Le Drômois after the photo.
+
+=== noye_ouveze/clues/helene/facts/1/text #c033321c
+Says she waited at the Arcades for “a friend who didn't come”, then went home.
+
+=== noye_ouveze/clues/helene/facts/1/label #5ae98fd6
+Wednesday night
+
+=== noye_ouveze/clues/helene/facts/2/text #3c37db9e
+Says she gave the mill keys back to Aimé Chabert in May. Has worked in the mill shop since 1993.
+
+=== noye_ouveze/clues/helene/facts/2/label #13c85ab0
+The keys
+
+=== noye_ouveze/clues/helene/facts/3/text #bc9ba3bd
+Inspector for the Mutuelle, staying at the Hôtel de la Place. Came to see Hélène.
+
+=== noye_ouveze/clues/maison/button #4896f9dd
+Come back while Hélène is at the shop
+
+=== noye_ouveze/clues/maison/title #6d1ae55d
+The Garcin house
+
+=== noye_ouveze/clues/maison/text #cf54cc6b
+You come back the next day, at the hour when Hélène minds the oil shop in the covered market. It is {{p:helene|her son}} Julien who opens the door, sixteen, a Walkman round his neck. He says his mother isn't in. Paul says he knows. Julien hesitates, then steps aside. “You're the ones from the paper. About my father.” It isn't a question.
+
+He shows you the back bedroom, his father's. Everything has been left as it was at the campsite: the map of the Ouvèze valley pinned to the wall, a pétanque cup, the wedding photo. “Mum doesn't want anyone touching it. She goes in there in the evenings. She shuts the door.”
+
+In the sitting room the bureau isn't locked. The letter from the Mutuelle rhodanienne, December 1993: payment of 1,400,000 francs under the {{d:assurance|life insurance}} policy. And under the letter, a Post Office counterfoil book. {{d:mandats|Postal orders}}, one a month, on the 5th, since 5 November 1992. 1,500 francs each time. Payee: “L. Royer, poste restante, 26170 Buis-les-Baronnies”. The last counterfoils are from May and June 1994.
+
+Julien has stayed in the doorway. “Who's Royer?” Nobody answers him. He puts his headphones back over his ears without switching the music on.
+
+=== noye_ouveze/clues/maison/facts/0/text #f51343c5
+Letter from the Mutuelle, December 1993: 1,400,000 F paid to Hélène Garcin. Kept in the bureau.
+
+=== noye_ouveze/clues/maison/facts/0/label #65a3e9b8
+The letter
+
+=== noye_ouveze/clues/maison/facts/1/text #438cc07a
+Postal order counterfoils: 1,500 F on the 5th of every month since November 1992, to “L. Royer, poste restante, Buis-les-Baronnies”. In Hélène's bureau.
+
+=== noye_ouveze/clues/maison/facts/2/text #58f44ce6
+Has sent 1,500 F a month to “L. Royer” since November 1992, two months after the flood.
+
+=== noye_ouveze/clues/maison/facts/2/label #e484ce98
+The postal orders
+
+=== noye_ouveze/clues/helene2/button #4a3c87e4
+Go back to Hélène with the time she left
+
+=== noye_ouveze/clues/helene2/title #13c4109a
+Hélène, second interview
+
+=== noye_ouveze/clues/helene2/text #3d5cd884
+This time Hélène sees you in the kitchen, with no tray. Paul lays the times on the table one by one, like playing cards. The Arcades left at a quarter to eleven, towards the bridge. The sluice gate opened with a key.
+
+She doesn't deny it for long. She corrects herself. “I went to the mill, yes. I wanted to talk to Aimé. He hadn't come to the Arcades. The door was locked, he didn't answer. I left.” She has the keys to the shop, yes. “I didn't give them back. I lied to you because I knew what you'd think.”
+
+“What did you want to talk to him about?” She looks at the window, where you can see, very far off, the line of the valley. “About my husband.”
+
+She doesn't ask what you know. She doesn't ask whether she is under suspicion. All she asks, at the end, is whether the children will hear about what is written on Saturday.
+
+=== noye_ouveze/clues/helene2/facts/0/text #a937086c
+Admits she went to the mill around 11 p.m. “to talk to Aimé”, and that she still has the shop keys. Says the door was locked and she left.
+
+=== noye_ouveze/clues/helene2/facts/0/label #d5486e33
+Second interview
+
+=== noye_ouveze/clues/helene2/buttonAlone #61eea9ae
+Question Hélène Garcin about the time she left
+
+=== noye_ouveze/clues/helene2/titleAlone #d42b83f4
+Hélène Garcin, faced with the time
+
+=== noye_ouveze/clues/firmin/button #29da712e
+Buy Firmin Achard a pastis
+
+=== noye_ouveze/clues/firmin/title #73059b84
+Firmin Achard
+
+=== noye_ouveze/clues/firmin/text #291fdcfc
+The Pension des Forts has six rooms and a terrace under a vine trellis. {{p:firmin|Firmin Achard}} has been settled there since 30 May, at the table at the back, a leather bag at his feet with three pétanque boules in it. White shirt buttoned to the collar despite the heat, a Drômois folded on the table, a pipe gone out.
+
+He accepts the pastis. He looks at you one by one, Paul, Yves, Karim, the way you look at boules before choosing which one to play.
+
+“I take the evening air on the bridge, like every old man in France.” Wednesday? “From four minutes to nine until ten past midnight.” He saw nothing. “I saw the water. It was low. It's always low in June, here.” He speaks of the river as of someone he has known a long time and slightly mistrusts.
+
+Karim asks him if he believes in ghosts. Firmin looks at him for a long while. “I believe in people who come back. It's not the same thing.”
+
+He leaves on Tuesday, he says. He has his room until Monday night. “After that, you know where to find me.” Nobody does.
+
+=== noye_ouveze/clues/firmin/facts/0/text #1d4a837c
+In Nyons since 30 May, at the Pension des Forts. Says he took the evening air on the Roman bridge on Wednesday from 8.56 p.m. to 12.10 a.m., and saw nothing “but the water”.
+
+=== noye_ouveze/clues/firmin/facts/1/text #f0f2419a
+Leaves Nyons on the morning of Tuesday 21 June.
+
+=== noye_ouveze/clues/firmin/facts/1/label #e07c95a2
+His departure
+
+=== noye_ouveze/clues/chambre_firmin/button #63c97afa
+Open the envelope left by M. Achard
+
+=== noye_ouveze/clues/chambre_firmin/title #1a60db5e
+Firmin Achard's notes
+
+=== noye_ouveze/clues/chambre_firmin/text #83553ec0
+The landlady of the pension stops you on the stairs. “M. Achard left this morning, at six, with his bag. He's paid till the end of the month. He left this for you. He said: for the journalists from Lyon, they'll come on Tuesday.” She holds out a large brown envelope, sealed with wax.
+
+Inside, a {{d:carnet_firmin|notebook}} bound in black cloth. On the first page, a very old stamp in red ink: a salamander in flames. And below it, in fountain pen: “The ghost of the Ouvèze. Opened 30 May 1994.”
+
+The handwriting is fine, slanting, as regular as a musical score. Every line begins with a time.
+
+“2 June. The photo. It isn't a dead man. It's a living man who turned his head.”
+“11 June. A young woman comes out of the mill in tears. The miller stays a long time on the footbridge.”
+“15 June. 9.41 p.m. The widow sits down at the Arcades. 9.58 p.m. The miller comes out by the millrace door and walks upstream. 10.05 p.m. Two men on the bank, a torch. The miller is crying. 10.32 p.m. The man with the boules sees me. He drops the torch, which stays on in the grass, and runs off towards La Digue. 10.50 p.m. The miller goes back into the mill by the millrace. 11.05 p.m. A woman goes in by the little street door, with a key. The widow. 11.12 p.m. The sluice gate roars, the millrace fills. 11.27 p.m. She comes out alone, locks the door, stays at the parapet. She is not crying. The miller does not come out.”
+“16 June. There is no ghost in Nyons. There is a widow.”
+
+The last page is blank, except for one line: “What you do with this is no concern of ours.”
+
+=== noye_ouveze/clues/chambre_firmin/facts/0/text #64b96a16
+Firmin Achard's notebook, a salamander in flames on the first page. Records the night of 15 June minute by minute, from the Roman bridge.
+
+=== noye_ouveze/clues/chambre_firmin/facts/1/text #d60c75df
+Goes into the mill by the little door at 11.05 p.m., with a key. The sluice gate roars at 11.12 p.m. Comes out alone at 11.27 p.m. and locks the door.
+
+=== noye_ouveze/clues/chambre_firmin/facts/1/label #4fb9a2b0
+According to Firmin
+
+=== noye_ouveze/clues/chambre_firmin/facts/2/text #10d933e5
+On the bank with the miller from 10.05 p.m. to 10.32 p.m., then runs off, dropping the torch. The miller goes back into the mill alive at 10.50 p.m.
+
+=== noye_ouveze/clues/chambre_firmin/facts/2/label #4fb9a2b0
+According to Firmin
+
+=== noye_ouveze/clues/chambre_firmin/facts/3/text #ed796984
+Had been watching the mill since 30 May. Saw everything on 15 June and told no one. “What you do with this is no concern of ours.”
+
+=== noye_ouveze/clues/chambre_firmin/facts/3/label #7478244c
+The notebook
+
+=== noye_ouveze/clues/josiane/button #73000c50
+Talk to Josiane, the cleaning lady
+
+=== noye_ouveze/clues/josiane/title #3f62aa07
+Josiane Pellegrin, cleaning lady
+
+=== noye_ouveze/clues/josiane/text #005dbf5c
+{{p:josiane|Josiane Pellegrin}} still comes to the mill every morning to water the geraniums in the yard. “Nobody else is going to.” She is seventy, wears a flowered apron, and calls the dead man “Monsieur Aimé”.
+
+On Wednesday he was “all out of sorts”. He told her he had to have it out with someone, at the canal, that evening. “He never said who. He said: Josiane, tomorrow I'm going to do something I should've done two years ago.”
+
+On Thursday morning, once the gendarmes had gone, she went in. “The two marc glasses, on the draining board, rinsed, turned upside down. Monsieur Aimé never rinsed a glass in his life. Never. I'd been rinsing them for him for thirty years.” She told the gendarmes. The warrant officer wrote down “two glasses”.
+
+And the Saturday before, the 11th, a young woman came. “A seasonal girl, fingers red from the cherries. She was shouting in the yard, shoving a newspaper under his nose. She was saying: did you watch him die? Did you watch? Monsieur Aimé never answered.” She crosses herself. “Her name's {{p:sandrine|Mollet}}, I think. She said her name as she left, like throwing something down.”
+
+The keys? “Mme Hélène's got her key to the shop, of course she has, she works there. She's always had it.”
+
+=== noye_ouveze/clues/josiane/facts/0/text #d72892fa
+Thursday morning, two marc glasses rinsed and turned upside down on the draining board. “Monsieur Aimé never rinsed a glass in his life.” Someone drank with him.
+
+=== noye_ouveze/clues/josiane/facts/0/label #66013745
+The glasses
+
+=== noye_ouveze/clues/josiane/facts/1/text #dd49a411
+According to her, Hélène still has her key to the mill shop.
+
+=== noye_ouveze/clues/josiane/facts/1/label #13c85ab0
+The keys
+
+=== noye_ouveze/clues/josiane/facts/2/text #7b96780a
+Came shouting at the mill on Saturday 11 June, a newspaper in her hand: “Did you watch him die?”
+
+=== noye_ouveze/clues/josiane/facts/2/label #2a98e2ce
+According to Josiane
+
+=== noye_ouveze/clues/josiane/facts/3/text #93a39793
+Wednesday: “Tomorrow I'm going to do something I should've done two years ago.”
+
+=== noye_ouveze/clues/josiane/facts/3/label #2a98e2ce
+According to Josiane
+
+=== noye_ouveze/clues/moulin/button #517c1a92
+Visit the mill
+
+=== noye_ouveze/clues/moulin/title #b13e56ac
+Chabert's mill
+
+=== noye_ouveze/clues/moulin/text #17ed3fb3
+Chabert's mill is a big stone building on the edge of the canal, with a wheel that has stopped turning and a shop closed behind a shutter. Josiane opens up the millstone room for you. It is as cool as a cellar, and it smells of last winter's crushed olives and wet stone.
+
+On the table, the bottle of marc is still there, three-quarters empty. The nail for the key ring, near the little street door. At the far end, the millrace door opens onto a plank footbridge over the water. Next to it, the big iron wheel of the sluice gate, and a chain with a brass padlock, snapped shut.
+
+In the office, the wastepaper basket hasn't been emptied. Yves pulls out a sheet torn in two, then crumpled. The handwriting shakes. {{d:brouillon|“To the gendarmes. In September 1992, I lied. Jacques Garcin was not swept away by the water. I found him that night, up in the hills, alive, and he asked me to say he was dead. I did it because he was my friend and because he had already had enough”}} The sentence stops there.
+
+On the footbridge, Karim leans over the millrace. The water is black and fast, and it makes almost no sound.
+
+=== noye_ouveze/clues/moulin/facts/0/text #7b38af46
+Torn draft found in the miller's wastepaper basket: “In September 1992, I lied. Jacques Garcin was not swept away. I found him alive, and he asked me to say he was dead.”
+
+=== noye_ouveze/clues/moulin/facts/1/text #b1e23ada
+The little street door, the nail for the key ring, the millrace door, the footbridge, and the sluice gate locked with a brass padlock.
+
+=== noye_ouveze/clues/isnard/button #b2419434
+Find the canal keeper
+
+=== noye_ouveze/clues/isnard/title #421ddab7
+Norbert Isnard, canal keeper
+
+=== noye_ouveze/clues/isnard/text #ca0e2890
+{{p:isnard|Norbert Isnard}} has been keeper of the canal since 1961. He is the one who opens and closes the sluices, who shares out the water to the gardens by day and hour, and who clears the grating in the mornings of branches, dead cats and, once in thirty-three years, a man. He talks in litres per second.
+
+“The mill's sluice gate, in June, it's shut. Nobody presses in June.” On Wednesday, at 11.10 p.m., the level at the divider downstream dropped four centimetres in one go. He shows you the paper roll from his water-level recorder, a line of blue ink with a step in it. “Somebody opened the mill gate. The water rushed into the millrace. There's a real current in there when it's open. A man falls in, he doesn't come up.”
+
+The padlock? Snapped shut on the chain, in the open position. “The gendarmes say it was Aimé, drunk. But that padlock doesn't close without the key, it's the association's model. And Aimé's key ring was on its nail, inside, the gendarmes wrote it down.” He shrugs. “So somebody can tell me with what key.”
+
+There are only two, he says. “Mine, right here.” He shows it, hanging round his neck on a bootlace. “And the one on the mill key ring. Which has a copy, in the shop, for when Aimé wasn't there.”
+
+=== noye_ouveze/clues/isnard/facts/0/text #550893fc
+The mill's sluice gate was opened on Wednesday around 11.10 p.m.: the canal level dropped 4 cm in one go. The padlock was closed again, which takes a key.
+
+=== noye_ouveze/clues/isnard/facts/0/label #1e5c5fb7
+The sluice gate
+
+=== noye_ouveze/clues/isnard/facts/1/text #e98e0a55
+Only two keys: his own, which he wears round his neck, and the one on the mill key ring, a copy of which is kept in the shop.
+
+=== noye_ouveze/clues/isnard/facts/1/label #13c85ab0
+The keys
+
+=== noye_ouveze/clues/isnard/facts/2/text #c112f4cf
+His key ring was on its nail, inside: he could not have closed the sluice gate padlock himself.
+
+=== noye_ouveze/clues/isnard/facts/2/label #cacfe1b5
+According to Isnard
+
+=== noye_ouveze/clues/berge/button #17e4c2eb
+Examine the bank
+
+=== noye_ouveze/clues/berge/title #02627c82
+The canal bank
+
+=== noye_ouveze/clues/berge/text #284db4b9
+The grass on the bank, upstream of the mill, has been flattened over a square metre, and it hasn't sprung back. Yves photographs two kinds of footprint in the dry earth at the edge: town shoes, resoled, and heavy-cleated work boots.
+
+Paul turns round. From here you can see everything: the canal all the way to the mill, the millrace footbridge, the little street door. And above, the humpback of the {{l:pont|Roman bridge}}, its stone parapet, the outline of a street lamp. “Someone up there sees everything. And nobody sees him, with the light behind him.”
+
+=== noye_ouveze/clues/berge/facts/0/text #c3c33b0d
+Flattened grass where the torch was found: two men, town shoes and work boots. The Roman bridge overlooks the whole scene.
+
+=== noye_ouveze/clues/berge/facts/0/label #067f7f31
+The bank
+
+=== noye_ouveze/clues/pont/button #9cb434e3
+Climb the Roman bridge
+
+=== noye_ouveze/clues/pont/title #b92bb4cb
+The Roman bridge
+
+=== noye_ouveze/clues/pont/text #e998e766
+The Roman bridge spans the Eygues in a single arch, so high it feels like climbing a hill. From the top you can see the canal, the mill, La Digue, and the whole old town rising in tiers.
+
+On the parapet, where the stone is most worn, a small heap of pipe ash the wind hasn't yet carried off. Wedged in a crack, a Drômois from Wednesday 15 June, folded in four, the boules page on top.
+
+And carved into the soft stone with the point of a knife, so small you have to lean in: a lizard in flames. The lines are fresh. The stone dust is still white in the grooves.
+
+Karim runs his finger over it. “We've seen that before.” Paul doesn't answer. He is looking down at the mill. From here, you see the little street door as if you were standing in front of it.
+
+
+=== noye_ouveze/clues/pont/facts/0/text #df9d41d3
+Pipe ash and a copy of Le Drômois from 15 June on the parapet. A salamander in flames carved with a knife, quite fresh. You can see the little door of the mill as if you were standing in front of it.
+
+=== noye_ouveze/clues/pont/facts/1/text #d21747bf
+Someone smoked a pipe and read the paper of 15 June on the bridge. And carved a salamander into the stone.
+
+=== noye_ouveze/clues/pont/facts/1/label #e486d40c
+The bridge
+
+=== noye_ouveze/clues/gaston/button #a16dedc6
+Talk to the road mender
+
+=== noye_ouveze/clues/gaston/title #59b5ad19
+Gaston Rey, road mender
+
+=== noye_ouveze/clues/gaston/text #961dd696
+{{p:gaston|Gaston Rey}} is the town's road mender and secretary of la Boule nyonsaise, which amounts to spending his days at La Digue, between the plane trees and the rake. He tells everything like a game: who pointed, who shot, who hit a carreau.
+
+“Royer? Lucien, from Les Pilles. He works for Tardieu, at the {{l:ferme_tardieu|farm}}, above the road. He plays all right, but he shoots lyonnaise style, arms out straight, three steps of run-up. You can tell he's not from round here. Some evenings he comes on his own with big boules, proper lyonnaise ones, bronze, and he plays against nobody.”
+
+He has seen the photo. “Everyone says it's Garcin. I say Garcin played pétanque like everybody else.” He thinks about it. “Mind you. Garcin was from Givors.”
+
+On Wednesday, around ten, while locking up the club hut, he saw a {{p:sandrine|woman}} alone on the ground, searching the earth by the light of a lighter. “A young one, a cherry picker. I asked her if she'd lost something. She said yes, without saying what.”
+
+=== noye_ouveze/clues/gaston/facts/0/text #65a952ec
+Royer works for Tardieu, at Les Pilles. Shoots “lyonnaise style”. Sometimes comes alone in the evening to play with bronze lyonnaise boules.
+
+=== noye_ouveze/clues/gaston/facts/0/label #18b48bb1
+Royer
+
+=== noye_ouveze/clues/gaston/facts/1/text #c5b691af
+Plays lyonnaise, a game from the Lyon region. Garcin was from Givors.
+
+=== noye_ouveze/clues/gaston/facts/1/label #d7a69b03
+His boules
+
+=== noye_ouveze/clues/gaston/facts/2/text #5540544c
+Wednesday around 10 p.m., alone on La Digue boules ground, looking for something on the ground by the light of a lighter.
+
+=== noye_ouveze/clues/gaston/facts/2/label #52ef8c7e
+According to Gaston
+
+=== noye_ouveze/clues/inscription/button #18495f0e
+Look at the tournament entry sheet
+
+=== noye_ouveze/clues/inscription/title #d73d2a08
+The Grand Prix sheet
+
+=== noye_ouveze/clues/inscription/text #465bf6b4
+Gaston brings a ring binder out of the club hut. The {{d:feuille_concours|entry sheet}} for Le Grand Prix de la Digue, Sunday 29 May, thirty-two doubles teams. Each player has written his name in his own hand.
+
+Team no. 23. “TARDIEU Raoul”, in slanting capitals. And next to it, in another hand: two letters, “Ga”, crossed out with a stroke pressed so hard it has torn through the paper. Then, straight after: “ROYER L.”
+
+Gaston had never noticed. “He started writing something else. Like when you sign a cheque with your wife's name.”
+
+=== noye_ouveze/clues/inscription/facts/0/text #4eeb356e
+Entry sheet of 29 May, team no. 23: Royer first wrote “Ga”, crossed it out, then wrote “ROYER L.”
+
+=== noye_ouveze/clues/inscription/facts/1/text #dcc8c2c0
+Started to sign “Ga”, then corrected himself.
+
+=== noye_ouveze/clues/inscription/facts/1/label #770fbfbe
+The sheet
+
+=== noye_ouveze/clues/sandrine/button #34e5dfef
+Go and see Sandrine Mollet
+
+=== noye_ouveze/clues/sandrine/title #b1a27663
+Sandrine Mollet, cherry picker
+
+=== noye_ouveze/clues/sandrine/text #0f152ff6
+The municipal campsite lies on the bank of the Eygues, under the poplars. In June it is the seasonal workers' campsite: ridge tents, Renault 4s, washing lines strung between the trees. {{p:sandrine|Sandrine Mollet}} comes back from picking at four o'clock, an empty crate on her shoulder. She is twenty-four and red-fingered up to the wrists.
+
+“I do the cherries. Then the apricots. Then the lavender. I do the seasons.” She is from Roanne. She never looks anyone in the face. She talks to the crate, to the tent, to the poplar.
+
+On Wednesday evening she was on La Digue. “I'd lost my watch in the afternoon. I went back to look for it. Didn't find it.” She found a boule instead, “a big one, not a pétanque boule”. She shrugs. “People lose things.”
+
+When Karim asks her whether she knew Aimé Chabert, she goes into her tent and zips it shut. From inside, she says: “None of your business.”
+
+=== noye_ouveze/clues/sandrine/facts/0/text #94055a36
+Seasonal worker from Roanne, 24. “I do the seasons.” Fingers red with cherry juice, like the stains on the page sent to the Bureau.
+
+=== noye_ouveze/clues/sandrine/facts/1/text #f43a282a
+On La Digue, looking for the watch she lost in the afternoon. Found a big boule instead.
+
+=== noye_ouveze/clues/sandrine/facts/1/label #5ae98fd6
+Wednesday evening
+
+=== noye_ouveze/clues/tente/button #107d88ee
+Take a look in Sandrine's tent
+
+=== noye_ouveze/clues/tente/title #57e94a40
+Sandrine's tent
+
+=== noye_ouveze/clues/tente/text #d605db30
+Sandrine is in the orchards. The tent isn't zipped, only tied. Paul doesn't say to go in. He doesn't say not to.
+
+Inside, a sleeping bag, a head torch, magazines. Pinned to the canvas above the pillow, a photo cut out of a 1992 newspaper: Jacques Garcin, moustache, the caption “The hero of Camping des Saules”. The eyes have been scratched out with a knife, right through the paper.
+
+On the crate that serves as a table, a pad of squared paper and a ballpoint pen. A torn-off sheet reading, in a round hand: “Chabert, mill, Saturday”. And a cardboard watch box, empty. On the lid, in felt-tip: “Thierry, 20”.
+
+Yves looks at the photo with the scratched-out eyes longer than at the rest. He does not photograph it.
+
+=== noye_ouveze/clues/tente/facts/0/text #c68b9cc8
+The 1992 photo of Garcin pinned above her bed, the eyes scratched out with a knife. A note: “Chabert, mill, Saturday”.
+
+=== noye_ouveze/clues/tente/facts/0/label #9002bd61
+Her tent
+
+=== noye_ouveze/clues/tente/facts/1/text #a86b1232
+A pad of squared paper and a ballpoint pen, as for the anonymous letter. An empty watch box marked “Thierry, 20”.
+
+=== noye_ouveze/clues/tente/facts/1/label #750242f5
+The paper
+
+=== noye_ouveze/clues/sandrine2/button #6f45c2df
+Go back to Sandrine about Thierry Mollet
+
+=== noye_ouveze/clues/sandrine2/title #604ab1a2
+Sandrine, second interview
+
+=== noye_ouveze/clues/sandrine2/text #c05072fc
+Sandrine is sitting on the crate in front of the tent, and she is waiting for you. She understood when she saw Paul coming. For the first time, she looks him in the face.
+
+“Thierry was my brother.” She says it without crying. She must have said it often in her head. “The watch was his, for his twentieth. I lost it Wednesday, on La Digue, watching him play. Him.” She doesn't say Garcin. She says him.
+
+She recognised Garcin in the photo of 2 June. “Twenty months I've been looking at his face every night. The hero who died trying to save my brother.” She went to see Chabert on the Saturday. She shouted. He said nothing, “but he cried, and a man who's told the truth doesn't cry”. And she was the one who wrote to the Bureau. “The gendarmes would've thought I was mad. You lot, ghosts are your job.”
+
+From her purse she takes a {{d:carte_thierry|postcard}} worn at the corners. The Roman bridge at Vaison. On the back, Thierry's handwriting, dated 21 September 1992: “Got in late. We're right at the back, under the willows, nice and quiet. The owner's friendly, he said we'd do the registration tomorrow. Love to Mum.”
+
+“He never registered them. He evacuated with the list. They weren't on the list.” She puts the card away. “I wanted him to tell the truth, the miller. Not to die.”
+
+=== noye_ouveze/clues/sandrine2/facts/0/text #67cf07c3
+Sister of Thierry Mollet, who died in the flood. Recognised Garcin in the photo, went to see Chabert on Saturday 11, and wrote the anonymous letter to the Bureau.
+
+=== noye_ouveze/clues/sandrine2/facts/0/label #d5486e33
+Second interview
+
+=== noye_ouveze/clues/sandrine2/facts/1/text #e37ad530
+Thierry Mollet's postcard, 21 September 1992: “We're right at the back, under the willows. The owner said we'd do the registration tomorrow.” The caravan was not on the list.
+
+=== noye_ouveze/clues/sandrine2/facts/2/text #967fde48
+According to Sandrine, he had not registered Thierry and Nathalie's caravan. He evacuated the campsite using the list.
+
+=== noye_ouveze/clues/sandrine2/facts/2/label #6a7a0b2d
+The night of the flood
+
+=== noye_ouveze/clues/sandrine2/buttonAlone #af3c1df2
+Talk to Sandrine about Thierry Mollet
+
+=== noye_ouveze/clues/sandrine2/titleAlone #72579df0
+Sandrine Mollet and her brother
+
+=== noye_ouveze/clues/tardieu/button #599e8d26
+Meet Raoul Tardieu
+
+=== noye_ouveze/clues/tardieu/title #39df117b
+Raoul Tardieu, fruit grower
+
+=== noye_ouveze/clues/tardieu/text #78e776bd
+The Tardieu farm stands on the way out of Les Pilles, above the road, among rows of cherry and apricot trees packed tight as soldiers. {{p:tardieu|Raoul Tardieu}} is sorting cherries under a corrugated-iron shed, a radio set on a crate. He complains about everything: the hail in May, the prices at Rungis, the seasonal workers who leave after three days.
+
+“Lucien? He's the only one who stays.” Royer arrived in March 1993, on foot, with a bag. He asked for work. Tardieu pays him cash. “Papers, I didn't ask him for any, and he didn't offer. A good worker doesn't talk to you about his papers.” He sleeps in the {{l:ferme_tardieu|hut}} at the far end of the orchard.
+
+Wednesday evening? “He went off about nine on the moped. He came back at eleven, I heard the engine, I wasn't asleep, my back's bad.” Eleven on the dot? “The radio news was starting.”
+
+In the evenings Lucien often heads off towards Vaison. “To {{l:camping_saules|Camping des Saules}}, so I'm told, the one that got swept away. There's nothing left there. I never asked him what he does there.”
+
+Walking you back to the car, he spits on the ground. “The photo, I'm the one who entered him for the tournament. He didn't want to. He really didn't want to.”
+
+=== noye_ouveze/clues/tardieu/facts/0/text #8cd575ac
+Has employed Royer since March 1993, paid in cash, no papers. Entered him for the Grand Prix “when he really didn't want to”.
+
+=== noye_ouveze/clues/tardieu/facts/1/text #519ef431
+According to Tardieu, left Les Pilles on his moped around 9 p.m., back at 11 p.m. on the dot (the radio news was starting).
+
+=== noye_ouveze/clues/tardieu/facts/1/label #5ae98fd6
+Wednesday evening
+
+=== noye_ouveze/clues/tardieu/facts/2/text #f6d48c9e
+Often goes off in the evening towards Vaison, to Camping des Saules, in ruins since the flood.
+
+=== noye_ouveze/clues/tardieu/facts/2/label #931a5fb8
+In the evenings
+
+=== noye_ouveze/clues/royer/button #01af80fb
+Talk to Lucien Royer
+
+=== noye_ouveze/clues/royer/title #b452e30e
+Lucien Royer
+
+=== noye_ouveze/clues/royer/text #2d063e3c
+{{p:royer|Lucien Royer}} is pruning an apricot tree at the end of a row, and doesn't turn round as you approach. Canvas cap, open shirt, a labourer's forearms. When he finally turns, he keeps the cap pulled low over his eyes and the sun at his back.
+
+“My name's Royer. Lucien. I'm from Givors.” He says it like a lesson. The photo? “Don't like photos.” The canal? “Never set foot there. I'm not from the town, me.” On Wednesday evening he went down to Nyons to fetch a boule he'd left on La Digue that afternoon. “A lyonnaise. They cost money. Nothing else.”
+
+He says little. He calls Tardieu's children “les gones”, the way they do in Lyon.
+
+Paul asks him if he has any family. Royer looks at the apricot tree. “Not any more.” Then he climbs back up his stepladder.
+
+=== noye_ouveze/clues/royer/facts/0/text #8eb4906e
+“My name's Royer. Lucien. I'm from Givors.” Calls children “les gones”, as in Lyon. “Family? Not any more.”
+
+=== noye_ouveze/clues/royer/facts/1/text #b19f23a3
+Says he never set foot at the canal, and only went down to La Digue to fetch a boule he had left there.
+
+=== noye_ouveze/clues/royer/facts/1/label #5ae98fd6
+Wednesday evening
+
+=== noye_ouveze/clues/royer2/button #01321ae0
+Go back to Royer with Karim's grid
+
+=== noye_ouveze/clues/royer2/title #c8e82927
+Royer, second interview
+
+=== noye_ouveze/clues/royer2/text #4c668759
+Paul lays Karim's grid on the bonnet of the car, at the end of the row of apricot trees. He says nothing. He waits.
+
+Royer looks for a long time at the little crosses and the little circles. Then he takes off his gloves. “I was at the canal.” He sits down on the step of the stepladder. “Aimé wanted to tell the gendarmes everything, the next day. He'd told me to meet him there, on the bank, at ten. I'd brought the torch.” He says Aimé. He doesn't say Chabert, or the miller.
+
+“I asked him to wait. Just a bit. Better I went myself. He was crying. He said he couldn't go on. He said he'd always protected me, and it was killing him.”
+
+At half past ten he saw someone on the Roman bridge, a figure, standing still, watching. “I got scared. I dropped the torch and ran. I went to get my boule on La Digue, a girl gave it back to me. Then I went home.”
+
+He looks up. “When I left, he was alive. He was crying, sitting in the grass. I swear it on the heads of my gones.” He stops dead. He said my.
+
+=== noye_ouveze/clues/royer2/facts/0/text #cf6bce0d
+Was at the canal with Chabert from 10 p.m. to half past ten, with the torch. Chabert wanted to tell the gendarmes everything. Royer ran off when he saw a figure on the bridge. “When I left, he was alive.”
+
+=== noye_ouveze/clues/royer2/facts/0/label #d5486e33
+Second interview
+
+=== noye_ouveze/clues/royer2/facts/1/text #90064f16
+Calls the miller “Aimé”. Swears “on the heads of my gones”, though he says he has no family left.
+
+=== noye_ouveze/clues/royer2/facts/1/label #34c96330
+The slip
+
+=== noye_ouveze/clues/royer2/buttonAlone #83f44d37
+Confront Lucien Royer with his lie
+
+=== noye_ouveze/clues/royer2/titleAlone #521daffc
+Lucien Royer and the grid
+
+=== noye_ouveze/clues/royer3/button #9559fb93
+Show Royer the identikit portrait
+
+=== noye_ouveze/clues/royer3/title #95a0e3ce
+Jacques Garcin
+
+=== noye_ouveze/clues/royer3/text #b17e02fb
+Royer looks at the identikit portrait, then at the 1992 photo Yves lays beside it. He takes off his cap. His hair is grey, cut short. He has the forehead from the photo, the nose, the chin. All he lacks is the moustache.
+
+“My name is {{p:garcin|Jacques Garcin}}.”
+
+He tells it without stopping, as if the words had been waiting for twenty months. The couple from Roanne who arrived late, on the evening of the 21st, pitch 31 at the back under the willows, “I told them we'd see about registering the next day”. The 22nd, the rain, the water rising, the evacuation with the list, everyone out, “everyone on the list”. And at six o'clock, in the middle of the car park, he remembered. “I ran. There was no back of the campsite any more. There were no willows any more. There was only the water.”
+
+He pushed his car into the current at the ford. He climbed up into the hills. Aimé found him at two in the morning, sitting in the mud. “I said to him: say I'm dead. He said it. He made a hero of me, the idiot. He wanted to help me.”
+
+The next evening he rang Hélène from a phone box in Malaucène. “I told her everything. She listened to the end. And then she said: You're dead. Stay dead. And she hung up.” The postal orders started arriving in November, poste restante at Buis. He cashed the first three, “in the winter, to eat”. Never again after that.
+
+He puts his cap back on. “Do what you like with me. But I didn't kill Aimé. I loved him. He was the only one who knew.”
+
+=== noye_ouveze/clues/royer3/facts/0/text #c3f37608
+Lucien Royer is Jacques Garcin. On 22 September 1992 he forgot the caravan on pitch 31, which was not registered. He pushed his car into the current and vanished. Chabert lied for him.
+
+=== noye_ouveze/clues/royer3/facts/0/label #7fdc6381
+His confession
+
+=== noye_ouveze/clues/royer3/facts/1/text #f63675c8
+He rang her on 23 September 1992 from Malaucène. “You're dead. Stay dead.” She has known from the first day.
+
+=== noye_ouveze/clues/royer3/facts/1/label #e6881d47
+According to Garcin
+
+=== noye_ouveze/clues/royer3/facts/2/text #98c9fe18
+He is Jacques Garcin. He cashed Hélène's first three postal orders, and none after that.
+
+=== noye_ouveze/clues/royer3/facts/2/label #7fdc6381
+His confession
+
+=== noye_ouveze/clues/royer3/buttonAlone #fcb32b06
+Show Lucien Royer the identikit portrait
+
+=== noye_ouveze/clues/royer3/titleAlone #23726dcd
+Lucien Royer and the portrait
+
+=== noye_ouveze/clues/cabanon/button #86fc7b40
+Search Royer's hut
+
+=== noye_ouveze/clues/cabanon/title #047f2ff0
+Royer's hut
+
+=== noye_ouveze/clues/cabanon/text #96d3fb05
+Royer's hut is at the far end of the orchard, a drystone shelter with a plank door and no lock. A camp bed, a basin, a camping stove, a 1993 Post Office calendar he has never changed.
+
+On a shelf, an unframed photo held up by a drawing pin: two children on a pebble beach, a boy and a girl. Under the bed, a leather case. Inside, four bronze {{d:boules|lyonnaise boules}}, heavy as cobblestones, in felt compartments. On each one, engraved by hand, two initials: “J.G.”
+
+In an iron sugar tin on the shelf, a bundle of {{d:mandats|postal orders}}, never cashed. Nineteen of them. Sender: “H. Garcin, Nyons”. Under the elastic band, a folded note in a woman's hand, very upright: “For your silence. For mine.”
+
+Yves photographs the photo of the children, then puts it back exactly where it was, with the same drawing pin, in the same hole.
+
+=== noye_ouveze/clues/cabanon/facts/0/text #07f30308
+Four bronze lyonnaise boules under Royer's bed, engraved “J.G.”.
+
+=== noye_ouveze/clues/cabanon/facts/1/text #1302b8e5
+Nineteen postal orders never cashed, sender “H. Garcin, Nyons”. A note: “For your silence. For mine.”
+
+=== noye_ouveze/clues/cabanon/facts/1/label #f03a3891
+In the hut
+
+=== noye_ouveze/clues/cabanon/facts/2/text #ffe617c6
+A photo of two children, a boy and a girl. Boules engraved J.G. Hélène Garcin's postal orders.
+
+=== noye_ouveze/clues/cabanon/facts/2/label #6cfea559
+His hut
+
+=== noye_ouveze/clues/poursuite/button #1bac9c0e
+Keep watch at night at Camping des Saules
+
+=== noye_ouveze/clues/poursuite/title #fab7ce90
+Night at Les Saules
+
+=== noye_ouveze/clues/poursuite/text #d63d7997
+It is eleven at night. Karim and Yves are crouching behind the wall of the old shower block at Camping des Saules, which no longer has a roof. The moon lights up the concrete slabs of the pitches, the twisted pipes, the bed of pebbles where the Ouvèze barely flows, so low you could cross it in your socks. The cicadas have gone quiet. You can hear the crickets, and an owl.
+
+At twenty past eleven, a moped with no headlight. It stops at the entrance. A man walks to the far end, under what is left of the willows. He sets a glass jar on the ground and lights a candle inside it. He crouches in front of it. He is two metres from Karim.
+
+The flame lights his face from below.
+
+=== noye_ouveze/clues/ruines/button #c2fe1dbb
+Visit the ruins in daylight
+
+=== noye_ouveze/clues/ruines/title #e48a6e1f
+The campsite ruins
+
+=== noye_ouveze/clues/ruines/text #525d6282
+In daylight, Camping des Saules looks like a bombed town in miniature. The slabs of the numbered pitches, the roofless shower block, a rusty sign, “ACCUEIL · RECEPTION · EMPFANG”, hanging by a single bolt. The vegetation has taken over everywhere except on the slabs.
+
+At the far end, near the river, where nothing is left but the stumps of torn-out willows, a cross made of two branches bound with wire. In front of it, a jar with the stub of a candle. Wild flowers, poppies and lavender, cut a day or two ago. On the cross, two first names carved carefully with a knife: “Thierry · Nathalie”.
+
+Yves looks for the pitch number. The marker post has fallen into the grass. He stands it up: 31.
+
+“The memorial plaques give the names,” says Paul. “They don't say where the caravan was. Whoever comes here knows it to within a metre.”
+
+=== noye_ouveze/clues/ruines/facts/0/text #619d6731
+On pitch 31, at the back under the willows, a cross of branches carved “Thierry · Nathalie”, fresh flowers and a candle. Someone knows exactly where the caravan was.
+
+=== noye_ouveze/clues/ruines/facts/0/label #8e2ca027
+The ruins
+
+=== noye_ouveze/clues/rosa/button #eabca95d
+Talk to Rosa Bérenger
+
+=== noye_ouveze/clues/rosa/title #ac789a64
+Rosa Bérenger
+
+=== noye_ouveze/clues/rosa/text #d8d923c9
+{{p:rosa|Rosa Bérenger}} is sitting on the bench facing the memorial, in the shade, a promotional fan in one hand and a rosary in the other. She is sixty-eight, with an Italian accent she hasn't lost in fifty years of the Vaucluse, and a photo of her husband in her handbag, which she takes out before anyone asks.
+
+“Marius. Forty-one years married. The river took him in the cellar, he'd gone down to fetch the wine.” She puts the photo away. “Last Thursday I saw him at the market. In front of the cheese stall. He was wearing his jacket. He looked at me, and he went away.”
+
+She doesn't cry. She explains, patiently, as if to children. “Since the photo in the paper, everyone knows. The river gives back its dead, monsieur. It kept Garcin two years, and it gave him back. It will give back the others.”
+
+Paul doesn't contradict her. Karim writes everything down.
+
+“And at night there's a light at {{l:camping_saules|Camping des Saules}}. A little light, at the back. I see it from my window, I live on the Malaucène road. It's them. They come back to where they left.”
+
+=== noye_ouveze/clues/rosa/facts/0/text #7492c876
+Widow of Marius, who died in the flood. Says she saw him at the market on Thursday 9 June. “The river gives back its dead. It gave back Garcin.”
+
+=== noye_ouveze/clues/rosa/facts/1/text #b7278bbe
+At night, a little light shines at the back of the ruined campsite.
+
+=== noye_ouveze/clues/rosa/facts/1/label #ada559d9
+According to Rosa
+
+=== noye_ouveze/clues/plaque/button #fa6a36c5
+Read the memorial plaque
+
+=== noye_ouveze/clues/plaque/title #5fef8b60
+The memorial plaque
+
+=== noye_ouveze/clues/plaque/text #a692fe1d
+The memorial is a white stone stele on the bank of the Ouvèze, near the Roman bridge at Vaison, which held in 1992 when everything else was going. The names are carved in columns, in alphabetical order. There are always flowers.
+
+Under G: “Jacques GARCIN, 1944-1992, died going to the rescue”. It is the only name with an inscription. In a porcelain medallion, the {{d:coupure_1992|photo}} from the 1992 newspaper: a moustached man with brown hair, a high forehead, a crooked nose, a square chin.
+
+Under M: “Thierry MOLLET, 1966-1992”. Under B: “Nathalie BRUN, 1968-1992”.
+
+Beneath Garcin's medallion, a bunch of lavender, fresh, held with an elastic band. A florist's card with no letterhead tucked into it, with a single word in biro: “Sorry.” No signature. Paul turns it over. Nothing on the back.
+
+=== noye_ouveze/clues/plaque/facts/0/text #34043be5
+On the Vaison plaque, the photo of Garcin in 1992: moustache, brown hair, high forehead, crooked nose, square chin.
+
+=== noye_ouveze/clues/plaque/facts/0/label #7bb04cf8
+The medallion
+
+=== noye_ouveze/clues/plaque/facts/1/text #ba4f4666
+“Jacques GARCIN, died going to the rescue”, the only name with an inscription. Further down, Thierry Mollet and Nathalie Brun. A bunch of flowers with a card: “Sorry.”
+
+=== noye_ouveze/clues/plaque/facts/1/label #9e0d4d5a
+The plaque
+
+=== noye_ouveze/puzzles/confrontation/title #016a5a6a
+Karim's grid
+
+=== noye_ouveze/puzzles/confrontation/instructions #012b9b37
+Only one of the four is lying, and everything that person says is false. The others are telling the truth. The grids are your rough work: only your answers to Paul's questions count.
+
+=== noye_ouveze/puzzles/confrontation/temoins/helene/nom #da6e92a5
+Hélène Garcin
+
+=== noye_ouveze/puzzles/confrontation/temoins/helene/court #e5c99e28
+Hélène
+
+=== noye_ouveze/puzzles/confrontation/temoins/helene/role #b9bd00da
+the widow
+
+=== noye_ouveze/puzzles/confrontation/temoins/royer/nom #b452e30e
+Lucien Royer
+
+=== noye_ouveze/puzzles/confrontation/temoins/royer/court #18b48bb1
+Royer
+
+=== noye_ouveze/puzzles/confrontation/temoins/royer/role #a7ee6de5
+farm labourer
+
+=== noye_ouveze/puzzles/confrontation/temoins/firmin/nom #73059b84
+Firmin Achard
+
+=== noye_ouveze/puzzles/confrontation/temoins/firmin/court #322cb340
+Firmin
+
+=== noye_ouveze/puzzles/confrontation/temoins/firmin/role #a6895823
+boules player
+
+=== noye_ouveze/puzzles/confrontation/temoins/sandrine/nom #d3803724
+Sandrine Mollet
+
+=== noye_ouveze/puzzles/confrontation/temoins/sandrine/court #bbe6ea53
+Sandrine
+
+=== noye_ouveze/puzzles/confrontation/temoins/sandrine/role #144cd247
+cherry picker
+
+=== noye_ouveze/puzzles/confrontation/declarations/0/texte #4f32e0a3
+I spent the evening at the Café des Arcades. Ask anyone you like.
+
+=== noye_ouveze/puzzles/confrontation/declarations/1/texte #acd80afd
+The canal? I didn't set foot there all evening.
+
+=== noye_ouveze/puzzles/confrontation/declarations/2/texte #d93ea85f
+I had my boules with me, like every evening. I never let them out of my sight.
+
+=== noye_ouveze/puzzles/confrontation/declarations/3/texte #be2b1d04
+If I went out, it was to fetch a boule I'd left on La Digue. Nothing else.
+
+=== noye_ouveze/puzzles/confrontation/declarations/4/texte #a2bfb135
+A torch? At my age, I know every stone in this country.
+
+=== noye_ouveze/puzzles/confrontation/declarations/5/texte #6ee197a9
+I was neither by the water nor on La Digue.
+
+=== noye_ouveze/puzzles/confrontation/declarations/6/texte #22609dad
+I wasn't looking for anything, and I wasn't waiting for anyone.
+
+=== noye_ouveze/puzzles/confrontation/declarations/7/texte #c0e0a4ee
+The lyonnaise boule, I'm the one who had it. I picked it up off the ground, it was lying about.
+
+=== noye_ouveze/puzzles/confrontation/declarations/8/texte #ce01e4c7
+Madame Garcin didn't have the paper. She stopped her subscription after the photo, everyone knows that.
+
+=== noye_ouveze/puzzles/confrontation/indices/0/source #59b5ad19
+Gaston Rey, road mender
+
+=== noye_ouveze/puzzles/confrontation/indices/0/texte #3673b2d7
+Around 10 p.m., a woman alone near La Digue boules ground.
+
+=== noye_ouveze/puzzles/confrontation/indices/1/source #870c83c0
+The gendarmes
+
+=== noye_ouveze/puzzles/confrontation/indices/1/texte #d2e346b7
+The torch was found on the bank of the canal: whoever was holding it was at the canal.
+
+=== noye_ouveze/puzzles/confrontation/indices/2/source #26939367
+Fredo, waiter
+
+=== noye_ouveze/puzzles/confrontation/indices/2/texte #5b56472e
+His 10 p.m. customer at the Arcades watched the door all evening: the person at the Arcades was waiting for someone.
+
+=== noye_ouveze/puzzles/confrontation/indices/3/source #2dcb6a56
+Josiane Pellegrin
+
+=== noye_ouveze/puzzles/confrontation/indices/3/texte #824315a0
+The miller was to “have it out with someone, at the canal, tonight”: the person at the canal had come to have it out.
+
+=== noye_ouveze/puzzles/confrontation/categories/lieu/nom #ec45da30
+Where, at 10 p.m.
+
+=== noye_ouveze/puzzles/confrontation/categories/lieu/valeurs/canal/nom #02627c82
+The canal bank
+
+=== noye_ouveze/puzzles/confrontation/categories/lieu/valeurs/canal/court #61f21e6f
+Canal
+
+=== noye_ouveze/puzzles/confrontation/categories/lieu/valeurs/pont/nom #b92bb4cb
+The Roman bridge
+
+=== noye_ouveze/puzzles/confrontation/categories/lieu/valeurs/pont/court #702ae052
+Bridge
+
+=== noye_ouveze/puzzles/confrontation/categories/lieu/valeurs/digue/nom #93968402
+La Digue boules ground
+
+=== noye_ouveze/puzzles/confrontation/categories/lieu/valeurs/digue/court #4575879c
+Digue
+
+=== noye_ouveze/puzzles/confrontation/categories/lieu/valeurs/arcades/nom #fbc229bd
+Café des Arcades
+
+=== noye_ouveze/puzzles/confrontation/categories/lieu/valeurs/arcades/court #fb98b2fb
+Arcades
+
+=== noye_ouveze/puzzles/confrontation/categories/objet/nom #66fcebe6
+With what
+
+=== noye_ouveze/puzzles/confrontation/categories/objet/valeurs/lampe/nom #01af4cbf
+A torch
+
+
+=== noye_ouveze/puzzles/confrontation/categories/objet/valeurs/lampe/court #ab26502a
+Lamp
+
+=== noye_ouveze/puzzles/confrontation/categories/objet/valeurs/cles/nom #9213737d
+The mill keys
+
+=== noye_ouveze/puzzles/confrontation/categories/objet/valeurs/cles/court #c05956ee
+Keys
+
+=== noye_ouveze/puzzles/confrontation/categories/objet/valeurs/journal/nom #98160104
+That day's paper
+
+=== noye_ouveze/puzzles/confrontation/categories/objet/valeurs/journal/court #57d7f743
+Paper
+
+=== noye_ouveze/puzzles/confrontation/categories/objet/valeurs/boule/nom #f94984c1
+A lyonnaise boule
+
+=== noye_ouveze/puzzles/confrontation/categories/objet/valeurs/boule/court #e80dbd5e
+Boule
+
+=== noye_ouveze/puzzles/confrontation/categories/raison/nom #7f3e611e
+Why out
+
+=== noye_ouveze/puzzles/confrontation/categories/raison/valeurs/expliquer/nom #aec0d9bc
+Coming to have it out
+
+=== noye_ouveze/puzzles/confrontation/categories/raison/valeurs/expliquer/court #e115aadc
+Have it out
+
+=== noye_ouveze/puzzles/confrontation/categories/raison/valeurs/attendre/nom #956860b6
+Waiting for someone
+
+=== noye_ouveze/puzzles/confrontation/categories/raison/valeurs/attendre/court #6b084958
+Waiting
+
+=== noye_ouveze/puzzles/confrontation/categories/raison/valeurs/surveiller/nom #2c538c73
+Watching someone
+
+=== noye_ouveze/puzzles/confrontation/categories/raison/valeurs/surveiller/court #ba70ec8c
+Watching
+
+=== noye_ouveze/puzzles/confrontation/categories/raison/valeurs/chercher/nom #7de5f535
+Looking for something lost
+
+=== noye_ouveze/puzzles/confrontation/categories/raison/valeurs/chercher/court #dcaef5e6
+Searching
+
+=== noye_ouveze/puzzles/confrontation/questions/menteur/texte #b1d6483e
+Who is lying?
+
+=== noye_ouveze/puzzles/confrontation/questions/menteur/choix #817df36e
+temoins
+
+=== noye_ouveze/puzzles/confrontation/questions/ou/texte #5ffff134
+Where was the liar at 10 p.m.?
+
+=== noye_ouveze/puzzles/confrontation/questions/ou/choix #1f4cf668
+lieu
+
+=== noye_ouveze/puzzles/confrontation/questions/sac/texte #83a62c8a
+What did Hélène Garcin have in her bag?
+
+=== noye_ouveze/puzzles/confrontation/questions/sac/choix #4da9e233
+objet
+
+=== noye_ouveze/puzzles/confrontation/erreur #df558a10
+“Granted.” Paul isn't convinced. Something doesn't hold up, and you have lost an hour.
+
+=== noye_ouveze/puzzles/confrontation/help #8351dff7
+Karim taps two lines in his notepad. “Royer and Sandrine both say they had the lyonnaise boule. They can't both be telling the truth. The liar is one of those two.”
+
+=== noye_ouveze/puzzles/confrontation/result #ad907877
+Paul nods. Lucien Royer lied about everything. At 10 p.m. he was on the bank of the canal, with the lamp from the Camping des Saules, come to have it out with the miller. Firmin was watching from the Roman bridge, his newspaper in his hand. Sandrine was looking for her watch at La Digue and had picked up Royer's boule there.
+
+And Hélène Garcin was waiting at the Arcades, with {{d:cles_moulin|the mill keys}} in her bag. The keys she says she gave back in May.
+
+“Granted, he's lying,” says Paul. “That doesn't mean he killed anyone. It means he was there.”
+
+=== noye_ouveze/puzzles/confrontation/facts/0/text #66543450
+Lies about everything. At 10 p.m. he was on the bank of the canal, with the lamp, come to have it out with the miller.
+
+=== noye_ouveze/puzzles/confrontation/facts/0/label #6bb88701
+The board
+
+=== noye_ouveze/puzzles/confrontation/facts/1/text #6793ecf5
+In Hélène Garcin's bag, at the Arcades, on Wednesday at 10 p.m. She says she gave them back in May.
+
+=== noye_ouveze/puzzles/confrontation/facts/2/text #e3fb2aff
+At the Arcades at 10 p.m., waiting for someone, with the mill keys in her bag.
+
+=== noye_ouveze/puzzles/confrontation/facts/2/label #6bb88701
+The board
+
+=== noye_ouveze/puzzles/confrontation/facts/3/text #ccdc71fa
+On the Roman bridge at 10 p.m., with that day's paper. He was watching someone.
+
+=== noye_ouveze/puzzles/confrontation/facts/3/label #6bb88701
+The board
+
+=== noye_ouveze/puzzles/confrontation/facts/4/text #228205b1
+At La Digue at 10 p.m., with Royer's lyonnaise boule. She was looking for something she had lost.
+
+=== noye_ouveze/puzzles/confrontation/facts/4/label #6bb88701
+The board
+
+=== noye_ouveze/puzzles/portrait/title #0f459bfe
+The identikit portrait
+
+=== noye_ouveze/puzzles/portrait/instructions #b699f737
+Choose each feature from what the two witnesses say. When they disagree, ask yourself which of them could have got it wrong, and why.
+
+=== noye_ouveze/puzzles/portrait/temoins/0/qui #bbe6ea53
+Sandrine
+
+=== noye_ouveze/puzzles/portrait/temoins/0/texte #6d7a5728
+I watched him play all afternoon, from a distance, in full sun. And in the evening I gave him back his boule under the street lamp. Short hair, grey. A high forehead, with lines, three of them. A moustache, I think. Well. I've looked at that man in the paper so often. A square chin. I didn't look him in the eye.
+
+=== noye_ouveze/puzzles/portrait/temoins/1/qui #36b8266b
+Karim
+
+=== noye_ouveze/puzzles/portrait/temoins/1/texte #05e3fa13
+I saw him from two metres away, by the light of the candle. White hair, pure white. Deep-set eyes, like two holes. A broken nose, crooked, like a boxer's. No moustache: clean-shaven, he had a razor nick on his cheek. A square chin, with a dimple.
+
+=== noye_ouveze/puzzles/portrait/traits/cheveux/nom #12f44fdc
+Hair
+
+=== noye_ouveze/puzzles/portrait/traits/cheveux/options/gris/nom #c507b209
+Short, grey
+
+=== noye_ouveze/puzzles/portrait/traits/cheveux/options/blancs/nom #afbcd5d4
+Short, white
+
+=== noye_ouveze/puzzles/portrait/traits/cheveux/options/degarnis/nom #3b9f4e10
+Thinning
+
+=== noye_ouveze/puzzles/portrait/traits/cheveux/options/longs/nom #f25b9bec
+Long, swept back
+
+=== noye_ouveze/puzzles/portrait/traits/front/nom #dd19f988
+Forehead
+
+=== noye_ouveze/puzzles/portrait/traits/front/options/haut/nom #77ca1a81
+High, lined
+
+=== noye_ouveze/puzzles/portrait/traits/front/options/bas/nom #5146422c
+Low
+
+=== noye_ouveze/puzzles/portrait/traits/front/options/lisse/nom #cad60c53
+Domed, smooth
+
+=== noye_ouveze/puzzles/portrait/traits/yeux/nom #a4ff88f5
+Eyes
+
+=== noye_ouveze/puzzles/portrait/traits/yeux/options/enfonces/nom #f0e089ee
+Deep-set
+
+=== noye_ouveze/puzzles/portrait/traits/yeux/options/ronds/nom #f37d8995
+Round
+
+=== noye_ouveze/puzzles/portrait/traits/yeux/options/tombants/nom #96e9d930
+Drooping
+
+=== noye_ouveze/puzzles/portrait/traits/nez/nom #d2e1e047
+Nose
+
+=== noye_ouveze/puzzles/portrait/traits/nez/options/droit/nom #5c444ad3
+Straight
+
+=== noye_ouveze/puzzles/portrait/traits/nez/options/casse/nom #8f0f4f17
+Broken, crooked
+
+=== noye_ouveze/puzzles/portrait/traits/nez/options/busque/nom #33aebca6
+Hooked
+
+=== noye_ouveze/puzzles/portrait/traits/bouche/nom #7104f89b
+Mouth
+
+=== noye_ouveze/puzzles/portrait/traits/bouche/options/rasee/nom #3357cd7f
+Thin, clean-shaven
+
+=== noye_ouveze/puzzles/portrait/traits/bouche/options/moustache/nom #bdc73b22
+Thin, with moustache
+
+=== noye_ouveze/puzzles/portrait/traits/bouche/options/epaisse/nom #5a48b5e2
+Full, clean-shaven
+
+=== noye_ouveze/puzzles/portrait/traits/menton/nom #34f88d5a
+Chin
+
+=== noye_ouveze/puzzles/portrait/traits/menton/options/carre/nom #47eaf823
+Square, dimpled
+
+=== noye_ouveze/puzzles/portrait/traits/menton/options/fuyant/nom #3ec5a92e
+Receding
+
+=== noye_ouveze/puzzles/portrait/traits/menton/options/pointu/nom #aa07f0ee
+Pointed
+
+=== noye_ouveze/puzzles/portrait/wrongOne #d6af6cbd
+Sandrine and Karim look at the portrait. They disagree with you on one feature.
+
+=== noye_ouveze/puzzles/portrait/wrongMany #776e1c2b
+Sandrine and Karim look at the portrait. They disagree with you on {n} features.
+
+=== noye_ouveze/puzzles/portrait/help #a4f90755
+Yves picks up the overlays again. “Sandrine added the moustache from the 1992 paper: she looked at that photo every night for twenty months. And by candlelight, grey turns white. I know, it's my job.”
+
+=== noye_ouveze/puzzles/portrait/result #3b1fcd5b
+Yves lays the {{d:portrait_robot|portrait}} next to the 1992 photo, the one in the medallion at Vaison. He covers the moustache with his thumb.
+
+The same high forehead. The same deep-set eyes. The same broken nose, bent to the left. The same dimple in the chin. He takes his thumb away, puts it back.
+
+“Twenty months, grey hair and a shave. It's him.”
+
+=== noye_ouveze/puzzles/portrait/facts/0/text #e2a706c8
+Short grey hair, high lined forehead, deep-set eyes, broken nose, thin mouth with no moustache, square dimpled chin. Garcin's face in 1992, without the moustache.
+
+=== noye_ouveze/puzzles/portrait/facts/1/text #bbdeee39
+The man at La Digue and the man at the Saules are one and the same. He has Jacques Garcin's face, minus the moustache.
+
+=== noye_ouveze/puzzles/portrait/facts/1/label #728c5525
+The portrait
+
+=== noye_ouveze/puzzles/poursuite/title #7d6b6104
+Eight seconds
+
+=== noye_ouveze/puzzles/poursuite/instructions #d5bed52a
+He blows out the candle and gets to his feet. He is about to leave. Decide, fast.
+
+=== noye_ouveze/puzzles/poursuite/result #858bbf1c
+Karim saw him from two metres away, by the flame. Later he will turn it into his {{d:temoignage_karim|statement}} for Yves, word for word: “I saw him from two metres away, by the light of the candle. White hair, pure white. Deep-set eyes, like two holes. A broken nose, crooked, like a boxer's. No moustache: clean-shaven, he had a razor nick on his cheek. A square chin, with a dimple.”
+
+=== noye_ouveze/puzzles/poursuite/facts/0/text #535f22c3
+“I saw him from two metres away, by the light of the candle. White hair, pure white. Deep-set eyes, like two holes. A broken nose, crooked, like a boxer's. No moustache: clean-shaven, he had a razor nick on his cheek. A square chin, with a dimple.”
+
+=== noye_ouveze/puzzles/poursuite/facts/1/text #dba67b76
+A man comes at night on a moped to pitch 31, at the far end under the willows, and lights a candle there.
+
+=== noye_ouveze/puzzles/poursuite/facts/1/label #45b0ba23
+The night
+
+=== noye_ouveze/puzzles/poursuite/help #d53c6468
+With no answer, Karim stays hidden.
+
+=== noye_ouveze/puzzles/poursuite/options/cacher/label #993eb1c7
+Stay hidden
+
+=== noye_ouveze/puzzles/poursuite/options/cacher/text #4552ba23
+Karim doesn't move. Neither does Yves. The man stands there a long while in the dark, the dead candle at his feet. Then he speaks, very low, with an accent that isn't from round here.
+
+“Sorry, Thierry. Sorry, Nathalie. I never put you down. I'd said tomorrow.”
+
+He picks up the jar, walks back to the moped, and rides off without switching on the headlight.
+
+=== noye_ouveze/puzzles/poursuite/options/cacher/facts/0/text #5a5bdb17
+“Sorry, Thierry. Sorry, Nathalie. I never put you down. I'd said tomorrow.”
+
+=== noye_ouveze/puzzles/poursuite/options/cacher/facts/0/label #c7e2979e
+The man's words
+
+=== noye_ouveze/puzzles/poursuite/options/suivre/label #b416dba7
+Follow him
+
+=== noye_ouveze/puzzles/poursuite/options/suivre/text #ece26c61
+You let him go, then Yves starts the car with all its lights off. The moped doesn't go back up towards Les Pilles. It goes down towards Vaison, crosses the Roman bridge and stops in front of the {{l:memorial|memorial}}.
+
+The man stands before the stone. Then he lays his hand flat on a name, under the letter G, and leaves it there a long time, as if on someone's shoulder.
+
+When he has gone, Karim goes to look. Under his hand it said: Jacques GARCIN.
+
+=== noye_ouveze/puzzles/poursuite/options/suivre/facts/0/text #9feedabb
+The man from the Saules stops at the memorial and keeps his hand on Jacques Garcin's name for a long time.
+
+=== noye_ouveze/puzzles/poursuite/options/suivre/facts/0/label #45b0ba23
+The night
+
+=== noye_ouveze/puzzles/poursuite/options/barrer/label #96773dfe
+Block his way
+
+=== noye_ouveze/puzzles/poursuite/options/barrer/text #11c4e988
+Yves stands up and fires his flash full in the man's face. The man cries out, hides his face in the crook of his arm and runs off through the stumps, towards the river. He leaves the moped behind, and a haversack at the foot of the cross.
+
+Inside, a water bottle, a knife, and a {{d:photo_famille|photo}} folded in four, worn along the creases: a man with a moustache, a blonde woman, two children, in front of a sign reading “Camping des Saules”. On the back: “Summer 1991”.
+
+In the morning, the moped has gone. Yves's photo, developed the next day: a raised arm, a white flare. Nothing else.
+
+=== noye_ouveze/puzzles/poursuite/options/barrer/facts/0/text #603de9f3
+In the haversack of the man from the Saules: the Garcin family in front of the campsite, “Summer 1991”.
+
+=== noye_ouveze/puzzles/poursuite/options/frapper/label #c8aed500
+Jump him
+
+=== noye_ouveze/puzzles/poursuite/options/frapper/text #1d6372a2
+Karim leaps. He played rugby at school, as he often tells people. The man is heavier, older, stronger. They roll over the pebbles. The cap falls off. The man pulls free, hits Karim just once, on the shoulder, without malice, and vanishes into the dark.
+
+Two minutes later, headlights: a patrol from the Vaison gendarmerie, called out by a neighbour who can see “lights among the dead”. Karim spends the night in custody for assault. Yves spends it in the corridor, on a chair.
+
+{{p:montagne|Warrant Officer Montagne}} comes to collect them at noon the next day. “Your trainee rugby-tackled a man on a ruined campsite. I don't have a column for that either. Full stop.” In the car, Karim takes the cap out of his pocket. He kept it. On the leather band, in ink: “J.G.”
+
+You have lost a day.
+
+=== noye_ouveze/puzzles/poursuite/options/frapper/facts/0/text #e5b8293e
+Picked Karim up at noon the next day, after a night in custody in Vaison for assault.
+
+=== noye_ouveze/puzzles/poursuite/options/frapper/facts/0/label #f2428405
+Custody
+
+=== noye_ouveze/puzzles/poursuite/options/frapper/facts/1/text #796e8c14
+Fell off during the scuffle. On the leather band, in ink: “J.G.”
+
+=== noye_ouveze/puzzles/poursuite/options/frapper/facts/1/label #86d59ce7
+The cap
+
+=== noye_ouveze/actions/endort/name #b634fcb8
+drugs
+
+=== noye_ouveze/actions/pousse/name #d47d5c06
+pushes him
+
+=== noye_ouveze/actions/va_tout_dire/name #ec1fdbcb
+is going to tell all
+
+=== noye_ouveze/actions/oublie/name #faaf89fa
+forgets
+
+=== noye_ouveze/actions/ment/name #16a12ebf
+lies
+
+=== noye_ouveze/actions/fait_chanter/name #c4c1fc2d
+blackmails him
+
+=== noye_ouveze/actions/suit/name #338ad11a
+follows him
+
+=== noye_ouveze/actions/protege/name #4dc0b0b1
+protects him
+
+=== noye_ouveze/actions/menace/name #139bec3d
+threatens him
+
+=== noye_ouveze/article/crue/title #6a7a0b2d
+The night of the flood
+
+=== noye_ouveze/article/crue/parts/0 #b5d8289e
+On 22 September 1992, as the Ouvèze rises, Jacques Garcin evacuates his campsite, list in hand. But he
+
+=== noye_ouveze/article/crue/parts/2 #64a93959
+ the caravan at the far end, where Thierry Mollet and Nathalie Brun are asleep. To cover for his friend,
+
+=== noye_ouveze/article/crue/parts/6 #1995a117
+ to the gendarmes: he says he saw him swept away while going to the rescue.
+
+=== noye_ouveze/article/revenant/title #0d3dc24d
+The revenant
+
+=== noye_ouveze/article/revenant/parts/0 #73721784
+The man in the Grand Prix de la Digue photo, Lucien Royer, is none other than
+
+=== noye_ouveze/article/revenant/parts/4 #a8037eda
+ leaves no room for doubt.
+
+=== noye_ouveze/article/veuve/title #c1290c29
+The widow
+
+=== noye_ouveze/article/veuve/parts/1 #248fead3
+ has known since the day after the flood. Every month, she sends him
+
+=== noye_ouveze/article/mobile/title #f235c928
+The motive
+
+=== noye_ouveze/article/mobile/parts/0 #0e1f5c36
+In June 1994, Aimé Chabert
+
+=== noye_ouveze/article/mobile/parts/2 #0fc0bb64
+ to the gendarmes. If Garcin is alive, his widow must pay back
+
+=== noye_ouveze/article/mobile/parts/4 #6ede1c30
+, and she could go to prison.
+
+=== noye_ouveze/article/canal/title #74cd1a60
+The night at the canal
+
+=== noye_ouveze/article/canal/parts/0 #8a69badf
+On Wednesday 15 June, at 11 p.m.,
+
+=== noye_ouveze/article/canal/parts/2 #fbc24ba8
+ enters the mill with
+
+=== noye_ouveze/article/canal/parts/4 #86b6323e
+. She
+
+=== noye_ouveze/article/canal/parts/6 #e66ed3ac
+ the miller with her sleeping pills, then
+
+=== noye_ouveze/article/canal/parts/8 #94a09e63
+ into the millrace.
+
+=== noye_ouveze/article/lettre/title #65a3e9b8
+The letter
+
+=== noye_ouveze/article/lettre/parts/0 #f55a4b61
+As for the letter that brought the Bureau to Nyons, it was
+
+=== noye_ouveze/article/lettre/parts/2 #5dce72ef
+ who wrote it. Thierry Mollet was her brother.
+
+=== noye_ouveze/article/salamandre/title #d904c0be
+The salamander
+
+=== noye_ouveze/article/salamandre/parts/0 #c8a6d290
+On the Roman bridge, someone saw everything and said nothing:
+
+=== noye_ouveze/article/salamandre/parts/2 #907a46be
+, whose notebook bears a salamander.
+
+=== noye_ouveze/review/juste #bcbf42d2
+Jean-Loup reads the article twice, over the phone, with Paul reading it aloud from the phone box on the square. He says nothing for a long while. Then: “It holds up. Send it.”
+
+=== noye_ouveze/review/essai1 #bbecb876
+Jean-Loup has gone over the fax. “There's a paragraph that doesn't hold up. I've marked it. I'm not telling you where it goes wrong.”
+
+=== noye_ouveze/review/essai1_pluriel #6f8f674c
+Jean-Loup has gone over the fax. “There are paragraphs that don't hold up. I've marked them. I'm not telling you where it goes wrong.”
+
+=== noye_ouveze/review/essai2 #a881b200
+Jean-Loup sighs into the receiver. “There, and there. In red. Last chance. Next fax, it goes out as it is.”
+
+=== noye_ouveze/review/essai3 #6c180b4a
+Jean-Loup doesn't even reread it. “Time's up. It's going out.”
+
+=== noye_ouveze/ranks/0/label #5c20637e
+Major success
+
+=== noye_ouveze/ranks/1/label #5005261b
+Success
+
+=== noye_ouveze/ranks/2/label #78ade448
+Partial success
+
+=== noye_ouveze/ranks/3/label #0ff45fa6
+Failure
+
+=== noye_ouveze/endings/une/title #67f4ec71
+The front page
+
+=== noye_ouveze/endings/une/headline #afd25b4f
+The drowned man of the Ouvèze was alive, and his widow knew
+
+=== noye_ouveze/endings/une/text #473a5aba
+On Saturday 25 June, the Occult Affairs page is on the front of Le Drômois, and picked up by the group's thirteen other titles. Jean-Loup chose the headline himself: “The drowned man of the Ouvèze was alive, and his widow knew”.
+
+Hélène Garcin is charged with murder the following Monday, in Valence. She says almost nothing to the judge. She asks only that her children not attend the trial. Dr Sauvan gives evidence. Warrant Officer Montagne is transferred to Die.
+
+Jacques Garcin turns himself in at the Vaison gendarmerie on Tuesday morning, on foot, carrying a bag. The prosecutor's office in Carpentras reopens the flood file. He has no lawyer, and he doesn't want one.
+
+Julien Garcin rings the Bureau in July. He doesn't shout. He only asks what his father looks like now. Paul tells him, feature by feature, as if for an identikit portrait.
+
+=== noye_ouveze/endings/sans_mobile/title #f235c928
+The motive
+
+=== noye_ouveze/endings/sans_mobile/headline #938ebed8
+Nyons: hero's widow charged
+
+=== noye_ouveze/endings/sans_mobile/text #91613c52
+On Saturday 25 June, the article causes a stir: the hero's widow killed the miller, and the hero is alive. Hélène Garcin is charged.
+
+But the article gets the why wrong, and her lawyer knows it. At the September hearing he reads the Saturday page aloud, slowly, and asks the judge where the motive is. There isn't one, in what the Bureau wrote. Hélène Garcin is released under judicial supervision.
+
+She takes the mill shop back in November, for the olive season. The customers say she is very dignified.
+
+=== noye_ouveze/endings/legende/title #13b87d97
+The legend
+
+=== noye_ouveze/endings/legende/headline #9f65572a
+Nyons: the miller did not drown on his own
+
+=== noye_ouveze/endings/legende/text #a155fa3e
+On Saturday 25 June, the article holds up on one point: Aimé Chabert did not drown on his own. Hélène Garcin is questioned, then charged.
+
+But the article doesn't say who the man in the photo is. The revenant remains a revenant. On Monday, Lucien Royer doesn't turn up at the orchards. Tardieu finds the hut empty, the boules bag gone, and the postal orders too.
+
+In Vaison, the plaque still says “died going to the rescue”. Rosa Bérenger still sees Marius at the market. And at night, from her window, she no longer sees a light at the Camping des Saules.
+
+=== noye_ouveze/endings/revenant/when/Q1/0 #2cdd916c
+p:royer
+
+=== noye_ouveze/endings/revenant/when/Q1/1 #57826c2a
+p:garcin
+
+=== noye_ouveze/endings/revenant/title #0d3dc24d
+The revenant
+
+=== noye_ouveze/endings/revenant/headline #9dbaad85
+The revenant of the Ouvèze killed the miller
+
+=== noye_ouveze/endings/revenant/text #ff52ff98
+On Saturday 25 June, Jean-Loup's headline goes round the whole region: “The revenant of the Ouvèze killed the miller”. It is exactly the page he wanted. Sales of Le Drômois double.
+
+The gendarmes come for Lucien Royer at Les Pilles on Monday morning. He doesn't resist. He doesn't defend himself. He says only that his name is Jacques Garcin, and that he didn't kill Aimé. Nobody listens to him. They listen even less once they learn what he did in 1992.
+
+Hélène Garcin sells the house in Les Forts in August, to a Dutch couple. Dr Sauvan sends the judge the results of her analysis, with a four-page letter. She never gets a reply.
+
+=== noye_ouveze/endings/dementi/title #eb969db9
+The denial
+
+=== noye_ouveze/endings/dementi/headline #d25ec6c7
+Nyons: the river keeps its secrets
+
+=== noye_ouveze/endings/dementi/text #4dcc525b
+The article comes out on Saturday 25 June. On Monday, the gendarmerie issues a statement: Aimé Chabert's death was accidental, the investigation is closed, and “certain journalists would do better to stick to ghosts”. Warrant Officer Montagne wrote the last sentence himself.
+
+Jean-Loup summons Paul to Lyon. The door stays shut for an hour. When Paul comes out, he says only: “Granted.”
+
+In Nyons, the mill's sluice gate is closed and the padlock is new. The summer goes by. They only press in winter.
+
+=== noye_ouveze/complements/Q4/right #63e08ddd
+The Vaison plaque is remade in October. The words “died going to the rescue” disappear, and Jacques Garcin's name with them. On the new stone, under the names of Thierry Mollet and Nathalie Brun, someone has had a line added: “pitch 31”.
+
+=== noye_ouveze/complements/Q4/wrong #b1174b82
+In Vaison, the plaque still says “died going to the rescue”. Every 22 September, someone leaves a bunch of lavender there with a card: “Sorry.”
+
+=== noye_ouveze/complements/Q5/right #db8293aa
+The Mutuelle rhodanienne files a complaint for fraud. The house in Les Forts is seized. Julien and Claire go to live with a great-aunt in Dieulefit.
+
+=== noye_ouveze/complements/Q5/wrong #4b1adb56
+The Mutuelle rhodanienne closes the file: nothing proves the widow knew. Jean-Claude Vasseur goes back to Avignon with his solar calculator.
+
+=== noye_ouveze/complements/Q6/right #f6be7000
+Sandrine Mollet goes back to Roanne at the end of the month. Gaston Rey found Thierry's watch under a bench at La Digue. He took it to her at the campsite without a word, and left before she opened the box.
+
+=== noye_ouveze/complements/Q6/wrong #b8ab3279
+Sandrine Mollet is questioned three times by the gendarmes about her visit to the mill. She leaves Nyons before the apricots, without her watch.
+
+=== noye_ouveze/choiceEndings/poursuite/frapper/title #a1d64188
+The Bureau makes the front page
+
+=== noye_ouveze/choiceEndings/poursuite/frapper/text #313c01c6
+On Tuesday, La Gazette du Vaucluse, a rival paper, runs a headline on page 3: “Lyon journalist assaults farm worker at flood-hit campsite”. Jean-Loup cuts out the article and pins it above Karim's desk in Lyon. It stays there until Christmas.
+
+=== noye_ouveze/epilogue #ba643859
+The following Monday, in the Bureau's post in Lyon, there is a plain white card with a Nyons postmark. The salamander in the flames, in red ink. On the back, in a fine, slanting hand: “Your conclusions are correct. So are ours. F. A.”
+
+Odile puts it next to the one from November. The two salamanders are identical, down to the last stroke. That evening she stays late in the archives.
+
+The next morning, on Paul's desk, there is a cutting from Le Drômois of 3 August 1958, from the boules page: “Nyons. Death of M. Firmin Achard, 71, a leading figure of la Boule nyonsaise.” No photo. Odile says nothing. She has underlined the age.
+
+=== noye_ouveze/calendar/days/0 #931c7e95
+Friday 17 June
+
+=== noye_ouveze/calendar/days/1 #b48904b7
+Saturday 18 June
+
+=== noye_ouveze/calendar/days/2 #e3030cab
+Monday 20 June
+
+=== noye_ouveze/calendar/days/3 #3fc6a9d5
+Tuesday 21 June
+
+=== noye_ouveze/calendar/days/4 #19c86744
+Wednesday 22 June
+
+=== noye_ouveze/calendar/slots/0 #0755603b
+9 a.m.
+
+=== noye_ouveze/calendar/slots/1 #a2bb8c03
+11 a.m.
+
+=== noye_ouveze/calendar/slots/2 #3e5af99b
+2 p.m.
+
+=== noye_ouveze/calendar/slots/3 #eedb2403
+4 p.m.
+
+=== noye_ouveze/calendar/deadline #6be2871b
+Thursday 23 June, 6 p.m.: deadline
+
+=== noye_ouveze/solution #39747918
+On 22 September 1992, Jacques Garcin evacuates his Camping des Saules with the list of guests, but he has forgotten to put on it the caravan of Thierry Mollet and Nathalie Brun, who arrived the day before. They die. Garcin disappears, and his friend Aimé Chabert, the miller, swears he saw him swept away while going to the rescue. The next day, Garcin rings his wife, Hélène: “You're dead. Stay dead.” She collects 1.4 million francs in life insurance and sends him postal orders to keep him quiet. Garcin lives at Les Pilles under the name Lucien Royer. In June 1994, a photo from a competition gives him away. Sandrine Mollet, Thierry's sister, recognises him, goes and shouts at Chabert's door and writes to the Bureau. Chabert decides to tell the gendarmes everything on Thursday 16, and warns Hélène. On Wednesday 15 at 10 p.m., he sees Garcin on the bank of the canal; Garcin leaves at half past ten, and Chabert is alive. At 11.05 p.m., Hélène enters the mill with her keys, puts Chabert to sleep with her Mogadon in a glass of marc, opens the sluice gate and pushes him into the millrace. Firmin Achard saw everything from the Roman bridge, and said nothing.
+
+=== noye_ouveze/plan/title #c4b2c9a7
+Map of Nyons
+
+=== noye_ouveze/plan/subtitle #b460035d
+1994 edition · scale 1:8,000
+
+=== noye_ouveze/plan/decor/0/label #1c5ef86b
+L'Eygues
+
+=== noye_ouveze/plan/decor/1/label #db274a3c
+Mill canal
+
+=== noye_ouveze/plan/decor/2/label #f4001535
+Avenue Henri-Rochier
+
+=== noye_ouveze/plan/decor/5/label #67a1e3f3
+Route de Vaison
+
+=== noye_ouveze/plan/decor/6/label #7898f0ce
+Les Pilles, 8 km →
+
+=== noye_ouveze/plan/decor/7/label #568bfcc0
+↙ Vaison-la-Romaine, 15 km

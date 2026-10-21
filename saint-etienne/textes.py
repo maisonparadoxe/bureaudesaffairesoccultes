@@ -9,7 +9,7 @@ AFFAIRE = dict(
     titre="Le feu de Ferréol",
     sous_titre="Une enquête du Bureau des affaires occultes",
     annee=1993,
-    pistes_accordees=16,
+    pistes_accordees=20,
 )
 
 DOCUMENTS = {

@@ -6,6 +6,12 @@
   const PROGRESS_KEY = "stephanois-progress-v1"; // carrière : affaires terminées
   const A = window.BAOAudio || { play() {}, playOneOf() {}, playQuick() {}, setAmbience() {}, setMusic() {}, setWeather() {}, silence() {}, settings: {}, set() {} };
 
+  // Langue (i18n.js) : t("texte français") rend le texte dans la langue choisie,
+  // tp(n, singulier, pluriel) choisit la bonne forme du nombre.
+  const L = window.BAOLang || { lang: "fr", locale: "fr-FR", t: (s, v) => s, tp: (n, a, b) => (n > 1 ? b : a), stored: (s) => s, set() {} };
+  const t = L.t;
+  const tp = L.tp;
+
   // Réglages visuels (animations, pluie, lumière du jour)
   const VIS_KEY = "bao-visuel-v1";
   const reducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -33,6 +39,7 @@
     minitelFound: new Set(), // index des entrées Minitel trouvées
     puzzlesSolved: new Set(),
     puzzlesHelped: new Set(),
+    choices: {}, // scènes à choix (la poursuite) : id du puzzle -> id de l'option choisie
     answers: {}, // article : id du trou -> "type:id" du mot posé
     attempts: 0, // relectures de Jean-Loup déjà faites
     review: null, // dernier retour de Jean-Loup
@@ -136,11 +143,11 @@
   }
 
   const RANKS = [
-    { min: 0, title: "Stagiaire" },
-    { min: 50, title: "Journaliste" },
-    { min: 120, title: "Journaliste confirmé" },
-    { min: 200, title: "Grand reporter" },
-    { min: 300, title: "Rédacteur en chef" }
+    { min: 0, title: t("Stagiaire") },
+    { min: 50, title: t("Journaliste") },
+    { min: 120, title: t("Journaliste confirmé") },
+    { min: 200, title: t("Grand reporter") },
+    { min: 300, title: t("Rédacteur en chef") }
   ];
 
   function currentRank() {
@@ -155,10 +162,10 @@
   function computeBadges() {
     const entries = existingCaseEntries();
     const badges = [];
-    if (entries.length >= 1) badges.push({ label: "Premier article publié", detail: "Une affaire menée jusqu'au bout." });
-    if (entries.some((e) => e.bestRank === "Réussite majeure"))
-      badges.push({ label: "Réussite majeure", detail: "Une enquête résolue presque sans faute." });
-    if (entries.length >= 2) badges.push({ label: "Plume assidue", detail: "Deux affaires ou plus menées à terme." });
+    if (entries.length >= 1) badges.push({ label: t("Premier article publié"), detail: t("Une affaire menée jusqu'au bout.") });
+    if (entries.some((e) => L.stored(e.bestRank) === t("Réussite majeure")))
+      badges.push({ label: t("Réussite majeure"), detail: t("Une enquête résolue presque sans faute.") });
+    if (entries.length >= 2) badges.push({ label: t("Plume assidue"), detail: t("Deux affaires ou plus menées à terme.") });
     return badges;
   }
 
@@ -199,6 +206,7 @@
           minitelFound: Array.from(state.minitelFound),
           puzzlesSolved: Array.from(state.puzzlesSolved),
           puzzlesHelped: Array.from(state.puzzlesHelped),
+          choices: state.choices,
           answers: state.answers,
           attempts: state.attempts,
           review: state.review,
@@ -262,12 +270,12 @@
 
   function timeAgo(iso) {
     const min = Math.round((Date.now() - new Date(iso).getTime()) / 60000);
-    if (min < 2) return "à l'instant";
-    if (min < 60) return "il y a " + min + " min";
+    if (min < 2) return t("à l'instant");
+    if (min < 60) return t("il y a {n} min", { n: min });
     const h = Math.round(min / 60);
-    if (h < 24) return "il y a " + h + " h";
+    if (h < 24) return t("il y a {n} h", { n: h });
     const d = Math.round(h / 24);
-    return "il y a " + d + " jour" + (d > 1 ? "s" : "");
+    return tp(d, "il y a {n} jour", "il y a {n} jours");
   }
 
   function resetCaseState() {
@@ -277,6 +285,7 @@
     state.minitelFound = new Set();
     state.puzzlesSolved = new Set();
     state.puzzlesHelped = new Set();
+    state.choices = {};
     state.answers = {};
     state.attempts = 0;
     state.review = null;
@@ -304,6 +313,7 @@
     state.minitelFound = new Set(s.minitelFound || []);
     state.puzzlesSolved = new Set(s.puzzlesSolved || []);
     state.puzzlesHelped = new Set(s.puzzlesHelped || []);
+    state.choices = s.choices || {};
     state.answers = s.answers && !s.answers.Q1 ? s.answers : {};
     state.attempts = s.attempts || 0;
     state.review = s.review || null;
@@ -349,10 +359,10 @@
       if (hasId && opts.links) {
         if (type === "l" && locationById(id) && opts.knowledge && opts.knowledge.l.has(id)) {
           cls += " tag-link";
-          attrs = ' data-goto-loc="' + id + '" role="button" tabindex="0" title="Aller : ' + escapeHtml(locationById(id).name) + '"';
+          attrs = ' data-goto-loc="' + id + '" role="button" tabindex="0" title="' + t("Aller : {lieu}", { lieu: escapeHtml(locationById(id).name) }) + '"';
         } else if ((type === "p" && characterById(id)) || (type === "d" && documentById(id))) {
           cls += " tag-link";
-          attrs = ' data-open-entity="' + type + ":" + id + '" role="button" tabindex="0" title="Ouvrir la fiche du carnet"';
+          attrs = ' data-open-entity="' + type + ":" + id + '" role="button" tabindex="0" title="' + t("Ouvrir la fiche du carnet") + '"';
         }
       }
       return '<span class="' + cls + '"' + attrs + ">" + label + "</span>";
@@ -381,8 +391,8 @@
 
   function colorLegendHTML() {
     return (
-      '<div class="tag-legend"><span class="tag-person">Personnes</span>' +
-      '<span class="tag-lieu">Lieux</span><span class="tag-doc">Pièces du dossier</span></div>'
+      '<div class="tag-legend"><span class="tag-person">' + t("Personnes") + "</span>" +
+      '<span class="tag-lieu">' + t("Lieux") + '</span><span class="tag-doc">' + t("Pièces du dossier") + "</span></div>"
     );
   }
 
@@ -409,7 +419,14 @@
       (clue.revealsLocations || []).forEach((id) => k.l.add(id));
       (clue.revealsActions || []).forEach((id) => k.a.add(id));
       const pz = puzzleOf(clue);
-      if (pz && state.puzzlesSolved.has(clue.puzzle)) absorb(pz.result);
+      if (pz && state.puzzlesSolved.has(clue.puzzle)) {
+        absorb(pz.result);
+        const opt = chosenOption(clue.puzzle);
+        if (opt) {
+          absorb(opt.text);
+          (opt.revealsActions || []).forEach((id) => k.a.add(id));
+        }
+      }
     });
 
     // Une adresse trouvée au Minitel ne mène quelque part que si l'enquête a déjà parlé
@@ -447,8 +464,27 @@
     return clue.button || clue.title;
   }
 
+  // L'option choisie dans une scène à choix (la poursuite), ou null
+  function chosenOption(puzzleId) {
+    const pz = (currentCase().puzzles || {})[puzzleId];
+    const id = state.choices[puzzleId];
+    return pz && pz.options && id ? pz.options.find((o) => o.id === id) || null : null;
+  }
+
+  // Une piste peut n'apparaître qu'à partir d'un certain jour (fromLead : nombre de
+  // pistes déjà dépensées), et disparaître si on ne l'a pas lue à temps (untilLead).
+  function clueInTime(clue) {
+    if (state.readClueIds.has(clue.id)) return true;
+    const used = leadsUsed();
+    if (clue.fromLead !== undefined && used < clue.fromLead) return false;
+    if (clue.untilLead !== undefined && used >= clue.untilLead) return false;
+    return true;
+  }
+
   function clueAvailable(clue, k) {
     if (!k.l.has(clue.locationId)) return false;
+    if (!clueInTime(clue)) return false;
+    if ((clue.requiresPuzzle || []).some((p) => !state.puzzlesSolved.has(p))) return false;
     if (!state.readClueIds.has(clue.id) && followUpRead(clue)) return false;
     if ((clue.requires || []).some((r) => !state.readClueIds.has(r))) return false;
     if (clue.requiresAny && !clue.requiresAny.some((r) => state.readClueIds.has(r))) return false;
@@ -472,13 +508,17 @@
         clueId: clueId,
         struck: (f.struckBy || []).some((id) => state.readClueIds.has(id))
       });
-    (cs.introNotes || []).forEach((f) => push(f, "L'intro", null));
+    (cs.introNotes || []).forEach((f) => push(f, t("L'intro"), null));
     Array.from(state.readClueIds).forEach((id) => {
       const clue = clueById(id);
       if (!clue) return;
       (clue.facts || []).forEach((f) => push(f, clueTitle(clue), clue.id));
       const pz = puzzleOf(clue);
-      if (pz && state.puzzlesSolved.has(clue.puzzle)) (pz.facts || []).forEach((f) => push(f, pz.title, clue.id));
+      if (pz && state.puzzlesSolved.has(clue.puzzle)) {
+        (pz.facts || []).forEach((f) => push(f, pz.title, clue.id));
+        const opt = chosenOption(clue.puzzle);
+        if (opt) (opt.facts || []).forEach((f) => push(f, pz.title, clue.id));
+      }
     });
     return out;
   }
@@ -505,9 +545,11 @@
     // Seuls les vrais déblocages (seconds entretiens, pièces à revenir voir) sont signalés
     const unlocked = Array.from(after.avail).filter((id) => {
       const c = clueById(id);
-      return !before.avail.has(id) && !state.readClueIds.has(id) && (c.requires || c.requiresAny);
+      return !before.avail.has(id) && !state.readClueIds.has(id) && (c.requires || c.requiresAny || c.requiresPuzzle || c.fromLead !== undefined);
     });
     unlocked.forEach((id) => state.freshClueIds.add(id));
+    // Quelqu'un est parti : la piste n'est plus possible
+    const lost = Array.from(before.avail).filter((id) => !after.avail.has(id) && !state.readClueIds.has(id) && clueById(id).untilLead !== undefined);
 
     // Un seul son pour signaler les découvertes : le plus important
     const sound = unlocked.length ? "interface/deblocage"
@@ -528,6 +570,7 @@
       newDocuments: names.d,
       newActions: names.a,
       unlocked: unlocked.map((id) => clueButton(clueById(id))),
+      lost: lost.map((id) => clueButton(clueById(id))),
       struck: after.struck - before.struck
     };
   }
@@ -560,14 +603,16 @@
   // ---------------------------------------------------------------
 
   function loadData() {
-    return fetch("data.json")
+    const en = L.lang === "en";
+    return fetch(en ? "data-en.json" : "data.json")
       .then((res) => {
         if (!res.ok) throw new Error("fetch failed");
         return res.json();
       })
       .catch(() => {
-        if (window.GAME_DATA_FALLBACK) return window.GAME_DATA_FALLBACK;
-        throw new Error("Aucune donnée disponible");
+        const fallback = en ? window.GAME_DATA_FALLBACK_EN : window.GAME_DATA_FALLBACK;
+        if (fallback) return fallback;
+        throw new Error(t("Aucune donnée disponible"));
       });
   }
 
@@ -622,7 +667,7 @@
         render();
       })
       .catch((err) => {
-        app.innerHTML = '<p style="font-family:monospace;padding:40px;">Erreur de chargement des données : ' + err.message + "</p>";
+        app.innerHTML = '<p style="font-family:monospace;padding:40px;">' + t("Erreur de chargement des données : ") + err.message + "</p>";
       });
   }
 
@@ -676,9 +721,12 @@
     const inCase = state.started && CASE_VIEWS.concat(["questionnaire"]).includes(v);
     const raining = inCase && currentCase() && isRaining();
     rain.on = raining && vis.anim;
-    A.setWeather(raining ? "pluie-vitre" : null);
     const ck = inCase && vis.anim ? clockInfo() : null;
+    // Plein été : les cigales chantent le jour, se taisent le soir
+    const sunny = inCase && currentCase() && currentCase().weather === "soleil" && !(ck && (ck.moment === "soir" || ck.moment === "nuit"));
+    A.setWeather(raining ? "pluie-vitre" : sunny ? "cigales" : null);
     document.body.dataset.moment = ck ? ck.moment : "";
+    document.body.dataset.meteo = inCase && currentCase() ? currentCase().weather || "" : "";
     if (v === "menu" || v === "options" || v === "credits") {
       A.setMusic("menu");
       A.setAmbience(null);
@@ -722,8 +770,8 @@
     const titles = document.createElement("div");
     titles.className = "masthead-titles";
     if (OUT_OF_CASE.includes(state.view)) {
-      const T = { caseSelect: currentCity() && currentCity().name, profile: "Fiche de l'enquêteur", options: "Options", credits: "Crédits", prologue: "Note de service" };
-      titles.innerHTML = '<p class="kicker">Bureau des affaires occultes</p><h1>' + (T[state.view] || "Choisir une ville") + "</h1>";
+      const T = { caseSelect: currentCity() && currentCity().name, profile: t("Fiche de l'enquêteur"), options: t("Options"), credits: t("Crédits"), prologue: t("Note de service") };
+      titles.innerHTML = '<p class="kicker">' + t("Bureau des affaires occultes") + "</p><h1>" + (T[state.view] || t("Choisir une ville")) + "</h1>";
     } else {
       const cs = currentCase();
       titles.innerHTML =
@@ -736,8 +784,8 @@
 
     const menuBtn = document.createElement("button");
     menuBtn.className = "menu-btn";
-    menuBtn.title = "Menu principal (la partie est sauvegardée)";
-    menuBtn.textContent = "☰ Menu";
+    menuBtn.title = t("Menu principal (la partie est sauvegardée)");
+    menuBtn.textContent = t("☰ Menu");
     menuBtn.addEventListener("click", () => {
       A.play("interface/clic");
       state.showAudio = false;
@@ -749,8 +797,8 @@
 
     const soundBtn = document.createElement("button");
     soundBtn.className = "sound-btn";
-    soundBtn.title = "Réglages du son";
-    soundBtn.setAttribute("aria-label", "Réglages du son");
+    soundBtn.title = t("Réglages du son");
+    soundBtn.setAttribute("aria-label", t("Réglages du son"));
     soundBtn.textContent = A.settings.muted ? "🔇" : "🔊";
     soundBtn.addEventListener("click", () => {
       state.showAudio = !state.showAudio;
@@ -761,8 +809,8 @@
     if (state.view !== "profile") {
       const profileBtn = document.createElement("button");
       profileBtn.className = "profile-btn";
-      profileBtn.title = "Voir la fiche de l'enquêteur";
-      profileBtn.setAttribute("aria-label", "Voir la fiche de l'enquêteur");
+      profileBtn.title = t("Voir la fiche de l'enquêteur");
+      profileBtn.setAttribute("aria-label", t("Voir la fiche de l'enquêteur"));
       profileBtn.innerHTML = buildAvatarSVG(40);
       profileBtn.addEventListener("click", () => {
         state.previousView = state.view;
@@ -775,13 +823,13 @@
     if (state.view === "citySelect") {
       const pts = document.createElement("div");
       pts.className = "lead-counter career";
-      pts.innerHTML = '<span class="num">' + careerPoints() + '</span><span class="label">points de carrière</span>';
+      pts.innerHTML = '<span class="num">' + careerPoints() + '</span><span class="label">' + t("points de carrière") + "</span>";
       tools.appendChild(pts);
     } else if (state.started && CASE_VIEWS.concat(["questionnaire"]).includes(state.view)) {
       if (state.leadsRemaining <= 0 && state.view !== "questionnaire") {
         const write = document.createElement("button");
         write.className = "lead-counter lead-counter-article";
-        write.innerHTML = '<span class="num">0</span><span class="label">Rédiger l\'article →</span>';
+        write.innerHTML = '<span class="num">0</span><span class="label">' + t("Rédiger l'article →") + "</span>";
         write.addEventListener("click", () => {
           A.play("interface/page-journal");
           state.view = "questionnaire";
@@ -793,7 +841,7 @@
         const counter = document.createElement("div");
         counter.className = "lead-counter" + (state.leadsRemaining <= 3 ? " low" : "");
         counter.innerHTML =
-          '<span class="num">' + state.leadsRemaining + '</span><span class="label">piste' + (state.leadsRemaining > 1 ? "s" : "") + " avant le bouclage</span>";
+          '<span class="num">' + state.leadsRemaining + '</span><span class="label">' + tp(state.leadsRemaining, "piste avant le bouclage", "pistes avant le bouclage") + "</span>";
         tools.appendChild(counter);
       }
       const ck = clockInfo();
@@ -815,19 +863,19 @@
     box.className = "audio-panel" + (inline ? " audio-panel-inline" : "");
     const s = A.settings;
     box.innerHTML =
-      '<label class="audio-row"><input type="checkbox" data-k="muted"' + (s.muted ? " checked" : "") + "> Couper tous les sons</label>" +
+      '<label class="audio-row"><input type="checkbox" data-k="muted"' + (s.muted ? " checked" : "") + "> " + t("Couper tous les sons") + "</label>" +
       [
-        ["effets", "Effets"],
-        ["ambiances", "Ambiances"],
-        ["musique", "Musique"]
+        ["effets", t("Effets")],
+        ["ambiances", t("Ambiances")],
+        ["musique", t("Musique")]
       ]
         .map(
           ([k, l]) =>
             '<label class="audio-row"><span>' + l + '</span><input type="range" min="0" max="1" step="0.05" data-k="' + k + '" value="' + (s[k] || 0) + '"></label>'
         )
         .join("") +
-      '<label class="audio-row"><input type="checkbox" data-v="anim"' + (vis.anim ? " checked" : "") + "> Animations, pluie et lumière du jour</label>" +
-      '<p class="audio-note">Les sons ne sont joués que si les fichiers sont présents dans le dossier audio.</p>';
+      '<label class="audio-row"><input type="checkbox" data-v="anim"' + (vis.anim ? " checked" : "") + "> " + t("Animations, pluie et lumière du jour") + "</label>" +
+      '<p class="audio-note">' + t("Les sons ne sont joués que si les fichiers sont présents dans le dossier audio.") + "</p>";
     box.querySelectorAll("input[data-v]").forEach((inp) =>
       inp.addEventListener("change", () => {
         setVis(inp.getAttribute("data-v"), inp.checked);
@@ -852,10 +900,10 @@
   // Logo : img/logo.png s'il existe, sinon un logo composé en texte
   function logoHTML() {
     return (
-      '<div class="logo" role="img" aria-label="Bureau des affaires occultes">' +
-      '<img src="img/logo.png" alt="" class="logo-img" data-remove-on-error>' +
-      '<div class="logo-text"><span class="logo-top">Bureau des</span><span class="logo-main">Affaires</span><span class="logo-main">occultes</span>' +
-      '<span class="logo-stamp">France · Années 1990</span></div></div>'
+      '<div class="logo" role="img" aria-label="' + t("Bureau des affaires occultes") + '">' +
+      '<img src="' + (L.lang === "en" ? "img/logo-en.png" : "img/logo.png") + '" alt="" class="logo-img" data-remove-on-error>' +
+      '<div class="logo-text"><span class="logo-top">' + t("Bureau des") + '</span><span class="logo-main">' + t("Affaires") + '</span><span class="logo-main">' + t("occultes") + "</span>" +
+      '<span class="logo-stamp">' + t("France · Années 1990") + "</span></div></div>"
     );
   }
 
@@ -867,7 +915,7 @@
       '<figure class="menu-fond" data-remove-parent><img src="img/menu-fond.jpg" alt="" data-remove-on-error></figure>' +
       '<div class="menu-lamp" aria-hidden="true"></div>' +
       '<div class="menu-inner">' + logoHTML() +
-      '<nav class="menu-list" aria-label="Menu principal"></nav></div>';
+      '<nav class="menu-list" aria-label="' + t("Menu principal") + '"></nav></div>';
     const nav = wrap.querySelector(".menu-list");
 
     const item = (label, sub, fn, disabled) => {
@@ -884,37 +932,63 @@
     };
 
     item(
-      "Continuer",
-      last ? last.cs.title + " · " + (last.cs.totalLeads - last.save.leadsRemaining) + " pistes lues · " + timeAgo(last.save.savedAt) : "Aucune enquête en cours",
+      t("Continuer"),
+      last ? last.cs.title + " · " + tp(last.cs.totalLeads - last.save.leadsRemaining, "{n} piste lue", "{n} pistes lues") + " · " + timeAgo(last.save.savedAt) : t("Aucune enquête en cours"),
       continueLatest,
       !last
     );
-    item("Nouvelle partie", state.progress.prologueSeen ? "Choisir une ville et une affaire" : "Prendre connaissance du dossier", () => {
+    item(t("Nouvelle partie"), state.progress.prologueSeen ? t("Choisir une ville et une affaire") : t("Prendre connaissance du dossier"), () => {
       A.play("interface/page");
       state.view = state.progress.prologueSeen ? "citySelect" : "prologue";
       render();
       window.scrollTo(0, 0);
     });
-    item("Options", "Son, animations, taille du texte", () => {
+    item(t("Options"), t("Son, animations, taille du texte, langue"), () => {
       state.previousView = "menu";
       state.view = "options";
       render();
     });
-    item("Fiche de l'enquêteur", currentRank() + " · " + careerPoints() + " points", () => {
+    item(t("Fiche de l'enquêteur"), currentRank() + " · " + tp(careerPoints(), "{n} point", "{n} points"), () => {
       state.previousView = "menu";
       state.view = "profile";
       render();
     });
-    item("Crédits", "", () => {
+    item(t("Crédits"), "", () => {
       state.view = "credits";
       render();
     });
 
     const foot = document.createElement("p");
     foot.className = "menu-foot";
-    foot.textContent = "Sauvegarde automatique dans ce navigateur.";
+    foot.textContent = t("Sauvegarde automatique dans ce navigateur.");
+    wrap.querySelector(".menu-inner").appendChild(languageSwitch("menu-langue"));
     wrap.querySelector(".menu-inner").appendChild(foot);
     return wrap;
+  }
+
+  // Choix de la langue : la page se recharge dans la langue choisie,
+  // la partie en cours et la progression sont gardées.
+  function languageSwitch(cls) {
+    const box = document.createElement("div");
+    box.className = "langue " + (cls || "");
+    box.setAttribute("role", "group");
+    box.setAttribute("aria-label", "Langue / Language");
+    [["fr", "Français"], ["en", "English"]].forEach(([code, label]) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "langue-btn" + (L.lang === code ? " active" : "");
+      b.lang = code;
+      b.textContent = label;
+      b.setAttribute("aria-pressed", L.lang === code ? "true" : "false");
+      b.addEventListener("click", () => {
+        if (L.lang === code) return;
+        A.play("interface/clic");
+        if (state.started && !OUT_OF_CASE.includes(state.view)) saveGame();
+        L.set(code);
+      });
+      box.appendChild(b);
+    });
+    return box;
   }
 
   function renderPrologue() {
@@ -927,9 +1001,9 @@
     const memo = document.createElement("article");
     memo.className = "memo";
     memo.innerHTML =
-      '<header class="memo-head"><p class="memo-entete">' + escapeHtml(P.entete) + '</p><p class="memo-titre">Note de service</p></header>' +
+      '<header class="memo-head"><p class="memo-entete">' + escapeHtml(P.entete) + '</p><p class="memo-titre">' + t("Note de service") + "</p></header>" +
       '<dl class="memo-meta">' +
-      [["Date", P.date], ["De", P.de], ["À", P.a], ["Copie", P.copie], ["Objet", P.objet]]
+      [[t("Date"), P.date], [t("De"), P.de], [t("À"), P.a], [t("Copie"), P.copie], [t("Objet"), P.objet]]
         .map(([k, v]) => "<dt>" + k + "</dt><dd>" + escapeHtml(v) + "</dd>")
         .join("") +
       '</dl><div class="memo-corps">' + P.corps.map((x) => "<p>" + escapeHtml(x) + "</p>").join("") +
@@ -940,7 +1014,7 @@
     const team = document.createElement("section");
     team.className = "equipe";
     team.innerHTML =
-      '<h2 class="equipe-titre">Le Bureau des affaires occultes</h2><div class="equipe-grille">' +
+      '<h2 class="equipe-titre">' + t("Le Bureau des affaires occultes") + '</h2><div class="equipe-grille">' +
       P.equipe
         .map(
           (m) =>
@@ -955,7 +1029,7 @@
     row.className = "btn-row";
     const go = document.createElement("button");
     go.className = "start-btn";
-    go.textContent = first ? "Accepter le dossier" : "Choisir une ville";
+    go.textContent = first ? t("Accepter le dossier") : t("Choisir une ville");
     go.addEventListener("click", () => {
       state.progress.prologueSeen = true;
       saveProgress();
@@ -992,7 +1066,7 @@
   function backToMenuButton(label) {
     const b = document.createElement("button");
     b.className = "end-early-btn back-btn";
-    b.textContent = label || "← Menu principal";
+    b.textContent = label || t("← Menu principal");
     b.addEventListener("click", () => {
       state.view = "menu";
       render();
@@ -1002,7 +1076,7 @@
 
   function renderOptions() {
     const wrap = document.createElement("div");
-    wrap.appendChild(backToMenuButton(state.started && state.previousView !== "menu" ? "← Retour" : "← Menu principal"));
+    wrap.appendChild(backToMenuButton(state.started && state.previousView !== "menu" ? t("← Retour") : t("← Menu principal")));
     if (state.started && state.previousView !== "menu") {
       wrap.firstChild.onclick = () => {
         state.view = state.previousView;
@@ -1013,41 +1087,46 @@
     card.className = "options-card";
 
     const h1 = document.createElement("h2");
-    h1.textContent = "Son";
+    h1.textContent = t("Son");
     card.appendChild(h1);
     card.appendChild(renderAudioPanel(true));
 
     const red = document.createElement("label");
     red.className = "audio-row";
-    red.innerHTML = '<input type="checkbox"' + (A.settings.reduits ? " checked" : "") + "> Effets sonores réduits (seulement le tampon et la sonnette)";
+    red.innerHTML = '<input type="checkbox"' + (A.settings.reduits ? " checked" : "") + "> " + t("Effets sonores réduits (seulement le tampon et la sonnette)");
     red.querySelector("input").addEventListener("change", (e) => A.set("reduits", e.target.checked));
     card.appendChild(red);
 
     const h2 = document.createElement("h2");
-    h2.textContent = "Lecture";
+    h2.textContent = t("Lecture");
     card.appendChild(h2);
     const txt = document.createElement("label");
     txt.className = "audio-row";
-    txt.innerHTML = '<input type="checkbox"' + (vis.grandTexte ? " checked" : "") + "> Texte plus grand pour les pistes et le carnet";
+    txt.innerHTML = '<input type="checkbox"' + (vis.grandTexte ? " checked" : "") + "> " + t("Texte plus grand pour les pistes et le carnet");
     txt.querySelector("input").addEventListener("change", (e) => {
       setVis("grandTexte", e.target.checked);
       render();
     });
     card.appendChild(txt);
 
+    const hl = document.createElement("h2");
+    hl.textContent = "Langue · Language";
+    card.appendChild(hl);
+    card.appendChild(languageSwitch("options-langue"));
+
     const h3 = document.createElement("h2");
-    h3.textContent = "Progression";
+    h3.textContent = t("Progression");
     card.appendChild(h3);
     const p = document.createElement("p");
     p.className = "options-note";
     p.textContent =
-      "Votre progression est sauvegardée automatiquement dans ce navigateur, sur cet ordinateur. Elle disparaît si vous videz les données de navigation.";
+      t("Votre progression est sauvegardée automatiquement dans ce navigateur, sur cet ordinateur. Elle disparaît si vous videz les données de navigation.");
     card.appendChild(p);
     const erase = document.createElement("button");
     erase.className = "danger-btn";
-    erase.textContent = "Effacer toute ma progression";
+    erase.textContent = t("Effacer toute ma progression");
     erase.addEventListener("click", () => {
-      if (window.confirm("Effacer toutes les enquêtes en cours, les affaires terminées, les scores et la fiche de l'enquêteur ? Cette action est définitive.")) {
+      if (window.confirm(t("Effacer toutes les enquêtes en cours, les affaires terminées, les scores et la fiche de l'enquêteur ? Cette action est définitive."))) {
         eraseAllProgress();
         state.view = "menu";
         render();
@@ -1067,7 +1146,7 @@
     card.innerHTML =
       logoHTML() +
       c.map((sec) => "<h2>" + escapeHtml(sec.title) + "</h2>" + sec.lines.map((l) => "<p>" + escapeHtml(l) + "</p>").join("")).join("") +
-      '<p class="options-note">Enquête fictive. Personnages, entreprises et faits sont imaginaires.</p>';
+      '<p class="options-note">' + t("Enquête fictive. Personnages, entreprises et faits sont imaginaires.") + "</p>";
     wrap.appendChild(card);
     return wrap;
   }
@@ -1083,7 +1162,7 @@
     row.appendChild(backToMenuButton());
     const memo = document.createElement("button");
     memo.className = "end-early-btn back-btn";
-    memo.textContent = "Relire la note de service";
+    memo.textContent = t("Relire la note de service");
     memo.addEventListener("click", () => {
       A.play("interface/page");
       state.view = "prologue";
@@ -1094,7 +1173,7 @@
     const intro = document.createElement("p");
     intro.className = "select-intro";
     intro.textContent =
-      "Choisissez une ville pour consulter les affaires qui vous y attendent. De nouvelles villes s'ouvriront au fil de votre carrière de journaliste.";
+      t("Choisissez une ville pour consulter les affaires qui vous y attendent. De nouvelles villes s'ouvriront au fil de votre carrière de journaliste.");
     wrap.appendChild(intro);
 
     const grid = document.createElement("div");
@@ -1107,8 +1186,10 @@
         const done = cityCompletedCount(city);
         const total = city.cases.length;
         card.innerHTML =
-          '<span class="city-name">' + city.name + '</span><span class="city-status">' + done + "/" + total +
-          " affaire" + (total > 1 ? "s" : "") + " terminée" + (done > 1 ? "s" : "") + "</span>";
+          '<span class="city-name">' + city.name + '</span><span class="city-status">' +
+          (L.lang === "en"
+            ? done + "/" + total + " case" + (total === 1 ? "" : "s") + " completed"
+            : done + "/" + total + " affaire" + (total > 1 ? "s" : "") + " terminée" + (done > 1 ? "s" : "")) + "</span>";
         card.addEventListener("click", () => {
           A.play("interface/clic");
           state.currentCityId = city.id;
@@ -1116,7 +1197,7 @@
           render();
         });
       } else {
-        card.innerHTML = '<span class="city-name">' + city.name + '</span><span class="city-status locked-tag">🔒 Bientôt disponible</span>';
+        card.innerHTML = '<span class="city-name">' + city.name + '</span><span class="city-status locked-tag">' + t("🔒 Bientôt disponible") + "</span>";
         card.disabled = true;
       }
       grid.appendChild(card);
@@ -1129,7 +1210,7 @@
     const wrap = document.createElement("div");
     const backBtn = document.createElement("button");
     backBtn.className = "end-early-btn back-btn";
-    backBtn.textContent = "← Retour aux villes";
+    backBtn.textContent = t("← Retour aux villes");
     backBtn.addEventListener("click", () => {
       state.view = "citySelect";
       render();
@@ -1144,9 +1225,9 @@
       const entry = state.progress.completedCases[caseKey(city.id, cs.id)];
       const card = document.createElement("button");
       card.className = "case-card" + (unlocked ? "" : " locked");
-      let status = "À découvrir";
-      if (entry && entry.completed) status = "Terminée : meilleur score " + entry.bestScore + " / " + maxScore(cs) + (entry.bestRank ? " (" + entry.bestRank + ")" : "");
-      else if (!unlocked) status = "🔒 Terminez l'affaire précédente pour débloquer";
+      let status = t("À découvrir");
+      if (entry && entry.completed) status = t("Terminée : meilleur score {score} / {max}", { score: entry.bestScore, max: maxScore(cs) }) + (entry.bestRank ? " (" + L.stored(entry.bestRank) + ")" : "");
+      else if (!unlocked) status = t("🔒 Terminez l'affaire précédente pour débloquer");
       card.innerHTML =
         '<span class="case-title">' + cs.title + '</span><span class="case-subtitle">' + cs.subtitle + '</span><span class="case-status">' + status + "</span>";
       if (unlocked) card.addEventListener("click", () => openCase(city.id, cs.id));
@@ -1176,7 +1257,7 @@
     const wrap = document.createElement("div");
     const backBtn = document.createElement("button");
     backBtn.className = "end-early-btn back-btn";
-    backBtn.textContent = "← Retour aux affaires";
+    backBtn.textContent = t("← Retour aux affaires");
     backBtn.addEventListener("click", () => {
       state.view = "caseSelect";
       render();
@@ -1187,7 +1268,7 @@
     const card = document.createElement("div");
     card.className = "intro-card";
     card.innerHTML =
-      "<h2>Dossier ouvert</h2>" + renderParagraphs(cs.intro) + '<p class="briefing">' + escapeHtml(cs.briefing) + "</p>" + colorLegendHTML();
+      "<h2>" + t("Dossier ouvert") + "</h2>" + renderParagraphs(cs.intro) + '<p class="briefing">' + escapeHtml(cs.briefing) + "</p>" + colorLegendHTML();
 
     const btnRow = document.createElement("div");
     btnRow.className = "btn-row";
@@ -1195,14 +1276,14 @@
     if (state.savedGame) {
       const resumeBtn = document.createElement("button");
       resumeBtn.className = "start-btn";
-      resumeBtn.textContent = "Reprendre l'enquête (" + (cs.totalLeads - state.savedGame.leadsRemaining) + " pistes déjà lues)";
+      resumeBtn.textContent = tp(cs.totalLeads - state.savedGame.leadsRemaining, "Reprendre l'enquête ({n} piste déjà lue)", "Reprendre l'enquête ({n} pistes déjà lues)");
       resumeBtn.addEventListener("click", resumeSavedGame);
       btnRow.appendChild(resumeBtn);
     }
 
     const btn = document.createElement("button");
     btn.className = state.savedGame ? "end-early-btn" : "start-btn";
-    btn.textContent = state.savedGame ? "Nouvelle tentative (efface la sauvegarde)" : "Commencer l'enquête";
+    btn.textContent = state.savedGame ? t("Nouvelle tentative (efface la sauvegarde)") : t("Commencer l'enquête");
     btn.addEventListener("click", () => {
       clearSavedGame(state.currentCityId, state.currentCaseId);
       state.savedGame = null;
@@ -1220,7 +1301,7 @@
       const d = new Date(state.savedGame.savedAt);
       const note = document.createElement("p");
       note.className = "briefing";
-      note.textContent = "Dernière sauvegarde : " + d.toLocaleDateString("fr-FR") + " à " + d.toLocaleTimeString("fr-FR");
+      note.textContent = t("Dernière sauvegarde : {date} à {heure}", { date: d.toLocaleDateString(L.locale), heure: d.toLocaleTimeString(L.locale) });
       card.appendChild(note);
     }
     wrap.appendChild(card);
@@ -1303,7 +1384,7 @@
       const hasKnown = cs.locations.some((l) => l.quartier === q.id && k.l.has(l.id));
       zones +=
         '<g data-zone="' + q.id + '" class="zone-group' + (state.selectedQuartier === q.id ? " zone-selected" : "") + (hasKnown ? "" : " zone-empty") + (q.outside ? " zone-dehors" : "") +
-        '" tabindex="0" role="button" aria-label="Quartier ' + esc(q.name) + '">' +
+        '" tabindex="0" role="button" aria-label="' + t("Quartier {nom}", { nom: esc(q.name) }) + '">' +
         '<path d="' + q.shape + '" class="zone-fond"/><path d="' + q.shape + '" fill="url(#ilots-' + q.id + ')" class="zone-ilots"/>' +
         '<path d="' + q.shape + '" class="zone-shape"/>' +
         '<text x="' + q.label.x + '" y="' + q.label.y + '" class="zone-label" text-anchor="middle"' +
@@ -1347,7 +1428,7 @@
       const visited = locationVisited(loc.id);
       const active = state.selectedLocationId === loc.id;
       const hasNew = cluesForLocation(loc.id).some((cl) => state.freshClueIds.has(cl.id) && clueAvailable(cl, k) && !state.readClueIds.has(cl.id));
-      const court = loc.short || loc.name.replace(/^(Ancienne |Café |Cabinet du |Cabinet |Chantier du |Consigne de la gare de )/, "").replace(/,.*$/, "");
+      const court = loc.short || loc.name.replace(/^(Ancienne |Café |Cabinet du |Cabinet |Chantier du |Consigne de la gare de |The old )/, "").replace(/ café$/, "").replace(/,.*$/, "");
       pins +=
         '<g data-loc="' + loc.id + '" class="pin-group' + (visited ? " pin-visited" : "") + (active ? " pin-active" : "") + (hasNew ? " pin-new" : "") +
         '" tabindex="0" role="button" aria-label="' + esc(loc.name) + '"><circle cx="' + c.x + '" cy="' + c.y + '" r="20" class="pin-hitarea"/>' +
@@ -1356,7 +1437,7 @@
         '<circle cx="' + c.x + '" cy="' + c.y + '" r="8" class="pin-circle"/><circle cx="' + (c.x - 2.5) + '" cy="' + (c.y - 2.5) + '" r="2.2" class="pin-reflet"/>' +
         (hasNew ? '<circle cx="' + (c.x + 9) + '" cy="' + (c.y - 9) + '" r="4.5" class="pin-badge"/>' : "") +
         '<text x="' + c.x + '" y="' + (c.y + 21) + '" text-anchor="middle" class="pin-nom">' + esc(court) + "</text>" +
-        "<title>" + esc(loc.name) + (visited ? " (déjà exploré)" : "") + "</title></g>";
+        "<title>" + esc(loc.name) + (visited ? t(" (déjà exploré)") : "") + "</title></g>";
     });
     const bg = mapImages[state.currentCityId]
       ? '<image href="img/plans/' + state.currentCityId + '.jpg" x="0" y="0" width="900" height="600" preserveAspectRatio="xMidYMid slice" class="map-image"/>'
@@ -1377,7 +1458,7 @@
       const r = rects[q.id];
       zones +=
         '<g data-zone="' + q.id + '" class="zone-group' + (state.selectedQuartier === q.id ? " zone-selected" : "") +
-        '" tabindex="0" role="button" aria-label="Quartier ' + q.name + '"><rect x="' + r.x + '" y="' + r.y + '" width="' + r.w +
+        '" tabindex="0" role="button" aria-label="' + t("Quartier {nom}", { nom: q.name }) + '"><rect x="' + r.x + '" y="' + r.y + '" width="' + r.w +
         '" height="' + r.h + '" rx="18" class="zone-shape"/><text x="' + (r.x + r.w / 2) + '" y="' + (r.y + 26) +
         '" class="zone-label" text-anchor="middle">' + q.name.toUpperCase() + "</text></g>";
     });
@@ -1394,7 +1475,7 @@
         (active ? '<circle cx="' + c.x + '" cy="' + c.y + '" r="17" class="pin-ring"/>' : "") +
         '<circle cx="' + c.x + '" cy="' + c.y + '" r="11" class="pin-circle"/>' +
         (hasNew ? '<circle cx="' + (c.x + 10) + '" cy="' + (c.y - 10) + '" r="5" class="pin-badge"/>' : "") +
-        "<title>" + loc.name + (visited ? " (déjà exploré)" : "") + "</title></g>";
+        "<title>" + loc.name + (visited ? t(" (déjà exploré)") : "") + "</title></g>";
     });
     const bg = mapImages[state.currentCityId]
       ? '<image href="img/plans/' + state.currentCityId + '.jpg" x="0" y="0" width="900" height="600" preserveAspectRatio="xMidYMid slice" class="map-image"/>'
@@ -1406,12 +1487,12 @@
     const wrap = document.createElement("div");
     wrap.className = "city-map-wrap";
     wrap.innerHTML =
-      '<h3 class="map-title">Plan de ' + currentCity().name + '<span class="map-count">' + k.l.size + " lieu" + (k.l.size > 1 ? "x" : "") +
-      " connu" + (k.l.size > 1 ? "s" : "") + "</span></h3>" + buildCityMapSVG(k) +
-      '<div class="map-legend"><span class="legend-item"><i class="dot dot-todo"></i>Lieu à explorer</span>' +
-      '<span class="legend-item"><i class="dot dot-visited"></i>Déjà exploré</span>' +
-      '<span class="legend-item"><i class="dot dot-new"></i>Nouvelle piste</span></div>' +
-      '<p class="map-mobile-hint">← Faites glisser pour voir tout le plan →</p>';
+      '<h3 class="map-title">' + t("Plan de {ville}", { ville: currentCity().name }) + '<span class="map-count">' + tp(k.l.size, "{n} lieu connu", "{n} lieux connus") +
+      "</span></h3>" + buildCityMapSVG(k) +
+      '<div class="map-legend"><span class="legend-item"><i class="dot dot-todo"></i>' + t("Lieu à explorer") + "</span>" +
+      '<span class="legend-item"><i class="dot dot-visited"></i>' + t("Déjà exploré") + "</span>" +
+      '<span class="legend-item"><i class="dot dot-new"></i>' + t("Nouvelle piste") + "</span></div>" +
+      '<p class="map-mobile-hint">' + t("← Faites glisser pour voir tout le plan →") + "</p>";
     const handle = (el) => {
       const pin = el.closest("[data-loc]");
       if (pin) return goToLocation(pin.getAttribute("data-loc"));
@@ -1455,7 +1536,7 @@
       return b;
     };
 
-    h("Quartiers");
+    h(t("Quartiers"));
     cs.quartiers.forEach((q) => {
       const count = cs.locations.filter((l) => l.quartier === q.id && k.l.has(l.id)).length;
       button(
@@ -1471,32 +1552,32 @@
       );
     });
 
-    h("Lieux : " + ((quartierById(state.selectedQuartier) || {}).name || ""));
+    h(t("Lieux : {quartier}", { quartier: (quartierById(state.selectedQuartier) || {}).name || "" }));
     const here = cs.locations.filter((l) => l.quartier === state.selectedQuartier && k.l.has(l.id));
     if (!here.length) {
       const none = document.createElement("p");
       none.className = "nav-none";
-      none.textContent = "Personne ne vous a encore parlé d'un lieu dans ce quartier.";
+      none.textContent = t("Personne ne vous a encore parlé d'un lieu dans ce quartier.");
       sidebar.appendChild(none);
     }
     here.forEach((l) =>
       button("nav-item tag-lieu-nav" + (state.view === "location" && state.selectedLocationId === l.id ? " active" : ""), escapeHtml(l.name), () => goToLocation(l.id))
     );
 
-    h("Outils");
-    button("annuaire-btn equipe-btn", "L'équipe du Bureau", () => {
+    h(t("Outils"));
+    button("annuaire-btn equipe-btn", t("L'équipe du Bureau"), () => {
       A.play("interface/page");
       state.view = "equipe";
       render();
       scrollToPanel();
     });
-    button("annuaire-btn journal-btn", "Carnet de l'enquête", () => {
+    button("annuaire-btn journal-btn", t("Carnet de l'enquête"), () => {
       A.play("outils/carnet-ouvrir");
       state.view = "journal";
       render();
       scrollToPanel();
     });
-    button("annuaire-btn", "Consulter l'annuaire (" + k.p.size + ")", () => {
+    button("annuaire-btn", t("Consulter l'annuaire ({n})", { n: k.p.size }), () => {
       A.play("interface/page");
       state.view = "annuaire";
       render();
@@ -1514,13 +1595,13 @@
     legend.innerHTML = colorLegendHTML();
     sidebar.appendChild(legend.firstChild);
 
-    button("end-early-btn article-btn", "Rédiger l'article", () => {
+    button("end-early-btn article-btn", t("Rédiger l'article"), () => {
       A.play("interface/page-journal");
       state.view = "questionnaire";
       render();
       window.scrollTo(0, 0);
     });
-    button("end-early-btn", "← Retour aux affaires", () => {
+    button("end-early-btn", t("← Retour aux affaires"), () => {
       state.view = "caseSelect";
       render();
       scrollToTop();
@@ -1528,11 +1609,11 @@
 
     const note = document.createElement("p");
     note.className = "briefing save-note";
-    note.textContent = "Sauvegarde automatique activée sur cet appareil.";
+    note.textContent = t("Sauvegarde automatique activée sur cet appareil.");
     sidebar.appendChild(note);
 
-    button("end-early-btn", "Effacer la sauvegarde de cette affaire", () => {
-      if (window.confirm("Effacer la sauvegarde de cette affaire et revenir à l'accueil ?")) {
+    button("end-early-btn", t("Effacer la sauvegarde de cette affaire"), () => {
+      if (window.confirm(t("Effacer la sauvegarde de cette affaire et revenir à l'accueil ?"))) {
         clearSavedGame(state.currentCityId, state.currentCaseId);
         state.savedGame = null;
         state.started = false;
@@ -1552,7 +1633,7 @@
     {
       id: "carte",
       icon: "🗺️",
-      label: "Carte",
+      label: t("Carte"),
       match: (v) => v === "quartier" || v === "location",
       go: () => {
         state.view = "quartier";
@@ -1563,7 +1644,7 @@
     {
       id: "equipe",
       icon: "🧑‍🤝‍🧑",
-      label: "Équipe",
+      label: t("Équipe"),
       match: (v) => v === "equipe",
       go: () => {
         A.play("interface/page");
@@ -1575,7 +1656,7 @@
     {
       id: "journal",
       icon: "📓",
-      label: "Carnet",
+      label: t("Carnet"),
       match: (v) => v === "journal",
       go: () => {
         A.play("outils/carnet-ouvrir");
@@ -1587,7 +1668,7 @@
     {
       id: "annuaire",
       icon: "📇",
-      label: "Annuaire",
+      label: t("Annuaire"),
       match: (v) => v === "annuaire",
       go: () => {
         A.play("interface/page");
@@ -1599,7 +1680,7 @@
     {
       id: "minitel",
       icon: "☎️",
-      label: "Minitel",
+      label: t("Minitel"),
       match: (v) => v === "minitel",
       go: () => {
         state.view = "minitel";
@@ -1614,7 +1695,7 @@
   function renderMobileTabBar() {
     const bar = document.createElement("nav");
     bar.className = "mobile-tabbar";
-    bar.setAttribute("aria-label", "Accès rapide");
+    bar.setAttribute("aria-label", t("Accès rapide"));
     MOBILE_TABBAR_ITEMS.forEach((item) => {
       const b = document.createElement("button");
       b.className = "tabbar-btn" + (item.match(state.view) ? " active" : "");
@@ -1638,8 +1719,7 @@
       const hint = document.createElement("div");
       hint.className = "location-card";
       hint.innerHTML =
-        "<p>Choisissez un lieu dans le quartier « " + escapeHtml((quartierById(state.selectedQuartier) || {}).name || "") +
-        " » pour mener un entretien ou une investigation. D'autres adresses apparaîtront au fil de vos découvertes.</p>";
+        "<p>" + t("Choisissez un lieu dans le quartier « {quartier} » pour mener un entretien ou une investigation. D'autres adresses apparaîtront au fil de vos découvertes.", { quartier: escapeHtml((quartierById(state.selectedQuartier) || {}).name || "") }) + "</p>";
       panel.appendChild(hint);
     } else panel.appendChild(renderLocationCard(k));
     return panel;
@@ -1660,7 +1740,7 @@
     if (!clues.length) {
       const none = document.createElement("p");
       none.className = "briefing";
-      none.textContent = "Rien à faire ici pour l'instant.";
+      none.textContent = t("Rien à faire ici pour l'instant.");
       list.appendChild(none);
     }
     clues.forEach((clue) => {
@@ -1671,9 +1751,10 @@
         "lead-btn lead-" + (clue.type === "entretien" ? "entretien" : "investigation") + (read ? " lead-read" : "") + (isNew ? " lead-new" : "") +
         (state.lastResult && state.lastResult.clueId === clue.id ? " lead-current" : "");
       btn.innerHTML =
-        '<span class="lead-kind">' + (clue.type === "entretien" ? "Entretien" : "Investigation") + "</span>" +
+        '<span class="lead-kind">' + (clue.type === "entretien" ? t("Entretien") : t("Investigation")) + "</span>" +
         '<span class="lead-label">' + escapeHtml(clueButton(clue)) + "</span>" +
-        (read ? '<span class="already-read">déjà lu, gratuit</span>' : isNew ? '<span class="new-tag">nouveau</span>' : "");
+        (read ? '<span class="already-read">' + t("déjà lu, gratuit") + "</span>" : isNew ? '<span class="new-tag">' + t("nouveau") + "</span>" : "") +
+        (!read && clue.free ? '<span class="already-read">' + t("gratuit") + "</span>" : "");
       const who = clue.speaker && characterById(clue.speaker);
       if (who) {
         btn.classList.add("lead-avec-portrait");
@@ -1691,18 +1772,18 @@
   function selectClue(clue) {
     const already = state.readClueIds.has(clue.id);
     if (!already) {
-      if (state.leadsRemaining <= 0) {
+      if (state.leadsRemaining <= 0 && !clue.free) {
         A.play("interface/plus-de-pistes");
         state.lastResult = {
           empty: true,
-          text: "L'heure du bouclage est passée : vous ne pouvez plus ouvrir de nouvelle piste. Relisez vos notes, consultez le carnet, puis rédigez votre article."
+          text: t("L'heure du bouclage est passée : vous ne pouvez plus ouvrir de nouvelle piste. Relisez vos notes, consultez le carnet, puis rédigez votre article.")
         };
         render();
         return;
       }
       const before = snapshot();
       const prevUsed = leadsUsed();
-      state.leadsRemaining -= 1;
+      if (!clue.free) state.leadsRemaining -= 1;
       afterLeadSpent(prevUsed);
       state.readClueIds.add(clue.id);
       state.freshClueIds.delete(clue.id);
@@ -1730,14 +1811,15 @@
   function discoveriesHTML(r) {
     const lines = [];
     const join = (arr, cls) => '<span class="' + cls + '">' + arr.map(escapeHtml).join('</span>, <span class="' + cls + '">') + "</span>";
-    if (r.newCharacters && r.newCharacters.length) lines.push('<span class="disc-label">Annuaire</span>' + join(r.newCharacters, "tag-person"));
-    if (r.newLocations && r.newLocations.length) lines.push('<span class="disc-label">Sur le plan</span>' + join(r.newLocations, "tag-lieu"));
-    if (r.newDocuments && r.newDocuments.length) lines.push('<span class="disc-label">Au dossier</span>' + join(r.newDocuments, "tag-doc"));
-    if (r.newActions && r.newActions.length) lines.push('<span class="disc-label">Pour l\'article</span>' + join(r.newActions, "tag-action"));
-    if (r.struck) lines.push('<span class="disc-label">Au carnet</span>' + r.struck + " déclaration" + (r.struck > 1 ? "s" : "") + " contredite" + (r.struck > 1 ? "s" : "") + ", barrée" + (r.struck > 1 ? "s" : ""));
-    if (r.unlocked && r.unlocked.length) lines.push('<span class="disc-label">Nouvelle piste</span>' + r.unlocked.map((u) => "« " + escapeHtml(u) + " »").join(", "));
+    if (r.newCharacters && r.newCharacters.length) lines.push('<span class="disc-label">' + t("Annuaire") + "</span>" + join(r.newCharacters, "tag-person"));
+    if (r.newLocations && r.newLocations.length) lines.push('<span class="disc-label">' + t("Sur le plan") + "</span>" + join(r.newLocations, "tag-lieu"));
+    if (r.newDocuments && r.newDocuments.length) lines.push('<span class="disc-label">' + t("Au dossier") + "</span>" + join(r.newDocuments, "tag-doc"));
+    if (r.newActions && r.newActions.length) lines.push('<span class="disc-label">' + t("Pour l'article") + "</span>" + join(r.newActions, "tag-action"));
+    if (r.struck) lines.push('<span class="disc-label">' + t("Au carnet") + "</span>" + tp(r.struck, "{n} déclaration contredite, barrée", "{n} déclarations contredites, barrées"));
+    if (r.unlocked && r.unlocked.length) lines.push('<span class="disc-label">' + t("Nouvelle piste") + "</span>" + r.unlocked.map((u) => t("« {texte} »", { texte: escapeHtml(u) })).join(", "));
+    if (r.lost && r.lost.length) lines.push('<span class="disc-label disc-perdu">' + t("Trop tard") + "</span>" + r.lost.map((u) => t("« {texte} »", { texte: escapeHtml(u) })).join(", "));
     if (!lines.length) return "";
-    return '<div class="discoveries"><p class="discoveries-head">Nouveau</p>' + lines.map((l) => '<p class="disc-line">' + l + "</p>").join("") + "</div>";
+    return '<div class="discoveries"><p class="discoveries-head">' + t("Nouveau") + "</p>" + lines.map((l) => '<p class="disc-line">' + l + "</p>").join("") + "</div>";
   }
 
   function renderClueResult(r, k) {
@@ -1762,7 +1844,7 @@
         : '<div class="clue-title">' + escapeHtml(clueTitle(clue)) + "</div>") +
       '<div class="clue-text">' +
       renderParagraphs(clue.text, { fresh: new Set(r.fresh || []), links: true, knowledge: k, fax: clue.fax, printFax: fax }) +
-      '</div><div class="stamp">Lu</div>' + discoveriesHTML(r);
+      '</div><div class="stamp">' + t("Lu") + "</div>" + discoveriesHTML(r);
     // Fin de lecture : sonnette (si le texte a été tapé), tampon « Lu », puis le son des découvertes
     const endSounds = (typed) => {
       if (r.endPlayed) return;
@@ -1943,7 +2025,10 @@
 
     if (solved) {
       if (state.puzzlesHelped.has(clue.puzzle)) box.innerHTML += '<p class="puzzle-help-text">' + escapeHtml(pz.help) + "</p>";
-      box.innerHTML += '<div class="puzzle-result">' + renderParagraphs(pz.result, { links: true, knowledge: k, fresh: new Set((state.lastPuzzleFresh || [])) }) + "</div>";
+      const opt = chosenOption(clue.puzzle);
+      if (pz.type === "portrait") box.innerHTML += '<div class="portrait-fini">' + window.BAOPortrait.face(pz.solution) + "</div>";
+      if (opt) box.innerHTML += '<p class="poursuite-choisi">' + escapeHtml(opt.label) + "</p>";
+      box.innerHTML += '<div class="puzzle-result">' + renderParagraphs(pz.result + (opt ? "\n\n" + opt.text : ""), { links: true, knowledge: k, fresh: new Set((state.lastPuzzleFresh || [])) }) + "</div>";
       if (state.lastPuzzleResult && state.lastPuzzleResult.id === clue.puzzle) box.innerHTML += discoveriesHTML(state.lastPuzzleResult);
       return box;
     }
@@ -1967,15 +2052,20 @@
     else if (pz.type === "line") buildLine(clue, pz, area, feedback);
     else if (pz.type === "code") buildCode(clue, pz, area, feedback);
     else if (pz.type === "grille") buildGrille(clue, pz, area);
+    else if (pz.type === "portrait") buildPortrait(clue, pz, area, feedback);
+    else if (pz.type === "poursuite") {
+      buildPoursuite(clue, pz, area);
+      return box; // pas d'aide : sans réponse, la scène choisit d'elle-même
+    }
 
     const help = document.createElement("button");
     help.className = "puzzle-help";
     help.textContent =
       state.leadsRemaining <= 0
-        ? "Plus de piste disponible pour demander de l'aide"
+        ? t("Plus de piste disponible pour demander de l'aide")
         : pz.type === "grille" && !hinted
-          ? "Demander un indice à Karim (coûte une piste)"
-          : "Demander de l'aide à l'équipe (coûte une piste)";
+          ? t("Demander un indice à Karim (coûte une piste)")
+          : t("Demander de l'aide à l'équipe (coûte une piste)");
     help.disabled = state.leadsRemaining <= 0;
     help.addEventListener("click", () => {
       if (state.leadsRemaining <= 0) return;
@@ -2025,7 +2115,7 @@
     const draw = () => {
       assembled.innerHTML = placed.length
         ? placed.map((i) => '<span class="frag frag-placed">' + escapeHtml(pz.pieces[i]) + "</span>").join("")
-        : '<span class="frag-empty">Le reçu se reconstitue ici</span>';
+        : '<span class="frag-empty">' + t("Le reçu se reconstitue ici") + "</span>";
       pile.innerHTML = "";
       shuffled.forEach((i, pos) => {
         if (placed.includes(i)) return;
@@ -2045,7 +2135,7 @@
             b.classList.remove("frag-wrong");
             void b.offsetWidth;
             b.classList.add("frag-wrong");
-            feedback.textContent = "Ce morceau ne vient pas là.";
+            feedback.textContent = t("Ce morceau ne vient pas là.");
           }
         });
         pile.appendChild(b);
@@ -2059,7 +2149,7 @@
     A.play("puzzles/listing");
     const table = document.createElement("div");
     table.className = "listing";
-    table.innerHTML = '<div class="listing-row listing-head"><span>Date</span><span>Heure</span><span>Numéro appelé</span><span>Durée</span></div>';
+    table.innerHTML = '<div class="listing-row listing-head"><span>' + t("Date") + "</span><span>" + t("Heure") + "</span><span>" + t("Numéro appelé") + "</span><span>" + t("Durée") + "</span></div>";
     pz.lines.forEach((line) => {
       const row = document.createElement("button");
       row.className = "listing-row";
@@ -2071,7 +2161,7 @@
         } else {
           table.querySelectorAll(".listing-row").forEach((r) => r.classList.remove("listing-picked"));
           row.classList.add("listing-picked");
-          feedback.textContent = "Le " + line.date + " à " + line.heure + " : un appel ordinaire, vers " + line.qui + ".";
+          feedback.textContent = t("Le {date} à {heure} : un appel ordinaire, vers {qui}.", { date: line.date, heure: line.heure, qui: line.qui });
         }
       });
       table.appendChild(row);
@@ -2097,6 +2187,62 @@
     });
   }
 
+  // Le portrait-robot (portrait.js) : composer un visage d'après deux témoins
+  function buildPortrait(clue, pz, area, feedback) {
+    if (!window.BAOPortrait) return;
+    window.BAOPortrait.build(area, pz, {
+      id: state.currentCaseId + ":" + clue.puzzle,
+      play: (name) => A.play(name),
+      say: (msg) => (feedback.textContent = msg),
+      onSolved: () => solvePuzzle(clue)
+    });
+  }
+
+  // La poursuite : un choix en temps limité. Sans réponse, l'option par défaut.
+  function buildPoursuite(clue, pz, area) {
+    const slow = !vis.anim; // effets réduits : deux fois plus de temps
+    const seconds = (pz.seconds || 8) * (slow ? 2 : 1);
+    const start = document.createElement("button");
+    start.className = "poursuite-depart";
+    start.textContent = t("Il se relève…");
+    area.appendChild(start);
+    const choose = (opt) => {
+      if (state.choices[clue.puzzle]) return;
+      clearInterval(timer);
+      state.choices[clue.puzzle] = opt.id;
+      if (opt.cost) {
+        const prevUsed = leadsUsed();
+        state.leadsRemaining = Math.max(0, state.leadsRemaining - opt.cost);
+        afterLeadSpent(prevUsed);
+      }
+      solvePuzzle(clue);
+    };
+    let timer = null;
+    start.addEventListener("click", () => {
+      start.remove();
+      A.play("interface/horloge");
+      const bar = document.createElement("div");
+      bar.className = "poursuite-temps";
+      bar.innerHTML = '<span style="animation-duration:' + seconds + 's"></span>';
+      area.appendChild(bar);
+      const row = document.createElement("div");
+      row.className = "poursuite-choix";
+      pz.options.forEach((opt) => {
+        const b = document.createElement("button");
+        b.className = "poursuite-btn";
+        b.textContent = opt.label;
+        b.addEventListener("click", () => choose(opt));
+        row.appendChild(b);
+      });
+      area.appendChild(row);
+      const end = Date.now() + seconds * 1000;
+      timer = setInterval(() => {
+        if (!area.isConnected) return clearInterval(timer);
+        if (Date.now() >= end) choose(pz.options.find((o) => o.id === pz.timeout) || pz.options[0]);
+      }, 200);
+    });
+  }
+
   // Le coffre : quatre molettes
   function buildCode(clue, pz, area, feedback) {
     const digits = new Array(pz.digits || 4).fill(0);
@@ -2109,13 +2255,13 @@
         w.className = "code-wheel";
         const up = document.createElement("button");
         up.textContent = "▲";
-        up.setAttribute("aria-label", "Chiffre " + (i + 1) + " plus");
+        up.setAttribute("aria-label", t("Chiffre {n} plus", { n: i + 1 }));
         const val = document.createElement("span");
         val.className = "code-digit";
         val.textContent = d;
         const down = document.createElement("button");
         down.textContent = "▼";
-        down.setAttribute("aria-label", "Chiffre " + (i + 1) + " moins");
+        down.setAttribute("aria-label", t("Chiffre {n} moins", { n: i + 1 }));
         up.addEventListener("click", () => {
           digits[i] = (digits[i] + 1) % 10;
           A.play("puzzles/coffre-molette");
@@ -2135,14 +2281,14 @@
     draw();
     const open = document.createElement("button");
     open.className = "code-open";
-    open.textContent = "Tourner la poignée";
+    open.textContent = t("Tourner la poignée");
     open.addEventListener("click", () => {
       if (digits.join("") === String(pz.code)) {
         A.play("puzzles/coffre-ouvert");
         solvePuzzle(clue);
       } else {
         A.play("puzzles/coffre-erreur");
-        feedback.textContent = "La poignée ne cède pas.";
+        feedback.textContent = t("La poignée ne cède pas.");
       }
     });
     area.appendChild(wheels);
@@ -2180,11 +2326,11 @@
       '<div class="minitel-log">' +
       (state.minitelLog.length
         ? state.minitelLog.map((l) => '<div class="minitel-entry' + (l.found ? " minitel-found" : "") + '">' + l.lines.map((x) => "<div>" + escapeHtml(x) + "</div>").join("") + "</div>").join("")
-        : '<div class="minitel-entry"><div>NOM :</div><div>LOCALITÉ : SAINT-ÉTIENNE (42)</div><div class="minitel-dim">Tapez un nom, puis ENVOI.</div></div>') +
+        : '<div class="minitel-entry"><div>NOM :</div><div>LOCALITÉ : ' + escapeHtml(currentCase().localite || "SAINT-ÉTIENNE (42)") + '</div><div class="minitel-dim">' + t("Tapez un nom, puis ENVOI.") + "</div></div>") +
       "</div>";
     const form = document.createElement("form");
     form.className = "minitel-form";
-    form.innerHTML = '<span class="minitel-prompt">NOM ▸</span><input type="text" autocomplete="off" spellcheck="false" maxlength="30" aria-label="Nom à chercher"><button type="submit">ENVOI</button>';
+    form.innerHTML = '<span class="minitel-prompt">NOM ▸</span><input type="text" autocomplete="off" spellcheck="false" maxlength="30" aria-label="' + t("Nom à chercher") + '"><button type="submit">ENVOI</button>';
     const input = form.querySelector("input");
     input.addEventListener("input", () => A.playOneOf(["outils/minitel-touche-1", "outils/minitel-touche-2", "outils/minitel-touche-3"]));
     form.addEventListener("submit", (e) => {
@@ -2197,7 +2343,7 @@
       let lines;
       let found = false;
       if (i < 0) {
-        lines = ["> " + query.toUpperCase(), "AUCUN ABONNÉ NE CORRESPOND", "À VOTRE DEMANDE."];
+        lines = ["> " + query.toUpperCase(), t("AUCUN ABONNÉ NE CORRESPOND"), t("À VOTRE DEMANDE.")];
         A.play("outils/minitel-rien", 500);
       } else {
         const entry = currentCase().minitel[i];
@@ -2206,7 +2352,7 @@
         state.minitelFound.add(i);
         if (found && entry.about && !before.k[entry.about[0]].has(entry.about.slice(2))) {
           found = false;
-          lines.push("(Ce nom n'apparaît nulle part dans votre dossier.)");
+          lines.push(t("(Ce nom n'apparaît nulle part dans votre dossier.)"));
         }
         A.play("outils/minitel-resultat", 500);
       }
@@ -2230,7 +2376,7 @@
 
     const close = document.createElement("button");
     close.className = "end-early-btn minitel-close";
-    close.textContent = "Déconnexion";
+    close.textContent = t("Déconnexion");
     close.addEventListener("click", () => {
       A.play("outils/minitel-deconnexion");
       state.view = state.selectedLocationId ? "location" : "quartier";
@@ -2320,12 +2466,12 @@
       d: (cs.documents || []).filter((x) => k.d.has(x.id))
     };
     const tabs = [
-      { id: "p", label: "Personnes", n: lists.p.length, cls: "tag-person" },
-      { id: "l", label: "Lieux", n: lists.l.length, cls: "tag-lieu" },
-      { id: "d", label: "Pièces", n: lists.d.length, cls: "tag-doc" },
-      { id: "pistes", label: "Pistes lues", n: state.readClueIds.size, cls: "" }
+      { id: "p", label: t("Personnes"), n: lists.p.length, cls: "tag-person" },
+      { id: "l", label: t("Lieux"), n: lists.l.length, cls: "tag-lieu" },
+      { id: "d", label: t("Pièces"), n: lists.d.length, cls: "tag-doc" },
+      { id: "pistes", label: t("Pistes lues"), n: state.readClueIds.size, cls: "" }
     ];
-    let html = '<h2 class="carnet-title">Carnet de l\'enquête</h2><div class="carnet-tabs" role="tablist">';
+    let html = '<h2 class="carnet-title">' + t("Carnet de l'enquête") + '</h2><div class="carnet-tabs" role="tablist">';
     tabs.forEach((t) => {
       html +=
         '<button class="carnet-tab' + (state.journalTab === t.id ? " active" : "") + '" data-tab="' + t.id + '" role="tab"><span class="' + t.cls + '">' + t.label +
@@ -2350,7 +2496,7 @@
     if (!list.length) {
       const empty = document.createElement("p");
       empty.className = "briefing";
-      empty.textContent = "Rien dans cette partie du carnet pour l'instant.";
+      empty.textContent = t("Rien dans cette partie du carnet pour l'instant.");
       wrap.appendChild(empty);
       return wrap;
     }
@@ -2369,7 +2515,7 @@
       b.className = "carnet-entry" + (key === current.key ? " active" : "");
       b.innerHTML =
         (type === "p" ? portraitHTML(obj, "mini") : "") + '<span class="carnet-entry-name ' + TAG_CLASS[type] + '">' + escapeHtml(obj.name) + "</span>" +
-        '<span class="carnet-entry-n' + (fresh ? " fresh" : "") + '">' + (mine.length ? mine.length + " note" + (mine.length > 1 ? "s" : "") : "") + "</span>";
+        '<span class="carnet-entry-n' + (fresh ? " fresh" : "") + '">' + (mine.length ? tp(mine.length, "{n} note", "{n} notes") : "") + "</span>";
       b.addEventListener("click", () => {
         A.play("interface/page");
         state.journalEntity = key;
@@ -2394,23 +2540,23 @@
       head +=
         portraitHTML(obj, "large") + '<div class="carnet-id"><h3 class="tag-person">' + escapeHtml(obj.name) + '</h3><p class="carnet-role">' + escapeHtml(obj.role) + "</p>" +
         (locKnown
-          ? '<p class="carnet-where">On le trouve : <span class="tag-lieu tag-link" data-goto-loc="' + loc.id + '" role="button" tabindex="0">' + escapeHtml(loc.name) + "</span></p>"
-          : loc ? '<p class="carnet-where carnet-dim">Adresse inconnue. Essayez le Minitel.</p>' : "") +
-        (characterMet(obj) ? '<span class="carnet-stamp">Interrogé</span>' : "") + "</div>";
+          ? '<p class="carnet-where">' + t("On le trouve : ") + '<span class="tag-lieu tag-link" data-goto-loc="' + loc.id + '" role="button" tabindex="0">' + escapeHtml(loc.name) + "</span></p>"
+          : loc ? '<p class="carnet-where carnet-dim">' + t("Adresse inconnue. Essayez le Minitel.") + "</p>" : "") +
+        (characterMet(obj) ? '<span class="carnet-stamp">' + t("Interrogé") + "</span>" : "") + "</div>";
     } else if (ent.type === "l") {
       head +=
         optionalImageHTML("img/lieux/" + obj.id + ".jpg", "piece-photo") +
         '<div class="carnet-id"><h3 class="tag-lieu">' + escapeHtml(obj.name) + '</h3><p class="carnet-role">' + escapeHtml((quartierById(obj.quartier) || {}).name || "") + " · " +
-        escapeHtml(obj.address) + "</p>" + (locationVisited(obj.id) ? '<span class="carnet-stamp">Visité</span>' : "") + "</div>";
+        escapeHtml(obj.address) + "</p>" + (locationVisited(obj.id) ? '<span class="carnet-stamp">' + t("Visité") + "</span>" : "") + "</div>";
     } else {
       head += optionalImageHTML("img/pieces/" + obj.id + ".jpg", "piece-photo") +
-        '<div class="carnet-id"><h3 class="tag-doc">' + escapeHtml(obj.name) + '</h3><p class="carnet-role">Pièce du dossier</p></div>';
+        '<div class="carnet-id"><h3 class="tag-doc">' + escapeHtml(obj.name) + '</h3><p class="carnet-role">' + t("Pièce du dossier") + "</p></div>";
     }
     head += "</div>";
 
     const mine = facts.filter((f) => f.about === ent.key);
-    let notes = '<p class="journal-recap-label">Ce que vous savez</p>';
-    if (!mine.length) notes += '<p class="carnet-nothing">Rien de plus que ce nom, pour l\'instant.</p>';
+    let notes = '<p class="journal-recap-label">' + t("Ce que vous savez") + "</p>";
+    if (!mine.length) notes += '<p class="carnet-nothing">' + t("Rien de plus que ce nom, pour l'instant.") + "</p>";
     else {
       notes += '<ul class="carnet-notes">';
       mine.forEach((f) => {
@@ -2418,19 +2564,19 @@
           '<li class="carnet-note' + (f.clueId && f.clueId === state.lastReadClueId ? " fresh" : "") + (f.struck ? " struck" : "") + '">' +
           (f.label ? '<span class="carnet-label">' + escapeHtml(f.label) + "</span>" : "") +
           '<span class="carnet-text">' + renderTaggedText(f.text, { links: true, knowledge: k }) + "</span>" +
-          '<span class="carnet-source">' + escapeHtml(f.source) + (f.struck ? " · contredit depuis" : "") + "</span></li>";
+          '<span class="carnet-source">' + escapeHtml(f.source) + (f.struck ? t(" · contredit depuis") : "") + "</span></li>";
       });
       notes += "</ul>";
     }
     const seen = cluesMentioning(ent.key);
-    if (seen.length) notes += '<p class="journal-recap-label" style="margin-top:18px">Cité dans</p><p class="carnet-seen">' + seen.map((c) => escapeHtml(clueTitle(c))).join(" · ") + "</p>";
+    if (seen.length) notes += '<p class="journal-recap-label" style="margin-top:18px">' + t("Cité dans") + '</p><p class="carnet-seen">' + seen.map((c) => escapeHtml(clueTitle(c))).join(" · ") + "</p>";
     page.innerHTML = head + notes;
 
     const target = ent.type === "l" ? obj.id : ent.type === "p" ? obj.locationId : null;
     if (target && k.l.has(target)) {
       const go = document.createElement("button");
       go.className = "journal-goto";
-      go.textContent = "Aller sur place";
+      go.textContent = t("Aller sur place");
       go.addEventListener("click", () => goToLocation(target));
       page.appendChild(go);
     }
@@ -2441,12 +2587,12 @@
     const cs = currentCase();
     const wrap = document.createElement("div");
     wrap.innerHTML =
-      '<div class="journal-recap"><p class="journal-recap-label">Rappel de l\'affaire</p>' + renderParagraphs(cs.intro, { links: true, knowledge: k }) + "</div>";
+      '<div class="journal-recap"><p class="journal-recap-label">' + t("Rappel de l'affaire") + "</p>" + renderParagraphs(cs.intro, { links: true, knowledge: k }) + "</div>";
     const ids = Array.from(state.readClueIds);
     if (!ids.length) {
       const empty = document.createElement("p");
       empty.className = "briefing";
-      empty.textContent = "Aucune piste consultée pour l'instant.";
+      empty.textContent = t("Aucune piste consultée pour l'instant.");
       wrap.appendChild(empty);
       return wrap;
     }
@@ -2460,11 +2606,11 @@
       entry.className = "journal-entry";
       entry.innerHTML =
         '<div class="journal-entry-head"><span class="journal-index">' + (i + 1) + '</span><span class="journal-loc">' + escapeHtml(loc.name) + " · " +
-        (clue.type === "entretien" ? "Entretien" : "Investigation") + '</span></div><div class="clue-title">' + escapeHtml(clueTitle(clue)) + "</div>" +
+        (clue.type === "entretien" ? t("Entretien") : t("Investigation")) + '</span></div><div class="clue-title">' + escapeHtml(clueTitle(clue)) + "</div>" +
         renderParagraphs(clue.text, { links: true, knowledge: k, fax: clue.fax });
       const go = document.createElement("button");
       go.className = "journal-goto";
-      go.textContent = "Retourner sur place";
+      go.textContent = t("Retourner sur place");
       go.addEventListener("click", () => goToLocation(loc.id));
       entry.appendChild(go);
       list.appendChild(entry);
@@ -2478,7 +2624,7 @@
   function renderAnnuaire(k) {
     const card = document.createElement("div");
     card.className = "location-card";
-    card.innerHTML = "<h2>Annuaire</h2>";
+    card.innerHTML = "<h2>" + t("Annuaire") + "</h2>";
     const chars = currentCase().characters.filter((ch) => k.p.has(ch.id));
     const list = document.createElement("div");
     list.className = "annuaire-list";
@@ -2489,14 +2635,14 @@
       row.className = "annuaire-entry";
       row.innerHTML =
         '<span class="name tag-person">' + escapeHtml(ch.name) + '</span><span class="role">' + escapeHtml(ch.role) +
-        (known ? ' · <span class="tag-lieu">' + escapeHtml(loc.name) + "</span>" : loc ? " · adresse à chercher au Minitel" : "") + "</span>";
+        (known ? ' · <span class="tag-lieu">' + escapeHtml(loc.name) + "</span>" : loc ? t(" · adresse à chercher au Minitel") : "") + "</span>";
       const fiche = document.createElement("button");
-      fiche.textContent = "Fiche";
+      fiche.textContent = t("Fiche");
       fiche.addEventListener("click", () => openJournalEntity("p:" + ch.id));
       row.appendChild(fiche);
       if (known) {
         const go = document.createElement("button");
-        go.textContent = "Aller sur place";
+        go.textContent = t("Aller sur place");
         go.addEventListener("click", () => goToLocation(loc.id));
         row.appendChild(go);
       }
@@ -2512,7 +2658,7 @@
     const P = state.data.prologue;
     const card = document.createElement("div");
     card.className = "location-card";
-    card.innerHTML = "<h2>L'équipe du Bureau</h2>";
+    card.innerHTML = "<h2>" + t("L'équipe du Bureau") + "</h2>";
     if (!P || !P.equipe || !P.equipe.length) return card;
     const grille = document.createElement("div");
     grille.className = "equipe-grille equipe-grille-jeu";
@@ -2537,7 +2683,8 @@
   // l'article part à l'imprimerie.
   // ---------------------------------------------------------------
 
-  const TYPE_NOM = { p: "personne", l: "lieu", d: "pièce", a: "action" };
+  const TYPE_NOM = { p: t("personne"), l: t("lieu"), d: t("pièce"), a: t("action") };
+  const TYPE_NOMS = { p: t("personnes"), l: t("lieux"), d: t("pièces"), a: t("actions") };
   const TYPE_CLASS = { p: "tag-person", l: "tag-lieu", d: "tag-doc", a: "tag-action" };
 
   function articleBlanks(cs) {
@@ -2556,17 +2703,22 @@
   }
 
   // Le même mot, tel qu'il s'écrit au milieu d'une phrase de l'article
-  function wordInText(type, id) {
-    if (type === "l") { const l = locationById(id); return l ? l.inArticle || l.name : id; }
-    const w = wordLabel(type, id);
-    if (type === "d" && !/^[A-Z]{2}/.test(w)) return w.charAt(0).toLowerCase() + w.slice(1);
-    return w;
+  // capital : le mot ouvre une phrase de l'article (il suit un point, ou rien)
+  function wordInText(type, id, capital) {
+    let w;
+    if (type === "l") { const l = locationById(id); w = l ? l.inArticle || l.name : id; }
+    else {
+      w = wordLabel(type, id);
+      if (type === "d" && !/^[A-Z]{2}/.test(w)) w = w.charAt(0).toLowerCase() + w.slice(1);
+    }
+    return capital ? w.charAt(0).toUpperCase() + w.slice(1) : w;
   }
+  const opensSentence = (parts, i) => i === 0 || (typeof parts[i - 1] === "string" && /[.!?]\s*$/.test(parts[i - 1]));
 
   function knownWords(k, type) {
     return Array.from(k[type])
       .map((id) => ({ id: id, label: wordLabel(type, id) }))
-      .sort((a, b) => a.label.localeCompare(b.label, "fr"));
+      .sort((a, b) => a.label.localeCompare(b.label, L.lang));
   }
 
   const isRight = (answers, b) => answers[b.id] === b.type + ":" + b.answer;
@@ -2590,35 +2742,36 @@
     const panel = document.createElement("div");
     panel.className = "intervention-panel article-redac";
     panel.innerHTML =
-      "<h2>Rédiger l'article</h2><p>Le bouclage approche. Paul tape l'article ; à vous de remplir les blancs avec ce que l'enquête a trouvé. " +
-      "Chaque couleur attend un type de mot. Touchez un blanc, puis un mot. Jean-Loup relit avant l'imprimerie : trois passages au plus, " +
-      "et moins il en faut, plus l'article rapporte (" + factors.map((f) => Math.round(f * 100) + " %").join(", ") + "). " +
-      "Vous avez lu " + leadsUsed() + " piste" + (leadsUsed() > 1 ? "s" : "") + " ; chaque piste au-delà de " + cs.referenceLeads + " coûte " + cs.penaltyPerExtraLead + " points.</p>" +
-      '<div class="tag-legend article-legende"><span class="tag-person">Personne</span><span class="tag-lieu">Lieu</span><span class="tag-doc">Pièce</span><span class="tag-action">Action</span></div>';
+      "<h2>" + t("Rédiger l'article") + "</h2><p>" +
+      t("Le bouclage approche. Paul tape l'article ; à vous de remplir les blancs avec ce que l'enquête a trouvé. Chaque couleur attend un type de mot. Touchez un blanc, puis un mot. Jean-Loup relit avant l'imprimerie : trois passages au plus, et moins il en faut, plus l'article rapporte ({facteurs}).",
+        { facteurs: factors.map((f) => t("{p} %", { p: Math.round(f * 100) })).join(", ") }) + " " +
+      tp(leadsUsed(), "Vous avez lu {n} piste ;", "Vous avez lu {n} pistes ;") + " " +
+      t("chaque piste au-delà de {ref} coûte {pen} points.", { ref: cs.referenceLeads, pen: cs.penaltyPerExtraLead }) + "</p>" +
+      '<div class="tag-legend article-legende"><span class="tag-person">' + t("Personne") + '</span><span class="tag-lieu">' + t("Lieu") + '</span><span class="tag-doc">' + t("Pièce") + '</span><span class="tag-action">' + t("Action") + "</span></div>";
 
     if (rv.message) {
       const note = document.createElement("div");
       note.className = "relecture";
-      note.innerHTML = '<p class="relecture-qui">Relecture de Jean-Loup · passage ' + state.attempts + " sur 3</p><p>" + escapeHtml(rv.message) + "</p>";
+      note.innerHTML = '<p class="relecture-qui">' + t("Relecture de Jean-Loup · passage {n} sur 3", { n: state.attempts }) + "</p><p>" + escapeHtml(rv.message) + "</p>";
       panel.appendChild(note);
     }
 
     // La copie
     const copy = document.createElement("div");
     copy.className = "copie";
-    copy.innerHTML = '<p class="copie-rubrique">Les Affaires occultes · brouillon</p>';
+    copy.innerHTML = '<p class="copie-rubrique">' + t("Les Affaires occultes · brouillon") + "</p>";
     (cs.article || []).forEach((par) => {
       const p = document.createElement("p");
       p.className = "copie-par" + (wrongPars.has(par.id) ? " copie-par-faux" : "") + (par.bonus ? " copie-par-bonus" : "");
-      let html = par.bonus ? '<span class="copie-bonus">Bonus</span> ' : "";
-      par.parts.forEach((x) => {
+      let html = par.bonus ? '<span class="copie-bonus">' + t("Bonus") + "</span> " : "";
+      par.parts.forEach((x, i) => {
         if (typeof x === "string") { html += escapeHtml(x); return; }
         const val = state.answers[x.id];
         const cls = "trou trou-" + x.type + (val ? " trou-rempli" : "") + (x.id === state.activeBlank ? " trou-actif" : "") + (wrongBlanks.has(x.id) ? " trou-faux" : "");
-        const txt = val ? wordInText(val.split(":")[0], val.slice(2)) : TYPE_NOM[x.type];
-        html += '<button type="button" class="' + cls + '" data-blank="' + x.id + '" aria-label="Blanc : ' + TYPE_NOM[x.type] + '">' + escapeHtml(txt) + "</button>";
+        const txt = val ? wordInText(val.split(":")[0], val.slice(2), opensSentence(par.parts, i)) : TYPE_NOM[x.type];
+        html += '<button type="button" class="' + cls + '" data-blank="' + x.id + '" aria-label="' + t("Blanc : {type}", { type: TYPE_NOM[x.type] }) + '">' + escapeHtml(txt) + "</button>";
       });
-      if (wrongPars.has(par.id)) html += ' <span class="copie-marge">ne tient pas</span>';
+      if (wrongPars.has(par.id)) html += ' <span class="copie-marge">' + t("ne tient pas") + "</span>";
       p.innerHTML = html;
       copy.appendChild(p);
     });
@@ -2637,8 +2790,8 @@
       bank.className = "banque banque-" + active.type;
       const words = knownWords(k, active.type);
       bank.innerHTML =
-        '<p class="banque-titre">Mots trouvés · <span class="' + TYPE_CLASS[active.type] + '">' + TYPE_NOM[active.type] + "s</span>" +
-        (words.length ? "" : " : aucun pour l'instant") + "</p>";
+        '<p class="banque-titre">' + t("Mots trouvés · ") + '<span class="' + TYPE_CLASS[active.type] + '">' + TYPE_NOMS[active.type] + "</span>" +
+        (words.length ? "" : t(" : aucun pour l'instant")) + "</p>";
       const list = document.createElement("div");
       list.className = "banque-mots";
       words.forEach((w) => {
@@ -2662,7 +2815,7 @@
         const clear = document.createElement("button");
         clear.type = "button";
         clear.className = "mot mot-retirer";
-        clear.textContent = "Effacer ce blanc";
+        clear.textContent = t("Effacer ce blanc");
         clear.addEventListener("click", () => {
           delete state.answers[active.id];
           A.play("interface/rature");
@@ -2683,10 +2836,10 @@
     submit.className = "confirm-btn";
     submit.disabled = missing > 0;
     submit.textContent = missing
-      ? "Encore " + missing + " blanc" + (missing > 1 ? "s" : "") + " à remplir"
-      : attempt >= 3 ? "Dernier passage : envoyer à l'imprimerie" : "Faire relire par Jean-Loup (passage " + attempt + " sur 3)";
+      ? tp(missing, "Encore {n} blanc à remplir", "Encore {n} blancs à remplir")
+      : attempt >= 3 ? t("Dernier passage : envoyer à l'imprimerie") : t("Faire relire par Jean-Loup (passage {n} sur 3)", { n: attempt });
     submit.addEventListener("click", () => {
-      if (attempt >= 3 && !window.confirm("Dernier passage : l'article part à l'imprimerie tel quel. On y va ?")) return;
+      if (attempt >= 3 && !window.confirm(t("Dernier passage : l'article part à l'imprimerie tel quel. On y va ?"))) return;
       submitArticle();
     });
     row.appendChild(submit);
@@ -2695,9 +2848,9 @@
       keep.className = "end-early-btn";
       keep.style.width = "auto";
       keep.style.marginTop = "0";
-      keep.textContent = "Envoyer la version déjà relue (" + Math.round(factors[state.attempts - 1] * 100) + " % des points)";
+      keep.textContent = t("Envoyer la version déjà relue ({p} % des points)", { p: Math.round(factors[state.attempts - 1] * 100) });
       keep.addEventListener("click", () => {
-        if (!window.confirm("Envoyer la version relue au passage " + state.attempts + ", sans vos corrections depuis ?")) return;
+        if (!window.confirm(t("Envoyer la version relue au passage {n}, sans vos corrections depuis ?", { n: state.attempts }))) return;
         publishArticle(state.lastSubmitted, state.attempts);
       });
       row.appendChild(keep);
@@ -2706,7 +2859,7 @@
     back.className = "end-early-btn";
     back.style.width = "auto";
     back.style.marginTop = "0";
-    back.textContent = "← Reprendre l'enquête";
+    back.textContent = t("← Reprendre l'enquête");
     back.addEventListener("click", () => {
       state.view = "quartier";
       render();
@@ -2716,7 +2869,7 @@
     carnet.className = "end-early-btn";
     carnet.style.width = "auto";
     carnet.style.marginTop = "0";
-    carnet.textContent = "Ouvrir le carnet";
+    carnet.textContent = t("Ouvrir le carnet");
     carnet.addEventListener("click", () => {
       state.view = "journal";
       render();
@@ -2767,13 +2920,23 @@
     });
     points = Math.round(points * factor);
     const extra = Math.max(0, leadsUsed() - cs.referenceLeads);
-    const penalty = extra * cs.penaltyPerExtraLead;
+    // Ce qu'on a fait pendant une scène à choix peut faire parler de soi (Karim en garde à vue)
+    const extras = [];
+    Object.keys(cs.choiceEndings || {}).forEach((pid) => {
+      const x = (cs.choiceEndings[pid] || {})[state.choices[pid]];
+      if (x) extras.push(x);
+    });
+    const penalty = extra * cs.penaltyPerExtraLead + extras.reduce((n, x) => n + (x.penalty || 0), 0);
     const total = Math.max(0, points - penalty);
     const rank = (cs.ranks.find((r) => total >= r.min) || cs.ranks[cs.ranks.length - 1]).label;
-    const ending = cs.endings.find((e) => Object.keys(e.when).every((q) => right[q] === e.when[q])) || cs.endings[cs.endings.length - 1];
+    // Une condition vaut true ou false (question juste ou fausse), ou une liste de mots :
+    // l'un des blancs de la question contient l'un d'eux.
+    const matches = (q, cond) =>
+      Array.isArray(cond) ? blanks.some((b) => b.q === q && cond.includes(answers[b.id])) : right[q] === cond;
+    const ending = cs.endings.find((e) => Object.keys(e.when).every((q) => matches(q, e.when[q]))) || cs.endings[cs.endings.length - 1];
     const allRight = blanks.every((b) => b.par.bonus || isRight(answers, b));
     state.ending = {
-      endingId: ending.id, right: right, answers: Object.assign({}, answers), points: points, penalty: penalty, total: total, rank: rank,
+      endingId: ending.id, right: right, answers: Object.assign({}, answers), points: points, penalty: penalty, total: total, rank: rank, extras: extras,
       leads: leadsUsed(), attempt: attempt, factor: factor, review: allRight ? cs.review.juste : attempt >= 3 ? cs.review.essai3 : ""
     };
     recordCaseCompletion(state.currentCityId, state.currentCaseId, total, rank);
@@ -2792,20 +2955,21 @@
         let ok = true;
         let pts = 0;
         let html = "";
-        par.parts.forEach((x) => {
+        par.parts.forEach((x, i) => {
           if (typeof x === "string") { html += escapeHtml(x); return; }
           const val = e.answers[x.id];
+          const cap = opensSentence(par.parts, i);
           const good = val === x.type + ":" + x.answer;
           if (good) pts += x.points;
           else ok = false;
-          const rightTxt = wordInText(x.type, x.answer);
+          const rightTxt = wordInText(x.type, x.answer, cap);
           html += good
             ? '<span class="' + TYPE_CLASS[x.type] + '">' + escapeHtml(rightTxt) + "</span>"
-            : '<s class="bilan-faux">' + escapeHtml(val ? wordInText(val.split(":")[0], val.slice(2)) : "…") + '</s> <span class="' + TYPE_CLASS[x.type] + '">' + escapeHtml(rightTxt) + "</span>";
+            : '<s class="bilan-faux">' + escapeHtml(val ? wordInText(val.split(":")[0], val.slice(2), cap) : "…") + '</s> <span class="' + TYPE_CLASS[x.type] + '">' + escapeHtml(rightTxt) + "</span>";
         });
         return (
           '<li class="' + (ok ? "ok" : "ko") + '"><span class="score-mark">' + (ok ? "✔" : "✘") + "</span><span><strong>" + escapeHtml(par.title) +
-          (par.bonus ? " (bonus)" : "") + "</strong><br><small class=\"bilan-texte\">" + html + '</small></span><span class="score-pts">+' + Math.round(pts * e.factor) + "</span></li>"
+          (par.bonus ? t(" (bonus)") : "") + "</strong><br><small class=\"bilan-texte\">" + html + '</small></span><span class="score-pts">+' + Math.round(pts * e.factor) + "</span></li>"
         );
       })
       .join("");
@@ -2824,11 +2988,12 @@
       .map((q) => "<p>" + escapeHtml(e.right[q] ? cs.complements[q].right : cs.complements[q].wrong) + "</p>")
       .join("");
     paper.innerHTML =
-      '<header class="une-head"><div class="une-title">Le Stéphanois</div><div class="une-meta"><span>Samedi 27 novembre 1993</span><span>4,50 F</span></div></header>' +
-      '<p class="une-rubrique">Les Affaires occultes · ' + escapeHtml(ending.title) + "</p>" +
+      '<header class="une-head"><div class="une-title">' + escapeHtml(cs.journal || "Le Stéphanois") + '</div><div class="une-meta"><span>' + t(cs.dateUne || "Samedi 27 novembre 1993") + "</span><span>" + t(cs.priceUne || "4,50 F") + "</span></div></header>" +
+      '<p class="une-rubrique">' + t("Les Affaires occultes · ") + escapeHtml(ending.title) + "</p>" +
       '<h2 class="une-headline">' + escapeHtml(ending.headline) + "</h2>" +
-      '<p class="une-byline">Par le Bureau des affaires occultes · Photos Yves Barral</p>' +
-      '<div class="une-body">' + renderParagraphs(ending.text) + complements + "</div>";
+      '<p class="une-byline">' + t("Par le Bureau des affaires occultes · Photos Yves Barral") + "</p>" +
+      '<div class="une-body">' + renderParagraphs(ending.text) + complements +
+      (e.extras || []).map((x) => '<p class="une-encadre"><strong>' + escapeHtml(x.title) + "</strong> " + escapeHtml(x.text) + "</p>").join("") + "</div>";
     wrap.appendChild(paper);
 
     if (e.review) {
@@ -2841,13 +3006,14 @@
     const score = document.createElement("div");
     score.className = "score-card";
     score.innerHTML =
-      "<h3>Votre article</h3>" +
+      "<h3>" + t("Votre article") + "</h3>" +
       '<ul class="score-list">' + articleReportHTML(cs, e) +
       "</ul>" +
-      (e.attempt ? '<p class="score-line">Envoyé au passage ' + e.attempt + " sur 3 : " + Math.round(e.factor * 100) + " % des points</p>" : "") +
-      '<p class="score-line">Pistes lues : ' + e.leads + " (référence : " + cs.referenceLeads + ")" + (e.penalty ? " · pénalité −" + e.penalty : "") + "</p>" +
-      '<p class="score-total">' + e.total + " / " + maxScore(cs) + ' <span class="score-rank">' + escapeHtml(e.rank) + "</span></p>" +
-      '<details class="solution"><summary>Ce qui s\'est vraiment passé</summary><p>' + escapeHtml(cs.solution || "") + "</p><p class='solution-path'>Le chemin le plus court : " +
+      (e.attempt ? '<p class="score-line">' + t("Envoyé au passage {n} sur 3 : {p} % des points", { n: e.attempt, p: Math.round(e.factor * 100) }) + "</p>" : "") +
+      '<p class="score-line">' + t("Pistes lues : {n} (référence : {ref})", { n: e.leads, ref: cs.referenceLeads }) + (e.penalty ? t(" · pénalité −{n}", { n: e.penalty }) : "") +
+      (e.extras || []).map((x) => (x.penalty ? " · " + escapeHtml(x.title) + t(" (−{n})", { n: x.penalty }) : "")).join("") + "</p>" +
+      '<p class="score-total">' + e.total + " / " + maxScore(cs) + ' <span class="score-rank">' + escapeHtml(L.stored(e.rank)) + "</span></p>" +
+      '<details class="solution"><summary>' + t("Ce qui s'est vraiment passé") + "</summary><p>" + escapeHtml(cs.solution || "") + "</p><p class='solution-path'>" + t("Le chemin le plus court : ") +
       (cs.referencePath || []).map((id) => { const c = clueById(id); return escapeHtml(c.follows && c.titleAlone && !cs.referencePath.includes(c.follows) ? c.titleAlone : c.title); }).join(" → ") + "</p></details>";
     wrap.appendChild(score);
 
@@ -2869,14 +3035,14 @@
     row.className = "btn-row";
     const back = document.createElement("button");
     back.className = "restart-btn";
-    back.textContent = "Retour aux affaires";
+    back.textContent = t("Retour aux affaires");
     back.addEventListener("click", () => {
       state.view = "caseSelect";
       render();
     });
     const again = document.createElement("button");
     again.className = "restart-btn";
-    again.textContent = "Retenter cette affaire";
+    again.textContent = t("Retenter cette affaire");
     again.addEventListener("click", () => {
       resetCaseState();
       state.started = false;
@@ -2898,7 +3064,7 @@
     const wrap = document.createElement("div");
     const backBtn = document.createElement("button");
     backBtn.className = "end-early-btn back-btn";
-    backBtn.textContent = "← Retour";
+    backBtn.textContent = t("← Retour");
     backBtn.addEventListener("click", () => {
       state.view = state.previousView || "menu";
       render();
@@ -2919,7 +3085,7 @@
     const nameInput = document.createElement("input");
     nameInput.type = "text";
     nameInput.className = "profile-name-input";
-    nameInput.placeholder = "Nom de l'enquêteur";
+    nameInput.placeholder = t("Nom de l'enquêteur");
     nameInput.value = state.progress.playerName || "";
     nameInput.maxLength = 40;
     nameInput.addEventListener("change", () => {
@@ -2929,19 +3095,19 @@
     idBlock.appendChild(nameInput);
     const rankTag = document.createElement("p");
     rankTag.className = "profile-rank";
-    rankTag.textContent = currentRank() + " · Bureau des affaires occultes";
+    rankTag.textContent = currentRank() + " · " + t("Bureau des affaires occultes");
     idBlock.appendChild(rankTag);
     const swatches = document.createElement("div");
     swatches.className = "avatar-swatches";
     [
-      { id: "red", label: "Rouge tampon" },
-      { id: "gold", label: "Or vieilli" },
-      { id: "steel", label: "Vert acier" }
+      { id: "red", label: t("Rouge tampon") },
+      { id: "gold", label: t("Or vieilli") },
+      { id: "steel", label: t("Vert acier") }
     ].forEach((opt) => {
       const sw = document.createElement("button");
       sw.className = "avatar-swatch avatar-swatch-" + opt.id + (state.progress.avatarAccent === opt.id ? " selected" : "");
       sw.title = opt.label;
-      sw.setAttribute("aria-label", "Choisir la couleur : " + opt.label);
+      sw.setAttribute("aria-label", t("Choisir la couleur : {couleur}", { couleur: opt.label }));
       sw.addEventListener("click", () => {
         setAvatarAccent(opt.id);
         render();
@@ -2957,9 +3123,9 @@
     const stats = document.createElement("div");
     stats.className = "profile-stats-grid";
     [
-      { label: "Points de carrière", value: careerPoints() },
-      { label: "Affaires résolues", value: entries.length + " / " + totalCasesAvailable() },
-      { label: "Meilleur score", value: best === null ? "N/A" : best }
+      { label: t("Points de carrière"), value: careerPoints() },
+      { label: t("Affaires résolues"), value: entries.length + " / " + totalCasesAvailable() },
+      { label: t("Meilleur score"), value: best === null ? t("N/A") : best }
     ].forEach((s) => {
       const box = document.createElement("div");
       box.className = "profile-stat";
@@ -2970,13 +3136,13 @@
 
     const bh = document.createElement("h3");
     bh.className = "profile-section-heading";
-    bh.textContent = "Distinctions";
+    bh.textContent = t("Distinctions");
     card.appendChild(bh);
     const badges = computeBadges();
     if (!badges.length) {
       const p = document.createElement("p");
       p.className = "briefing";
-      p.textContent = "Aucune distinction pour l'instant. Terminez une première affaire pour commencer à en gagner.";
+      p.textContent = t("Aucune distinction pour l'instant. Terminez une première affaire pour commencer à en gagner.");
       card.appendChild(p);
     } else {
       const bl = document.createElement("div");
@@ -2996,7 +3162,7 @@
   function renderFootnote() {
     const el = document.createElement("div");
     el.className = "footnote";
-    el.textContent = "Enquête fictive. Personnages, entreprises et faits sont imaginaires.";
+    el.textContent = t("Enquête fictive. Personnages, entreprises et faits sont imaginaires.");
     return el;
   }
 

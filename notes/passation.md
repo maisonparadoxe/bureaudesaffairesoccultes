@@ -25,8 +25,8 @@
 
 ## 3. Mécaniques existantes
 
-- **Pistes :** 16 pistes accordées. Le chemin de référence (« le chemin le plus court ») en utilise 12. Au-delà, chaque piste coûte 2 points.
-- **Calendrier :** 4 créneaux par jour (9 h, 11 h, 14 h, 16 h), du vendredi au mercredi, puis le bouclage le jeudi à 18 h. Le clocher sonne à chaque nouveau jour. Il pleut à certains créneaux seulement (`calendar.rain`).
+- **Pistes :** 20 pistes accordées dans chaque affaire (16 avant le 21 octobre 2026). Le chemin de référence (« le chemin le plus court ») en utilise 12 à Ferréol, 13 à Nyons. Au-delà, chaque piste coûte 2 points.
+- **Calendrier :** 4 créneaux par jour (9 h, 11 h, 14 h, 16 h), cinq jours d'enquête du vendredi au mercredi (le samedi compte, pas le dimanche), puis le bouclage le jeudi à 18 h. Le clocher sonne à chaque nouveau jour. Il pleut à certains créneaux seulement (`calendar.rain`).
 - **Entités colorées :** personnes en bleu, lieux en vert, pièces en violet. Un lieu ou une personne n'est connu qu'une fois mentionné dans une piste (syntaxe `{{p:id|texte}}`, `{{l:id|texte}}`, `{{d:id|texte}}`).
 - **Entretiens de suite :** « Revenir voir X ». On peut confronter quelqu'un sans l'avoir vu avant : le bouton et le titre s'adaptent (`bouton_seul`, `titre_seul`). Une fois la personne confrontée, le premier entretien disparaît.
 - **Minitel 3611 :** l'annuaire répond pour n'importe quel nom, mais une adresse ne débloque le lieu que si l'enquête a déjà parlé de la personne. Liste rouge, SCI introuvable et prénoms seuls donnent des réponses spécifiques.
@@ -41,6 +41,15 @@
 - **Équipe du Bureau, accessible pendant l'enquête (depuis le 28 septembre) :** avant, l'équipe (Paul, Yves, Karim, Odile) n'apparaissait qu'une fois, sur la note de service, avant de choisir une ville. Un bouton « L'équipe du Bureau » a été ajouté dans la colonne de gauche, section Outils, au-dessus de « Carnet de l'enquête » — il ouvre à tout moment un écran avec les quatre portraits, rôles et bios (`renderEquipe`, vue `equipe`, réutilise les données `prologue.equipe` de `data.json` et le style `.equipe-grille` déjà existant).
 - **Confort mobile (29 septembre) :** un audit sur écran 390×844 a montré deux frictions systématiques sur téléphone. 1) Aucun écran ne remontait en haut lors d'un changement de vue (démarrer l'enquête, ouvrir un outil, changer de quartier) : le joueur atterrissait au milieu de l'écran précédent. Corrigé avec deux fonctions, `scrollToTop()` (remonte en haut de la page — utilisée pour « Commencer l'enquête », reprise de sauvegarde, changement de quartier, retour aux affaires) et `scrollToPanel()` déjà existante (scrolle jusqu'au panneau de contenu — utilisée pour les 4 boutons Outils : Équipe, Carnet, Annuaire, Minitel). 2) La carte de la ville s'affichait en haut de CHAQUE écran d'enquête, y compris Carnet/Annuaire/Minitel/Équipe où elle n'a aucun rapport, obligeant à un long scroll avant d'atteindre le vrai contenu sur mobile. Corrigé en ajoutant une classe `map-secondaire` à la carte quand `state.view` n'est pas `quartier`/`location` (liste `VUES_AVEC_CARTE` dans `renderMainGrid`), masquée uniquement sur mobile via `@media (max-width: 760px) { .city-map-wrap.map-secondaire { display: none; } }` dans `jeu.css` — la carte reste affichée normalement sur desktop.
 - **Barre d'outils fixe sur mobile (29 septembre, suite) :** troisième et dernière brique du confort mobile. Une barre `<nav class="mobile-tabbar">` fixée en bas d'écran (5 boutons : Carte, Équipe, Carnet, Annuaire, Minitel) est maintenant toujours visible sans scroller, sur les écrans d'enquête (`MOBILE_TABBAR_VIEWS` = pistes/lieu/carnet/annuaire/minitel/équipe). Elle est absente sur l'écran de l'article (la banque de mots y occupe déjà le bas d'écran) et sur les écrans hors-enquête. Onglet actif mis en évidence en rouge tampon. Masquée par défaut, affichée uniquement sous `@media (max-width: 760px)` — le desktop garde la colonne de gauche inchangée. `render()` bascule une classe `has-tabbar` sur `<body>` qui ajoute le padding-bottom nécessaire pour que le dernier bloc de contenu ne se cache pas sous la barre. Testé en Playwright (390×844) sur les 5 écrans + vérifié absente sur l'article + vérifié invisible en desktop (1280×900). Avec ça, les trois frictions mobiles identifiées le 29 septembre sont traitées.
+- **Nouveautés de Nyons (21 octobre 2026), utilisables partout :**
+  - **Pistes datées :** `fromLead` (la piste n'apparaît qu'après N pistes dépensées) et `untilLead` (elle disparaît si on ne l'a pas lue à temps : « Trop tard » dans les découvertes). Dans `carte.py` : `des_le=` et `jusqu_a=`.
+  - **Piste gratuite :** `free` (`gratuit=True`), lisible même à 0 piste, hors du compte de référence.
+  - **Piste qui attend un puzzle :** `requiresPuzzle` (`requiert_puzzle=`).
+  - **Portrait-robot** (`type: "portrait"`, code `portrait.js`) : deux témoins, six traits à choisir sur les calques d'Yves, le visage se dessine en SVG. Pas de coût à l'erreur, l'aide coûte une piste.
+  - **Poursuite** (`type: "poursuite"`) : un compte à rebours (8 s, doublé en effets réduits), quatre choix, `timeout` choisit à la place du joueur. Un choix peut coûter des pistes (`cost`) et débloquer des mots d'action. Le choix est gardé dans `state.choices`.
+  - **Fins à choix :** `choiceEndings[puzzle][choix]` ajoute un encadré à la une et une pénalité (Nyons : Karim saute sur l'homme, « Le Bureau fait la une », −10).
+  - **Fins à réponses multiples :** `when: { Q1: ["p:royer", "p:garcin"] }`.
+  - **L'affaire porte son journal :** `journal`, `dateUne`, `priceUne`, `localite` (Minitel), `weather` (`"soleil"` : lumière d'été et cigales le jour).
 - **Autour :** menu principal, sauvegarde automatique, options (volumes, coupure du son, effets réduits, animations, texte plus grand), note de service au premier lancement, fiche de l'enquêteur (points de carrière).
 
 ## 4. Idées gardées pour les prochaines affaires
@@ -69,7 +78,8 @@
 - **Chaîne de construction :** `python3 carte.py`, puis `python3 verifier_textes.py`, puis `python3 construire.py`, puis `node outils/verifier.js` (qui contrôle tout et régénère `data.js`).
 - **Ne jamais modifier `data.json` à la main :** il est reconstruit.
 - **`construire.py` ne touche qu'à sa ville.** Celui de Saint-Étienne ne vide plus Nyons (corrigé le 28 septembre). Il écrit encore la note de service et les crédits, communs à tout le jeu : quand Nyons aura son propre `construire.py`, il faudra sortir ces deux blocs dans un script commun (par exemple `outils/commun.py`), pour qu'une seule source les écrive.
-- **Nyons** est déjà déclarée dans `data.json` avec le statut `coming_soon`, comme les autres villes.
+- **Nyons** est jouable (statut `available`). Son atelier est `nyons/` (même modèle, plus `outils/verifier_confrontation.py`). L'anglais de Nyons n'est pas écrit : en anglais, l'affaire s'affiche en français (`node outils/traduction.js manquants` liste ce qui manque).
+- **Test de bout en bout de Nyons :** un script Playwright joue l'affaire par l'interface (chemin de référence, poursuite « frapper », article faux) ; il n'est pas dans le jeu.
 - **Assets :** `assets-a-creer.md` tient la liste à jour de ce qui est fait et de ce qui manque.
 
 ## 7. Méthode de travail qui a bien marché
@@ -83,14 +93,20 @@
 ## 8. Chantiers ouverts
 
 - **Synchronisation :** la référence du jeu est le dépôt GitHub `maisonparadoxe/bureaudesaffairesoccultes` (publié sur GitHub Pages). Le dossier local `C:\Users\Pascal\Documents\MaisonParadoxe\bureau-affaires-occultes` en est une copie : le mettre à jour en même temps que le dépôt.
-- **Ce que `script.js` suppose encore de Saint-Étienne (à rendre propre à chaque affaire avant Nyons) :**
-  - l'écran d'accueil du Minitel affiche « LOCALITÉ : SAINT-ÉTIENNE (42) » ;
-  - la une de fin affiche « Le Stéphanois » et « Samedi 27 novembre 1993 » ;
-  - la pluie est la seule météo prévue (`weather: "pluie"`) : Nyons aura besoin d'une autre (soleil, vent, cigales) ;
-  - l'écran d'intro et la note de service jouent l'ambiance « bureau-lyon » avec la pluie sur la vitre : ça reste juste pour Lyon, mais pas forcément en juin.
-  Il suffira de lire ces valeurs dans l'affaire (`cs.journal`, `cs.dateUne`, `cs.localite`, `cs.weather`), avec les valeurs actuelles par défaut.
+- **Script commun :** la note de service et les crédits sont encore écrits par `saint-etienne/construire.py`. À sortir dans `outils/commun.py`.
+- **L'ambiance « bureau-lyon »** de l'intro garde la pluie sur la vitre, même en juin.
+- **Validations attendues de Pascal (21 octobre 2026) :** Ferréol à 20 pistes avec un samedi (fait, à valider) ; la poursuite « frapper » publie l'article avec une pénalité au lieu de l'annuler ; l'épilogue salamandre de Nyons (carte de F. A., puis Firmin Achard mort en 1958).
 
-## 9. Nyons : décisions prises (conception en cours, rien d'écrit)
+## 9. Nyons : écrite (21 octobre 2026)
+
+L'affaire est entièrement écrite et jouable. La vérité complète, les mensonges, les recoupements et les questions de l'article sont dans `nyons/1-verite.md`, la carte des pistes dans `nyons/3-carte-des-pistes.md`. En résumé :
+
+- **Calendrier :** vendredi 17, samedi 18, lundi 20, mardi 21, mercredi 22 juin 1994 ; bouclage jeudi 23 ; page le samedi 25.
+- **La vérité :** Jacques Garcin vit sous le nom de Lucien Royer aux Pilles. Hélène, sa femme, le sait depuis le premier jour et lui envoie des mandats. Le soir du 15 juin, elle endort Aimé Chabert au marc et au Mogadon, ouvre la vanne avec la clé du moulin et le pousse dans le bief. Royer ment sur sa soirée (il a vu Chabert au canal), mais il n'a pas tué. Sandrine Mollet, sœur d'une victime de la crue, a écrit la lettre anonyme.
+- **Ce qui change de Ferréol :** la confrontation de Karim (grille), une nuit de poursuite aux Saules, le portrait-robot, des pistes qui arrivent avec les jours (la lettre de Chabert, le labo) et d'autres qui se perdent (Firmin Achard part), une piste gratuite, une fin propre au choix de la poursuite.
+- **Salamandre :** Firmin Achard, vieux joueur de boules qui a tout vu du pont roman. Son carnet porte la salamandre. Épilogue : une carte signée F. A., puis Odile découvre qu'un Firmin Achard est mort en 1958, à 71 ans.
+
+### Décisions de conception gardées (avant l'écriture)
 
 - **Date :** fin juin 1994. Proposition de calendrier, à confirmer : enquête du vendredi 17 au mercredi 22 juin, bouclage le jeudi 23, page le samedi 25. La fête de la musique tombe le mardi 21.
 - **Affaire retenue : « Le noyé de l'Ouvèze ».** Arrière-plan réel : la crue de l'Ouvèze à Vaison-la-Romaine, le 22 septembre 1992. Les victimes et le camping de l'histoire sont inventés ; la catastrophe est traitée avec gravité.

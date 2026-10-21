@@ -298,7 +298,7 @@ QUESTIONS = {
 REFERENCE = ["reperage", "livre", "bensaid2", "bureau_vallenot", "lacour2", "igier2",
              "compta", "colette2", "dossier", "registre", "tirages", "chaptal2"]
 
-PISTES_ACCORDEES = 16
+PISTES_ACCORDEES = 20
 
 # ------------------------------------------------------------------ contrôles
 P = {c["id"]: c for c in PISTES}

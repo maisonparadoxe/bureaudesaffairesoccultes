@@ -11,7 +11,8 @@ avec votre navigateur (double-clic). Pas besoin d'internet ni de serveur
 
 Fichiers du jeu, tous au même niveau que index.html :
   index.html, style.css, tags.css, carnet.css, jeu.css,
-  audio.js, tableau.js, script.js, data.js, data.json
+  audio.js, i18n.js, tableau.js, portrait.js, script.js,
+  data.js, data.json, data-en.js, data-en.json
 Sons et images : dossiers audio/ et img/. La liste complète, avec les noms
 exacts et les formats, est dans assets-a-creer.md.
 
@@ -29,5 +30,14 @@ Après une modification des textes ou de la carte :
   python3 construire.py
   cd ..
   node outils/verifier.js        (vérifie data.json et régénère data.js)
+
+L'affaire de Nyons se prépare de la même façon dans le dossier nyons/ :
+  python3 nyons/carte.py
+  python3 nyons/construire.py
+  node outils/verifier.js
+
+Version anglaise : les traductions sont dans traduction/en.txt.
+  node outils/traduction.js manquants   liste les textes à traduire ou à revoir
+  node outils/traduction.js             construit data-en.json et data-en.js
 
 Les anciennes versions des affaires sont gardées dans archives/.

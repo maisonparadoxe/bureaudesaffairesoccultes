@@ -71,6 +71,8 @@ data.cities.filter((c) => c.status === "available").forEach((city) => {
       if (c.follows && !clues.has(c.follows)) err(w, "suite d'une piste inconnue « " + c.follows + " »");
       if (c.follows && (!c.buttonAlone || !c.titleAlone)) err(w, "suite sans bouton ni titre pour le cas où le premier entretien n'a pas eu lieu");
       if (c.puzzle && !puzzles[c.puzzle]) err(w, "puzzle inconnu « " + c.puzzle + " »");
+      (c.requiresPuzzle || []).forEach((p) => puzzles[p] || err(w, "attend un puzzle inconnu « " + p + " »"));
+      if (c.fromLead !== undefined && c.untilLead !== undefined && c.untilLead <= c.fromLead) err(w, "disparaît avant d'apparaître");
       (c.revealsActions || []).forEach((a) => actions.has(a) || err(w, "révèle un mot d'action inconnu « " + a + " »"));
       checkText(w, c.text);
       checkFacts(w, c.facts);
@@ -81,6 +83,21 @@ data.cities.filter((c) => c.status === "available").forEach((city) => {
       if (pz.type === "fragments" && !(pz.pieces || []).length) err(w, "aucun morceau");
       if (pz.type === "line" && !(pz.lines || []).some((l) => !l.qui)) err(w, "aucune ligne gagnante");
       if (pz.type === "code" && String(pz.code).length !== (pz.digits || 4)) err(w, "le code n'a pas le bon nombre de chiffres");
+      if (pz.type === "portrait") {
+        (pz.traits || []).forEach((tr) => (tr.options || []).some((o) => o.id === (pz.solution || {})[tr.id]) || err(w, "le trait « " + tr.id + " » n'a pas sa bonne réponse parmi les calques"));
+        if (!(pz.temoins || []).length) err(w, "aucun témoin");
+      }
+      if (pz.type === "poursuite") {
+        const ids = (pz.options || []).map((o) => o.id);
+        if (ids.length < 2) err(w, "moins de deux choix");
+        if (!ids.includes(pz.timeout)) err(w, "le choix par défaut « " + pz.timeout + " » n'existe pas");
+        (pz.options || []).forEach((o) => {
+          checkText(w + ", choix " + o.id, o.text);
+          checkFacts(w + ", choix " + o.id, o.facts);
+          (o.revealsActions || []).forEach((a) => actions.has(a) || err(w + ", choix " + o.id, "mot d'action inconnu « " + a + " »"));
+        });
+        Object.keys((cs.choiceEndings || {})[id] || {}).forEach((o) => ids.includes(o) || err("fin à choix " + id, "choix inconnu « " + o + " »"));
+      }
       if (pz.type === "grille") {
         const tem = (pz.temoins || []).map((t) => t.id);
         const sol = pz.solution || {};
@@ -115,11 +132,16 @@ data.cities.filter((c) => c.status === "available").forEach((city) => {
       const ok = b.type === "a" ? actions.has(b.answer) : exists(b.type, b.answer);
       if (!ok) err("article, blanc " + b.id, "la réponse « " + b.type + ":" + b.answer + " » n'existe pas");
     });
-    (cs.endings || []).forEach((e) => Object.keys(e.when || {}).forEach((q) => qs.has(q) || err("fin " + e.id, "question inconnue " + q)));
+    (cs.endings || []).forEach((e) => Object.entries(e.when || {}).forEach(([q, v]) => {
+      if (!qs.has(q)) err("fin " + e.id, "question inconnue " + q);
+      [].concat(v).forEach((x) => typeof x !== "string" || /^[pld]:/.test(x) || actions.has(x) || err("fin " + e.id, "réponse inconnue « " + x + " »"));
+    }));
+    Object.keys(cs.choiceEndings || {}).forEach((id) => puzzles[id] || err("fin à choix " + id, "puzzle inconnu"));
     Object.keys(cs.complements || {}).forEach((q) => qs.has(q) || err("complément " + q, "aucun blanc ne décide de cette question"));
 
     // 2. Simulation
-    function knowledge(read, solved, minitel) {
+    // choices : le choix retenu pour chaque puzzle à options ("*" = tous les choix)
+    function knowledge(read, solved, minitel, choices) {
       const k = { p: new Set(), l: new Set(), d: new Set(), a: new Set() };
       const absorb = (text) => tagsOf(text).forEach((t) => t.id && k[t.type].add(t.id));
       cs.characters.forEach((ch) => ch.alwaysRevealed && k.p.add(ch.id));
@@ -132,7 +154,13 @@ data.cities.filter((c) => c.status === "available").forEach((city) => {
         (c.revealsCharacters || []).forEach((x) => k.p.add(x));
         (c.revealsLocations || []).forEach((x) => k.l.add(x));
         (c.revealsActions || []).forEach((x) => k.a.add(x));
-        if (c.puzzle && solved.has(c.puzzle)) absorb(puzzles[c.puzzle].result);
+        if (c.puzzle && solved.has(c.puzzle)) {
+          const pz = puzzles[c.puzzle];
+          absorb(pz.result);
+          (pz.options || [])
+            .filter((o) => choices === "*" || (choices || {})[c.puzzle] === o.id)
+            .forEach((o) => { absorb(o.text); (o.revealsActions || []).forEach((x) => k.a.add(x)); });
+        }
       });
       minitel.forEach((i) => {
         const e = cs.minitel[i];
@@ -154,8 +182,12 @@ data.cities.filter((c) => c.status === "available").forEach((city) => {
         if (known) minitel.add(i);
       });
     }
-    const available = (c, k, read) =>
+    const paid = (read) => [...read].filter((id) => !clues.get(id).free).length;
+    // inTime : null = on ignore le calendrier (pour la partie où l'on lit tout)
+    const available = (c, k, read, solved, used) =>
       k.l.has(c.locationId) &&
+      (used == null || ((c.fromLead === undefined || used >= c.fromLead) && (c.untilLead === undefined || used < c.untilLead))) &&
+      (c.requiresPuzzle || []).every((p) => solved.has(p)) &&
       !cs.clues.some((x) => x.follows === c.id && read.has(x.id)) &&
       (c.requires || []).every((r) => read.has(r)) &&
       (!c.requiresAny || c.requiresAny.some((r) => read.has(r)));
@@ -165,16 +197,16 @@ data.cities.filter((c) => c.status === "available").forEach((city) => {
       let changed = true;
       while (changed) {
         changed = false;
-        let k = knowledge(read, solved, minitel);
+        let k = knowledge(read, solved, minitel, "*");
         const before = minitel.size;
         searchMinitel(k, minitel);
-        if (minitel.size > before) { changed = true; k = knowledge(read, solved, minitel); }
+        if (minitel.size > before) { changed = true; k = knowledge(read, solved, minitel, "*"); }
         cs.clues.forEach((c) => {
-          if (!read.has(c.id) && available(c, k, read)) { read.add(c.id); changed = true; }
+          if (!read.has(c.id) && available(c, k, read, solved, null)) { read.add(c.id); changed = true; }
           if (read.has(c.id) && c.puzzle && !solved.has(c.puzzle)) { solved.add(c.puzzle); changed = true; }
         });
       }
-      return { read, k: knowledge(read, solved, minitel) };
+      return { read, k: knowledge(read, solved, minitel, "*") };
     }
     const all = playAll();
     cs.locations.forEach((l) => all.k.l.has(l.id) || err("lieu " + l.id, "jamais révélé, impossible à atteindre"));
@@ -184,30 +216,36 @@ data.cities.filter((c) => c.status === "available").forEach((city) => {
     (cs.minitel || []).forEach((e, i) => e.about && !chars.has(e.about.slice(2)) && err("minitel " + i, "rattaché à une personne inconnue « " + e.about + " »"));
 
     if (cs.referencePath) {
+      // Sur le chemin de référence, le joueur laisse filer le temps des puzzles à options.
+      const choices = {};
+      Object.entries(puzzles).forEach(([id, pz]) => pz.timeout && (choices[id] = pz.timeout));
       const read = new Set(), solved = new Set(), minitel = new Set();
       cs.referencePath.forEach((id) => {
         const c = clues.get(id);
         if (!c) return err("chemin de référence", "piste inconnue " + id);
-        let k = knowledge(read, solved, minitel);
+        let k = knowledge(read, solved, minitel, choices);
         searchMinitel(k, minitel);
-        k = knowledge(read, solved, minitel);
-        if (!available(c, k, read)) err("chemin de référence", "« " + id + " » n'est pas encore accessible à ce moment");
+        k = knowledge(read, solved, minitel, choices);
+        if (!available(c, k, read, solved, paid(read))) err("chemin de référence", "« " + id + " » n'est pas accessible à ce moment (" + paid(read) + " pistes dépensées)");
         read.add(id);
         if (c.puzzle) solved.add(c.puzzle);
       });
-      if (cs.referencePath.length >= cs.totalLeads) err("chemin de référence", "il consomme toutes les pistes accordées");
+      const nPaid = paid(read);
+      if (nPaid >= cs.totalLeads) err("chemin de référence", "il consomme toutes les pistes accordées");
+      if (cs.referenceLeads && cs.referenceLeads !== nPaid) warn("chemin de référence", nPaid + " pistes payantes, mais referenceLeads vaut " + cs.referenceLeads);
       // Au bout du chemin de référence, chaque blanc doit pouvoir être rempli juste,
       // et il doit y avoir au moins deux mots possibles (sinon le blanc est gratuit).
-      let k = knowledge(read, solved, minitel);
+      let k = knowledge(read, solved, minitel, choices);
       searchMinitel(k, minitel);
-      k = knowledge(read, solved, minitel);
+      k = knowledge(read, solved, minitel, choices);
       blanks.forEach((b) => {
         if (!k[b.type].has(b.answer)) err("article, blanc " + b.id, "« " + b.answer + " » n'est pas trouvable par le chemin de référence");
         if (k[b.type].size < 2) warn("article, blanc " + b.id, "un seul mot possible : le blanc est gratuit");
       });
-      console.log("  Chemin de référence : " + cs.referencePath.length + " pistes sur " + cs.totalLeads + " accordées.");
+      const free = cs.referencePath.length - nPaid;
+      console.log("  Chemin de référence : " + nPaid + " pistes sur " + cs.totalLeads + " accordées" + (free ? " (+ " + free + " gratuite" + (free > 1 ? "s" : "") + ")" : "") + ".");
     }
-    const start = knowledge(new Set(), new Set(), new Set());
+    const start = knowledge(new Set(), new Set(), new Set(), {});
     start.a.forEach((a) => warn("mot d'action " + a, "disponible dès le départ"));
     actions.forEach((a, id) => all.k.a.has(id) || err("mot d'action " + id, "jamais débloqué"));
     console.log("  " + start.l.size + " lieu(x) connu(s) au départ sur " + cs.locations.length + ", " + all.read.size + "/" + cs.clues.length + " pistes atteignables.");

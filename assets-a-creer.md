@@ -305,3 +305,76 @@ Toutes **raccordables** (tileable) : le bord droit continue le bord gauche, le h
 | **Total** | | **127** (68 sons, 59 images, dont l'icône provisoire déjà fournie) |
 
 Pour vérifier qu'un fichier est bien pris en compte : ouvrez le jeu, allez à l'endroit où il doit apparaître ou se faire entendre, et rechargez la page si besoin (Ctrl + F5).
+
+---
+
+# Partie 3 : Nyons, « Le noyé de l'Ouvèze » (ajoutée le 21 octobre 2026)
+
+Mêmes consignes que pour Saint-Étienne. Nyons réutilise tous les sons d'interface, d'outils et de puzzles, et les musiques de fin. Aucun de ces fichiers ne bloque le jeu s'il manque.
+
+## 3.1 Sons nouveaux (`audio/ambiances/`) : 18 fichiers
+
+| Fichier | Contenu |
+| --- | --- |
+| `cigales.mp3` | Des cigales en plein après-midi, régulières, sans oiseaux. Se superpose aux autres ambiances le jour, comme la pluie à Saint-Étienne, et se tait le soir. **Priorité.** |
+| `saules-nuit.mp3` | Une rivière basse sur des galets, des grillons, une chouette. Pas de cigales. Pour la nuit de la poursuite. |
+| `agence-dromois.mp3` | Une petite agence de journal : un ventilateur, un fax au loin, la rue par la fenêtre ouverte. |
+| `gendarmerie-nyons.mp3` | Un bureau de brigade : une machine à écrire, une radio de service qui grésille. |
+| `arcades.mp3` | Une terrasse de café sous des arcades : tasses, conversations en provençal mêlé de français, un scooter qui passe. |
+| `cabinet-sauvan.mp3` | Une salle d'attente l'été : une pendule, des volets mi-clos, un enfant qui s'impatiente. |
+| `pharmacie.mp3` | Une pharmacie de village : le carillon de la porte, un tiroir qu'on ferme. |
+| `hotel-place.mp3` | Un hall d'hôtel modeste : une sonnette de comptoir, un ventilateur de plafond. |
+| `maison-garcin.mp3` | Une maison fraîche aux volets fermés : une horloge, des cigales étouffées dehors. |
+| `pension-forts.mp3` | Une pension de vieilles pierres : un couloir, une radio très bas, des pas lents. |
+| `moulin.mp3` | Un moulin arrêté : l'eau qui court sous le plancher, des poutres qui craquent. |
+| `canal.mp3` | Un canal d'irrigation : un courant régulier, une vanne qui grince, des moustiques. |
+| `pont-roman.mp3` | Sous un pont de pierre : l'Eygues, l'écho, des martinets. |
+| `boulodrome.mp3` | Un concours de boules : le choc des boules, des exclamations, des cigales. |
+| `camping-municipal.mp3` | Un camping de saisonniers : une radio, des voix, une douche qui coule. |
+| `ferme-tardieu.mp3` | Une ferme dans les vergers : un tracteur au loin, des poules, un chien. |
+| `camping-saules.mp3` | Un camping détruit en plein jour : le vent dans les saules, la rivière, rien d'autre. |
+| `memorial.mp3` | Une place au bord de l'eau : une fontaine, des cloches au loin. |
+
+## 3.2 Portraits (`img/portraits/`) : 17 fichiers
+
+Même prompt de base, avec **juin 1994** et une lumière d'été (chemise ouverte, peau hâlée chez ceux qui travaillent dehors). Les âges et les détails viennent des textes quand ils y sont ; le reste est une proposition.
+
+| Fichier | Personnage | Ce qu'il faut voir |
+| --- | --- | --- |
+| `garcin.jpg` | Jacques Garcin, en 1992 | **Le même homme que Royer, deux ans plus tôt.** 48 ans, moustache épaisse, cheveux bruns, front haut, yeux enfoncés, nez cassé de travers, fossette au menton. Sourire d'accueil de gérant de camping. Une photo de 1991, plus nette que les autres. |
+| `royer.jpg` | Lucien Royer | Garcin vingt mois plus tard : cheveux gris coupés court, rasé de près, une coupure de rasoir à la joue, très bronzé, amaigri. Casquette à la main. Ne regarde pas l'objectif. |
+| `helene.jpg` | Hélène Garcin | 45 ans, blonde, tailleur clair, très droite, maquillage discret. Un visage fermé et poli. |
+| `chabert.jpg` | Aimé Chabert | 63 ans, meunier, grand, chemise à carreaux, mains hors champ. Une photo prise avant sa mort (le portrait sert dans le carnet). |
+| `firmin.jpg` | Firmin Achard | Un vieil homme de 71 ans, chapeau de feutre, gilet, col de chemise boutonné sans cravate. **Sa tenue a quarante ans de retard,** sans que ce soit un costume. Le regard très clair. |
+| `sandrine.jpg` | Sandrine Mollet | 24 ans, saisonnière de Roanne, cheveux attachés, débardeur, le visage brûlé de soleil. Colère contenue. |
+| `montagne.jpg` | Adjudant-chef Montagne | 50 ans, uniforme d'été de la gendarmerie, moustache taillée au millimètre, l'air d'un homme qui a déjà classé l'affaire. |
+| `sauvan.jpg` | Dr Anne Sauvan | 32 ans, cheveux attachés avec un crayon, chemisier, le regard de quelqu'un qui doute. |
+| `gaston.jpg` | Gaston Rey | 65 ans, cantonnier, casquette, chemise de travail ouverte, grosse moustache blanche. |
+| `fredo.jpg` | Fredo | 30 ans, serveur, tablier, cheveux gominés, torchon sur l'épaule. |
+| `josiane.jpg` | Josiane Pellegrin | 70 ans, femme de ménage du meunier, tablier à fleurs, les yeux rouges. |
+| `isnard.jpg` | Norbert Isnard | 70 ans, aiguadier, chapeau de paille, visage tanné. |
+| `tardieu.jpg` | Raoul Tardieu | 60 ans, arboriculteur, maillot de corps, épaules larges, méfiant. |
+| `gisele.jpg` | Gisèle Arnaud | 60 ans, correspondante locale depuis vingt-deux ans, l'air affable d'une femme qui connaît tout le monde. |
+| `vasseur.jpg` | Jean-Claude Vasseur | 45 ans, inspecteur d'assurance, costume gris trop chaud pour juin, cravate desserrée. |
+| `rosa.jpg` | Rosa Bérenger | 68 ans, Italienne de naissance, veuve de la crue, robe noire, très digne. |
+| `roux.jpg` | La pharmacienne Roux | 50 ans, blouse amidonnée, lunettes au bout d'une chaîne. |
+
+## 3.3 Photos des lieux (`img/lieux/`) : 16 fichiers
+
+Même style que celles de Saint-Étienne, en **lumière d'été dure**, ombres courtes. Noms : `agence.jpg`, `gendarmerie.jpg`, `arcades.jpg`, `cabinet_sauvan.jpg`, `pharmacie.jpg`, `hotel.jpg`, `maison_garcin.jpg`, `pension.jpg`, `moulin.jpg`, `canal.jpg`, `pont.jpg`, `boulodrome.jpg`, `camping_municipal.jpg`, `ferme_tardieu.jpg`, `camping_saules.jpg` (un camping détruit par une crue, souches et dalles nues), `memorial.jpg` (une stèle avec une liste de noms). Les noms gardent ici le tiret bas : ce sont les identifiants des lieux.
+
+## 3.4 Pièces du dossier (`img/pieces/`) : 16 fichiers
+
+`lettre_anonyme.jpg` (feuille de cahier à petits carreaux, écriture ronde, taches de jus de cerise), `photo_concours.jpg` (page de journal, photo de groupe de boulistes, un visage à demi caché), `coupure_1992.jpg`, `lettre_chabert.jpg` (un fax), `cles_moulin.jpg`, `lampe.jpg`, `pv.jpg`, `analyse.jpg`, `assurance.jpg`, `mandats.jpg` (talons de mandats « L. Royer, poste restante, Buis »), `carnet_firmin.jpg` (carnet de cuir usé, **une salamandre gravée sur la couverture**), `brouillon.jpg`, `feuille_concours.jpg`, `carte_thierry.jpg`, `boules.jpg` (boules lyonnaises gravées J.G.), `photo_famille.jpg` (famille devant un panneau « Camping des Saules », pliée en quatre).
+
+Le portrait-robot et le témoignage de Karim n'ont pas besoin d'image : le jeu dessine le portrait.
+
+## Récapitulatif Nyons
+
+| Famille | Nombre |
+| --- | --- |
+| Ambiances | 18 |
+| Portraits | 17 |
+| Photos des lieux | 16 |
+| Pièces du dossier | 16 |
+| **Total** | **67** |

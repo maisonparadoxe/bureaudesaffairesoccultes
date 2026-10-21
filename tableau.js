@@ -26,6 +26,8 @@
     return marks[id];
   }
 
+  const t = (window.BAOLang && window.BAOLang.t) || ((s, v) => (v ? s.replace("{texte}", v.texte) : s));
+
   function build(area, pz, opts) {
     const o = Object.assign({ id: "grille", play() {}, onSolved() {}, onWrong() {} }, opts);
     const st = stateFor(o.id, pz);
@@ -35,13 +37,13 @@
     const decl = document.createElement("div");
     decl.className = "tab-section";
     decl.innerHTML =
-      '<p class="tab-title">Les déclarations</p>' +
+      '<p class="tab-title">' + t("Les déclarations") + "</p>" +
       pz.temoins
-        .map((t) => {
-          const dits = pz.declarations.filter((d) => d.qui === t.id);
+        .map((w) => {
+          const dits = pz.declarations.filter((d) => d.qui === w.id);
           return (
-            '<div class="tab-temoin"><p class="tab-temoin-nom">' + esc(t.nom) + (t.role ? ' <span class="tab-role">' + esc(t.role) + "</span>" : "") + "</p>" +
-            dits.map((d) => '<p class="tab-quote">« ' + esc(d.texte) + " »</p>").join("") +
+            '<div class="tab-temoin"><p class="tab-temoin-nom">' + esc(w.nom) + (w.role ? ' <span class="tab-role">' + esc(w.role) + "</span>" : "") + "</p>" +
+            dits.map((d) => '<p class="tab-quote">' + t("« {texte} »", { texte: esc(d.texte) }) + "</p>").join("") +
             "</div>"
           );
         })
@@ -53,7 +55,7 @@
       const ind = document.createElement("div");
       ind.className = "tab-section tab-indices";
       ind.innerHTML =
-        '<p class="tab-title">Ce qui est sûr</p><ol>' +
+        '<p class="tab-title">' + t("Ce qui est sûr") + "</p><ol>" +
         pz.indices.map((i) => "<li>" + (i.source ? "<strong>" + esc(i.source) + " :</strong> " : "") + esc(i.texte) + "</li>").join("") +
         "</ol>";
       area.appendChild(ind);
@@ -84,27 +86,27 @@
       cat.valeurs.forEach((v) => (head += '<th scope="col"><span>' + esc(v.court || v.nom) + "</span></th>"));
       table.innerHTML = head + "</tr></thead>";
       const body = document.createElement("tbody");
-      pz.temoins.forEach((t) => {
+      pz.temoins.forEach((w) => {
         const tr = document.createElement("tr");
-        tr.innerHTML = '<th scope="row">' + esc(nom(t)) + "</th>";
+        tr.innerHTML = '<th scope="row">' + esc(nom(w)) + "</th>";
         cat.valeurs.forEach((v) => {
           const td = document.createElement("td");
           const b = document.createElement("button");
           // "auto" : croix posée par un rond, recalculée quand les ronds changent
-          const m = g[t.id][v.id] || "";
+          const m = g[w.id][v.id] || "";
           const croix = m === "non" || m === "auto";
           b.className = "tab-cell" + (m === "oui" ? " tab-oui" : croix ? " tab-non" : "");
           b.textContent = m === "oui" ? "●" : croix ? "✕" : "";
-          b.setAttribute("aria-label", nom(t) + ", " + v.nom + " : " + (m === "oui" ? "oui" : croix ? "non" : "vide"));
+          b.setAttribute("aria-label", nom(w) + ", " + v.nom + " : " + (m === "oui" ? t("oui") : croix ? t("non") : t("vide")));
           b.addEventListener("click", () => {
             const next = m === "" ? "non" : croix ? "oui" : "";
             if (next === "oui") {
               // un nouveau rond remplace un ancien rond de sa ligne ou de sa colonne
-              cat.valeurs.forEach((w) => g[t.id][w.id] === "oui" && delete g[t.id][w.id]);
+              cat.valeurs.forEach((x) => g[w.id][x.id] === "oui" && delete g[w.id][x.id]);
               pz.temoins.forEach((u) => g[u.id][v.id] === "oui" && delete g[u.id][v.id]);
             }
-            if (next) g[t.id][v.id] = next;
-            else delete g[t.id][v.id];
+            if (next) g[w.id][v.id] = next;
+            else delete g[w.id][v.id];
             autoCroix(cat, g);
             o.play(next === "non" ? "interface/rature" : "interface/crayon-note");
             say("");
@@ -126,7 +128,7 @@
 
     const reset = document.createElement("button");
     reset.className = "tab-reset";
-    reset.textContent = "Effacer le brouillon";
+    reset.textContent = t("Effacer le brouillon");
     reset.addEventListener("click", () => {
       Object.keys(st.grids).forEach((c) => Object.keys(st.grids[c]).forEach((t) => (st.grids[c][t] = {})));
       o.play("interface/rature");
@@ -147,7 +149,7 @@
     area.appendChild(questions);
 
     const drawQuestions = () => {
-      questions.innerHTML = '<p class="tab-title">Les questions de Paul</p>';
+      questions.innerHTML = '<p class="tab-title">' + t("Les questions de Paul") + "</p>";
       pz.questions.forEach((q) => {
         const p = document.createElement("p");
         p.className = "tab-question";
@@ -175,7 +177,7 @@
 
     const submit = document.createElement("button");
     submit.className = "tab-submit";
-    submit.textContent = "Répondre à Paul";
+    submit.textContent = t("Répondre à Paul");
     area.appendChild(submit);
 
     const feedback = document.createElement("p");
@@ -188,7 +190,7 @@
     submit.addEventListener("click", () => {
       const vides = pz.questions.filter((q) => !st.reponses[q.id]);
       if (vides.length) {
-        say(vides.length === pz.questions.length ? "Paul attend vos réponses." : "Paul attend une réponse à chaque question.");
+        say(vides.length === pz.questions.length ? t("Paul attend vos réponses.") : t("Paul attend une réponse à chaque question."));
         return;
       }
       if (pz.questions.every((q) => st.reponses[q.id] === q.reponse)) {
@@ -197,7 +199,7 @@
         o.onSolved();
       } else {
         o.play("interface/rature");
-        say(pz.erreur || "« Admettons. » Paul n'est pas convaincu. Quelque chose ne tient pas.");
+        say(pz.erreur || t("« Admettons. » Paul n'est pas convaincu. Quelque chose ne tient pas."));
         o.onWrong();
       }
     });

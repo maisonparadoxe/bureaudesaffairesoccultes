@@ -157,7 +157,7 @@ cas = dict(
     complements={q: dict(right=a, wrong=b) for q, (a, b) in T["FINS_COMPLEMENTS"].items()},
     epilogue=T["EPILOGUE"],
     weather="pluie",
-    calendar=dict(days=["Vendredi 19 novembre", "Lundi 22 novembre", "Mardi 23 novembre", "Mercredi 24 novembre"],
+    calendar=dict(days=["Vendredi 19 novembre", "Samedi 20 novembre", "Lundi 22 novembre", "Mardi 23 novembre", "Mercredi 24 novembre"],
                   slots=["9 h", "11 h", "14 h", "16 h"], deadline="Jeudi 25 novembre, 18 h : bouclage",
                   rain=[0, 1, 10, 11, 16]),  # créneaux (pistes déjà lues) où il pleut
     solution=T["SOLUTION"],

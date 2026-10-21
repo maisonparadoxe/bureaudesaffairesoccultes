@@ -162,6 +162,39 @@
 .tab-reset { border-style: dashed; color: var(--ink-soft); margin: 0 0 18px; font-size: 11.5px; padding: 6px 10px; }
 .tab-submit { background: var(--ink); color: var(--paper); border-color: var(--ink); }
 .tab-submit:hover { background: var(--stamp-red); border-color: var(--stamp-red); }
+/* Le portrait-robot (portrait.js) */
+.portrait-temoins { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px 20px; margin: 0 0 16px; }
+.portrait-temoin { padding-left: 10px; border-left: 3px solid var(--c-person-soft); }
+.portrait-atelier { display: flex; flex-wrap: wrap; gap: 18px; align-items: flex-start; margin: 0 0 14px; }
+.portrait-visage, .portrait-fini { flex: 0 0 180px; }
+.portrait-svg { display: block; width: 180px; height: 225px; border: 1px solid var(--ink-soft); box-shadow: 2px 3px 0 rgba(0, 0, 0, 0.08); background: #F4F0E6; }
+.portrait-fini { margin: 0 0 12px; }
+.portrait-calques { flex: 1 1 260px; }
+.portrait-trait { margin: 0 0 10px; }
+.portrait-trait-nom { margin: 0 0 4px; font-family: var(--font-display); font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; }
+
+/* La poursuite : un choix en temps limité */
+.poursuite-depart, .poursuite-btn {
+  font-family: var(--font-mono); font-size: 13px; padding: 10px 14px; border-radius: 3px; cursor: pointer;
+  background: var(--ink); color: var(--paper); border: 1px solid var(--ink);
+}
+.poursuite-depart:hover, .poursuite-btn:hover { background: var(--stamp-red); border-color: var(--stamp-red); }
+.poursuite-temps { height: 6px; background: var(--paper-dark); margin: 4px 0 14px; overflow: hidden; border-radius: 3px; }
+.poursuite-temps span { display: block; height: 100%; width: 100%; background: var(--stamp-red); transform-origin: left; animation: poursuite-temps linear forwards; }
+@keyframes poursuite-temps { from { transform: scaleX(1); } to { transform: scaleX(0); } }
+.poursuite-choix { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; }
+.poursuite-choisi { font-family: var(--font-mono); font-size: 12px; color: var(--stamp-red); text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 8px; }
+
+/* Une piste perdue (quelqu'un a quitté la ville) */
+.disc-perdu { color: var(--stamp-red); }
+/* Encadré de la une : ce que l'équipe a fait parler d'elle */
+.une-body .une-encadre { border: 1px solid var(--ink); padding: 8px 10px; break-inside: avoid; }
+.une-body .une-encadre::first-letter { float: none !important; font-size: inherit !important; padding: 0 !important; }
+
+/* Plein été : la lumière est plus dure et plus chaude */
+body[data-meteo="soleil"][data-moment="matinee"]::after { background: rgba(255, 214, 140, 0.05); }
+body[data-meteo="soleil"][data-moment="apres-midi"]::after { background: rgba(240, 180, 80, 0.1); }
+
 @media (max-width: 760px) {
   .tab-grids { flex-direction: column; }
   .tab-cell { min-width: 44px; height: 44px; line-height: 44px; }
@@ -1039,3 +1072,29 @@ body.menu-mode #pluie { z-index: 3; }
   .copie { padding: 16px 14px 6px; }
   .copie-par { font-size: 15.5px; line-height: 2.2; padding-left: 8px; }
 }
+
+/* ---------- Choix de la langue ---------- */
+.langue { display: inline-flex; gap: 0; border-radius: 3px; overflow: hidden; }
+.langue-btn {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border: 1px solid currentColor;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+.langue-btn + .langue-btn { border-left: none; }
+.langue-btn.active { cursor: default; }
+.menu-langue { color: #C9B98F; }
+.menu-langue .langue-btn.active { background: #C9B98F; color: #1E1B16; }
+.menu-langue .langue-btn:not(.active):hover, .menu-langue .langue-btn:focus-visible { color: #F1E8D0; outline: none; }
+.options-langue { justify-self: start; color: var(--ink); }
+.options-langue .langue-btn.active { background: var(--ink); color: var(--paper-dark); }
+.options-langue .langue-btn:not(.active):hover { color: var(--stamp-red); }
+
+/* Textes posés par la feuille de style, en anglais */
+:lang(en) .typing-active .clue-text::after, :lang(en) .memo.typing-active::after { content: "Click to show everything"; }
+:lang(en) .carnet-entry-n.fresh::after { content: " · new"; }

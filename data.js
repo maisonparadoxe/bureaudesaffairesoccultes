@@ -13,7 +13,7 @@ window.GAME_DATA_FALLBACK = {
           "title": "Le feu de Ferréol",
           "subtitle": "Une enquête du Bureau des affaires occultes",
           "year": 1993,
-          "totalLeads": 16,
+          "totalLeads": 20,
           "referenceLeads": 12,
           "penaltyPerExtraLead": 2,
           "referencePath": [
@@ -51,7 +51,7 @@ window.GAME_DATA_FALLBACK = {
               "label": "La légende"
             }
           ],
-          "briefing": "Menez des entretiens et des investigations. Chaque piste lue pour la première fois coûte une heure avant le bouclage, et vous n'en avez que 16 ; relire est gratuit. Un lieu n'apparaît sur le plan qu'une fois qu'on vous en a parlé. Certaines adresses se cherchent au Minitel. Certaines personnes ne parlent que si vous revenez avec la bonne pièce. Quand vous serez prêts, remplissez le questionnaire : votre article en dépend.",
+          "briefing": "Menez des entretiens et des investigations. Chaque piste lue pour la première fois coûte une heure avant le bouclage, et vous n'en avez que 20 ; relire est gratuit. Un lieu n'apparaît sur le plan qu'une fois qu'on vous en a parlé. Certaines adresses se cherchent au Minitel. Certaines personnes ne parlent que si vous revenez avec la bonne pièce. Quand vous serez prêts, remplissez le questionnaire : votre article en dépend.",
           "quartiers": [
             {
               "id": "centre",
@@ -2177,6 +2177,7 @@ window.GAME_DATA_FALLBACK = {
           "calendar": {
             "days": [
               "Vendredi 19 novembre",
+              "Samedi 20 novembre",
               "Lundi 22 novembre",
               "Mardi 23 novembre",
               "Mercredi 24 novembre"
@@ -2275,8 +2276,2537 @@ window.GAME_DATA_FALLBACK = {
     {
       "id": "nyons",
       "name": "Nyons",
-      "status": "coming_soon",
-      "cases": []
+      "status": "available",
+      "cases": [
+        {
+          "id": "noye_ouveze",
+          "title": "Le noyé de l'Ouvèze",
+          "subtitle": "Une enquête du Bureau des affaires occultes",
+          "year": 1994,
+          "totalLeads": 20,
+          "referenceLeads": 13,
+          "penaltyPerExtraLead": 2,
+          "referencePath": [
+            "dossier",
+            "confrontation",
+            "tardieu",
+            "poursuite",
+            "portrait",
+            "royer2",
+            "royer3",
+            "isnard",
+            "sauvan",
+            "helene",
+            "lettre_chabert",
+            "maison",
+            "odile",
+            "sandrine2"
+          ],
+          "journal": "Le Drômois",
+          "dateUne": "Samedi 25 juin 1994",
+          "priceUne": "4,80 F",
+          "localite": "NYONS (26)",
+          "intro": "Jeudi 16 juin 1994, quatrième étage du siège, à Lyon. Il fait déjà trente degrés à dix heures, et le ventilateur d'Odile brasse du papier.\n\nLa lettre est arrivée au courrier du matin. Une feuille de cahier à petits carreaux, une écriture d'écolière, ronde, appliquée. Pliée dedans, une page du Drômois du 2 juin. Dans un coin de la page, des taches rouge sombre, comme du jus. Cachet de la poste : Nyons, mardi 14.\n\n{{d:lettre_anonyme|« Monsieur le journaliste des Affaires occultes. Vous écrivez sur les fantômes, alors venez à Nyons. Regardez la photo. L'homme de droite, c'est Jacques Garcin. Il s'est noyé dans l'Ouvèze le 22 septembre 1992, son nom est sur la plaque à Vaison. Maintenant il joue aux boules. Ici tout le monde le dit : la rivière rend ses morts. Le meunier Chabert a juré qu'il l'avait vu emporter. Le meunier a menti. Demandez-lui pourquoi. »}}\n\nLa page, c'est {{d:photo_concours|la photo des vainqueurs du Grand Prix de la Digue}}, au {{l:boulodrome|boulodrome de Nyons}}. Deux hommes en maillot de corps, une coupe entre eux. La légende dit {{p:tardieu|Raoul Tardieu}} et {{p:royer|Lucien Royer}}. Royer a tourné la tête au moment du flash. On voit une oreille, une joue, une casquette.\n\nÀ onze heures, Odile remonte avec un fax de l'agence de Valence. Une brève du Drômois du matin. « Nyons : le meunier noyé dans le canal. » {{p:chabert|Aimé Chabert}}, 63 ans, propriétaire du {{l:moulin|moulin à huile}} du quartier du Pont roman, a été retrouvé à l'aube contre la grille du canal. Les {{l:gendarmerie|gendarmes}} concluent à un accident. Dernière ligne : « Aimé Chabert avait été, en 1992, le témoin de la mort héroïque de {{p:garcin|Jacques Garcin}}, emporté par la crue de l'Ouvèze en portant secours à des campeurs. {{p:helene|Sa veuve, Hélène}}, vit à Nyons. »\n\nKarim a lu la lettre trois fois. « Elle a écrit mardi. Il est mort mercredi soir. »\n\nJean-Loup Sarrazin passe la tête par la porte. « Une rivière qui rend ses morts. C'est l'été, les gens veulent frissonner à la plage. Vous partez ce soir. » Paul plie la page du journal en deux, sans quitter la photo des yeux. « Admettons. »\n\nTrois heures d'autoroute, puis la route de la vallée de l'Eygues. Il fait nuit quand vous arrivez. Les fenêtres de la voiture sont ouvertes, ça sent le tilleul et la lavande coupée, et les cigales n'ont pas encore compris que le soleil est couché. L'{{l:agence|agence du Drômois}}, avenue Henri-Rochier, est une ancienne mercerie. Le rideau de fer est à moitié baissé. Un ventilateur tourne au plafond, et sur le bureau qu'on vous a laissé, quelqu'un a posé une corbeille d'abricots.",
+          "briefing": "Chaque piste lue pour la première fois coûte un quart de journée avant le bouclage de jeudi, et vous en avez 20 ; relire est gratuit. Le calendrier compte, cette fois : certaines pistes n'apparaissent qu'à partir d'un certain jour, d'autres disparaissent si vous tardez, car les gens partent et les choses se perdent. Certaines personnes ne parlent que si vous revenez avec la bonne pièce, ou avec la bonne tête. Quand vous serez prêts, écrivez votre article.",
+          "introNotes": [
+            {
+              "about": "p:chabert",
+              "text": "Retrouvé noyé le jeudi 16 juin à l'aube, contre la grille du canal du Moulin. Les gendarmes concluent à un accident.",
+              "label": "Version officielle",
+              "struckBy": [
+                "sauvan",
+                "labo",
+                "isnard"
+              ]
+            },
+            {
+              "about": "p:garcin",
+              "text": "Mort le 22 septembre 1992 dans la crue de l'Ouvèze, en portant secours à des campeurs. Le meunier Chabert l'a vu emporter.",
+              "label": "Version officielle",
+              "struckBy": [
+                "royer3",
+                "cabanon"
+              ]
+            },
+            {
+              "about": "p:royer",
+              "text": "Vainqueur du Grand Prix de la Digue avec Raoul Tardieu. Selon la lettre anonyme, ce serait Jacques Garcin."
+            },
+            {
+              "about": "d:lettre_anonyme",
+              "text": "Postée à Nyons le mardi 14 juin, la veille de la mort du meunier. Écriture ronde, papier à carreaux. Des taches rouges, comme du jus, sur la page jointe."
+            }
+          ],
+          "quartiers": [
+            {
+              "id": "vieille_ville",
+              "name": "Les Forts",
+              "shape": "M300,40 L430,30 L580,44 L600,110 L586,178 L450,190 L310,182 L296,110 Z",
+              "label": {
+                "x": 520,
+                "y": 62,
+                "angle": 0
+              }
+            },
+            {
+              "id": "centre",
+              "name": "Centre",
+              "shape": "M262,196 L440,206 L600,192 L612,280 L598,350 L440,362 L276,352 L252,280 Z",
+              "label": {
+                "x": 540,
+                "y": 222,
+                "angle": 0
+              }
+            },
+            {
+              "id": "pont_roman",
+              "name": "Le Pont roman",
+              "shape": "M624,150 L740,140 L768,250 L762,360 L736,470 L640,476 L618,380 L624,270 Z",
+              "label": {
+                "x": 692,
+                "y": 168,
+                "angle": 0
+              }
+            },
+            {
+              "id": "digue",
+              "name": "La Digue",
+              "shape": "M150,370 L300,366 L470,374 L610,372 L620,470 L470,478 L300,474 L140,466 Z",
+              "label": {
+                "x": 230,
+                "y": 392,
+                "angle": 0
+              }
+            },
+            {
+              "id": "les_pilles",
+              "name": "Les Pilles",
+              "shape": "M788,40 L870,36 L874,564 L792,568 L780,300 Z",
+              "label": {
+                "x": 832,
+                "y": 300,
+                "angle": -90
+              },
+              "outside": true
+            },
+            {
+              "id": "vaison",
+              "name": "Vaison-la-Romaine",
+              "shape": "M40,500 L300,496 L560,504 L566,566 L300,572 L36,566 Z",
+              "label": {
+                "x": 440,
+                "y": 540,
+                "angle": 0
+              },
+              "outside": true
+            }
+          ],
+          "locations": [
+            {
+              "id": "agence",
+              "name": "Agence du Drômois",
+              "quartier": "centre",
+              "address": "Avenue Henri-Rochier",
+              "map": {
+                "x": 318,
+                "y": 236
+              },
+              "ambience": "agence-dromois",
+              "alwaysRevealed": true,
+              "short": "Agence",
+              "inArticle": "à l'agence du Drômois"
+            },
+            {
+              "id": "gendarmerie",
+              "name": "Brigade de gendarmerie",
+              "quartier": "centre",
+              "address": "Promenade de la Digue",
+              "map": {
+                "x": 300,
+                "y": 318
+              },
+              "ambience": "gendarmerie-nyons",
+              "short": "Gendarmerie",
+              "inArticle": "à la gendarmerie"
+            },
+            {
+              "id": "arcades",
+              "name": "Café des Arcades",
+              "quartier": "centre",
+              "address": "Place des Arcades",
+              "map": {
+                "x": 440,
+                "y": 262
+              },
+              "ambience": "arcades",
+              "short": "Les Arcades",
+              "inArticle": "au café des Arcades"
+            },
+            {
+              "id": "cabinet_sauvan",
+              "name": "Cabinet du Dr Sauvan",
+              "quartier": "centre",
+              "address": "Rue de la Résistance",
+              "map": {
+                "x": 540,
+                "y": 252
+              },
+              "ambience": "cabinet-sauvan",
+              "short": "Dr Sauvan",
+              "inArticle": "au cabinet du Dr Sauvan"
+            },
+            {
+              "id": "pharmacie",
+              "name": "Pharmacie du Pont",
+              "quartier": "centre",
+              "address": "Place du Pont",
+              "map": {
+                "x": 560,
+                "y": 318
+              },
+              "ambience": "pharmacie",
+              "short": "Pharmacie",
+              "inArticle": "à la pharmacie du Pont"
+            },
+            {
+              "id": "hotel",
+              "name": "Hôtel de la Place",
+              "quartier": "centre",
+              "address": "Place des Arcades",
+              "map": {
+                "x": 420,
+                "y": 330
+              },
+              "ambience": "hotel-place",
+              "short": "Hôtel",
+              "inArticle": "à l'hôtel de la Place"
+            },
+            {
+              "id": "maison_garcin",
+              "name": "Maison d'Hélène Garcin",
+              "quartier": "vieille_ville",
+              "address": "Rue des Grands-Forts",
+              "map": {
+                "x": 380,
+                "y": 112
+              },
+              "ambience": "maison-garcin",
+              "short": "Maison Garcin",
+              "inArticle": "chez Hélène Garcin"
+            },
+            {
+              "id": "pension",
+              "name": "Pension des Forts",
+              "quartier": "vieille_ville",
+              "address": "Montée des Forts",
+              "map": {
+                "x": 500,
+                "y": 132
+              },
+              "ambience": "pension-forts",
+              "short": "Pension",
+              "inArticle": "à la pension des Forts"
+            },
+            {
+              "id": "moulin",
+              "name": "Moulin Chabert",
+              "quartier": "pont_roman",
+              "address": "Quartier du Pont roman",
+              "map": {
+                "x": 668,
+                "y": 330
+              },
+              "ambience": "moulin",
+              "short": "Moulin",
+              "inArticle": "au moulin Chabert"
+            },
+            {
+              "id": "canal",
+              "name": "Le canal du Moulin",
+              "quartier": "pont_roman",
+              "address": "Chemin du canal",
+              "map": {
+                "x": 716,
+                "y": 262
+              },
+              "ambience": "canal",
+              "short": "Canal",
+              "inArticle": "au bord du canal"
+            },
+            {
+              "id": "pont",
+              "name": "Le Pont roman",
+              "quartier": "pont_roman",
+              "address": "Pont roman sur l'Eygues",
+              "map": {
+                "x": 690,
+                "y": 430
+              },
+              "ambience": "pont-roman",
+              "short": "Pont roman",
+              "inArticle": "sur le pont roman"
+            },
+            {
+              "id": "boulodrome",
+              "name": "Boulodrome de la Digue",
+              "quartier": "digue",
+              "address": "Promenade de la Digue",
+              "map": {
+                "x": 460,
+                "y": 420
+              },
+              "ambience": "boulodrome",
+              "short": "Boulodrome",
+              "inArticle": "à la Digue"
+            },
+            {
+              "id": "camping_municipal",
+              "name": "Camping municipal",
+              "quartier": "digue",
+              "address": "Bord de l'Eygues",
+              "map": {
+                "x": 230,
+                "y": 430
+              },
+              "ambience": "camping-municipal",
+              "short": "Camping municipal",
+              "inArticle": "au camping municipal"
+            },
+            {
+              "id": "ferme_tardieu",
+              "name": "Ferme Tardieu",
+              "quartier": "les_pilles",
+              "address": "Route des Pilles, Les Pilles",
+              "map": {
+                "x": 832,
+                "y": 150
+              },
+              "ambience": "ferme-tardieu",
+              "short": "Ferme Tardieu",
+              "inArticle": "à la ferme Tardieu"
+            },
+            {
+              "id": "camping_saules",
+              "name": "Camping des Saules",
+              "quartier": "vaison",
+              "address": "Bord de l'Ouvèze, en amont de Vaison",
+              "map": {
+                "x": 120,
+                "y": 534
+              },
+              "ambience": "camping-saules",
+              "short": "Camping des Saules",
+              "inArticle": "au camping des Saules"
+            },
+            {
+              "id": "memorial",
+              "name": "Mémorial de la crue",
+              "quartier": "vaison",
+              "address": "Près du pont romain, Vaison-la-Romaine",
+              "map": {
+                "x": 300,
+                "y": 534
+              },
+              "ambience": "memorial",
+              "short": "Mémorial",
+              "inArticle": "au mémorial de Vaison"
+            }
+          ],
+          "characters": [
+            {
+              "id": "garcin",
+              "name": "Garcin Jacques",
+              "label": "Jacques Garcin",
+              "role": "Gérant du camping des Saules, disparu dans la crue de 1992",
+              "locationId": "maison_garcin",
+              "alwaysRevealed": true
+            },
+            {
+              "id": "royer",
+              "name": "Royer Lucien",
+              "label": "Lucien Royer",
+              "role": "Ouvrier agricole chez Tardieu, l'homme de la photo",
+              "locationId": "ferme_tardieu",
+              "minitel": true
+            },
+            {
+              "id": "helene",
+              "name": "Garcin Hélène",
+              "label": "Hélène Garcin",
+              "role": "Veuve de Jacques Garcin",
+              "locationId": "maison_garcin"
+            },
+            {
+              "id": "chabert",
+              "name": "Chabert Aimé",
+              "label": "Aimé Chabert",
+              "role": "Meunier à Nyons (la victime)",
+              "locationId": "moulin"
+            },
+            {
+              "id": "firmin",
+              "name": "Achard Firmin",
+              "label": "Firmin Achard",
+              "role": "Joueur de boules, à la pension des Forts",
+              "locationId": "pension"
+            },
+            {
+              "id": "sandrine",
+              "name": "Mollet Sandrine",
+              "label": "Sandrine Mollet",
+              "role": "Saisonnière aux cerises",
+              "locationId": "camping_municipal"
+            },
+            {
+              "id": "montagne",
+              "name": "Montagne (adjudant-chef)",
+              "label": "L'adjudant-chef Montagne",
+              "role": "Commandant de la brigade de gendarmerie",
+              "locationId": "gendarmerie"
+            },
+            {
+              "id": "sauvan",
+              "name": "Sauvan Anne (Dr)",
+              "label": "Dr Anne Sauvan",
+              "role": "Médecin, a constaté le décès",
+              "locationId": "cabinet_sauvan",
+              "minitel": true
+            },
+            {
+              "id": "gaston",
+              "name": "Rey Gaston",
+              "label": "Gaston Rey",
+              "role": "Cantonnier, secrétaire de la Boule nyonsaise",
+              "locationId": "boulodrome"
+            },
+            {
+              "id": "fredo",
+              "name": "Fredo",
+              "label": "Fredo",
+              "role": "Serveur au café des Arcades",
+              "locationId": "arcades"
+            },
+            {
+              "id": "josiane",
+              "name": "Pellegrin Josiane",
+              "label": "Josiane Pellegrin",
+              "role": "Femme de ménage du meunier",
+              "locationId": "moulin"
+            },
+            {
+              "id": "isnard",
+              "name": "Isnard Norbert",
+              "label": "Norbert Isnard",
+              "role": "Aiguadier du canal du Moulin",
+              "locationId": "canal"
+            },
+            {
+              "id": "tardieu",
+              "name": "Tardieu Raoul",
+              "label": "Raoul Tardieu",
+              "role": "Arboriculteur aux Pilles",
+              "locationId": "ferme_tardieu",
+              "minitel": true
+            },
+            {
+              "id": "gisele",
+              "name": "Arnaud Gisèle",
+              "label": "Gisèle Arnaud",
+              "role": "Correspondante du Drômois à Nyons",
+              "locationId": "agence"
+            },
+            {
+              "id": "vasseur",
+              "name": "Vasseur Jean-Claude",
+              "label": "Jean-Claude Vasseur",
+              "role": "Inspecteur de la Mutuelle rhodanienne",
+              "locationId": "hotel"
+            },
+            {
+              "id": "rosa",
+              "name": "Bérenger Rosa",
+              "label": "Rosa Bérenger",
+              "role": "Veuve de la crue, à Vaison",
+              "locationId": "memorial"
+            },
+            {
+              "id": "roux",
+              "name": "Roux (pharmacienne)",
+              "label": "Mme Roux",
+              "role": "Pharmacienne, pharmacie du Pont",
+              "locationId": "pharmacie"
+            }
+          ],
+          "documents": [
+            {
+              "id": "lettre_anonyme",
+              "name": "La lettre anonyme"
+            },
+            {
+              "id": "photo_concours",
+              "name": "La photo du Grand Prix de la Digue"
+            },
+            {
+              "id": "coupure_1992",
+              "name": "La photo de Garcin en 1992"
+            },
+            {
+              "id": "lettre_chabert",
+              "name": "La lettre du meunier"
+            },
+            {
+              "id": "cles_moulin",
+              "name": "Les clés du moulin"
+            },
+            {
+              "id": "portrait_robot",
+              "name": "Le portrait-robot"
+            },
+            {
+              "id": "lampe",
+              "name": "La lampe du camping des Saules"
+            },
+            {
+              "id": "pv",
+              "name": "Le procès-verbal des gendarmes"
+            },
+            {
+              "id": "analyse",
+              "name": "L'analyse du laboratoire"
+            },
+            {
+              "id": "assurance",
+              "name": "L'assurance-vie de Jacques Garcin"
+            },
+            {
+              "id": "mandats",
+              "name": "Les mandats à L. Royer"
+            },
+            {
+              "id": "carnet_firmin",
+              "name": "Le carnet de Firmin Achard"
+            },
+            {
+              "id": "brouillon",
+              "name": "Le brouillon du meunier"
+            },
+            {
+              "id": "feuille_concours",
+              "name": "La feuille d'inscription du Grand Prix"
+            },
+            {
+              "id": "carte_thierry",
+              "name": "La carte postale de Thierry"
+            },
+            {
+              "id": "boules",
+              "name": "Les boules gravées J.G."
+            },
+            {
+              "id": "photo_famille",
+              "name": "La photo de famille"
+            },
+            {
+              "id": "temoignage_karim",
+              "name": "Ce que Karim a vu aux Saules"
+            }
+          ],
+          "minitel": [
+            {
+              "keys": [
+                "tardieu"
+              ],
+              "lines": [
+                "TARDIEU Raoul",
+                "Arboriculteur",
+                "Route des Pilles · 26110 LES PILLES",
+                "75 27 41 08"
+              ],
+              "reveals": [
+                "l:ferme_tardieu"
+              ],
+              "about": "p:tardieu"
+            },
+            {
+              "keys": [
+                "sauvan"
+              ],
+              "lines": [
+                "SAUVAN Anne",
+                "Médecin généraliste",
+                "Rue de la Résistance · 26110 NYONS",
+                "75 26 13 40"
+              ],
+              "reveals": [
+                "l:cabinet_sauvan"
+              ],
+              "about": "p:sauvan"
+            },
+            {
+              "keys": [
+                "royer"
+              ],
+              "lines": [
+                "ROYER",
+                "Aucun abonné à ce nom",
+                "dans la Drôme."
+              ],
+              "reveals": []
+            },
+            {
+              "keys": [
+                "garcin"
+              ],
+              "lines": [
+                "GARCIN Hélène",
+                "Rue des Grands-Forts",
+                "26110 NYONS",
+                "75 26 08 77"
+              ],
+              "reveals": [
+                "l:maison_garcin"
+              ],
+              "about": "p:helene"
+            },
+            {
+              "keys": [
+                "chabert"
+              ],
+              "lines": [
+                "CHABERT Aimé",
+                "Moulin à huile",
+                "Quartier du Pont roman · 26110 NYONS",
+                "75 26 02 19"
+              ],
+              "reveals": [
+                "l:moulin"
+              ],
+              "about": "p:chabert"
+            },
+            {
+              "keys": [
+                "achard"
+              ],
+              "lines": [
+                "ACHARD",
+                "Aucun abonné à ce nom",
+                "dans la Drôme."
+              ],
+              "reveals": []
+            },
+            {
+              "keys": [
+                "mollet"
+              ],
+              "lines": [
+                "MOLLET",
+                "Aucun abonné à ce nom dans la Drôme.",
+                "14 abonnés dans la Loire : précisez la localité."
+              ],
+              "reveals": []
+            },
+            {
+              "keys": [
+                "vasseur",
+                "mutuelle"
+              ],
+              "lines": [
+                "MUTUELLE RHODANIENNE",
+                "Agence d'Avignon",
+                "84000 AVIGNON",
+                "90 82 11 60"
+              ],
+              "reveals": []
+            },
+            {
+              "keys": [
+                "berenger"
+              ],
+              "lines": [
+                "BÉRENGER Marius",
+                "Route de Malaucène",
+                "84110 VAISON-LA-ROMAINE",
+                "90 36 04 51"
+              ],
+              "reveals": []
+            },
+            {
+              "keys": [
+                "isnard"
+              ],
+              "lines": [
+                "ISNARD Norbert",
+                "Chemin du canal",
+                "26110 NYONS",
+                "75 26 19 92"
+              ],
+              "reveals": [
+                "l:canal"
+              ],
+              "about": "p:isnard"
+            },
+            {
+              "keys": [
+                "fredo",
+                "gaston",
+                "josiane",
+                "gisele",
+                "rosa",
+                "sandrine",
+                "lucien",
+                "jacques",
+                "helene",
+                "aime",
+                "firmin",
+                "raoul",
+                "norbert",
+                "anne"
+              ],
+              "lines": [
+                "Recherche par prénom impossible.",
+                "Tapez le nom de famille."
+              ],
+              "reveals": []
+            }
+          ],
+          "clues": [
+            {
+              "id": "gisele",
+              "locationId": "agence",
+              "type": "entretien",
+              "button": "Parler à Gisèle Arnaud, la correspondante",
+              "title": "Gisèle Arnaud, correspondante",
+              "text": "{{p:gisele|Gisèle Arnaud}} est la correspondante du Drômois à Nyons depuis vingt-deux ans. Elle couvre les conseils municipaux, les comices, les mariages et les concours de boules. Elle a apporté un cake au citron « pour les Lyonnais » et elle vous regarde le manger.\n\n« La photo, c'est moi. Le dimanche 29 mai, à la Digue. C'est la première fois qu'on me reprend en page régionale. » Elle sourit, puis elle ne sourit plus. « Il a tourné la tête juste quand j'ai déclenché. Je n'ai pas fait exprès, il faut me croire. Je ne savais pas, pour Garcin. »\n\nDepuis le 2 juin, dit-elle, on ne parle que de ça. À Vaison surtout. « Ils ont tous perdu quelqu'un, là-bas. Et maintenant ils voient leurs morts partout. {{p:rosa|Rosa Bérenger}}, une veuve de la crue, jure qu'elle a vu son mari jeudi dernier, au marché, devant le banc du fromager. Elle passe ses journées au {{l:memorial|mémorial}}, près du pont romain de Vaison. Elle dit que la rivière rend ses morts. Les gens commencent à le répéter. »\n\nElle baisse la voix, alors qu'il n'y a personne d'autre dans l'agence. « Et il y a ce vieux monsieur, à la pension des Forts. Il est venu le 2 juin acheter trois exemplaires du journal. Trois. Il m'a demandé à quelle heure exactement j'avais pris la photo. Je lui ai dit vers six heures. Il m'a dit : non, à six heures moins douze, regardez l'ombre du platane. » Elle a vérifié. Il avait raison.\n\n« Il s'appelle {{p:firmin|Achard}}, je crois. Il joue aux boules, mais je ne l'ai jamais vu gagner. »",
+              "facts": [
+                {
+                  "about": "d:photo_concours",
+                  "text": "Prise par Gisèle Arnaud le dimanche 29 mai vers 17 h 48, à la Digue. Royer a tourné la tête au moment du déclenchement."
+                },
+                {
+                  "about": "p:rosa",
+                  "text": "Veuve de la crue de 1992. Dit avoir vu son mari mort au marché de Vaison. « La rivière rend ses morts. »"
+                },
+                {
+                  "about": "p:firmin",
+                  "text": "Vieux joueur de boules, à la pension des Forts. A acheté trois exemplaires du journal du 2 juin et calculé l'heure de la photo à la minute près."
+                }
+              ],
+              "speaker": "gisele"
+            },
+            {
+              "id": "odile",
+              "locationId": "agence",
+              "type": "investigation",
+              "button": "Appeler Odile aux archives du groupe",
+              "title": "Odile et la crue de 1992",
+              "text": "Odile rappelle dans l'heure. Puis le fax de l'agence se met à cracher du papier thermique, qui s'enroule par terre comme une langue.\n\n[[fax]]\n\nPaul pose le doigt sur la photo de Garcin, puis sur celle de Royer, la page du concours. On ne voit rien sur la seconde. Une oreille. Une joue. « Il était moustachu, en 1992. »\n\nKarim, lui, a souligné deux noms dans la liste des victimes, sans savoir pourquoi. « Roanne. C'est à côté de chez nous, Roanne. »",
+              "facts": [
+                {
+                  "about": "p:garcin",
+                  "text": "Gérant du camping des Saules, en amont de Vaison. Né à Givors en 1944. Moustachu sur la photo du journal de 1992.",
+                  "label": "En 1992"
+                },
+                {
+                  "about": "p:chabert",
+                  "text": "« Je l'ai vu partir vers la caravane du fond. L'eau l'a pris. » Le Drômois du 25 septembre 1992.",
+                  "label": "Son témoignage"
+                },
+                {
+                  "about": "d:coupure_1992",
+                  "text": "Le Drômois du 25 septembre 1992 : « Le héros du camping des Saules ». La photo de Garcin, moustache, cheveux bruns."
+                },
+                {
+                  "about": "l:camping_saules",
+                  "text": "Camping de Jacques Garcin au bord de l'Ouvèze, en amont de Vaison. Détruit par la crue du 22 septembre 1992."
+                },
+                {
+                  "about": "l:memorial",
+                  "text": "Parmi les morts de la crue : Thierry Mollet, 26 ans, et Nathalie Brun, 24 ans, de Roanne, retrouvés à Roaix trois jours après.",
+                  "label": "Les victimes"
+                }
+              ],
+              "fax": "GROUPE SARRAZIN · SERVICE DES ARCHIVES · LYON\nÀ : BUREAU DES AFFAIRES OCCULTES, AUX BONS SOINS DU DRÔMOIS, NYONS · 2 PAGES\n\nLE DRÔMOIS, 25 SEPTEMBRE 1992, PAGE 1\nLe héros du camping des Saules. Jacques Garcin, 48 ans, né à Givors, gérant du camping des Saules en amont de Vaison, a été emporté mardi en fin d'après-midi alors qu'il retournait chercher les occupants d'une caravane, au fond du terrain. Son ami Aimé Chabert, meunier à Nyons, venu aider à l'évacuation : « Je l'ai vu partir vers la caravane du fond. L'eau l'a pris. Je n'ai rien pu faire. » Sa voiture a été retrouvée au gué, retournée. Le corps n'a pas été retrouvé. (Photo : J. Garcin à l'accueil du camping, été 1991.)\n\nLE DRÔMOIS, 28 SEPTEMBRE 1992, PAGE 3, LISTE DES VICTIMES (EXTRAIT)\n… Thierry MOLLET, 26 ans, et Nathalie BRUN, 24 ans, de Roanne, en vacances, retrouvés à Roaix …\n\n(À la main, en bas de la page :) Sur la photo de 1991, il a la moustache et les cheveux bruns. Le nez a été cassé, et mal remis. O."
+            },
+            {
+              "id": "lettre_chabert",
+              "locationId": "agence",
+              "type": "investigation",
+              "button": "Lire le fax d'Odile : un courrier pour la rédaction",
+              "title": "La lettre du meunier",
+              "text": "Lundi matin, le {{d:lettre_chabert|fax}} sonne avant que vous ayez fini le café. Odile a écrit en haut de la première page, au feutre : « Arrivé à Valence vendredi, au courrier des lecteurs. Ils l'ont mis de côté. Ils ne savaient pas quoi en faire. Moi, si. »\n\n[[fax]]\n\nPersonne ne dit rien pendant un moment. Le ventilateur tourne. Karim relit la dernière phrase à voix basse.\n\nPaul allume sa cigarette, pour une fois, et la laisse se consumer dans le cendrier sans y toucher.",
+              "facts": [
+                {
+                  "about": "d:lettre_chabert",
+                  "text": "Postée à Valence par Aimé Chabert le mercredi 15 juin, le jour de sa mort. Il avoue avoir menti en 1992 et annonce qu'il parlera aux gendarmes le jeudi."
+                },
+                {
+                  "about": "p:chabert",
+                  "text": "« J'ai menti en 1992. Jacques n'est pas mort. Je le dirai jeudi aux gendarmes. »",
+                  "label": "Sa lettre"
+                },
+                {
+                  "about": "p:helene",
+                  "text": "« Hélène le sait, je le lui ai dit dimanche. » Elle savait que le meunier parlerait le jeudi.",
+                  "label": "Selon Chabert"
+                }
+              ],
+              "fromLead": 8,
+              "free": true,
+              "fax": "AIMÉ CHABERT · MOULIN CHABERT · QUARTIER DU PONT ROMAN · 26110 NYONS\nÀ LA RÉDACTION DU DRÔMOIS, VALENCE · POSTÉE LE 15 JUIN 1994\n\nMessieurs,\n\nVous avez publié le 2 juin la photo d'un homme qui s'appelle Lucien Royer. C'est Jacques Garcin. Il n'est pas mort en 1992. J'ai menti aux gendarmes. Je ne l'ai pas vu emporter. Je l'ai retrouvé vivant, la nuit, dans la colline, et il m'a demandé de dire qu'il était mort. Je l'ai fait. Il n'est pas allé chercher la caravane du fond. Il l'avait oubliée.\n\nJe le dirai jeudi aux gendarmes. Je l'écris aussi au journal, parce que c'est le journal qui a fait de lui un héros, et parce que j'ai peur de ne pas avoir le courage jeudi.\n\nHélène le sait. Je le lui ai dit dimanche. Elle m'a demandé d'attendre. Je n'attendrai plus.\n\nS'il m'arrive quelque chose, ce ne sera pas la rivière.\n\nAimé Chabert",
+              "revealsActions": [
+                "va_tout_dire",
+                "ment"
+              ]
+            },
+            {
+              "id": "confrontation",
+              "locationId": "agence",
+              "type": "entretien",
+              "button": "Faire venir les quatre témoins du mercredi soir",
+              "title": "Le tableau de Karim",
+              "text": "Paul a demandé à Gisèle de vous prêter l'arrière-boutique de l'agence, là où on range les vieux numéros. Une table, quatre chaises, des piles de journaux jaunis jusqu'au plafond. Il les fait venir un par un, à une heure d'intervalle, sans leur dire qui d'autre viendra. Karim écrit tout, mot pour mot, sur un grand bloc à dessin.\n\n{{p:helene|Hélène Garcin}} vient en tailleur clair, son sac sur les genoux, et ne s'assoit pas au fond de la chaise. {{p:royer|Lucien Royer}} vient parce que Tardieu le lui a dit, casquette à la main, et regarde la porte. {{p:firmin|Firmin Achard}} arrive à l'heure exacte, et le fait remarquer. {{p:sandrine|Sandrine Mollet}} vient entre deux journées de cueillette, les doigts rouges, et répond à la table plutôt qu'à Paul.\n\nPaul leur pose à tous la même question : mercredi soir, vers dix heures, où étiez-vous, qu'aviez-vous sur vous, et pourquoi étiez-vous dehors ?\n\nEn partant, Sandrine se retourne vers Karim, pas vers Paul. « L'homme à qui j'ai rendu la boule, à moins vingt, sous le réverbère de la Digue. Je l'avais vu jouer tout l'après-midi, de loin. Les cheveux courts, gris. Le front haut, avec des rides, trois. Une moustache, je crois. Enfin. Je ne sais plus. Je l'ai tellement regardé sur le journal, cet homme-là. Le menton carré. Je ne l'ai pas regardé dans les yeux. »\n\nKarim a recopié les déclarations au propre, à côté de ce que dit le dossier des gendarmes. Il a tracé les grilles. « Il y en a un qui ment. Tout ce qu'il dit est faux. Les trois autres disent vrai. »",
+              "facts": [
+                {
+                  "about": "p:sandrine",
+                  "text": "Décrit l'homme à qui elle a rendu la boule, mercredi à 22 h 40 : cheveux courts et gris, front haut ridé, « une moustache, je crois », menton carré. Elle l'avait vu jouer de jour.",
+                  "label": "Le portrait"
+                }
+              ],
+              "requires": [
+                "dossier"
+              ],
+              "puzzle": "confrontation"
+            },
+            {
+              "id": "portrait",
+              "locationId": "agence",
+              "type": "investigation",
+              "button": "Composer le portrait-robot avec Yves",
+              "title": "Le portrait-robot",
+              "text": "Yves a sorti d'une valise un vieux kit de portrait-robot, acheté à une vente de la police en 1981 : des planches de traits imprimés sur du calque, qu'on superpose. Il les étale sur le bureau, sous le ventilateur, et pose une agrafeuse sur chaque pile pour qu'elles ne s'envolent pas.\n\n« Deux témoins. Sandrine l'a vu jouer en plein jour, de loin, et le soir sous un réverbère. Karim l'a vu à un mètre, à la bougie, avec la peur. Chacun se trompe sur quelque chose. Les gens se trompent toujours sur quelque chose. Il faut juste savoir sur quoi, et pourquoi. »\n\nIl vous tend les calques.",
+              "facts": [],
+              "requires": [
+                "confrontation",
+                "poursuite"
+              ],
+              "puzzle": "portrait"
+            },
+            {
+              "id": "montagne",
+              "locationId": "gendarmerie",
+              "type": "entretien",
+              "button": "Rencontrer l'adjudant-chef Montagne",
+              "title": "L'adjudant-chef Montagne",
+              "text": "L'adjudant-chef {{p:montagne|Montagne}} vous reçoit debout, derrière le comptoir de la brigade, comme on reçoit des gens qui viennent déclarer un vélo volé. Il a une moustache taillée au millimètre et une tasse « Club taurin de Nyons ».\n\n« Le Bureau des affaires occultes. » Il le dit lentement, pour que vous entendiez comme ça sonne. « Un homme de soixante-trois ans, qui boit, qui vit seul, qui sort au bord de son canal à minuit, et qui tombe dedans. 1,8 gramme. Ça n'a rien d'occulte. Point. »\n\nUne analyse toxicologique ? « Pour quoi faire ? On sait ce qu'il a bu : du marc. La bouteille était sur la table. » Personne ne l'a poussé, dit-il, il n'y a pas une trace de lutte, pas un témoin. Le revenant ? « Ça, c'est pour votre journal. Moi, je n'ai pas de rubrique fantômes. »\n\nIl vous raccompagne. Sur le pas de la porte, il ajoute quand même, à mi-voix : « Le constat, c'est le {{p:sauvan|Dr Sauvan}} qui l'a fait. Elle pose des questions, elle aussi. Elle est jeune. »",
+              "facts": [
+                {
+                  "about": "p:montagne",
+                  "text": "Conclut à un accident : 1,8 g d'alcool, une chute dans le canal. Pas d'analyse toxicologique. « Personne ne l'a poussé. »",
+                  "struckBy": [
+                    "sauvan",
+                    "labo"
+                  ]
+                },
+                {
+                  "about": "p:chabert",
+                  "text": "Mort accidentelle : ivre, il est tombé dans le canal en sortant par la porte du bief.",
+                  "label": "Selon les gendarmes",
+                  "struckBy": [
+                    "sauvan",
+                    "isnard"
+                  ]
+                },
+                {
+                  "about": "p:sauvan",
+                  "text": "A constaté le décès d'Aimé Chabert. « Elle pose des questions », selon l'adjudant-chef."
+                }
+              ],
+              "speaker": "montagne",
+              "revealsActions": [
+                "pousse"
+              ]
+            },
+            {
+              "id": "dossier",
+              "locationId": "gendarmerie",
+              "type": "investigation",
+              "button": "Lire le dossier, puisqu'il n'y a rien à cacher",
+              "title": "Le dossier de la gendarmerie",
+              "text": "« Vous voulez lire le dossier ? Lisez-le. Il n'y a rien à cacher, c'est un accident. » L'adjudant-chef vous installe dans un bureau vide avec une chemise cartonnée et la ferme derrière vous. Elle ne fait que neuf pages.\n\nLe {{d:pv|procès-verbal}} est daté du jeudi 16 juin, 6 h 30. Le corps a été trouvé à 5 h 10 par {{p:isnard|l'aiguadier du canal}}, contre la grille, deux cents mètres en aval du moulin. Constat du {{p:sauvan|Dr Sauvan}}. Au moulin, la porte de la rue était fermée à clé. Le trousseau de Chabert pendait au clou, à l'intérieur. La porte qui donne sur le bief était ouverte, et la vanne aussi : « la victime l'aura ouverte elle-même, en état d'ivresse ». Personne ne l'a poussé, conclut le rédacteur. Sur la berge du {{l:canal|canal}}, en amont, une {{d:lampe|lampe de poche}} en métal, encore allumée, la pile presque à plat. Sur le manche, une étiquette Dymo : « CAMPING DES SAULES · ACCUEIL ».\n\nL'enquête de voisinage tient sur une page. Quatre personnes dehors, mercredi vers 22 h : {{p:helene|Mme Hélène Garcin}}, au {{l:arcades|café des Arcades}} ; « un homme avec des boules », dont personne ne sait le nom ; « le vieux monsieur de la pension », {{p:firmin|M. Achard}} ; et « une saisonnière », {{p:sandrine|Sandrine Mollet}}, qui loge au {{l:camping_municipal|camping municipal}}.\n\nEt quatre déclarations recueillies, chacune de trois lignes :\n{{p:gaston|Gaston Rey}}, cantonnier : vers 22 h, une femme seule près du boulodrome de la Digue.\n{{p:fredo|Le serveur des Arcades}} : sa cliente de 22 h « a regardé la porte toute la soirée ».\n{{p:josiane|Josiane Pellegrin}}, femme de ménage : M. Chabert lui a dit mercredi qu'il devait « s'expliquer avec quelqu'un, au canal, ce soir ».\nEt la lampe, trouvée sur la berge : celui qui la tenait était au canal.\n\nPersonne n'a fait le lien entre la lampe et le {{l:camping_saules|camping des Saules}}. Ou personne n'a voulu.",
+              "facts": [
+                {
+                  "about": "d:pv",
+                  "text": "Porte du moulin fermée à clé, trousseau de Chabert au clou à l'intérieur, porte du bief ouverte, vanne ouverte « par la victime ». Corps trouvé à 5 h 10 contre la grille.",
+                  "struckBy": [
+                    "isnard"
+                  ]
+                },
+                {
+                  "about": "d:lampe",
+                  "text": "Trouvée allumée sur la berge du canal, en amont du moulin. Étiquette Dymo : « CAMPING DES SAULES · ACCUEIL ». Celui qui la tenait était au canal."
+                },
+                {
+                  "about": "p:helene",
+                  "text": "Au café des Arcades vers 22 h, selon l'enquête de voisinage.",
+                  "label": "Mercredi soir"
+                },
+                {
+                  "about": "p:gaston",
+                  "text": "Vers 22 h mercredi, a vu une femme seule près du boulodrome de la Digue."
+                },
+                {
+                  "about": "p:fredo",
+                  "text": "Sa cliente de 22 h, aux Arcades, « a regardé la porte toute la soirée » : elle attendait quelqu'un."
+                },
+                {
+                  "about": "p:josiane",
+                  "text": "Chabert lui a dit mercredi qu'il devait « s'expliquer avec quelqu'un, au canal, ce soir »."
+                },
+                {
+                  "about": "p:sandrine",
+                  "text": "Saisonnière, loge au camping municipal. Dehors mercredi vers 22 h."
+                },
+                {
+                  "about": "p:firmin",
+                  "text": "Dehors vers 22 h, selon l'enquête de voisinage.",
+                  "label": "Mercredi soir"
+                }
+              ],
+              "revealsActions": [
+                "pousse"
+              ]
+            },
+            {
+              "id": "sauvan",
+              "locationId": "cabinet_sauvan",
+              "type": "entretien",
+              "button": "Consulter le Dr Sauvan",
+              "title": "Le Dr Sauvan",
+              "text": "Le cabinet du {{p:sauvan|Dr Anne Sauvan}} est au premier étage, au-dessus d'un marchand de tissus provençaux. Elle a trente-deux ans, les cheveux attachés avec un crayon, et elle fume à la fenêtre entre deux patients en soufflant dehors, comme si ça ne comptait pas.\n\n« Je ne signe pas ce que je ne sais pas. J'ai écrit noyade. J'ai écrit alcool. Je n'ai pas écrit accident, c'est le gendarme qui l'a écrit. » Elle tire sur sa cigarette. « La mort, c'est entre onze heures du soir et une heure du matin. Pas avant onze heures, ça, je le signe. »\n\nCe qui la gêne, ce sont les mains. « Un noyé se débat. Il s'agrippe aux herbes, il se casse les ongles sur le béton, il a de la vase partout. Lui, rien. Des mains propres. Pas une écorchure. Il n'a pas lutté. » Elle écrase la cigarette sur le rebord. « Il dormait quand il est entré dans l'eau. Un homme qui a bu un litre de marc peut dormir, d'accord. Mais pas si profond. »\n\nL'adjudant-chef n'a pas voulu d'analyse. Elle a gardé un tube de sang au réfrigérateur, et elle l'a envoyé vendredi à un laboratoire de Lyon, à ses frais. « Le résultat, mardi. Repassez mardi. Et ne le dites pas à Montagne, il serait vexé. »",
+              "facts": [
+                {
+                  "about": "p:sauvan",
+                  "text": "Décès d'Aimé Chabert entre 23 h et 1 h, pas avant 23 h. Pas de trace de lutte : « Il dormait quand il est entré dans l'eau. »"
+                },
+                {
+                  "about": "p:chabert",
+                  "text": "Mort après 23 h, sans se débattre. Le Dr Sauvan a fait analyser son sang à Lyon : résultat le mardi 21.",
+                  "label": "Selon le Dr Sauvan"
+                }
+              ],
+              "speaker": "sauvan",
+              "revealsActions": [
+                "endort"
+              ]
+            },
+            {
+              "id": "labo",
+              "locationId": "cabinet_sauvan",
+              "type": "investigation",
+              "button": "Rappeler le Dr Sauvan pour l'analyse",
+              "title": "L'analyse du laboratoire",
+              "text": "Le Dr Sauvan a le papier du laboratoire à la main quand vous entrez. Elle ne vous fait pas asseoir.\n\n{{d:analyse|Rapport d'analyse}}, laboratoire Mérieux, Lyon. Alcoolémie : 1,8 g. Et une ligne de plus : nitrazépam, à une concentration « compatible avec une prise de plusieurs comprimés dans les heures précédant le décès ».\n\n« Du Mogadon. Un somnifère. On le prescrit aux insomniaques, aux veuves, aux gens qui ont peur la nuit. Avec un litre de marc, il ne pouvait plus lever un bras. » Elle replie la feuille. « Il n'en prenait pas, je suis son médecin depuis quatre ans. Quelqu'un le lui a donné. »\n\nElle n'a pas besoin qu'on lui pose la question suivante. « Dans le centre, il n'y a qu'une pharmacie qui en délivre beaucoup. La {{l:pharmacie|pharmacie du Pont}}. {{p:roux|Mme Roux}}. Elle ne vous dira rien. Enfin, elle vous dira qu'elle ne dit rien, et après elle parlera. »\n\nElle porte le rapport à la gendarmerie cet après-midi. « Montagne sera vexé. Tant pis. »",
+              "facts": [
+                {
+                  "about": "d:analyse",
+                  "text": "Sang d'Aimé Chabert : 1,8 g d'alcool et du nitrazépam (Mogadon) à forte dose, pris quelques heures avant la mort."
+                },
+                {
+                  "about": "p:chabert",
+                  "text": "Drogué au Mogadon avant d'entrer dans l'eau. Il n'en prenait pas.",
+                  "label": "Le laboratoire"
+                }
+              ],
+              "requires": [
+                "sauvan"
+              ],
+              "fromLead": 12,
+              "mood": "silence",
+              "revealsActions": [
+                "endort"
+              ]
+            },
+            {
+              "id": "pharmacie",
+              "locationId": "pharmacie",
+              "type": "entretien",
+              "button": "Parler à la pharmacienne",
+              "title": "Mme Roux, pharmacienne",
+              "text": "{{p:roux|Mme Roux}} porte une blouse amidonnée et des lunettes au bout d'une chaîne. Derrière elle, des bocaux en faïence et une affiche contre les coups de soleil.\n\n« Je ne parle pas de mes clients. Jamais. » Elle range trois boîtes sur une étagère, très soigneusement. « Le Mogadon, j'en délivre à une vingtaine de personnes. Des gens âgés, surtout. Et des gens qui ont eu un malheur. »\n\nElle se tourne vers la vitrine. « Une seule de ces personnes est venue jeudi dernier, à huit heures et demie, avant même que j'aie remonté le store. Pour renouveler son ordonnance, dix jours en avance. Elle m'a dit qu'elle avait renversé la boîte dans l'évier. Je lui ai dit que ce n'était pas grave. » Elle reste un moment sans rien dire. « Elle a eu un grand malheur, en 1992. Je ne vous ai pas dit son nom. »\n\nElle n'a pas besoin de le dire. Il n'y a qu'une veuve de 1992 à Nyons qu'on appelle « elle » en baissant la voix.",
+              "facts": [
+                {
+                  "about": "p:roux",
+                  "text": "Une cliente, veuve de 1992, est venue le jeudi 16 juin à 8 h 30 renouveler son Mogadon dix jours en avance : « J'ai renversé la boîte dans l'évier. »"
+                },
+                {
+                  "about": "p:helene",
+                  "text": "Selon la pharmacienne, a renouvelé son Mogadon en avance le jeudi 16 au matin, le lendemain de la mort du meunier.",
+                  "label": "Le Mogadon"
+                }
+              ],
+              "requires": [
+                "labo"
+              ],
+              "speaker": "roux"
+            },
+            {
+              "id": "vasseur",
+              "locationId": "hotel",
+              "type": "entretien",
+              "button": "Rencontrer l'inspecteur de la Mutuelle",
+              "title": "Jean-Claude Vasseur, de la Mutuelle rhodanienne",
+              "text": "{{p:vasseur|Jean-Claude Vasseur}}, inspecteur des sinistres à la Mutuelle rhodanienne, occupe la meilleure table de la terrasse de l'hôtel de la Place, sous le seul parasol qui tienne debout. Costume gris, cravate desserrée de deux centimètres, une calculette solaire posée sur ses dossiers.\n\n« Le Bureau des affaires occultes. On m'avait dit. » Il commande deux diabolos menthe sans vous demander. « Moi, je suis le Bureau des affaires très concrètes. »\n\nLe contrat est simple, dit-il. {{d:assurance|Assurance-vie}} de Jacques Garcin, souscrite en 1988. Jugement déclaratif de décès en juillet 1993, à Carpentras. 1,4 million de francs versés à la veuve en décembre. « Elle a racheté la maison de ses parents, rue des Grands-Forts. Elle a placé le reste pour les études des enfants. Une femme très sérieuse. »\n\n« Si Garcin est vivant, tout doit revenir à la Mutuelle. Tout. La maison, les placements. Et si la veuve savait qu'il était vivant, ce n'est plus un remboursement, c'est une escroquerie. Le tribunal correctionnel. » Il tapote la calculette. « La prison, possiblement. »\n\nIl a été envoyé après la photo du 2 juin, quand quelqu'un a téléphoné à son agence d'Avignon. Une voix de jeune femme, qui n'a pas donné son nom. Et il y a autre chose. « Le meunier m'a appelé lui-même, le mardi 14. Il voulait savoir ce que risque un témoin qui a fait une fausse déclaration. Je lui ai dit de venir me voir. Il devait venir jeudi. » Il soupire. « Je crois qu'il faisait chanter la veuve, si vous voulez mon avis. Un pauvre type qui avait des dettes et un secret. On en voit tous les jours. »",
+              "facts": [
+                {
+                  "about": "d:assurance",
+                  "text": "Assurance-vie de Jacques Garcin : 1,4 million de francs versés à Hélène en décembre 1993. Si Garcin est vivant, tout doit être remboursé ; si la veuve savait, c'est une escroquerie."
+                },
+                {
+                  "about": "p:vasseur",
+                  "text": "Inspecteur de la Mutuelle rhodanienne, à Nyons depuis la photo du 2 juin. Une jeune femme anonyme a appelé son agence."
+                },
+                {
+                  "about": "p:chabert",
+                  "text": "A appelé la Mutuelle le mardi 14 pour savoir ce que risque un faux témoin. Devait venir le jeudi. Vasseur le soupçonne de faire chanter la veuve.",
+                  "label": "Selon Vasseur",
+                  "struckBy": [
+                    "lettre_chabert",
+                    "royer2"
+                  ]
+                }
+              ],
+              "speaker": "vasseur",
+              "revealsActions": [
+                "fait_chanter"
+              ]
+            },
+            {
+              "id": "fredo",
+              "locationId": "arcades",
+              "type": "entretien",
+              "button": "Parler au serveur",
+              "title": "Fredo, serveur aux Arcades",
+              "text": "{{p:fredo|Fredo}} essuie les tables de la terrasse sous les arcades avec un torchon qui a connu des jours meilleurs. Il tutoie tout le monde, Paul compris.\n\n« Mme Garcin ? Mercredi, oui. Elle s'est assise là, à neuf heures et demie, à la table du coin. Une menthe à l'eau. Elle regardait la porte. Pas la place, la porte. Chaque fois que quelqu'un entrait, elle levait la tête. » Il plie le torchon en quatre. « Elle attendait quelqu'un, c'est sûr. Quelqu'un qui est pas venu. »\n\nElle est partie à onze heures moins le quart. « Je m'en souviens parce qu'elle avait pas fini son verre, et qu'elle a laissé un billet de vingt pour une menthe à l'eau. Elle est partie par là. » Il montre la rue qui descend vers l'est. « Vers le pont roman. Pas vers chez elle. Chez elle, c'est en haut, aux Forts. »\n\n« Le vieux de la pension, M. Achard, lui il lit son journal sur le {{l:pont|pont roman}} tous les soirs, de neuf heures jusqu'à pas d'heure. Tu peux régler ta montre dessus. Mercredi, pareil. »",
+              "facts": [
+                {
+                  "about": "p:fredo",
+                  "text": "Hélène Garcin aux Arcades de 21 h 30 à 22 h 45, une menthe à l'eau, les yeux sur la porte. Partie sans finir son verre, vers le pont roman, pas vers chez elle.",
+                  "label": "Mercredi soir"
+                },
+                {
+                  "about": "p:helene",
+                  "text": "A quitté les Arcades à 22 h 45, en direction du pont roman.",
+                  "label": "Selon Fredo"
+                },
+                {
+                  "about": "p:firmin",
+                  "text": "Lit son journal sur le pont roman tous les soirs, de 21 h « jusqu'à pas d'heure ». Mercredi aussi.",
+                  "label": "Selon Fredo"
+                }
+              ],
+              "speaker": "fredo",
+              "revealsActions": [
+                "suit"
+              ]
+            },
+            {
+              "id": "helene",
+              "locationId": "maison_garcin",
+              "type": "entretien",
+              "button": "Rendre visite à Hélène Garcin",
+              "title": "Hélène Garcin, la veuve",
+              "text": "La maison est en haut des Forts, rue des Grands-Forts, là où les ruelles deviennent des escaliers couverts. Volets bleus, un laurier en pot, un vélo d'adolescent contre le mur. {{p:helene|Hélène Garcin}} vous ouvre avant que vous ayez frappé. Elle vous avait vus monter.\n\nElle vous sert de l'eau fraîche dans des verres à pied, sur un plateau. Elle est très calme. Elle parle de l'huile d'olive de Nyons, la seule en France à avoir une appellation, de la récolte de l'hiver dernier, du prix au litre. Quand Paul pose la page du concours sur la table, elle ne la regarde pas.\n\n« Jacques est mort, monsieur. La rivière ne rend rien. Je le sais, j'ai attendu trois semaines au bord de l'eau qu'elle me le rende. » Elle repose son verre. « J'ai fait suspendre l'abonnement au Drômois. Les enfants n'ont pas à voir ça. »\n\nMercredi soir ? Elle était aux Arcades. « J'attendais une amie, qui n'est pas venue. Je suis rentrée. » Elle travaille à la boutique du moulin depuis l'an dernier : « Aimé me l'avait proposé. Il était bon pour nous. » Les clés du moulin ? « Je les lui ai rendues en mai. La boutique ferme l'été, on ne presse qu'en hiver. »\n\nEn vous raccompagnant, elle ajoute, du même ton : « Un monsieur de la Mutuelle est venu me voir. Il est descendu à l'{{l:hotel|hôtel de la Place}}. {{p:vasseur|M. Vasseur}}. Vous devriez parler ensemble, vous vous entendriez bien. »",
+              "facts": [
+                {
+                  "about": "p:helene",
+                  "text": "« Jacques est mort. La rivière ne rend rien. » A fait suspendre son abonnement au Drômois après la photo.",
+                  "struckBy": [
+                    "royer3"
+                  ]
+                },
+                {
+                  "about": "p:helene",
+                  "text": "Dit avoir attendu aux Arcades « une amie qui n'est pas venue », puis être rentrée chez elle.",
+                  "label": "Mercredi soir",
+                  "struckBy": [
+                    "fredo",
+                    "helene2",
+                    "chambre_firmin"
+                  ]
+                },
+                {
+                  "about": "p:helene",
+                  "text": "Dit avoir rendu les clés du moulin à Aimé Chabert en mai. Travaille à la boutique du moulin depuis 1993.",
+                  "label": "Les clés",
+                  "struckBy": [
+                    "josiane",
+                    "helene2"
+                  ]
+                },
+                {
+                  "about": "p:vasseur",
+                  "text": "Inspecteur de la Mutuelle, descendu à l'hôtel de la Place. Est venu voir Hélène."
+                }
+              ],
+              "speaker": "helene"
+            },
+            {
+              "id": "maison",
+              "locationId": "maison_garcin",
+              "type": "investigation",
+              "button": "Revenir quand Hélène est à la boutique",
+              "title": "La maison des Garcin",
+              "text": "Vous revenez le lendemain, à l'heure où Hélène tient la boutique d'huile du marché couvert. C'est {{p:helene|son fils}} Julien qui ouvre, seize ans, un walkman autour du cou. Il dit que sa mère n'est pas là. Paul dit qu'il le sait. Julien hésite, puis il s'écarte. « Vous êtes ceux du journal. Pour mon père. » Ce n'est pas une question.\n\nIl vous montre la chambre du fond, celle de son père. Tout est resté comme au camping : la carte de la vallée de l'Ouvèze punaisée au mur, une coupe de pétanque, la photo de mariage. « Maman ne veut pas qu'on y touche. Elle y va le soir. Elle ferme la porte. »\n\nDans le salon, le secrétaire n'est pas fermé à clé. La lettre de la Mutuelle rhodanienne, décembre 1993 : versement de 1 400 000 francs au titre de l'{{d:assurance|assurance-vie}}. Et sous la lettre, un carnet de souches de la Poste. Des {{d:mandats|mandats}}, un par mois, le 5, depuis le 5 novembre 1992. 1 500 francs chaque fois. Destinataire : « L. Royer, poste restante, 26170 Buis-les-Baronnies ». Les dernières souches sont de mai et de juin 1994.\n\nJulien est resté dans l'encadrement de la porte. « C'est qui, Royer ? » Personne ne lui répond. Il remet son casque sur ses oreilles sans mettre la musique.",
+              "facts": [
+                {
+                  "about": "d:assurance",
+                  "text": "Lettre de la Mutuelle de décembre 1993 : 1 400 000 F versés à Hélène Garcin. Rangée dans le secrétaire.",
+                  "label": "La lettre"
+                },
+                {
+                  "about": "d:mandats",
+                  "text": "Souches de mandats postaux : 1 500 F le 5 de chaque mois depuis novembre 1992, à « L. Royer, poste restante, Buis-les-Baronnies ». Dans le secrétaire d'Hélène."
+                },
+                {
+                  "about": "p:helene",
+                  "text": "Envoie 1 500 F par mois à « L. Royer » depuis novembre 1992, deux mois après la crue.",
+                  "label": "Les mandats"
+                }
+              ],
+              "requires": [
+                "helene"
+              ]
+            },
+            {
+              "id": "helene2",
+              "locationId": "maison_garcin",
+              "type": "entretien",
+              "button": "Revenir voir Hélène avec l'heure de son départ",
+              "title": "Hélène, second entretien",
+              "text": "Hélène vous reçoit cette fois dans la cuisine, sans plateau. Paul pose les heures sur la table, une par une, comme des cartes. Les Arcades quittées à onze heures moins le quart, vers le pont. La vanne ouverte avec une clé.\n\nElle ne nie pas longtemps. Elle rectifie. « Je suis allée au moulin, oui. Je voulais parler à Aimé. Il n'était pas venu aux Arcades. La porte était fermée, il n'a pas répondu. Je suis repartie. » Elle a les clés de la boutique, oui. « Je ne les ai pas rendues. Je vous ai menti parce que je savais ce que vous alliez penser. »\n\n« De quoi vouliez-vous lui parler ? » Elle regarde la fenêtre, où on voit, très loin, la ligne de la vallée. « De mon mari. »\n\nElle ne demande pas ce que vous savez. Elle ne demande pas si on la soupçonne. Elle demande seulement, à la fin, si les enfants seront au courant de ce qui sera écrit samedi.",
+              "facts": [
+                {
+                  "about": "p:helene",
+                  "text": "Reconnaît être allée au moulin vers 23 h « parler à Aimé », et avoir encore les clés de la boutique. Dit que la porte était fermée et qu'elle est repartie.",
+                  "label": "Second entretien"
+                }
+              ],
+              "requiresAny": [
+                "fredo",
+                "isnard"
+              ],
+              "speaker": "helene",
+              "follows": "helene",
+              "buttonAlone": "Interroger Hélène Garcin sur l'heure de son départ",
+              "titleAlone": "Hélène Garcin, face à l'heure"
+            },
+            {
+              "id": "firmin",
+              "locationId": "pension",
+              "type": "entretien",
+              "button": "Payer un pastis à Firmin Achard",
+              "title": "Firmin Achard",
+              "text": "La pension des Forts a six chambres et une terrasse sous une treille. {{p:firmin|Firmin Achard}} y est installé depuis le 30 mai, à la table du fond, une sacoche de cuir à ses pieds avec trois boules de pétanque dedans. Chemise blanche boutonnée jusqu'au col malgré la chaleur, un Drômois plié sur la table, une pipe éteinte.\n\nIl accepte le pastis. Il vous regarde un par un, Paul, Yves, Karim, comme on regarde des boules avant de choisir laquelle jouer.\n\n« Je prends le frais sur le pont, le soir, comme tous les vieux de France. » Mercredi ? « De neuf heures moins quatre à minuit dix. » Il n'a rien vu. « J'ai vu l'eau. Elle était basse. Elle est toujours basse en juin, ici. » Il parle de la rivière comme d'une personne qu'on connaît depuis longtemps et dont on se méfie un peu.\n\nKarim lui demande s'il croit aux revenants. Firmin le regarde longtemps. « Je crois aux gens qui reviennent. Ce n'est pas la même chose. »\n\nIl repart mardi, dit-il. Il a sa chambre jusqu'au lundi soir. « Après, vous savez où me trouver. » Personne ne le sait.",
+              "facts": [
+                {
+                  "about": "p:firmin",
+                  "text": "À Nyons depuis le 30 mai, à la pension des Forts. Dit avoir pris le frais sur le pont roman mercredi de 20 h 56 à 0 h 10, et n'avoir rien vu « que l'eau ».",
+                  "struckBy": [
+                    "chambre_firmin"
+                  ]
+                },
+                {
+                  "about": "p:firmin",
+                  "text": "Quitte Nyons le mardi 21 juin au matin.",
+                  "label": "Son départ"
+                }
+              ],
+              "untilLead": 12,
+              "speaker": "firmin"
+            },
+            {
+              "id": "chambre_firmin",
+              "locationId": "pension",
+              "type": "investigation",
+              "button": "Ouvrir l'enveloppe laissée par M. Achard",
+              "title": "Les notes de Firmin Achard",
+              "text": "La patronne de la pension vous arrête dans l'escalier. « M. Achard est parti ce matin, à six heures, avec sa sacoche. Il a payé jusqu'à la fin du mois. Il a laissé ça pour vous. Il a dit : pour les journalistes de Lyon, ils viendront mardi. » Elle tend une grande enveloppe kraft, fermée à la cire.\n\nDedans, un {{d:carnet_firmin|carnet}} à couverture de toile noire. Sur la première page, un tampon à l'encre rouge, très ancien : une salamandre dans les flammes. Et en dessous, à la plume : « Le revenant de l'Ouvèze. Ouvert le 30 mai 1994. »\n\nL'écriture est fine, penchée, régulière comme une partition. Chaque ligne commence par une heure.\n\n« 2 juin. La photo. Ce n'est pas un mort. C'est un vivant qui a tourné la tête. »\n« 11 juin. Une jeune femme sort du moulin en pleurant. Le meunier reste longtemps sur la passerelle. »\n« 15 juin. 21 h 41. La veuve s'assoit aux Arcades. 21 h 58. Le meunier sort par la porte du bief et marche vers l'amont. 22 h 05. Deux hommes sur la berge, une lampe. Le meunier pleure. 22 h 32. L'homme aux boules me voit. Il laisse tomber la lampe, qui reste allumée dans l'herbe, et il part en courant vers la Digue. 22 h 50. Le meunier rentre au moulin par le bief. 23 h 05. Une femme entre par la petite porte de la rue, avec une clé. La veuve. 23 h 12. La vanne gronde, le bief se remplit. 23 h 27. Elle ressort seule, ferme à clé, reste au parapet. Elle ne pleure pas. Le meunier ne ressort pas. »\n« 16 juin. Il n'y a pas de revenant à Nyons. Il y a une veuve. »\n\nLa dernière page est blanche, sauf une ligne : « Ce que vous ferez de ceci ne nous regarde pas. »",
+              "facts": [
+                {
+                  "about": "d:carnet_firmin",
+                  "text": "Carnet de Firmin Achard, une salamandre dans les flammes en première page. Note minute par minute la nuit du 15 juin, depuis le pont roman."
+                },
+                {
+                  "about": "p:helene",
+                  "text": "Entre au moulin par la petite porte à 23 h 05, avec une clé. La vanne gronde à 23 h 12. Ressort seule à 23 h 27 et ferme à clé.",
+                  "label": "Selon Firmin"
+                },
+                {
+                  "about": "p:royer",
+                  "text": "Sur la berge avec le meunier de 22 h 05 à 22 h 32, puis s'enfuit en lâchant la lampe. Le meunier rentre vivant au moulin à 22 h 50.",
+                  "label": "Selon Firmin"
+                },
+                {
+                  "about": "p:firmin",
+                  "text": "Surveillait le moulin depuis le 30 mai. A tout vu le 15 juin et n'a prévenu personne. « Ce que vous ferez de ceci ne nous regarde pas. »",
+                  "label": "Le carnet"
+                }
+              ],
+              "fromLead": 12,
+              "mood": "silence",
+              "salamandre": true,
+              "revealsActions": [
+                "endort",
+                "pousse"
+              ]
+            },
+            {
+              "id": "josiane",
+              "locationId": "moulin",
+              "type": "entretien",
+              "button": "Parler à Josiane, la femme de ménage",
+              "title": "Josiane Pellegrin, femme de ménage",
+              "text": "{{p:josiane|Josiane Pellegrin}} vient encore au moulin tous les matins arroser les géraniums de la cour. « Personne d'autre le fera. » Elle a soixante-dix ans, un tablier à fleurs, et elle appelle le mort « Monsieur Aimé ».\n\nMercredi, il était « tout chose ». Il lui a dit qu'il devait s'expliquer avec quelqu'un, au canal, le soir. « Il m'a pas dit qui. Il m'a dit : Josiane, demain, je fais une chose que j'aurais dû faire il y a deux ans. »\n\nJeudi matin, les gendarmes partis, elle est entrée. « Les deux verres à marc, sur l'égouttoir, rincés, retournés. Monsieur Aimé a jamais rincé un verre de sa vie. Jamais. Ça faisait trente ans que je les rinçais pour lui. » Elle l'a dit aux gendarmes. L'adjudant a noté « deux verres ».\n\nEt le samedi d'avant, le 11, une jeune femme est venue. « Une saisonnière, avec les doigts rouges des cerises. Elle criait dans la cour, elle lui mettait un journal sous le nez. Elle disait : vous l'avez vu mourir ? Vous l'avez vu ? Monsieur Aimé répondait rien. » Elle se signe. « Elle s'appelle {{p:sandrine|Mollet}}, je crois. Elle a dit son nom en partant, comme on jette quelque chose. »\n\nLes clés ? « Mme Hélène a sa clé de la boutique, pardi, elle y travaille. Elle l'a toujours. »",
+              "facts": [
+                {
+                  "about": "p:josiane",
+                  "text": "Jeudi matin, deux verres à marc rincés et retournés sur l'égouttoir. « Monsieur Aimé n'a jamais rincé un verre de sa vie. » Quelqu'un a bu avec lui.",
+                  "label": "Les verres"
+                },
+                {
+                  "about": "p:josiane",
+                  "text": "Selon elle, Hélène a toujours sa clé de la boutique du moulin.",
+                  "label": "Les clés"
+                },
+                {
+                  "about": "p:sandrine",
+                  "text": "Est venue crier au moulin le samedi 11 juin, un journal à la main : « Vous l'avez vu mourir ? »",
+                  "label": "Selon Josiane"
+                },
+                {
+                  "about": "p:chabert",
+                  "text": "Mercredi : « Demain, je fais une chose que j'aurais dû faire il y a deux ans. »",
+                  "label": "Selon Josiane"
+                }
+              ],
+              "speaker": "josiane",
+              "revealsActions": [
+                "menace"
+              ]
+            },
+            {
+              "id": "moulin",
+              "locationId": "moulin",
+              "type": "investigation",
+              "button": "Visiter le moulin",
+              "title": "Le moulin Chabert",
+              "text": "Le moulin Chabert est une grande bâtisse de pierre au bord du canal, avec une roue arrêtée et une boutique fermée par un rideau. Josiane vous ouvre la salle des meules. Il y fait frais comme dans une cave, ça sent l'olive écrasée de l'hiver et la pierre mouillée.\n\nSur la table, la bouteille de marc est encore là, aux trois quarts vide. Le clou du trousseau, près de la petite porte de la rue. Au fond, la porte du bief donne sur une passerelle de planches au-dessus de l'eau. À côté, la grande roue de fer de la vanne, et une chaîne avec un cadenas en laiton, refermé.\n\nDans le bureau, la corbeille n'a pas été vidée. Yves en sort une feuille déchirée en deux, puis froissée. L'écriture tremble. {{d:brouillon|« Messieurs les gendarmes. En septembre 1992, j'ai menti. Jacques Garcin n'a pas été emporté par l'eau. Je l'ai retrouvé la nuit, dans la colline, vivant, et il m'a demandé de dire qu'il était mort. Je l'ai fait parce que c'était mon ami et parce qu'il avait déjà assez »}} La phrase s'arrête là.\n\nSur la passerelle, Karim se penche au-dessus du bief. L'eau est noire, rapide, et elle ne fait presque pas de bruit.",
+              "facts": [
+                {
+                  "about": "d:brouillon",
+                  "text": "Brouillon déchiré trouvé dans la corbeille du meunier : « En septembre 1992, j'ai menti. Jacques Garcin n'a pas été emporté. Je l'ai retrouvé vivant, et il m'a demandé de dire qu'il était mort. »"
+                },
+                {
+                  "about": "l:moulin",
+                  "text": "La petite porte de la rue, le clou du trousseau, la porte du bief, la passerelle et la vanne fermée par un cadenas en laiton."
+                }
+              ],
+              "revealsActions": [
+                "ment"
+              ]
+            },
+            {
+              "id": "isnard",
+              "locationId": "canal",
+              "type": "entretien",
+              "button": "Trouver l'aiguadier du canal",
+              "title": "Norbert Isnard, aiguadier",
+              "text": "{{p:isnard|Norbert Isnard}} est aiguadier du canal depuis 1961. C'est lui qui ouvre et ferme les martelières, qui distribue l'eau aux jardins selon les jours et les heures, et qui retire de la grille, le matin, les branches, les chats crevés et, une fois en trente-trois ans, un homme. Il parle en litres-seconde.\n\n« La vanne du moulin, en juin, elle est fermée. On presse pas en juin. » Mercredi, à 23 h 10, le niveau du partiteur, en aval, a baissé d'un coup de quatre centimètres. Il vous montre le rouleau de papier de son limnigraphe, un trait d'encre bleue qui fait une marche. « Quelqu'un a ouvert la vanne du moulin. L'eau a filé dans le bief. Ça fait du courant, là-dedans, quand c'est ouvert. Un homme qui tombe, il remonte pas. »\n\nLe cadenas ? Refermé, sur la chaîne, en position ouverte. « Les gendarmes disent que c'est Aimé, saoul. Mais le cadenas, il se referme pas sans la clé, c'est un modèle de l'association. Et le trousseau d'Aimé, il était au clou, dedans, les gendarmes l'ont écrit. » Il hausse les épaules. « Alors on me dira avec quelle clé. »\n\nIl n'en existe que deux, dit-il. « La mienne, que voilà. » Il la montre, pendue à son cou par un lacet. « Et celle du trousseau du moulin. Qui a une copie, à la boutique, pour quand Aimé était pas là. »",
+              "facts": [
+                {
+                  "about": "p:isnard",
+                  "text": "La vanne du moulin a été ouverte mercredi vers 23 h 10 : le niveau du canal a baissé de 4 cm d'un coup. Le cadenas a été refermé, ce qui demande une clé.",
+                  "label": "La vanne"
+                },
+                {
+                  "about": "p:isnard",
+                  "text": "Deux clés seulement : la sienne, qu'il porte au cou, et celle du trousseau du moulin, dont une copie est à la boutique.",
+                  "label": "Les clés"
+                },
+                {
+                  "about": "p:chabert",
+                  "text": "Son trousseau était au clou, à l'intérieur : il n'a pas pu refermer le cadenas de la vanne lui-même.",
+                  "label": "Selon Isnard"
+                }
+              ],
+              "speaker": "isnard"
+            },
+            {
+              "id": "berge",
+              "locationId": "canal",
+              "type": "investigation",
+              "button": "Examiner la berge",
+              "title": "La berge du canal",
+              "text": "L'herbe de la berge, en amont du moulin, a été couchée sur un mètre carré, et elle ne s'est pas relevée. Yves photographie deux sortes d'empreintes dans la terre sèche du bord : des souliers de ville, ressemelés, et des chaussures de travail à grosses crampons.\n\nPaul se retourne. D'ici, on voit tout : le canal jusqu'au moulin, la passerelle du bief, la petite porte de la rue. Et au-dessus, le dos d'âne du {{l:pont|pont roman}}, son parapet de pierre, la silhouette d'un réverbère. « Quelqu'un, là-haut, voit tout. Et personne ne le voit, avec la lumière dans le dos. »",
+              "facts": [
+                {
+                  "about": "l:canal",
+                  "text": "Herbe couchée là où on a trouvé la lampe : deux hommes, des souliers de ville et des chaussures de travail. Le pont roman domine toute la scène.",
+                  "label": "La berge"
+                }
+              ]
+            },
+            {
+              "id": "pont",
+              "locationId": "pont",
+              "type": "investigation",
+              "button": "Monter sur le pont roman",
+              "title": "Le pont roman",
+              "text": "Le pont roman enjambe l'Eygues d'une seule arche, si haute qu'on a l'impression de monter une colline. Au sommet, on voit le canal, le moulin, la Digue, et toute la vieille ville en gradins.\n\nSur le parapet, à l'endroit où la pierre est la plus usée, un petit tas de cendre de pipe que le vent n'a pas encore emporté. Coincé dans une fente, un Drômois du mercredi 15 juin, plié en quatre, la page des boules en dessus.\n\nEt gravé dans la pierre tendre, à la pointe d'un couteau, si petit qu'il faut se pencher : un lézard dans des flammes. Les traits sont frais. La poussière de pierre est encore blanche dans le creux.\n\nKarim passe le doigt dessus. « On l'a déjà vu, ça. » Paul ne répond pas. Il regarde le moulin, en bas. D'ici, on voit la petite porte de la rue comme si on était devant.",
+              "facts": [
+                {
+                  "about": "l:pont",
+                  "text": "De la cendre de pipe et un Drômois du 15 juin sur le parapet. Une salamandre dans les flammes gravée au couteau, toute fraîche. On voit la petite porte du moulin comme si on était devant."
+                },
+                {
+                  "about": "p:firmin",
+                  "text": "Quelqu'un fumait la pipe et lisait le journal du 15 juin sur le pont. Et a gravé une salamandre dans la pierre.",
+                  "label": "Le pont"
+                }
+              ],
+              "salamandre": true
+            },
+            {
+              "id": "gaston",
+              "locationId": "boulodrome",
+              "type": "entretien",
+              "button": "Parler au cantonnier",
+              "title": "Gaston Rey, cantonnier",
+              "text": "{{p:gaston|Gaston Rey}} est cantonnier de la ville et secrétaire de la Boule nyonsaise, ce qui revient à passer ses journées à la Digue, entre les platanes et le râteau. Il raconte tout comme une partie : qui pointe, qui tire, qui a fait un carreau.\n\n« Royer ? Lucien, des Pilles. Il travaille chez Tardieu, à la {{l:ferme_tardieu|ferme}}, au-dessus de la route. Il joue pas mal, mais il tire à la lyonnaise, les bras tendus, trois pas d'élan. On voit qu'il est pas d'ici. Le soir, des fois, il vient tout seul avec des grosses boules, des vraies lyonnaises, en bronze, et il joue contre personne. »\n\nIl a vu la photo. « Tout le monde dit que c'est Garcin. Moi je dis que Garcin, il jouait à la pétanque comme tout le monde. » Il réfléchit. « Enfin. Garcin, il était de Givors. »\n\nMercredi, vers dix heures, en fermant le cabanon du club, il a vu une {{p:sandrine|femme}} seule sur le terrain, qui cherchait par terre avec un briquet. « Une jeune, une saisonnière. Je lui ai demandé si elle avait perdu quelque chose. Elle m'a dit oui, sans dire quoi. »",
+              "facts": [
+                {
+                  "about": "p:gaston",
+                  "text": "Royer travaille chez Tardieu, aux Pilles. Tire « à la lyonnaise ». Vient parfois seul le soir jouer avec des boules lyonnaises en bronze.",
+                  "label": "Royer"
+                },
+                {
+                  "about": "p:royer",
+                  "text": "Joue à la lyonnaise, un jeu du Lyonnais. Garcin était de Givors.",
+                  "label": "Ses boules"
+                },
+                {
+                  "about": "p:sandrine",
+                  "text": "Mercredi vers 22 h, seule sur le boulodrome de la Digue, cherchait quelque chose par terre avec un briquet.",
+                  "label": "Selon Gaston"
+                }
+              ],
+              "speaker": "gaston"
+            },
+            {
+              "id": "inscription",
+              "locationId": "boulodrome",
+              "type": "investigation",
+              "button": "Consulter la feuille d'inscription du concours",
+              "title": "La feuille du Grand Prix",
+              "text": "Gaston sort du cabanon du club un classeur à anneaux. La {{d:feuille_concours|feuille d'inscription}} du Grand Prix de la Digue, dimanche 29 mai, trente-deux doublettes. Chacun a écrit son nom de sa main.\n\nDoublette n° 23. « TARDIEU Raoul », en capitales penchées. Et à côté, d'une autre écriture : deux lettres, « Ga », barrées d'un trait si appuyé qu'il a troué le papier. Puis, juste après : « ROYER L. »\n\nGaston n'avait jamais remarqué. « Il a commencé à écrire autre chose. Comme quand on signe un chèque avec le nom de sa femme. »",
+              "facts": [
+                {
+                  "about": "d:feuille_concours",
+                  "text": "Feuille d'inscription du 29 mai, doublette n° 23 : Royer a d'abord écrit « Ga », l'a barré, puis a écrit « ROYER L. »"
+                },
+                {
+                  "about": "p:royer",
+                  "text": "A commencé à signer « Ga », puis s'est repris.",
+                  "label": "La feuille"
+                }
+              ]
+            },
+            {
+              "id": "sandrine",
+              "locationId": "camping_municipal",
+              "type": "entretien",
+              "button": "Aller voir Sandrine Mollet",
+              "title": "Sandrine Mollet, saisonnière",
+              "text": "Le camping municipal est au bord de l'Eygues, sous les peupliers. En juin, c'est le camping des saisonniers : des tentes canadiennes, des 4L, des cordes à linge entre les arbres. {{p:sandrine|Sandrine Mollet}} rentre de la cueillette à quatre heures, une caisse vide sur l'épaule. Elle a vingt-quatre ans et les doigts rouges jusqu'aux poignets.\n\n« Je fais les cerises. Après, les abricots. Après, la lavande. Je fais les saisons. » Elle est de Roanne. Elle ne regarde jamais en face. Elle parle à la caisse, à la tente, au peuplier.\n\nMercredi soir, elle était sur la Digue. « J'avais perdu ma montre l'après-midi. J'y suis retournée la chercher. Je l'ai pas trouvée. » Elle a trouvé une boule à la place, « une grosse, pas une boule de pétanque ». Elle hausse les épaules. « Les gens perdent des choses. »\n\nQuand Karim lui demande si elle connaissait Aimé Chabert, elle rentre dans sa tente et referme la fermeture éclair. De dedans, elle dit : « C'est pas vos oignons. »",
+              "facts": [
+                {
+                  "about": "p:sandrine",
+                  "text": "Saisonnière de Roanne, 24 ans. « Je fais les saisons. » Les doigts rouges de jus de cerise, comme les taches sur la page envoyée au Bureau.",
+                  "struckBy": [
+                    "sandrine2"
+                  ]
+                },
+                {
+                  "about": "p:sandrine",
+                  "text": "Sur la Digue, à chercher sa montre perdue l'après-midi. A trouvé une grosse boule à la place.",
+                  "label": "Mercredi soir"
+                }
+              ],
+              "speaker": "sandrine"
+            },
+            {
+              "id": "tente",
+              "locationId": "camping_municipal",
+              "type": "investigation",
+              "button": "Jeter un œil à la tente de Sandrine",
+              "title": "La tente de Sandrine",
+              "text": "Sandrine est aux vergers. La tente n'est pas fermée, juste nouée. Paul ne dit pas d'y aller. Il ne dit pas de ne pas y aller.\n\nÀ l'intérieur, un sac de couchage, une lampe frontale, des magazines. Épinglée à la toile, au-dessus de l'oreiller, une photo découpée dans un journal de 1992 : Jacques Garcin, moustache, la légende « Le héros du camping des Saules ». Les yeux ont été grattés au couteau, jusqu'à trouer le papier.\n\nSur la caisse qui sert de table, un bloc de papier à petits carreaux, et un stylo bille. Une feuille arrachée, où on lit, en écriture ronde : « Chabert, moulin, samedi ». Et une boîte à montre en carton, vide. Sur le couvercle, au feutre : « Thierry, 20 ans ».\n\nYves regarde la photo aux yeux grattés plus longtemps que le reste. Il ne la photographie pas.",
+              "facts": [
+                {
+                  "about": "p:sandrine",
+                  "text": "La photo de Garcin de 1992 épinglée au-dessus de son lit, les yeux grattés au couteau. Une note : « Chabert, moulin, samedi ».",
+                  "label": "Sa tente"
+                },
+                {
+                  "about": "p:sandrine",
+                  "text": "Un bloc de papier à petits carreaux et un stylo bille, comme pour la lettre anonyme. Une boîte à montre vide, marquée « Thierry, 20 ans ».",
+                  "label": "Le papier"
+                }
+              ],
+              "revealsActions": [
+                "menace"
+              ]
+            },
+            {
+              "id": "sandrine2",
+              "locationId": "camping_municipal",
+              "type": "entretien",
+              "button": "Revenir voir Sandrine pour Thierry Mollet",
+              "title": "Sandrine, second entretien",
+              "text": "Sandrine est assise sur la caisse, devant la tente, et elle vous attend. Elle a compris en voyant Paul arriver. Pour la première fois, elle le regarde en face.\n\n« Thierry, c'était mon frère. » Elle le dit sans pleurer. Elle a dû le dire souvent dans sa tête. « La montre, c'était la sienne, pour ses vingt ans. Je l'ai perdue mercredi, sur la Digue, en le regardant jouer, lui. » Elle ne dit pas Garcin. Elle dit lui.\n\nElle a reconnu Garcin sur la photo du 2 juin. « Ça fait vingt mois que je regarde sa tête tous les soirs. Le héros qui est mort en voulant sauver mon frère. » Elle est allée voir Chabert le samedi. Elle a crié. Il n'a rien dit, « mais il a pleuré, et un homme qui a dit la vérité, il pleure pas ». Et c'est elle qui a écrit au Bureau. « Les gendarmes, ils m'auraient prise pour une folle. Vous, les fantômes, c'est votre métier. »\n\nElle sort de son portefeuille une {{d:carte_thierry|carte postale}} usée aux coins. Le pont romain de Vaison. Au dos, l'écriture de Thierry, datée du 21 septembre 1992 : « Arrivés tard. On est au fond, sous les saules, au calme. Le patron est sympa, il a dit qu'on ferait l'inscription demain. Bises à maman. »\n\n« Il les avait pas inscrits. Il évacuait avec la liste. Ils étaient pas sur la liste. » Elle range la carte. « Je voulais qu'il dise la vérité, le meunier. Pas qu'il meure. »",
+              "facts": [
+                {
+                  "about": "p:sandrine",
+                  "text": "Sœur de Thierry Mollet, mort dans la crue. A reconnu Garcin sur la photo, est allée voir Chabert le samedi 11, et a écrit la lettre anonyme au Bureau.",
+                  "label": "Second entretien"
+                },
+                {
+                  "about": "d:carte_thierry",
+                  "text": "Carte de Thierry Mollet, 21 septembre 1992 : « On est au fond, sous les saules. Le patron a dit qu'on ferait l'inscription demain. » La caravane n'était pas sur la liste."
+                },
+                {
+                  "about": "p:garcin",
+                  "text": "Selon Sandrine, n'avait pas inscrit la caravane de Thierry et Nathalie. Il évacuait le camping avec la liste.",
+                  "label": "Le soir de la crue"
+                }
+              ],
+              "requiresAny": [
+                "odile",
+                "tente",
+                "plaque"
+              ],
+              "speaker": "sandrine",
+              "follows": "sandrine",
+              "buttonAlone": "Parler de Thierry Mollet à Sandrine",
+              "titleAlone": "Sandrine Mollet et son frère",
+              "revealsActions": [
+                "oublie"
+              ]
+            },
+            {
+              "id": "tardieu",
+              "locationId": "ferme_tardieu",
+              "type": "entretien",
+              "button": "Rencontrer Raoul Tardieu",
+              "title": "Raoul Tardieu, arboriculteur",
+              "text": "La ferme Tardieu est à la sortie des Pilles, au-dessus de la route, entre des rangées de cerisiers et d'abricotiers serrés comme des soldats. {{p:tardieu|Raoul Tardieu}} trie des cerises sous un hangar de tôle, une radio posée sur une caisse. Il se plaint de tout : de la grêle de mai, des prix de Rungis, des saisonniers qui partent au bout de trois jours.\n\n« Lucien ? C'est le seul qui reste. » Royer est arrivé en mars 1993, à pied, avec un sac. Il a demandé du travail. Tardieu le paie en liquide. « Les papiers, je lui ai pas demandé, et il m'en a pas proposé. Un bon ouvrier, il vous parle pas de ses papiers. » Il dort dans le {{l:ferme_tardieu|cabanon}}, au fond du verger.\n\nMercredi soir ? « Il est parti vers neuf heures avec la mob. Il est rentré à onze heures, j'ai entendu le moteur, je dormais pas, j'ai mal au dos. » Onze heures pile ? « Les informations de la radio commençaient. »\n\nLe soir, souvent, Lucien part vers Vaison. « Au {{l:camping_saules|camping des Saules}}, à ce qu'on m'a dit, celui qui a été emporté. Il y a plus rien là-bas. Je lui ai jamais demandé ce qu'il y fait. »\n\nEn vous raccompagnant à la voiture, il crache par terre. « La photo, c'est moi qui l'ai inscrit au concours. Il voulait pas. Il voulait vraiment pas. »",
+              "facts": [
+                {
+                  "about": "p:tardieu",
+                  "text": "Emploie Royer depuis mars 1993, payé en liquide, sans papiers. L'a inscrit au Grand Prix « alors qu'il ne voulait vraiment pas »."
+                },
+                {
+                  "about": "p:royer",
+                  "text": "Selon Tardieu, parti des Pilles en mobylette vers 21 h, rentré à 23 h pile (le journal de la radio commençait).",
+                  "label": "Mercredi soir"
+                },
+                {
+                  "about": "p:royer",
+                  "text": "Part souvent le soir vers Vaison, au camping des Saules, en ruine depuis la crue.",
+                  "label": "Le soir"
+                }
+              ],
+              "speaker": "tardieu"
+            },
+            {
+              "id": "royer",
+              "locationId": "ferme_tardieu",
+              "type": "entretien",
+              "button": "Parler à Lucien Royer",
+              "title": "Lucien Royer",
+              "text": "{{p:royer|Lucien Royer}} taille un abricotier, au bout d'un rang, sans se retourner quand vous approchez. Casquette de toile, chemise ouverte, des avant-bras de manœuvre. Quand il se retourne enfin, il garde la casquette bas sur les yeux et le soleil dans le dos.\n\n« Je m'appelle Royer. Lucien. Je suis de Givors. » Il le dit comme une leçon. La photo ? « J'aime pas les photos. » Le canal ? « J'y ai jamais mis les pieds. Je suis pas de la ville, moi. » Mercredi soir, il est descendu à Nyons chercher une boule qu'il avait oubliée l'après-midi sur la Digue. « Une lyonnaise. Ça coûte cher. Rien d'autre. »\n\nIl parle peu. Il dit « les gones » pour parler des enfants de Tardieu, comme on dit à Lyon.\n\nPaul lui demande s'il a de la famille. Royer regarde l'abricotier. « Plus maintenant. » Puis il remonte sur son escabeau.",
+              "facts": [
+                {
+                  "about": "p:royer",
+                  "text": "« Je m'appelle Royer. Lucien. Je suis de Givors. » Dit « les gones » pour les enfants, comme à Lyon. « De la famille ? Plus maintenant. »",
+                  "struckBy": [
+                    "royer3"
+                  ]
+                },
+                {
+                  "about": "p:royer",
+                  "text": "Dit n'avoir jamais mis les pieds au canal, et être seulement descendu chercher sur la Digue une boule oubliée.",
+                  "label": "Mercredi soir",
+                  "struckBy": [
+                    "royer2"
+                  ]
+                }
+              ],
+              "speaker": "royer"
+            },
+            {
+              "id": "royer2",
+              "locationId": "ferme_tardieu",
+              "type": "entretien",
+              "button": "Revenir voir Royer avec le tableau de Karim",
+              "title": "Royer, second entretien",
+              "text": "Paul pose le tableau de Karim sur le capot de la voiture, au bout du rang d'abricotiers. Il ne dit rien. Il attend.\n\nRoyer regarde longtemps les petites croix et les petits ronds. Puis il enlève ses gants. « J'étais au canal. » Il s'assoit sur le marchepied de l'escabeau. « Aimé voulait tout dire aux gendarmes, le lendemain. Il m'avait donné rendez-vous là, sur la berge, à dix heures. J'avais pris la lampe. » Il dit Aimé. Il ne dit pas Chabert, ni le meunier.\n\n« Je lui ai demandé d'attendre. Juste un peu. Que j'y aille moi-même, plutôt. Il pleurait. Il disait qu'il pouvait plus. Il disait qu'il m'avait toujours protégé, et que ça le tuait. »\n\nÀ dix heures et demie, il a vu quelqu'un sur le pont roman, une silhouette, immobile, qui regardait. « J'ai eu peur. J'ai lâché la lampe et je suis parti en courant. Je suis allé chercher ma boule sur la Digue, une fille me l'a rendue. Après je suis rentré. »\n\nIl relève la tête. « Quand je suis parti, il était vivant. Il pleurait, assis dans l'herbe. Je vous le jure sur la tête de mes gones. » Il s'arrête net. Il a dit mes.",
+              "facts": [
+                {
+                  "about": "p:royer",
+                  "text": "Était au canal avec Chabert de 22 h à 22 h 30, avec la lampe. Chabert voulait tout dire aux gendarmes. Royer a fui en voyant une silhouette sur le pont. « Quand je suis parti, il était vivant. »",
+                  "label": "Second entretien"
+                },
+                {
+                  "about": "p:royer",
+                  "text": "Appelle le meunier « Aimé ». Jure « sur la tête de mes gones », alors qu'il dit ne plus avoir de famille.",
+                  "label": "Le lapsus"
+                }
+              ],
+              "requiresPuzzle": [
+                "confrontation"
+              ],
+              "speaker": "royer",
+              "follows": "royer",
+              "buttonAlone": "Confronter Lucien Royer à son mensonge",
+              "titleAlone": "Lucien Royer, face au tableau",
+              "revealsActions": [
+                "va_tout_dire",
+                "protege"
+              ]
+            },
+            {
+              "id": "royer3",
+              "locationId": "ferme_tardieu",
+              "type": "entretien",
+              "button": "Montrer le portrait-robot à Royer",
+              "title": "Jacques Garcin",
+              "text": "Royer regarde le portrait-robot, puis la photo de 1992 qu'Yves pose à côté. Il enlève sa casquette. Ses cheveux sont gris, coupés court. Il a le front de la photo, le nez, le menton. Il ne lui manque que la moustache.\n\n« Je m'appelle {{p:garcin|Jacques Garcin}}. »\n\nIl raconte sans s'arrêter, comme si le texte attendait depuis vingt mois. Le couple de Roanne arrivé tard, le 21 au soir, l'emplacement 31 au fond sous les saules, « je leur ai dit qu'on verrait l'inscription le lendemain ». Le 22, la pluie, l'eau qui monte, l'évacuation avec la liste, tout le monde dehors, « tout le monde sur la liste ». Et à six heures, au milieu du parking, il s'est souvenu. « J'ai couru. Il y avait plus de fond du camping. Il y avait plus de saules. Il y avait que l'eau. »\n\nIl a poussé sa voiture dans le courant au gué. Il est monté dans la colline. Aimé l'a trouvé à deux heures du matin, assis dans la boue. « Je lui ai dit : dis que je suis mort. Il l'a dit. Il a fait de moi un héros, ce con. Il voulait m'aider. »\n\nLe lendemain soir, il a appelé Hélène, d'une cabine à Malaucène. « Je lui ai tout dit. Elle m'a écouté jusqu'au bout. Et puis elle a dit : Tu es mort. Reste mort. Et elle a raccroché. » Les mandats sont arrivés en novembre, à la poste restante de Buis. Il a encaissé les trois premiers, « l'hiver, pour manger ». Plus jamais après.\n\nIl remet sa casquette. « Faites ce que vous voulez de moi. Mais j'ai pas tué Aimé. Je l'aimais. C'était le seul qui savait. »",
+              "facts": [
+                {
+                  "about": "p:garcin",
+                  "text": "Lucien Royer est Jacques Garcin. Le 22 septembre 1992, il a oublié la caravane du 31, non inscrite. Il a poussé sa voiture dans le courant et disparu. Chabert a menti pour lui.",
+                  "label": "Ses aveux"
+                },
+                {
+                  "about": "p:helene",
+                  "text": "Il l'a appelée le 23 septembre 1992 depuis Malaucène. « Tu es mort. Reste mort. » Elle sait depuis le premier jour.",
+                  "label": "Selon Garcin"
+                },
+                {
+                  "about": "p:royer",
+                  "text": "C'est Jacques Garcin. Il a encaissé les trois premiers mandats d'Hélène, plus aucun ensuite.",
+                  "label": "Ses aveux"
+                }
+              ],
+              "requires": [
+                "royer2"
+              ],
+              "requiresPuzzle": [
+                "portrait"
+              ],
+              "speaker": "royer",
+              "follows": "royer2",
+              "buttonAlone": "Montrer le portrait-robot à Lucien Royer",
+              "titleAlone": "Lucien Royer, face au portrait",
+              "mood": "silence",
+              "revealsActions": [
+                "oublie",
+                "ment"
+              ]
+            },
+            {
+              "id": "cabanon",
+              "locationId": "ferme_tardieu",
+              "type": "investigation",
+              "button": "Fouiller le cabanon de Royer",
+              "title": "Le cabanon de Royer",
+              "text": "Le cabanon de Royer est au bout du verger, une cabane de pierres sèches avec une porte en planches et pas de serrure. Un lit de camp, une bassine, un réchaud, un calendrier des Postes de 1993 qu'il n'a pas changé.\n\nSur une étagère, une photo sans cadre, tenue par une punaise : deux enfants sur une plage de galets, un garçon et une fille. Sous le lit, une sacoche de cuir. Dedans, quatre {{d:boules|boules lyonnaises}} en bronze, lourdes comme des pavés, dans des cases de feutre. Sur chacune, gravées à la main, deux initiales : « J.G. »\n\nDans une boîte à sucre en fer, sur l'étagère, une liasse de {{d:mandats|mandats}} postaux, jamais encaissés. Dix-neuf. Expéditeur : « H. Garcin, Nyons ». Sous l'élastique, un mot plié, une écriture de femme, très droite : « Pour ton silence. Pour le mien. »\n\nYves photographie la photo des enfants, puis il la remet exactement où elle était, avec la même punaise, dans le même trou.",
+              "facts": [
+                {
+                  "about": "d:boules",
+                  "text": "Quatre boules lyonnaises en bronze sous le lit de Royer, gravées « J.G. »."
+                },
+                {
+                  "about": "d:mandats",
+                  "text": "Dix-neuf mandats jamais encaissés, expéditeur « H. Garcin, Nyons ». Un mot : « Pour ton silence. Pour le mien. »",
+                  "label": "Dans le cabanon"
+                },
+                {
+                  "about": "p:royer",
+                  "text": "Une photo de deux enfants, un garçon et une fille. Des boules gravées J.G. Les mandats d'Hélène Garcin.",
+                  "label": "Son cabanon"
+                }
+              ],
+              "requires": [
+                "royer"
+              ]
+            },
+            {
+              "id": "poursuite",
+              "locationId": "camping_saules",
+              "type": "investigation",
+              "button": "Guetter la nuit au camping des Saules",
+              "title": "La nuit aux Saules",
+              "text": "Il est onze heures du soir. Karim et Yves sont accroupis derrière le mur de l'ancien bloc sanitaire du camping des Saules, qui n'a plus de toit. La lune éclaire les dalles des emplacements, les tuyaux tordus, le lit de galets où l'Ouvèze coule à peine, si basse qu'on pourrait la traverser en chaussettes. Les cigales se sont tues. On entend les grillons, et une chouette.\n\nÀ onze heures vingt, une mobylette, sans phare. Elle s'arrête à l'entrée. Un homme marche jusqu'au fond, sous ce qui reste des saules. Il pose par terre un bocal de verre et allume une bougie dedans. Il s'accroupit devant. Il est à deux mètres de Karim.\n\nLa flamme lui éclaire le visage par en dessous.",
+              "facts": [],
+              "requiresAny": [
+                "tardieu",
+                "rosa"
+              ],
+              "puzzle": "poursuite",
+              "ambience": "saules-nuit"
+            },
+            {
+              "id": "ruines",
+              "locationId": "camping_saules",
+              "type": "investigation",
+              "button": "Visiter les ruines en plein jour",
+              "title": "Les ruines du camping",
+              "text": "En plein jour, le camping des Saules ressemble à une ville bombardée en miniature. Les dalles des emplacements numérotés, le bloc sanitaire sans toit, un panneau rouillé « ACCUEIL · RECEPTION · EMPFANG » qui tient par un seul boulon. La végétation a repris partout, sauf sur les dalles.\n\nAu fond, près de la rivière, là où il ne reste que des souches de saules arrachées, une croix faite de deux branches liées avec du fil de fer. Devant, un bocal avec un fond de bougie. Des fleurs des champs, coquelicots et lavande, coupées depuis un jour ou deux. Sur la croix, deux prénoms gravés au couteau, avec soin : « Thierry · Nathalie ».\n\nYves cherche le numéro de l'emplacement. La borne est tombée dans l'herbe. Il la relève : 31.\n\n« Les plaques du mémorial donnent les noms, dit Paul. Elles ne disent pas où était la caravane. Celui qui vient ici le sait à un mètre près. »",
+              "facts": [
+                {
+                  "about": "l:camping_saules",
+                  "text": "À l'emplacement 31, au fond sous les saules, une croix de branches gravée « Thierry · Nathalie », des fleurs fraîches et une bougie. Quelqu'un sait exactement où était la caravane.",
+                  "label": "Les ruines"
+                }
+              ]
+            },
+            {
+              "id": "rosa",
+              "locationId": "memorial",
+              "type": "entretien",
+              "button": "Parler à Rosa Bérenger",
+              "title": "Rosa Bérenger",
+              "text": "{{p:rosa|Rosa Bérenger}} est assise sur le banc qui fait face au mémorial, à l'ombre, un éventail publicitaire dans une main et un chapelet dans l'autre. Elle a soixante-huit ans, un accent italien qu'elle n'a pas perdu en cinquante ans de Vaucluse, et une photo de son mari dans son sac, qu'elle sort avant qu'on la lui demande.\n\n« Marius. Quarante et un ans de mariage. La rivière l'a pris dans la cave, il était descendu chercher le vin. » Elle range la photo. « Jeudi dernier, je l'ai vu au marché. Devant le fromager. Il portait sa veste. Il m'a regardée, et il est parti. »\n\nElle ne pleure pas. Elle explique, patiemment, comme à des enfants. « Depuis la photo dans le journal, tout le monde le sait. La rivière rend ses morts, monsieur. Elle a gardé Garcin deux ans, et elle l'a rendu. Elle rendra les autres. »\n\nPaul ne la contredit pas. Karim note tout.\n\n« Et la nuit, il y a de la lumière au {{l:camping_saules|camping des Saules}}. Une petite lumière, au fond. Je la vois de ma fenêtre, j'habite la route de Malaucène. C'est eux. Ils reviennent là où ils sont partis. »",
+              "facts": [
+                {
+                  "about": "p:rosa",
+                  "text": "Veuve de Marius, mort dans la crue. Dit l'avoir vu au marché le jeudi 9 juin. « La rivière rend ses morts. Elle a rendu Garcin. »"
+                },
+                {
+                  "about": "l:camping_saules",
+                  "text": "La nuit, une petite lumière brille au fond du camping en ruine.",
+                  "label": "Selon Rosa"
+                }
+              ],
+              "speaker": "rosa"
+            },
+            {
+              "id": "plaque",
+              "locationId": "memorial",
+              "type": "investigation",
+              "button": "Lire la plaque du souvenir",
+              "title": "La plaque du souvenir",
+              "text": "Le mémorial est une stèle de pierre blanche au bord de l'Ouvèze, près du pont romain de Vaison, qui a tenu en 1992 quand tout le reste partait. Les noms sont gravés en colonnes, par ordre alphabétique. Il y a toujours des fleurs.\n\nÀ la lettre G : « Jacques GARCIN, 1944-1992, mort en portant secours ». C'est le seul nom qui porte une mention. Dans un médaillon de porcelaine, la {{d:coupure_1992|photo}} du journal de 1992 : un homme moustachu aux cheveux bruns, le front haut, le nez de travers, le menton carré.\n\nÀ la lettre M : « Thierry MOLLET, 1966-1992 ». À la lettre B : « Nathalie BRUN, 1968-1992 ».\n\nSous le médaillon de Garcin, un bouquet de lavande, frais, attaché avec un élastique. Une carte de fleuriste sans en-tête, glissée dedans, avec un seul mot au stylo : « Pardon. » Pas de signature. Paul la retourne. Rien au dos.",
+              "facts": [
+                {
+                  "about": "d:coupure_1992",
+                  "text": "Sur la plaque de Vaison, la photo de Garcin en 1992 : moustache, cheveux bruns, front haut, nez de travers, menton carré.",
+                  "label": "Le médaillon"
+                },
+                {
+                  "about": "l:memorial",
+                  "text": "« Jacques GARCIN, mort en portant secours », le seul nom avec une mention. Plus bas, Thierry Mollet et Nathalie Brun. Un bouquet avec une carte : « Pardon. »",
+                  "label": "La plaque"
+                }
+              ]
+            }
+          ],
+          "puzzles": {
+            "confrontation": {
+              "type": "grille",
+              "title": "Le tableau de Karim",
+              "instructions": "Un seul des quatre ment, et tout ce qu'il dit est faux. Les autres disent vrai. Les grilles sont votre brouillon : seules comptent vos réponses aux questions de Paul.",
+              "temoins": [
+                {
+                  "id": "helene",
+                  "nom": "Hélène Garcin",
+                  "court": "Hélène",
+                  "role": "la veuve"
+                },
+                {
+                  "id": "royer",
+                  "nom": "Lucien Royer",
+                  "court": "Royer",
+                  "role": "ouvrier agricole"
+                },
+                {
+                  "id": "firmin",
+                  "nom": "Firmin Achard",
+                  "court": "Firmin",
+                  "role": "joueur de boules"
+                },
+                {
+                  "id": "sandrine",
+                  "nom": "Sandrine Mollet",
+                  "court": "Sandrine",
+                  "role": "saisonnière"
+                }
+              ],
+              "declarations": [
+                {
+                  "qui": "helene",
+                  "texte": "J'ai passé la soirée au café des Arcades. Demandez à qui vous voulez."
+                },
+                {
+                  "qui": "royer",
+                  "texte": "Le canal ? Je n'y ai pas mis les pieds de la soirée."
+                },
+                {
+                  "qui": "royer",
+                  "texte": "J'avais mes boules avec moi, comme tous les soirs. Je ne les quitte pas."
+                },
+                {
+                  "qui": "royer",
+                  "texte": "Si je suis sorti, c'est pour chercher une boule que j'avais oubliée sur la Digue. Rien d'autre."
+                },
+                {
+                  "qui": "firmin",
+                  "texte": "Une lampe ? À mon âge, je connais chaque pierre de ce pays."
+                },
+                {
+                  "qui": "firmin",
+                  "texte": "Je n'étais ni au bord de l'eau, ni sur la Digue."
+                },
+                {
+                  "qui": "firmin",
+                  "texte": "Je ne cherchais rien, et je n'attendais personne."
+                },
+                {
+                  "qui": "sandrine",
+                  "texte": "La boule lyonnaise, c'est moi qui l'avais. Je l'ai ramassée par terre, elle traînait."
+                },
+                {
+                  "qui": "sandrine",
+                  "texte": "Madame Garcin n'avait pas le journal. Elle a fait suspendre l'abonnement après la photo, tout le monde le sait."
+                }
+              ],
+              "indices": [
+                {
+                  "source": "Gaston Rey, cantonnier",
+                  "texte": "Vers 22 h, une femme seule près du boulodrome de la Digue."
+                },
+                {
+                  "source": "Les gendarmes",
+                  "texte": "La lampe de poche a été trouvée sur la berge du canal : celui qui la tenait était au canal."
+                },
+                {
+                  "source": "Fredo, serveur",
+                  "texte": "Sa cliente de 22 h aux Arcades a regardé la porte toute la soirée : la personne des Arcades attendait quelqu'un."
+                },
+                {
+                  "source": "Josiane Pellegrin",
+                  "texte": "Le meunier devait « s'expliquer avec quelqu'un, au canal, ce soir » : la personne du canal venait s'expliquer."
+                }
+              ],
+              "categories": [
+                {
+                  "id": "lieu",
+                  "nom": "Où, à 22 h",
+                  "valeurs": [
+                    {
+                      "id": "canal",
+                      "nom": "La berge du canal",
+                      "court": "Canal"
+                    },
+                    {
+                      "id": "pont",
+                      "nom": "Le pont roman",
+                      "court": "Pont"
+                    },
+                    {
+                      "id": "digue",
+                      "nom": "Le boulodrome de la Digue",
+                      "court": "Digue"
+                    },
+                    {
+                      "id": "arcades",
+                      "nom": "Le café des Arcades",
+                      "court": "Arcades"
+                    }
+                  ]
+                },
+                {
+                  "id": "objet",
+                  "nom": "Avec quoi",
+                  "valeurs": [
+                    {
+                      "id": "lampe",
+                      "nom": "Une lampe de poche",
+                      "court": "Lampe"
+                    },
+                    {
+                      "id": "cles",
+                      "nom": "Les clés du moulin",
+                      "court": "Clés"
+                    },
+                    {
+                      "id": "journal",
+                      "nom": "Le journal du jour",
+                      "court": "Journal"
+                    },
+                    {
+                      "id": "boule",
+                      "nom": "Une boule lyonnaise",
+                      "court": "Boule"
+                    }
+                  ]
+                },
+                {
+                  "id": "raison",
+                  "nom": "Pourquoi dehors",
+                  "valeurs": [
+                    {
+                      "id": "expliquer",
+                      "nom": "Venir s'expliquer",
+                      "court": "S'expliquer"
+                    },
+                    {
+                      "id": "attendre",
+                      "nom": "Attendre quelqu'un",
+                      "court": "Attendre"
+                    },
+                    {
+                      "id": "surveiller",
+                      "nom": "Surveiller quelqu'un",
+                      "court": "Surveiller"
+                    },
+                    {
+                      "id": "chercher",
+                      "nom": "Chercher un objet perdu",
+                      "court": "Chercher"
+                    }
+                  ]
+                }
+              ],
+              "questions": [
+                {
+                  "id": "menteur",
+                  "texte": "Qui ment ?",
+                  "choix": "temoins",
+                  "reponse": "royer"
+                },
+                {
+                  "id": "ou",
+                  "texte": "Où était le menteur à 22 h ?",
+                  "choix": "lieu",
+                  "reponse": "canal"
+                },
+                {
+                  "id": "sac",
+                  "texte": "Qu'avait Hélène Garcin dans son sac ?",
+                  "choix": "objet",
+                  "reponse": "cles"
+                }
+              ],
+              "solution": {
+                "menteur": "royer",
+                "lieu": {
+                  "helene": "arcades",
+                  "royer": "canal",
+                  "firmin": "pont",
+                  "sandrine": "digue"
+                },
+                "objet": {
+                  "helene": "cles",
+                  "royer": "lampe",
+                  "firmin": "journal",
+                  "sandrine": "boule"
+                },
+                "raison": {
+                  "helene": "attendre",
+                  "royer": "expliquer",
+                  "firmin": "surveiller",
+                  "sandrine": "chercher"
+                }
+              },
+              "erreur": "« Admettons. » Paul n'est pas convaincu. Quelque chose ne tient pas, et vous avez perdu une heure.",
+              "help": "Karim tapote deux lignes de son bloc. « Royer et Sandrine disent tous les deux qu'ils avaient la boule lyonnaise. Ils ne peuvent pas dire vrai tous les deux. Le menteur, c'est l'un des deux. »",
+              "result": "Paul hoche la tête. Lucien Royer a menti sur toute la ligne. À 22 h, il était sur la berge du canal, avec la lampe du camping des Saules, venu s'expliquer avec le meunier. Firmin surveillait depuis le pont roman, son journal à la main. Sandrine cherchait sa montre sur la Digue et y avait ramassé la boule de Royer.\n\nEt Hélène Garcin attendait aux Arcades, avec dans son sac {{d:cles_moulin|les clés du moulin}}. Les clés qu'elle dit avoir rendues en mai.\n\n« Admettons qu'il mente, dit Paul. Ça ne veut pas dire qu'il a tué. Ça veut dire qu'il était là. »",
+              "facts": [
+                {
+                  "about": "p:royer",
+                  "text": "Ment sur tout. À 22 h, il était sur la berge du canal, avec la lampe, venu s'expliquer avec le meunier.",
+                  "label": "Le tableau"
+                },
+                {
+                  "about": "d:cles_moulin",
+                  "text": "Dans le sac d'Hélène Garcin, aux Arcades, mercredi à 22 h. Elle dit les avoir rendues en mai."
+                },
+                {
+                  "about": "p:helene",
+                  "text": "À 22 h aux Arcades, à attendre quelqu'un, avec les clés du moulin dans son sac.",
+                  "label": "Le tableau"
+                },
+                {
+                  "about": "p:firmin",
+                  "text": "À 22 h sur le pont roman, avec le journal du jour. Il surveillait quelqu'un.",
+                  "label": "Le tableau"
+                },
+                {
+                  "about": "p:sandrine",
+                  "text": "À 22 h sur la Digue, avec la boule lyonnaise de Royer. Elle cherchait un objet perdu.",
+                  "label": "Le tableau"
+                }
+              ]
+            },
+            "portrait": {
+              "type": "portrait",
+              "title": "Le portrait-robot",
+              "instructions": "Choisissez chaque trait d'après les deux témoins. Quand ils ne sont pas d'accord, demandez-vous lequel a pu se tromper, et pourquoi.",
+              "temoins": [
+                {
+                  "qui": "Sandrine",
+                  "texte": "Je l'ai regardé jouer tout l'après-midi, de loin, en plein soleil. Et le soir, je lui ai rendu sa boule sous le réverbère. Les cheveux courts, gris. Le front haut, avec des rides, trois. Une moustache, je crois. Enfin. Je l'ai tellement regardé sur le journal, cet homme-là. Le menton carré. Je ne l'ai pas regardé dans les yeux."
+                },
+                {
+                  "qui": "Karim",
+                  "texte": "Je l'ai vu à deux mètres, à la flamme de la bougie. Les cheveux blancs, tout blancs. Les yeux enfoncés, comme deux trous. Le nez cassé, de travers, comme un boxeur. Pas de moustache : rasé de près, il avait une coupure de rasoir sur la joue. Le menton carré, avec une fossette."
+                }
+              ],
+              "traits": [
+                {
+                  "id": "cheveux",
+                  "nom": "Cheveux",
+                  "options": [
+                    {
+                      "id": "gris",
+                      "nom": "Courts, gris"
+                    },
+                    {
+                      "id": "blancs",
+                      "nom": "Courts, blancs"
+                    },
+                    {
+                      "id": "degarnis",
+                      "nom": "Dégarnis"
+                    },
+                    {
+                      "id": "longs",
+                      "nom": "Longs, en arrière"
+                    }
+                  ]
+                },
+                {
+                  "id": "front",
+                  "nom": "Front",
+                  "options": [
+                    {
+                      "id": "haut",
+                      "nom": "Haut, ridé"
+                    },
+                    {
+                      "id": "bas",
+                      "nom": "Bas"
+                    },
+                    {
+                      "id": "lisse",
+                      "nom": "Bombé, lisse"
+                    }
+                  ]
+                },
+                {
+                  "id": "yeux",
+                  "nom": "Yeux",
+                  "options": [
+                    {
+                      "id": "enfonces",
+                      "nom": "Enfoncés"
+                    },
+                    {
+                      "id": "ronds",
+                      "nom": "Ronds"
+                    },
+                    {
+                      "id": "tombants",
+                      "nom": "Tombants"
+                    }
+                  ]
+                },
+                {
+                  "id": "nez",
+                  "nom": "Nez",
+                  "options": [
+                    {
+                      "id": "droit",
+                      "nom": "Droit"
+                    },
+                    {
+                      "id": "casse",
+                      "nom": "Cassé, de travers"
+                    },
+                    {
+                      "id": "busque",
+                      "nom": "Busqué"
+                    }
+                  ]
+                },
+                {
+                  "id": "bouche",
+                  "nom": "Bouche",
+                  "options": [
+                    {
+                      "id": "rasee",
+                      "nom": "Fine, rasée"
+                    },
+                    {
+                      "id": "moustache",
+                      "nom": "Fine, avec moustache"
+                    },
+                    {
+                      "id": "epaisse",
+                      "nom": "Épaisse, rasée"
+                    }
+                  ]
+                },
+                {
+                  "id": "menton",
+                  "nom": "Menton",
+                  "options": [
+                    {
+                      "id": "carre",
+                      "nom": "Carré, à fossette"
+                    },
+                    {
+                      "id": "fuyant",
+                      "nom": "Fuyant"
+                    },
+                    {
+                      "id": "pointu",
+                      "nom": "Pointu"
+                    }
+                  ]
+                }
+              ],
+              "solution": {
+                "cheveux": "gris",
+                "front": "haut",
+                "yeux": "enfonces",
+                "nez": "casse",
+                "bouche": "rasee",
+                "menton": "carre"
+              },
+              "wrongOne": "Sandrine et Karim regardent le portrait. Ils ne sont pas d'accord avec vous sur un trait.",
+              "wrongMany": "Sandrine et Karim regardent le portrait. Ils ne sont pas d'accord avec vous sur {n} traits.",
+              "help": "Yves reprend les calques. « Sandrine a ajouté la moustache du journal de 1992 : elle a regardé cette photo tous les soirs pendant vingt mois. Et à la bougie, le gris devient blanc. Je le sais, c'est mon métier. »",
+              "result": "Yves pose le {{d:portrait_robot|portrait}} à côté de la photo de 1992, celle du médaillon de Vaison. Il cache la moustache avec son pouce.\n\nLe même front haut. Les mêmes yeux enfoncés. Le même nez cassé, de travers vers la gauche. La même fossette au menton. Il retire son pouce, le remet.\n\n« Vingt mois, des cheveux gris et un coup de rasoir. C'est lui. »",
+              "facts": [
+                {
+                  "about": "d:portrait_robot",
+                  "text": "Cheveux courts et gris, front haut ridé, yeux enfoncés, nez cassé, bouche fine sans moustache, menton carré à fossette. Le visage de Garcin en 1992, sans la moustache."
+                },
+                {
+                  "about": "p:royer",
+                  "text": "L'homme de la Digue et l'homme des Saules sont le même. Il a le visage de Jacques Garcin, moustache en moins.",
+                  "label": "Le portrait"
+                }
+              ]
+            },
+            "poursuite": {
+              "type": "poursuite",
+              "title": "Huit secondes",
+              "instructions": "Il souffle la bougie et se relève. Il va repartir. Décidez, vite.",
+              "seconds": 8,
+              "timeout": "cacher",
+              "result": "Karim l'a vu à deux mètres, à la flamme. Plus tard, il en fera son {{d:temoignage_karim|témoignage}} pour Yves, mot pour mot : « Je l'ai vu à deux mètres, à la flamme de la bougie. Les cheveux blancs, tout blancs. Les yeux enfoncés, comme deux trous. Le nez cassé, de travers, comme un boxeur. Pas de moustache : rasé de près, il avait une coupure de rasoir sur la joue. Le menton carré, avec une fossette. »",
+              "facts": [
+                {
+                  "about": "d:temoignage_karim",
+                  "text": "« Je l'ai vu à deux mètres, à la flamme de la bougie. Les cheveux blancs, tout blancs. Les yeux enfoncés, comme deux trous. Le nez cassé, de travers, comme un boxeur. Pas de moustache : rasé de près, il avait une coupure de rasoir sur la joue. Le menton carré, avec une fossette. »"
+                },
+                {
+                  "about": "l:camping_saules",
+                  "text": "Un homme vient la nuit en mobylette à l'emplacement 31, au fond sous les saules, et y allume une bougie.",
+                  "label": "La nuit"
+                }
+              ],
+              "help": "Sans réponse, Karim reste caché.",
+              "options": [
+                {
+                  "id": "cacher",
+                  "label": "Rester caché",
+                  "text": "Karim ne bouge pas. Yves non plus. L'homme reste debout un long moment dans le noir, la bougie éteinte à ses pieds. Puis il parle, tout bas, avec un accent qui n'est pas d'ici.\n\n« Pardon, Thierry. Pardon, Nathalie. Je vous avais pas notés. J'avais dit demain. »\n\nIl ramasse le bocal, il repart à pied vers la mobylette, et il s'en va sans allumer le phare.",
+                  "facts": [
+                    {
+                      "about": "l:camping_saules",
+                      "text": "« Pardon, Thierry. Pardon, Nathalie. Je vous avais pas notés. J'avais dit demain. »",
+                      "label": "Les mots de l'homme"
+                    }
+                  ],
+                  "revealsActions": [
+                    "oublie"
+                  ]
+                },
+                {
+                  "id": "suivre",
+                  "label": "Le suivre",
+                  "text": "Vous le laissez partir, puis Yves démarre la voiture tous feux éteints. La mobylette ne remonte pas vers les Pilles. Elle descend vers Vaison, passe le pont romain et s'arrête devant le {{l:memorial|mémorial}}.\n\nL'homme reste debout devant la stèle. Puis il pose la main à plat sur un nom, à la lettre G, et il la laisse là longtemps, comme sur l'épaule de quelqu'un.\n\nQuand il est reparti, Karim va voir. Sous sa main, il y avait : Jacques GARCIN.",
+                  "facts": [
+                    {
+                      "about": "l:memorial",
+                      "text": "L'homme des Saules s'arrête au mémorial et pose longtemps la main sur le nom de Jacques Garcin.",
+                      "label": "La nuit"
+                    }
+                  ],
+                  "revealsActions": [
+                    "suit"
+                  ]
+                },
+                {
+                  "id": "barrer",
+                  "label": "Lui barrer la route",
+                  "text": "Yves se lève et déclenche son flash en pleine figure. L'homme crie, se cache le visage dans le coude et part en courant à travers les souches, vers la rivière. Il laisse la mobylette, et une musette au pied de la croix.\n\nDedans, une gourde, un couteau, et une {{d:photo_famille|photo}} pliée en quatre, usée aux plis : un homme moustachu, une femme blonde, deux enfants, devant un panneau « Camping des Saules ». Au dos : « Été 1991 ».\n\nAu matin, la mobylette a disparu. La photo d'Yves, développée le lendemain : un bras levé, un éclair blanc. Rien d'autre.",
+                  "facts": [
+                    {
+                      "about": "d:photo_famille",
+                      "text": "Dans la musette de l'homme des Saules : la famille Garcin devant le camping, « Été 1991 »."
+                    }
+                  ]
+                },
+                {
+                  "id": "frapper",
+                  "label": "Lui sauter dessus",
+                  "text": "Karim bondit. Il a fait du rugby au lycée, il le dit souvent. L'homme est plus lourd, plus vieux, plus fort. Ils roulent dans les galets. La casquette tombe. L'homme se dégage, frappe Karim une seule fois, à l'épaule, sans méchanceté, et disparaît dans le noir.\n\nDeux minutes plus tard, des phares : une patrouille de la brigade de Vaison, appelée par une voisine qui voit « des lumières chez les morts ». Karim passe la nuit en garde à vue pour violences. Yves, dans le couloir, sur une chaise.\n\nL'{{p:montagne|adjudant-chef Montagne}} vient les chercher le lendemain à midi. « Votre stagiaire a plaqué un homme dans un camping en ruine. Je n'ai pas de rubrique pour ça non plus. Point. » Dans la voiture, Karim sort de sa poche la casquette, qu'il a gardée. Sur la bande de cuir, à l'encre : « J.G. »\n\nVous avez perdu une journée.",
+                  "facts": [
+                    {
+                      "about": "p:montagne",
+                      "text": "A récupéré Karim le lendemain midi, après une nuit de garde à vue à Vaison pour violences.",
+                      "label": "Garde à vue"
+                    },
+                    {
+                      "about": "l:camping_saules",
+                      "text": "Tombée pendant la bagarre. Sur la bande de cuir, à l'encre : « J.G. »",
+                      "label": "La casquette"
+                    }
+                  ],
+                  "cost": 4
+                }
+              ]
+            }
+          },
+          "actions": [
+            {
+              "id": "endort",
+              "name": "endort"
+            },
+            {
+              "id": "pousse",
+              "name": "pousse"
+            },
+            {
+              "id": "va_tout_dire",
+              "name": "va tout dire"
+            },
+            {
+              "id": "oublie",
+              "name": "oublie"
+            },
+            {
+              "id": "ment",
+              "name": "ment"
+            },
+            {
+              "id": "fait_chanter",
+              "name": "fait chanter"
+            },
+            {
+              "id": "suit",
+              "name": "suit"
+            },
+            {
+              "id": "protege",
+              "name": "protège"
+            },
+            {
+              "id": "menace",
+              "name": "menace"
+            }
+          ],
+          "article": [
+            {
+              "id": "crue",
+              "title": "Le soir de la crue",
+              "parts": [
+                "Le 22 septembre 1992, quand l'Ouvèze monte, Jacques Garcin évacue son camping, la liste à la main. Mais il ",
+                {
+                  "id": "crue-1",
+                  "type": "a",
+                  "answer": "oublie",
+                  "q": "Q4",
+                  "points": 3.333
+                },
+                " la caravane du fond, où dorment Thierry Mollet et Nathalie Brun. Pour couvrir son ami, ",
+                {
+                  "id": "crue-2",
+                  "type": "p",
+                  "answer": "chabert",
+                  "q": "Q4",
+                  "points": 3.333
+                },
+                " ",
+                {
+                  "id": "crue-3",
+                  "type": "a",
+                  "answer": "ment",
+                  "q": "Q4",
+                  "points": 3.333
+                },
+                " aux gendarmes : il dit l'avoir vu emporté en portant secours."
+              ]
+            },
+            {
+              "id": "revenant",
+              "title": "Le revenant",
+              "parts": [
+                "L'homme de la photo du Grand Prix de la Digue, Lucien Royer, n'est autre que ",
+                {
+                  "id": "revenant-1",
+                  "type": "p",
+                  "answer": "garcin",
+                  "q": "Q3",
+                  "points": 10
+                },
+                ". ",
+                {
+                  "id": "revenant-2",
+                  "type": "d",
+                  "answer": "portrait_robot",
+                  "q": "Q3",
+                  "points": 10
+                },
+                " ne laisse aucun doute."
+              ]
+            },
+            {
+              "id": "veuve",
+              "title": "La veuve",
+              "parts": [
+                {
+                  "id": "veuve-1",
+                  "type": "p",
+                  "answer": "helene",
+                  "q": "Q5",
+                  "points": 5
+                },
+                " le sait depuis le lendemain de la crue. Chaque mois, elle lui envoie ",
+                {
+                  "id": "veuve-2",
+                  "type": "d",
+                  "answer": "mandats",
+                  "q": "Q5",
+                  "points": 5
+                },
+                "."
+              ]
+            },
+            {
+              "id": "mobile",
+              "title": "Le mobile",
+              "parts": [
+                "En juin 1994, Aimé Chabert ",
+                {
+                  "id": "mobile-1",
+                  "type": "a",
+                  "answer": "va_tout_dire",
+                  "q": "Q2",
+                  "points": 10
+                },
+                " aux gendarmes. Si Garcin est vivant, sa veuve doit rendre ",
+                {
+                  "id": "mobile-2",
+                  "type": "d",
+                  "answer": "assurance",
+                  "q": "Q2",
+                  "points": 10
+                },
+                ", et elle risque la prison."
+              ]
+            },
+            {
+              "id": "canal",
+              "title": "La nuit du canal",
+              "parts": [
+                "Le mercredi 15 juin, à 23 h, ",
+                {
+                  "id": "canal-1",
+                  "type": "p",
+                  "answer": "helene",
+                  "q": "Q1",
+                  "points": 5
+                },
+                " entre au moulin avec ",
+                {
+                  "id": "canal-2",
+                  "type": "d",
+                  "answer": "cles_moulin",
+                  "q": "Q1",
+                  "points": 5
+                },
+                ". Elle ",
+                {
+                  "id": "canal-3",
+                  "type": "a",
+                  "answer": "endort",
+                  "q": "Q1",
+                  "points": 5
+                },
+                " le meunier avec ses somnifères, puis le ",
+                {
+                  "id": "canal-4",
+                  "type": "a",
+                  "answer": "pousse",
+                  "q": "Q1",
+                  "points": 5
+                },
+                " dans le bief."
+              ]
+            },
+            {
+              "id": "lettre",
+              "title": "La lettre",
+              "parts": [
+                "La lettre qui a fait venir le Bureau à Nyons, c'est ",
+                {
+                  "id": "lettre-1",
+                  "type": "p",
+                  "answer": "sandrine",
+                  "q": "Q6",
+                  "points": 10
+                },
+                " qui l'a écrite. Thierry Mollet était son frère."
+              ]
+            },
+            {
+              "id": "salamandre",
+              "title": "La salamandre",
+              "parts": [
+                "Sur le pont roman, quelqu'un a tout vu et n'a rien dit : ",
+                {
+                  "id": "salamandre-1",
+                  "type": "p",
+                  "answer": "firmin",
+                  "q": "BONUS",
+                  "points": 5
+                },
+                ", dont le carnet porte une salamandre."
+              ],
+              "bonus": true
+            }
+          ],
+          "attemptFactors": [
+            1,
+            0.8,
+            0.6
+          ],
+          "review": {
+            "juste": "Jean-Loup lit l'article deux fois, au téléphone, Paul lisant à voix haute depuis la cabine de la place. Il ne dit rien pendant un long moment. Puis : « Ça tient. Envoyez. »",
+            "essai1": "Jean-Loup a relu le fax. « Il y a un paragraphe qui ne tient pas. Je l'ai marqué. Je ne vous dis pas où ça cloche. »",
+            "essai1_pluriel": "Jean-Loup a relu le fax. « Il y a des paragraphes qui ne tiennent pas. Je les ai marqués. Je ne vous dis pas où ça cloche. »",
+            "essai2": "Jean-Loup soupire dans le combiné. « Là, et là. En rouge. Dernière chance. Au prochain fax, ça part tel quel. »",
+            "essai3": "Jean-Loup ne relit même pas. « C'est l'heure. Ça part. »"
+          },
+          "ranks": [
+            {
+              "min": 80,
+              "label": "Réussite majeure"
+            },
+            {
+              "min": 60,
+              "label": "Réussite"
+            },
+            {
+              "min": 40,
+              "label": "Demi-succès"
+            },
+            {
+              "min": 0,
+              "label": "Échec"
+            }
+          ],
+          "endings": [
+            {
+              "id": "une",
+              "when": {
+                "Q1": true,
+                "Q2": true,
+                "Q3": true
+              },
+              "title": "La une",
+              "headline": "Le noyé de l'Ouvèze était vivant, et sa veuve le savait",
+              "text": "Samedi 25 juin, la page des Affaires occultes est en une du Drômois, et reprise par les treize autres titres du groupe. Jean-Loup a choisi le titre lui-même : « Le noyé de l'Ouvèze était vivant, et sa veuve le savait ».\n\nHélène Garcin est mise en examen pour meurtre le lundi suivant, à Valence. Elle ne dit presque rien au juge. Elle demande seulement que ses enfants n'assistent pas au procès. Le Dr Sauvan témoigne. L'adjudant-chef Montagne est muté à Die.\n\nJacques Garcin se présente de lui-même à la gendarmerie de Vaison le mardi matin, à pied, avec un sac. Le parquet de Carpentras rouvre le dossier de la crue. Il n'a pas d'avocat, et il n'en veut pas.\n\nJulien Garcin appelle le Bureau en juillet. Il ne crie pas. Il demande seulement à quoi ressemble son père, maintenant. Paul le lui dit, trait par trait, comme pour un portrait-robot.",
+              "music": "fin-une"
+            },
+            {
+              "id": "sans_mobile",
+              "when": {
+                "Q1": true,
+                "Q3": true
+              },
+              "title": "Le mobile",
+              "headline": "Nyons : la veuve du héros mise en examen",
+              "text": "Samedi 25 juin, l'article fait du bruit : la veuve du héros a tué le meunier, et le héros est vivant. Hélène Garcin est mise en examen.\n\nMais l'article se trompe sur le pourquoi, et son avocat le sait. À l'audience de septembre, il lit la page du samedi à voix haute, lentement, et demande au juge où est le mobile. Il n'y en a pas, dans ce qu'a écrit le Bureau. Hélène Garcin est remise en liberté sous contrôle judiciaire.\n\nElle reprend la boutique du moulin en novembre, pour la saison des olives. Les clients disent qu'elle est très digne.",
+              "music": "fin-martyr"
+            },
+            {
+              "id": "legende",
+              "when": {
+                "Q1": true
+              },
+              "title": "La légende",
+              "headline": "Nyons : le meunier ne s'est pas noyé tout seul",
+              "text": "Samedi 25 juin, l'article tient sur un point : Aimé Chabert ne s'est pas noyé tout seul. Hélène Garcin est entendue, puis mise en examen.\n\nMais l'article ne dit pas qui est l'homme de la photo. Le revenant reste un revenant. Le lundi, Lucien Royer ne se présente pas aux vergers. Tardieu trouve le cabanon vide, la sacoche de boules partie, les mandats aussi.\n\nÀ Vaison, la plaque dit toujours « mort en portant secours ». Rosa Bérenger continue de voir Marius au marché. Et la nuit, de sa fenêtre, elle ne voit plus de lumière au camping des Saules.",
+              "music": "fin-promoteur"
+            },
+            {
+              "id": "revenant",
+              "when": {
+                "Q1": [
+                  "p:royer",
+                  "p:garcin"
+                ]
+              },
+              "title": "Le revenant",
+              "headline": "Le revenant de l'Ouvèze a tué le meunier",
+              "text": "Samedi 25 juin, le titre de Jean-Loup fait le tour de la région : « Le revenant de l'Ouvèze a tué le meunier ». C'est exactement la page qu'il voulait. Les ventes du Drômois doublent.\n\nLes gendarmes viennent chercher Lucien Royer aux Pilles le lundi matin. Il ne résiste pas. Il ne se défend pas. Il dit seulement qu'il s'appelle Jacques Garcin, et qu'il n'a pas tué Aimé. Personne ne l'écoute. On l'écoute encore moins quand on apprend ce qu'il a fait en 1992.\n\nHélène Garcin vend la maison des Forts en août, à un couple de Hollandais. Le Dr Sauvan envoie au juge le résultat de son analyse, et une lettre de quatre pages. Elle n'a jamais de réponse.",
+              "music": "fin-dementi"
+            },
+            {
+              "id": "dementi",
+              "when": {},
+              "title": "Le démenti",
+              "headline": "Nyons : la rivière garde ses secrets",
+              "text": "L'article paraît le samedi 25 juin. Le lundi, la gendarmerie publie un communiqué : la mort d'Aimé Chabert est accidentelle, l'enquête est close, et « certains journalistes feraient mieux de s'en tenir aux fantômes ». L'adjudant-chef Montagne a écrit la dernière phrase lui-même.\n\nJean-Loup convoque Paul à Lyon. La porte reste fermée une heure. En sortant, il dit seulement : « Admettons. »\n\nÀ Nyons, la vanne du moulin est fermée, le cadenas est neuf. L'été passe. On ne presse qu'en hiver.",
+              "music": "fin-dementi"
+            }
+          ],
+          "complements": {
+            "Q4": {
+              "right": "La plaque de Vaison est refaite en octobre. La mention « mort en portant secours » disparaît, et le nom de Jacques Garcin avec elle. Sur la nouvelle pierre, quelqu'un a fait ajouter, sous les noms de Thierry Mollet et Nathalie Brun : « emplacement 31 ».",
+              "wrong": "À Vaison, la plaque dit toujours « mort en portant secours ». Chaque 22 septembre, quelqu'un y dépose un bouquet de lavande avec une carte : « Pardon. »"
+            },
+            "Q5": {
+              "right": "La Mutuelle rhodanienne porte plainte pour escroquerie. La maison des Forts est saisie. Julien et Claire partent vivre chez une grand-tante, à Dieulefit.",
+              "wrong": "La Mutuelle rhodanienne classe le dossier : rien ne prouve que la veuve savait. Jean-Claude Vasseur repart à Avignon avec sa calculette solaire."
+            },
+            "Q6": {
+              "right": "Sandrine Mollet repart à Roanne à la fin du mois. Gaston Rey a retrouvé la montre de Thierry sous un banc de la Digue. Il la lui a portée au camping, sans un mot, et il est reparti avant qu'elle ouvre la boîte.",
+              "wrong": "Sandrine Mollet est entendue trois fois par les gendarmes sur sa visite au moulin. Elle quitte Nyons avant les abricots, sans sa montre."
+            }
+          },
+          "choiceEndings": {
+            "poursuite": {
+              "frapper": {
+                "title": "Le Bureau fait la une",
+                "text": "Le mardi, La Gazette du Vaucluse, un concurrent, titre en page 3 : « Un journaliste lyonnais agresse un ouvrier agricole dans un camping sinistré ». Jean-Loup découpe l'article et l'épingle au-dessus du bureau de Karim, à Lyon. Il y restera jusqu'à Noël.",
+                "penalty": 10
+              }
+            }
+          },
+          "epilogue": "Le lundi suivant, au courrier du Bureau, à Lyon, une carte de bristol blanc, timbrée de Nyons. La salamandre dans les flammes, à l'encre rouge. Au dos, d'une écriture fine et penchée : « Vos conclusions sont justes. Les nôtres aussi. F. A. »\n\nOdile la pose à côté de celle de novembre. Les deux salamandres sont identiques, au trait près. Le soir, elle reste tard aux archives.\n\nLe lendemain matin, il y a sur le bureau de Paul une coupure du Drômois du 3 août 1958, page des boules : « Nyons. Décès de M. Firmin Achard, 71 ans, figure de la Boule nyonsaise. » Pas de photo. Odile ne dit rien. Elle a souligné l'âge.",
+          "weather": "soleil",
+          "calendar": {
+            "days": [
+              "Vendredi 17 juin",
+              "Samedi 18 juin",
+              "Lundi 20 juin",
+              "Mardi 21 juin",
+              "Mercredi 22 juin"
+            ],
+            "slots": [
+              "9 h",
+              "11 h",
+              "14 h",
+              "16 h"
+            ],
+            "deadline": "Jeudi 23 juin, 18 h : bouclage"
+          },
+          "solution": "Le 22 septembre 1992, Jacques Garcin évacue son camping des Saules avec la liste des inscrits, mais il a oublié d'y noter la caravane de Thierry Mollet et Nathalie Brun, arrivés la veille. Ils meurent. Garcin disparaît, et son ami Aimé Chabert, le meunier, jure l'avoir vu emporté en portant secours. Le lendemain, Garcin appelle sa femme, Hélène : « Tu es mort. Reste mort. » Elle touche 1,4 million d'assurance-vie et lui envoie des mandats pour qu'il se taise. Garcin vit aux Pilles sous le nom de Lucien Royer. En juin 1994, une photo de concours le trahit. Sandrine Mollet, la sœur de Thierry, le reconnaît, va crier chez Chabert et écrit au Bureau. Chabert décide de tout dire aux gendarmes le jeudi 16, et prévient Hélène. Le mercredi 15 à 22 h, il voit Garcin sur la berge du canal ; Garcin repart à 22 h 30, et Chabert est vivant. À 23 h 05, Hélène entre au moulin avec ses clés, endort Chabert avec son Mogadon dans un verre de marc, ouvre la vanne et le pousse dans le bief. Firmin Achard a tout vu depuis le pont roman, et n'a rien dit.",
+          "plan": {
+            "title": "Plan de Nyons",
+            "subtitle": "Édition 1994 · échelle 1/8 000",
+            "decor": [
+              {
+                "type": "river",
+                "d": "M900,96 C860,180 800,300 760,380 C720,440 660,462 560,470 C440,480 320,486 180,484 C100,484 40,480 0,476",
+                "label": "L'Eygues",
+                "at": [
+                  520,
+                  494
+                ],
+                "angle": -2
+              },
+              {
+                "type": "river",
+                "d": "M780,250 C740,300 700,340 650,360 C590,382 520,386 440,388 C340,392 250,394 150,396",
+                "label": "Canal du Moulin",
+                "at": [
+                  560,
+                  380
+                ],
+                "angle": -6
+              },
+              {
+                "type": "road",
+                "d": "M0,284 C200,282 400,276 600,270 C700,268 780,240 900,190",
+                "label": "Avenue Henri-Rochier",
+                "at": [
+                  160,
+                  278
+                ],
+                "angle": -1
+              },
+              {
+                "type": "road",
+                "d": "M690,500 C690,470 690,440 690,410"
+              },
+              {
+                "type": "road",
+                "d": "M300,0 C320,80 360,140 440,200 C470,222 470,250 460,282"
+              },
+              {
+                "type": "road",
+                "d": "M260,330 C200,380 140,440 90,600",
+                "label": "Route de Vaison",
+                "at": [
+                  150,
+                  470
+                ],
+                "angle": -62
+              },
+              {
+                "type": "note",
+                "label": "Les Pilles, 8 km →",
+                "at": [
+                  860,
+                  560
+                ],
+                "angle": -90
+              },
+              {
+                "type": "note",
+                "label": "↙ Vaison-la-Romaine, 15 km",
+                "at": [
+                  200,
+                  590
+                ],
+                "angle": 0
+              }
+            ]
+          },
+          "maxPoints": 95
+        }
+      ]
     },
     {
       "id": "lyon",

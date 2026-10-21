@@ -12,7 +12,7 @@ Généré par `carte.py`, qui vérifie aussi la cohérence de l'enquête. Pour m
 | Personnages | 14 |
 | Pistes écrites | 39, dont 14 à débloquer |
 | Rôle des pistes | 12 essentielles, 21 utiles, 1 qui élimine un suspect, 5 fausses pistes |
-| Pistes accordées au joueur | 16 |
+| Pistes accordées au joueur | 20 |
 | Chemin de référence | 12 pistes |
 
 ## Ce que le joueur connaît au départ
@@ -282,7 +282,7 @@ Un outil permanent, gratuit : le joueur tape un nom pour obtenir une adresse. Po
 
 ## Le chemin de référence
 
-Le chemin le plus court pour répondre à toutes les questions : 12 pistes. Le joueur en a 16, soit 4 de marge pour les détours.
+Le chemin le plus court pour répondre à toutes les questions : 12 pistes. Le joueur en a 20, soit 8 de marge pour les détours.
 
 1. **Repérage du chantier** (Ancienne Manufacture Ferréol)
 2. **Le livre de police de la casse** (Casse Berthet)
