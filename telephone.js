@@ -36,6 +36,7 @@
   let gestureHandler = () => {};
   let statusHandler = () => {};
   let renewTimer = null;
+  let seen = 0;
 
   const load = (src) =>
     new Promise((ok, ko) => {
@@ -118,6 +119,7 @@
       }
       if (conn && conn !== c) conn.close();
       conn = c;
+      seen = Date.now();
       if (byToken) {
         deviceKey = rand(32);
         newToken(); // le jeton ne sert qu'une fois
@@ -130,14 +132,28 @@
     });
     c.on("data", (msg) => {
       if (c !== conn || !msg || typeof msg !== "object") return;
+      seen = Date.now();
+      if (msg.t === "ping") return c.send({ t: "pong" });
       if (msg.t === "geste") gestureHandler(msg);
     });
-    c.on("close", () => {
+    const gone = () => {
       if (c !== conn) return;
       conn = null;
       setStatus("perdu");
-    });
+    };
+    c.on("close", gone);
+    c.on("error", gone);
   }
+
+  // Le téléphone sonde le jeu toutes les 4 s ; sans nouvelles depuis 15 s, le lien est mort
+  setInterval(() => {
+    if (conn && Date.now() - seen > 15000) {
+      const dead = conn;
+      conn = null;
+      try { dead.close(); } catch (e) {}
+      setStatus("perdu");
+    }
+  }, 5000);
 
   function forget() {
     if (conn) conn.close();

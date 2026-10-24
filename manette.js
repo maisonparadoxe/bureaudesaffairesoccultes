@@ -69,16 +69,33 @@
     } else if (peer.open) openConn();
   }
 
+  let lastSeen = 0;
+  let beat = null;
   function openConn() {
     const meta = deviceKey ? { deviceKey: deviceKey } : { token: pairToken };
     const c = peer.connect(hostId, { metadata: meta, serialization: "json", reliable: true });
-    c.on("open", () => { conn = c; attempt = 0; });
-    c.on("data", onData);
-    c.on("close", () => {
+    const lost = () => {
       if (c !== conn) return;
       conn = null;
+      clearInterval(beat);
+      try { c.close(); } catch (e) {}
       if (!refused) { message(tr("reconnexion")); retry(); }
+    };
+    c.on("open", () => {
+      conn = c;
+      attempt = 0;
+      lastSeen = Date.now();
+      clearInterval(beat);
+      // Un lien peut mourir sans prévenir (veille, clavier, réseau) : on le sonde
+      beat = setInterval(() => {
+        if (c !== conn) return;
+        if (Date.now() - lastSeen > 12000) return lost();
+        try { c.send({ t: "ping" }); } catch (e) { lost(); }
+      }, 4000);
     });
+    c.on("data", (m) => { lastSeen = Date.now(); onData(m); });
+    c.on("close", lost);
+    c.on("error", lost);
   }
 
   function retry() {
@@ -95,7 +112,7 @@
   }
 
   function onData(msg) {
-    if (!msg || typeof msg !== "object") return;
+    if (!msg || typeof msg !== "object" || msg.t === "pong") return;
     if (msg.t === "refus") {
       // la clé ne vaut plus (jeu relancé, téléphone déconnecté) : il faut un nouveau QR code
       refused = true;
@@ -192,6 +209,7 @@
     shownResult = rid || null;
   }
   let shownResult = null;
+  let typed = ""; // ce qui est tapé au Minitel, gardé si l'écran est redessiné
 
   function drawMinitel() {
     const mi = etat.minitel || {};
@@ -203,12 +221,13 @@
       '<div class="m-bas"><button class="m-btn m-btn-clair" type="button">' + esc(lab("deconnexion")) + "</button></div>";
     const form = root.querySelector("form");
     const input = form.querySelector("input");
-    input.addEventListener("input", () => { buzz(8); send("minitel-frappe", { texte: input.value }); });
+    input.value = typed;
+    input.addEventListener("input", () => { typed = input.value; buzz(8); send("minitel-frappe", { texte: input.value }); });
     form.addEventListener("submit", (ev) => {
       ev.preventDefault();
       if (!input.value.trim()) return;
       send("minitel-envoi", { texte: input.value });
-      input.value = "";
+      input.value = typed = "";
     });
     root.querySelector(".m-btn-clair").addEventListener("click", () => send("minitel-fermer"));
     drawMinitelLog();
