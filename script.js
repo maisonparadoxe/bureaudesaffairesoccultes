@@ -586,6 +586,14 @@
     scrollToPanel();
   }
 
+  function goToQuartier(qId) {
+    state.view = "quartier";
+    state.selectedQuartier = qId;
+    state.lastResult = null;
+    render();
+    scrollToTop();
+  }
+
   function scrollToPanel() {
     const panel = document.querySelector(".content-panel");
     if (panel && panel.scrollIntoView) panel.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -715,12 +723,77 @@
     app.appendChild(renderFootnote());
     syncAudio();
     phoneSync();
+    if (window.BAOPhone && state.started && CASE_VIEWS.includes(state.view)) window.BAOPhone.invite();
   }
 
   // ---------------------------------------------------------------
   // Le téléphone comme manette (telephone.js) : le jeu lui dit quoi afficher
   // ---------------------------------------------------------------
   let activeChase = null;
+
+  // Ce que la télécommande affiche : quartiers, lieux, pistes du lieu et dernier résultat
+  function phoneInvestigation(cs) {
+    const k = computeKnowledge();
+    const plain = (text, fax) => {
+      const box = document.createElement("div");
+      box.innerHTML = renderParagraphs(text, { knowledge: k, fax: fax || "" });
+      return Array.from(box.querySelectorAll("p")).map((p) => p.textContent.trim()).filter(Boolean);
+    };
+    const out = {
+      quartiers: cs.quartiers.map((q) => ({
+        id: q.id,
+        nom: q.name,
+        n: cs.locations.filter((l) => l.quartier === q.id && k.l.has(l.id)).length,
+        actif: state.selectedQuartier === q.id
+      })),
+      lieux: cs.locations
+        .filter((l) => l.quartier === state.selectedQuartier && k.l.has(l.id))
+        .map((l) => ({ id: l.id, nom: l.name, actif: state.view === "location" && state.selectedLocationId === l.id })),
+      liste: []
+    };
+    const loc = state.view === "location" && locationById(state.selectedLocationId);
+    if (loc) {
+      out.liste = cluesForLocation(loc.id)
+        .filter((c) => clueAvailable(c, k))
+        .map((c) => {
+          const lu = state.readClueIds.has(c.id);
+          const who = c.speaker && characterById(c.speaker);
+          return {
+            id: c.id,
+            genre: c.type === "entretien" ? "pc" : "inv",
+            label: clueButton(c),
+            qui: who ? who.name : "",
+            lu: lu,
+            nouveau: state.freshClueIds.has(c.id) && !lu,
+            gratuit: !lu && !!c.free,
+            courant: !!(state.lastResult && state.lastResult.clueId === c.id)
+          };
+        });
+      const r = state.lastResult;
+      if (r && r.empty) out.resultat = { vide: true, paragraphes: [r.text] };
+      else if (r && r.clueId && clueById(r.clueId)) {
+        const clue = clueById(r.clueId);
+        const who = clue.speaker && characterById(clue.speaker);
+        const pz = puzzleOf(clue);
+        const dec = [];
+        const add = (label, arr) => arr && arr.length && dec.push({ label: label, texte: arr.join(", ") });
+        add(t("Annuaire"), r.newCharacters);
+        add(t("Sur le plan"), r.newLocations);
+        add(t("Au dossier"), r.newDocuments);
+        add(t("Pour l'article"), r.newActions);
+        add(t("Nouvelle piste"), r.unlocked);
+        out.resultat = {
+          clue: clue.id,
+          titre: clueTitle(clue),
+          qui: who ? who.name + (who.role ? " · " + who.role : "") : "",
+          paragraphes: plain(clue.text, clue.fax),
+          decouvertes: dec,
+          surOrdi: !!pz && !state.puzzlesSolved.has(clue.puzzle)
+        };
+      }
+    }
+    return out;
+  }
 
   function phoneSync() {
     const P = window.BAOPhone;
@@ -741,13 +814,26 @@
         nom: t("Nom à chercher"),
         deconnexion: t("Déconnexion"),
         localite: "LOCALITÉ : " + ((cs && cs.localite) || ""),
-        invite: t("Tapez un nom, puis ENVOI.")
+        invite: t("Tapez un nom, puis ENVOI."),
+        quartiers: t("Quartiers"),
+        lieux: t("Lieux"),
+        aucunLieu: t("Personne ne vous a encore parlé d'un lieu dans ce quartier."),
+        choisirLieu: t("Choisissez un lieu pour voir les pistes."),
+        rienIci: t("Rien à faire ici pour l'instant."),
+        pc: t("Entretien"),
+        inv: t("Investigation"),
+        lu: t("déjà lu, gratuit"),
+        nouveau: t("nouveau"),
+        gratuit: t("gratuit"),
+        surOrdi: t("Cette scène se joue sur l'ordinateur."),
+        luTampon: t("Lu")
       }
     };
     if (inCase) {
       const ck = clockInfo();
       const loc = state.view === "location" && locationById(state.selectedLocationId);
       etat.enquete = { affaire: cs.title, horloge: ck ? ck.label : "", pistes: state.leadsRemaining, lieu: loc ? loc.name : "" };
+      if (etat.mode === "enquete") Object.assign(etat.enquete, phoneInvestigation(cs));
     }
     if (etat.mode === "minitel") {
       const last = state.minitelLog[0];
@@ -768,6 +854,8 @@
     P.sync(etat);
   }
 
+  const cs0 = () => (state.started ? currentCase() : null);
+
   if (window.BAOPhone) {
     window.BAOPhone.onStatus(() => {
       // le bouton des outils change de nom ; pas de nouveau rendu pendant une poursuite en cours
@@ -783,7 +871,13 @@
         A.playOneOf(["outils/minitel-touche-1", "outils/minitel-touche-2", "outils/minitel-touche-3"]);
       } else if (g.kind === "minitel-envoi" && state.view === "minitel") minitelSubmit(String(g.texte || "").slice(0, 30));
       else if (g.kind === "minitel-fermer" && state.view === "minitel") minitelClose();
-      else if (g.kind === "poursuite-depart" && activeChase && activeChase.area.isConnected) activeChase.start();
+      else if (g.kind === "quartier" && cs0() && cs0().quartiers.some((q) => q.id === g.id)) goToQuartier(g.id);
+      else if (g.kind === "lieu" && locationById(String(g.id)) && computeKnowledge().l.has(String(g.id))) goToLocation(String(g.id));
+      else if (g.kind === "piste" && state.view === "location") {
+        const k = computeKnowledge();
+        const clue = cluesForLocation(state.selectedLocationId).find((c) => c.id === String(g.id) && clueAvailable(c, k));
+        if (clue) selectClue(clue);
+      } else if (g.kind === "poursuite-depart" && activeChase && activeChase.area.isConnected) activeChase.start();
       else if (g.kind === "poursuite-choix" && activeChase && activeChase.end) activeChase.choose(String(g.id));
     });
   }
@@ -1614,13 +1708,7 @@
       button(
         "nav-item" + (state.view === "quartier" && state.selectedQuartier === q.id ? " active" : "") + (count === 0 ? " nav-empty" : ""),
         escapeHtml(q.name) + (count ? '<span class="nav-count">' + count + "</span>" : ""),
-        () => {
-          state.view = "quartier";
-          state.selectedQuartier = q.id;
-          state.lastResult = null;
-          render();
-          scrollToTop();
-        }
+        () => goToQuartier(q.id)
       );
     });
 

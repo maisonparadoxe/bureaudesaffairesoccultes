@@ -31,6 +31,8 @@
   let status = "aucun"; // aucun | attente | relie | perdu | erreur
   let error = "";
   let overlay = null;
+  let inviteMode = false; // la fenêtre propose d'abord le téléphone, sans QR code
+  let invited = false;
   let gestureHandler = () => {};
   let statusHandler = () => {};
   let renewTimer = null;
@@ -47,8 +49,12 @@
 
   const online = () => /^https?:$/.test(location.protocol);
 
+  // Dans itch.io, le jeu tourne dans un cadre sur un autre domaine : le QR code
+  // pointe alors vers la page de la manette sur le site du jeu, plus propre à ouvrir.
+  const SITE = "https://maisonparadoxe.github.io/bureaudesaffairesoccultes/";
   function controllerURL() {
-    return new URL("manette.html", location.href).href.split("#")[0] + "#" + peer.id + "." + token;
+    const base = /(^|\.)itch\.(io|zone)$/.test(location.hostname) ? SITE : location.href;
+    return new URL("manette.html", base).href.split("#")[0] + "#" + peer.id + "." + token;
   }
 
   function newToken() {
@@ -178,6 +184,19 @@
   }
 
   // ---------------- la fenêtre du QR code ----------------
+  const NO = "bao-manette-non";
+  const stored = () => { try { return localStorage.getItem(NO) === "1"; } catch (e) { return false; } };
+
+  // Au début de la partie : le jeu propose le téléphone (une fois par session,
+  // jamais sur un téléphone, jamais si on a dit « ne plus me le proposer »)
+  function invite() {
+    if (invited || conn || stored() || !online()) return;
+    invited = true;
+    if (window.matchMedia && (matchMedia("(pointer: coarse)").matches || innerWidth <= 760)) return;
+    inviteMode = true;
+    open();
+  }
+
   function open() {
     if (!overlay) {
       overlay = document.createElement("div");
@@ -186,15 +205,38 @@
       document.body.appendChild(overlay);
     }
     overlay.hidden = false;
-    start();
+    if (!inviteMode) start();
     drawOverlay();
   }
   function close() {
+    inviteMode = false;
     if (overlay) overlay.hidden = true;
+  }
+
+  function drawInvite() {
+    overlay.innerHTML =
+      '<div class="manette-fenetre manette-invitation" role="dialog" aria-modal="true" aria-label="' + esc(t("Jouer avec votre téléphone ?")) + '">' +
+      '<p class="manette-titre">' + t("Jouer avec votre téléphone ?") + "</p>" +
+      '<p class="manette-intro">' + t("Scannez un QR code : le téléphone affiche la carte, les pistes et les entretiens, devient le Minitel et sert de chronomètre pendant les poursuites. Vous pouvez aussi tout jouer à la souris.") + "</p>" +
+      '<div class="manette-actions manette-actions-col">' +
+      '<button type="button" class="manette-oui">' + t("Afficher le QR code") + "</button>" +
+      '<button type="button" class="manette-fermer">' + t("Jouer à la souris") + "</button>" +
+      '<button type="button" class="manette-jamais">' + t("Ne plus me le proposer") + "</button></div></div>";
+    overlay.querySelector(".manette-oui").addEventListener("click", () => {
+      inviteMode = false;
+      start();
+      drawOverlay();
+    });
+    overlay.querySelector(".manette-fermer").addEventListener("click", close);
+    overlay.querySelector(".manette-jamais").addEventListener("click", () => {
+      try { localStorage.setItem(NO, "1"); } catch (e) {}
+      close();
+    });
   }
 
   function drawOverlay() {
     if (!overlay || overlay.hidden) return;
+    if (inviteMode) return drawInvite();
     let body = "";
     if (status === "erreur" && error === "hors-ligne") {
       body =
@@ -231,7 +273,8 @@
   }
 
   window.BAOPhone = {
-    open: open,
+    open: function () { inviteMode = false; open(); },
+    invite: invite,
     sync: sync,
     fx: fx,
     banner: banner,

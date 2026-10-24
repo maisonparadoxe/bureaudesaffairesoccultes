@@ -1145,6 +1145,11 @@ body.menu-mode #pluie { z-index: 3; }
   color: var(--ink);
 }
 .manette-actions .manette-fermer { background: var(--ink); color: var(--paper); }
+.manette-actions-col { flex-direction: column; align-items: stretch; justify-content: flex-start; }
+.manette-actions-col button { padding: 13px 14px; }
+.manette-actions-col .manette-oui { background: var(--stamp-red); border-color: var(--stamp-red); color: var(--paper); }
+.manette-actions-col .manette-fermer { background: transparent; color: var(--ink); }
+.manette-actions-col .manette-jamais { border-color: transparent; font-size: 11.5px; color: var(--muted); text-decoration: underline; padding: 6px; }
 .manette-btn { background: var(--paper-dark) !important; color: var(--ink) !important; border-style: dashed !important; }
 .manette-btn.manette-reliee { border-style: solid !important; }
 .manette-btn.manette-reliee::before { content: "● "; color: #3C7A3F; }

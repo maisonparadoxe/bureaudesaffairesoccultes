@@ -144,14 +144,54 @@
 
   function drawRemote() {
     const e = etat.enquete || {};
+    const keep = window.scrollY;
+    const r = e.resultat;
+    const chip = (q) => '<button class="m-chip' + (q.actif ? " on" : "") + '" type="button" data-q="' + esc(q.id) + '">' + esc(q.nom) + (q.n ? " <i>" + q.n + "</i>" : "") + "</button>";
+    const lieux = (e.lieux || []).length
+      ? (e.lieux || []).map((l) => '<button class="m-lieu' + (l.actif ? " on" : "") + '" type="button" data-l="' + esc(l.id) + '">' + esc(l.nom) + "</button>").join("")
+      : '<p class="m-texte m-vide">' + esc(lab("aucunLieu")) + "</p>";
+    let pistes = "";
+    if (e.lieu) {
+      pistes = (e.liste || []).length
+        ? e.liste.map((p) =>
+            '<button class="m-piste m-' + p.genre + (p.lu ? " lu" : "") + (p.courant ? " courant" : "") + '" type="button" data-p="' + esc(p.id) + '">' +
+            '<span class="m-genre">' + esc(lab(p.genre)) + (p.nouveau ? " · " + esc(lab("nouveau")) : "") + "</span>" +
+            "<b>" + esc(p.label) + "</b>" +
+            (p.qui ? '<span class="m-qui">' + esc(p.qui) + "</span>" : "") +
+            (p.lu ? '<span class="m-note">' + esc(lab("lu")) + "</span>" : p.gratuit ? '<span class="m-note">' + esc(lab("gratuit")) + "</span>" : "") +
+            "</button>").join("")
+        : '<p class="m-texte m-vide">' + esc(lab("rienIci")) + "</p>";
+    } else pistes = '<p class="m-texte m-vide">' + esc(lab("choisirLieu")) + "</p>";
+    let res = "";
+    if (r) {
+      res =
+        '<article class="m-resultat" id="m-resultat">' +
+        (r.titre ? '<h2>' + esc(r.titre) + "</h2>" : "") +
+        (r.qui ? '<p class="m-qui">' + esc(r.qui) + "</p>" : "") +
+        (r.paragraphes || []).map((p) => "<p>" + esc(p) + "</p>").join("") +
+        (r.surOrdi ? '<p class="m-surordi">' + esc(lab("surOrdi")) + "</p>" : "") +
+        (r.decouvertes || []).map((d) => '<p class="m-decouverte"><span>' + esc(d.label) + "</span> " + esc(d.texte) + "</p>").join("") +
+        "</article>";
+    }
     root.innerHTML =
       '<p class="m-entete"><span>' + esc(e.affaire) + "</span><span>" + esc(e.horloge) + "</span></p>" +
       '<div class="m-pistes"><b>' + esc(e.pistes) + "</b><span>" + esc(lab("pistes")) + "</span></div>" +
-      '<div class="m-carte"><p class="m-texte">' + esc(e.lieu || lab("plan")) + "</p></div>" +
-      '<div class="m-bas"><button class="m-btn" data-g="minitel-ouvrir">Minitel · 3611</button>' +
+      '<h3 class="m-sec">' + esc(lab("quartiers")) + '</h3><div class="m-chips">' + (e.quartiers || []).map(chip).join("") + "</div>" +
+      '<h3 class="m-sec">' + esc(lab("lieux")) + '</h3><div class="m-lieux">' + lieux + "</div>" +
+      '<div class="m-liste">' + pistes + "</div>" + res +
+      '<div class="m-bas"><button class="m-btn" data-g="minitel-ouvrir" type="button">Minitel · 3611</button>' +
       '<p class="m-etat">' + esc(lab("telecommande")) + "</p></div>";
     root.querySelector("[data-g]").addEventListener("click", () => send("minitel-ouvrir"));
+    root.querySelectorAll("[data-q]").forEach((b) => b.addEventListener("click", () => { buzz(15); send("quartier", { id: b.getAttribute("data-q") }); }));
+    root.querySelectorAll("[data-l]").forEach((b) => b.addEventListener("click", () => { buzz(15); send("lieu", { id: b.getAttribute("data-l") }); }));
+    root.querySelectorAll("[data-p]").forEach((b) => b.addEventListener("click", () => { buzz(30); send("piste", { id: b.getAttribute("data-p") }); }));
+    // une nouvelle piste lue : on montre le résultat ; sinon on reste où l'on était
+    const rid = r && r.clue;
+    if (rid && rid !== shownResult) root.querySelector("#m-resultat").scrollIntoView({ block: "start" });
+    else window.scrollTo(0, keep);
+    shownResult = rid || null;
   }
+  let shownResult = null;
 
   function drawMinitel() {
     const mi = etat.minitel || {};
