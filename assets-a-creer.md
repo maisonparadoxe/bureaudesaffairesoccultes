@@ -335,7 +335,7 @@ Mêmes consignes que pour Saint-Étienne. Nyons réutilise tous les sons d'inter
 | `camping-saules.mp3` | Un camping détruit en plein jour : le vent dans les saules, la rivière, rien d'autre. |
 | `memorial.mp3` | Une place au bord de l'eau : une fontaine, des cloches au loin. |
 
-## 3.2 Portraits (`img/portraits/`) : 17 fichiers
+## 3.2 Portraits (`img/portraits/`) : 17 fichiers (faits et dans le jeu depuis le 2 novembre 2026)
 
 Même prompt de base, avec **juin 1994** et une lumière d'été (chemise ouverte, peau hâlée chez ceux qui travaillent dehors). Les âges et les détails viennent des textes quand ils y sont ; le reste est une proposition.
 
